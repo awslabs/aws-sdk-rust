@@ -60,6 +60,27 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::EntitlementAlreadyExistsException(inner) => inner.meta(),
+            Self::EntitlementNotFoundException(inner) => inner.meta(),
+            Self::IncompatibleImageException(inner) => inner.meta(),
+            Self::InvalidAccountStatusException(inner) => inner.meta(),
+            Self::InvalidParameterCombinationException(inner) => inner.meta(),
+            Self::InvalidRoleException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::RequestLimitExceededException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotAvailableException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

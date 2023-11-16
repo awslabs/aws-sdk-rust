@@ -51,6 +51,24 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AgentsAlreadyRunningAssessmentException(inner) => inner.meta(),
+            Self::AssessmentRunInProgressException(inner) => inner.meta(),
+            Self::InternalException(inner) => inner.meta(),
+            Self::InvalidCrossAccountRoleException(inner) => inner.meta(),
+            Self::InvalidInputException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NoSuchEntityException(inner) => inner.meta(),
+            Self::PreviewGenerationInProgressException(inner) => inner.meta(),
+            Self::ServiceTemporarilyUnavailableException(inner) => inner.meta(),
+            Self::UnsupportedFeatureException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError, R>>
     for Error
 where

@@ -27,6 +27,9 @@ pub fn de_list_registries_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::list_registries::ListRegistriesError::ForbiddenException({
@@ -39,6 +42,9 @@ pub fn de_list_registries_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::list_registries::ListRegistriesError::InternalServerErrorException({
@@ -52,6 +58,9 @@ pub fn de_list_registries_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::list_registries::ListRegistriesError::ServiceUnavailableException({
@@ -65,6 +74,9 @@ pub fn de_list_registries_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::list_registries::ListRegistriesError::UnauthorizedException({
@@ -77,6 +89,9 @@ pub fn de_list_registries_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::list_registries::ListRegistriesError::generic(generic),

@@ -106,6 +106,41 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ActivityDoesNotExist(inner) => inner.meta(),
+            Self::ActivityLimitExceeded(inner) => inner.meta(),
+            Self::ActivityWorkerLimitExceeded(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::ExecutionAlreadyExists(inner) => inner.meta(),
+            Self::ExecutionDoesNotExist(inner) => inner.meta(),
+            Self::ExecutionLimitExceeded(inner) => inner.meta(),
+            Self::ExecutionNotRedrivable(inner) => inner.meta(),
+            Self::InvalidArn(inner) => inner.meta(),
+            Self::InvalidDefinition(inner) => inner.meta(),
+            Self::InvalidExecutionInput(inner) => inner.meta(),
+            Self::InvalidLoggingConfiguration(inner) => inner.meta(),
+            Self::InvalidName(inner) => inner.meta(),
+            Self::InvalidOutput(inner) => inner.meta(),
+            Self::InvalidToken(inner) => inner.meta(),
+            Self::InvalidTracingConfiguration(inner) => inner.meta(),
+            Self::MissingRequiredParameter(inner) => inner.meta(),
+            Self::ResourceNotFound(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::StateMachineAlreadyExists(inner) => inner.meta(),
+            Self::StateMachineDeleting(inner) => inner.meta(),
+            Self::StateMachineDoesNotExist(inner) => inner.meta(),
+            Self::StateMachineLimitExceeded(inner) => inner.meta(),
+            Self::StateMachineTypeNotSupported(inner) => inner.meta(),
+            Self::TaskDoesNotExist(inner) => inner.meta(),
+            Self::TaskTimedOut(inner) => inner.meta(),
+            Self::TooManyTags(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_activity::CreateActivityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

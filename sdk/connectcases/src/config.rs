@@ -25,6 +25,7 @@ pub struct Config {
     cloneable: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
+    behavior_major_version: ::std::option::Option<crate::config::BehaviorMajorVersion>,
 }
 impl Config {
     /// Constructs a config builder.
@@ -37,6 +38,7 @@ impl Config {
             config: self.cloneable.clone(),
             runtime_components: self.runtime_components.clone(),
             runtime_plugins: self.runtime_plugins.clone(),
+            behavior_major_version: self.behavior_major_version.clone(),
         }
     }
     /// Deprecated. Don't use.
@@ -131,6 +133,7 @@ pub struct Builder {
     pub(crate) config: ::aws_smithy_types::config_bag::CloneableLayer,
     pub(crate) runtime_components: crate::config::RuntimeComponentsBuilder,
     pub(crate) runtime_plugins: ::std::vec::Vec<crate::config::SharedRuntimePlugin>,
+    pub(crate) behavior_major_version: ::std::option::Option<crate::config::BehaviorMajorVersion>,
 }
 impl ::std::default::Default for Builder {
     fn default() -> Self {
@@ -138,6 +141,7 @@ impl ::std::default::Default for Builder {
             config: ::std::default::Default::default(),
             runtime_components: crate::config::RuntimeComponentsBuilder::new("service config"),
             runtime_plugins: ::std::default::Default::default(),
+            behavior_major_version: ::std::default::Default::default(),
         }
     }
 }
@@ -946,6 +950,83 @@ impl Builder {
         }
         self
     }
+    /// Sets the [`behavior major version`](crate::config::BehaviorMajorVersion).
+    ///
+    /// Over time, new best-practice behaviors are introduced. However, these behaviors might not be backwards
+    /// compatible. For example, a change which introduces new default timeouts or a new retry-mode for
+    /// all operations might be the ideal behavior but could break existing applications.
+    ///
+    /// # Examples
+    ///
+    /// Set the behavior major version to `latest`. This is equivalent to enabling the `behavior-version-latest` cargo feature.
+    /// ```no_run
+    /// use aws_sdk_connectcases::config::BehaviorMajorVersion;
+    ///
+    /// let config = aws_sdk_connectcases::Config::builder()
+    ///     .behavior_major_version(BehaviorMajorVersion::latest())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_connectcases::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing behavior major version:
+    /// ```no_run
+    /// use aws_sdk_connectcases::config::BehaviorMajorVersion;
+    ///
+    /// let config = aws_sdk_connectcases::Config::builder()
+    ///     .behavior_major_version(BehaviorMajorVersion::v2023_11_09())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_connectcases::Client::from_conf(config);
+    /// ```
+
+    pub fn behavior_major_version(mut self, behavior_major_version: crate::config::BehaviorMajorVersion) -> Self {
+        self.set_behavior_major_version(Some(behavior_major_version));
+        self
+    }
+
+    /// Sets the [`behavior major version`](crate::config::BehaviorMajorVersion).
+    ///
+    /// Over time, new best-practice behaviors are introduced. However, these behaviors might not be backwards
+    /// compatible. For example, a change which introduces new default timeouts or a new retry-mode for
+    /// all operations might be the ideal behavior but could break existing applications.
+    ///
+    /// # Examples
+    ///
+    /// Set the behavior major version to `latest`. This is equivalent to enabling the `behavior-version-latest` cargo feature.
+    /// ```no_run
+    /// use aws_sdk_connectcases::config::BehaviorMajorVersion;
+    ///
+    /// let config = aws_sdk_connectcases::Config::builder()
+    ///     .behavior_major_version(BehaviorMajorVersion::latest())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_connectcases::Client::from_conf(config);
+    /// ```
+    ///
+    /// Customizing behavior major version:
+    /// ```no_run
+    /// use aws_sdk_connectcases::config::BehaviorMajorVersion;
+    ///
+    /// let config = aws_sdk_connectcases::Config::builder()
+    ///     .behavior_major_version(BehaviorMajorVersion::v2023_11_09())
+    ///     // ...
+    ///     .build();
+    /// let client = aws_sdk_connectcases::Client::from_conf(config);
+    /// ```
+
+    pub fn set_behavior_major_version(&mut self, behavior_major_version: Option<crate::config::BehaviorMajorVersion>) -> &mut Self {
+        self.behavior_major_version = behavior_major_version;
+        self
+    }
+
+    /// Convenience method to set the latest behavior major version
+    ///
+    /// This is equivalent to enabling the `behavior-version-latest` Cargo feature
+    pub fn behavior_major_version_latest(mut self) -> Self {
+        self.set_behavior_major_version(Some(crate::config::BehaviorMajorVersion::latest()));
+        self
+    }
     /// Adds a runtime plugin to the config.
     #[allow(unused)]
     pub(crate) fn runtime_plugin(mut self, plugin: impl crate::config::RuntimePlugin + 'static) -> Self {
@@ -1000,6 +1081,7 @@ impl Builder {
             cloneable: layer,
             runtime_components: self.runtime_components,
             runtime_plugins: self.runtime_plugins,
+            behavior_major_version: self.behavior_major_version,
         }
     }
 }
@@ -1127,6 +1209,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
 
         builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
+        builder.set_behavior_major_version(input.behavior_major_version());
 
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
@@ -1150,21 +1233,32 @@ pub use ::aws_smithy_async::rt::sleep::Sleep;
 pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
+    #[allow(unused_mut)]
+    let mut behavior_major_version = config.behavior_major_version.clone();
+    #[cfg(feature = "behavior-version-latest")]
+    {
+        if behavior_major_version.is_none() {
+            behavior_major_version = Some(::aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion::latest());
+        }
+    }
 
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
-        // defaults
-        .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
-            ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new().with_retry_partition_name("connectcases"),
-        ))
-        // user config
-        .with_client_plugin(
-            ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
-                .with_config(config.config.clone())
-                .with_runtime_components(config.runtime_components.clone()),
-        )
-        // codegen config
-        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
-        .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
+                    // defaults
+                    .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
+                        ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
+                            .with_retry_partition_name("connectcases")
+                            .with_behavior_major_version(behavior_major_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                    ))
+                    // user config
+                    .with_client_plugin(
+                        ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
+                            .with_config(config.config.clone())
+                            .with_runtime_components(config.runtime_components.clone())
+                    )
+                    // codegen config
+                    .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
+                    .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
+
     for plugin in configured_plugins {
         plugins = plugins.with_client_plugin(plugin);
     }
@@ -1176,6 +1270,8 @@ pub use ::aws_smithy_types::config_bag::FrozenLayer;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 
 pub use ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin;
+
+pub use ::aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
 
 pub use ::aws_smithy_runtime_api::client::http::SharedHttpClient;
 

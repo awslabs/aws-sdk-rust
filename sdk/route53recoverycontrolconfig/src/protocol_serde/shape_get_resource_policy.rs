@@ -28,6 +28,9 @@ pub fn de_get_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::get_resource_policy::GetResourcePolicyError::ResourceNotFoundException({
@@ -40,6 +43,9 @@ pub fn de_get_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::get_resource_policy::GetResourcePolicyError::generic(generic),

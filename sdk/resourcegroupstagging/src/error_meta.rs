@@ -49,6 +49,19 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConstraintViolationException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::PaginationTokenExpiredException(inner) => inner.meta(),
+            Self::ThrottledException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_report_creation::DescribeReportCreationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -245,13 +245,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchPutSched
     }
 }
 
-/// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type BatchPutScheduledUpdateGroupActionErrorKind = BatchPutScheduledUpdateGroupActionError;
 /// Error type for the `BatchPutScheduledUpdateGroupActionError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -264,51 +257,6 @@ pub enum BatchPutScheduledUpdateGroupActionError {
     ResourceContentionFault(crate::types::error::ResourceContentionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
-}
-impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for BatchPutScheduledUpdateGroupActionError {
-    fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
-    }
-}
-impl ::std::fmt::Display for BatchPutScheduledUpdateGroupActionError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        match self {
-            Self::AlreadyExistsFault(_inner) => _inner.fmt(f),
-            Self::LimitExceededFault(_inner) => _inner.fmt(f),
-            Self::ResourceContentionFault(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchPutScheduledUpdateGroupActionError {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        match self {
-            Self::AlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceContentionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-        }
-    }
-}
-impl ::aws_types::request_id::RequestId for crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
-impl ::aws_smithy_types::retry::ProvideErrorKind for BatchPutScheduledUpdateGroupActionError {
-    fn code(&self) -> ::std::option::Option<&str> {
-        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
-    }
-    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
-    }
 }
 impl BatchPutScheduledUpdateGroupActionError {
     /// Creates the `BatchPutScheduledUpdateGroupActionError::Unhandled` variant from any error type.
@@ -356,6 +304,51 @@ impl ::std::error::Error for BatchPutScheduledUpdateGroupActionError {
             Self::ResourceContentionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
+    }
+}
+impl ::std::fmt::Display for BatchPutScheduledUpdateGroupActionError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::AlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::LimitExceededFault(_inner) => _inner.fmt(f),
+            Self::ResourceContentionFault(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for BatchPutScheduledUpdateGroupActionError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchPutScheduledUpdateGroupActionError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::AlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceContentionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for BatchPutScheduledUpdateGroupActionError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled({
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
     }
 }
 

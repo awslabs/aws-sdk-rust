@@ -30,6 +30,9 @@ pub fn de_list_tags_for_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException({
@@ -42,6 +45,9 @@ pub fn de_list_tags_for_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::list_tags_for_resource::ListTagsForResourceError::generic(generic),

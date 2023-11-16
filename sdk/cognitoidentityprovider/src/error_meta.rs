@@ -141,6 +141,54 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AliasExistsException(inner) => inner.meta(),
+            Self::CodeDeliveryFailureException(inner) => inner.meta(),
+            Self::CodeMismatchException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DuplicateProviderException(inner) => inner.meta(),
+            Self::EnableSoftwareTokenMfaException(inner) => inner.meta(),
+            Self::ExpiredCodeException(inner) => inner.meta(),
+            Self::ForbiddenException(inner) => inner.meta(),
+            Self::GroupExistsException(inner) => inner.meta(),
+            Self::InternalErrorException(inner) => inner.meta(),
+            Self::InvalidEmailRoleAccessPolicyException(inner) => inner.meta(),
+            Self::InvalidLambdaResponseException(inner) => inner.meta(),
+            Self::InvalidOAuthFlowException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidPasswordException(inner) => inner.meta(),
+            Self::InvalidSmsRoleAccessPolicyException(inner) => inner.meta(),
+            Self::InvalidSmsRoleTrustRelationshipException(inner) => inner.meta(),
+            Self::InvalidUserPoolConfigurationException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MfaMethodNotFoundException(inner) => inner.meta(),
+            Self::NotAuthorizedException(inner) => inner.meta(),
+            Self::PasswordResetRequiredException(inner) => inner.meta(),
+            Self::PreconditionNotMetException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ScopeDoesNotExistException(inner) => inner.meta(),
+            Self::SoftwareTokenMfaNotFoundException(inner) => inner.meta(),
+            Self::TooManyFailedAttemptsException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
+            Self::UnexpectedLambdaException(inner) => inner.meta(),
+            Self::UnsupportedIdentityProviderException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::UnsupportedTokenTypeException(inner) => inner.meta(),
+            Self::UnsupportedUserStateException(inner) => inner.meta(),
+            Self::UserImportInProgressException(inner) => inner.meta(),
+            Self::UserLambdaValidationException(inner) => inner.meta(),
+            Self::UserNotConfirmedException(inner) => inner.meta(),
+            Self::UserNotFoundException(inner) => inner.meta(),
+            Self::UserPoolAddOnNotEnabledException(inner) => inner.meta(),
+            Self::UserPoolTaggingException(inner) => inner.meta(),
+            Self::UsernameExistsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_custom_attributes::AddCustomAttributesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -108,6 +108,43 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessPointAlreadyExists(inner) => inner.meta(),
+            Self::AccessPointLimitExceeded(inner) => inner.meta(),
+            Self::AccessPointNotFound(inner) => inner.meta(),
+            Self::AvailabilityZonesMismatch(inner) => inner.meta(),
+            Self::BadRequest(inner) => inner.meta(),
+            Self::DependencyTimeout(inner) => inner.meta(),
+            Self::FileSystemAlreadyExists(inner) => inner.meta(),
+            Self::FileSystemInUse(inner) => inner.meta(),
+            Self::FileSystemLimitExceeded(inner) => inner.meta(),
+            Self::FileSystemNotFound(inner) => inner.meta(),
+            Self::IncorrectFileSystemLifeCycleState(inner) => inner.meta(),
+            Self::IncorrectMountTargetState(inner) => inner.meta(),
+            Self::InsufficientThroughputCapacity(inner) => inner.meta(),
+            Self::InternalServerError(inner) => inner.meta(),
+            Self::InvalidPolicyException(inner) => inner.meta(),
+            Self::IpAddressInUse(inner) => inner.meta(),
+            Self::MountTargetConflict(inner) => inner.meta(),
+            Self::MountTargetNotFound(inner) => inner.meta(),
+            Self::NetworkInterfaceLimitExceeded(inner) => inner.meta(),
+            Self::NoFreeAddressesInSubnet(inner) => inner.meta(),
+            Self::PolicyNotFound(inner) => inner.meta(),
+            Self::ReplicationNotFound(inner) => inner.meta(),
+            Self::SecurityGroupLimitExceeded(inner) => inner.meta(),
+            Self::SecurityGroupNotFound(inner) => inner.meta(),
+            Self::SubnetNotFound(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::ThroughputLimitExceeded(inner) => inner.meta(),
+            Self::TooManyRequests(inner) => inner.meta(),
+            Self::UnsupportedAvailabilityZone(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_point::CreateAccessPointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

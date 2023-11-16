@@ -234,13 +234,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ResizeCluster
     }
 }
 
-/// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type ResizeClusterErrorKind = ResizeClusterError;
 /// Error type for the `ResizeClusterError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -277,75 +270,6 @@ pub enum ResizeClusterError {
     UnsupportedOptionFault(crate::types::error::UnsupportedOptionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
-}
-impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ResizeClusterError {
-    fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
-    }
-}
-impl ::std::fmt::Display for ResizeClusterError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        match self {
-            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
-            Self::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
-            Self::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
-            Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
-            Self::InvalidReservedNodeStateFault(_inner) => _inner.fmt(f),
-            Self::LimitExceededFault(_inner) => _inner.fmt(f),
-            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => _inner.fmt(f),
-            Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
-            Self::ReservedNodeAlreadyExistsFault(_inner) => _inner.fmt(f),
-            Self::ReservedNodeAlreadyMigratedFault(_inner) => _inner.fmt(f),
-            Self::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
-            Self::ReservedNodeOfferingNotFoundFault(_inner) => _inner.fmt(f),
-            Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
-            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
-            Self::UnsupportedOptionFault(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResizeClusterError {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        match self {
-            Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DependentServiceUnavailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InsufficientClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidReservedNodeStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::NumberOfNodesQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReservedNodeAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReservedNodeAlreadyMigratedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReservedNodeNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReservedNodeOfferingNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnsupportedOptionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-        }
-    }
-}
-impl ::aws_types::request_id::RequestId for crate::operation::resize_cluster::ResizeClusterError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
-impl ::aws_smithy_types::retry::ProvideErrorKind for ResizeClusterError {
-    fn code(&self) -> ::std::option::Option<&str> {
-        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
-    }
-    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
-    }
 }
 impl ResizeClusterError {
     /// Creates the `ResizeClusterError::Unhandled` variant from any error type.
@@ -465,6 +389,75 @@ impl ::std::error::Error for ResizeClusterError {
             Self::UnsupportedOptionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
+    }
+}
+impl ::std::fmt::Display for ResizeClusterError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceUnavailableFault(_inner) => _inner.fmt(f),
+            Self::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidReservedNodeStateFault(_inner) => _inner.fmt(f),
+            Self::LimitExceededFault(_inner) => _inner.fmt(f),
+            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => _inner.fmt(f),
+            Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::ReservedNodeAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::ReservedNodeAlreadyMigratedFault(_inner) => _inner.fmt(f),
+            Self::ReservedNodeNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ReservedNodeOfferingNotFoundFault(_inner) => _inner.fmt(f),
+            Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationFault(_inner) => _inner.fmt(f),
+            Self::UnsupportedOptionFault(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for ResizeClusterError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ResizeClusterError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::ClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DependentServiceUnavailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidReservedNodeStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NumberOfNodesQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReservedNodeAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReservedNodeAlreadyMigratedFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReservedNodeNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReservedNodeOfferingNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOptionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ResizeClusterError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled({
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::operation::resize_cluster::ResizeClusterError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
     }
 }
 

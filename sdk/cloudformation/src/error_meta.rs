@@ -85,6 +85,35 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::CfnRegistryException(inner) => inner.meta(),
+            Self::ChangeSetNotFoundException(inner) => inner.meta(),
+            Self::CreatedButModifiedException(inner) => inner.meta(),
+            Self::InsufficientCapabilitiesException(inner) => inner.meta(),
+            Self::InvalidChangeSetStatusException(inner) => inner.meta(),
+            Self::InvalidOperationException(inner) => inner.meta(),
+            Self::InvalidStateTransitionException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NameAlreadyExistsException(inner) => inner.meta(),
+            Self::OperationIdAlreadyExistsException(inner) => inner.meta(),
+            Self::OperationInProgressException(inner) => inner.meta(),
+            Self::OperationNotFoundException(inner) => inner.meta(),
+            Self::OperationStatusCheckFailedException(inner) => inner.meta(),
+            Self::StackInstanceNotFoundException(inner) => inner.meta(),
+            Self::StackNotFoundException(inner) => inner.meta(),
+            Self::StackSetNotEmptyException(inner) => inner.meta(),
+            Self::StackSetNotFoundException(inner) => inner.meta(),
+            Self::StaleRequestException(inner) => inner.meta(),
+            Self::TokenAlreadyExistsException(inner) => inner.meta(),
+            Self::TypeConfigurationNotFoundException(inner) => inner.meta(),
+            Self::TypeNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_organizations_access::ActivateOrganizationsAccessError, R>>
     for Error
 where

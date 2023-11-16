@@ -51,6 +51,24 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::IllegalStatusException(inner) => inner.meta(),
+            Self::InternalException(inner) => inner.meta(),
+            Self::InvalidEventPatternException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ManagedRuleException(inner) => inner.meta(),
+            Self::OperationDisabledException(inner) => inner.meta(),
+            Self::PolicyLengthExceededException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_event_source::ActivateEventSourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

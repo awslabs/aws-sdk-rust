@@ -28,6 +28,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::update_bridge_state::UpdateBridgeStateError::ConflictException({
@@ -40,6 +43,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::update_bridge_state::UpdateBridgeStateError::ForbiddenException({
@@ -52,6 +58,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::update_bridge_state::UpdateBridgeStateError::InternalServerErrorException({
@@ -65,6 +74,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::update_bridge_state::UpdateBridgeStateError::NotFoundException({
@@ -77,6 +89,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_bridge_state::UpdateBridgeStateError::ServiceUnavailableException({
@@ -90,6 +105,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::update_bridge_state::UpdateBridgeStateError::TooManyRequestsException({
@@ -102,6 +120,9 @@ pub fn de_update_bridge_state_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::update_bridge_state::UpdateBridgeStateError::generic(generic),

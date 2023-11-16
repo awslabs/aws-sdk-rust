@@ -123,6 +123,48 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ActiveDirectoryError(inner) => inner.meta(),
+            Self::BackupBeingCopied(inner) => inner.meta(),
+            Self::BackupInProgress(inner) => inner.meta(),
+            Self::BackupNotFound(inner) => inner.meta(),
+            Self::BackupRestoring(inner) => inner.meta(),
+            Self::BadRequest(inner) => inner.meta(),
+            Self::DataRepositoryAssociationNotFound(inner) => inner.meta(),
+            Self::DataRepositoryTaskEnded(inner) => inner.meta(),
+            Self::DataRepositoryTaskExecuting(inner) => inner.meta(),
+            Self::DataRepositoryTaskNotFound(inner) => inner.meta(),
+            Self::FileCacheNotFound(inner) => inner.meta(),
+            Self::FileSystemNotFound(inner) => inner.meta(),
+            Self::IncompatibleParameterError(inner) => inner.meta(),
+            Self::IncompatibleRegionForMultiAz(inner) => inner.meta(),
+            Self::InternalServerError(inner) => inner.meta(),
+            Self::InvalidDataRepositoryType(inner) => inner.meta(),
+            Self::InvalidDestinationKmsKey(inner) => inner.meta(),
+            Self::InvalidExportPath(inner) => inner.meta(),
+            Self::InvalidImportPath(inner) => inner.meta(),
+            Self::InvalidNetworkSettings(inner) => inner.meta(),
+            Self::InvalidPerUnitStorageThroughput(inner) => inner.meta(),
+            Self::InvalidRegion(inner) => inner.meta(),
+            Self::InvalidSourceKmsKey(inner) => inner.meta(),
+            Self::MissingFileCacheConfiguration(inner) => inner.meta(),
+            Self::MissingFileSystemConfiguration(inner) => inner.meta(),
+            Self::MissingVolumeConfiguration(inner) => inner.meta(),
+            Self::NotServiceResourceError(inner) => inner.meta(),
+            Self::ResourceDoesNotSupportTagging(inner) => inner.meta(),
+            Self::ResourceNotFound(inner) => inner.meta(),
+            Self::ServiceLimitExceeded(inner) => inner.meta(),
+            Self::SnapshotNotFound(inner) => inner.meta(),
+            Self::SourceBackupUnavailable(inner) => inner.meta(),
+            Self::StorageVirtualMachineNotFound(inner) => inner.meta(),
+            Self::UnsupportedOperation(inner) => inner.meta(),
+            Self::VolumeNotFound(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError, R>>
     for Error
 where

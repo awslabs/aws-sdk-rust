@@ -30,6 +30,9 @@ pub fn de_update_global_settings_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::update_global_settings::UpdateGlobalSettingsError::ConflictException({
@@ -42,6 +45,9 @@ pub fn de_update_global_settings_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_global_settings::UpdateGlobalSettingsError::InternalServerException({
@@ -54,6 +60,9 @@ pub fn de_update_global_settings_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_global_settings::UpdateGlobalSettingsError::ThrottlingException({
@@ -66,6 +75,9 @@ pub fn de_update_global_settings_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::update_global_settings::UpdateGlobalSettingsError::ValidationException({
@@ -78,6 +90,9 @@ pub fn de_update_global_settings_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::update_global_settings::UpdateGlobalSettingsError::generic(generic),

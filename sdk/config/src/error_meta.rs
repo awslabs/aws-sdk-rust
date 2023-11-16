@@ -220,6 +220,67 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConformancePackTemplateValidationException(inner) => inner.meta(),
+            Self::IdempotentParameterMismatch(inner) => inner.meta(),
+            Self::InsufficientDeliveryPolicyException(inner) => inner.meta(),
+            Self::InsufficientPermissionsException(inner) => inner.meta(),
+            Self::InvalidConfigurationRecorderNameException(inner) => inner.meta(),
+            Self::InvalidDeliveryChannelNameException(inner) => inner.meta(),
+            Self::InvalidExpressionException(inner) => inner.meta(),
+            Self::InvalidLimitException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidParameterValueException(inner) => inner.meta(),
+            Self::InvalidRecordingGroupException(inner) => inner.meta(),
+            Self::InvalidResultTokenException(inner) => inner.meta(),
+            Self::InvalidRoleException(inner) => inner.meta(),
+            Self::InvalidS3KeyPrefixException(inner) => inner.meta(),
+            Self::InvalidS3KmsKeyArnException(inner) => inner.meta(),
+            Self::InvalidSnsTopicArnException(inner) => inner.meta(),
+            Self::InvalidTimeRangeException(inner) => inner.meta(),
+            Self::LastDeliveryChannelDeleteFailedException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MaxActiveResourcesExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfConfigRulesExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfConfigurationRecordersExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfConformancePacksExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfDeliveryChannelsExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfOrganizationConfigRulesExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfOrganizationConformancePacksExceededException(inner) => inner.meta(),
+            Self::MaxNumberOfRetentionConfigurationsExceededException(inner) => inner.meta(),
+            Self::NoAvailableConfigurationRecorderException(inner) => inner.meta(),
+            Self::NoAvailableDeliveryChannelException(inner) => inner.meta(),
+            Self::NoAvailableOrganizationException(inner) => inner.meta(),
+            Self::NoRunningConfigurationRecorderException(inner) => inner.meta(),
+            Self::NoSuchBucketException(inner) => inner.meta(),
+            Self::NoSuchConfigRuleException(inner) => inner.meta(),
+            Self::NoSuchConfigRuleInConformancePackException(inner) => inner.meta(),
+            Self::NoSuchConfigurationAggregatorException(inner) => inner.meta(),
+            Self::NoSuchConfigurationRecorderException(inner) => inner.meta(),
+            Self::NoSuchConformancePackException(inner) => inner.meta(),
+            Self::NoSuchDeliveryChannelException(inner) => inner.meta(),
+            Self::NoSuchOrganizationConfigRuleException(inner) => inner.meta(),
+            Self::NoSuchOrganizationConformancePackException(inner) => inner.meta(),
+            Self::NoSuchRemediationConfigurationException(inner) => inner.meta(),
+            Self::NoSuchRemediationExceptionException(inner) => inner.meta(),
+            Self::NoSuchRetentionConfigurationException(inner) => inner.meta(),
+            Self::OrganizationAccessDeniedException(inner) => inner.meta(),
+            Self::OrganizationAllFeaturesNotEnabledException(inner) => inner.meta(),
+            Self::OrganizationConformancePackTemplateValidationException(inner) => inner.meta(),
+            Self::OversizedConfigurationItemException(inner) => inner.meta(),
+            Self::RemediationInProgressException(inner) => inner.meta(),
+            Self::ResourceConcurrentModificationException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotDiscoveredException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

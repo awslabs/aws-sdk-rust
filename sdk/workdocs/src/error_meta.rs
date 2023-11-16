@@ -93,6 +93,38 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictingOperationException(inner) => inner.meta(),
+            Self::CustomMetadataLimitExceededException(inner) => inner.meta(),
+            Self::DeactivatingLastSystemUserException(inner) => inner.meta(),
+            Self::DocumentLockedForCommentsException(inner) => inner.meta(),
+            Self::DraftUploadOutOfSyncException(inner) => inner.meta(),
+            Self::EntityAlreadyExistsException(inner) => inner.meta(),
+            Self::EntityNotExistsException(inner) => inner.meta(),
+            Self::FailedDependencyException(inner) => inner.meta(),
+            Self::IllegalUserStateException(inner) => inner.meta(),
+            Self::InvalidArgumentException(inner) => inner.meta(),
+            Self::InvalidCommentOperationException(inner) => inner.meta(),
+            Self::InvalidOperationException(inner) => inner.meta(),
+            Self::InvalidPasswordException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ProhibitedStateException(inner) => inner.meta(),
+            Self::RequestedEntityTooLargeException(inner) => inner.meta(),
+            Self::ResourceAlreadyCheckedOutException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::StorageLimitExceededException(inner) => inner.meta(),
+            Self::StorageLimitWillExceedException(inner) => inner.meta(),
+            Self::TooManyLabelsException(inner) => inner.meta(),
+            Self::TooManySubscriptionsException(inner) => inner.meta(),
+            Self::UnauthorizedOperationException(inner) => inner.meta(),
+            Self::UnauthorizedResourceAccessException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError, R>>
     for Error
 where

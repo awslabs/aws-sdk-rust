@@ -45,6 +45,22 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::BadRequestException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::ForbiddenException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::ResourceLimitExceededException(inner) => inner.meta(),
+            Self::ServiceFailureException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::ThrottledClientException(inner) => inner.meta(),
+            Self::UnauthorizedClientException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineError, R>>
     for Error
 where

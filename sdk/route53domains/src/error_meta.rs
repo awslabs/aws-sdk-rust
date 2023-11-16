@@ -39,6 +39,20 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::DnssecLimitExceeded(inner) => inner.meta(),
+            Self::DomainLimitExceeded(inner) => inner.meta(),
+            Self::DuplicateRequest(inner) => inner.meta(),
+            Self::InvalidInput(inner) => inner.meta(),
+            Self::OperationLimitExceeded(inner) => inner.meta(),
+            Self::TldRulesViolation(inner) => inner.meta(),
+            Self::UnsupportedTld(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

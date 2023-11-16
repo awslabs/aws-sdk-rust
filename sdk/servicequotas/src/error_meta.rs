@@ -69,6 +69,30 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AwsServiceAccessNotEnabledException(inner) => inner.meta(),
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::DependencyAccessDeniedException(inner) => inner.meta(),
+            Self::IllegalArgumentException(inner) => inner.meta(),
+            Self::InvalidPaginationTokenException(inner) => inner.meta(),
+            Self::InvalidResourceStateException(inner) => inner.meta(),
+            Self::NoAvailableOrganizationException(inner) => inner.meta(),
+            Self::NoSuchResourceException(inner) => inner.meta(),
+            Self::OrganizationNotInAllFeaturesModeException(inner) => inner.meta(),
+            Self::QuotaExceededException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::ServiceQuotaTemplateNotInUseException(inner) => inner.meta(),
+            Self::TagPolicyViolationException(inner) => inner.meta(),
+            Self::TemplatesNotAvailableInRegionException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateError, R>,

@@ -75,6 +75,32 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CertificateMismatchException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::InvalidArgsException(inner) => inner.meta(),
+            Self::InvalidArnException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidPolicyException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
+            Self::InvalidTagException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::LockoutPreventedException(inner) => inner.meta(),
+            Self::MalformedCsrException(inner) => inner.meta(),
+            Self::MalformedCertificateException(inner) => inner.meta(),
+            Self::PermissionAlreadyExistsException(inner) => inner.meta(),
+            Self::RequestAlreadyProcessedException(inner) => inner.meta(),
+            Self::RequestFailedException(inner) => inner.meta(),
+            Self::RequestInProgressException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_certificate_authority::CreateCertificateAuthorityError, R>>
     for Error
 where

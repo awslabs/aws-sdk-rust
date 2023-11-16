@@ -120,6 +120,47 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AuthorizationErrorException(inner) => inner.meta(),
+            Self::BatchEntryIdsNotDistinctException(inner) => inner.meta(),
+            Self::BatchRequestTooLongException(inner) => inner.meta(),
+            Self::ConcurrentAccessException(inner) => inner.meta(),
+            Self::EmptyBatchRequestException(inner) => inner.meta(),
+            Self::EndpointDisabledException(inner) => inner.meta(),
+            Self::FilterPolicyLimitExceededException(inner) => inner.meta(),
+            Self::InternalErrorException(inner) => inner.meta(),
+            Self::InvalidBatchEntryIdException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidParameterValueException(inner) => inner.meta(),
+            Self::InvalidSecurityException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
+            Self::KmsAccessDeniedException(inner) => inner.meta(),
+            Self::KmsDisabledException(inner) => inner.meta(),
+            Self::KmsInvalidStateException(inner) => inner.meta(),
+            Self::KmsNotFoundException(inner) => inner.meta(),
+            Self::KmsOptInRequired(inner) => inner.meta(),
+            Self::KmsThrottlingException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::OptedOutException(inner) => inner.meta(),
+            Self::PlatformApplicationDisabledException(inner) => inner.meta(),
+            Self::ReplayLimitExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::StaleTagException(inner) => inner.meta(),
+            Self::SubscriptionLimitExceededException(inner) => inner.meta(),
+            Self::TagLimitExceededException(inner) => inner.meta(),
+            Self::TagPolicyException(inner) => inner.meta(),
+            Self::ThrottledException(inner) => inner.meta(),
+            Self::TooManyEntriesInBatchRequestException(inner) => inner.meta(),
+            Self::TopicLimitExceededException(inner) => inner.meta(),
+            Self::UserErrorException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::VerificationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_permission::AddPermissionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

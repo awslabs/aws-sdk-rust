@@ -30,6 +30,9 @@ pub fn de_describe_safety_rule_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_safety_rule::DescribeSafetyRuleError::ValidationException({
@@ -42,6 +45,9 @@ pub fn de_describe_safety_rule_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::describe_safety_rule::DescribeSafetyRuleError::generic(generic),

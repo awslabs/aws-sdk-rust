@@ -51,6 +51,24 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BadRequestException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::InternalServerErrorException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitor::CreateMonitorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

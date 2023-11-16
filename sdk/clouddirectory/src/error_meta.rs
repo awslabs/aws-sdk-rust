@@ -123,6 +123,48 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BatchWriteException(inner) => inner.meta(),
+            Self::CannotListParentOfRootException(inner) => inner.meta(),
+            Self::DirectoryAlreadyExistsException(inner) => inner.meta(),
+            Self::DirectoryDeletedException(inner) => inner.meta(),
+            Self::DirectoryNotDisabledException(inner) => inner.meta(),
+            Self::DirectoryNotEnabledException(inner) => inner.meta(),
+            Self::FacetAlreadyExistsException(inner) => inner.meta(),
+            Self::FacetInUseException(inner) => inner.meta(),
+            Self::FacetNotFoundException(inner) => inner.meta(),
+            Self::FacetValidationException(inner) => inner.meta(),
+            Self::IncompatibleSchemaException(inner) => inner.meta(),
+            Self::IndexedAttributeMissingException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidArnException(inner) => inner.meta(),
+            Self::InvalidAttachmentException(inner) => inner.meta(),
+            Self::InvalidFacetUpdateException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidRuleException(inner) => inner.meta(),
+            Self::InvalidSchemaDocException(inner) => inner.meta(),
+            Self::InvalidTaggingRequestException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::LinkNameAlreadyInUseException(inner) => inner.meta(),
+            Self::NotIndexException(inner) => inner.meta(),
+            Self::NotNodeException(inner) => inner.meta(),
+            Self::NotPolicyException(inner) => inner.meta(),
+            Self::ObjectAlreadyDetachedException(inner) => inner.meta(),
+            Self::ObjectNotDetachedException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RetryableConflictException(inner) => inner.meta(),
+            Self::SchemaAlreadyExistsException(inner) => inner.meta(),
+            Self::SchemaAlreadyPublishedException(inner) => inner.meta(),
+            Self::StillContainsLinksException(inner) => inner.meta(),
+            Self::UnsupportedIndexTypeException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_facet_to_object::AddFacetToObjectError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

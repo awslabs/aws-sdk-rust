@@ -36,6 +36,19 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::InternalDependencyException(inner) => inner.meta(),
+            Self::InternalFailure(inner) => inner.meta(),
+            Self::ModelError(inner) => inner.meta(),
+            Self::ModelNotReadyException(inner) => inner.meta(),
+            Self::ServiceUnavailable(inner) => inner.meta(),
+            Self::ValidationError(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_endpoint::InvokeEndpointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

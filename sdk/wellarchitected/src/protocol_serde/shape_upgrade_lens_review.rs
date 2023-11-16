@@ -28,6 +28,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::upgrade_lens_review::UpgradeLensReviewError::ConflictException({
@@ -40,6 +43,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::upgrade_lens_review::UpgradeLensReviewError::InternalServerException({
@@ -52,6 +58,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::upgrade_lens_review::UpgradeLensReviewError::ResourceNotFoundException({
@@ -64,6 +73,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::upgrade_lens_review::UpgradeLensReviewError::ThrottlingException({
@@ -76,6 +88,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::upgrade_lens_review::UpgradeLensReviewError::ValidationException({
@@ -88,6 +103,9 @@ pub fn de_upgrade_lens_review_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::upgrade_lens_review::UpgradeLensReviewError::generic(generic),

@@ -133,6 +133,7 @@ version = "0.3.16"
 features = ["env-filter", "json"]
 
 [features]
+behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-types/rt-tokio"]

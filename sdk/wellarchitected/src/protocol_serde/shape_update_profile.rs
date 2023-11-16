@@ -27,6 +27,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::update_profile::UpdateProfileError::ConflictException({
@@ -39,6 +42,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::update_profile::UpdateProfileError::InternalServerException({
@@ -51,6 +57,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::update_profile::UpdateProfileError::ResourceNotFoundException({
@@ -63,6 +72,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::update_profile::UpdateProfileError::ThrottlingException({
@@ -75,6 +87,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::update_profile::UpdateProfileError::ValidationException({
@@ -87,6 +102,9 @@ pub fn de_update_profile_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::update_profile::UpdateProfileError::generic(generic),

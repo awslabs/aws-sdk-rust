@@ -196,7 +196,8 @@ impl ProviderConfig {
             .region(self.region())
             .time_source(self.time_source())
             .use_fips(self.use_fips().unwrap_or_default())
-            .use_dual_stack(self.use_dual_stack().unwrap_or_default());
+            .use_dual_stack(self.use_dual_stack().unwrap_or_default())
+            .behavior_major_version(crate::BehaviorMajorVersion::latest());
         builder.set_http_client(self.http_client.clone());
         builder.set_sleep_impl(self.sleep_impl.clone());
         builder.build()

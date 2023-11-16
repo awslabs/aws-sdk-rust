@@ -57,6 +57,26 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlreadyStreamedException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DuplicateRequestException(inner) => inner.meta(),
+            Self::InternalErrorException(inner) => inner.meta(),
+            Self::InvalidConfigurationException(inner) => inner.meta(),
+            Self::InvalidLambdaFunctionOutputException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::LambdaThrottledException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NotAuthorizedException(inner) => inner.meta(),
+            Self::ResourceConflictException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::bulk_publish::BulkPublishError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

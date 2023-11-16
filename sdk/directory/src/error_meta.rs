@@ -129,6 +129,50 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AuthenticationFailedException(inner) => inner.meta(),
+            Self::CertificateAlreadyExistsException(inner) => inner.meta(),
+            Self::CertificateDoesNotExistException(inner) => inner.meta(),
+            Self::CertificateInUseException(inner) => inner.meta(),
+            Self::CertificateLimitExceededException(inner) => inner.meta(),
+            Self::ClientException(inner) => inner.meta(),
+            Self::DirectoryAlreadyInRegionException(inner) => inner.meta(),
+            Self::DirectoryAlreadySharedException(inner) => inner.meta(),
+            Self::DirectoryDoesNotExistException(inner) => inner.meta(),
+            Self::DirectoryInDesiredStateException(inner) => inner.meta(),
+            Self::DirectoryLimitExceededException(inner) => inner.meta(),
+            Self::DirectoryNotSharedException(inner) => inner.meta(),
+            Self::DirectoryUnavailableException(inner) => inner.meta(),
+            Self::DomainControllerLimitExceededException(inner) => inner.meta(),
+            Self::EntityAlreadyExistsException(inner) => inner.meta(),
+            Self::EntityDoesNotExistException(inner) => inner.meta(),
+            Self::IncompatibleSettingsException(inner) => inner.meta(),
+            Self::InsufficientPermissionsException(inner) => inner.meta(),
+            Self::InvalidCertificateException(inner) => inner.meta(),
+            Self::InvalidClientAuthStatusException(inner) => inner.meta(),
+            Self::InvalidLdapsStatusException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidPasswordException(inner) => inner.meta(),
+            Self::InvalidTargetException(inner) => inner.meta(),
+            Self::IpRouteLimitExceededException(inner) => inner.meta(),
+            Self::NoAvailableCertificateException(inner) => inner.meta(),
+            Self::OrganizationsException(inner) => inner.meta(),
+            Self::RegionLimitExceededException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::ShareLimitExceededException(inner) => inner.meta(),
+            Self::SnapshotLimitExceededException(inner) => inner.meta(),
+            Self::TagLimitExceededException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::UnsupportedSettingsException(inner) => inner.meta(),
+            Self::UserDoesNotExistException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_shared_directory::AcceptSharedDirectoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

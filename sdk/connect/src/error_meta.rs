@@ -87,6 +87,36 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ContactFlowNotPublishedException(inner) => inner.meta(),
+            Self::ContactNotFoundException(inner) => inner.meta(),
+            Self::DestinationNotAllowedException(inner) => inner.meta(),
+            Self::DuplicateResourceException(inner) => inner.meta(),
+            Self::IdempotencyException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidContactFlowException(inner) => inner.meta(),
+            Self::InvalidContactFlowModuleException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MaximumResultReturnedException(inner) => inner.meta(),
+            Self::OutboundContactNotPermittedException(inner) => inner.meta(),
+            Self::PropertyValidationException(inner) => inner.meta(),
+            Self::ResourceConflictException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::UserNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_evaluation_form::ActivateEvaluationFormError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

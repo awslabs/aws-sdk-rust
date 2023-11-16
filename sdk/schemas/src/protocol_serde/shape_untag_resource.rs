@@ -27,6 +27,9 @@ pub fn de_untag_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::untag_resource::UntagResourceError::ForbiddenException({
@@ -39,6 +42,9 @@ pub fn de_untag_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::untag_resource::UntagResourceError::InternalServerErrorException({
@@ -52,6 +58,9 @@ pub fn de_untag_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::untag_resource::UntagResourceError::NotFoundException({
@@ -64,6 +73,9 @@ pub fn de_untag_resource_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::untag_resource::UntagResourceError::generic(generic),

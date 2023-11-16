@@ -72,6 +72,31 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::EntityNotFoundException(inner) => inner.meta(),
+            Self::ExpiredException(inner) => inner.meta(),
+            Self::GlueEncryptionException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidInputException(inner) => inner.meta(),
+            Self::OperationTimeoutException(inner) => inner.meta(),
+            Self::PermissionTypeMismatchException(inner) => inner.meta(),
+            Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::ResourceNumberLimitExceededException(inner) => inner.meta(),
+            Self::StatisticsNotReadyYetException(inner) => inner.meta(),
+            Self::ThrottledException(inner) => inner.meta(),
+            Self::TransactionCanceledException(inner) => inner.meta(),
+            Self::TransactionCommitInProgressException(inner) => inner.meta(),
+            Self::TransactionCommittedException(inner) => inner.meta(),
+            Self::WorkUnitsNotReadyYetException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

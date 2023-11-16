@@ -102,6 +102,41 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::IdempotentParameterMismatchException(inner) => inner.meta(),
+            Self::InvalidClientTokenException(inner) => inner.meta(),
+            Self::InvalidMaxResultsException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidPolicyException(inner) => inner.meta(),
+            Self::InvalidResourceTypeException(inner) => inner.meta(),
+            Self::InvalidStateTransitionException(inner) => inner.meta(),
+            Self::MalformedArnException(inner) => inner.meta(),
+            Self::MalformedPolicyTemplateException(inner) => inner.meta(),
+            Self::MissingRequiredParameterException(inner) => inner.meta(),
+            Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::PermissionAlreadyExistsException(inner) => inner.meta(),
+            Self::PermissionLimitExceededException(inner) => inner.meta(),
+            Self::PermissionVersionsLimitExceededException(inner) => inner.meta(),
+            Self::ResourceArnNotFoundException(inner) => inner.meta(),
+            Self::ResourceShareInvitationAlreadyAcceptedException(inner) => inner.meta(),
+            Self::ResourceShareInvitationAlreadyRejectedException(inner) => inner.meta(),
+            Self::ResourceShareInvitationArnNotFoundException(inner) => inner.meta(),
+            Self::ResourceShareInvitationExpiredException(inner) => inner.meta(),
+            Self::ResourceShareLimitExceededException(inner) => inner.meta(),
+            Self::ServerInternalException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::TagLimitExceededException(inner) => inner.meta(),
+            Self::TagPolicyViolationException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::UnknownResourceException(inner) => inner.meta(),
+            Self::UnmatchedPolicyPermissionException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError, R>,

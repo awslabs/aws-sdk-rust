@@ -225,6 +225,45 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::BackupInUseException(inner) => inner.meta(),
+            Self::BackupNotFoundException(inner) => inner.meta(),
+            Self::ConditionalCheckFailedException(inner) => inner.meta(),
+            Self::ContinuousBackupsUnavailableException(inner) => inner.meta(),
+            Self::DuplicateItemException(inner) => inner.meta(),
+            Self::ExportConflictException(inner) => inner.meta(),
+            Self::ExportNotFoundException(inner) => inner.meta(),
+            Self::GlobalTableAlreadyExistsException(inner) => inner.meta(),
+            Self::GlobalTableNotFoundException(inner) => inner.meta(),
+            Self::IdempotentParameterMismatchException(inner) => inner.meta(),
+            Self::ImportConflictException(inner) => inner.meta(),
+            Self::ImportNotFoundException(inner) => inner.meta(),
+            Self::IndexNotFoundException(inner) => inner.meta(),
+            Self::InternalServerError(inner) => inner.meta(),
+            Self::InvalidEndpointException(inner) => inner.meta(),
+            Self::InvalidExportTimeException(inner) => inner.meta(),
+            Self::InvalidRestoreTimeException(inner) => inner.meta(),
+            Self::ItemCollectionSizeLimitExceededException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::PointInTimeRecoveryUnavailableException(inner) => inner.meta(),
+            Self::ProvisionedThroughputExceededException(inner) => inner.meta(),
+            Self::ReplicaAlreadyExistsException(inner) => inner.meta(),
+            Self::ReplicaNotFoundException(inner) => inner.meta(),
+            Self::RequestLimitExceeded(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TableAlreadyExistsException(inner) => inner.meta(),
+            Self::TableInUseException(inner) => inner.meta(),
+            Self::TableNotFoundException(inner) => inner.meta(),
+            Self::TransactionCanceledException(inner) => inner.meta(),
+            Self::TransactionConflictException(inner) => inner.meta(),
+            Self::TransactionInProgressException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_execute_statement::BatchExecuteStatementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

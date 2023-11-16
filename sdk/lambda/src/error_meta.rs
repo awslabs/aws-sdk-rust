@@ -132,6 +132,51 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CodeSigningConfigNotFoundException(inner) => inner.meta(),
+            Self::CodeStorageExceededException(inner) => inner.meta(),
+            Self::CodeVerificationFailedException(inner) => inner.meta(),
+            Self::Ec2AccessDeniedException(inner) => inner.meta(),
+            Self::Ec2ThrottledException(inner) => inner.meta(),
+            Self::Ec2UnexpectedException(inner) => inner.meta(),
+            Self::EfsioException(inner) => inner.meta(),
+            Self::EfsMountConnectivityException(inner) => inner.meta(),
+            Self::EfsMountFailureException(inner) => inner.meta(),
+            Self::EfsMountTimeoutException(inner) => inner.meta(),
+            Self::EniLimitReachedException(inner) => inner.meta(),
+            Self::InvalidCodeSignatureException(inner) => inner.meta(),
+            Self::InvalidParameterValueException(inner) => inner.meta(),
+            Self::InvalidRequestContentException(inner) => inner.meta(),
+            Self::InvalidRuntimeException(inner) => inner.meta(),
+            Self::InvalidSecurityGroupIdException(inner) => inner.meta(),
+            Self::InvalidSubnetIdException(inner) => inner.meta(),
+            Self::InvalidZipFileException(inner) => inner.meta(),
+            Self::KmsAccessDeniedException(inner) => inner.meta(),
+            Self::KmsDisabledException(inner) => inner.meta(),
+            Self::KmsInvalidStateException(inner) => inner.meta(),
+            Self::KmsNotFoundException(inner) => inner.meta(),
+            Self::PolicyLengthExceededException(inner) => inner.meta(),
+            Self::PreconditionFailedException(inner) => inner.meta(),
+            Self::ProvisionedConcurrencyConfigNotFoundException(inner) => inner.meta(),
+            Self::RecursiveInvocationException(inner) => inner.meta(),
+            Self::RequestTooLargeException(inner) => inner.meta(),
+            Self::ResourceConflictException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::SnapStartException(inner) => inner.meta(),
+            Self::SnapStartNotReadyException(inner) => inner.meta(),
+            Self::SnapStartTimeoutException(inner) => inner.meta(),
+            Self::SubnetIpAddressLimitReachedException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::UnsupportedMediaTypeException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_layer_version_permission::AddLayerVersionPermissionError, R>>
     for Error
 where

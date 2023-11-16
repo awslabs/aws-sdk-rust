@@ -22,6 +22,7 @@ allowed_external_types = [
    "aws_smithy_runtime_api::client::http::SharedHttpClient",
    "aws_smithy_runtime_api::client::identity::ResolveCachedIdentity",
    "aws_smithy_runtime_api::client::identity::ResolveIdentity",
+   "aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion",
    "aws_smithy_runtime_api::client::orchestrator::HttpResponse",
    "aws_smithy_runtime_api::client::result::SdkError",
    "aws_smithy_types::body::SdkBody",

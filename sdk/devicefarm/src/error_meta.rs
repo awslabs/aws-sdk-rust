@@ -54,6 +54,25 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ArgumentException(inner) => inner.meta(),
+            Self::CannotDeleteException(inner) => inner.meta(),
+            Self::IdempotencyException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidOperationException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NotEligibleException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::ServiceAccountException(inner) => inner.meta(),
+            Self::TagOperationException(inner) => inner.meta(),
+            Self::TagPolicyException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_device_pool::CreateDevicePoolError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

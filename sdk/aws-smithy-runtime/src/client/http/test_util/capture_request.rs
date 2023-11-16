@@ -27,12 +27,9 @@ pub struct CaptureRequestHandler(Arc<Mutex<Inner>>);
 impl HttpConnector for CaptureRequestHandler {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
         let mut inner = self.0.lock().unwrap();
-        inner
-            .sender
-            .take()
-            .expect("already sent")
-            .send(request)
-            .expect("channel not ready");
+        if let Err(_e) = inner.sender.take().expect("already sent").send(request) {
+            tracing::trace!("The receiver was already dropped");
+        }
         HttpConnectorFuture::ready(Ok(inner
             .response
             .take()

@@ -57,6 +57,26 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CodeValidationException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::InvalidApplicationConfigurationException(inner) => inner.meta(),
+            Self::InvalidArgumentException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceProvisionedThroughputExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnableToDetectSchemaException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

@@ -63,6 +63,28 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ExpiredIteratorException(inner) => inner.meta(),
+            Self::ExpiredNextTokenException(inner) => inner.meta(),
+            Self::InvalidArgumentException(inner) => inner.meta(),
+            Self::KmsAccessDeniedException(inner) => inner.meta(),
+            Self::KmsDisabledException(inner) => inner.meta(),
+            Self::KmsInvalidStateException(inner) => inner.meta(),
+            Self::KmsNotFoundException(inner) => inner.meta(),
+            Self::KmsOptInRequired(inner) => inner.meta(),
+            Self::KmsThrottlingException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ProvisionedThroughputExceededException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags_to_stream::AddTagsToStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

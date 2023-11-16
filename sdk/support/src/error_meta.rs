@@ -48,6 +48,23 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AttachmentIdNotFound(inner) => inner.meta(),
+            Self::AttachmentLimitExceeded(inner) => inner.meta(),
+            Self::AttachmentSetExpired(inner) => inner.meta(),
+            Self::AttachmentSetIdNotFound(inner) => inner.meta(),
+            Self::AttachmentSetSizeLimitExceeded(inner) => inner.meta(),
+            Self::CaseCreationLimitExceeded(inner) => inner.meta(),
+            Self::CaseIdNotFound(inner) => inner.meta(),
+            Self::DescribeAttachmentLimitExceeded(inner) => inner.meta(),
+            Self::InternalServerError(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_attachments_to_set::AddAttachmentsToSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

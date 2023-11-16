@@ -126,6 +126,47 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccountSendingPausedException(inner) => inner.meta(),
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::CannotDeleteException(inner) => inner.meta(),
+            Self::ConfigurationSetAlreadyExistsException(inner) => inner.meta(),
+            Self::ConfigurationSetDoesNotExistException(inner) => inner.meta(),
+            Self::ConfigurationSetSendingPausedException(inner) => inner.meta(),
+            Self::CustomVerificationEmailInvalidContentException(inner) => inner.meta(),
+            Self::CustomVerificationEmailTemplateAlreadyExistsException(inner) => inner.meta(),
+            Self::CustomVerificationEmailTemplateDoesNotExistException(inner) => inner.meta(),
+            Self::EventDestinationAlreadyExistsException(inner) => inner.meta(),
+            Self::EventDestinationDoesNotExistException(inner) => inner.meta(),
+            Self::FromEmailAddressNotVerifiedException(inner) => inner.meta(),
+            Self::InvalidCloudWatchDestinationException(inner) => inner.meta(),
+            Self::InvalidConfigurationSetException(inner) => inner.meta(),
+            Self::InvalidDeliveryOptionsException(inner) => inner.meta(),
+            Self::InvalidFirehoseDestinationException(inner) => inner.meta(),
+            Self::InvalidLambdaFunctionException(inner) => inner.meta(),
+            Self::InvalidPolicyException(inner) => inner.meta(),
+            Self::InvalidRenderingParameterException(inner) => inner.meta(),
+            Self::InvalidS3ConfigurationException(inner) => inner.meta(),
+            Self::InvalidSnsDestinationException(inner) => inner.meta(),
+            Self::InvalidSnsTopicException(inner) => inner.meta(),
+            Self::InvalidTemplateException(inner) => inner.meta(),
+            Self::InvalidTrackingOptionsException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MailFromDomainNotVerifiedException(inner) => inner.meta(),
+            Self::MessageRejected(inner) => inner.meta(),
+            Self::MissingRenderingAttributeException(inner) => inner.meta(),
+            Self::ProductionAccessNotGrantedException(inner) => inner.meta(),
+            Self::RuleDoesNotExistException(inner) => inner.meta(),
+            Self::RuleSetDoesNotExistException(inner) => inner.meta(),
+            Self::TemplateDoesNotExistException(inner) => inner.meta(),
+            Self::TrackingOptionsAlreadyExistsException(inner) => inner.meta(),
+            Self::TrackingOptionsDoesNotExistException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -82,6 +82,34 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::EngineNotSupportedException(inner) => inner.meta(),
+            Self::InvalidLexiconException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidS3BucketException(inner) => inner.meta(),
+            Self::InvalidS3KeyException(inner) => inner.meta(),
+            Self::InvalidSampleRateException(inner) => inner.meta(),
+            Self::InvalidSnsTopicArnException(inner) => inner.meta(),
+            Self::InvalidSsmlException(inner) => inner.meta(),
+            Self::InvalidTaskIdException(inner) => inner.meta(),
+            Self::LanguageNotSupportedException(inner) => inner.meta(),
+            Self::LexiconNotFoundException(inner) => inner.meta(),
+            Self::LexiconSizeExceededException(inner) => inner.meta(),
+            Self::MarksNotSupportedForFormatException(inner) => inner.meta(),
+            Self::MaxLexemeLengthExceededException(inner) => inner.meta(),
+            Self::MaxLexiconsNumberExceededException(inner) => inner.meta(),
+            Self::ServiceFailureException(inner) => inner.meta(),
+            Self::SsmlMarksNotSupportedForTextTypeException(inner) => inner.meta(),
+            Self::SynthesisTaskNotFoundException(inner) => inner.meta(),
+            Self::TextLengthExceededException(inner) => inner.meta(),
+            Self::UnsupportedPlsAlphabetException(inner) => inner.meta(),
+            Self::UnsupportedPlsLanguageException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lexicon::DeleteLexiconError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

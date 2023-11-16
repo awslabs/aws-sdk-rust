@@ -30,6 +30,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ForbiddenException({
@@ -42,6 +45,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServerErrorException({
@@ -55,6 +61,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::NotFoundException({
@@ -67,6 +76,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ServiceUnavailableException({
@@ -80,6 +92,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::UnauthorizedException({
@@ -92,6 +107,9 @@ pub fn de_delete_resource_policy_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::delete_resource_policy::DeleteResourcePolicyError::generic(generic),

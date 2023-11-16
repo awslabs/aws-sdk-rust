@@ -51,6 +51,24 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AuthException(inner) => inner.meta(),
+            Self::Ec2InstanceNotFoundException(inner) => inner.meta(),
+            Self::Ec2InstanceStateInvalidException(inner) => inner.meta(),
+            Self::Ec2InstanceTypeInvalidException(inner) => inner.meta(),
+            Self::Ec2InstanceUnavailableException(inner) => inner.meta(),
+            Self::InvalidArgsException(inner) => inner.meta(),
+            Self::SerialConsoleAccessDisabledException(inner) => inner.meta(),
+            Self::SerialConsoleSessionLimitExceededException(inner) => inner.meta(),
+            Self::SerialConsoleSessionUnavailableException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

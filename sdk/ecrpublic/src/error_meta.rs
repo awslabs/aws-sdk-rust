@@ -90,6 +90,37 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::EmptyUploadException(inner) => inner.meta(),
+            Self::ImageAlreadyExistsException(inner) => inner.meta(),
+            Self::ImageDigestDoesNotMatchException(inner) => inner.meta(),
+            Self::ImageNotFoundException(inner) => inner.meta(),
+            Self::ImageTagAlreadyExistsException(inner) => inner.meta(),
+            Self::InvalidLayerException(inner) => inner.meta(),
+            Self::InvalidLayerPartException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidTagParameterException(inner) => inner.meta(),
+            Self::LayerAlreadyExistsException(inner) => inner.meta(),
+            Self::LayerPartTooSmallException(inner) => inner.meta(),
+            Self::LayersNotFoundException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ReferencedImagesNotFoundException(inner) => inner.meta(),
+            Self::RegistryNotFoundException(inner) => inner.meta(),
+            Self::RepositoryAlreadyExistsException(inner) => inner.meta(),
+            Self::RepositoryCatalogDataNotFoundException(inner) => inner.meta(),
+            Self::RepositoryNotEmptyException(inner) => inner.meta(),
+            Self::RepositoryNotFoundException(inner) => inner.meta(),
+            Self::RepositoryPolicyNotFoundException(inner) => inner.meta(),
+            Self::ServerException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnsupportedCommandException(inner) => inner.meta(),
+            Self::UploadNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError, R>>
     for Error

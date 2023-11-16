@@ -19,7 +19,7 @@ tower = "0.4.13"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-features = ["rt-tokio"]
+features = ["rt-tokio", "behavior-version-latest"]
 version = "0.57.1"
 
 [dependencies.aws-credential-types]

@@ -70,6 +70,30 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CustomerNotEntitledException(inner) => inner.meta(),
+            Self::DisabledApiException(inner) => inner.meta(),
+            Self::DuplicateRequestException(inner) => inner.meta(),
+            Self::ExpiredTokenException(inner) => inner.meta(),
+            Self::InternalServiceErrorException(inner) => inner.meta(),
+            Self::InvalidCustomerIdentifierException(inner) => inner.meta(),
+            Self::InvalidEndpointRegionException(inner) => inner.meta(),
+            Self::InvalidProductCodeException(inner) => inner.meta(),
+            Self::InvalidPublicKeyVersionException(inner) => inner.meta(),
+            Self::InvalidRegionException(inner) => inner.meta(),
+            Self::InvalidTagException(inner) => inner.meta(),
+            Self::InvalidTokenException(inner) => inner.meta(),
+            Self::InvalidUsageAllocationsException(inner) => inner.meta(),
+            Self::InvalidUsageDimensionException(inner) => inner.meta(),
+            Self::PlatformNotSupportedException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TimestampOutOfBoundsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

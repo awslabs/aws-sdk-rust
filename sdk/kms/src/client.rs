@@ -88,8 +88,10 @@ impl Client {
     ///
     /// - Retries or timeouts are enabled without a `sleep_impl` configured.
     /// - Identity caching is enabled without a `sleep_impl` and `time_source` configured.
+    /// - No `behavior_major_version` is provided.
     ///
     /// The panic message for each of these will have instructions on how to resolve them.
+    #[track_caller]
     pub fn from_conf(conf: crate::Config) -> Self {
         let handle = Handle {
             conf: conf.clone(),
@@ -127,6 +129,8 @@ impl Client {
     ///     the `sleep_impl` on the Config passed into this function to fix it.
     /// - This method will panic if the `sdk_config` is missing an HTTP connector. If you experience this panic, set the
     ///     `http_connector` on the Config passed into this function to fix it.
+    /// - This method will panic if no `BehaviorMajorVersion` is provided. If you experience this panic, set `behavior_major_version` on the Config or enable the `behavior-version-latest` Cargo feature.
+    #[track_caller]
     pub fn new(sdk_config: &::aws_types::sdk_config::SdkConfig) -> Self {
         Self::from_conf(sdk_config.into())
     }

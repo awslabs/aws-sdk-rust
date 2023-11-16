@@ -54,6 +54,25 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::DryRunOperationException(inner) => inner.meta(),
+            Self::InternalError(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::MissingRequiredParameterException(inner) => inner.meta(),
+            Self::NoConnectorsAvailableException(inner) => inner.meta(),
+            Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::ReplicationJobAlreadyExistsException(inner) => inner.meta(),
+            Self::ReplicationJobNotFoundException(inner) => inner.meta(),
+            Self::ReplicationRunLimitExceededException(inner) => inner.meta(),
+            Self::ServerCannotBeReplicatedException(inner) => inner.meta(),
+            Self::TemporarilyUnavailableException(inner) => inner.meta(),
+            Self::UnauthorizedOperationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_app::CreateAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

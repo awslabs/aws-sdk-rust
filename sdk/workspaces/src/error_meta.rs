@@ -75,6 +75,32 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ApplicationNotSupportedException(inner) => inner.meta(),
+            Self::ComputeNotCompatibleException(inner) => inner.meta(),
+            Self::IncompatibleApplicationsException(inner) => inner.meta(),
+            Self::InvalidParameterValuesException(inner) => inner.meta(),
+            Self::InvalidResourceStateException(inner) => inner.meta(),
+            Self::OperatingSystemNotCompatibleException(inner) => inner.meta(),
+            Self::OperationInProgressException(inner) => inner.meta(),
+            Self::OperationNotSupportedException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ResourceAssociatedException(inner) => inner.meta(),
+            Self::ResourceCreationFailedException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceLimitExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceUnavailableException(inner) => inner.meta(),
+            Self::UnsupportedNetworkConfigurationException(inner) => inner.meta(),
+            Self::UnsupportedWorkspaceConfigurationException(inner) => inner.meta(),
+            Self::WorkspacesDefaultRoleNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_connection_alias::AssociateConnectionAliasError, R>>
     for Error
 where

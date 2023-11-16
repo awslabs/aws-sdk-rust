@@ -474,7 +474,7 @@ impl RuntimeComponentsBuilder {
         auth_scheme_option_resolver: Option<impl ResolveAuthSchemeOptions + 'static>,
     ) -> &mut Self {
         self.auth_scheme_option_resolver =
-            auth_scheme_option_resolver.map(|r| Tracked::new(self.builder_name, r.into_shared()));
+            self.tracked(auth_scheme_option_resolver.map(IntoShared::into_shared));
         self
     }
 
@@ -494,7 +494,7 @@ impl RuntimeComponentsBuilder {
 
     /// Sets the HTTP client.
     pub fn set_http_client(&mut self, connector: Option<impl HttpClient + 'static>) -> &mut Self {
-        self.http_client = connector.map(|c| Tracked::new(self.builder_name, c.into_shared()));
+        self.http_client = self.tracked(connector.map(IntoShared::into_shared));
         self
     }
 
@@ -717,13 +717,13 @@ impl RuntimeComponentsBuilder {
 
     /// Sets the async sleep implementation.
     pub fn set_sleep_impl(&mut self, sleep_impl: Option<SharedAsyncSleep>) -> &mut Self {
-        self.sleep_impl = sleep_impl.map(|s| Tracked::new(self.builder_name, s));
+        self.sleep_impl = self.tracked(sleep_impl);
         self
     }
 
     /// Sets the async sleep implementation.
     pub fn with_sleep_impl(mut self, sleep_impl: Option<impl AsyncSleep + 'static>) -> Self {
-        self.sleep_impl = sleep_impl.map(|s| Tracked::new(self.builder_name, s.into_shared()));
+        self.set_sleep_impl(sleep_impl.map(IntoShared::into_shared));
         self
     }
 
@@ -734,13 +734,13 @@ impl RuntimeComponentsBuilder {
 
     /// Sets the time source.
     pub fn set_time_source(&mut self, time_source: Option<SharedTimeSource>) -> &mut Self {
-        self.time_source = time_source.map(|s| Tracked::new(self.builder_name, s));
+        self.time_source = self.tracked(time_source);
         self
     }
 
     /// Sets the time source.
     pub fn with_time_source(mut self, time_source: Option<impl TimeSource + 'static>) -> Self {
-        self.time_source = time_source.map(|s| Tracked::new(self.builder_name, s.into_shared()));
+        self.set_time_source(time_source.map(IntoShared::into_shared));
         self
     }
 
@@ -804,6 +804,11 @@ impl RuntimeComponentsBuilder {
         validate!(self.interceptors);
         validate!(self.retry_strategy);
         Ok(())
+    }
+
+    /// Wraps `v` in tracking associated with this builder
+    fn tracked<T>(&self, v: Option<T>) -> Option<Tracked<T>> {
+        v.map(|v| Tracked::new(self.builder_name, v))
     }
 }
 

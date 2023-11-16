@@ -63,6 +63,28 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DeviceNotRegisteredException(inner) => inner.meta(),
+            Self::InvalidCertificateAuthorityException(inner) => inner.meta(),
+            Self::InvalidDeviceException(inner) => inner.meta(),
+            Self::InvalidSecretsManagerResourceException(inner) => inner.meta(),
+            Self::InvalidServiceLinkedRoleStateException(inner) => inner.meta(),
+            Self::InvalidUserStatusException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NameInUseException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::ResourceAssociatedException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::SkillNotLinkedException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::approve_skill::ApproveSkillError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

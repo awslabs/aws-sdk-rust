@@ -51,6 +51,23 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::DefaultUndefinedFault(inner) => inner.meta(),
+            Self::DomainAlreadyExistsFault(inner) => inner.meta(),
+            Self::DomainDeprecatedFault(inner) => inner.meta(),
+            Self::LimitExceededFault(inner) => inner.meta(),
+            Self::OperationNotPermittedFault(inner) => inner.meta(),
+            Self::TooManyTagsFault(inner) => inner.meta(),
+            Self::TypeAlreadyExistsFault(inner) => inner.meta(),
+            Self::TypeDeprecatedFault(inner) => inner.meta(),
+            Self::UnknownResourceFault(inner) => inner.meta(),
+            Self::WorkflowExecutionAlreadyStartedFault(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError, R>,

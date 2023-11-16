@@ -246,13 +246,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreatePullReq
     }
 }
 
-/// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type CreatePullRequestErrorKind = CreatePullRequestError;
 /// Error type for the `CreatePullRequestError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -311,95 +304,6 @@ pub enum CreatePullRequestError {
     TitleRequiredException(crate::types::error::TitleRequiredException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
-}
-impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreatePullRequestError {
-    fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
-    }
-}
-impl ::std::fmt::Display for CreatePullRequestError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        match self {
-            Self::ClientRequestTokenRequiredException(_inner) => _inner.fmt(f),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
-            Self::IdempotencyParameterMismatchException(_inner) => _inner.fmt(f),
-            Self::InvalidClientRequestTokenException(_inner) => _inner.fmt(f),
-            Self::InvalidDescriptionException(_inner) => _inner.fmt(f),
-            Self::InvalidReferenceNameException(_inner) => _inner.fmt(f),
-            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
-            Self::InvalidTargetException(_inner) => _inner.fmt(f),
-            Self::InvalidTargetsException(_inner) => _inner.fmt(f),
-            Self::InvalidTitleException(_inner) => _inner.fmt(f),
-            Self::MaximumOpenPullRequestsExceededException(_inner) => _inner.fmt(f),
-            Self::MultipleRepositoriesInPullRequestException(_inner) => _inner.fmt(f),
-            Self::ReferenceDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::ReferenceNameRequiredException(_inner) => _inner.fmt(f),
-            Self::ReferenceTypeNotSupportedException(_inner) => _inner.fmt(f),
-            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
-            Self::SourceAndDestinationAreSameException(_inner) => _inner.fmt(f),
-            Self::TargetRequiredException(_inner) => _inner.fmt(f),
-            Self::TargetsRequiredException(_inner) => _inner.fmt(f),
-            Self::TitleRequiredException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreatePullRequestError {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        match self {
-            Self::ClientRequestTokenRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::IdempotencyParameterMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidClientRequestTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidDescriptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidReferenceNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidTargetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidTargetsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidTitleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MaximumOpenPullRequestsExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MultipleRepositoriesInPullRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReferenceDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReferenceNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReferenceTypeNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::SourceAndDestinationAreSameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TargetRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TargetsRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TitleRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-        }
-    }
-}
-impl ::aws_types::request_id::RequestId for crate::operation::create_pull_request::CreatePullRequestError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
-impl ::aws_smithy_types::retry::ProvideErrorKind for CreatePullRequestError {
-    fn code(&self) -> ::std::option::Option<&str> {
-        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
-    }
-    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
-    }
 }
 impl CreatePullRequestError {
     /// Creates the `CreatePullRequestError::Unhandled` variant from any error type.
@@ -579,6 +483,95 @@ impl ::std::error::Error for CreatePullRequestError {
             Self::TitleRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
+    }
+}
+impl ::std::fmt::Display for CreatePullRequestError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::ClientRequestTokenRequiredException(_inner) => _inner.fmt(f),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
+            Self::IdempotencyParameterMismatchException(_inner) => _inner.fmt(f),
+            Self::InvalidClientRequestTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidDescriptionException(_inner) => _inner.fmt(f),
+            Self::InvalidReferenceNameException(_inner) => _inner.fmt(f),
+            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
+            Self::InvalidTargetException(_inner) => _inner.fmt(f),
+            Self::InvalidTargetsException(_inner) => _inner.fmt(f),
+            Self::InvalidTitleException(_inner) => _inner.fmt(f),
+            Self::MaximumOpenPullRequestsExceededException(_inner) => _inner.fmt(f),
+            Self::MultipleRepositoriesInPullRequestException(_inner) => _inner.fmt(f),
+            Self::ReferenceDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::ReferenceNameRequiredException(_inner) => _inner.fmt(f),
+            Self::ReferenceTypeNotSupportedException(_inner) => _inner.fmt(f),
+            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
+            Self::SourceAndDestinationAreSameException(_inner) => _inner.fmt(f),
+            Self::TargetRequiredException(_inner) => _inner.fmt(f),
+            Self::TargetsRequiredException(_inner) => _inner.fmt(f),
+            Self::TitleRequiredException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for CreatePullRequestError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreatePullRequestError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::ClientRequestTokenRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IdempotencyParameterMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidClientRequestTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDescriptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidReferenceNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRepositoryNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTitleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MaximumOpenPullRequestsExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MultipleRepositoriesInPullRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReferenceDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReferenceNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReferenceTypeNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RepositoryNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SourceAndDestinationAreSameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TargetRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TargetsRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TitleRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreatePullRequestError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled({
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::operation::create_pull_request::CreatePullRequestError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
     }
 }
 

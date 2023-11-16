@@ -27,6 +27,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::delete_registry::DeleteRegistryError::ForbiddenException({
@@ -39,6 +42,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::delete_registry::DeleteRegistryError::InternalServerErrorException({
@@ -52,6 +58,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::delete_registry::DeleteRegistryError::NotFoundException({
@@ -64,6 +73,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::delete_registry::DeleteRegistryError::ServiceUnavailableException({
@@ -77,6 +89,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::delete_registry::DeleteRegistryError::UnauthorizedException({
@@ -89,6 +104,9 @@ pub fn de_delete_registry_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::delete_registry::DeleteRegistryError::generic(generic),

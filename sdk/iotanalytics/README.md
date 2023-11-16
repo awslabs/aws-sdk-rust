@@ -20,7 +20,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = "0.57.1"
+aws-config = { version = "0.57.1", features = ["behavior-version-latest"] }
 aws-sdk-iotanalytics = "0.37.0"
 tokio = { version = "1", features = ["full"] }
 ```

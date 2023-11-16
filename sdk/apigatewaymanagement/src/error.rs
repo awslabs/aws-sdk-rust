@@ -7,4 +7,5 @@ pub use ::aws_smithy_runtime_api::client::result::ConnectorError;
 pub use ::aws_smithy_types::error::operation::BuildError;
 
 pub use ::aws_smithy_types::error::display::DisplayErrorContext;
+pub use ::aws_smithy_types::error::metadata::ErrorMetadata;
 pub use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;

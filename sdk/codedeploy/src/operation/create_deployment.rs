@@ -236,13 +236,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDeploym
     }
 }
 
-/// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type CreateDeploymentErrorKind = CreateDeploymentError;
 /// Error type for the `CreateDeploymentError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -314,99 +307,6 @@ pub enum CreateDeploymentError {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
-}
-impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreateDeploymentError {
-    fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
-    }
-}
-impl ::std::fmt::Display for CreateDeploymentError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        match self {
-            Self::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
-            Self::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
-            Self::DeploymentConfigDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::DeploymentGroupNameRequiredException(_inner) => _inner.fmt(f),
-            Self::DeploymentLimitExceededException(_inner) => _inner.fmt(f),
-            Self::DescriptionTooLongException(_inner) => _inner.fmt(f),
-            Self::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
-            Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
-            Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
-            Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
-            Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
-            Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
-            Self::InvalidFileExistsBehaviorException(_inner) => _inner.fmt(f),
-            Self::InvalidGitHubAccountTokenException(_inner) => _inner.fmt(f),
-            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => _inner.fmt(f),
-            Self::InvalidLoadBalancerInfoException(_inner) => _inner.fmt(f),
-            Self::InvalidRevisionException(_inner) => _inner.fmt(f),
-            Self::InvalidRoleException(_inner) => _inner.fmt(f),
-            Self::InvalidTargetInstancesException(_inner) => _inner.fmt(f),
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => _inner.fmt(f),
-            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => _inner.fmt(f),
-            Self::RevisionDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::RevisionRequiredException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploymentError {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        match self {
-            Self::AlarmsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ApplicationDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ApplicationNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DeploymentConfigDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DeploymentGroupDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DeploymentGroupNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DeploymentLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::DescriptionTooLongException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidAlarmConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidFileExistsBehaviorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidGitHubAccountTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => {
-                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidLoadBalancerInfoException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRevisionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidTargetInstancesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RevisionDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RevisionRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-        }
-    }
-}
-impl ::aws_types::request_id::RequestId for crate::operation::create_deployment::CreateDeploymentError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
-impl ::aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentError {
-    fn code(&self) -> ::std::option::Option<&str> {
-        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
-    }
-    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
-    }
 }
 impl CreateDeploymentError {
     /// Creates the `CreateDeploymentError::Unhandled` variant from any error type.
@@ -592,6 +492,99 @@ impl ::std::error::Error for CreateDeploymentError {
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
+    }
+}
+impl ::std::fmt::Display for CreateDeploymentError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::AlarmsLimitExceededException(_inner) => _inner.fmt(f),
+            Self::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::ApplicationNameRequiredException(_inner) => _inner.fmt(f),
+            Self::DeploymentConfigDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::DeploymentGroupNameRequiredException(_inner) => _inner.fmt(f),
+            Self::DeploymentLimitExceededException(_inner) => _inner.fmt(f),
+            Self::DescriptionTooLongException(_inner) => _inner.fmt(f),
+            Self::InvalidAlarmConfigException(_inner) => _inner.fmt(f),
+            Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
+            Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
+            Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
+            Self::InvalidFileExistsBehaviorException(_inner) => _inner.fmt(f),
+            Self::InvalidGitHubAccountTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => _inner.fmt(f),
+            Self::InvalidLoadBalancerInfoException(_inner) => _inner.fmt(f),
+            Self::InvalidRevisionException(_inner) => _inner.fmt(f),
+            Self::InvalidRoleException(_inner) => _inner.fmt(f),
+            Self::InvalidTargetInstancesException(_inner) => _inner.fmt(f),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => _inner.fmt(f),
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => _inner.fmt(f),
+            Self::RevisionDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::RevisionRequiredException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for CreateDeploymentError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploymentError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::AlarmsLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApplicationDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ApplicationNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentConfigDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupNameRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DescriptionTooLongException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAlarmConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidFileExistsBehaviorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidGitHubAccountTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidLoadBalancerInfoException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRevisionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetInstancesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTrafficRoutingConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RevisionDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RevisionRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CreateDeploymentError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled({
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::operation::create_deployment::CreateDeploymentError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
     }
 }
 

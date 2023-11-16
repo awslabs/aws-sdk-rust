@@ -45,6 +45,22 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::BucketAlreadyExists(inner) => inner.meta(),
+            Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
+            Self::InvalidObjectState(inner) => inner.meta(),
+            Self::NoSuchBucket(inner) => inner.meta(),
+            Self::NoSuchKey(inner) => inner.meta(),
+            Self::NoSuchUpload(inner) => inner.meta(),
+            Self::NotFound(inner) => inner.meta(),
+            Self::ObjectAlreadyInActiveTierError(inner) => inner.meta(),
+            Self::ObjectNotInActiveTierError(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_multipart_upload::AbortMultipartUploadError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

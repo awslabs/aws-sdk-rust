@@ -36,6 +36,19 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CloudHsmAccessDeniedException(inner) => inner.meta(),
+            Self::CloudHsmInternalFailureException(inner) => inner.meta(),
+            Self::CloudHsmInvalidRequestException(inner) => inner.meta(),
+            Self::CloudHsmResourceNotFoundException(inner) => inner.meta(),
+            Self::CloudHsmServiceException(inner) => inner.meta(),
+            Self::CloudHsmTagException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_backup_to_region::CopyBackupToRegionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

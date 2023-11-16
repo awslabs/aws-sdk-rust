@@ -42,6 +42,21 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::DuplicateResourceException(inner) => inner.meta(),
+            Self::InvalidParametersException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::OperationNotSupportedException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TagOptionNotMigratedException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_portfolio_share::AcceptPortfolioShareError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

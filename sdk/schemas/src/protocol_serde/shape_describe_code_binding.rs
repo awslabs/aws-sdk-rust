@@ -30,6 +30,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::describe_code_binding::DescribeCodeBindingError::ForbiddenException({
@@ -42,6 +45,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::describe_code_binding::DescribeCodeBindingError::InternalServerErrorException({
@@ -55,6 +61,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::describe_code_binding::DescribeCodeBindingError::NotFoundException({
@@ -67,6 +76,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::describe_code_binding::DescribeCodeBindingError::TooManyRequestsException({
@@ -79,6 +91,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "UnauthorizedException" => crate::operation::describe_code_binding::DescribeCodeBindingError::UnauthorizedException({
@@ -91,6 +106,9 @@ pub fn de_describe_code_binding_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::unauthorized_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::describe_code_binding::DescribeCodeBindingError::generic(generic),

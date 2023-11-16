@@ -126,6 +126,49 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ActionNotFoundException(inner) => inner.meta(),
+            Self::ActionTypeNotFoundException(inner) => inner.meta(),
+            Self::ApprovalAlreadyCompletedException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::DuplicatedStopRequestException(inner) => inner.meta(),
+            Self::InvalidActionDeclarationException(inner) => inner.meta(),
+            Self::InvalidApprovalTokenException(inner) => inner.meta(),
+            Self::InvalidArnException(inner) => inner.meta(),
+            Self::InvalidBlockerDeclarationException(inner) => inner.meta(),
+            Self::InvalidClientTokenException(inner) => inner.meta(),
+            Self::InvalidJobException(inner) => inner.meta(),
+            Self::InvalidJobStateException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidNonceException(inner) => inner.meta(),
+            Self::InvalidStageDeclarationException(inner) => inner.meta(),
+            Self::InvalidStructureException(inner) => inner.meta(),
+            Self::InvalidTagsException(inner) => inner.meta(),
+            Self::InvalidWebhookAuthenticationParametersException(inner) => inner.meta(),
+            Self::InvalidWebhookFilterPatternException(inner) => inner.meta(),
+            Self::JobNotFoundException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NotLatestPipelineExecutionException(inner) => inner.meta(),
+            Self::OutputVariablesSizeExceededException(inner) => inner.meta(),
+            Self::PipelineExecutionNotFoundException(inner) => inner.meta(),
+            Self::PipelineExecutionNotStoppableException(inner) => inner.meta(),
+            Self::PipelineNameInUseException(inner) => inner.meta(),
+            Self::PipelineNotFoundException(inner) => inner.meta(),
+            Self::PipelineVersionNotFoundException(inner) => inner.meta(),
+            Self::RequestFailedException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::StageNotFoundException(inner) => inner.meta(),
+            Self::StageNotRetryableException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::WebhookNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::acknowledge_job::AcknowledgeJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

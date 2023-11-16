@@ -48,6 +48,23 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::InvalidPolicyRevisionIdException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::LockoutPreventionException(inner) => inner.meta(),
+            Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::PolicyCountLimitExceededException(inner) => inner.meta(),
+            Self::PolicySizeLimitExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RuleLimitExceededException(inner) => inner.meta(),
+            Self::ThrottledException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_traces::BatchGetTracesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

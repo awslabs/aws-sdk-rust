@@ -6,19 +6,17 @@
 use aws_sdk_iam::config::{Credentials, Region};
 use aws_smithy_runtime::client::http::test_util::capture_request;
 
-// this test is ignored because pseudoregions have been removed. This test should be re-enabled
-// once FIPS support is added in aws-config
 #[tokio::test]
-#[ignore]
 async fn correct_endpoint_resolver() {
     let (http_client, request) = capture_request(None);
     let conf = aws_sdk_iam::Config::builder()
-        .region(Region::from_static("iam-fips"))
         .credentials_provider(Credentials::for_tests())
+        .use_fips(true)
+        .region(Region::new("us-east-1"))
         .http_client(http_client)
         .build();
     let client = aws_sdk_iam::Client::from_conf(conf);
-    let _ = client.list_roles().send().await;
+    let _ = dbg!(client.list_roles().send().await);
     let req = request.expect_request();
     assert_eq!(&req.uri().to_string(), "https://iam-fips.amazonaws.com/");
 }

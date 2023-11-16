@@ -17,6 +17,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 stable = true
 
 [features]
+behavior-version-latest = []
 client-hyper = ["aws-smithy-runtime/connector-hyper-0-14-x"]
 rustls = ["aws-smithy-runtime/tls-rustls", "client-hyper"]
 allow-compilation = []

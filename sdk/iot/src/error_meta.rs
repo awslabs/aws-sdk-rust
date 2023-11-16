@@ -117,6 +117,46 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CertificateConflictException(inner) => inner.meta(),
+            Self::CertificateStateException(inner) => inner.meta(),
+            Self::CertificateValidationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::ConflictingResourceUpdateException(inner) => inner.meta(),
+            Self::DeleteConflictException(inner) => inner.meta(),
+            Self::IndexNotReadyException(inner) => inner.meta(),
+            Self::InternalException(inner) => inner.meta(),
+            Self::InternalFailureException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidAggregationException(inner) => inner.meta(),
+            Self::InvalidQueryException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidResponseException(inner) => inner.meta(),
+            Self::InvalidStateTransitionException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MalformedPolicyException(inner) => inner.meta(),
+            Self::NotConfiguredException(inner) => inner.meta(),
+            Self::RegistrationCodeValidationException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceRegistrationFailureException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::SqlParseException(inner) => inner.meta(),
+            Self::TaskAlreadyExistsException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TransferAlreadyCompletedException(inner) => inner.meta(),
+            Self::TransferConflictException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::VersionConflictException(inner) => inner.meta(),
+            Self::VersionsLimitExceededException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_certificate_transfer::AcceptCertificateTransferError, R>>
     for Error
 where

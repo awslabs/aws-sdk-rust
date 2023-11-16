@@ -27,6 +27,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::start_flow::StartFlowError::ForbiddenException({
@@ -39,6 +42,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::start_flow::StartFlowError::InternalServerErrorException({
@@ -52,6 +58,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::start_flow::StartFlowError::NotFoundException({
@@ -64,6 +73,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::start_flow::StartFlowError::ServiceUnavailableException({
@@ -77,6 +89,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::start_flow::StartFlowError::TooManyRequestsException({
@@ -89,6 +104,9 @@ pub fn de_start_flow_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::start_flow::StartFlowError::generic(generic),

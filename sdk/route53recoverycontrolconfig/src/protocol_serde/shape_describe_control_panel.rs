@@ -30,6 +30,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::describe_control_panel::DescribeControlPanelError::ConflictException({
@@ -42,6 +45,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_control_panel::DescribeControlPanelError::InternalServerException({
@@ -54,6 +60,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_control_panel::DescribeControlPanelError::ResourceNotFoundException({
@@ -66,6 +75,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_control_panel::DescribeControlPanelError::ThrottlingException({
@@ -78,6 +90,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_control_panel::DescribeControlPanelError::ValidationException({
@@ -90,6 +105,9 @@ pub fn de_describe_control_panel_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::describe_control_panel::DescribeControlPanelError::generic(generic),

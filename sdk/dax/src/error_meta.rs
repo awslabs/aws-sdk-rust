@@ -99,6 +99,40 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ClusterAlreadyExistsFault(inner) => inner.meta(),
+            Self::ClusterNotFoundFault(inner) => inner.meta(),
+            Self::ClusterQuotaForCustomerExceededFault(inner) => inner.meta(),
+            Self::InsufficientClusterCapacityFault(inner) => inner.meta(),
+            Self::InvalidArnFault(inner) => inner.meta(),
+            Self::InvalidClusterStateFault(inner) => inner.meta(),
+            Self::InvalidParameterCombinationException(inner) => inner.meta(),
+            Self::InvalidParameterGroupStateFault(inner) => inner.meta(),
+            Self::InvalidParameterValueException(inner) => inner.meta(),
+            Self::InvalidSubnet(inner) => inner.meta(),
+            Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
+            Self::NodeNotFoundFault(inner) => inner.meta(),
+            Self::NodeQuotaForClusterExceededFault(inner) => inner.meta(),
+            Self::NodeQuotaForCustomerExceededFault(inner) => inner.meta(),
+            Self::ParameterGroupAlreadyExistsFault(inner) => inner.meta(),
+            Self::ParameterGroupNotFoundFault(inner) => inner.meta(),
+            Self::ParameterGroupQuotaExceededFault(inner) => inner.meta(),
+            Self::ServiceLinkedRoleNotFoundFault(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::SubnetGroupAlreadyExistsFault(inner) => inner.meta(),
+            Self::SubnetGroupInUseFault(inner) => inner.meta(),
+            Self::SubnetGroupNotFoundFault(inner) => inner.meta(),
+            Self::SubnetGroupQuotaExceededFault(inner) => inner.meta(),
+            Self::SubnetInUse(inner) => inner.meta(),
+            Self::SubnetQuotaExceededFault(inner) => inner.meta(),
+            Self::TagNotFoundFault(inner) => inner.meta(),
+            Self::TagQuotaPerResourceExceeded(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

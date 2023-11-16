@@ -57,6 +57,26 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AccessDeniedForDependencyException(inner) => inner.meta(),
+            Self::InternalErrorException(inner) => inner.meta(),
+            Self::InvalidOperationException(inner) => inner.meta(),
+            Self::InvalidPaginationTokenException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::InvalidResourceException(inner) => inner.meta(),
+            Self::LimitsExceededException(inner) => inner.meta(),
+            Self::LockedSubscriptionException(inner) => inner.meta(),
+            Self::NoAssociatedRoleException(inner) => inner.meta(),
+            Self::OptimisticLockException(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

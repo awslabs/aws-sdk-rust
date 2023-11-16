@@ -194,6 +194,60 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::CloudHsmClusterInUseException(inner) => inner.meta(),
+            Self::CloudHsmClusterInvalidConfigurationException(inner) => inner.meta(),
+            Self::CloudHsmClusterNotActiveException(inner) => inner.meta(),
+            Self::CloudHsmClusterNotFoundException(inner) => inner.meta(),
+            Self::CloudHsmClusterNotRelatedException(inner) => inner.meta(),
+            Self::CustomKeyStoreHasCmKsException(inner) => inner.meta(),
+            Self::CustomKeyStoreInvalidStateException(inner) => inner.meta(),
+            Self::CustomKeyStoreNameInUseException(inner) => inner.meta(),
+            Self::CustomKeyStoreNotFoundException(inner) => inner.meta(),
+            Self::DependencyTimeoutException(inner) => inner.meta(),
+            Self::DisabledException(inner) => inner.meta(),
+            Self::DryRunOperationException(inner) => inner.meta(),
+            Self::ExpiredImportTokenException(inner) => inner.meta(),
+            Self::IncorrectKeyException(inner) => inner.meta(),
+            Self::IncorrectKeyMaterialException(inner) => inner.meta(),
+            Self::IncorrectTrustAnchorException(inner) => inner.meta(),
+            Self::InvalidAliasNameException(inner) => inner.meta(),
+            Self::InvalidArnException(inner) => inner.meta(),
+            Self::InvalidCiphertextException(inner) => inner.meta(),
+            Self::InvalidGrantIdException(inner) => inner.meta(),
+            Self::InvalidGrantTokenException(inner) => inner.meta(),
+            Self::InvalidImportTokenException(inner) => inner.meta(),
+            Self::InvalidKeyUsageException(inner) => inner.meta(),
+            Self::InvalidMarkerException(inner) => inner.meta(),
+            Self::KmsInternalException(inner) => inner.meta(),
+            Self::KmsInvalidMacException(inner) => inner.meta(),
+            Self::KmsInvalidSignatureException(inner) => inner.meta(),
+            Self::KmsInvalidStateException(inner) => inner.meta(),
+            Self::KeyUnavailableException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::TagException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::XksKeyAlreadyInUseException(inner) => inner.meta(),
+            Self::XksKeyInvalidConfigurationException(inner) => inner.meta(),
+            Self::XksKeyNotFoundException(inner) => inner.meta(),
+            Self::XksProxyIncorrectAuthenticationCredentialException(inner) => inner.meta(),
+            Self::XksProxyInvalidConfigurationException(inner) => inner.meta(),
+            Self::XksProxyInvalidResponseException(inner) => inner.meta(),
+            Self::XksProxyUriEndpointInUseException(inner) => inner.meta(),
+            Self::XksProxyUriInUseException(inner) => inner.meta(),
+            Self::XksProxyUriUnreachableException(inner) => inner.meta(),
+            Self::XksProxyVpcEndpointServiceInUseException(inner) => inner.meta(),
+            Self::XksProxyVpcEndpointServiceInvalidConfigurationException(inner) => inner.meta(),
+            Self::XksProxyVpcEndpointServiceNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_key_deletion::CancelKeyDeletionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

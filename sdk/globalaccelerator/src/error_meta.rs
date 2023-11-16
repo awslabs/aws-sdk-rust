@@ -78,6 +78,33 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AcceleratorNotDisabledException(inner) => inner.meta(),
+            Self::AcceleratorNotFoundException(inner) => inner.meta(),
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AssociatedEndpointGroupFoundException(inner) => inner.meta(),
+            Self::AssociatedListenerFoundException(inner) => inner.meta(),
+            Self::AttachmentNotFoundException(inner) => inner.meta(),
+            Self::ByoipCidrNotFoundException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::EndpointAlreadyExistsException(inner) => inner.meta(),
+            Self::EndpointGroupAlreadyExistsException(inner) => inner.meta(),
+            Self::EndpointGroupNotFoundException(inner) => inner.meta(),
+            Self::EndpointNotFoundException(inner) => inner.meta(),
+            Self::IncorrectCidrStateException(inner) => inner.meta(),
+            Self::InternalServiceErrorException(inner) => inner.meta(),
+            Self::InvalidArgumentException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidPortRangeException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ListenerNotFoundException(inner) => inner.meta(),
+            Self::TransactionInProgressException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError, R>>
     for Error
 where

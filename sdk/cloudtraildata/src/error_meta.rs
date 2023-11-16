@@ -36,6 +36,19 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ChannelInsufficientPermission(inner) => inner.meta(),
+            Self::ChannelNotFound(inner) => inner.meta(),
+            Self::ChannelUnsupportedSchema(inner) => inner.meta(),
+            Self::DuplicatedAuditEventId(inner) => inner.meta(),
+            Self::InvalidChannelArn(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

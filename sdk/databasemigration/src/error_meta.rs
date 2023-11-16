@@ -93,6 +93,38 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedFault(inner) => inner.meta(),
+            Self::CollectorNotFoundFault(inner) => inner.meta(),
+            Self::InsufficientResourceCapacityFault(inner) => inner.meta(),
+            Self::InvalidCertificateFault(inner) => inner.meta(),
+            Self::InvalidOperationFault(inner) => inner.meta(),
+            Self::InvalidResourceStateFault(inner) => inner.meta(),
+            Self::InvalidSubnet(inner) => inner.meta(),
+            Self::KmsAccessDeniedFault(inner) => inner.meta(),
+            Self::KmsDisabledFault(inner) => inner.meta(),
+            Self::KmsFault(inner) => inner.meta(),
+            Self::KmsInvalidStateFault(inner) => inner.meta(),
+            Self::KmsKeyNotAccessibleFault(inner) => inner.meta(),
+            Self::KmsNotFoundFault(inner) => inner.meta(),
+            Self::KmsThrottlingFault(inner) => inner.meta(),
+            Self::ReplicationSubnetGroupDoesNotCoverEnoughAZs(inner) => inner.meta(),
+            Self::ResourceAlreadyExistsFault(inner) => inner.meta(),
+            Self::ResourceNotFoundFault(inner) => inner.meta(),
+            Self::ResourceQuotaExceededFault(inner) => inner.meta(),
+            Self::S3AccessDeniedFault(inner) => inner.meta(),
+            Self::S3ResourceNotFoundFault(inner) => inner.meta(),
+            Self::SnsInvalidTopicFault(inner) => inner.meta(),
+            Self::SnsNoAuthorizationFault(inner) => inner.meta(),
+            Self::StorageQuotaExceededFault(inner) => inner.meta(),
+            Self::SubnetAlreadyInUse(inner) => inner.meta(),
+            Self::UpgradeDependencyFailureFault(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags_to_resource::AddTagsToResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

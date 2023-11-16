@@ -64,6 +64,28 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConflictException(inner) => inner.meta(),
+            Self::FleetCapacityExceededException(inner) => inner.meta(),
+            Self::GameSessionFullException(inner) => inner.meta(),
+            Self::IdempotentParameterMismatchException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidFleetStatusException(inner) => inner.meta(),
+            Self::InvalidGameSessionStatusException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::OutOfCapacityException(inner) => inner.meta(),
+            Self::TaggingFailedException(inner) => inner.meta(),
+            Self::TerminalRoutingStrategyException(inner) => inner.meta(),
+            Self::UnauthorizedException(inner) => inner.meta(),
+            Self::UnsupportedRegionException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_match::AcceptMatchError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

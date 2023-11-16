@@ -82,6 +82,34 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlreadyExistsException(inner) => inner.meta(),
+            Self::ClientTokenConflictException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConcurrentOperationException(inner) => inner.meta(),
+            Self::GeneralServiceException(inner) => inner.meta(),
+            Self::HandlerFailureException(inner) => inner.meta(),
+            Self::HandlerInternalFailureException(inner) => inner.meta(),
+            Self::InvalidCredentialsException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::NetworkFailureException(inner) => inner.meta(),
+            Self::NotStabilizedException(inner) => inner.meta(),
+            Self::NotUpdatableException(inner) => inner.meta(),
+            Self::PrivateTypeException(inner) => inner.meta(),
+            Self::RequestTokenNotFoundException(inner) => inner.meta(),
+            Self::ResourceConflictException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServiceInternalErrorException(inner) => inner.meta(),
+            Self::ServiceLimitExceededException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TypeNotFoundException(inner) => inner.meta(),
+            Self::UnsupportedActionException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_resource_request::CancelResourceRequestError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

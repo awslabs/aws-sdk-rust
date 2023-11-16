@@ -27,6 +27,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::update_flow_source::UpdateFlowSourceError::ForbiddenException({
@@ -39,6 +42,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::update_flow_source::UpdateFlowSourceError::InternalServerErrorException({
@@ -52,6 +58,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::update_flow_source::UpdateFlowSourceError::NotFoundException({
@@ -64,6 +73,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::update_flow_source::UpdateFlowSourceError::ServiceUnavailableException({
@@ -77,6 +89,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::update_flow_source::UpdateFlowSourceError::TooManyRequestsException({
@@ -89,6 +104,9 @@ pub fn de_update_flow_source_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::update_flow_source::UpdateFlowSourceError::generic(generic),

@@ -11,6 +11,7 @@
     rustdoc::missing_crate_level_docs,
     unreachable_pub
 )]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
 //! `aws-config` provides implementations of region and credential resolution.
 //!
@@ -25,14 +26,15 @@
 //!
 //! Load default SDK configuration:
 //! ```no_run
-//! # mod aws_sdk_dynamodb {
+//! use aws_config::BehaviorMajorVersion;
+//! mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
 //! #     pub fn new(config: &aws_types::SdkConfig) -> Self { Client }
 //! #   }
 //! # }
 //! # async fn docs() {
-//! let config = aws_config::load_from_env().await;
+//! let config = aws_config::load_from_env_with_version(BehaviorMajorVersion::v2023_11_09()).await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
 //! # }
 //! ```
@@ -48,6 +50,7 @@
 //! # async fn docs() {
 //! # use aws_config::meta::region::RegionProviderChain;
 //! let region_provider = RegionProviderChain::default_provider().or_else("us-east-1");
+//! // Note: requires the `behavior-version-latest` feature enabled
 //! let config = aws_config::from_env().region(region_provider).load().await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
 //! # }
@@ -84,7 +87,7 @@
 //! # fn custom_provider(base: &SdkConfig) -> impl ProvideCredentials {
 //! #   base.credentials_provider().unwrap().clone()
 //! # }
-//! let sdk_config = aws_config::load_from_env().await;
+//! let sdk_config = aws_config::load_from_env_with_version(aws_config::BehaviorMajorVersion::latest()).await;
 //! let custom_credentials_provider = custom_provider(&sdk_config);
 //! let dynamo_config = aws_sdk_dynamodb::config::Builder::from(&sdk_config)
 //!   .credentials_provider(custom_credentials_provider)
@@ -94,9 +97,11 @@
 //! ```
 
 pub use aws_smithy_http::endpoint;
+pub use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
 // Re-export types from aws-types
 pub use aws_types::{
     app_name::{AppName, InvalidAppName},
+    region::Region,
     SdkConfig,
 };
 /// Load default sources for all configuration with override support
@@ -137,22 +142,66 @@ pub mod web_identity_token;
 
 /// Create an environment loader for AWS Configuration
 ///
+/// This loader will always set [`BehaviorMajorVersion::latest`].
+///
 /// # Examples
 /// ```no_run
 /// # async fn create_config() {
-/// use aws_types::region::Region;
 /// let config = aws_config::from_env().region("us-east-1").load().await;
 /// # }
 /// ```
+#[cfg(feature = "behavior-version-latest")]
 pub fn from_env() -> ConfigLoader {
-    ConfigLoader::default()
+    ConfigLoader::default().behavior_major_version(BehaviorMajorVersion::latest())
+}
+
+/// Load configuration from the environment
+#[cfg(not(feature = "behavior-version-latest"))]
+#[deprecated(
+    note = "To enable the default behavior version, enable the `behavior-version-latest` feature. Alternatively, you can use [`from_env_with_version`]. This function will be removed in the next release."
+)]
+pub fn from_env() -> ConfigLoader {
+    ConfigLoader::default().behavior_major_version(BehaviorMajorVersion::latest())
+}
+
+/// Load configuration from the environment
+#[cfg(not(feature = "behavior-version-latest"))]
+#[deprecated(
+    note = "To enable the default behavior version, enable the `behavior-version-latest` feature. Alternatively, you can use [`load_from_env_with_version`]. This function will be removed in the next release."
+)]
+pub async fn load_from_env() -> SdkConfig {
+    load_from_env_with_version(BehaviorMajorVersion::latest()).await
+}
+
+/// Create an environment loader for AWS Configuration
+///
+/// # Examples
+/// ```no_run
+/// # async fn create_config() {
+/// use aws_config::BehaviorMajorVersion;
+/// let config = aws_config::from_env_with_version(BehaviorMajorVersion::v2023_11_09())
+///     .region("us-east-1")
+///     .load()
+///     .await;
+/// # }
+/// ```
+pub fn from_env_with_version(version: BehaviorMajorVersion) -> ConfigLoader {
+    ConfigLoader::default().behavior_major_version(version)
 }
 
 /// Load a default configuration from the environment
 ///
 /// Convenience wrapper equivalent to `aws_config::from_env().load().await`
-pub async fn load_from_env() -> aws_types::SdkConfig {
+#[cfg(feature = "behavior-version-latest")]
+pub async fn load_from_env() -> SdkConfig {
     from_env().load().await
+}
+
+/// Load a default configuration from the environment
+///
+/// Convenience wrapper equivalent to `aws_config::from_env_with_version(BehaviorMajorVersion::latest()).load().await`
+pub async fn load_from_env_with_version(version: BehaviorMajorVersion) -> SdkConfig {
+    from_env_with_version(version).load().await
 }
 
 mod loader {
@@ -165,6 +214,7 @@ mod loader {
     use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
+    use aws_smithy_runtime_api::client::behavior_version::BehaviorMajorVersion;
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::client::identity::{ResolveCachedIdentity, SharedIdentityCache};
     use aws_smithy_runtime_api::shared::IntoShared;
@@ -212,9 +262,19 @@ mod loader {
         time_source: Option<SharedTimeSource>,
         env: Option<Env>,
         fs: Option<Fs>,
+        behavior_major_version: Option<BehaviorMajorVersion>,
     }
 
     impl ConfigLoader {
+        /// Sets the [`BehaviorMajorVersion`] used to build [`SdkConfig`](aws_types::SdkConfig).
+        pub fn behavior_major_version(
+            mut self,
+            behavior_major_version: BehaviorMajorVersion,
+        ) -> Self {
+            self.behavior_major_version = Some(behavior_major_version);
+            self
+        }
+
         /// Override the region used to build [`SdkConfig`](aws_types::SdkConfig).
         ///
         /// # Examples
@@ -571,7 +631,7 @@ mod loader {
         ///     .enable_http1()
         ///     .build();
         /// let provider_config = ProviderConfig::default().with_tcp_connector(custom_https_connector);
-        /// let shared_config = aws_config::from_env().configure(provider_config).load().await;
+        /// let shared_config = aws_config::from_env_with_version(BehaviorVersion::latest()).configure(provider_config).load().await;
         /// # }
         /// ```
         #[deprecated(
@@ -692,6 +752,7 @@ mod loader {
                 .timeout_config(timeout_config)
                 .time_source(time_source);
 
+            builder.set_behavior_major_version(self.behavior_major_version);
             builder.set_http_client(self.http_client);
             builder.set_app_name(app_name);
             builder.set_identity_cache(self.identity_cache);
@@ -721,7 +782,8 @@ mod loader {
     mod test {
         use crate::profile::profile_file::{ProfileFileKind, ProfileFiles};
         use crate::test_case::{no_traffic_client, InstantSleep};
-        use crate::{from_env, ConfigLoader};
+        use crate::BehaviorMajorVersion;
+        use crate::{from_env_with_version, ConfigLoader};
         use aws_credential_types::provider::ProvideCredentials;
         use aws_smithy_async::rt::sleep::TokioSleep;
         use aws_smithy_runtime::client::http::test_util::{infallible_client_fn, NeverClient};
@@ -742,7 +804,7 @@ mod loader {
             ]);
             let fs =
                 Fs::from_slice(&[("test_config", "[profile custom]\nsdk-ua-app-id = correct")]);
-            let loader = from_env()
+            let loader = from_env_with_version(BehaviorMajorVersion::latest())
                 .sleep_impl(TokioSleep::new())
                 .env(env)
                 .fs(fs)
@@ -786,7 +848,7 @@ mod loader {
         }
 
         fn base_conf() -> ConfigLoader {
-            from_env()
+            from_env_with_version(BehaviorMajorVersion::latest())
                 .sleep_impl(InstantSleep)
                 .http_client(no_traffic_client())
         }
@@ -816,7 +878,10 @@ mod loader {
         #[cfg(feature = "rustls")]
         #[tokio::test]
         async fn disable_default_credentials() {
-            let config = from_env().no_credentials().load().await;
+            let config = from_env_with_version(BehaviorMajorVersion::latest())
+                .no_credentials()
+                .load()
+                .await;
             assert!(config.identity_cache().is_none());
             assert!(config.credentials_provider().is_none());
         }
@@ -829,7 +894,7 @@ mod loader {
                 movable.fetch_add(1, Ordering::Relaxed);
                 http::Response::new("ok!")
             });
-            let config = from_env()
+            let config = from_env_with_version(BehaviorMajorVersion::latest())
                 .fs(Fs::from_slice(&[]))
                 .env(Env::from_slice(&[]))
                 .http_client(http_client.clone())

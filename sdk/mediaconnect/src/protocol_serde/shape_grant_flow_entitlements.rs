@@ -30,6 +30,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::ForbiddenException({
@@ -42,6 +45,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "GrantFlowEntitlements420Exception" => {
@@ -58,6 +64,9 @@ pub fn de_grant_flow_entitlements_http_error(
                     let output = output.meta(generic);
                     crate::serde_util::grant_flow_entitlements420_exception_correct_errors(output).build()
                 };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
                 tmp
             })
         }
@@ -72,6 +81,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::NotFoundException({
@@ -84,6 +96,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::ServiceUnavailableException({
@@ -97,6 +112,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::TooManyRequestsException({
@@ -109,6 +127,9 @@ pub fn de_grant_flow_entitlements_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError::generic(generic),

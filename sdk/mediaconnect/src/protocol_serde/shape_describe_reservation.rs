@@ -30,6 +30,9 @@ pub fn de_describe_reservation_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::describe_reservation::DescribeReservationError::InternalServerErrorException({
@@ -43,6 +46,9 @@ pub fn de_describe_reservation_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::describe_reservation::DescribeReservationError::NotFoundException({
@@ -55,6 +61,9 @@ pub fn de_describe_reservation_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::describe_reservation::DescribeReservationError::ServiceUnavailableException({
@@ -68,6 +77,9 @@ pub fn de_describe_reservation_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::describe_reservation::DescribeReservationError::TooManyRequestsException({
@@ -80,6 +92,9 @@ pub fn de_describe_reservation_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::describe_reservation::DescribeReservationError::generic(generic),

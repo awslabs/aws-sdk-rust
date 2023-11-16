@@ -27,6 +27,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::ConflictException({
@@ -39,6 +42,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::ForbiddenException({
@@ -51,6 +57,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::InternalServerErrorException({
@@ -64,6 +73,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::NotFoundException({
@@ -76,6 +88,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::ServiceUnavailableException({
@@ -89,6 +104,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::add_bridge_sources::AddBridgeSourcesError::TooManyRequestsException({
@@ -101,6 +119,9 @@ pub fn de_add_bridge_sources_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::add_bridge_sources::AddBridgeSourcesError::generic(generic),

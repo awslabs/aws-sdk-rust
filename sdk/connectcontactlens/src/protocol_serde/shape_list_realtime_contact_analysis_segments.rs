@@ -31,6 +31,9 @@ pub fn de_list_realtime_contact_analysis_segments_http_error(
                     let output = output.meta(generic);
                     crate::serde_util::access_denied_exception_correct_errors(output).build()
                 };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
                 tmp
             })
         }
@@ -97,6 +100,9 @@ pub fn de_list_realtime_contact_analysis_segments_http_error(
                     let output = output.meta(generic);
                     crate::serde_util::throttling_exception_correct_errors(output).build()
                 };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
                 tmp
             })
         }

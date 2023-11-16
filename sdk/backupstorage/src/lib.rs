@@ -28,7 +28,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.57.1"
+//! aws-config = { version = "0.57.1", features = ["behavior-version-latest"] }
 //! aws-sdk-backupstorage = "0.20.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

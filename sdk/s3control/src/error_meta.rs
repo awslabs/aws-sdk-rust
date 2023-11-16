@@ -54,6 +54,25 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::BadRequestException(inner) => inner.meta(),
+            Self::BucketAlreadyExists(inner) => inner.meta(),
+            Self::BucketAlreadyOwnedByYou(inner) => inner.meta(),
+            Self::IdempotencyException(inner) => inner.meta(),
+            Self::InternalServiceException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::JobStatusException(inner) => inner.meta(),
+            Self::NoSuchPublicAccessBlockConfiguration(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_point::CreateAccessPointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

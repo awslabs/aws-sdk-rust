@@ -84,6 +84,35 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessPointNotFoundException(inner) => inner.meta(),
+            Self::CertificateNotFoundException(inner) => inner.meta(),
+            Self::DependencyThrottleException(inner) => inner.meta(),
+            Self::DuplicateAccessPointNameException(inner) => inner.meta(),
+            Self::DuplicateListenerException(inner) => inner.meta(),
+            Self::DuplicatePolicyNameException(inner) => inner.meta(),
+            Self::DuplicateTagKeysException(inner) => inner.meta(),
+            Self::InvalidConfigurationRequestException(inner) => inner.meta(),
+            Self::InvalidEndPointException(inner) => inner.meta(),
+            Self::InvalidSchemeException(inner) => inner.meta(),
+            Self::InvalidSecurityGroupException(inner) => inner.meta(),
+            Self::InvalidSubnetException(inner) => inner.meta(),
+            Self::ListenerNotFoundException(inner) => inner.meta(),
+            Self::LoadBalancerAttributeNotFoundException(inner) => inner.meta(),
+            Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::PolicyNotFoundException(inner) => inner.meta(),
+            Self::PolicyTypeNotFoundException(inner) => inner.meta(),
+            Self::SubnetNotFoundException(inner) => inner.meta(),
+            Self::TooManyAccessPointsException(inner) => inner.meta(),
+            Self::TooManyPoliciesException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnsupportedProtocolException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

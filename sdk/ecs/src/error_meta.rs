@@ -107,6 +107,39 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AttributeLimitExceededException(inner) => inner.meta(),
+            Self::BlockedException(inner) => inner.meta(),
+            Self::ClientException(inner) => inner.meta(),
+            Self::ClusterContainsContainerInstancesException(inner) => inner.meta(),
+            Self::ClusterContainsServicesException(inner) => inner.meta(),
+            Self::ClusterContainsTasksException(inner) => inner.meta(),
+            Self::ClusterNotFoundException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MissingVersionException(inner) => inner.meta(),
+            Self::NamespaceNotFoundException(inner) => inner.meta(),
+            Self::NoUpdateAvailableException(inner) => inner.meta(),
+            Self::PlatformTaskDefinitionIncompatibilityException(inner) => inner.meta(),
+            Self::PlatformUnknownException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ServerException(inner) => inner.meta(),
+            Self::ServiceNotActiveException(inner) => inner.meta(),
+            Self::ServiceNotFoundException(inner) => inner.meta(),
+            Self::TargetNotConnectedException(inner) => inner.meta(),
+            Self::TargetNotFoundException(inner) => inner.meta(),
+            Self::TaskSetNotFoundException(inner) => inner.meta(),
+            Self::UnsupportedFeatureException(inner) => inner.meta(),
+            Self::UpdateInProgressException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

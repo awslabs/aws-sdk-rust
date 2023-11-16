@@ -132,6 +132,33 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::WafBadRequestException(inner) => inner.meta(),
+            Self::WafDisallowedNameException(inner) => inner.meta(),
+            Self::WafEntityMigrationException(inner) => inner.meta(),
+            Self::WafInternalErrorException(inner) => inner.meta(),
+            Self::WafInvalidAccountException(inner) => inner.meta(),
+            Self::WafInvalidOperationException(inner) => inner.meta(),
+            Self::WafInvalidParameterException(inner) => inner.meta(),
+            Self::WafInvalidPermissionPolicyException(inner) => inner.meta(),
+            Self::WafInvalidRegexPatternException(inner) => inner.meta(),
+            Self::WafLimitsExceededException(inner) => inner.meta(),
+            Self::WafNonEmptyEntityException(inner) => inner.meta(),
+            Self::WafNonexistentContainerException(inner) => inner.meta(),
+            Self::WafNonexistentItemException(inner) => inner.meta(),
+            Self::WafReferencedItemException(inner) => inner.meta(),
+            Self::WafServiceLinkedRoleErrorException(inner) => inner.meta(),
+            Self::WafStaleDataException(inner) => inner.meta(),
+            Self::WafSubscriptionNotFoundException(inner) => inner.meta(),
+            Self::WafTagOperationException(inner) => inner.meta(),
+            Self::WafTagOperationInternalErrorException(inner) => inner.meta(),
+            Self::WafUnavailableEntityException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_web_acl::AssociateWebACLError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

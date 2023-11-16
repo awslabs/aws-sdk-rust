@@ -51,6 +51,24 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ClusterLimitExceededException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::Ec2RequestFailedException(inner) => inner.meta(),
+            Self::InvalidAddressException(inner) => inner.meta(),
+            Self::InvalidInputCombinationException(inner) => inner.meta(),
+            Self::InvalidJobStateException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidResourceException(inner) => inner.meta(),
+            Self::KmsRequestFailedException(inner) => inner.meta(),
+            Self::ReturnShippingLabelAlreadyExistsException(inner) => inner.meta(),
+            Self::UnsupportedAddressException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_cluster::CancelClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -28,6 +28,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::add_flow_outputs420_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "BadRequestException" => crate::operation::add_flow_outputs::AddFlowOutputsError::BadRequestException({
@@ -40,6 +43,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::add_flow_outputs::AddFlowOutputsError::ForbiddenException({
@@ -52,6 +58,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::add_flow_outputs::AddFlowOutputsError::InternalServerErrorException({
@@ -65,6 +74,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::add_flow_outputs::AddFlowOutputsError::NotFoundException({
@@ -77,6 +89,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::add_flow_outputs::AddFlowOutputsError::ServiceUnavailableException({
@@ -90,6 +105,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::add_flow_outputs::AddFlowOutputsError::TooManyRequestsException({
@@ -102,6 +120,9 @@ pub fn de_add_flow_outputs_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::add_flow_outputs::AddFlowOutputsError::generic(generic),

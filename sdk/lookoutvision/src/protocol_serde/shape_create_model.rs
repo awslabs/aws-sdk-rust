@@ -27,6 +27,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::create_model::CreateModelError::ConflictException({
@@ -39,6 +42,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::create_model::CreateModelError::InternalServerException({
@@ -56,6 +62,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::create_model::CreateModelError::ResourceNotFoundException({
@@ -68,6 +77,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceQuotaExceededException" => crate::operation::create_model::CreateModelError::ServiceQuotaExceededException({
@@ -83,6 +95,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_quota_exceeded_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::create_model::CreateModelError::ThrottlingException({
@@ -100,6 +115,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::create_model::CreateModelError::ValidationException({
@@ -112,6 +130,9 @@ pub fn de_create_model_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::create_model::CreateModelError::generic(generic),

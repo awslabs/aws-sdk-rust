@@ -81,6 +81,32 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::CodeBuildNotInServiceRegionException(inner) => inner.meta(),
+            Self::ElasticBeanstalkServiceException(inner) => inner.meta(),
+            Self::InsufficientPrivilegesException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::ManagedActionInvalidStateException(inner) => inner.meta(),
+            Self::OperationInProgressException(inner) => inner.meta(),
+            Self::PlatformVersionStillReferencedException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ResourceTypeNotSupportedException(inner) => inner.meta(),
+            Self::S3LocationNotInServiceRegionException(inner) => inner.meta(),
+            Self::S3SubscriptionRequiredException(inner) => inner.meta(),
+            Self::SourceBundleDeletionException(inner) => inner.meta(),
+            Self::TooManyApplicationVersionsException(inner) => inner.meta(),
+            Self::TooManyApplicationsException(inner) => inner.meta(),
+            Self::TooManyBucketsException(inner) => inner.meta(),
+            Self::TooManyConfigurationTemplatesException(inner) => inner.meta(),
+            Self::TooManyEnvironmentsException(inner) => inner.meta(),
+            Self::TooManyPlatformsException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::abort_environment_update::AbortEnvironmentUpdateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

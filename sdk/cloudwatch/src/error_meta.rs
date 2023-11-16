@@ -57,6 +57,26 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DashboardInvalidInputError(inner) => inner.meta(),
+            Self::DashboardNotFoundError(inner) => inner.meta(),
+            Self::InternalServiceFault(inner) => inner.meta(),
+            Self::InvalidFormatFault(inner) => inner.meta(),
+            Self::InvalidNextToken(inner) => inner.meta(),
+            Self::InvalidParameterCombinationException(inner) => inner.meta(),
+            Self::InvalidParameterValueException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::LimitExceededFault(inner) => inner.meta(),
+            Self::MissingRequiredParameterException(inner) => inner.meta(),
+            Self::ResourceNotFound(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

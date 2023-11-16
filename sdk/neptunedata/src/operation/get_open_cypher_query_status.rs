@@ -245,13 +245,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOpenCypher
     }
 }
 
-/// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type GetOpenCypherQueryStatusErrorKind = GetOpenCypherQueryStatusError;
 /// Error type for the `GetOpenCypherQueryStatusError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -292,87 +285,6 @@ pub enum GetOpenCypherQueryStatusError {
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
-}
-impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for GetOpenCypherQueryStatusError {
-    fn create_unhandled_error(
-        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
-        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
-        Self::Unhandled({
-            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
-    }
-}
-impl ::std::fmt::Display for GetOpenCypherQueryStatusError {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        match self {
-            Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::BadRequestException(_inner) => _inner.fmt(f),
-            Self::ClientTimeoutException(_inner) => _inner.fmt(f),
-            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
-            Self::ConstraintViolationException(_inner) => _inner.fmt(f),
-            Self::FailureByQueryException(_inner) => _inner.fmt(f),
-            Self::IllegalArgumentException(_inner) => _inner.fmt(f),
-            Self::InvalidArgumentException(_inner) => _inner.fmt(f),
-            Self::InvalidNumericDataException(_inner) => _inner.fmt(f),
-            Self::InvalidParameterException(_inner) => _inner.fmt(f),
-            Self::MissingParameterException(_inner) => _inner.fmt(f),
-            Self::ParsingException(_inner) => _inner.fmt(f),
-            Self::PreconditionsFailedException(_inner) => _inner.fmt(f),
-            Self::ReadOnlyViolationException(_inner) => _inner.fmt(f),
-            Self::TimeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::TooManyRequestsException(_inner) => _inner.fmt(f),
-            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
-        }
-    }
-}
-impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetOpenCypherQueryStatusError {
-    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
-        match self {
-            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ClientTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConstraintViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::FailureByQueryException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::IllegalArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidNumericDataException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::MissingParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ParsingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::PreconditionsFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ReadOnlyViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TimeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-        }
-    }
-}
-impl ::aws_types::request_id::RequestId for crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
-impl ::aws_smithy_types::retry::ProvideErrorKind for GetOpenCypherQueryStatusError {
-    fn code(&self) -> ::std::option::Option<&str> {
-        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
-    }
-    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        match self {
-            Self::ClientTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            Self::ConcurrentModificationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            Self::ConstraintViolationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            Self::FailureByQueryException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            Self::TimeLimitExceededException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            Self::TooManyRequestsException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
-            _ => ::std::option::Option::None,
-        }
-    }
 }
 impl GetOpenCypherQueryStatusError {
     /// Creates the `GetOpenCypherQueryStatusError::Unhandled` variant from any error type.
@@ -504,6 +416,87 @@ impl ::std::error::Error for GetOpenCypherQueryStatusError {
             Self::UnsupportedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
+    }
+}
+impl ::std::fmt::Display for GetOpenCypherQueryStatusError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::ClientTimeoutException(_inner) => _inner.fmt(f),
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::ConstraintViolationException(_inner) => _inner.fmt(f),
+            Self::FailureByQueryException(_inner) => _inner.fmt(f),
+            Self::IllegalArgumentException(_inner) => _inner.fmt(f),
+            Self::InvalidArgumentException(_inner) => _inner.fmt(f),
+            Self::InvalidNumericDataException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::MissingParameterException(_inner) => _inner.fmt(f),
+            Self::ParsingException(_inner) => _inner.fmt(f),
+            Self::PreconditionsFailedException(_inner) => _inner.fmt(f),
+            Self::ReadOnlyViolationException(_inner) => _inner.fmt(f),
+            Self::TimeLimitExceededException(_inner) => _inner.fmt(f),
+            Self::TooManyRequestsException(_inner) => _inner.fmt(f),
+            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for GetOpenCypherQueryStatusError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        match self {
+            Self::ClientTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ConcurrentModificationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ConstraintViolationException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::FailureByQueryException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::TimeLimitExceededException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::TooManyRequestsException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetOpenCypherQueryStatusError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ClientTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConstraintViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::FailureByQueryException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IllegalArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidNumericDataException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MissingParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ParsingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PreconditionsFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ReadOnlyViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TimeLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for GetOpenCypherQueryStatusError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled({
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::operation::get_open_cypher_query_status::GetOpenCypherQueryStatusError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
     }
 }
 

@@ -28,6 +28,9 @@ pub fn de_list_notifications_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::list_notifications::ListNotificationsError::InternalServerException({
@@ -40,6 +43,9 @@ pub fn de_list_notifications_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::list_notifications::ListNotificationsError::ThrottlingException({
@@ -52,6 +58,9 @@ pub fn de_list_notifications_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::list_notifications::ListNotificationsError::ValidationException({
@@ -64,6 +73,9 @@ pub fn de_list_notifications_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::list_notifications::ListNotificationsError::generic(generic),

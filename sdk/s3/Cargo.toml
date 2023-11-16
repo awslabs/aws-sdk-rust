@@ -179,6 +179,7 @@ features = ["no-env-filter"]
 
 [features]
 sigv4a = ["aws-runtime/sigv4a"]
+behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-types/rt-tokio"]

@@ -34,6 +34,9 @@ pub fn de_describe_model_packaging_job_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError::InternalServerException({
@@ -53,6 +56,9 @@ pub fn de_describe_model_packaging_job_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError::ResourceNotFoundException({
@@ -65,6 +71,9 @@ pub fn de_describe_model_packaging_job_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError::ThrottlingException({
@@ -84,6 +93,9 @@ pub fn de_describe_model_packaging_job_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError::ValidationException({
@@ -96,6 +108,9 @@ pub fn de_describe_model_packaging_job_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError::generic(generic),

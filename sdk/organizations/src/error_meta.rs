@@ -245,6 +245,60 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AwsOrganizationsNotInUseException(inner) => inner.meta(),
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AccessDeniedForDependencyException(inner) => inner.meta(),
+            Self::AccountAlreadyClosedException(inner) => inner.meta(),
+            Self::AccountAlreadyRegisteredException(inner) => inner.meta(),
+            Self::AccountNotFoundException(inner) => inner.meta(),
+            Self::AccountNotRegisteredException(inner) => inner.meta(),
+            Self::AccountOwnerNotVerifiedException(inner) => inner.meta(),
+            Self::AlreadyInOrganizationException(inner) => inner.meta(),
+            Self::ChildNotFoundException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
+            Self::ConstraintViolationException(inner) => inner.meta(),
+            Self::CreateAccountStatusNotFoundException(inner) => inner.meta(),
+            Self::DestinationParentNotFoundException(inner) => inner.meta(),
+            Self::DuplicateAccountException(inner) => inner.meta(),
+            Self::DuplicateHandshakeException(inner) => inner.meta(),
+            Self::DuplicateOrganizationalUnitException(inner) => inner.meta(),
+            Self::DuplicatePolicyAttachmentException(inner) => inner.meta(),
+            Self::DuplicatePolicyException(inner) => inner.meta(),
+            Self::EffectivePolicyNotFoundException(inner) => inner.meta(),
+            Self::FinalizingOrganizationException(inner) => inner.meta(),
+            Self::HandshakeAlreadyInStateException(inner) => inner.meta(),
+            Self::HandshakeConstraintViolationException(inner) => inner.meta(),
+            Self::HandshakeNotFoundException(inner) => inner.meta(),
+            Self::InvalidHandshakeTransitionException(inner) => inner.meta(),
+            Self::InvalidInputException(inner) => inner.meta(),
+            Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::MasterCannotLeaveOrganizationException(inner) => inner.meta(),
+            Self::OrganizationNotEmptyException(inner) => inner.meta(),
+            Self::OrganizationalUnitNotEmptyException(inner) => inner.meta(),
+            Self::OrganizationalUnitNotFoundException(inner) => inner.meta(),
+            Self::ParentNotFoundException(inner) => inner.meta(),
+            Self::PolicyChangesInProgressException(inner) => inner.meta(),
+            Self::PolicyInUseException(inner) => inner.meta(),
+            Self::PolicyNotAttachedException(inner) => inner.meta(),
+            Self::PolicyNotFoundException(inner) => inner.meta(),
+            Self::PolicyTypeAlreadyEnabledException(inner) => inner.meta(),
+            Self::PolicyTypeNotAvailableForOrganizationException(inner) => inner.meta(),
+            Self::PolicyTypeNotEnabledException(inner) => inner.meta(),
+            Self::ResourcePolicyNotFoundException(inner) => inner.meta(),
+            Self::RootNotFoundException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::SourceParentNotFoundException(inner) => inner.meta(),
+            Self::TargetNotFoundException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::UnsupportedApiEndpointException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::accept_handshake::AcceptHandshakeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

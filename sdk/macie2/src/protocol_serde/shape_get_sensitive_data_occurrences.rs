@@ -117,6 +117,9 @@ pub fn de_get_sensitive_data_occurrences_http_error(
                     let output = output.meta(generic);
                     crate::serde_util::unprocessable_entity_exception_correct_errors(output).build()
                 };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
                 tmp
             })
         }

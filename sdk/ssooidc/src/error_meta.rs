@@ -54,6 +54,25 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AuthorizationPendingException(inner) => inner.meta(),
+            Self::ExpiredTokenException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidClientException(inner) => inner.meta(),
+            Self::InvalidClientMetadataException(inner) => inner.meta(),
+            Self::InvalidGrantException(inner) => inner.meta(),
+            Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidScopeException(inner) => inner.meta(),
+            Self::SlowDownException(inner) => inner.meta(),
+            Self::UnauthorizedClientException(inner) => inner.meta(),
+            Self::UnsupportedGrantTypeException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_token::CreateTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

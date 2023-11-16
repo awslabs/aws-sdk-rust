@@ -41,6 +41,20 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::AccountSetupInProgressException(inner) => inner.meta(),
+            Self::InvalidInputException(inner) => inner.meta(),
+            Self::NotFoundException(inner) => inner.meta(),
+            Self::OperationFailureException(inner) => inner.meta(),
+            Self::ServiceException(inner) => inner.meta(),
+            Self::UnauthenticatedException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::allocate_static_ip::AllocateStaticIpError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

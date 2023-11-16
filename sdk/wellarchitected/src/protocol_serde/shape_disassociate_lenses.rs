@@ -30,6 +30,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ConflictException" => crate::operation::disassociate_lenses::DisassociateLensesError::ConflictException({
@@ -42,6 +45,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerException" => crate::operation::disassociate_lenses::DisassociateLensesError::InternalServerException({
@@ -54,6 +60,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ResourceNotFoundException" => crate::operation::disassociate_lenses::DisassociateLensesError::ResourceNotFoundException({
@@ -66,6 +75,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ThrottlingException" => crate::operation::disassociate_lenses::DisassociateLensesError::ThrottlingException({
@@ -78,6 +90,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ValidationException" => crate::operation::disassociate_lenses::DisassociateLensesError::ValidationException({
@@ -90,6 +105,9 @@ pub fn de_disassociate_lenses_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::disassociate_lenses::DisassociateLensesError::generic(generic),

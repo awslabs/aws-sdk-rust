@@ -30,6 +30,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::bad_request_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ForbiddenException" => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::ForbiddenException({
@@ -42,6 +45,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::forbidden_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "InternalServerErrorException" => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::InternalServerErrorException({
@@ -55,6 +61,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_error_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "NotFoundException" => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::NotFoundException({
@@ -67,6 +76,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::not_found_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "ServiceUnavailableException" => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::ServiceUnavailableException({
@@ -80,6 +92,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::service_unavailable_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         "TooManyRequestsException" => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::TooManyRequestsException({
@@ -92,6 +107,9 @@ pub fn de_remove_flow_media_stream_http_error(
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output).build()
             };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
             tmp
         }),
         _ => crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError::generic(generic),

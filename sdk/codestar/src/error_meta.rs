@@ -57,6 +57,26 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::InvalidNextTokenException(inner) => inner.meta(),
+            Self::InvalidServiceRoleException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::ProjectAlreadyExistsException(inner) => inner.meta(),
+            Self::ProjectConfigurationException(inner) => inner.meta(),
+            Self::ProjectCreationFailedException(inner) => inner.meta(),
+            Self::ProjectNotFoundException(inner) => inner.meta(),
+            Self::TeamMemberAlreadyAssociatedException(inner) => inner.meta(),
+            Self::TeamMemberNotFoundException(inner) => inner.meta(),
+            Self::UserProfileAlreadyExistsException(inner) => inner.meta(),
+            Self::UserProfileNotFoundException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_team_member::AssociateTeamMemberError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

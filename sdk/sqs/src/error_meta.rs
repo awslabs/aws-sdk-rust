@@ -112,6 +112,41 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::BatchEntryIdsNotDistinct(inner) => inner.meta(),
+            Self::BatchRequestTooLong(inner) => inner.meta(),
+            Self::EmptyBatchRequest(inner) => inner.meta(),
+            Self::InvalidAddress(inner) => inner.meta(),
+            Self::InvalidAttributeName(inner) => inner.meta(),
+            Self::InvalidAttributeValue(inner) => inner.meta(),
+            Self::InvalidBatchEntryId(inner) => inner.meta(),
+            Self::InvalidIdFormat(inner) => inner.meta(),
+            Self::InvalidMessageContents(inner) => inner.meta(),
+            Self::InvalidSecurity(inner) => inner.meta(),
+            Self::KmsAccessDenied(inner) => inner.meta(),
+            Self::KmsDisabled(inner) => inner.meta(),
+            Self::KmsInvalidKeyUsage(inner) => inner.meta(),
+            Self::KmsInvalidState(inner) => inner.meta(),
+            Self::KmsNotFound(inner) => inner.meta(),
+            Self::KmsOptInRequired(inner) => inner.meta(),
+            Self::KmsThrottled(inner) => inner.meta(),
+            Self::MessageNotInflight(inner) => inner.meta(),
+            Self::OverLimit(inner) => inner.meta(),
+            Self::PurgeQueueInProgress(inner) => inner.meta(),
+            Self::QueueDeletedRecently(inner) => inner.meta(),
+            Self::QueueDoesNotExist(inner) => inner.meta(),
+            Self::QueueNameExists(inner) => inner.meta(),
+            Self::ReceiptHandleIsInvalid(inner) => inner.meta(),
+            Self::RequestThrottled(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::TooManyEntriesInBatchRequest(inner) => inner.meta(),
+            Self::UnsupportedOperation(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_permission::AddPermissionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

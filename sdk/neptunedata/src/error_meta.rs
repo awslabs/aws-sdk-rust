@@ -120,6 +120,47 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BadRequestException(inner) => inner.meta(),
+            Self::BulkLoadIdNotFoundException(inner) => inner.meta(),
+            Self::CancelledByUserException(inner) => inner.meta(),
+            Self::ClientTimeoutException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConstraintViolationException(inner) => inner.meta(),
+            Self::ExpiredStreamException(inner) => inner.meta(),
+            Self::FailureByQueryException(inner) => inner.meta(),
+            Self::IllegalArgumentException(inner) => inner.meta(),
+            Self::InternalFailureException(inner) => inner.meta(),
+            Self::InvalidArgumentException(inner) => inner.meta(),
+            Self::InvalidNumericDataException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
+            Self::LoadUrlAccessDeniedException(inner) => inner.meta(),
+            Self::MlResourceNotFoundException(inner) => inner.meta(),
+            Self::MalformedQueryException(inner) => inner.meta(),
+            Self::MemoryLimitExceededException(inner) => inner.meta(),
+            Self::MethodNotAllowedException(inner) => inner.meta(),
+            Self::MissingParameterException(inner) => inner.meta(),
+            Self::ParsingException(inner) => inner.meta(),
+            Self::PreconditionsFailedException(inner) => inner.meta(),
+            Self::QueryLimitExceededException(inner) => inner.meta(),
+            Self::QueryLimitException(inner) => inner.meta(),
+            Self::QueryTooLargeException(inner) => inner.meta(),
+            Self::ReadOnlyViolationException(inner) => inner.meta(),
+            Self::S3Exception(inner) => inner.meta(),
+            Self::ServerShutdownException(inner) => inner.meta(),
+            Self::StatisticsNotAvailableException(inner) => inner.meta(),
+            Self::StreamRecordsNotFoundException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
+            Self::TimeLimitExceededException(inner) => inner.meta(),
+            Self::TooManyRequestsException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_gremlin_query::CancelGremlinQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

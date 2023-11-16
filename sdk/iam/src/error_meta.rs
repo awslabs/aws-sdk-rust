@@ -99,6 +99,40 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::CredentialReportExpiredException(inner) => inner.meta(),
+            Self::CredentialReportNotPresentException(inner) => inner.meta(),
+            Self::CredentialReportNotReadyException(inner) => inner.meta(),
+            Self::DeleteConflictException(inner) => inner.meta(),
+            Self::DuplicateCertificateException(inner) => inner.meta(),
+            Self::DuplicateSshPublicKeyException(inner) => inner.meta(),
+            Self::EntityAlreadyExistsException(inner) => inner.meta(),
+            Self::EntityTemporarilyUnmodifiableException(inner) => inner.meta(),
+            Self::InvalidAuthenticationCodeException(inner) => inner.meta(),
+            Self::InvalidCertificateException(inner) => inner.meta(),
+            Self::InvalidInputException(inner) => inner.meta(),
+            Self::InvalidPublicKeyException(inner) => inner.meta(),
+            Self::InvalidUserTypeException(inner) => inner.meta(),
+            Self::KeyPairMismatchException(inner) => inner.meta(),
+            Self::LimitExceededException(inner) => inner.meta(),
+            Self::MalformedCertificateException(inner) => inner.meta(),
+            Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::NoSuchEntityException(inner) => inner.meta(),
+            Self::PasswordPolicyViolationException(inner) => inner.meta(),
+            Self::PolicyEvaluationException(inner) => inner.meta(),
+            Self::PolicyNotAttachableException(inner) => inner.meta(),
+            Self::ReportGenerationLimitExceededException(inner) => inner.meta(),
+            Self::ServiceFailureException(inner) => inner.meta(),
+            Self::ServiceNotSupportedException(inner) => inner.meta(),
+            Self::UnmodifiableEntityException(inner) => inner.meta(),
+            Self::UnrecognizedPublicKeyEncodingException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

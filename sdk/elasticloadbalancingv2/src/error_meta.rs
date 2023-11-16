@@ -129,6 +129,50 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
         Error::Unhandled(::aws_smithy_types::error::Unhandled::builder().source(value).build())
     }
 }
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
+    fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
+        match self {
+            Self::AlpnPolicyNotSupportedException(inner) => inner.meta(),
+            Self::AllocationIdNotFoundException(inner) => inner.meta(),
+            Self::AvailabilityZoneNotSupportedException(inner) => inner.meta(),
+            Self::CertificateNotFoundException(inner) => inner.meta(),
+            Self::DuplicateListenerException(inner) => inner.meta(),
+            Self::DuplicateLoadBalancerNameException(inner) => inner.meta(),
+            Self::DuplicateTagKeysException(inner) => inner.meta(),
+            Self::DuplicateTargetGroupNameException(inner) => inner.meta(),
+            Self::HealthUnavailableException(inner) => inner.meta(),
+            Self::IncompatibleProtocolsException(inner) => inner.meta(),
+            Self::InvalidConfigurationRequestException(inner) => inner.meta(),
+            Self::InvalidLoadBalancerActionException(inner) => inner.meta(),
+            Self::InvalidSchemeException(inner) => inner.meta(),
+            Self::InvalidSecurityGroupException(inner) => inner.meta(),
+            Self::InvalidSubnetException(inner) => inner.meta(),
+            Self::InvalidTargetException(inner) => inner.meta(),
+            Self::ListenerNotFoundException(inner) => inner.meta(),
+            Self::LoadBalancerNotFoundException(inner) => inner.meta(),
+            Self::OperationNotPermittedException(inner) => inner.meta(),
+            Self::PriorityInUseException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
+            Self::RuleNotFoundException(inner) => inner.meta(),
+            Self::SslPolicyNotFoundException(inner) => inner.meta(),
+            Self::SubnetNotFoundException(inner) => inner.meta(),
+            Self::TargetGroupAssociationLimitException(inner) => inner.meta(),
+            Self::TargetGroupNotFoundException(inner) => inner.meta(),
+            Self::TooManyActionsException(inner) => inner.meta(),
+            Self::TooManyCertificatesException(inner) => inner.meta(),
+            Self::TooManyListenersException(inner) => inner.meta(),
+            Self::TooManyLoadBalancersException(inner) => inner.meta(),
+            Self::TooManyRegistrationsForTargetIdException(inner) => inner.meta(),
+            Self::TooManyRulesException(inner) => inner.meta(),
+            Self::TooManyTagsException(inner) => inner.meta(),
+            Self::TooManyTargetGroupsException(inner) => inner.meta(),
+            Self::TooManyTargetsException(inner) => inner.meta(),
+            Self::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.meta(),
+            Self::UnsupportedProtocolException(inner) => inner.meta(),
+            Self::Unhandled(inner) => inner.meta(),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_listener_certificates::AddListenerCertificatesError, R>>
     for Error
 where
