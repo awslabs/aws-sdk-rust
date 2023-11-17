@@ -1,4 +1,443 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+November 17th, 2023
+===================
+**Breaking Changes:**
+- :warning: ([smithy-rs#3205](https://github.com/smithy-lang/smithy-rs/issues/3205)) imds::client::Builder::endpoint has been updated to accept a string instead of a URI. The method now returns a result instead.
+- :warning: ([smithy-rs#3205](https://github.com/smithy-lang/smithy-rs/issues/3205)) The `AssumeRoleBuilder::policy_arns` now accepts strings instead of an STS specific type
+- :warning: ([smithy-rs#3213](https://github.com/smithy-lang/smithy-rs/issues/3213)) Fix optional types in S3. Many types in S3 were modeled as non-optional but this causes serialization issues.
+
+**Service Features:**
+- `aws-sdk-appmesh` (0.38.0): Change the default value of these fields from 0 to null: MaxConnections, MaxPendingRequests, MaxRequests, HealthCheckThreshold, PortNumber, and HealthCheckPolicy -> port. Users are not expected to perceive the change, except that badRequestException is thrown when required fields missing configured.
+- `aws-sdk-athena` (0.38.0): Adding SerivicePreProcessing time metric
+- `aws-sdk-cloudformation` (0.38.0): This release adds a new flag ImportExistingResources to CreateChangeSet. Specify this parameter on a CREATE- or UPDATE-type change set to import existing resources with custom names instead of recreating them.
+- `aws-sdk-codepipeline` (0.38.0): CodePipeline now supports overriding source revisions to achieve manual re-deploy of a past revision
+- `aws-sdk-codestarconnections` (0.38.0): This release adds support for the CloudFormation Git sync feature. Git sync enables updating a CloudFormation stack from a template stored in a Git repository.
+- `aws-sdk-connect` (0.38.0): This release adds WISDOM_QUICK_RESPONSES as new IntegrationType of Connect IntegrationAssociation resource and bug fixes.
+- `aws-sdk-ec2` (0.38.0): This release adds new features for Amazon VPC IP Address Manager (IPAM) Allowing a choice between Free and Advanced Tiers, viewing public IP address insights across regions and in Amazon Cloudwatch, use IPAM to plan your subnet IPs within a VPC and bring your own autonomous system number to IPAM.
+- `aws-sdk-ecr` (0.38.0): Documentation and operational updates for Amazon ECR, adding support for pull through cache rules for upstream registries that require authentication.
+- `aws-sdk-emr` (0.38.0): Launch support for IAM Identity Center Trusted Identity Propagation and workspace storage encryption using AWS KMS in EMR Studio
+- `aws-sdk-eventbridge` (0.38.0): Introduces a new rule state ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS for matching with Get, List and Describe AWS API call events from CloudTrail.
+- `aws-sdk-internetmonitor` (0.14.0): Adds new querying capabilities for running data queries on a monitor
+- `aws-sdk-ivs` (0.38.0): type & defaulting refinement to various range properties
+- `aws-sdk-ivschat` (0.38.0): type & defaulting refinement to various range properties
+- `aws-sdk-location` (0.38.0): Remove default value and allow nullable for request parameters having minimum value larger than zero.
+- `aws-sdk-medialive` (0.38.0): MediaLive has now added support for per-output static image overlay.
+- `aws-sdk-mgn` (0.38.0): Removed invalid and unnecessary default values.
+- `aws-sdk-osis` (0.11.0): Add support for enabling a persistent buffer when creating or updating an OpenSearch Ingestion pipeline. Add tags to Pipeline and PipelineSummary response models.
+- `aws-sdk-pipes` (0.16.0): TargetParameters now properly supports BatchJobParameters.ArrayProperties.Size and BatchJobParameters.RetryStrategy.Attempts being optional, and EcsTaskParameters.Overrides.EphemeralStorage.SizeInGiB now properly required when setting EphemeralStorage
+- `aws-sdk-rds` (0.38.0): This release adds support for option groups and replica enhancements to Amazon RDS Custom.
+- `aws-sdk-redshift` (0.38.0): Updated SDK for Amazon Redshift, which you can use to configure a connection with IAM Identity Center to manage access to databases. With these, you can create a connection through a managed application. You can also change a managed application, delete it, or get information about an existing one.
+- `aws-sdk-redshiftserverless` (0.38.0): Updated SDK for Amazon Redshift Serverless, which provides the ability to configure a connection with IAM Identity Center to manage user and group access to databases.
+- `aws-sdk-s3` (0.38.0): Removes all default 0 values for numbers and false values for booleans
+- `aws-sdk-ssoadmin` (0.38.0): Improves support for configuring RefreshToken and TokenExchange grants on applications.
+- `aws-sdk-ssooidc` (0.38.0): Adding support for `sso-oauth:CreateTokenWithIAM`.
+- `aws-sdk-trustedadvisor` (0.1.0): AWS Trusted Advisor introduces new APIs to enable you to programmatically access Trusted Advisor best practice checks, recommendations, and prioritized recommendations. Trusted Advisor APIs enable you to integrate Trusted Advisor with your operational tools to automate your workloads.
+- `aws-sdk-verifiedpermissions` (0.10.0): Adding BatchIsAuthorized API which supports multiple authorization requests against a PolicyStore
+- `aws-sdk-wisdom` (0.38.0): This release adds QuickResponse as a new Wisdom resource and Wisdom APIs for import, create, read, search, update and delete QuickResponse resources.
+
+**Service Documentation:**
+- `aws-sdk-cloud9` (0.38.0): A minor doc only update related to changing the date of an API change.
+- `aws-sdk-dlm` (0.38.0): Added support for SAP HANA in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies with pre and post scripts.
+- `aws-sdk-kinesisvideo` (0.38.0): Docs only build to bring up-to-date with public docs.
+- `aws-sdk-sts` (0.38.0): API updates for the AWS Security Token Service
+
+**Crate Versions**
+<details>
+<summary>Click to expand to view crate versions...</summary>
+
+|Crate|Version|
+|-|-|
+|aws-config|0.101.0|
+|aws-credential-types|0.101.0|
+|aws-endpoint|0.59.0|
+|aws-http|0.59.0|
+|aws-hyper|0.59.0|
+|aws-runtime|0.101.0|
+|aws-runtime-api|0.101.0|
+|aws-sdk-accessanalyzer|0.38.0|
+|aws-sdk-account|0.38.0|
+|aws-sdk-acm|0.38.0|
+|aws-sdk-acmpca|0.38.0|
+|aws-sdk-alexaforbusiness|0.38.0|
+|aws-sdk-amp|0.38.0|
+|aws-sdk-amplify|0.38.0|
+|aws-sdk-amplifybackend|0.38.0|
+|aws-sdk-amplifyuibuilder|0.38.0|
+|aws-sdk-apigateway|0.38.0|
+|aws-sdk-apigatewaymanagement|0.38.0|
+|aws-sdk-apigatewayv2|0.38.0|
+|aws-sdk-appconfig|0.38.0|
+|aws-sdk-appconfigdata|0.38.0|
+|aws-sdk-appfabric|0.10.0|
+|aws-sdk-appflow|0.38.0|
+|aws-sdk-appintegrations|0.38.0|
+|aws-sdk-applicationautoscaling|0.38.0|
+|aws-sdk-applicationcostprofiler|0.38.0|
+|aws-sdk-applicationdiscovery|0.38.0|
+|aws-sdk-applicationinsights|0.38.0|
+|aws-sdk-appmesh|0.38.0|
+|aws-sdk-apprunner|0.38.0|
+|aws-sdk-appstream|0.38.0|
+|aws-sdk-appsync|0.38.0|
+|aws-sdk-arczonalshift|0.16.0|
+|aws-sdk-athena|0.38.0|
+|aws-sdk-auditmanager|0.38.0|
+|aws-sdk-autoscaling|0.38.0|
+|aws-sdk-autoscalingplans|0.38.0|
+|aws-sdk-backup|0.38.0|
+|aws-sdk-backupgateway|0.38.0|
+|aws-sdk-backupstorage|0.21.0|
+|aws-sdk-batch|0.38.0|
+|aws-sdk-bedrock|0.7.0|
+|aws-sdk-bedrockruntime|0.7.0|
+|aws-sdk-billingconductor|0.38.0|
+|aws-sdk-braket|0.38.0|
+|aws-sdk-budgets|0.38.0|
+|aws-sdk-chime|0.38.0|
+|aws-sdk-chimesdkidentity|0.38.0|
+|aws-sdk-chimesdkmediapipelines|0.38.0|
+|aws-sdk-chimesdkmeetings|0.38.0|
+|aws-sdk-chimesdkmessaging|0.38.0|
+|aws-sdk-chimesdkvoice|0.16.0|
+|aws-sdk-cleanrooms|0.15.0|
+|aws-sdk-cloud9|0.38.0|
+|aws-sdk-cloudcontrol|0.38.0|
+|aws-sdk-clouddirectory|0.38.0|
+|aws-sdk-cloudformation|0.38.0|
+|aws-sdk-cloudfront|0.38.0|
+|aws-sdk-cloudhsm|0.38.0|
+|aws-sdk-cloudhsmv2|0.38.0|
+|aws-sdk-cloudsearch|0.38.0|
+|aws-sdk-cloudsearchdomain|0.38.0|
+|aws-sdk-cloudtrail|0.38.0|
+|aws-sdk-cloudtraildata|0.14.0|
+|aws-sdk-cloudwatch|0.38.0|
+|aws-sdk-cloudwatchevents|0.38.0|
+|aws-sdk-cloudwatchlogs|0.38.0|
+|aws-sdk-codeartifact|0.38.0|
+|aws-sdk-codebuild|0.38.0|
+|aws-sdk-codecatalyst|0.16.0|
+|aws-sdk-codecommit|0.38.0|
+|aws-sdk-codedeploy|0.38.0|
+|aws-sdk-codeguruprofiler|0.38.0|
+|aws-sdk-codegurureviewer|0.38.0|
+|aws-sdk-codegurusecurity|0.10.0|
+|aws-sdk-codepipeline|0.38.0|
+|aws-sdk-codestar|0.38.0|
+|aws-sdk-codestarconnections|0.38.0|
+|aws-sdk-codestarnotifications|0.38.0|
+|aws-sdk-cognitoidentity|0.38.0|
+|aws-sdk-cognitoidentityprovider|0.38.0|
+|aws-sdk-cognitosync|0.38.0|
+|aws-sdk-comprehend|0.38.0|
+|aws-sdk-comprehendmedical|0.38.0|
+|aws-sdk-computeoptimizer|0.38.0|
+|aws-sdk-config|0.38.0|
+|aws-sdk-connect|0.38.0|
+|aws-sdk-connectcampaigns|0.38.0|
+|aws-sdk-connectcases|0.19.0|
+|aws-sdk-connectcontactlens|0.38.0|
+|aws-sdk-connectparticipant|0.38.0|
+|aws-sdk-controltower|0.19.0|
+|aws-sdk-costandusagereport|0.38.0|
+|aws-sdk-costexplorer|0.38.0|
+|aws-sdk-customerprofiles|0.38.0|
+|aws-sdk-databasemigration|0.38.0|
+|aws-sdk-databrew|0.38.0|
+|aws-sdk-dataexchange|0.38.0|
+|aws-sdk-datapipeline|0.38.0|
+|aws-sdk-datasync|0.38.0|
+|aws-sdk-datazone|0.6.0|
+|aws-sdk-dax|0.38.0|
+|aws-sdk-detective|0.38.0|
+|aws-sdk-devicefarm|0.38.0|
+|aws-sdk-devopsguru|0.38.0|
+|aws-sdk-directconnect|0.38.0|
+|aws-sdk-directory|0.38.0|
+|aws-sdk-dlm|0.38.0|
+|aws-sdk-docdb|0.38.0|
+|aws-sdk-docdbelastic|0.16.0|
+|aws-sdk-drs|0.38.0|
+|aws-sdk-dynamodb|0.38.0|
+|aws-sdk-dynamodbstreams|0.38.0|
+|aws-sdk-ebs|0.38.0|
+|aws-sdk-ec2|0.38.0|
+|aws-sdk-ec2instanceconnect|0.38.0|
+|aws-sdk-ecr|0.38.0|
+|aws-sdk-ecrpublic|0.38.0|
+|aws-sdk-ecs|0.38.0|
+|aws-sdk-efs|0.38.0|
+|aws-sdk-eks|0.38.0|
+|aws-sdk-elasticache|0.38.0|
+|aws-sdk-elasticbeanstalk|0.38.0|
+|aws-sdk-elasticinference|0.38.0|
+|aws-sdk-elasticloadbalancing|0.38.0|
+|aws-sdk-elasticloadbalancingv2|0.38.0|
+|aws-sdk-elasticsearch|0.38.0|
+|aws-sdk-elastictranscoder|0.38.0|
+|aws-sdk-emr|0.38.0|
+|aws-sdk-emrcontainers|0.38.0|
+|aws-sdk-emrserverless|0.38.0|
+|aws-sdk-entityresolution|0.10.0|
+|aws-sdk-eventbridge|0.38.0|
+|aws-sdk-evidently|0.38.0|
+|aws-sdk-finspace|0.38.0|
+|aws-sdk-finspacedata|0.38.0|
+|aws-sdk-firehose|0.38.0|
+|aws-sdk-fis|0.38.0|
+|aws-sdk-fms|0.38.0|
+|aws-sdk-forecast|0.38.0|
+|aws-sdk-forecastquery|0.38.0|
+|aws-sdk-frauddetector|0.38.0|
+|aws-sdk-fsx|0.38.0|
+|aws-sdk-gamelift|0.38.0|
+|aws-sdk-glacier|0.38.0|
+|aws-sdk-globalaccelerator|0.38.0|
+|aws-sdk-glue|0.38.0|
+|aws-sdk-grafana|0.38.0|
+|aws-sdk-greengrass|0.38.0|
+|aws-sdk-greengrassv2|0.38.0|
+|aws-sdk-groundstation|0.38.0|
+|aws-sdk-guardduty|0.38.0|
+|aws-sdk-health|0.38.0|
+|aws-sdk-healthlake|0.38.0|
+|aws-sdk-honeycode|0.38.0|
+|aws-sdk-iam|0.38.0|
+|aws-sdk-identitystore|0.38.0|
+|aws-sdk-imagebuilder|0.38.0|
+|aws-sdk-inspector|0.38.0|
+|aws-sdk-inspector2|0.38.0|
+|aws-sdk-internetmonitor|0.14.0|
+|aws-sdk-iot|0.38.0|
+|aws-sdk-iot1clickdevices|0.38.0|
+|aws-sdk-iot1clickprojects|0.38.0|
+|aws-sdk-iotanalytics|0.38.0|
+|aws-sdk-iotdataplane|0.38.0|
+|aws-sdk-iotdeviceadvisor|0.38.0|
+|aws-sdk-iotevents|0.38.0|
+|aws-sdk-ioteventsdata|0.38.0|
+|aws-sdk-iotfleethub|0.38.0|
+|aws-sdk-iotfleetwise|0.19.0|
+|aws-sdk-iotjobsdataplane|0.38.0|
+|aws-sdk-iotroborunner|0.16.0|
+|aws-sdk-iotsecuretunneling|0.38.0|
+|aws-sdk-iotsitewise|0.38.0|
+|aws-sdk-iotthingsgraph|0.38.0|
+|aws-sdk-iottwinmaker|0.38.0|
+|aws-sdk-iotwireless|0.38.0|
+|aws-sdk-ivs|0.38.0|
+|aws-sdk-ivschat|0.38.0|
+|aws-sdk-ivsrealtime|0.14.0|
+|aws-sdk-kafka|0.38.0|
+|aws-sdk-kafkaconnect|0.38.0|
+|aws-sdk-kendra|0.38.0|
+|aws-sdk-kendraranking|0.16.0|
+|aws-sdk-keyspaces|0.38.0|
+|aws-sdk-kinesis|0.38.0|
+|aws-sdk-kinesisanalytics|0.38.0|
+|aws-sdk-kinesisanalyticsv2|0.38.0|
+|aws-sdk-kinesisvideo|0.38.0|
+|aws-sdk-kinesisvideoarchivedmedia|0.38.0|
+|aws-sdk-kinesisvideomedia|0.38.0|
+|aws-sdk-kinesisvideosignaling|0.38.0|
+|aws-sdk-kinesisvideowebrtcstorage|0.16.0|
+|aws-sdk-kms|0.38.0|
+|aws-sdk-lakeformation|0.38.0|
+|aws-sdk-lambda|0.38.0|
+|aws-sdk-launchwizard|0.3.0|
+|aws-sdk-lexmodelbuilding|0.38.0|
+|aws-sdk-lexmodelsv2|0.38.0|
+|aws-sdk-lexruntime|0.38.0|
+|aws-sdk-lexruntimev2|0.38.0|
+|aws-sdk-licensemanager|0.38.0|
+|aws-sdk-licensemanagerlinuxsubscriptions|0.16.0|
+|aws-sdk-licensemanagerusersubscriptions|0.22.0|
+|aws-sdk-lightsail|0.38.0|
+|aws-sdk-location|0.38.0|
+|aws-sdk-lookoutequipment|0.38.0|
+|aws-sdk-lookoutmetrics|0.38.0|
+|aws-sdk-lookoutvision|0.38.0|
+|aws-sdk-m2|0.38.0|
+|aws-sdk-machinelearning|0.38.0|
+|aws-sdk-macie|0.38.0|
+|aws-sdk-macie2|0.38.0|
+|aws-sdk-managedblockchain|0.38.0|
+|aws-sdk-managedblockchainquery|0.10.0|
+|aws-sdk-marketplacecatalog|0.38.0|
+|aws-sdk-marketplacecommerceanalytics|0.38.0|
+|aws-sdk-marketplaceentitlement|0.38.0|
+|aws-sdk-marketplacemetering|0.38.0|
+|aws-sdk-mediaconnect|0.38.0|
+|aws-sdk-mediaconvert|0.38.0|
+|aws-sdk-medialive|0.38.0|
+|aws-sdk-mediapackage|0.38.0|
+|aws-sdk-mediapackagev2|0.10.0|
+|aws-sdk-mediapackagevod|0.38.0|
+|aws-sdk-mediastore|0.38.0|
+|aws-sdk-mediastoredata|0.38.0|
+|aws-sdk-mediatailor|0.38.0|
+|aws-sdk-medicalimaging|0.8.0|
+|aws-sdk-memorydb|0.38.0|
+|aws-sdk-mgn|0.38.0|
+|aws-sdk-migrationhub|0.38.0|
+|aws-sdk-migrationhubconfig|0.38.0|
+|aws-sdk-migrationhuborchestrator|0.19.0|
+|aws-sdk-migrationhubrefactorspaces|0.38.0|
+|aws-sdk-migrationhubstrategy|0.38.0|
+|aws-sdk-mobile|0.38.0|
+|aws-sdk-mq|0.38.0|
+|aws-sdk-mturk|0.38.0|
+|aws-sdk-mwaa|0.38.0|
+|aws-sdk-neptune|0.38.0|
+|aws-sdk-neptunedata|0.8.0|
+|aws-sdk-networkfirewall|0.38.0|
+|aws-sdk-networkmanager|0.38.0|
+|aws-sdk-nimble|0.38.0|
+|aws-sdk-oam|0.16.0|
+|aws-sdk-omics|0.16.0|
+|aws-sdk-opensearch|0.38.0|
+|aws-sdk-opensearchserverless|0.16.0|
+|aws-sdk-opsworks|0.38.0|
+|aws-sdk-opsworkscm|0.38.0|
+|aws-sdk-organizations|0.38.0|
+|aws-sdk-osis|0.11.0|
+|aws-sdk-outposts|0.38.0|
+|aws-sdk-panorama|0.38.0|
+|aws-sdk-paymentcryptography|0.10.0|
+|aws-sdk-paymentcryptographydata|0.10.0|
+|aws-sdk-pcaconnectorad|0.8.0|
+|aws-sdk-personalize|0.38.0|
+|aws-sdk-personalizeevents|0.38.0|
+|aws-sdk-personalizeruntime|0.38.0|
+|aws-sdk-pi|0.38.0|
+|aws-sdk-pinpoint|0.38.0|
+|aws-sdk-pinpointemail|0.38.0|
+|aws-sdk-pinpointsmsvoice|0.38.0|
+|aws-sdk-pinpointsmsvoicev2|0.38.0|
+|aws-sdk-pipes|0.16.0|
+|aws-sdk-polly|0.38.0|
+|aws-sdk-pricing|0.38.0|
+|aws-sdk-privatenetworks|0.21.0|
+|aws-sdk-proton|0.38.0|
+|aws-sdk-qldb|0.38.0|
+|aws-sdk-qldbsession|0.38.0|
+|aws-sdk-quicksight|0.38.0|
+|aws-sdk-ram|0.38.0|
+|aws-sdk-rbin|0.38.0|
+|aws-sdk-rds|0.38.0|
+|aws-sdk-rdsdata|0.38.0|
+|aws-sdk-redshift|0.38.0|
+|aws-sdk-redshiftdata|0.38.0|
+|aws-sdk-redshiftserverless|0.38.0|
+|aws-sdk-rekognition|0.38.0|
+|aws-sdk-resiliencehub|0.38.0|
+|aws-sdk-resourceexplorer2|0.16.0|
+|aws-sdk-resourcegroups|0.38.0|
+|aws-sdk-resourcegroupstagging|0.38.0|
+|aws-sdk-robomaker|0.38.0|
+|aws-sdk-rolesanywhere|0.23.0|
+|aws-sdk-route53|0.38.0|
+|aws-sdk-route53domains|0.38.0|
+|aws-sdk-route53recoverycluster|0.38.0|
+|aws-sdk-route53recoverycontrolconfig|0.38.0|
+|aws-sdk-route53recoveryreadiness|0.38.0|
+|aws-sdk-route53resolver|0.38.0|
+|aws-sdk-rum|0.38.0|
+|aws-sdk-s3|0.38.0|
+|aws-sdk-s3control|0.38.0|
+|aws-sdk-s3outposts|0.38.0|
+|aws-sdk-sagemaker|0.38.0|
+|aws-sdk-sagemakera2iruntime|0.38.0|
+|aws-sdk-sagemakeredge|0.38.0|
+|aws-sdk-sagemakerfeaturestoreruntime|0.38.0|
+|aws-sdk-sagemakergeospatial|0.16.0|
+|aws-sdk-sagemakermetrics|0.16.0|
+|aws-sdk-sagemakerruntime|0.38.0|
+|aws-sdk-savingsplans|0.38.0|
+|aws-sdk-scheduler|0.16.0|
+|aws-sdk-schemas|0.38.0|
+|aws-sdk-secretsmanager|0.38.0|
+|aws-sdk-securityhub|0.38.0|
+|aws-sdk-securitylake|0.16.0|
+|aws-sdk-serverlessapplicationrepository|0.38.0|
+|aws-sdk-servicecatalog|0.38.0|
+|aws-sdk-servicecatalogappregistry|0.38.0|
+|aws-sdk-servicediscovery|0.38.0|
+|aws-sdk-servicequotas|0.38.0|
+|aws-sdk-ses|0.38.0|
+|aws-sdk-sesv2|0.38.0|
+|aws-sdk-sfn|0.38.0|
+|aws-sdk-shield|0.38.0|
+|aws-sdk-signer|0.38.0|
+|aws-sdk-simspaceweaver|0.16.0|
+|aws-sdk-sms|0.38.0|
+|aws-sdk-snowball|0.38.0|
+|aws-sdk-snowdevicemanagement|0.38.0|
+|aws-sdk-sns|0.38.0|
+|aws-sdk-sqs|0.38.0|
+|aws-sdk-ssm|0.38.0|
+|aws-sdk-ssmcontacts|0.38.0|
+|aws-sdk-ssmincidents|0.38.0|
+|aws-sdk-ssmsap|0.16.0|
+|aws-sdk-sso|0.38.0|
+|aws-sdk-ssoadmin|0.38.0|
+|aws-sdk-ssooidc|0.38.0|
+|aws-sdk-storagegateway|0.38.0|
+|aws-sdk-sts|0.38.0|
+|aws-sdk-support|0.38.0|
+|aws-sdk-supportapp|0.21.0|
+|aws-sdk-swf|0.38.0|
+|aws-sdk-synthetics|0.38.0|
+|aws-sdk-textract|0.38.0|
+|aws-sdk-timestreamquery|0.10.0|
+|aws-sdk-timestreamwrite|0.10.0|
+|aws-sdk-tnb|0.14.0|
+|aws-sdk-transcribe|0.38.0|
+|aws-sdk-transcribestreaming|0.38.0|
+|aws-sdk-transfer|0.38.0|
+|aws-sdk-translate|0.38.0|
+|aws-sdk-trustedadvisor|0.1.0|
+|aws-sdk-verifiedpermissions|0.10.0|
+|aws-sdk-voiceid|0.38.0|
+|aws-sdk-vpclattice|0.14.0|
+|aws-sdk-waf|0.38.0|
+|aws-sdk-wafregional|0.38.0|
+|aws-sdk-wafv2|0.38.0|
+|aws-sdk-wellarchitected|0.38.0|
+|aws-sdk-wisdom|0.38.0|
+|aws-sdk-workdocs|0.38.0|
+|aws-sdk-worklink|0.38.0|
+|aws-sdk-workmail|0.38.0|
+|aws-sdk-workmailmessageflow|0.38.0|
+|aws-sdk-workspaces|0.38.0|
+|aws-sdk-workspacesweb|0.38.0|
+|aws-sdk-xray|0.38.0|
+|aws-sig-auth|0.59.0|
+|aws-sigv4|0.101.0|
+|aws-smithy-async|0.101.0|
+|aws-smithy-checksums|0.59.0|
+|aws-smithy-client|0.59.0|
+|aws-smithy-eventstream|0.59.0|
+|aws-smithy-eventstream-fuzz|0.1.0|
+|aws-smithy-http|0.59.0|
+|aws-smithy-http-auth|0.59.0|
+|aws-smithy-http-fuzz|0.0.0|
+|aws-smithy-http-tower|0.59.0|
+|aws-smithy-json|0.59.0|
+|aws-smithy-json-fuzz|0.0.0|
+|aws-smithy-protocol-test|0.59.0|
+|aws-smithy-query|0.59.0|
+|aws-smithy-runtime|0.101.0|
+|aws-smithy-runtime-api|0.101.0|
+|aws-smithy-types|0.101.0|
+|aws-smithy-types-convert|0.59.0|
+|aws-smithy-types-fuzz|0.0.0|
+|aws-smithy-xml|0.59.0|
+|aws-types|0.101.0|
+|aws-types-fuzz|0.0.0|
+</details>
+
+
 November 16th, 2023
 ===================
 **Breaking Changes:**
