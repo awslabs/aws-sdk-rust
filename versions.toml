@@ -2,7 +2,7 @@ smithy_rs_revision = 'f63980cda330c2d76384d465692110f04d517092'
 aws_doc_sdk_examples_revision = '9f08f276537a38dc094727f1ad0b0ceacbb1dc7b'
 
 [manual_interventions]
-crates_to_remove = []
+crates_to_remove = ['aws-sdk-macie']
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.100.0'
