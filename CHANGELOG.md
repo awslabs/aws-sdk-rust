@@ -5,7 +5,7 @@ November 16th, 2023
 - :warning: ([smithy-rs#3138](https://github.com/smithy-lang/smithy-rs/issues/3138), [smithy-rs#3148](https://github.com/smithy-lang/smithy-rs/issues/3148)) [Upgrade guidance for HTTP Request/Response changes](https://github.com/awslabs/aws-sdk-rust/discussions/950). HTTP request types moved, and a new HTTP response type was added.
 - :warning: ([smithy-rs#3100](https://github.com/smithy-lang/smithy-rs/issues/3100), [smithy-rs#3114](https://github.com/smithy-lang/smithy-rs/issues/3114)) An operation output that supports receiving events from stream now provides a new-type wrapping `aws_smithy_http::event_stream::receiver::Receiver`. The new-type supports the `.recv()` method whose signature is the same as [`aws_smithy_http::event_stream::receiver::Receiver::recv`](https://docs.rs/aws-smithy-http/0.57.0/aws_smithy_http/event_stream/struct.Receiver.html#method.recv).
 - :warning: ([smithy-rs#3160](https://github.com/smithy-lang/smithy-rs/issues/3160)) The `RequestId` trait has moved from the aws-http crate into aws-types.
-- :warning: ([smithy-rs#3151](https://github.com/smithy-lang/smithy-rs/issues/3151)) Clients now require a `BehaviorVersion` to be provided. For must customers, `latest` is the best choice. This will be enabled automatically if you enable the `behavior-version-latest` cargo feature on `aws-config` or on an SDK crate. For customers that wish to pin to a specific behavior major version, it can be set in `aws-config` or when constructing the service client.
+- :warning: ([smithy-rs#3151](https://github.com/smithy-lang/smithy-rs/issues/3151)) Clients now require a `BehaviorVersion` to be provided. For most customers, `latest` is the best choice. This will be enabled automatically if you enable the `behavior-version-latest` cargo feature on `aws-config` or on an SDK crate. For customers that wish to pin to a specific behavior major version, it can be set in `aws-config` or when constructing the service client.
 
     ```rust
     async fn example() {
@@ -43,6 +43,7 @@ November 16th, 2023
 **New this release:**
 - :tada: ([aws-sdk-rust#780](https://github.com/awslabs/aws-sdk-rust/issues/780), [smithy-rs#3189](https://github.com/smithy-lang/smithy-rs/issues/3189)) Add `ProvideErrorMetadata` impl for service `Error` type.
 - :bug: ([smithy-rs#3164](https://github.com/smithy-lang/smithy-rs/issues/3164), @utkarshgupta137) Change `ByteStream::into_async_read` to return `AsyncBufRead`
+- :bug: ([smithy-rs#3210](https://github.com/awslabs/smithy-rs/issues/3210), [aws-sdk-rust#957](https://github.com/awslabs/aws-sdk-rust/issues/957)) Fix broken serialization for SQS
 
 **Service Features:**
 - `aws-sdk-codecatalyst` (0.15.0): This release includes updates to the Dev Environment APIs to include an optional vpcConnectionName parameter that supports using Dev Environments with Amazon VPC.
