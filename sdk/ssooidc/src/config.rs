@@ -116,7 +116,7 @@ impl Config {
     /// The signing service may be overridden by the `Endpoint`, or by specifying a custom
     /// [`SigningName`](aws_types::SigningName) during operation construction
     pub fn signing_name(&self) -> &'static str {
-        "awsssooidc"
+        "sso-oauth"
     }
     /// Returns the AWS region, if it was provided.
     pub fn region(&self) -> ::std::option::Option<&crate::config::Region> {
@@ -1052,7 +1052,7 @@ impl Builder {
                 .set_time_source(::std::option::Option::Some(::std::default::Default::default()));
         }
         layer.store_put(crate::meta::API_METADATA.clone());
-        layer.store_put(::aws_types::SigningName::from_static("awsssooidc"));
+        layer.store_put(::aws_types::SigningName::from_static("sso-oauth"));
         layer
             .load::<::aws_types::region::Region>()
             .cloned()

@@ -124,6 +124,31 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }
+                        "IdcInstanceArn" => {
+                            builder = builder.set_idc_instance_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrustedIdentityPropagationEnabled" => {
+                            builder = builder
+                                .set_trusted_identity_propagation_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IdcUserAssignment" => {
+                            builder = builder.set_idc_user_assignment(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IdcUserAssignment::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "EncryptionKeyArn" => {
+                            builder = builder.set_encryption_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

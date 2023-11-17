@@ -451,11 +451,15 @@ pub(crate) mod shape_oidc_jwt_update_configuration;
 
 pub(crate) mod shape_permission_set_provisioning_status_metadata;
 
+pub(crate) mod shape_refresh_token_grant;
+
 pub(crate) mod shape_resource_server_scopes;
 
 pub(crate) mod shape_scope_details;
 
 pub(crate) mod shape_sign_in_options;
+
+pub(crate) mod shape_token_exchange_grant;
 
 pub(crate) mod shape_trusted_token_issuer_metadata;
 

@@ -131,6 +131,11 @@ pub fn ser_create_change_set_input_input_input(
     if let Some(var_54) = &input.on_stack_failure {
         scope_53.string(var_54.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_55 = writer.prefix("ImportExistingResources");
+    if let Some(var_56) = &input.import_existing_resources {
+        scope_55.boolean(*var_56);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

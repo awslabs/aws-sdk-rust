@@ -13,6 +13,9 @@ pub mod create_content;
 /// Types for the `CreateKnowledgeBase` operation.
 pub mod create_knowledge_base;
 
+/// Types for the `CreateQuickResponse` operation.
+pub mod create_quick_response;
+
 /// Types for the `CreateSession` operation.
 pub mod create_session;
 
@@ -25,8 +28,14 @@ pub mod delete_assistant_association;
 /// Types for the `DeleteContent` operation.
 pub mod delete_content;
 
+/// Types for the `DeleteImportJob` operation.
+pub mod delete_import_job;
+
 /// Types for the `DeleteKnowledgeBase` operation.
 pub mod delete_knowledge_base;
+
+/// Types for the `DeleteQuickResponse` operation.
+pub mod delete_quick_response;
 
 /// Types for the `GetAssistant` operation.
 pub mod get_assistant;
@@ -40,8 +49,14 @@ pub mod get_content;
 /// Types for the `GetContentSummary` operation.
 pub mod get_content_summary;
 
+/// Types for the `GetImportJob` operation.
+pub mod get_import_job;
+
 /// Types for the `GetKnowledgeBase` operation.
 pub mod get_knowledge_base;
+
+/// Types for the `GetQuickResponse` operation.
+pub mod get_quick_response;
 
 /// Types for the `GetRecommendations` operation.
 pub mod get_recommendations;
@@ -58,8 +73,14 @@ pub mod list_assistants;
 /// Types for the `ListContents` operation.
 pub mod list_contents;
 
+/// Types for the `ListImportJobs` operation.
+pub mod list_import_jobs;
+
 /// Types for the `ListKnowledgeBases` operation.
 pub mod list_knowledge_bases;
+
+/// Types for the `ListQuickResponses` operation.
+pub mod list_quick_responses;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -76,11 +97,17 @@ pub mod remove_knowledge_base_template_uri;
 /// Types for the `SearchContent` operation.
 pub mod search_content;
 
+/// Types for the `SearchQuickResponses` operation.
+pub mod search_quick_responses;
+
 /// Types for the `SearchSessions` operation.
 pub mod search_sessions;
 
 /// Types for the `StartContentUpload` operation.
 pub mod start_content_upload;
+
+/// Types for the `StartImportJob` operation.
+pub mod start_import_job;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -93,3 +120,6 @@ pub mod update_content;
 
 /// Types for the `UpdateKnowledgeBaseTemplateUri` operation.
 pub mod update_knowledge_base_template_uri;
+
+/// Types for the `UpdateQuickResponse` operation.
+pub mod update_quick_response;

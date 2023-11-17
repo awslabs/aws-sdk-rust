@@ -894,4 +894,18 @@ impl CreateClusterFluentBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_az()
     }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.redshift_idc_application_arn(input.into());
+        self
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_redshift_idc_application_arn(input);
+        self
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_redshift_idc_application_arn()
+    }
 }

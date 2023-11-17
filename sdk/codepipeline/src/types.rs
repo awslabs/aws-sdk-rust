@@ -65,6 +65,10 @@ pub use crate::types::_lambda_executor_configuration::LambdaExecutorConfiguratio
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_source_revision_override::SourceRevisionOverride;
+
+pub use crate::types::_source_revision_type::SourceRevisionType;
+
 pub use crate::types::_pipeline_variable::PipelineVariable;
 
 pub use crate::types::_stage_retry_mode::StageRetryMode;
@@ -342,6 +346,10 @@ mod _s3_artifact_location;
 mod _s3_location;
 
 mod _source_revision;
+
+mod _source_revision_override;
+
+mod _source_revision_type;
 
 mod _stage_context;
 

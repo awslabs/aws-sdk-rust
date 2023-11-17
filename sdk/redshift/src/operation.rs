@@ -67,6 +67,9 @@ pub mod create_hsm_client_certificate;
 /// Types for the `CreateHsmConfiguration` operation.
 pub mod create_hsm_configuration;
 
+/// Types for the `CreateRedshiftIdcApplication` operation.
+pub mod create_redshift_idc_application;
+
 /// Types for the `CreateScheduledAction` operation.
 pub mod create_scheduled_action;
 
@@ -120,6 +123,9 @@ pub mod delete_hsm_configuration;
 
 /// Types for the `DeletePartner` operation.
 pub mod delete_partner;
+
+/// Types for the `DeleteRedshiftIdcApplication` operation.
+pub mod delete_redshift_idc_application;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
@@ -222,6 +228,9 @@ pub mod describe_orderable_cluster_options;
 
 /// Types for the `DescribePartners` operation.
 pub mod describe_partners;
+
+/// Types for the `DescribeRedshiftIdcApplications` operation.
+pub mod describe_redshift_idc_applications;
 
 /// Types for the `DescribeReservedNodeExchangeStatus` operation.
 pub mod describe_reserved_node_exchange_status;
@@ -327,6 +336,9 @@ pub mod modify_endpoint_access;
 
 /// Types for the `ModifyEventSubscription` operation.
 pub mod modify_event_subscription;
+
+/// Types for the `ModifyRedshiftIdcApplication` operation.
+pub mod modify_redshift_idc_application;
 
 /// Types for the `ModifyScheduledAction` operation.
 pub mod modify_scheduled_action;

@@ -11,9 +11,14 @@ pub fn ser_advertise_byoip_cidr_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("DryRun");
-    if let Some(var_4) = &input.dry_run {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("Asn");
+    if let Some(var_4) = &input.asn {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("DryRun");
+    if let Some(var_6) = &input.dry_run {
+        scope_5.boolean(*var_6);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

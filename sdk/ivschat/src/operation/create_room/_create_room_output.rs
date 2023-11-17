@@ -14,9 +14,9 @@ pub struct CreateRoomOutput {
     /// <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request (if specified).</p>
-    pub maximum_message_rate_per_second: i32,
+    pub maximum_message_rate_per_second: ::std::option::Option<i32>,
     /// <p>Maximum number of characters in a single message, from the request (if specified).</p>
-    pub maximum_message_length: i32,
+    pub maximum_message_length: ::std::option::Option<i32>,
     /// <p>Configuration information for optional review of messages.</p>
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Tags attached to the resource, from the request (if specified).</p>
@@ -47,11 +47,11 @@ impl CreateRoomOutput {
         self.update_time.as_ref()
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request (if specified).</p>
-    pub fn maximum_message_rate_per_second(&self) -> i32 {
+    pub fn maximum_message_rate_per_second(&self) -> ::std::option::Option<i32> {
         self.maximum_message_rate_per_second
     }
     /// <p>Maximum number of characters in a single message, from the request (if specified).</p>
-    pub fn maximum_message_length(&self) -> i32 {
+    pub fn maximum_message_length(&self) -> ::std::option::Option<i32> {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages.</p>
@@ -267,8 +267,8 @@ impl CreateRoomOutputBuilder {
             name: self.name,
             create_time: self.create_time,
             update_time: self.update_time,
-            maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
-            maximum_message_length: self.maximum_message_length.unwrap_or_default(),
+            maximum_message_rate_per_second: self.maximum_message_rate_per_second,
+            maximum_message_length: self.maximum_message_length,
             message_review_handler: self.message_review_handler,
             tags: self.tags,
             logging_configuration_identifiers: self.logging_configuration_identifiers,

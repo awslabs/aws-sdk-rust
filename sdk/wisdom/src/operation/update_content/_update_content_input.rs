@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContentInput {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub content_id: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct UpdateContentInput {
     pub upload_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContentInput {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
@@ -75,18 +75,18 @@ pub struct UpdateContentInputBuilder {
     pub(crate) upload_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContentInputBuilder {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }

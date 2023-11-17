@@ -24,5 +24,8 @@ pub fn ser_update_studio_input_input(
     if let Some(var_7) = &input.default_s3_location {
         object.key("DefaultS3Location").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_8.as_str());
+    }
     Ok(())
 }

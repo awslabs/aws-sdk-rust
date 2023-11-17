@@ -87,6 +87,8 @@ pub use crate::types::_db_cluster_role::DbClusterRole;
 
 pub use crate::types::_db_cluster_member::DbClusterMember;
 
+pub use crate::types::_db_cluster_status_info::DbClusterStatusInfo;
+
 pub use crate::types::_db_cluster_option_group_status::DbClusterOptionGroupStatus;
 
 pub use crate::types::_export_source_type::ExportSourceType;
@@ -320,6 +322,8 @@ mod _db_cluster_snapshot;
 mod _db_cluster_snapshot_attribute;
 
 mod _db_cluster_snapshot_attributes_result;
+
+mod _db_cluster_status_info;
 
 mod _db_engine_version;
 

@@ -347,4 +347,18 @@ impl CreateIpamPoolFluentBuilder {
     pub fn get_public_ip_source(&self) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
         self.inner.get_public_ip_source()
     }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn source_resource(mut self, input: crate::types::IpamPoolSourceResourceRequest) -> Self {
+        self.inner = self.inner.source_resource(input);
+        self
+    }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn set_source_resource(mut self, input: ::std::option::Option<crate::types::IpamPoolSourceResourceRequest>) -> Self {
+        self.inner = self.inner.set_source_resource(input);
+        self
+    }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn get_source_resource(&self) -> &::std::option::Option<crate::types::IpamPoolSourceResourceRequest> {
+        self.inner.get_source_resource()
+    }
 }

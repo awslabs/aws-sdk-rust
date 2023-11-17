@@ -13,6 +13,10 @@ pub struct UpdatePipelineInput {
     pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs to configure log publishing.</p>
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
 }
 impl UpdatePipelineInput {
     /// <p>The name of the pipeline to update.</p>
@@ -35,6 +39,14 @@ impl UpdatePipelineInput {
     pub fn log_publishing_options(&self) -> ::std::option::Option<&crate::types::LogPublishingOptions> {
         self.log_publishing_options.as_ref()
     }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn buffer_options(&self) -> ::std::option::Option<&crate::types::BufferOptions> {
+        self.buffer_options.as_ref()
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
 }
 impl UpdatePipelineInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
@@ -52,6 +64,8 @@ pub struct UpdatePipelineInputBuilder {
     pub(crate) max_units: ::std::option::Option<i32>,
     pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
+    pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
 }
 impl UpdatePipelineInputBuilder {
     /// <p>The name of the pipeline to update.</p>
@@ -125,6 +139,34 @@ impl UpdatePipelineInputBuilder {
     pub fn get_log_publishing_options(&self) -> &::std::option::Option<crate::types::LogPublishingOptions> {
         &self.log_publishing_options
     }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn buffer_options(mut self, input: crate::types::BufferOptions) -> Self {
+        self.buffer_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn set_buffer_options(mut self, input: ::std::option::Option<crate::types::BufferOptions>) -> Self {
+        self.buffer_options = input;
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn get_buffer_options(&self) -> &::std::option::Option<crate::types::BufferOptions> {
+        &self.buffer_options
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
+        self.encryption_at_rest_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
+        self.encryption_at_rest_options = input;
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        &self.encryption_at_rest_options
+    }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
     pub fn build(
         self,
@@ -135,6 +177,8 @@ impl UpdatePipelineInputBuilder {
             max_units: self.max_units,
             pipeline_configuration_body: self.pipeline_configuration_body,
             log_publishing_options: self.log_publishing_options,
+            buffer_options: self.buffer_options,
+            encryption_at_rest_options: self.encryption_at_rest_options,
         })
     }
 }

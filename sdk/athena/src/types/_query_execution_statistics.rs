@@ -14,6 +14,8 @@ pub struct QueryExecutionStatistics {
     pub total_execution_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     pub query_queue_time_in_millis: ::std::option::Option<i64>,
+    /// <p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>
+    pub service_pre_processing_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub query_planning_time_in_millis: ::std::option::Option<i64>,
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
@@ -41,6 +43,10 @@ impl QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     pub fn query_queue_time_in_millis(&self) -> ::std::option::Option<i64> {
         self.query_queue_time_in_millis
+    }
+    /// <p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>
+    pub fn service_pre_processing_time_in_millis(&self) -> ::std::option::Option<i64> {
+        self.service_pre_processing_time_in_millis
     }
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub fn query_planning_time_in_millis(&self) -> ::std::option::Option<i64> {
@@ -71,6 +77,7 @@ pub struct QueryExecutionStatisticsBuilder {
     pub(crate) data_manifest_location: ::std::option::Option<::std::string::String>,
     pub(crate) total_execution_time_in_millis: ::std::option::Option<i64>,
     pub(crate) query_queue_time_in_millis: ::std::option::Option<i64>,
+    pub(crate) service_pre_processing_time_in_millis: ::std::option::Option<i64>,
     pub(crate) query_planning_time_in_millis: ::std::option::Option<i64>,
     pub(crate) service_processing_time_in_millis: ::std::option::Option<i64>,
     pub(crate) result_reuse_information: ::std::option::Option<crate::types::ResultReuseInformation>,
@@ -146,6 +153,20 @@ impl QueryExecutionStatisticsBuilder {
     pub fn get_query_queue_time_in_millis(&self) -> &::std::option::Option<i64> {
         &self.query_queue_time_in_millis
     }
+    /// <p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>
+    pub fn service_pre_processing_time_in_millis(mut self, input: i64) -> Self {
+        self.service_pre_processing_time_in_millis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>
+    pub fn set_service_pre_processing_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.service_pre_processing_time_in_millis = input;
+        self
+    }
+    /// <p>The number of milliseconds that Athena took to preprocess the query before submitting the query to the query engine.</p>
+    pub fn get_service_pre_processing_time_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.service_pre_processing_time_in_millis
+    }
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub fn query_planning_time_in_millis(mut self, input: i64) -> Self {
         self.query_planning_time_in_millis = ::std::option::Option::Some(input);
@@ -196,6 +217,7 @@ impl QueryExecutionStatisticsBuilder {
             data_manifest_location: self.data_manifest_location,
             total_execution_time_in_millis: self.total_execution_time_in_millis,
             query_queue_time_in_millis: self.query_queue_time_in_millis,
+            service_pre_processing_time_in_millis: self.service_pre_processing_time_in_millis,
             query_planning_time_in_millis: self.query_planning_time_in_millis,
             service_processing_time_in_millis: self.service_processing_time_in_millis,
             result_reuse_information: self.result_reuse_information,

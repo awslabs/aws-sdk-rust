@@ -22,7 +22,9 @@ impl StartCalculationExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `StartCalculationExecution`.
 ///
-/// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p>
+/// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p> <note>
+/// <p>The request syntax requires the <code>StartCalculationExecutionRequest$CodeBlock</code> parameter or the <code>CalculationConfiguration$CodeBlock</code> parameter, but not both. Because <code>CalculationConfiguration$CodeBlock</code> is deprecated, use the <code>StartCalculationExecutionRequest$CodeBlock</code> parameter instead.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCalculationExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -153,17 +155,17 @@ impl StartCalculationExecutionFluentBuilder {
     pub fn get_calculation_configuration(&self) -> &::std::option::Option<crate::types::CalculationConfiguration> {
         self.inner.get_calculation_configuration()
     }
-    /// <p>A string that contains the code of the calculation.</p>
+    /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub fn code_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code_block(input.into());
         self
     }
-    /// <p>A string that contains the code of the calculation.</p>
+    /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code_block(input);
         self
     }
-    /// <p>A string that contains the code of the calculation.</p>
+    /// <p>A string that contains the code of the calculation. Use this parameter instead of <code>CalculationConfiguration$CodeBlock</code>, which is deprecated.</p>
     pub fn get_code_block(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_block()
     }

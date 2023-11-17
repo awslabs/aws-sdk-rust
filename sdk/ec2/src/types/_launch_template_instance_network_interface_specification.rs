@@ -47,6 +47,8 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub primary_ipv6: ::std::option::Option<bool>,
     /// <p>Contains the ENA Express settings for instances launched from your launch template.</p>
     pub ena_srd_specification: ::std::option::Option<crate::types::LaunchTemplateEnaSrdSpecification>,
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecification>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
@@ -144,6 +146,10 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub fn ena_srd_specification(&self) -> ::std::option::Option<&crate::types::LaunchTemplateEnaSrdSpecification> {
         self.ena_srd_specification.as_ref()
     }
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecification> {
+        self.connection_tracking_specification.as_ref()
+    }
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
@@ -177,6 +183,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub(crate) ipv6_prefix_count: ::std::option::Option<i32>,
     pub(crate) primary_ipv6: ::std::option::Option<bool>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::LaunchTemplateEnaSrdSpecification>,
+    pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecification>,
 }
 impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
@@ -506,6 +513,20 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
     pub fn get_ena_srd_specification(&self) -> &::std::option::Option<crate::types::LaunchTemplateEnaSrdSpecification> {
         &self.ena_srd_specification
     }
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn connection_tracking_specification(mut self, input: crate::types::ConnectionTrackingSpecification) -> Self {
+        self.connection_tracking_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn set_connection_tracking_specification(mut self, input: ::std::option::Option<crate::types::ConnectionTrackingSpecification>) -> Self {
+        self.connection_tracking_specification = input;
+        self
+    }
+    /// <p>A security group connection tracking specification that enables you to set the timeout for connection tracking on an Elastic network interface. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecification> {
+        &self.connection_tracking_specification
+    }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification {
         crate::types::LaunchTemplateInstanceNetworkInterfaceSpecification {
@@ -530,6 +551,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
             ipv6_prefix_count: self.ipv6_prefix_count,
             primary_ipv6: self.primary_ipv6,
             ena_srd_specification: self.ena_srd_specification,
+            connection_tracking_specification: self.connection_tracking_specification,
         }
     }
 }

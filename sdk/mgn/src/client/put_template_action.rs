@@ -21,10 +21,10 @@ impl super::Client {
     ///   - [`action_id(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::action_id): <p>Template post migration custom action ID.</p>
     ///   - [`action_name(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::action_name): <p>Template post migration custom action name.</p>
     ///   - [`document_identifier(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::document_identifier): <p>Template post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::operation::put_template_action::PutTemplateActionOutput::order): <p>Template post migration custom action order.</p>
+    ///   - [`order(Option<i32>)`](crate::operation::put_template_action::PutTemplateActionOutput::order): <p>Template post migration custom action order.</p>
     ///   - [`document_version(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::document_version): <p>Template post migration custom action document version.</p>
     ///   - [`active(Option<bool>)`](crate::operation::put_template_action::PutTemplateActionOutput::active): <p>Template post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::operation::put_template_action::PutTemplateActionOutput::timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
+    ///   - [`timeout_seconds(Option<i32>)`](crate::operation::put_template_action::PutTemplateActionOutput::timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
     ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::operation::put_template_action::PutTemplateActionOutput::must_succeed_for_cutover): <p>Template post migration custom action must succeed for cutover.</p>
     ///   - [`parameters(Option<HashMap::<String, Vec::<SsmParameterStoreParameter>>>)`](crate::operation::put_template_action::PutTemplateActionOutput::parameters): <p>Template post migration custom action parameters.</p>
     ///   - [`operating_system(Option<String>)`](crate::operation::put_template_action::PutTemplateActionOutput::operating_system): <p>Operating system eligible for this template post migration custom action.</p>

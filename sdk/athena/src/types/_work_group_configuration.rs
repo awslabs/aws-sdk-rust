@@ -18,7 +18,7 @@ pub struct WorkGroupConfiguration {
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
     pub additional_configuration: ::std::option::Option<::std::string::String>,
-    /// <p>Role used in a session for accessing the user's resources.</p>
+    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
@@ -55,7 +55,7 @@ impl WorkGroupConfiguration {
     pub fn additional_configuration(&self) -> ::std::option::Option<&str> {
         self.additional_configuration.as_deref()
     }
-    /// <p>Role used in a session for accessing the user's resources.</p>
+    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -190,17 +190,17 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_configuration
     }
-    /// <p>Role used in a session for accessing the user's resources.</p>
+    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Role used in a session for accessing the user's resources.</p>
+    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>Role used in a session for accessing the user's resources.</p>
+    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }

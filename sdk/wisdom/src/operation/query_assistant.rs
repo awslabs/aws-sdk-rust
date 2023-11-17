@@ -249,6 +249,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for QueryAssistan
 pub enum QueryAssistantError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request reached the service more than 15 minutes after the date stamp on the request or more than 15 minutes after the request expiration date (such as for pre-signed URLs), or the date stamp on the request is more than 15 minutes in the future.</p>
+    RequestTimeoutException(crate::types::error::RequestTimeoutException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The input fails to satisfy the constraints specified by a service.</p>
@@ -287,6 +289,7 @@ impl QueryAssistantError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RequestTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -295,6 +298,10 @@ impl QueryAssistantError {
     /// Returns `true` if the error kind is `QueryAssistantError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `QueryAssistantError::RequestTimeoutException`.
+    pub fn is_request_timeout_exception(&self) -> bool {
+        matches!(self, Self::RequestTimeoutException(_))
     }
     /// Returns `true` if the error kind is `QueryAssistantError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -309,6 +316,7 @@ impl ::std::error::Error for QueryAssistantError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -319,6 +327,7 @@ impl ::std::fmt::Display for QueryAssistantError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::RequestTimeoutException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -336,13 +345,17 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for QueryAssistantError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::RequestTimeoutException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for QueryAssistantError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

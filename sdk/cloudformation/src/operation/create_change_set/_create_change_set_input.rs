@@ -42,7 +42,7 @@ pub struct CreateChangeSetInput {
     /// </note>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.</p> <note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p> <note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -78,6 +78,10 @@ pub struct CreateChangeSetInput {
     /// </ul>
     /// <p>For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the change set for the parent stack, any failure in a child stack will cause the parent stack creation to fail and all stacks to be deleted.</p>
     pub on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </note>
+    pub import_existing_resources: ::std::option::Option<bool>,
 }
 impl CreateChangeSetInput {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -134,7 +138,7 @@ impl CreateChangeSetInput {
         self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.</p> <note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p> <note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     ///
@@ -202,6 +206,12 @@ impl CreateChangeSetInput {
     pub fn on_stack_failure(&self) -> ::std::option::Option<&crate::types::OnStackFailure> {
         self.on_stack_failure.as_ref()
     }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </note>
+    pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
+        self.import_existing_resources
+    }
 }
 impl CreateChangeSetInput {
     /// Creates a new builder-style object to manufacture [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
@@ -232,6 +242,7 @@ pub struct CreateChangeSetInputBuilder {
     pub(crate) resources_to_import: ::std::option::Option<::std::vec::Vec<crate::types::ResourceToImport>>,
     pub(crate) include_nested_stacks: ::std::option::Option<bool>,
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
+    pub(crate) import_existing_resources: ::std::option::Option<bool>,
 }
 impl CreateChangeSetInputBuilder {
     /// <p>The name or the unique ID of the stack for which you are creating a change set. CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values.</p>
@@ -411,7 +422,7 @@ impl CreateChangeSetInputBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.</p> <note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p> <note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -421,7 +432,7 @@ impl CreateChangeSetInputBuilder {
         self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.</p> <note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p> <note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -429,7 +440,7 @@ impl CreateChangeSetInputBuilder {
         self
     }
     /// <p>The template resource types that you have permissions to work with if you execute this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p>
-    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the CloudFormation User Guide.</p> <note>
+    /// <p>If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, CloudFormation grants permissions to all resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.</p> <note>
     /// <p>Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters can be specified.</p>
     /// </note>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -638,6 +649,26 @@ impl CreateChangeSetInputBuilder {
     pub fn get_on_stack_failure(&self) -> &::std::option::Option<crate::types::OnStackFailure> {
         &self.on_stack_failure
     }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </note>
+    pub fn import_existing_resources(mut self, input: bool) -> Self {
+        self.import_existing_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </note>
+    pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.import_existing_resources = input;
+        self
+    }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </note>
+    pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
+        &self.import_existing_resources
+    }
     /// Consumes the builder and constructs a [`CreateChangeSetInput`](crate::operation::create_change_set::CreateChangeSetInput).
     pub fn build(
         self,
@@ -661,6 +692,7 @@ impl CreateChangeSetInputBuilder {
             resources_to_import: self.resources_to_import,
             include_nested_stacks: self.include_nested_stacks,
             on_stack_failure: self.on_stack_failure,
+            import_existing_resources: self.import_existing_resources,
         })
     }
 }

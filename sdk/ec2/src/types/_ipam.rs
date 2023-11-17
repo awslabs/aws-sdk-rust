@@ -33,6 +33,10 @@ pub struct Ipam {
     pub default_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPAM's resource discovery association count.</p>
     pub resource_discovery_association_count: ::std::option::Option<i32>,
+    /// <p>The state message.</p>
+    pub state_message: ::std::option::Option<::std::string::String>,
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl Ipam {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -96,6 +100,14 @@ impl Ipam {
     pub fn resource_discovery_association_count(&self) -> ::std::option::Option<i32> {
         self.resource_discovery_association_count
     }
+    /// <p>The state message.</p>
+    pub fn state_message(&self) -> ::std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
+        self.tier.as_ref()
+    }
 }
 impl Ipam {
     /// Creates a new builder-style object to manufacture [`Ipam`](crate::types::Ipam).
@@ -122,6 +134,8 @@ pub struct IpamBuilder {
     pub(crate) default_resource_discovery_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_resource_discovery_association_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_discovery_association_count: ::std::option::Option<i32>,
+    pub(crate) state_message: ::std::option::Option<::std::string::String>,
+    pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl IpamBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
@@ -335,6 +349,34 @@ impl IpamBuilder {
     pub fn get_resource_discovery_association_count(&self) -> &::std::option::Option<i32> {
         &self.resource_discovery_association_count
     }
+    /// <p>The state message.</p>
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The state message.</p>
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_message = input;
+        self
+    }
+    /// <p>The state message.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(mut self, input: crate::types::IpamTier) -> Self {
+        self.tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::IpamTier>) -> Self {
+        self.tier = input;
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`Ipam`](crate::types::Ipam).
     pub fn build(self) -> crate::types::Ipam {
         crate::types::Ipam {
@@ -352,6 +394,8 @@ impl IpamBuilder {
             default_resource_discovery_id: self.default_resource_discovery_id,
             default_resource_discovery_association_id: self.default_resource_discovery_association_id,
             resource_discovery_association_count: self.resource_discovery_association_count,
+            state_message: self.state_message,
+            tier: self.tier,
         }
     }
 }

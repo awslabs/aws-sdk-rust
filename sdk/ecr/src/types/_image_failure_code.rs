@@ -19,6 +19,9 @@
 ///     ImageFailureCode::InvalidImageTag => { /* ... */ },
 ///     ImageFailureCode::KmsError => { /* ... */ },
 ///     ImageFailureCode::MissingDigestAndTag => { /* ... */ },
+///     ImageFailureCode::UpstreamAccessDenied => { /* ... */ },
+///     ImageFailureCode::UpstreamTooManyRequests => { /* ... */ },
+///     ImageFailureCode::UpstreamUnavailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +63,12 @@ pub enum ImageFailureCode {
     KmsError,
     #[allow(missing_docs)] // documentation missing in model
     MissingDigestAndTag,
+    #[allow(missing_docs)] // documentation missing in model
+    UpstreamAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
+    UpstreamTooManyRequests,
+    #[allow(missing_docs)] // documentation missing in model
+    UpstreamUnavailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -74,6 +83,9 @@ impl ::std::convert::From<&str> for ImageFailureCode {
             "InvalidImageTag" => ImageFailureCode::InvalidImageTag,
             "KmsError" => ImageFailureCode::KmsError,
             "MissingDigestAndTag" => ImageFailureCode::MissingDigestAndTag,
+            "UpstreamAccessDenied" => ImageFailureCode::UpstreamAccessDenied,
+            "UpstreamTooManyRequests" => ImageFailureCode::UpstreamTooManyRequests,
+            "UpstreamUnavailable" => ImageFailureCode::UpstreamUnavailable,
             other => ImageFailureCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -96,6 +108,9 @@ impl ImageFailureCode {
             ImageFailureCode::InvalidImageTag => "InvalidImageTag",
             ImageFailureCode::KmsError => "KmsError",
             ImageFailureCode::MissingDigestAndTag => "MissingDigestAndTag",
+            ImageFailureCode::UpstreamAccessDenied => "UpstreamAccessDenied",
+            ImageFailureCode::UpstreamTooManyRequests => "UpstreamTooManyRequests",
+            ImageFailureCode::UpstreamUnavailable => "UpstreamUnavailable",
             ImageFailureCode::Unknown(value) => value.as_str(),
         }
     }
@@ -109,6 +124,9 @@ impl ImageFailureCode {
             "InvalidImageTag",
             "KmsError",
             "MissingDigestAndTag",
+            "UpstreamAccessDenied",
+            "UpstreamTooManyRequests",
+            "UpstreamUnavailable",
         ]
     }
 }

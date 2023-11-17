@@ -9,46 +9,46 @@ pub fn ser_ssm_document(
     {
         object.key("ssmDocumentName").string(input.ssm_document_name.as_str());
     }
-    if input.timeout_seconds != 0 {
+    if let Some(var_1) = &input.timeout_seconds {
         object.key("timeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.must_succeed_for_cutover {
-        object.key("mustSucceedForCutover").boolean(*var_1);
+    if let Some(var_2) = &input.must_succeed_for_cutover {
+        object.key("mustSucceedForCutover").boolean(*var_2);
     }
-    if let Some(var_2) = &input.parameters {
+    if let Some(var_3) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("parameters").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("parameters").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                let mut array_6 = object_3.key(key_4.as_str()).start_array();
-                for item_7 in value_5 {
+                let mut array_7 = object_4.key(key_5.as_str()).start_array();
+                for item_8 in value_6 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_8 = array_6.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_8, item_7)?;
-                        object_8.finish();
+                        let mut object_9 = array_7.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_9, item_8)?;
+                        object_9.finish();
                     }
                 }
-                array_6.finish();
+                array_7.finish();
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_9) = &input.external_parameters {
+    if let Some(var_10) = &input.external_parameters {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("externalParameters").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("externalParameters").start_object();
+        for (key_12, value_13) in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = object_10.key(key_11.as_str()).start_object();
-                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_13, value_12)?;
-                object_13.finish();
+                let mut object_14 = object_11.key(key_12.as_str()).start_object();
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_14, value_13)?;
+                object_14.finish();
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
     Ok(())
 }

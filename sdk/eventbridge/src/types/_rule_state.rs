@@ -14,6 +14,7 @@
 /// match rulestate {
 ///     RuleState::Disabled => { /* ... */ },
 ///     RuleState::Enabled => { /* ... */ },
+///     RuleState::EnabledWithAllCloudtrailManagementEvents => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum RuleState {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    EnabledWithAllCloudtrailManagementEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for RuleState {
         match s {
             "DISABLED" => RuleState::Disabled,
             "ENABLED" => RuleState::Enabled,
+            "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS" => RuleState::EnabledWithAllCloudtrailManagementEvents,
             other => RuleState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl RuleState {
         match self {
             RuleState::Disabled => "DISABLED",
             RuleState::Enabled => "ENABLED",
+            RuleState::EnabledWithAllCloudtrailManagementEvents => "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS",
             RuleState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &["DISABLED", "ENABLED", "ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleState {

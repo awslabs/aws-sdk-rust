@@ -57,5 +57,17 @@ pub fn ser_create_studio_input_input(
         }
         array_16.finish();
     }
+    if let Some(var_19) = &input.trusted_identity_propagation_enabled {
+        object.key("TrustedIdentityPropagationEnabled").boolean(*var_19);
+    }
+    if let Some(var_20) = &input.idc_user_assignment {
+        object.key("IdcUserAssignment").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.idc_instance_arn {
+        object.key("IdcInstanceArn").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.encryption_key_arn {
+        object.key("EncryptionKeyArn").string(var_22.as_str());
+    }
     Ok(())
 }

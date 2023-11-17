@@ -402,4 +402,21 @@ impl CreateNetworkInterfaceFluentBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_primary_ipv6()
     }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn connection_tracking_specification(mut self, input: crate::types::ConnectionTrackingSpecificationRequest) -> Self {
+        self.inner = self.inner.connection_tracking_specification(input);
+        self
+    }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn set_connection_tracking_specification(
+        mut self,
+        input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    ) -> Self {
+        self.inner = self.inner.set_connection_tracking_specification(input);
+        self
+    }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
+        self.inner.get_connection_tracking_specification()
+    }
 }

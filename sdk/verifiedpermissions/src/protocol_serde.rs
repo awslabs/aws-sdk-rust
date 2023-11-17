@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_is_authorized;
+
 pub(crate) mod shape_create_identity_source;
 
 pub(crate) mod shape_create_policy;
@@ -80,6 +82,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_batch_is_authorized_input;
 
 pub(crate) mod shape_conflict_exception;
 
@@ -143,6 +147,10 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_action_identifier;
 
+pub(crate) mod shape_batch_is_authorized_input_item;
+
+pub(crate) mod shape_batch_is_authorized_output_list;
+
 pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_context_definition;
@@ -189,6 +197,8 @@ pub(crate) mod shape_validation_settings;
 
 pub(crate) mod shape_attribute_value;
 
+pub(crate) mod shape_batch_is_authorized_output_item;
+
 pub(crate) mod shape_client_ids;
 
 pub(crate) mod shape_cognito_user_pool_configuration;
@@ -232,3 +242,9 @@ pub(crate) mod shape_policy_definition_item;
 pub(crate) mod shape_static_policy_definition_item;
 
 pub(crate) mod shape_template_linked_policy_definition_item;
+
+pub(crate) mod shape_context_map;
+
+pub(crate) mod shape_record_attribute;
+
+pub(crate) mod shape_set_attribute;

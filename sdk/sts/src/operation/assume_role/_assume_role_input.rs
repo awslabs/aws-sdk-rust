@@ -52,7 +52,9 @@ pub struct AssumeRoleInput {
     /// <p>You can require users to specify a source identity when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code> condition key to further control access to Amazon Web Services resources based on the value of source identity. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for Amazon Web Services internal use.</p>
     pub source_identity: ::std::option::Option<::std::string::String>,
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub provided_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
 }
 impl AssumeRoleInput {
@@ -133,7 +135,9 @@ impl AssumeRoleInput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provided_contexts.is_none()`.
     pub fn provided_contexts(&self) -> &[crate::types::ProvidedContext] {
@@ -424,19 +428,25 @@ impl AssumeRoleInputBuilder {
     ///
     /// To override the contents of this collection use [`set_provided_contexts`](Self::set_provided_contexts).
     ///
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn provided_contexts(mut self, input: crate::types::ProvidedContext) -> Self {
         let mut v = self.provided_contexts.unwrap_or_default();
         v.push(input);
         self.provided_contexts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn set_provided_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>) -> Self {
         self.provided_contexts = input;
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn get_provided_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>> {
         &self.provided_contexts
     }

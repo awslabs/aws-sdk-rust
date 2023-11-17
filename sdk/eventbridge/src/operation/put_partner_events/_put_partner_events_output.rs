@@ -5,7 +5,8 @@
 pub struct PutPartnerEventsOutput {
     /// <p>The number of events from this operation that could not be written to the partner event bus.</p>
     pub failed_entry_count: i32,
-    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// <p>The results for each event entry the partner submitted in this request. If the event was successfully submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>,
     _request_id: Option<String>,
 }
@@ -14,7 +15,8 @@ impl PutPartnerEventsOutput {
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
-    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// <p>The results for each event entry the partner submitted in this request. If the event was successfully submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::PutPartnerEventsResultEntry] {
@@ -60,19 +62,22 @@ impl PutPartnerEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// <p>The results for each event entry the partner submitted in this request. If the event was successfully submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn entries(mut self, input: crate::types::PutPartnerEventsResultEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// <p>The results for each event entry the partner submitted in this request. If the event was successfully submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// <p>The results for each event entry the partner submitted in this request. If the event was successfully submitted, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutPartnerEventsResultEntry>> {
         &self.entries
     }

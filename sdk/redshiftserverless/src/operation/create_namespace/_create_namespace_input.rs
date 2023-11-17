@@ -26,6 +26,8 @@ pub struct CreateNamespaceInput {
     pub manage_admin_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
     pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateNamespaceInput {
     /// <p>The name of the namespace.</p>
@@ -79,6 +81,10 @@ impl CreateNamespaceInput {
     pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.admin_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+        self.redshift_idc_application_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateNamespaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -94,6 +100,7 @@ impl ::std::fmt::Debug for CreateNamespaceInput {
         formatter.field("tags", &self.tags);
         formatter.field("manage_admin_password", &self.manage_admin_password);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.finish()
     }
 }
@@ -119,6 +126,7 @@ pub struct CreateNamespaceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) manage_admin_password: ::std::option::Option<bool>,
     pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateNamespaceInputBuilder {
     /// <p>The name of the namespace.</p>
@@ -297,6 +305,20 @@ impl CreateNamespaceInputBuilder {
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_password_secret_kms_key_id
     }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = input;
+        self
+    }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redshift_idc_application_arn
+    }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
     pub fn build(
         self,
@@ -313,6 +335,7 @@ impl CreateNamespaceInputBuilder {
             tags: self.tags,
             manage_admin_password: self.manage_admin_password,
             admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
+            redshift_idc_application_arn: self.redshift_idc_application_arn,
         })
     }
 }
@@ -330,6 +353,7 @@ impl ::std::fmt::Debug for CreateNamespaceInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("manage_admin_password", &self.manage_admin_password);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.finish()
     }
 }

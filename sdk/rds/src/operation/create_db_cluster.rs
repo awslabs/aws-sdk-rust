@@ -261,6 +261,8 @@ pub enum CreateDBClusterError {
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
+    /// <p>The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the same source instance.</p>
+    InvalidDbSubnetGroupFault(crate::types::error::InvalidDbSubnetGroupFault),
     /// <p>The DB subnet group cannot be deleted because it's in use.</p>
     InvalidDbSubnetGroupStateFault(crate::types::error::InvalidDbSubnetGroupStateFault),
     /// <p>The global cluster is in an invalid state and can't perform the requested operation.</p>
@@ -271,6 +273,8 @@ pub enum CreateDBClusterError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The specified option group could not be found.</p>
+    OptionGroupNotFoundFault(crate::types::error::OptionGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -318,11 +322,13 @@ impl CreateDBClusterError {
             Self::InsufficientStorageClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbSubnetGroupFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbSubnetGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidGlobalClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsKeyNotAccessibleFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -375,6 +381,10 @@ impl CreateDBClusterError {
     pub fn is_invalid_db_instance_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbInstanceStateFault(_))
     }
+    /// Returns `true` if the error kind is `CreateDBClusterError::InvalidDbSubnetGroupFault`.
+    pub fn is_invalid_db_subnet_group_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbSubnetGroupFault(_))
+    }
     /// Returns `true` if the error kind is `CreateDBClusterError::InvalidDbSubnetGroupStateFault`.
     pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
         matches!(self, Self::InvalidDbSubnetGroupStateFault(_))
@@ -394,6 +404,10 @@ impl CreateDBClusterError {
     /// Returns `true` if the error kind is `CreateDBClusterError::KmsKeyNotAccessibleFault`.
     pub fn is_kms_key_not_accessible_fault(&self) -> bool {
         matches!(self, Self::KmsKeyNotAccessibleFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateDBClusterError::OptionGroupNotFoundFault`.
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::OptionGroupNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBClusterError::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
@@ -415,11 +429,13 @@ impl ::std::error::Error for CreateDBClusterError {
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbSubnetGroupFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGlobalClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -440,11 +456,13 @@ impl ::std::fmt::Display for CreateDBClusterError {
             Self::InsufficientStorageClusterCapacityFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbSubnetGroupFault(_inner) => _inner.fmt(f),
             Self::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidGlobalClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
+            Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -479,11 +497,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBClust
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbSubnetGroupFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidGlobalClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

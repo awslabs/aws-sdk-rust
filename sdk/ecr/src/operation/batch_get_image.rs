@@ -242,10 +242,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchGetImage
 pub enum BatchGetImageError {
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The operation did not succeed because it would have exceeded a service limit for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>
     RepositoryNotFoundException(crate::types::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The image or images were unable to be pulled using the pull through cache rule. This is usually caused because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.</p>
+    UnableToGetUpstreamImageException(crate::types::error::UnableToGetUpstreamImageException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -280,14 +284,20 @@ impl BatchGetImageError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnableToGetUpstreamImageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `BatchGetImageError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `BatchGetImageError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `BatchGetImageError::RepositoryNotFoundException`.
     pub fn is_repository_not_found_exception(&self) -> bool {
@@ -297,13 +307,19 @@ impl BatchGetImageError {
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
     }
+    /// Returns `true` if the error kind is `BatchGetImageError::UnableToGetUpstreamImageException`.
+    pub fn is_unable_to_get_upstream_image_exception(&self) -> bool {
+        matches!(self, Self::UnableToGetUpstreamImageException(_))
+    }
 }
 impl ::std::error::Error for BatchGetImageError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnableToGetUpstreamImageException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -312,8 +328,10 @@ impl ::std::fmt::Display for BatchGetImageError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::RepositoryNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::UnableToGetUpstreamImageException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -336,8 +354,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchGetImage
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnableToGetUpstreamImageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

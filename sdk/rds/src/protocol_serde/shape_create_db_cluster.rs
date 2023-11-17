@@ -209,6 +209,21 @@ pub fn de_create_db_cluster_http_error(
             }
             tmp
         }),
+        "InvalidDBSubnetGroupFault" => crate::operation::create_db_cluster::CreateDBClusterError::InvalidDbSubnetGroupFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidDbSubnetGroupFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_db_subnet_group_fault::de_invalid_db_subnet_group_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidDBSubnetGroupStateFault" => crate::operation::create_db_cluster::CreateDBClusterError::InvalidDbSubnetGroupStateFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -282,6 +297,21 @@ pub fn de_create_db_cluster_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::KmsKeyNotAccessibleFaultBuilder::default();
                 output = crate::protocol_serde::shape_kms_key_not_accessible_fault::de_kms_key_not_accessible_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OptionGroupNotFoundFault" => crate::operation::create_db_cluster::CreateDBClusterError::OptionGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

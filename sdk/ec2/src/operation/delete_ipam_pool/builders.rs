@@ -139,4 +139,24 @@ impl DeleteIpamPoolFluentBuilder {
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ipam_pool_id()
     }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn cascade(mut self, input: bool) -> Self {
+        self.inner = self.inner.cascade(input);
+        self
+    }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_cascade(input);
+        self
+    }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn get_cascade(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cascade()
+    }
 }

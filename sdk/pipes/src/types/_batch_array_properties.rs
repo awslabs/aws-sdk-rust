@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job.</p>
-    pub size: i32,
+    pub size: ::std::option::Option<i32>,
 }
 impl BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
 }
@@ -43,8 +43,6 @@ impl BatchArrayPropertiesBuilder {
     }
     /// Consumes the builder and constructs a [`BatchArrayProperties`](crate::types::BatchArrayProperties).
     pub fn build(self) -> crate::types::BatchArrayProperties {
-        crate::types::BatchArrayProperties {
-            size: self.size.unwrap_or_default(),
-        }
+        crate::types::BatchArrayProperties { size: self.size }
     }
 }

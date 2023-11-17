@@ -23,12 +23,12 @@ pub struct GetMonitorOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub max_city_networks_to_monitor: i32,
+    pub max_city_networks_to_monitor: ::std::option::Option<i32>,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub traffic_percentage_to_monitor: i32,
+    pub traffic_percentage_to_monitor: ::std::option::Option<i32>,
     /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub health_events_config: ::std::option::Option<crate::types::HealthEventsConfig>,
@@ -76,7 +76,7 @@ impl GetMonitorOutput {
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. This limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn max_city_networks_to_monitor(&self) -> i32 {
+    pub fn max_city_networks_to_monitor(&self) -> ::std::option::Option<i32> {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
@@ -85,7 +85,7 @@ impl GetMonitorOutput {
     }
     /// <p>The percentage of the internet-facing traffic for your application to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn traffic_percentage_to_monitor(&self) -> i32 {
+    pub fn traffic_percentage_to_monitor(&self) -> ::std::option::Option<i32> {
         self.traffic_percentage_to_monitor
     }
     /// <p>The list of health event threshold configurations. The threshold percentage for a health score determines, along with other configuration information, when Internet Monitor creates a health event when there's an internet issue that affects your application end users.</p>
@@ -392,9 +392,9 @@ impl GetMonitorOutputBuilder {
             processing_status: self.processing_status,
             processing_status_info: self.processing_status_info,
             tags: self.tags,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
+            max_city_networks_to_monitor: self.max_city_networks_to_monitor,
             internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
+            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor,
             health_events_config: self.health_events_config,
             _request_id: self._request_id,
         })

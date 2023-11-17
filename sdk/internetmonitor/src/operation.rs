@@ -13,6 +13,12 @@ pub mod get_health_event;
 /// Types for the `GetMonitor` operation.
 pub mod get_monitor;
 
+/// Types for the `GetQueryResults` operation.
+pub mod get_query_results;
+
+/// Types for the `GetQueryStatus` operation.
+pub mod get_query_status;
+
 /// Types for the `ListHealthEvents` operation.
 pub mod list_health_events;
 
@@ -21,6 +27,12 @@ pub mod list_monitors;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `StartQuery` operation.
+pub mod start_query;
+
+/// Types for the `StopQuery` operation.
+pub mod stop_query;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

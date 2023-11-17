@@ -136,17 +136,17 @@ impl StartDeviceAuthorizationFluentBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_secret()
     }
-    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    /// <p>The URL for the Amazon Web Services access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn start_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start_url(input.into());
         self
     }
-    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    /// <p>The URL for the Amazon Web Services access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn set_start_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start_url(input);
         self
     }
-    /// <p>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+    /// <p>The URL for the Amazon Web Services access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
     pub fn get_start_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_start_url()
     }

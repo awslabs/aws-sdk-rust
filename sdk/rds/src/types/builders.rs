@@ -69,6 +69,8 @@ pub use crate::types::_db_cluster_role::DbClusterRoleBuilder;
 
 pub use crate::types::_db_cluster_member::DbClusterMemberBuilder;
 
+pub use crate::types::_db_cluster_status_info::DbClusterStatusInfoBuilder;
+
 pub use crate::types::_db_cluster_option_group_status::DbClusterOptionGroupStatusBuilder;
 
 pub use crate::types::_db_security_group::DbSecurityGroupBuilder;

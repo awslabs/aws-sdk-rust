@@ -108,6 +108,18 @@ pub fn ser_schedule_action_settings(
         )?;
         object_26.finish();
     }
+    if let Some(var_27) = &input.static_image_output_activate_settings {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("staticImageOutputActivateSettings").start_object();
+        crate::protocol_serde::shape_static_image_output_activate_schedule_action_settings::ser_static_image_output_activate_schedule_action_settings(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.static_image_output_deactivate_settings {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("staticImageOutputDeactivateSettings").start_object();
+        crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::ser_static_image_output_deactivate_schedule_action_settings(&mut object_30, var_29)?;
+        object_30.finish();
+    }
     Ok(())
 }
 
@@ -191,6 +203,16 @@ where
                         "staticImageDeactivateSettings" => {
                             builder = builder.set_static_image_deactivate_settings(
                                     crate::protocol_serde::shape_static_image_deactivate_schedule_action_settings::de_static_image_deactivate_schedule_action_settings(tokens)?
+                                );
+                        }
+                        "staticImageOutputActivateSettings" => {
+                            builder = builder.set_static_image_output_activate_settings(
+                                    crate::protocol_serde::shape_static_image_output_activate_schedule_action_settings::de_static_image_output_activate_schedule_action_settings(tokens)?
+                                );
+                        }
+                        "staticImageOutputDeactivateSettings" => {
+                            builder = builder.set_static_image_output_deactivate_settings(
+                                    crate::protocol_serde::shape_static_image_output_deactivate_schedule_action_settings::de_static_image_output_deactivate_schedule_action_settings(tokens)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

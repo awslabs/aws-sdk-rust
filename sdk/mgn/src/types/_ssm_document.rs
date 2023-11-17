@@ -9,7 +9,7 @@ pub struct SsmDocument {
     /// <p>AWS Systems Manager Document name or full ARN.</p>
     pub ssm_document_name: ::std::string::String,
     /// <p>AWS Systems Manager Document timeout seconds.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>AWS Systems Manager Document parameters.</p>
@@ -30,7 +30,7 @@ impl SsmDocument {
         self.ssm_document_name.deref()
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>If true, Cutover will not be enabled if the document has failed.</p>
@@ -200,7 +200,7 @@ impl SsmDocumentBuilder {
                     "ssm_document_name was not specified but it is required when building SsmDocument",
                 )
             })?,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             external_parameters: self.external_parameters,

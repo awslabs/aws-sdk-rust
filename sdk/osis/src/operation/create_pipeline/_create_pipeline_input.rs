@@ -15,6 +15,10 @@ pub struct CreatePipelineInput {
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     /// <p>Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.</p>
     pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>List of tags to add to the pipeline upon creation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -43,6 +47,14 @@ impl CreatePipelineInput {
     pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn buffer_options(&self) -> ::std::option::Option<&crate::types::BufferOptions> {
+        self.buffer_options.as_ref()
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
     /// <p>List of tags to add to the pipeline upon creation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -67,6 +79,8 @@ pub struct CreatePipelineInputBuilder {
     pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
+    pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePipelineInputBuilder {
@@ -158,6 +172,34 @@ impl CreatePipelineInputBuilder {
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         &self.vpc_options
     }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn buffer_options(mut self, input: crate::types::BufferOptions) -> Self {
+        self.buffer_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn set_buffer_options(mut self, input: ::std::option::Option<crate::types::BufferOptions>) -> Self {
+        self.buffer_options = input;
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn get_buffer_options(&self) -> &::std::option::Option<crate::types::BufferOptions> {
+        &self.buffer_options
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
+        self.encryption_at_rest_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
+        self.encryption_at_rest_options = input;
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        &self.encryption_at_rest_options
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -189,6 +231,8 @@ impl CreatePipelineInputBuilder {
             pipeline_configuration_body: self.pipeline_configuration_body,
             log_publishing_options: self.log_publishing_options,
             vpc_options: self.vpc_options,
+            buffer_options: self.buffer_options,
+            encryption_at_rest_options: self.encryption_at_rest_options,
             tags: self.tags,
         })
     }

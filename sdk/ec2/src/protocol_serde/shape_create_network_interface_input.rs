@@ -138,6 +138,11 @@ pub fn ser_create_network_interface_input_input_input(
     if let Some(var_52) = &input.enable_primary_ipv6 {
         scope_51.boolean(*var_52);
     }
+    #[allow(unused_mut)]
+    let mut scope_53 = writer.prefix("ConnectionTrackingSpecification");
+    if let Some(var_54) = &input.connection_tracking_specification {
+        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_53, var_54)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

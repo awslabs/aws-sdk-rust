@@ -11,6 +11,8 @@ pub struct DeletePullThroughCacheRuleOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub credential_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeletePullThroughCacheRuleOutput {
@@ -29,6 +31,10 @@ impl DeletePullThroughCacheRuleOutput {
     /// <p>The registry ID associated with the request.</p>
     pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn credential_arn(&self) -> ::std::option::Option<&str> {
+        self.credential_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeletePullThroughCacheRuleOutput {
@@ -51,6 +57,7 @@ pub struct DeletePullThroughCacheRuleOutputBuilder {
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeletePullThroughCacheRuleOutputBuilder {
@@ -110,6 +117,20 @@ impl DeletePullThroughCacheRuleOutputBuilder {
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.credential_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.credential_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +147,7 @@ impl DeletePullThroughCacheRuleOutputBuilder {
             upstream_registry_url: self.upstream_registry_url,
             created_at: self.created_at,
             registry_id: self.registry_id,
+            credential_arn: self.credential_arn,
             _request_id: self._request_id,
         }
     }

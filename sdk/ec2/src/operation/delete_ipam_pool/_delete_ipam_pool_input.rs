@@ -7,6 +7,10 @@ pub struct DeleteIpamPoolInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the pool to delete.</p>
     pub ipam_pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub cascade: ::std::option::Option<bool>,
 }
 impl DeleteIpamPoolInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -16,6 +20,12 @@ impl DeleteIpamPoolInput {
     /// <p>The ID of the pool to delete.</p>
     pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
         self.ipam_pool_id.as_deref()
+    }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn cascade(&self) -> ::std::option::Option<bool> {
+        self.cascade
     }
 }
 impl DeleteIpamPoolInput {
@@ -31,6 +41,7 @@ impl DeleteIpamPoolInput {
 pub struct DeleteIpamPoolInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cascade: ::std::option::Option<bool>,
 }
 impl DeleteIpamPoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -62,6 +73,26 @@ impl DeleteIpamPoolInputBuilder {
     pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_pool_id
     }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn cascade(mut self, input: bool) -> Self {
+        self.cascade = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn set_cascade(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.cascade = input;
+        self
+    }
+    /// <p>Enables you to quickly delete an IPAM pool and all resources within that pool, including provisioned CIDRs, allocations, and other pools.</p> <important>
+    /// <p>You can only use this option to delete pools in the private scope or pools in the public scope with a source resource. A source resource is a resource used to provision CIDRs to a resource planning pool.</p>
+    /// </important>
+    pub fn get_cascade(&self) -> &::std::option::Option<bool> {
+        &self.cascade
+    }
     /// Consumes the builder and constructs a [`DeleteIpamPoolInput`](crate::operation::delete_ipam_pool::DeleteIpamPoolInput).
     pub fn build(
         self,
@@ -69,6 +100,7 @@ impl DeleteIpamPoolInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_ipam_pool::DeleteIpamPoolInput {
             dry_run: self.dry_run,
             ipam_pool_id: self.ipam_pool_id,
+            cascade: self.cascade,
         })
     }
 }

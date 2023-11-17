@@ -4,6 +4,8 @@
 /// <p>This is only supported for the <code>CodeStarSourceConnection</code> action type.</p>
 /// </note> <note>
 /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
+/// </note> <note>
+/// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

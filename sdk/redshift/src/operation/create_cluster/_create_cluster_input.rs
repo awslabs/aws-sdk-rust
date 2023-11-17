@@ -159,6 +159,8 @@ pub struct CreateClusterInput {
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).</p>
     pub multi_az: ::std::option::Option<bool>,
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInput {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -400,6 +402,10 @@ impl CreateClusterInput {
     pub fn multi_az(&self) -> ::std::option::Option<bool> {
         self.multi_az
     }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn redshift_idc_application_arn(&self) -> ::std::option::Option<&str> {
+        self.redshift_idc_application_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -442,6 +448,7 @@ impl ::std::fmt::Debug for CreateClusterInput {
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
+        formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.finish()
     }
 }
@@ -494,6 +501,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) master_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) multi_az: ::std::option::Option<bool>,
+    pub(crate) redshift_idc_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -1292,6 +1300,20 @@ impl CreateClusterInputBuilder {
     pub fn get_multi_az(&self) -> &::std::option::Option<bool> {
         &self.multi_az
     }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.redshift_idc_application_arn = input;
+        self
+    }
+    /// <p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.redshift_idc_application_arn
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -1335,6 +1357,7 @@ impl CreateClusterInputBuilder {
             master_password_secret_kms_key_id: self.master_password_secret_kms_key_id,
             ip_address_type: self.ip_address_type,
             multi_az: self.multi_az,
+            redshift_idc_application_arn: self.redshift_idc_application_arn,
         })
     }
 }
@@ -1379,6 +1402,7 @@ impl ::std::fmt::Debug for CreateClusterInputBuilder {
         formatter.field("master_password_secret_kms_key_id", &self.master_password_secret_kms_key_id);
         formatter.field("ip_address_type", &self.ip_address_type);
         formatter.field("multi_az", &self.multi_az);
+        formatter.field("redshift_idc_application_arn", &self.redshift_idc_application_arn);
         formatter.finish()
     }
 }

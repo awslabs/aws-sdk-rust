@@ -376,6 +376,7 @@ members = [
     "sdk/transcribestreaming",
     "sdk/transfer",
     "sdk/translate",
+    "sdk/trustedadvisor",
     "sdk/verifiedpermissions",
     "sdk/voiceid",
     "sdk/vpclattice",

@@ -6,23 +6,23 @@ pub fn ser_thumbnail_configuration(
     if let Some(var_1) = &input.recording_mode {
         object.key("recordingMode").string(var_1.as_str());
     }
-    if input.target_interval_seconds != 0 {
+    if let Some(var_2) = &input.target_interval_seconds {
         object.key("targetIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.target_interval_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.resolution {
-        object.key("resolution").string(var_2.as_str());
+    if let Some(var_3) = &input.resolution {
+        object.key("resolution").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.storage {
-        let mut array_4 = object.key("storage").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.storage {
+        let mut array_5 = object.key("storage").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     Ok(())
 }

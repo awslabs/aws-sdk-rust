@@ -121,5 +121,11 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdatePullThroughCacheRule` operation.
+pub mod update_pull_through_cache_rule;
+
 /// Types for the `UploadLayerPart` operation.
 pub mod upload_layer_part;
+
+/// Types for the `ValidatePullThroughCacheRule` operation.
+pub mod validate_pull_through_cache_rule;

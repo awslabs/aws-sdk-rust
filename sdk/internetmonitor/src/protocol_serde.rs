@@ -31,11 +31,19 @@ pub(crate) mod shape_get_health_event;
 
 pub(crate) mod shape_get_monitor;
 
+pub(crate) mod shape_get_query_results;
+
+pub(crate) mod shape_get_query_status;
+
 pub(crate) mod shape_list_health_events;
 
 pub(crate) mod shape_list_monitors;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_start_query;
+
+pub(crate) mod shape_stop_query;
 
 pub(crate) mod shape_tag_resource;
 
@@ -69,6 +77,8 @@ pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_start_query_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -79,6 +89,8 @@ pub(crate) mod shape_update_monitor_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_filter_parameter;
+
 pub(crate) mod shape_health_event_list;
 
 pub(crate) mod shape_health_events_config;
@@ -88,6 +100,10 @@ pub(crate) mod shape_impacted_locations_list;
 pub(crate) mod shape_internet_measurements_log_delivery;
 
 pub(crate) mod shape_monitor_list;
+
+pub(crate) mod shape_query_data;
+
+pub(crate) mod shape_query_fields;
 
 pub(crate) mod shape_set_of_arns;
 
@@ -100,6 +116,10 @@ pub(crate) mod shape_impacted_location;
 pub(crate) mod shape_local_health_events_config;
 
 pub(crate) mod shape_monitor;
+
+pub(crate) mod shape_query_field;
+
+pub(crate) mod shape_query_row;
 
 pub(crate) mod shape_s3_config;
 

@@ -23,6 +23,8 @@ impl CreateApiDestinationInputBuilder {
 /// Fluent builder constructing a request to `CreateApiDestination`.
 ///
 /// <p>Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.</p>
+/// <p>API destinations do not support private destinations, such as interface VPC endpoints.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API destinations</a> in the <i>EventBridge User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApiDestinationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

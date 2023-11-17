@@ -292,6 +292,30 @@ pub(crate) fn static_image_activate_schedule_action_settings_correct_errors(
     builder
 }
 
+pub(crate) fn static_image_output_activate_schedule_action_settings_correct_errors(
+    mut builder: crate::types::builders::StaticImageOutputActivateScheduleActionSettingsBuilder,
+) -> crate::types::builders::StaticImageOutputActivateScheduleActionSettingsBuilder {
+    if builder.image.is_none() {
+        builder.image = {
+            let builder = crate::types::builders::InputLocationBuilder::default();
+            Some(crate::serde_util::input_location_correct_errors(builder).build())
+        }
+    }
+    if builder.output_names.is_none() {
+        builder.output_names = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn static_image_output_deactivate_schedule_action_settings_correct_errors(
+    mut builder: crate::types::builders::StaticImageOutputDeactivateScheduleActionSettingsBuilder,
+) -> crate::types::builders::StaticImageOutputDeactivateScheduleActionSettingsBuilder {
+    if builder.output_names.is_none() {
+        builder.output_names = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn archive_group_settings_correct_errors(
     mut builder: crate::types::builders::ArchiveGroupSettingsBuilder,
 ) -> crate::types::builders::ArchiveGroupSettingsBuilder {

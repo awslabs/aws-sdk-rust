@@ -22,9 +22,6 @@ impl DisassociateTrunkInterfaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateTrunkInterface`.
 ///
-/// <note>
-/// <p>This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact your account manager.</p>
-/// </note>
 /// <p>Removes an association between a branch network interface with a trunk network interface.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateTrunkInterfaceFluentBuilder {

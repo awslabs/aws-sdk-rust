@@ -108,17 +108,17 @@ impl StopInputDeviceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
         self
     }
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_device_id(input);
         self
     }
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_device_id()
     }

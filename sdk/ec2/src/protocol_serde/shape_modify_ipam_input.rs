@@ -42,6 +42,11 @@ pub fn ser_modify_ipam_input_input_input(
         }
         list_15.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("Tier");
+    if let Some(var_18) = &input.tier {
+        scope_17.string(var_18.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

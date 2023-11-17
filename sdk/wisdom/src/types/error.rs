@@ -9,6 +9,8 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_request_timeout_exception::RequestTimeoutException;
+
 pub use crate::types::error::_precondition_failed_exception::PreconditionFailedException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
@@ -18,6 +20,8 @@ mod _access_denied_exception;
 mod _conflict_exception;
 
 mod _precondition_failed_exception;
+
+mod _request_timeout_exception;
 
 mod _resource_not_found_exception;
 

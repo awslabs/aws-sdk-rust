@@ -685,6 +685,8 @@ pub use crate::types::_global_configuration_input_end_action::GlobalConfiguratio
 
 pub use crate::types::_feature_activations::FeatureActivations;
 
+pub use crate::types::_feature_activations_output_static_image_overlay_schedule_actions::FeatureActivationsOutputStaticImageOverlayScheduleActions;
+
 pub use crate::types::_feature_activations_input_prepare_schedule_actions::FeatureActivationsInputPrepareScheduleActions;
 
 pub use crate::types::_caption_description::CaptionDescription;
@@ -948,6 +950,10 @@ pub use crate::types::_follow_point::FollowPoint;
 pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeScheduleActionStartSettings;
 
 pub use crate::types::_schedule_action_settings::ScheduleActionSettings;
+
+pub use crate::types::_static_image_output_deactivate_schedule_action_settings::StaticImageOutputDeactivateScheduleActionSettings;
+
+pub use crate::types::_static_image_output_activate_schedule_action_settings::StaticImageOutputActivateScheduleActionSettings;
 
 pub use crate::types::_static_image_deactivate_schedule_action_settings::StaticImageDeactivateScheduleActionSettings;
 
@@ -1306,6 +1312,8 @@ mod _failover_condition_settings;
 mod _feature_activations;
 
 mod _feature_activations_input_prepare_schedule_actions;
+
+mod _feature_activations_output_static_image_overlay_schedule_actions;
 
 mod _fec_output_include_fec;
 
@@ -1976,6 +1984,10 @@ mod _start_timecode;
 mod _static_image_activate_schedule_action_settings;
 
 mod _static_image_deactivate_schedule_action_settings;
+
+mod _static_image_output_activate_schedule_action_settings;
+
+mod _static_image_output_deactivate_schedule_action_settings;
 
 mod _static_key_settings;
 

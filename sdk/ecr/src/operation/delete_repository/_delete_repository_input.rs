@@ -7,7 +7,7 @@ pub struct DeleteRepositoryInput {
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository to delete.</p>
     pub repository_name: ::std::option::Option<::std::string::String>,
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub force: ::std::option::Option<bool>,
 }
 impl DeleteRepositoryInput {
@@ -19,7 +19,7 @@ impl DeleteRepositoryInput {
     pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
@@ -69,17 +69,17 @@ impl DeleteRepositoryInputBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }

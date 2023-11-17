@@ -6,5 +6,11 @@ pub fn ser_start_content_upload_input_input(
     if let Some(var_1) = &input.content_type {
         object.key("contentType").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.presigned_url_time_to_live {
+        object.key("presignedUrlTimeToLive").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     Ok(())
 }

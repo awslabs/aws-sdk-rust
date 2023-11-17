@@ -27,6 +27,7 @@ impl RemoveTargetsInputBuilder {
 /// </note>
 /// <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Allow a short period of time for changes to take effect.</p>
 /// <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>
+/// <p>The maximum number of entries per request is 10.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

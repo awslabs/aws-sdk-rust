@@ -247,6 +247,8 @@ pub use crate::types::_block_public_access_configuration_metadata::BlockPublicAc
 
 pub use crate::types::_studio::Studio;
 
+pub use crate::types::_idc_user_assignment::IdcUserAssignment;
+
 pub use crate::types::_step::Step;
 
 pub use crate::types::_os_release::OsRelease;
@@ -370,6 +372,8 @@ mod _failure_details;
 mod _hadoop_jar_step_config;
 
 mod _hadoop_step_config;
+
+mod _idc_user_assignment;
 
 mod _identity_type;
 

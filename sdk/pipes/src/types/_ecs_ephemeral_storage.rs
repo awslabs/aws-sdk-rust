@@ -45,9 +45,16 @@ impl EcsEphemeralStorageBuilder {
         &self.size_in_gib
     }
     /// Consumes the builder and constructs a [`EcsEphemeralStorage`](crate::types::EcsEphemeralStorage).
-    pub fn build(self) -> crate::types::EcsEphemeralStorage {
-        crate::types::EcsEphemeralStorage {
-            size_in_gib: self.size_in_gib.unwrap_or_default(),
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`size_in_gib`](crate::types::builders::EcsEphemeralStorageBuilder::size_in_gib)
+    pub fn build(self) -> ::std::result::Result<crate::types::EcsEphemeralStorage, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::EcsEphemeralStorage {
+            size_in_gib: self.size_in_gib.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "size_in_gib",
+                    "size_in_gib was not specified but it is required when building EcsEphemeralStorage",
+                )
+            })?,
+        })
     }
 }

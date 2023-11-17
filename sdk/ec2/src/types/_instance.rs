@@ -22,7 +22,7 @@ pub struct Instance {
     pub monitoring: ::std::option::Option<crate::types::Monitoring>,
     /// <p>The location where the instance launched, if applicable.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
-    /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
@@ -161,7 +161,7 @@ impl Instance {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
-    /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
         self.platform.as_ref()
     }
@@ -572,17 +572,17 @@ impl InstanceBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }
-    /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
         self.platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::PlatformValues>) -> Self {
         self.platform = input;
         self
     }
-    /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+    /// <p>The platform. This value is <code>windows</code> for Windows instances; otherwise, it is empty.</p>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::PlatformValues> {
         &self.platform
     }

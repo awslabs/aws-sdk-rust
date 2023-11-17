@@ -23,6 +23,7 @@ impl PutPartnerEventsInputBuilder {
 /// Fluent builder constructing a request to `PutPartnerEvents`.
 ///
 /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services customers do not use this operation.</p>
+/// <p>For information on calculating event batch size, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevent-size.html">Calculating EventBridge PutEvents event entry size</a> in the <i>EventBridge User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPartnerEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

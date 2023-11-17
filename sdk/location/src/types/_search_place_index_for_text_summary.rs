@@ -15,7 +15,7 @@ pub struct SearchPlaceIndexForTextSummary {
     /// <p>Contains the optional country filter specified in the request.</p>
     pub filter_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains the optional result count limit specified in the request.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The bounding box that fully contains all search results.</p> <note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
@@ -60,7 +60,7 @@ impl SearchPlaceIndexForTextSummary {
         self.filter_countries.as_deref().unwrap_or_default()
     }
     /// <p>Contains the optional result count limit specified in the request.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The bounding box that fully contains all search results.</p> <note>
@@ -333,7 +333,7 @@ impl SearchPlaceIndexForTextSummaryBuilder {
             bias_position: self.bias_position,
             filter_b_box: self.filter_b_box,
             filter_countries: self.filter_countries,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             result_b_box: self.result_b_box,
             data_source: self.data_source.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

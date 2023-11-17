@@ -182,4 +182,18 @@ impl UpdateStudioFluentBuilder {
     pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_default_s3_location()
     }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.encryption_key_arn(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_encryption_key_arn(input);
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key_arn()
+    }
 }

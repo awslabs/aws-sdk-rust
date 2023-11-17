@@ -279,6 +279,8 @@ pub enum CreateClusterError {
     NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
     /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
+    /// <p>The application you attempted to find doesn't exist.</p>
+    RedshiftIdcApplicationNotExistsFault(crate::types::error::RedshiftIdcApplicationNotExistsFault),
     /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::types::error::SnapshotScheduleNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
@@ -340,6 +342,7 @@ impl CreateClusterError {
             Self::LimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NumberOfNodesPerClusterLimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NumberOfNodesQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RedshiftIdcApplicationNotExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotScheduleNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TagLimitExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedOperation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -427,6 +430,10 @@ impl CreateClusterError {
     pub fn is_number_of_nodes_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::NumberOfNodesQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `CreateClusterError::RedshiftIdcApplicationNotExistsFault`.
+    pub fn is_redshift_idc_application_not_exists_fault(&self) -> bool {
+        matches!(self, Self::RedshiftIdcApplicationNotExistsFault(_))
+    }
     /// Returns `true` if the error kind is `CreateClusterError::SnapshotScheduleNotFoundFault`.
     pub fn is_snapshot_schedule_not_found_fault(&self) -> bool {
         matches!(self, Self::SnapshotScheduleNotFoundFault(_))
@@ -467,6 +474,7 @@ impl ::std::error::Error for CreateClusterError {
             Self::LimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::NumberOfNodesQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotScheduleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TagLimitExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UnauthorizedOperation(_inner) => ::std::option::Option::Some(_inner),
@@ -498,6 +506,7 @@ impl ::std::fmt::Display for CreateClusterError {
             Self::LimitExceededFault(_inner) => _inner.fmt(f),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => _inner.fmt(f),
             Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => _inner.fmt(f),
             Self::SnapshotScheduleNotFoundFault(_inner) => _inner.fmt(f),
             Self::TagLimitExceededFault(_inner) => _inner.fmt(f),
             Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
@@ -543,6 +552,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCluster
             Self::LimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NumberOfNodesQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RedshiftIdcApplicationNotExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotScheduleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagLimitExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnauthorizedOperation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

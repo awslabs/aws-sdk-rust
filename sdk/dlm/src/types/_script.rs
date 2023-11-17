@@ -15,7 +15,7 @@ pub struct Script {
     pub stages: ::std::option::Option<::std::vec::Vec<crate::types::StageValues>>,
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
-    /// <li> <p>If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
+    /// <li> <p>If you are using custom SSM documents or automating application-consistent snapshots of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
     /// <li> <p>If you are automating VSS Backups, omit this parameter.</p> </li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
@@ -23,6 +23,7 @@ pub struct Script {
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
     /// <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case, Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li>
+    /// <li> <p>If you are automating application-consistent snapshots for SAP HANA workloads, specify <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li>
     /// <li> <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p> </li>
     /// </ul>
     pub execution_handler: ::std::option::Option<::std::string::String>,
@@ -63,7 +64,7 @@ impl Script {
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
-    /// <li> <p>If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
+    /// <li> <p>If you are using custom SSM documents or automating application-consistent snapshots of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
     /// <li> <p>If you are automating VSS Backups, omit this parameter.</p> </li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
@@ -73,6 +74,7 @@ impl Script {
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
     /// <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case, Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li>
+    /// <li> <p>If you are automating application-consistent snapshots for SAP HANA workloads, specify <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li>
     /// <li> <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p> </li>
     /// </ul>
     pub fn execution_handler(&self) -> ::std::option::Option<&str> {
@@ -167,7 +169,7 @@ impl ScriptBuilder {
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
-    /// <li> <p>If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
+    /// <li> <p>If you are using custom SSM documents or automating application-consistent snapshots of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
     /// <li> <p>If you are automating VSS Backups, omit this parameter.</p> </li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
@@ -177,7 +179,7 @@ impl ScriptBuilder {
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
-    /// <li> <p>If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
+    /// <li> <p>If you are using custom SSM documents or automating application-consistent snapshots of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
     /// <li> <p>If you are automating VSS Backups, omit this parameter.</p> </li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
@@ -187,7 +189,7 @@ impl ScriptBuilder {
     }
     /// <p>Indicates the service used to execute the pre and/or post scripts.</p>
     /// <ul>
-    /// <li> <p>If you are using custom SSM documents, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
+    /// <li> <p>If you are using custom SSM documents or automating application-consistent snapshots of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.</p> </li>
     /// <li> <p>If you are automating VSS Backups, omit this parameter.</p> </li>
     /// </ul>
     /// <p>Default: AWS_SYSTEMS_MANAGER</p>
@@ -197,6 +199,7 @@ impl ScriptBuilder {
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
     /// <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case, Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li>
+    /// <li> <p>If you are automating application-consistent snapshots for SAP HANA workloads, specify <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li>
     /// <li> <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p> </li>
     /// </ul>
     /// This field is required.
@@ -207,6 +210,7 @@ impl ScriptBuilder {
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
     /// <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case, Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li>
+    /// <li> <p>If you are automating application-consistent snapshots for SAP HANA workloads, specify <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li>
     /// <li> <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p> </li>
     /// </ul>
     pub fn set_execution_handler(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -216,6 +220,7 @@ impl ScriptBuilder {
     /// <p>The SSM document that includes the pre and/or post scripts to run.</p>
     /// <ul>
     /// <li> <p>If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case, Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code> SSM document.</p> </li>
+    /// <li> <p>If you are automating application-consistent snapshots for SAP HANA workloads, specify <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.</p> </li>
     /// <li> <p>If you are using a custom SSM document that you own, specify either the name or ARN of the SSM document. If you are using a custom SSM document that is shared with you, specify the ARN of the SSM document.</p> </li>
     /// </ul>
     pub fn get_execution_handler(&self) -> &::std::option::Option<::std::string::String> {

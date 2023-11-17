@@ -61,6 +61,8 @@ pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_pull_through_cache_rule::PullThroughCacheRule;
 
+pub use crate::types::_upstream_registry::UpstreamRegistry;
+
 pub use crate::types::_image_scan_findings::ImageScanFindings;
 
 pub use crate::types::_enhanced_image_scan_finding::EnhancedImageScanFinding;
@@ -240,6 +242,8 @@ mod _score_details;
 mod _tag;
 
 mod _tag_status;
+
+mod _upstream_registry;
 
 mod _vulnerable_package;
 

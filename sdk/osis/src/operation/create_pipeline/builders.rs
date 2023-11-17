@@ -192,6 +192,34 @@ impl CreatePipelineFluentBuilder {
     pub fn get_vpc_options(&self) -> &::std::option::Option<crate::types::VpcOptions> {
         self.inner.get_vpc_options()
     }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn buffer_options(mut self, input: crate::types::BufferOptions) -> Self {
+        self.inner = self.inner.buffer_options(input);
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn set_buffer_options(mut self, input: ::std::option::Option<crate::types::BufferOptions>) -> Self {
+        self.inner = self.inner.set_buffer_options(input);
+        self
+    }
+    /// <p>Key-value pairs to configure persistent buffering for the pipeline.</p>
+    pub fn get_buffer_options(&self) -> &::std::option::Option<crate::types::BufferOptions> {
+        self.inner.get_buffer_options()
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
+        self.inner = self.inner.encryption_at_rest_options(input);
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
+        self.inner = self.inner.set_encryption_at_rest_options(input);
+        self
+    }
+    /// <p>Key-value pairs to configure encryption for data that is written to a persistent buffer.</p>
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        self.inner.get_encryption_at_rest_options()
+    }
     /// Appends an item to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

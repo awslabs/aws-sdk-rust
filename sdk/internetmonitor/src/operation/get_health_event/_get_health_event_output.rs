@@ -5,7 +5,7 @@
 pub struct GetHealthEventOutput {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
     pub event_arn: ::std::string::String,
-    /// <p>The internally generated identifier of a health event.</p>
+    /// <p>The internally-generated identifier of a health event.</p>
     pub event_id: ::std::string::String,
     /// <p>The time when a health event started.</p>
     pub started_at: ::aws_smithy_types::DateTime,
@@ -33,7 +33,7 @@ impl GetHealthEventOutput {
         use std::ops::Deref;
         self.event_arn.deref()
     }
-    /// <p>The internally generated identifier of a health event.</p>
+    /// <p>The internally-generated identifier of a health event.</p>
     pub fn event_id(&self) -> &str {
         use std::ops::Deref;
         self.event_id.deref()
@@ -121,18 +121,18 @@ impl GetHealthEventOutputBuilder {
     pub fn get_event_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_arn
     }
-    /// <p>The internally generated identifier of a health event.</p>
+    /// <p>The internally-generated identifier of a health event.</p>
     /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The internally generated identifier of a health event.</p>
+    /// <p>The internally-generated identifier of a health event.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
-    /// <p>The internally generated identifier of a health event.</p>
+    /// <p>The internally-generated identifier of a health event.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }

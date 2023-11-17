@@ -14,6 +14,8 @@ pub struct CreateIpamInput {
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl CreateIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,6 +43,10 @@ impl CreateIpamInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
+        self.tier.as_ref()
+    }
 }
 impl CreateIpamInput {
     /// Creates a new builder-style object to manufacture [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
@@ -58,6 +64,7 @@ pub struct CreateIpamInputBuilder {
     pub(crate) operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl CreateIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -145,6 +152,20 @@ impl CreateIpamInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(mut self, input: crate::types::IpamTier) -> Self {
+        self.tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::IpamTier>) -> Self {
+        self.tier = input;
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`CreateIpamInput`](crate::operation::create_ipam::CreateIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_ipam::CreateIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ipam::CreateIpamInput {
@@ -153,6 +174,7 @@ impl CreateIpamInputBuilder {
             operating_regions: self.operating_regions,
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
+            tier: self.tier,
         })
     }
 }

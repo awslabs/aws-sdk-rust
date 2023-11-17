@@ -23,6 +23,7 @@ impl ListRuleNamesByTargetInputBuilder {
 /// Fluent builder constructing a request to `ListRuleNamesByTarget`.
 ///
 /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.</p>
+/// <p>The maximum number of results per page for requests is 100.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRuleNamesByTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

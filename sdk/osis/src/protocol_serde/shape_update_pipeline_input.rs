@@ -3,26 +3,38 @@ pub fn ser_update_pipeline_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_pipeline::UpdatePipelineInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.log_publishing_options {
+    if let Some(var_1) = &input.buffer_options {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("LogPublishingOptions").start_object();
-        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(&mut object_2, var_1)?;
+        let mut object_2 = object.key("BufferOptions").start_object();
+        crate::protocol_serde::shape_buffer_options::ser_buffer_options(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_units {
+    if let Some(var_3) = &input.encryption_at_rest_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("EncryptionAtRestOptions").start_object();
+        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.log_publishing_options {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("LogPublishingOptions").start_object();
+        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.max_units {
         object.key("MaxUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.min_units {
+    if let Some(var_8) = &input.min_units {
         object.key("MinUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_5) = &input.pipeline_configuration_body {
-        object.key("PipelineConfigurationBody").string(var_5.as_str());
+    if let Some(var_9) = &input.pipeline_configuration_body {
+        object.key("PipelineConfigurationBody").string(var_9.as_str());
     }
     Ok(())
 }

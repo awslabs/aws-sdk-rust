@@ -103,7 +103,11 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_pull_through_cache_rule;
+
 pub(crate) mod shape_upload_layer_part;
+
+pub(crate) mod shape_validate_pull_through_cache_rule;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -229,6 +233,8 @@ pub(crate) mod shape_repository_policy_not_found_exception;
 
 pub(crate) mod shape_scan_not_found_exception;
 
+pub(crate) mod shape_secret_not_found_exception;
+
 pub(crate) mod shape_server_exception;
 
 pub(crate) mod shape_set_repository_policy_input;
@@ -241,15 +247,27 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_tags_exception;
 
+pub(crate) mod shape_unable_to_access_secret_exception;
+
+pub(crate) mod shape_unable_to_decrypt_secret_value_exception;
+
+pub(crate) mod shape_unable_to_get_upstream_image_exception;
+
+pub(crate) mod shape_unable_to_get_upstream_layer_exception;
+
 pub(crate) mod shape_unsupported_image_type_exception;
 
 pub(crate) mod shape_unsupported_upstream_registry_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_pull_through_cache_rule_input;
+
 pub(crate) mod shape_upload_layer_part_input;
 
 pub(crate) mod shape_upload_not_found_exception;
+
+pub(crate) mod shape_validate_pull_through_cache_rule_input;
 
 pub(crate) mod shape_validation_exception;
 

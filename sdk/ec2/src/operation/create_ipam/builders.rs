@@ -190,4 +190,18 @@ impl CreateIpamFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(mut self, input: crate::types::IpamTier) -> Self {
+        self.inner = self.inner.tier(input);
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::IpamTier>) -> Self {
+        self.inner = self.inner.set_tier(input);
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
+        self.inner.get_tier()
+    }
 }

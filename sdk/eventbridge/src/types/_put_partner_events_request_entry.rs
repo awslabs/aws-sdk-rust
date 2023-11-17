@@ -6,13 +6,19 @@
 pub struct PutPartnerEventsRequestEntry {
     /// <p>The date and time of the event.</p>
     pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The event source that is generating the entry.</p>
+    /// <p>The event source that is generating the entry.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub source: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub detail_type: ::std::option::Option<::std::string::String>,
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested sub-objects.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub detail: ::std::option::Option<::std::string::String>,
 }
 impl PutPartnerEventsRequestEntry {
@@ -20,7 +26,9 @@ impl PutPartnerEventsRequestEntry {
     pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
-    /// <p>The event source that is generating the entry.</p>
+    /// <p>The event source that is generating the entry.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
@@ -30,11 +38,15 @@ impl PutPartnerEventsRequestEntry {
     pub fn resources(&self) -> &[::std::string::String] {
         self.resources.as_deref().unwrap_or_default()
     }
-    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn detail_type(&self) -> ::std::option::Option<&str> {
         self.detail_type.as_deref()
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested sub-objects.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn detail(&self) -> ::std::option::Option<&str> {
         self.detail.as_deref()
     }
@@ -71,17 +83,23 @@ impl PutPartnerEventsRequestEntryBuilder {
     pub fn get_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time
     }
-    /// <p>The event source that is generating the entry.</p>
+    /// <p>The event source that is generating the entry.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The event source that is generating the entry.</p>
+    /// <p>The event source that is generating the entry.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The event source that is generating the entry.</p>
+    /// <p>The event source that is generating the entry.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
@@ -105,31 +123,43 @@ impl PutPartnerEventsRequestEntryBuilder {
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }
-    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn set_detail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail_type = input;
         self
     }
-    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
+    /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn get_detail_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.detail_type
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested sub-objects.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn detail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.detail = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested sub-objects.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn set_detail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail = input;
         self
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested sub-objects.</p> <note>
+    /// <p> <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to successfully send an event to an event bus. If you include event entries in a request that do not include each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have each of these properties, EventBridge fails the entire request. </p>
+    /// </note>
     pub fn get_detail(&self) -> &::std::option::Option<::std::string::String> {
         &self.detail
     }

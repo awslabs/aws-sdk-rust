@@ -67,6 +67,8 @@ pub enum Error {
     CustomCnameAssociationFault(crate::types::error::CustomCnameAssociationFault),
     /// <p>An error occurred. The custom domain name couldn't be found.</p>
     CustomDomainAssociationNotFoundFault(crate::types::error::CustomDomainAssociationNotFoundFault),
+    /// <p>A dependent service denied access for the integration.</p>
+    DependentServiceAccessDeniedFault(crate::types::error::DependentServiceAccessDeniedFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
     /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
@@ -182,6 +184,12 @@ pub enum Error {
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::types::error::PartnerNotFoundFault),
+    /// <p>The application you attempted to add already exists.</p>
+    RedshiftIdcApplicationAlreadyExistsFault(crate::types::error::RedshiftIdcApplicationAlreadyExistsFault),
+    /// <p>The application you attempted to find doesn't exist.</p>
+    RedshiftIdcApplicationNotExistsFault(crate::types::error::RedshiftIdcApplicationNotExistsFault),
+    /// <p>The maximum number of Redshift IAM Identity Center applications was exceeded.</p>
+    RedshiftIdcApplicationQuotaExceededFault(crate::types::error::RedshiftIdcApplicationQuotaExceededFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::types::error::ReservedNodeAlreadyExistsFault),
     /// <p>Indicates that the reserved node has already been exchanged.</p>
@@ -312,6 +320,7 @@ impl ::std::fmt::Display for Error {
             Error::CopyToRegionDisabledFault(inner) => inner.fmt(f),
             Error::CustomCnameAssociationFault(inner) => inner.fmt(f),
             Error::CustomDomainAssociationNotFoundFault(inner) => inner.fmt(f),
+            Error::DependentServiceAccessDeniedFault(inner) => inner.fmt(f),
             Error::DependentServiceRequestThrottlingFault(inner) => inner.fmt(f),
             Error::DependentServiceUnavailableFault(inner) => inner.fmt(f),
             Error::EndpointAlreadyExistsFault(inner) => inner.fmt(f),
@@ -369,6 +378,9 @@ impl ::std::fmt::Display for Error {
             Error::NumberOfNodesPerClusterLimitExceededFault(inner) => inner.fmt(f),
             Error::NumberOfNodesQuotaExceededFault(inner) => inner.fmt(f),
             Error::PartnerNotFoundFault(inner) => inner.fmt(f),
+            Error::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::RedshiftIdcApplicationNotExistsFault(inner) => inner.fmt(f),
+            Error::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ReservedNodeAlreadyMigratedFault(inner) => inner.fmt(f),
             Error::ReservedNodeExchangeNotFoundFault(inner) => inner.fmt(f),
@@ -465,6 +477,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CopyToRegionDisabledFault(inner) => inner.meta(),
             Self::CustomCnameAssociationFault(inner) => inner.meta(),
             Self::CustomDomainAssociationNotFoundFault(inner) => inner.meta(),
+            Self::DependentServiceAccessDeniedFault(inner) => inner.meta(),
             Self::DependentServiceRequestThrottlingFault(inner) => inner.meta(),
             Self::DependentServiceUnavailableFault(inner) => inner.meta(),
             Self::EndpointAlreadyExistsFault(inner) => inner.meta(),
@@ -522,6 +535,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NumberOfNodesPerClusterLimitExceededFault(inner) => inner.meta(),
             Self::NumberOfNodesQuotaExceededFault(inner) => inner.meta(),
             Self::PartnerNotFoundFault(inner) => inner.meta(),
+            Self::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.meta(),
+            Self::RedshiftIdcApplicationNotExistsFault(inner) => inner.meta(),
+            Self::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.meta(),
             Self::ReservedNodeAlreadyExistsFault(inner) => inner.meta(),
             Self::ReservedNodeAlreadyMigratedFault(inner) => inner.meta(),
             Self::ReservedNodeExchangeNotFoundFault(inner) => inner.meta(),
@@ -1029,6 +1045,9 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::NumberOfNodesQuotaExceededFault(inner) => {
                 Error::NumberOfNodesQuotaExceededFault(inner)
             }
+            crate::operation::create_cluster::CreateClusterError::RedshiftIdcApplicationNotExistsFault(inner) => {
+                Error::RedshiftIdcApplicationNotExistsFault(inner)
+            }
             crate::operation::create_cluster::CreateClusterError::SnapshotScheduleNotFoundFault(inner) => Error::SnapshotScheduleNotFoundFault(inner),
             crate::operation::create_cluster::CreateClusterError::TagLimitExceededFault(inner) => Error::TagLimitExceededFault(inner),
             crate::operation::create_cluster::CreateClusterError::UnauthorizedOperation(inner) => Error::UnauthorizedOperation(inner),
@@ -1399,6 +1418,49 @@ impl From<crate::operation::create_hsm_configuration::CreateHsmConfigurationErro
                 Error::TagLimitExceededFault(inner)
             }
             crate::operation::create_hsm_configuration::CreateHsmConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError> for Error {
+    fn from(err: crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError) -> Self {
+        match err {
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::RedshiftIdcApplicationAlreadyExistsFault(inner) => {
+                Error::RedshiftIdcApplicationAlreadyExistsFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::RedshiftIdcApplicationQuotaExceededFault(inner) => {
+                Error::RedshiftIdcApplicationQuotaExceededFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::create_redshift_idc_application::CreateRedshiftIdcApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1971,6 +2033,46 @@ impl From<crate::operation::delete_partner::DeletePartnerError> for Error {
             }
             crate::operation::delete_partner::DeletePartnerError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::delete_partner::DeletePartnerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError> for Error {
+    fn from(err: crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError) -> Self {
+        match err {
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
+            }
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError::RedshiftIdcApplicationNotExistsFault(inner) => {
+                Error::RedshiftIdcApplicationNotExistsFault(inner)
+            }
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::delete_redshift_idc_application::DeleteRedshiftIdcApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2995,6 +3097,50 @@ impl From<crate::operation::describe_partners::DescribePartnersError> for Error 
             }
             crate::operation::describe_partners::DescribePartnersError::UnsupportedOperationFault(inner) => Error::UnsupportedOperationFault(inner),
             crate::operation::describe_partners::DescribePartnersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError> for Error {
+    fn from(err: crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError) -> Self {
+        match err {
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
+            }
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError::RedshiftIdcApplicationNotExistsFault(
+                inner,
+            ) => Error::RedshiftIdcApplicationNotExistsFault(inner),
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4183,6 +4329,46 @@ impl From<crate::operation::modify_event_subscription::ModifyEventSubscriptionEr
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError> for Error {
+    fn from(err: crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError) -> Self {
+        match err {
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError::DependentServiceAccessDeniedFault(inner) => {
+                Error::DependentServiceAccessDeniedFault(inner)
+            }
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError::DependentServiceUnavailableFault(inner) => {
+                Error::DependentServiceUnavailableFault(inner)
+            }
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError::RedshiftIdcApplicationNotExistsFault(inner) => {
+                Error::RedshiftIdcApplicationNotExistsFault(inner)
+            }
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError::UnsupportedOperationFault(inner) => {
+                Error::UnsupportedOperationFault(inner)
+            }
+            crate::operation::modify_redshift_idc_application::ModifyRedshiftIdcApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_scheduled_action::ModifyScheduledActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4946,6 +5132,7 @@ impl ::std::error::Error for Error {
             Error::CopyToRegionDisabledFault(inner) => inner.source(),
             Error::CustomCnameAssociationFault(inner) => inner.source(),
             Error::CustomDomainAssociationNotFoundFault(inner) => inner.source(),
+            Error::DependentServiceAccessDeniedFault(inner) => inner.source(),
             Error::DependentServiceRequestThrottlingFault(inner) => inner.source(),
             Error::DependentServiceUnavailableFault(inner) => inner.source(),
             Error::EndpointAlreadyExistsFault(inner) => inner.source(),
@@ -5003,6 +5190,9 @@ impl ::std::error::Error for Error {
             Error::NumberOfNodesPerClusterLimitExceededFault(inner) => inner.source(),
             Error::NumberOfNodesQuotaExceededFault(inner) => inner.source(),
             Error::PartnerNotFoundFault(inner) => inner.source(),
+            Error::RedshiftIdcApplicationAlreadyExistsFault(inner) => inner.source(),
+            Error::RedshiftIdcApplicationNotExistsFault(inner) => inner.source(),
+            Error::RedshiftIdcApplicationQuotaExceededFault(inner) => inner.source(),
             Error::ReservedNodeAlreadyExistsFault(inner) => inner.source(),
             Error::ReservedNodeAlreadyMigratedFault(inner) => inner.source(),
             Error::ReservedNodeExchangeNotFoundFault(inner) => inner.source(),
@@ -5085,6 +5275,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CopyToRegionDisabledFault(e) => e.request_id(),
             Self::CustomCnameAssociationFault(e) => e.request_id(),
             Self::CustomDomainAssociationNotFoundFault(e) => e.request_id(),
+            Self::DependentServiceAccessDeniedFault(e) => e.request_id(),
             Self::DependentServiceRequestThrottlingFault(e) => e.request_id(),
             Self::DependentServiceUnavailableFault(e) => e.request_id(),
             Self::EndpointAlreadyExistsFault(e) => e.request_id(),
@@ -5142,6 +5333,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NumberOfNodesPerClusterLimitExceededFault(e) => e.request_id(),
             Self::NumberOfNodesQuotaExceededFault(e) => e.request_id(),
             Self::PartnerNotFoundFault(e) => e.request_id(),
+            Self::RedshiftIdcApplicationAlreadyExistsFault(e) => e.request_id(),
+            Self::RedshiftIdcApplicationNotExistsFault(e) => e.request_id(),
+            Self::RedshiftIdcApplicationQuotaExceededFault(e) => e.request_id(),
             Self::ReservedNodeAlreadyExistsFault(e) => e.request_id(),
             Self::ReservedNodeAlreadyMigratedFault(e) => e.request_id(),
             Self::ReservedNodeExchangeNotFoundFault(e) => e.request_id(),

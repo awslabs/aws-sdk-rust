@@ -27,6 +27,8 @@ pub struct AllocateIpamPoolCidrInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A preview of the next available CIDR in a pool.</p>
     pub preview_next_cidr: ::std::option::Option<bool>,
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub allowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
     pub disallowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -69,6 +71,12 @@ impl AllocateIpamPoolCidrInput {
     pub fn preview_next_cidr(&self) -> ::std::option::Option<bool> {
         self.preview_next_cidr
     }
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_cidrs.is_none()`.
+    pub fn allowed_cidrs(&self) -> &[::std::string::String] {
+        self.allowed_cidrs.as_deref().unwrap_or_default()
+    }
     /// <p>Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using netmask length for allocation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disallowed_cidrs.is_none()`.
@@ -94,6 +102,7 @@ pub struct AllocateIpamPoolCidrInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) preview_next_cidr: ::std::option::Option<bool>,
+    pub(crate) allowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disallowed_cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AllocateIpamPoolCidrInputBuilder {
@@ -226,6 +235,26 @@ impl AllocateIpamPoolCidrInputBuilder {
     pub fn get_preview_next_cidr(&self) -> &::std::option::Option<bool> {
         &self.preview_next_cidr
     }
+    /// Appends an item to `allowed_cidrs`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_cidrs`](Self::set_allowed_cidrs).
+    ///
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn allowed_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.allowed_cidrs.unwrap_or_default();
+        v.push(input.into());
+        self.allowed_cidrs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn set_allowed_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.allowed_cidrs = input;
+        self
+    }
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn get_allowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.allowed_cidrs
+    }
     /// Appends an item to `disallowed_cidrs`.
     ///
     /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).
@@ -259,6 +288,7 @@ impl AllocateIpamPoolCidrInputBuilder {
             client_token: self.client_token,
             description: self.description,
             preview_next_cidr: self.preview_next_cidr,
+            allowed_cidrs: self.allowed_cidrs,
             disallowed_cidrs: self.disallowed_cidrs,
         })
     }

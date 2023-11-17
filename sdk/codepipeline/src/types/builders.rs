@@ -49,6 +49,8 @@ pub use crate::types::_lambda_executor_configuration::LambdaExecutorConfiguratio
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_source_revision_override::SourceRevisionOverrideBuilder;
+
 pub use crate::types::_pipeline_variable::PipelineVariableBuilder;
 
 pub use crate::types::_list_webhook_item::ListWebhookItemBuilder;

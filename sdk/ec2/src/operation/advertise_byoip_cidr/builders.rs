@@ -126,6 +126,20 @@ impl AdvertiseByoipCidrFluentBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn asn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asn(input.into());
+        self
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asn(input);
+        self
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asn()
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

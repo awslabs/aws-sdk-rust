@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`client_secret(Option<String>)`](crate::operation::register_client::RegisterClientOutput::client_secret): <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     ///   - [`client_id_issued_at(i64)`](crate::operation::register_client::RegisterClientOutput::client_id_issued_at): <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
     ///   - [`client_secret_expires_at(i64)`](crate::operation::register_client::RegisterClientOutput::client_secret_expires_at): <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
-    ///   - [`authorization_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::authorization_endpoint): <p>The endpoint where the client can request authorization.</p>
-    ///   - [`token_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::token_endpoint): <p>The endpoint where the client can get an access token.</p>
+    ///   - [`authorization_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::authorization_endpoint): <p>An endpoint that the client can use to request authorization.</p>
+    ///   - [`token_endpoint(Option<String>)`](crate::operation::register_client::RegisterClientOutput::token_endpoint): <p>An endpoint that the client can use to create tokens.</p>
     /// - On failure, responds with [`SdkError<RegisterClientError>`](crate::operation::register_client::RegisterClientError)
     pub fn register_client(&self) -> crate::operation::register_client::builders::RegisterClientFluentBuilder {
         crate::operation::register_client::builders::RegisterClientFluentBuilder::new(self.handle.clone())

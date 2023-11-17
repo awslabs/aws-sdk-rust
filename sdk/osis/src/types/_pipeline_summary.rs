@@ -20,6 +20,8 @@ pub struct PipelineSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the pipeline was last updated.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineSummary {
     /// <p>The current status of the pipeline.</p>
@@ -54,6 +56,12 @@ impl PipelineSummary {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl PipelineSummary {
     /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::types::PipelineSummary).
@@ -74,6 +82,7 @@ pub struct PipelineSummaryBuilder {
     pub(crate) max_units: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineSummaryBuilder {
     /// <p>The current status of the pipeline.</p>
@@ -188,6 +197,26 @@ impl PipelineSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn build(self) -> crate::types::PipelineSummary {
         crate::types::PipelineSummary {
@@ -199,6 +228,7 @@ impl PipelineSummaryBuilder {
             max_units: self.max_units,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
+            tags: self.tags,
         }
     }
 }

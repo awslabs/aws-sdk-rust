@@ -3,19 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContentUploadInput {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of content to upload.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub presigned_url_time_to_live: ::std::option::Option<i32>,
 }
 impl StartContentUploadInput {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The type of content to upload.</p>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn presigned_url_time_to_live(&self) -> ::std::option::Option<i32> {
+        self.presigned_url_time_to_live
     }
 }
 impl StartContentUploadInput {
@@ -31,20 +37,21 @@ impl StartContentUploadInput {
 pub struct StartContentUploadInputBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) presigned_url_time_to_live: ::std::option::Option<i32>,
 }
 impl StartContentUploadInputBuilder {
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
@@ -63,6 +70,20 @@ impl StartContentUploadInputBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type
     }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn presigned_url_time_to_live(mut self, input: i32) -> Self {
+        self.presigned_url_time_to_live = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn set_presigned_url_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.presigned_url_time_to_live = input;
+        self
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn get_presigned_url_time_to_live(&self) -> &::std::option::Option<i32> {
+        &self.presigned_url_time_to_live
+    }
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
     pub fn build(
         self,
@@ -71,6 +92,7 @@ impl StartContentUploadInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadInput {
             knowledge_base_id: self.knowledge_base_id,
             content_type: self.content_type,
+            presigned_url_time_to_live: self.presigned_url_time_to_live,
         })
     }
 }

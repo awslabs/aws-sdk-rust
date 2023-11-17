@@ -261,6 +261,8 @@ pub enum ModifyDBClusterError {
     InvalidSubnet(crate::types::error::InvalidSubnet),
     /// <p>The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>The specified option group could not be found.</p>
+    OptionGroupNotFoundFault(crate::types::error::OptionGroupNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
     /// <p>The <code>aurora-iopt1</code> storage type isn't available, because you modified the DB cluster to use this storage type less than one month ago.</p>
@@ -310,6 +312,7 @@ impl ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OptionGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StorageTypeNotAvailableFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -363,6 +366,10 @@ impl ModifyDBClusterError {
     pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
         matches!(self, Self::InvalidVpcNetworkStateFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::OptionGroupNotFoundFault`.
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::OptionGroupNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `ModifyDBClusterError::StorageQuotaExceededFault`.
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::StorageQuotaExceededFault(_))
@@ -387,6 +394,7 @@ impl ::std::error::Error for ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::OptionGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::StorageTypeNotAvailableFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -408,6 +416,7 @@ impl ::std::fmt::Display for ModifyDBClusterError {
             Self::InvalidDbSubnetGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            Self::OptionGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::StorageTypeNotAvailableFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -443,6 +452,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBClust
             Self::InvalidDbSubnetGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OptionGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StorageTypeNotAvailableFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

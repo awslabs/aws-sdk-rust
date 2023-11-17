@@ -13,6 +13,8 @@ pub struct UpdateStudioInput {
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
     pub default_s3_location: ::std::option::Option<::std::string::String>,
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStudioInput {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
@@ -37,6 +39,10 @@ impl UpdateStudioInput {
     pub fn default_s3_location(&self) -> ::std::option::Option<&str> {
         self.default_s3_location.as_deref()
     }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl UpdateStudioInput {
     /// Creates a new builder-style object to manufacture [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
@@ -54,6 +60,7 @@ pub struct UpdateStudioInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) default_s3_location: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStudioInputBuilder {
     /// <p>The ID of the Amazon EMR Studio to update.</p>
@@ -133,6 +140,20 @@ impl UpdateStudioInputBuilder {
     pub fn get_default_s3_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_s3_location
     }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::operation::update_studio::UpdateStudioInput).
     pub fn build(
         self,
@@ -143,6 +164,7 @@ impl UpdateStudioInputBuilder {
             description: self.description,
             subnet_ids: self.subnet_ids,
             default_s3_location: self.default_s3_location,
+            encryption_key_arn: self.encryption_key_arn,
         })
     }
 }

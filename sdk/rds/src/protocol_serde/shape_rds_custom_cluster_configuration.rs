@@ -14,6 +14,11 @@ pub fn ser_rds_custom_cluster_configuration(
     if let Some(var_4) = &input.transit_gateway_multicast_domain_id {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("ReplicaMode");
+    if let Some(var_6) = &input.replica_mode {
+        scope_5.string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -26,7 +31,7 @@ pub fn de_rds_custom_cluster_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("InterconnectSubnetId") /* InterconnectSubnetId com.amazonaws.rds#RdsCustomClusterConfiguration$InterconnectSubnetId */ =>  {
-                let var_5 =
+                let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -35,11 +40,11 @@ pub fn de_rds_custom_cluster_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_interconnect_subnet_id(var_5);
+                builder = builder.set_interconnect_subnet_id(var_7);
             }
             ,
             s if s.matches("TransitGatewayMulticastDomainId") /* TransitGatewayMulticastDomainId com.amazonaws.rds#RdsCustomClusterConfiguration$TransitGatewayMulticastDomainId */ =>  {
-                let var_6 =
+                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -48,7 +53,21 @@ pub fn de_rds_custom_cluster_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_transit_gateway_multicast_domain_id(var_6);
+                builder = builder.set_transit_gateway_multicast_domain_id(var_8);
+            }
+            ,
+            s if s.matches("ReplicaMode") /* ReplicaMode com.amazonaws.rds#RdsCustomClusterConfiguration$ReplicaMode */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<crate::types::ReplicaMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ReplicaMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_replica_mode(var_9);
             }
             ,
             _ => {}

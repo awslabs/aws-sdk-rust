@@ -15,6 +15,7 @@
 ///     IpamPoolAllocationResourceType::Custom => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => { /* ... */ },
 ///     IpamPoolAllocationResourceType::IpamPool => { /* ... */ },
+///     IpamPoolAllocationResourceType::Subnet => { /* ... */ },
 ///     IpamPoolAllocationResourceType::Vpc => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum IpamPoolAllocationResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IpamPool,
     #[allow(missing_docs)] // documentation missing in model
+    Subnet,
+    #[allow(missing_docs)] // documentation missing in model
     Vpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for IpamPoolAllocationResourceType {
             "custom" => IpamPoolAllocationResourceType::Custom,
             "ec2-public-ipv4-pool" => IpamPoolAllocationResourceType::Ec2PublicIpv4Pool,
             "ipam-pool" => IpamPoolAllocationResourceType::IpamPool,
+            "subnet" => IpamPoolAllocationResourceType::Subnet,
             "vpc" => IpamPoolAllocationResourceType::Vpc,
             other => IpamPoolAllocationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -80,13 +84,14 @@ impl IpamPoolAllocationResourceType {
             IpamPoolAllocationResourceType::Custom => "custom",
             IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => "ec2-public-ipv4-pool",
             IpamPoolAllocationResourceType::IpamPool => "ipam-pool",
+            IpamPoolAllocationResourceType::Subnet => "subnet",
             IpamPoolAllocationResourceType::Vpc => "vpc",
             IpamPoolAllocationResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["custom", "ec2-public-ipv4-pool", "ipam-pool", "vpc"]
+        &["custom", "ec2-public-ipv4-pool", "ipam-pool", "subnet", "vpc"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamPoolAllocationResourceType {

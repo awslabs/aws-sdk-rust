@@ -11,6 +11,10 @@ pub struct CreatePullThroughCacheRuleOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The registry ID associated with the request.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the upstream registry associated with the pull through cache rule.</p>
+    pub upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub credential_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePullThroughCacheRuleOutput {
@@ -29,6 +33,14 @@ impl CreatePullThroughCacheRuleOutput {
     /// <p>The registry ID associated with the request.</p>
     pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
+    }
+    /// <p>The name of the upstream registry associated with the pull through cache rule.</p>
+    pub fn upstream_registry(&self) -> ::std::option::Option<&crate::types::UpstreamRegistry> {
+        self.upstream_registry.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn credential_arn(&self) -> ::std::option::Option<&str> {
+        self.credential_arn.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreatePullThroughCacheRuleOutput {
@@ -51,6 +63,8 @@ pub struct CreatePullThroughCacheRuleOutputBuilder {
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
+    pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePullThroughCacheRuleOutputBuilder {
@@ -110,6 +124,34 @@ impl CreatePullThroughCacheRuleOutputBuilder {
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }
+    /// <p>The name of the upstream registry associated with the pull through cache rule.</p>
+    pub fn upstream_registry(mut self, input: crate::types::UpstreamRegistry) -> Self {
+        self.upstream_registry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The name of the upstream registry associated with the pull through cache rule.</p>
+    pub fn set_upstream_registry(mut self, input: ::std::option::Option<crate::types::UpstreamRegistry>) -> Self {
+        self.upstream_registry = input;
+        self
+    }
+    /// <p>The name of the upstream registry associated with the pull through cache rule.</p>
+    pub fn get_upstream_registry(&self) -> &::std::option::Option<crate::types::UpstreamRegistry> {
+        &self.upstream_registry
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.credential_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.credential_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
+    pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +168,8 @@ impl CreatePullThroughCacheRuleOutputBuilder {
             upstream_registry_url: self.upstream_registry_url,
             created_at: self.created_at,
             registry_id: self.registry_id,
+            upstream_registry: self.upstream_registry,
+            credential_arn: self.credential_arn,
             _request_id: self._request_id,
         }
     }

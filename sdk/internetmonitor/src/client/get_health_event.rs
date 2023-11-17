@@ -4,10 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor.</p><br>
-    ///   - [`event_id(impl Into<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::set_event_id):<br>required: **true**<br><p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p><br>
+    ///   - [`event_id(impl Into<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::event_id) / [`set_event_id(Option<String>)`](crate::operation::get_health_event::builders::GetHealthEventFluentBuilder::set_event_id):<br>required: **true**<br><p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p><br>
     /// - On success, responds with [`GetHealthEventOutput`](crate::operation::get_health_event::GetHealthEventOutput) with field(s):
     ///   - [`event_arn(String)`](crate::operation::get_health_event::GetHealthEventOutput::event_arn): <p>The Amazon Resource Name (ARN) of the event.</p>
-    ///   - [`event_id(String)`](crate::operation::get_health_event::GetHealthEventOutput::event_id): <p>The internally generated identifier of a health event.</p>
+    ///   - [`event_id(String)`](crate::operation::get_health_event::GetHealthEventOutput::event_id): <p>The internally-generated identifier of a health event.</p>
     ///   - [`started_at(DateTime)`](crate::operation::get_health_event::GetHealthEventOutput::started_at): <p>The time when a health event started.</p>
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_health_event::GetHealthEventOutput::ended_at): <p>The time when a health event was resolved. If the health event is still active, the end time is not set.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_health_event::GetHealthEventOutput::created_at): <p>The time when a health event was created.</p>

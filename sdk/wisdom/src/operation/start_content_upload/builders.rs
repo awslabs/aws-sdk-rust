@@ -108,17 +108,17 @@ impl StartContentUploadFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
@@ -135,5 +135,19 @@ impl StartContentUploadFluentBuilder {
     /// <p>The type of content to upload.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn presigned_url_time_to_live(mut self, input: i32) -> Self {
+        self.inner = self.inner.presigned_url_time_to_live(input);
+        self
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn set_presigned_url_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_presigned_url_time_to_live(input);
+        self
+    }
+    /// <p>The expected expiration time of the generated presigned URL, specified in minutes.</p>
+    pub fn get_presigned_url_time_to_live(&self) -> &::std::option::Option<i32> {
+        self.inner.get_presigned_url_time_to_live()
     }
 }

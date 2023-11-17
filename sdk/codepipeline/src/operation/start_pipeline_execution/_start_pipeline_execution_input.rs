@@ -10,6 +10,8 @@ pub struct StartPipelineExecutionInput {
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>>,
     /// <p>The system-generated unique ID used to identify a unique execution request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub source_revisions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>>,
 }
 impl StartPipelineExecutionInput {
     /// <p>The name of the pipeline to start.</p>
@@ -26,6 +28,12 @@ impl StartPipelineExecutionInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_revisions.is_none()`.
+    pub fn source_revisions(&self) -> &[crate::types::SourceRevisionOverride] {
+        self.source_revisions.as_deref().unwrap_or_default()
+    }
 }
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
@@ -41,6 +49,7 @@ pub struct StartPipelineExecutionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariable>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) source_revisions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>>,
 }
 impl StartPipelineExecutionInputBuilder {
     /// <p>The name of the pipeline to start.</p>
@@ -92,6 +101,26 @@ impl StartPipelineExecutionInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// Appends an item to `source_revisions`.
+    ///
+    /// To override the contents of this collection use [`set_source_revisions`](Self::set_source_revisions).
+    ///
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn source_revisions(mut self, input: crate::types::SourceRevisionOverride) -> Self {
+        let mut v = self.source_revisions.unwrap_or_default();
+        v.push(input);
+        self.source_revisions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn set_source_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>>) -> Self {
+        self.source_revisions = input;
+        self
+    }
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn get_source_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>> {
+        &self.source_revisions
+    }
     /// Consumes the builder and constructs a [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn build(
         self,
@@ -103,6 +132,7 @@ impl StartPipelineExecutionInputBuilder {
             name: self.name,
             variables: self.variables,
             client_request_token: self.client_request_token,
+            source_revisions: self.source_revisions,
         })
     }
 }

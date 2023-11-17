@@ -13,6 +13,46 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_knowledge_base_type::KnowledgeBaseType;
 
+pub use crate::types::_import_job_data::ImportJobData;
+
+pub use crate::types::_external_source_configuration::ExternalSourceConfiguration;
+
+pub use crate::types::_configuration::Configuration;
+
+pub use crate::types::_connect_configuration::ConnectConfiguration;
+
+pub use crate::types::_external_source::ExternalSource;
+
+pub use crate::types::_import_job_status::ImportJobStatus;
+
+pub use crate::types::_import_job_type::ImportJobType;
+
+pub use crate::types::_quick_response_search_result_data::QuickResponseSearchResultData;
+
+pub use crate::types::_grouping_configuration::GroupingConfiguration;
+
+pub use crate::types::_quick_response_contents::QuickResponseContents;
+
+pub use crate::types::_quick_response_content_provider::QuickResponseContentProvider;
+
+pub use crate::types::_quick_response_status::QuickResponseStatus;
+
+pub use crate::types::_quick_response_search_expression::QuickResponseSearchExpression;
+
+pub use crate::types::_quick_response_order_field::QuickResponseOrderField;
+
+pub use crate::types::_order::Order;
+
+pub use crate::types::_quick_response_filter_field::QuickResponseFilterField;
+
+pub use crate::types::_quick_response_filter_operator::QuickResponseFilterOperator;
+
+pub use crate::types::_quick_response_query_field::QuickResponseQueryField;
+
+pub use crate::types::_priority::Priority;
+
+pub use crate::types::_quick_response_query_operator::QuickResponseQueryOperator;
+
 pub use crate::types::_content_summary::ContentSummary;
 
 pub use crate::types::_content_status::ContentStatus;
@@ -25,7 +65,15 @@ pub use crate::types::_filter_operator::FilterOperator;
 
 pub use crate::types::_filter_field::FilterField;
 
+pub use crate::types::_import_job_summary::ImportJobSummary;
+
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummary;
+
+pub use crate::types::_quick_response_summary::QuickResponseSummary;
+
+pub use crate::types::_quick_response_data::QuickResponseData;
+
+pub use crate::types::_quick_response_data_provider::QuickResponseDataProvider;
 
 pub use crate::types::_content_data::ContentData;
 
@@ -107,6 +155,10 @@ mod _assistant_type;
 
 mod _association_type;
 
+mod _configuration;
+
+mod _connect_configuration;
+
 mod _content_data;
 
 mod _content_reference;
@@ -119,13 +171,27 @@ mod _document;
 
 mod _document_text;
 
+mod _external_source;
+
+mod _external_source_configuration;
+
 mod _filter;
 
 mod _filter_field;
 
 mod _filter_operator;
 
+mod _grouping_configuration;
+
 mod _highlight;
+
+mod _import_job_data;
+
+mod _import_job_status;
+
+mod _import_job_summary;
+
+mod _import_job_type;
 
 mod _knowledge_base_association_data;
 
@@ -139,7 +205,37 @@ mod _knowledge_base_type;
 
 mod _notify_recommendations_received_error;
 
+mod _order;
+
+mod _priority;
+
 mod _query_recommendation_trigger_data;
+
+mod _quick_response_content_provider;
+
+mod _quick_response_contents;
+
+mod _quick_response_data;
+
+mod _quick_response_data_provider;
+
+mod _quick_response_filter_field;
+
+mod _quick_response_filter_operator;
+
+mod _quick_response_order_field;
+
+mod _quick_response_query_field;
+
+mod _quick_response_query_operator;
+
+mod _quick_response_search_expression;
+
+mod _quick_response_search_result_data;
+
+mod _quick_response_status;
+
+mod _quick_response_summary;
 
 mod _recommendation_data;
 

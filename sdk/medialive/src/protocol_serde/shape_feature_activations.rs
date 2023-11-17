@@ -6,6 +6,9 @@ pub fn ser_feature_activations(
     if let Some(var_1) = &input.input_prepare_schedule_actions {
         object.key("inputPrepareScheduleActions").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.output_static_image_overlay_schedule_actions {
+        object.key("outputStaticImageOverlayScheduleActions").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -30,6 +33,16 @@ where
                                     .map(|s| {
                                         s.to_unescaped()
                                             .map(|u| crate::types::FeatureActivationsInputPrepareScheduleActions::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "outputStaticImageOverlayScheduleActions" => {
+                            builder = builder.set_output_static_image_overlay_schedule_actions(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::FeatureActivationsOutputStaticImageOverlayScheduleActions::from(u.as_ref()))
                                     })
                                     .transpose()?,
                             );

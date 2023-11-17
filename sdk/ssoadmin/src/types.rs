@@ -3,6 +3,10 @@ pub use crate::types::_grant_item::GrantItem;
 
 pub use crate::types::_grant::Grant;
 
+pub use crate::types::_token_exchange_grant::TokenExchangeGrant;
+
+pub use crate::types::_refresh_token_grant::RefreshTokenGrant;
+
 pub use crate::types::_jwt_bearer_grant::JwtBearerGrant;
 
 pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuer;
@@ -205,6 +209,8 @@ mod _provision_target_type;
 
 mod _provisioning_status;
 
+mod _refresh_token_grant;
+
 mod _resource_server_config;
 
 mod _resource_server_scope_details;
@@ -220,6 +226,8 @@ mod _status_values;
 mod _tag;
 
 mod _target_type;
+
+mod _token_exchange_grant;
 
 mod _trusted_token_issuer_configuration;
 

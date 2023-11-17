@@ -277,4 +277,18 @@ impl CreateNamespaceFluentBuilder {
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_password_secret_kms_key_id()
     }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn redshift_idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.redshift_idc_application_arn(input.into());
+        self
+    }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn set_redshift_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_redshift_idc_application_arn(input);
+        self
+    }
+    /// <p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>
+    pub fn get_redshift_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_redshift_idc_application_arn()
+    }
 }

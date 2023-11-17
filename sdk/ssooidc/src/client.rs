@@ -92,6 +92,8 @@ impl Client {
 
 mod create_token;
 
+mod create_token_with_iam;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

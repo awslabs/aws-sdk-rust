@@ -19,6 +19,8 @@ pub enum Error {
     InvalidGrantException(crate::types::error::InvalidGrantException),
     /// <p>Indicates that something is wrong with the input to the request. For example, a required parameter might be missing or out of range.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>Indicates that a token provided as input to the request was issued by and is only usable by calling IAM Identity Center endpoints in another region.</p>
+    InvalidRequestRegionException(crate::types::error::InvalidRequestRegionException),
     /// <p>Indicates that the scope provided in the request is invalid.</p>
     InvalidScopeException(crate::types::error::InvalidScopeException),
     /// <p>Indicates that the client is making the request too frequently and is more than the service can handle. </p>
@@ -47,6 +49,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidClientMetadataException(inner) => inner.fmt(f),
             Error::InvalidGrantException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
+            Error::InvalidRequestRegionException(inner) => inner.fmt(f),
             Error::InvalidScopeException(inner) => inner.fmt(f),
             Error::SlowDownException(inner) => inner.fmt(f),
             Error::UnauthorizedClientException(inner) => inner.fmt(f),
@@ -80,6 +83,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidClientMetadataException(inner) => inner.meta(),
             Self::InvalidGrantException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidRequestRegionException(inner) => inner.meta(),
             Self::InvalidScopeException(inner) => inner.meta(),
             Self::SlowDownException(inner) => inner.meta(),
             Self::UnauthorizedClientException(inner) => inner.meta(),
@@ -117,6 +121,47 @@ impl From<crate::operation::create_token::CreateTokenError> for Error {
             crate::operation::create_token::CreateTokenError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
             crate::operation::create_token::CreateTokenError::UnsupportedGrantTypeException(inner) => Error::UnsupportedGrantTypeException(inner),
             crate::operation::create_token::CreateTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_token_with_iam::CreateTokenWithIAMError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_token_with_iam::CreateTokenWithIAMError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_token_with_iam::CreateTokenWithIAMError> for Error {
+    fn from(err: crate::operation::create_token_with_iam::CreateTokenWithIAMError) -> Self {
+        match err {
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::AuthorizationPendingException(inner) => {
+                Error::AuthorizationPendingException(inner)
+            }
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InvalidClientException(inner) => Error::InvalidClientException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InvalidGrantException(inner) => Error::InvalidGrantException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InvalidRequestRegionException(inner) => {
+                Error::InvalidRequestRegionException(inner)
+            }
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::SlowDownException(inner) => Error::SlowDownException(inner),
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::UnauthorizedClientException(inner) => {
+                Error::UnauthorizedClientException(inner)
+            }
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::UnsupportedGrantTypeException(inner) => {
+                Error::UnsupportedGrantTypeException(inner)
+            }
+            crate::operation::create_token_with_iam::CreateTokenWithIAMError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -195,6 +240,7 @@ impl ::std::error::Error for Error {
             Error::InvalidClientMetadataException(inner) => inner.source(),
             Error::InvalidGrantException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidRequestRegionException(inner) => inner.source(),
             Error::InvalidScopeException(inner) => inner.source(),
             Error::SlowDownException(inner) => inner.source(),
             Error::UnauthorizedClientException(inner) => inner.source(),
@@ -214,6 +260,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidClientMetadataException(e) => e.request_id(),
             Self::InvalidGrantException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
+            Self::InvalidRequestRegionException(e) => e.request_id(),
             Self::InvalidScopeException(e) => e.request_id(),
             Self::SlowDownException(e) => e.request_id(),
             Self::UnauthorizedClientException(e) => e.request_id(),

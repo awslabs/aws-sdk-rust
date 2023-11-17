@@ -33,8 +33,18 @@ pub fn de_byoip_cidr(
                 builder = builder.set_description(var_2);
             }
             ,
-            s if s.matches("statusMessage") /* StatusMessage com.amazonaws.ec2#ByoipCidr$StatusMessage */ =>  {
+            s if s.matches("asnAssociationSet") /* AsnAssociations com.amazonaws.ec2#ByoipCidr$AsnAssociations */ =>  {
                 let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_asn_association_set::de_asn_association_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_asn_associations(var_3);
+            }
+            ,
+            s if s.matches("statusMessage") /* StatusMessage com.amazonaws.ec2#ByoipCidr$StatusMessage */ =>  {
+                let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -43,11 +53,11 @@ pub fn de_byoip_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_status_message(var_3);
+                builder = builder.set_status_message(var_4);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#ByoipCidr$State */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         Result::<crate::types::ByoipCidrState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ByoipCidrState::from(
@@ -57,7 +67,7 @@ pub fn de_byoip_cidr(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_4);
+                builder = builder.set_state(var_5);
             }
             ,
             _ => {}

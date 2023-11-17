@@ -252,6 +252,8 @@ pub enum GetDownloadUrlForLayerError {
     RepositoryNotFoundException(crate::types::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>There was an issue getting the upstream layer matching the pull through cache rule.</p>
+    UnableToGetUpstreamLayerException(crate::types::error::UnableToGetUpstreamLayerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -290,6 +292,7 @@ impl GetDownloadUrlForLayerError {
             Self::LayersNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnableToGetUpstreamLayerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -313,6 +316,10 @@ impl GetDownloadUrlForLayerError {
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
     }
+    /// Returns `true` if the error kind is `GetDownloadUrlForLayerError::UnableToGetUpstreamLayerException`.
+    pub fn is_unable_to_get_upstream_layer_exception(&self) -> bool {
+        matches!(self, Self::UnableToGetUpstreamLayerException(_))
+    }
 }
 impl ::std::error::Error for GetDownloadUrlForLayerError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -322,6 +329,7 @@ impl ::std::error::Error for GetDownloadUrlForLayerError {
             Self::LayersNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnableToGetUpstreamLayerException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -334,6 +342,7 @@ impl ::std::fmt::Display for GetDownloadUrlForLayerError {
             Self::LayersNotFoundException(_inner) => _inner.fmt(f),
             Self::RepositoryNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::UnableToGetUpstreamLayerException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -360,6 +369,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDownloadUr
             Self::LayersNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnableToGetUpstreamLayerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -20,6 +20,8 @@ pub struct ModifyNetworkInterfaceAttributeInput {
     pub ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
     /// <p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
     pub enable_primary_ipv6: ::std::option::Option<bool>,
+    /// <p>A connection tracking specification.</p>
+    pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
@@ -56,6 +58,10 @@ impl ModifyNetworkInterfaceAttributeInput {
     pub fn enable_primary_ipv6(&self) -> ::std::option::Option<bool> {
         self.enable_primary_ipv6
     }
+    /// <p>A connection tracking specification.</p>
+    pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
+        self.connection_tracking_specification.as_ref()
+    }
 }
 impl ModifyNetworkInterfaceAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
@@ -76,6 +82,7 @@ pub struct ModifyNetworkInterfaceAttributeInputBuilder {
     pub(crate) source_dest_check: ::std::option::Option<crate::types::AttributeBooleanValue>,
     pub(crate) ena_srd_specification: ::std::option::Option<crate::types::EnaSrdSpecification>,
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
+    pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
 impl ModifyNetworkInterfaceAttributeInputBuilder {
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
@@ -197,6 +204,23 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         &self.enable_primary_ipv6
     }
+    /// <p>A connection tracking specification.</p>
+    pub fn connection_tracking_specification(mut self, input: crate::types::ConnectionTrackingSpecificationRequest) -> Self {
+        self.connection_tracking_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A connection tracking specification.</p>
+    pub fn set_connection_tracking_specification(
+        mut self,
+        input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    ) -> Self {
+        self.connection_tracking_specification = input;
+        self
+    }
+    /// <p>A connection tracking specification.</p>
+    pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
+        &self.connection_tracking_specification
+    }
     /// Consumes the builder and constructs a [`ModifyNetworkInterfaceAttributeInput`](crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeInput).
     pub fn build(
         self,
@@ -214,6 +238,7 @@ impl ModifyNetworkInterfaceAttributeInputBuilder {
                 source_dest_check: self.source_dest_check,
                 ena_srd_specification: self.ena_srd_specification,
                 enable_primary_ipv6: self.enable_primary_ipv6,
+                connection_tracking_specification: self.connection_tracking_specification,
             },
         )
     }

@@ -80,6 +80,21 @@ pub fn de_create_pipeline_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::create_pipeline::CreatePipelineError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_pipeline::CreatePipelineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::create_pipeline::CreatePipelineError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

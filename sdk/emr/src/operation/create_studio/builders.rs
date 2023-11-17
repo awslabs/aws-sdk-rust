@@ -298,4 +298,60 @@ impl CreateStudioFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    pub fn trusted_identity_propagation_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.trusted_identity_propagation_enabled(input);
+        self
+    }
+    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    pub fn set_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_trusted_identity_propagation_enabled(input);
+        self
+    }
+    /// <p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>
+    pub fn get_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_trusted_identity_propagation_enabled()
+    }
+    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn idc_user_assignment(mut self, input: crate::types::IdcUserAssignment) -> Self {
+        self.inner = self.inner.idc_user_assignment(input);
+        self
+    }
+    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn set_idc_user_assignment(mut self, input: ::std::option::Option<crate::types::IdcUserAssignment>) -> Self {
+        self.inner = self.inner.set_idc_user_assignment(input);
+        self
+    }
+    /// <p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn get_idc_user_assignment(&self) -> &::std::option::Option<crate::types::IdcUserAssignment> {
+        self.inner.get_idc_user_assignment()
+    }
+    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.idc_instance_arn(input.into());
+        self
+    }
+    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_idc_instance_arn(input);
+        self
+    }
+    /// <p> The ARN of the IAM Identity Center instance to create the Studio application. </p>
+    pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_idc_instance_arn()
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.encryption_key_arn(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_encryption_key_arn(input);
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_encryption_key_arn()
+    }
 }

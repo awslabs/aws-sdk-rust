@@ -12,5 +12,11 @@ pub fn ser_create_pull_through_cache_rule_input_input(
     if let Some(var_3) = &input.registry_id {
         object.key("registryId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.upstream_registry {
+        object.key("upstreamRegistry").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.credential_arn {
+        object.key("credentialArn").string(var_5.as_str());
+    }
     Ok(())
 }

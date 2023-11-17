@@ -3,6 +3,10 @@ pub use crate::types::_byoip_cidr::ByoipCidr;
 
 pub use crate::types::_byoip_cidr_state::ByoipCidrState;
 
+pub use crate::types::_asn_association::AsnAssociation;
+
+pub use crate::types::_asn_association_state::AsnAssociationState;
+
 pub use crate::types::_security_group_rule_description::SecurityGroupRuleDescription;
 
 pub use crate::types::_ip_permission::IpPermission;
@@ -179,6 +183,8 @@ pub use crate::types::_device_type::DeviceType;
 
 pub use crate::types::_instance_network_interface::InstanceNetworkInterface;
 
+pub use crate::types::_connection_tracking_specification_response::ConnectionTrackingSpecificationResponse;
+
 pub use crate::types::_instance_ipv6_prefix::InstanceIpv6Prefix;
 
 pub use crate::types::_instance_ipv4_prefix::InstanceIpv4Prefix;
@@ -264,6 +270,8 @@ pub use crate::types::_elastic_inference_accelerator::ElasticInferenceAccelerato
 pub use crate::types::_elastic_gpu_specification::ElasticGpuSpecification;
 
 pub use crate::types::_instance_network_interface_specification::InstanceNetworkInterfaceSpecification;
+
+pub use crate::types::_connection_tracking_specification_request::ConnectionTrackingSpecificationRequest;
 
 pub use crate::types::_ena_srd_specification_request::EnaSrdSpecificationRequest;
 
@@ -512,6 +520,12 @@ pub use crate::types::_ipam_pool_cidr_failure_code::IpamPoolCidrFailureCode;
 pub use crate::types::_ipam_pool_cidr_state::IpamPoolCidrState;
 
 pub use crate::types::_ipam_cidr_authorization_context::IpamCidrAuthorizationContext;
+
+pub use crate::types::_byoasn::Byoasn;
+
+pub use crate::types::_asn_state::AsnState;
+
+pub use crate::types::_asn_authorization_context::AsnAuthorizationContext;
 
 pub use crate::types::_cidr_authorization_context::CidrAuthorizationContext;
 
@@ -777,6 +791,10 @@ pub use crate::types::_ipam_resource_type::IpamResourceType;
 
 pub use crate::types::_ipam_pool::IpamPool;
 
+pub use crate::types::_ipam_pool_source_resource::IpamPoolSourceResource;
+
+pub use crate::types::_ipam_pool_source_resource_type::IpamPoolSourceResourceType;
+
 pub use crate::types::_ipam_pool_public_ip_source::IpamPoolPublicIpSource;
 
 pub use crate::types::_ipam_pool_aws_service::IpamPoolAwsService;
@@ -788,6 +806,8 @@ pub use crate::types::_ipam_pool_state::IpamPoolState;
 pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 
 pub use crate::types::_ipam::Ipam;
+
+pub use crate::types::_ipam_tier::IpamTier;
 
 pub use crate::types::_ipam_state::IpamState;
 
@@ -1063,6 +1083,8 @@ pub use crate::types::_launch_templates_monitoring::LaunchTemplatesMonitoring;
 
 pub use crate::types::_launch_template_instance_network_interface_specification::LaunchTemplateInstanceNetworkInterfaceSpecification;
 
+pub use crate::types::_connection_tracking_specification::ConnectionTrackingSpecification;
+
 pub use crate::types::_launch_template_ena_srd_specification::LaunchTemplateEnaSrdSpecification;
 
 pub use crate::types::_launch_template_ena_srd_udp_specification::LaunchTemplateEnaSrdUdpSpecification;
@@ -1082,6 +1104,20 @@ pub use crate::types::_ipam_pool_allocation::IpamPoolAllocation;
 pub use crate::types::_ipam_pool_allocation_resource_type::IpamPoolAllocationResourceType;
 
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr;
+
+pub use crate::types::_ipam_discovered_public_address::IpamDiscoveredPublicAddress;
+
+pub use crate::types::_ipam_public_address_security_group::IpamPublicAddressSecurityGroup;
+
+pub use crate::types::_ipam_public_address_tags::IpamPublicAddressTags;
+
+pub use crate::types::_ipam_public_address_tag::IpamPublicAddressTag;
+
+pub use crate::types::_ipam_public_address_aws_service::IpamPublicAddressAwsService;
+
+pub use crate::types::_ipam_public_address_type::IpamPublicAddressType;
+
+pub use crate::types::_ipam_public_address_association_status::IpamPublicAddressAssociationStatus;
 
 pub use crate::types::_ipam_discovered_account::IpamDiscoveredAccount;
 
@@ -1488,6 +1524,8 @@ pub use crate::types::_network_interface_association::NetworkInterfaceAssociatio
 pub use crate::types::_network_interface_ipv6_address::NetworkInterfaceIpv6Address;
 
 pub use crate::types::_network_interface_type::NetworkInterfaceType;
+
+pub use crate::types::_connection_tracking_configuration::ConnectionTrackingConfiguration;
 
 pub use crate::types::_network_interface_attachment::NetworkInterfaceAttachment;
 
@@ -2017,6 +2055,8 @@ pub use crate::types::_launch_template_iam_instance_profile_specification_reques
 
 pub use crate::types::_key_format::KeyFormat;
 
+pub use crate::types::_ipam_pool_source_resource_request::IpamPoolSourceResourceRequest;
+
 pub use crate::types::_export_to_s3_task_specification::ExportToS3TaskSpecification;
 
 pub use crate::types::_storage_location::StorageLocation;
@@ -2161,6 +2201,14 @@ mod _architecture_type;
 
 mod _architecture_values;
 
+mod _asn_association;
+
+mod _asn_association_state;
+
+mod _asn_authorization_context;
+
+mod _asn_state;
+
 mod _assigned_private_ip_address;
 
 mod _associated_network_type;
@@ -2228,6 +2276,8 @@ mod _bundle_task_error;
 mod _bundle_task_state;
 
 mod _burstable_performance;
+
+mod _byoasn;
 
 mod _byoip_cidr;
 
@@ -2368,6 +2418,14 @@ mod _connection_notification;
 mod _connection_notification_state;
 
 mod _connection_notification_type;
+
+mod _connection_tracking_configuration;
+
+mod _connection_tracking_specification;
+
+mod _connection_tracking_specification_request;
+
+mod _connection_tracking_specification_response;
 
 mod _connectivity_type;
 
@@ -2971,6 +3029,8 @@ mod _ipam_compliance_status;
 
 mod _ipam_discovered_account;
 
+mod _ipam_discovered_public_address;
+
 mod _ipam_discovered_resource_cidr;
 
 mod _ipam_discovery_failure_code;
@@ -3001,7 +3061,25 @@ mod _ipam_pool_cidr_state;
 
 mod _ipam_pool_public_ip_source;
 
+mod _ipam_pool_source_resource;
+
+mod _ipam_pool_source_resource_request;
+
+mod _ipam_pool_source_resource_type;
+
 mod _ipam_pool_state;
+
+mod _ipam_public_address_association_status;
+
+mod _ipam_public_address_aws_service;
+
+mod _ipam_public_address_security_group;
+
+mod _ipam_public_address_tag;
+
+mod _ipam_public_address_tags;
+
+mod _ipam_public_address_type;
 
 mod _ipam_resource_cidr;
 
@@ -3024,6 +3102,8 @@ mod _ipam_scope_state;
 mod _ipam_scope_type;
 
 mod _ipam_state;
+
+mod _ipam_tier;
 
 mod _ipv4_prefix_specification;
 

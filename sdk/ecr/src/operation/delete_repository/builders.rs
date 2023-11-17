@@ -22,7 +22,7 @@ impl DeleteRepositoryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRepository`.
 ///
-/// <p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>
+/// <p>Deletes a repository. If the repository isn't empty, you must either delete the contents of the repository or use the <code>force</code> option to delete the repository and have Amazon ECR delete all of its contents on your behalf.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRepositoryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl DeleteRepositoryFluentBuilder {
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_repository_name()
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// <p> If a repository contains images, forces the deletion.</p>
+    /// <p>If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }

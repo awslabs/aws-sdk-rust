@@ -23,6 +23,7 @@ impl ListTargetsByRuleInputBuilder {
 /// Fluent builder constructing a request to `ListTargetsByRule`.
 ///
 /// <p>Lists the targets assigned to the specified rule.</p>
+/// <p>The maximum number of results per page for requests is 100.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTargetsByRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

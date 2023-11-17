@@ -21,5 +21,17 @@ pub fn ser_start_pipeline_execution_input_input(
     if let Some(var_6) = &input.client_request_token {
         object.key("clientRequestToken").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.source_revisions {
+        let mut array_8 = object.key("sourceRevisions").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_source_revision_override::ser_source_revision_override(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

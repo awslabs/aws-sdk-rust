@@ -57,10 +57,20 @@ pub enum Error {
     RepositoryPolicyNotFoundException(crate::types::error::RepositoryPolicyNotFoundException),
     /// <p>The specified image scan could not be found. Ensure that image scanning is enabled on the repository and try again.</p>
     ScanNotFoundException(crate::types::error::ScanNotFoundException),
+    /// <p>The ARN of the secret specified in the pull through cache rule was not found. Update the pull through cache rule with a valid secret ARN and try again.</p>
+    SecretNotFoundException(crate::types::error::SecretNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
+    /// <p>The secret is unable to be accessed. Verify the resource permissions for the secret and try again.</p>
+    UnableToAccessSecretException(crate::types::error::UnableToAccessSecretException),
+    /// <p>The secret is accessible but is unable to be decrypted. Verify the resource permisisons and try again.</p>
+    UnableToDecryptSecretValueException(crate::types::error::UnableToDecryptSecretValueException),
+    /// <p>The image or images were unable to be pulled using the pull through cache rule. This is usually caused because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.</p>
+    UnableToGetUpstreamImageException(crate::types::error::UnableToGetUpstreamImageException),
+    /// <p>There was an issue getting the upstream layer matching the pull through cache rule.</p>
+    UnableToGetUpstreamLayerException(crate::types::error::UnableToGetUpstreamLayerException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::types::error::UnsupportedImageTypeException),
     /// <p>The specified upstream registry isn't supported.</p>
@@ -108,8 +118,13 @@ impl ::std::fmt::Display for Error {
             Error::RepositoryNotFoundException(inner) => inner.fmt(f),
             Error::RepositoryPolicyNotFoundException(inner) => inner.fmt(f),
             Error::ScanNotFoundException(inner) => inner.fmt(f),
+            Error::SecretNotFoundException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::UnableToAccessSecretException(inner) => inner.fmt(f),
+            Error::UnableToDecryptSecretValueException(inner) => inner.fmt(f),
+            Error::UnableToGetUpstreamImageException(inner) => inner.fmt(f),
+            Error::UnableToGetUpstreamLayerException(inner) => inner.fmt(f),
             Error::UnsupportedImageTypeException(inner) => inner.fmt(f),
             Error::UnsupportedUpstreamRegistryException(inner) => inner.fmt(f),
             Error::UploadNotFoundException(inner) => inner.fmt(f),
@@ -162,8 +177,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RepositoryNotFoundException(inner) => inner.meta(),
             Self::RepositoryPolicyNotFoundException(inner) => inner.meta(),
             Self::ScanNotFoundException(inner) => inner.meta(),
+            Self::SecretNotFoundException(inner) => inner.meta(),
             Self::ServerException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::UnableToAccessSecretException(inner) => inner.meta(),
+            Self::UnableToDecryptSecretValueException(inner) => inner.meta(),
+            Self::UnableToGetUpstreamImageException(inner) => inner.meta(),
+            Self::UnableToGetUpstreamLayerException(inner) => inner.meta(),
             Self::UnsupportedImageTypeException(inner) => inner.meta(),
             Self::UnsupportedUpstreamRegistryException(inner) => inner.meta(),
             Self::UploadNotFoundException(inner) => inner.meta(),
@@ -253,8 +273,12 @@ impl From<crate::operation::batch_get_image::BatchGetImageError> for Error {
     fn from(err: crate::operation::batch_get_image::BatchGetImageError) -> Self {
         match err {
             crate::operation::batch_get_image::BatchGetImageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::batch_get_image::BatchGetImageError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::batch_get_image::BatchGetImageError::RepositoryNotFoundException(inner) => Error::RepositoryNotFoundException(inner),
             crate::operation::batch_get_image::BatchGetImageError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::batch_get_image::BatchGetImageError::UnableToGetUpstreamImageException(inner) => {
+                Error::UnableToGetUpstreamImageException(inner)
+            }
             crate::operation::batch_get_image::BatchGetImageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -364,8 +388,17 @@ impl From<crate::operation::create_pull_through_cache_rule::CreatePullThroughCac
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::PullThroughCacheRuleAlreadyExistsException(inner) => {
                 Error::PullThroughCacheRuleAlreadyExistsException(inner)
             }
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::SecretNotFoundException(inner) => {
+                Error::SecretNotFoundException(inner)
+            }
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::ServerException(inner) => {
                 Error::ServerException(inner)
+            }
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnableToAccessSecretException(inner) => {
+                Error::UnableToAccessSecretException(inner)
+            }
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnableToDecryptSecretValueException(inner) => {
+                Error::UnableToDecryptSecretValueException(inner)
             }
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnsupportedUpstreamRegistryException(inner) => {
                 Error::UnsupportedUpstreamRegistryException(inner)
@@ -839,6 +872,9 @@ impl From<crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerEr
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::UnableToGetUpstreamLayerException(inner) => {
+                Error::UnableToGetUpstreamLayerException(inner)
+            }
             crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1481,6 +1517,51 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError> for Error {
+    fn from(err: crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError) -> Self {
+        match err {
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::PullThroughCacheRuleNotFoundException(inner) => {
+                Error::PullThroughCacheRuleNotFoundException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::SecretNotFoundException(inner) => {
+                Error::SecretNotFoundException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::UnableToAccessSecretException(inner) => {
+                Error::UnableToAccessSecretException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::UnableToDecryptSecretValueException(inner) => {
+                Error::UnableToDecryptSecretValueException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::upload_layer_part::UploadLayerPartError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1508,6 +1589,46 @@ impl From<crate::operation::upload_layer_part::UploadLayerPartError> for Error {
             crate::operation::upload_layer_part::UploadLayerPartError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::upload_layer_part::UploadLayerPartError::UploadNotFoundException(inner) => Error::UploadNotFoundException(inner),
             crate::operation::upload_layer_part::UploadLayerPartError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError> for Error {
+    fn from(err: crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError) -> Self {
+        match err {
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError::PullThroughCacheRuleNotFoundException(inner) => {
+                Error::PullThroughCacheRuleNotFoundException(inner)
+            }
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1541,8 +1662,13 @@ impl ::std::error::Error for Error {
             Error::RepositoryNotFoundException(inner) => inner.source(),
             Error::RepositoryPolicyNotFoundException(inner) => inner.source(),
             Error::ScanNotFoundException(inner) => inner.source(),
+            Error::SecretNotFoundException(inner) => inner.source(),
             Error::ServerException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::UnableToAccessSecretException(inner) => inner.source(),
+            Error::UnableToDecryptSecretValueException(inner) => inner.source(),
+            Error::UnableToGetUpstreamImageException(inner) => inner.source(),
+            Error::UnableToGetUpstreamLayerException(inner) => inner.source(),
             Error::UnsupportedImageTypeException(inner) => inner.source(),
             Error::UnsupportedUpstreamRegistryException(inner) => inner.source(),
             Error::UploadNotFoundException(inner) => inner.source(),
@@ -1581,8 +1707,13 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RepositoryNotFoundException(e) => e.request_id(),
             Self::RepositoryPolicyNotFoundException(e) => e.request_id(),
             Self::ScanNotFoundException(e) => e.request_id(),
+            Self::SecretNotFoundException(e) => e.request_id(),
             Self::ServerException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::UnableToAccessSecretException(e) => e.request_id(),
+            Self::UnableToDecryptSecretValueException(e) => e.request_id(),
+            Self::UnableToGetUpstreamImageException(e) => e.request_id(),
+            Self::UnableToGetUpstreamLayerException(e) => e.request_id(),
             Self::UnsupportedImageTypeException(e) => e.request_id(),
             Self::UnsupportedUpstreamRegistryException(e) => e.request_id(),
             Self::UploadNotFoundException(e) => e.request_id(),

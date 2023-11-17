@@ -95,6 +95,7 @@ impl From<crate::operation::create_pipeline::CreatePipelineError> for Error {
             crate::operation::create_pipeline::CreatePipelineError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::create_pipeline::CreatePipelineError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_pipeline::CreatePipelineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_pipeline::CreatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }

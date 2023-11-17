@@ -57,5 +57,8 @@ pub fn ser_create_namespace_input_input(
     if let Some(var_18) = &input.admin_password_secret_kms_key_id {
         object.key("adminPasswordSecretKmsKeyId").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.redshift_idc_application_arn {
+        object.key("redshiftIdcApplicationArn").string(var_19.as_str());
+    }
     Ok(())
 }

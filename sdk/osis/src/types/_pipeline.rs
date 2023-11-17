@@ -28,6 +28,14 @@ pub struct Pipeline {
     pub log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     /// <p>The VPC interface endpoints that have access to the pipeline.</p>
     pub vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
+    pub buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.</p>
+    pub service_vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>,
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Pipeline {
     /// <p>The name of the pipeline.</p>
@@ -82,6 +90,26 @@ impl Pipeline {
     pub fn vpc_endpoints(&self) -> &[crate::types::VpcEndpoint] {
         self.vpc_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
+    pub fn buffer_options(&self) -> ::std::option::Option<&crate::types::BufferOptions> {
+        self.buffer_options.as_ref()
+    }
+    /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
+    pub fn encryption_at_rest_options(&self) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
+        self.encryption_at_rest_options.as_ref()
+    }
+    /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_vpc_endpoints.is_none()`.
+    pub fn service_vpc_endpoints(&self) -> &[crate::types::ServiceVpcEndpoint] {
+        self.service_vpc_endpoints.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl Pipeline {
     /// Creates a new builder-style object to manufacture [`Pipeline`](crate::types::Pipeline).
@@ -106,6 +134,10 @@ pub struct PipelineBuilder {
     pub(crate) ingest_endpoint_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) log_publishing_options: ::std::option::Option<crate::types::LogPublishingOptions>,
     pub(crate) vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>>,
+    pub(crate) buffer_options: ::std::option::Option<crate::types::BufferOptions>,
+    pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub(crate) service_vpc_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineBuilder {
     /// <p>The name of the pipeline.</p>
@@ -288,6 +320,74 @@ impl PipelineBuilder {
     pub fn get_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcEndpoint>> {
         &self.vpc_endpoints
     }
+    /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
+    pub fn buffer_options(mut self, input: crate::types::BufferOptions) -> Self {
+        self.buffer_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
+    pub fn set_buffer_options(mut self, input: ::std::option::Option<crate::types::BufferOptions>) -> Self {
+        self.buffer_options = input;
+        self
+    }
+    /// <p>Options that specify the configuration of a persistent buffer. To configure how OpenSearch Ingestion encrypts this data, set the EncryptionAtRestOptions.</p>
+    pub fn get_buffer_options(&self) -> &::std::option::Option<crate::types::BufferOptions> {
+        &self.buffer_options
+    }
+    /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
+    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
+        self.encryption_at_rest_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
+    pub fn set_encryption_at_rest_options(mut self, input: ::std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
+        self.encryption_at_rest_options = input;
+        self
+    }
+    /// <p>Options to control how OpenSearch encrypts all data-at-rest.</p>
+    pub fn get_encryption_at_rest_options(&self) -> &::std::option::Option<crate::types::EncryptionAtRestOptions> {
+        &self.encryption_at_rest_options
+    }
+    /// Appends an item to `service_vpc_endpoints`.
+    ///
+    /// To override the contents of this collection use [`set_service_vpc_endpoints`](Self::set_service_vpc_endpoints).
+    ///
+    /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.</p>
+    pub fn service_vpc_endpoints(mut self, input: crate::types::ServiceVpcEndpoint) -> Self {
+        let mut v = self.service_vpc_endpoints.unwrap_or_default();
+        v.push(input);
+        self.service_vpc_endpoints = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.</p>
+    pub fn set_service_vpc_endpoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>>) -> Self {
+        self.service_vpc_endpoints = input;
+        self
+    }
+    /// <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS services.</p>
+    pub fn get_service_vpc_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVpcEndpoint>> {
+        &self.service_vpc_endpoints
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of tags associated with the given pipeline.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`Pipeline`](crate::types::Pipeline).
     pub fn build(self) -> crate::types::Pipeline {
         crate::types::Pipeline {
@@ -303,6 +403,10 @@ impl PipelineBuilder {
             ingest_endpoint_urls: self.ingest_endpoint_urls,
             log_publishing_options: self.log_publishing_options,
             vpc_endpoints: self.vpc_endpoints,
+            buffer_options: self.buffer_options,
+            encryption_at_rest_options: self.encryption_at_rest_options,
+            service_vpc_endpoints: self.service_vpc_endpoints,
+            tags: self.tags,
         }
     }
 }

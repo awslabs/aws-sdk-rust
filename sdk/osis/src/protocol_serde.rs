@@ -85,7 +85,11 @@ pub(crate) mod shape_validate_pipeline_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_buffer_options;
+
 pub(crate) mod shape_change_progress_status_list;
+
+pub(crate) mod shape_encryption_at_rest_options;
 
 pub(crate) mod shape_log_publishing_options;
 
@@ -117,11 +121,15 @@ pub(crate) mod shape_pipeline_status_reason;
 
 pub(crate) mod shape_pipeline_summary;
 
+pub(crate) mod shape_service_vpc_endpoints_list;
+
 pub(crate) mod shape_validation_message;
 
 pub(crate) mod shape_vpc_endpoints_list;
 
 pub(crate) mod shape_change_progress_stage_list;
+
+pub(crate) mod shape_service_vpc_endpoint;
 
 pub(crate) mod shape_vpc_endpoint;
 

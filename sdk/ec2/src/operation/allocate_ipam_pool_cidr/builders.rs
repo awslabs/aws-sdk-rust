@@ -239,6 +239,24 @@ impl AllocateIpamPoolCidrFluentBuilder {
     pub fn get_preview_next_cidr(&self) -> &::std::option::Option<bool> {
         self.inner.get_preview_next_cidr()
     }
+    /// Appends an item to `AllowedCidrs`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_cidrs`](Self::set_allowed_cidrs).
+    ///
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn allowed_cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.allowed_cidrs(input.into());
+        self
+    }
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn set_allowed_cidrs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_allowed_cidrs(input);
+        self
+    }
+    /// <p>Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask length for allocation.</p>
+    pub fn get_allowed_cidrs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_allowed_cidrs()
+    }
     /// Appends an item to `DisallowedCidrs`.
     ///
     /// To override the contents of this collection use [`set_disallowed_cidrs`](Self::set_disallowed_cidrs).

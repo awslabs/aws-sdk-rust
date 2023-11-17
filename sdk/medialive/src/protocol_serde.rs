@@ -621,6 +621,10 @@ pub(crate) mod shape_static_image_activate_schedule_action_settings;
 
 pub(crate) mod shape_static_image_deactivate_schedule_action_settings;
 
+pub(crate) mod shape_static_image_output_activate_schedule_action_settings;
+
+pub(crate) mod shape_static_image_output_deactivate_schedule_action_settings;
+
 pub(crate) mod shape_teletext_destination_settings;
 
 pub(crate) mod shape_thumbnail;

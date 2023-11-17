@@ -8,6 +8,8 @@ pub struct RdsCustomClusterConfiguration {
     pub interconnect_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Reserved for future use.</p>
     pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
+    /// <p>Reserved for future use.</p>
+    pub replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
 }
 impl RdsCustomClusterConfiguration {
     /// <p>Reserved for future use.</p>
@@ -17,6 +19,10 @@ impl RdsCustomClusterConfiguration {
     /// <p>Reserved for future use.</p>
     pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_multicast_domain_id.as_deref()
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn replica_mode(&self) -> ::std::option::Option<&crate::types::ReplicaMode> {
+        self.replica_mode.as_ref()
     }
 }
 impl RdsCustomClusterConfiguration {
@@ -32,6 +38,7 @@ impl RdsCustomClusterConfiguration {
 pub struct RdsCustomClusterConfigurationBuilder {
     pub(crate) interconnect_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_mode: ::std::option::Option<crate::types::ReplicaMode>,
 }
 impl RdsCustomClusterConfigurationBuilder {
     /// <p>Reserved for future use.</p>
@@ -62,11 +69,26 @@ impl RdsCustomClusterConfigurationBuilder {
     pub fn get_transit_gateway_multicast_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_multicast_domain_id
     }
+    /// <p>Reserved for future use.</p>
+    pub fn replica_mode(mut self, input: crate::types::ReplicaMode) -> Self {
+        self.replica_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_replica_mode(mut self, input: ::std::option::Option<crate::types::ReplicaMode>) -> Self {
+        self.replica_mode = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_replica_mode(&self) -> &::std::option::Option<crate::types::ReplicaMode> {
+        &self.replica_mode
+    }
     /// Consumes the builder and constructs a [`RdsCustomClusterConfiguration`](crate::types::RdsCustomClusterConfiguration).
     pub fn build(self) -> crate::types::RdsCustomClusterConfiguration {
         crate::types::RdsCustomClusterConfiguration {
             interconnect_subnet_id: self.interconnect_subnet_id,
             transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
+            replica_mode: self.replica_mode,
         }
     }
 }

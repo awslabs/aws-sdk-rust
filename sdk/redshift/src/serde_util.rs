@@ -34,3 +34,12 @@ pub(crate) fn integration_error_correct_errors(
     }
     builder
 }
+
+pub(crate) fn lake_formation_query_correct_errors(
+    mut builder: crate::types::builders::LakeFormationQueryBuilder,
+) -> crate::types::builders::LakeFormationQueryBuilder {
+    if builder.authorization.is_none() {
+        builder.authorization = "no value was set".parse::<crate::types::ServiceAuthorization>().ok()
+    }
+    builder
+}

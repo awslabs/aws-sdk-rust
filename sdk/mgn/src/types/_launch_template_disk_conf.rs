@@ -7,9 +7,9 @@ pub struct LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Launch template disk iops configuration.</p>
-    pub iops: i64,
+    pub iops: ::std::option::Option<i64>,
     /// <p>Launch template disk throughput configuration.</p>
-    pub throughput: i64,
+    pub throughput: ::std::option::Option<i64>,
 }
 impl LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
@@ -17,11 +17,11 @@ impl LaunchTemplateDiskConf {
         self.volume_type.as_ref()
     }
     /// <p>Launch template disk iops configuration.</p>
-    pub fn iops(&self) -> i64 {
+    pub fn iops(&self) -> ::std::option::Option<i64> {
         self.iops
     }
     /// <p>Launch template disk throughput configuration.</p>
-    pub fn throughput(&self) -> i64 {
+    pub fn throughput(&self) -> ::std::option::Option<i64> {
         self.throughput
     }
 }
@@ -87,8 +87,8 @@ impl LaunchTemplateDiskConfBuilder {
     pub fn build(self) -> crate::types::LaunchTemplateDiskConf {
         crate::types::LaunchTemplateDiskConf {
             volume_type: self.volume_type,
-            iops: self.iops.unwrap_or_default(),
-            throughput: self.throughput.unwrap_or_default(),
+            iops: self.iops,
+            throughput: self.throughput,
         }
     }
 }

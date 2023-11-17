@@ -344,6 +344,25 @@ pub fn de_create_cluster_http_error(
             }
             tmp
         }),
+        "RedshiftIdcApplicationNotExists" => crate::operation::create_cluster::CreateClusterError::RedshiftIdcApplicationNotExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RedshiftIdcApplicationNotExistsFaultBuilder::default();
+                output =
+                    crate::protocol_serde::shape_redshift_idc_application_not_exists_fault::de_redshift_idc_application_not_exists_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SnapshotScheduleNotFound" => crate::operation::create_cluster::CreateClusterError::SnapshotScheduleNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

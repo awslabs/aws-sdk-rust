@@ -223,6 +223,16 @@ pub fn de_instance_network_interface(
                 builder = builder.set_ipv6_prefixes(var_18);
             }
             ,
+            s if s.matches("connectionTrackingConfiguration") /* ConnectionTrackingConfiguration com.amazonaws.ec2#InstanceNetworkInterface$ConnectionTrackingConfiguration */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_connection_tracking_specification_response::de_connection_tracking_specification_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_tracking_configuration(var_19);
+            }
+            ,
             _ => {}
         }
     }

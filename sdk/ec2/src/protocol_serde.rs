@@ -107,6 +107,10 @@ pub(crate) mod shape_associate_instance_event_window;
 
 pub(crate) mod shape_associate_instance_event_window_input;
 
+pub(crate) mod shape_associate_ipam_byoasn;
+
+pub(crate) mod shape_associate_ipam_byoasn_input;
+
 pub(crate) mod shape_associate_ipam_resource_discovery;
 
 pub(crate) mod shape_associate_ipam_resource_discovery_input;
@@ -867,6 +871,10 @@ pub(crate) mod shape_deprovision_byoip_cidr;
 
 pub(crate) mod shape_deprovision_byoip_cidr_input;
 
+pub(crate) mod shape_deprovision_ipam_byoasn;
+
+pub(crate) mod shape_deprovision_ipam_byoasn_input;
+
 pub(crate) mod shape_deprovision_ipam_pool_cidr;
 
 pub(crate) mod shape_deprovision_ipam_pool_cidr_input;
@@ -1114,6 +1122,10 @@ pub(crate) mod shape_describe_instances_input;
 pub(crate) mod shape_describe_internet_gateways;
 
 pub(crate) mod shape_describe_internet_gateways_input;
+
+pub(crate) mod shape_describe_ipam_byoasn;
+
+pub(crate) mod shape_describe_ipam_byoasn_input;
 
 pub(crate) mod shape_describe_ipam_pools;
 
@@ -1587,6 +1599,10 @@ pub(crate) mod shape_disassociate_instance_event_window;
 
 pub(crate) mod shape_disassociate_instance_event_window_input;
 
+pub(crate) mod shape_disassociate_ipam_byoasn;
+
+pub(crate) mod shape_disassociate_ipam_byoasn_input;
+
 pub(crate) mod shape_disassociate_ipam_resource_discovery;
 
 pub(crate) mod shape_disassociate_ipam_resource_discovery_input;
@@ -1778,6 +1794,10 @@ pub(crate) mod shape_get_ipam_address_history_input;
 pub(crate) mod shape_get_ipam_discovered_accounts;
 
 pub(crate) mod shape_get_ipam_discovered_accounts_input;
+
+pub(crate) mod shape_get_ipam_discovered_public_addresses;
+
+pub(crate) mod shape_get_ipam_discovered_public_addresses_input;
 
 pub(crate) mod shape_get_ipam_discovered_resource_cidrs;
 
@@ -2199,6 +2219,10 @@ pub(crate) mod shape_provision_byoip_cidr;
 
 pub(crate) mod shape_provision_byoip_cidr_input;
 
+pub(crate) mod shape_provision_ipam_byoasn;
+
+pub(crate) mod shape_provision_ipam_byoasn_input;
+
 pub(crate) mod shape_provision_ipam_pool_cidr;
 
 pub(crate) mod shape_provision_ipam_pool_cidr_input;
@@ -2465,6 +2489,8 @@ pub(crate) mod shape_add_ipam_operating_region;
 
 pub(crate) mod shape_add_prefix_list_entry;
 
+pub(crate) mod shape_asn_authorization_context;
+
 pub(crate) mod shape_attribute_boolean_value;
 
 pub(crate) mod shape_attribute_value;
@@ -2486,6 +2512,8 @@ pub(crate) mod shape_client_login_banner_options;
 pub(crate) mod shape_client_vpn_authentication_request;
 
 pub(crate) mod shape_connection_log_options;
+
+pub(crate) mod shape_connection_tracking_specification_request;
 
 pub(crate) mod shape_cpu_options_request;
 
@@ -2586,6 +2614,8 @@ pub(crate) mod shape_integrate_services;
 pub(crate) mod shape_ip_permission;
 
 pub(crate) mod shape_ipam_cidr_authorization_context;
+
+pub(crate) mod shape_ipam_pool_source_resource_request;
 
 pub(crate) mod shape_ipv4_prefix_specification_request;
 
@@ -2729,6 +2759,8 @@ pub(crate) mod shape_address_transfer_list;
 
 pub(crate) mod shape_allowed_principal_set;
 
+pub(crate) mod shape_asn_association;
+
 pub(crate) mod shape_assigned_private_ip_address_list;
 
 pub(crate) mod shape_associated_roles_list;
@@ -2748,6 +2780,10 @@ pub(crate) mod shape_block_device_mapping_list;
 pub(crate) mod shape_bundle_task;
 
 pub(crate) mod shape_bundle_task_list;
+
+pub(crate) mod shape_byoasn;
+
+pub(crate) mod shape_byoasn_set;
 
 pub(crate) mod shape_byoip_cidr;
 
@@ -2998,6 +3034,8 @@ pub(crate) mod shape_ipam;
 pub(crate) mod shape_ipam_address_history_record_set;
 
 pub(crate) mod shape_ipam_discovered_account_set;
+
+pub(crate) mod shape_ipam_discovered_public_address_set;
 
 pub(crate) mod shape_ipam_discovered_resource_cidr_set;
 
@@ -3543,6 +3581,8 @@ pub(crate) mod shape_alternate_path_hint_list;
 
 pub(crate) mod shape_arn_list;
 
+pub(crate) mod shape_asn_association_set;
+
 pub(crate) mod shape_assigned_private_ip_address;
 
 pub(crate) mod shape_associated_role;
@@ -3586,6 +3626,8 @@ pub(crate) mod shape_client_vpn_route;
 pub(crate) mod shape_cloud_watch_log_options_specification;
 
 pub(crate) mod shape_coip_address_usage;
+
+pub(crate) mod shape_connection_tracking_configuration;
 
 pub(crate) mod shape_create_fleet_error;
 
@@ -3723,11 +3765,15 @@ pub(crate) mod shape_ipam_address_history_record;
 
 pub(crate) mod shape_ipam_discovered_account;
 
+pub(crate) mod shape_ipam_discovered_public_address;
+
 pub(crate) mod shape_ipam_discovered_resource_cidr;
 
 pub(crate) mod shape_ipam_operating_region_set;
 
 pub(crate) mod shape_ipam_pool_cidr_failure_reason;
+
+pub(crate) mod shape_ipam_pool_source_resource;
 
 pub(crate) mod shape_ipam_resource_tag_list;
 
@@ -4181,6 +4227,10 @@ pub(crate) mod shape_ipam_discovery_failure_reason;
 
 pub(crate) mod shape_ipam_operating_region;
 
+pub(crate) mod shape_ipam_public_address_security_group_list;
+
+pub(crate) mod shape_ipam_public_address_tags;
+
 pub(crate) mod shape_ipam_resource_tag;
 
 pub(crate) mod shape_ipv6_cidr_block_set;
@@ -4393,6 +4443,8 @@ pub(crate) mod shape_client_vpn_authentication;
 
 pub(crate) mod shape_client_vpn_endpoint_attribute_status;
 
+pub(crate) mod shape_connection_tracking_specification;
+
 pub(crate) mod shape_core_count_list;
 
 pub(crate) mod shape_describe_fleet_error;
@@ -4448,6 +4500,10 @@ pub(crate) mod shape_instance_network_interface_specification_list;
 pub(crate) mod shape_instance_status_details_list;
 
 pub(crate) mod shape_ip_address_list;
+
+pub(crate) mod shape_ipam_public_address_security_group;
+
+pub(crate) mod shape_ipam_public_address_tag_list;
 
 pub(crate) mod shape_ipv4_prefix_list_response;
 
@@ -4529,6 +4585,8 @@ pub(crate) mod shape_additional_detail;
 
 pub(crate) mod shape_certificate_authentication;
 
+pub(crate) mod shape_connection_tracking_specification_response;
+
 pub(crate) mod shape_directory_service_authentication;
 
 pub(crate) mod shape_disable_fast_snapshot_restore_state_error;
@@ -4566,6 +4624,8 @@ pub(crate) mod shape_instance_private_ip_address_list;
 pub(crate) mod shape_instance_status_details;
 
 pub(crate) mod shape_ip_ranges;
+
+pub(crate) mod shape_ipam_public_address_tag;
 
 pub(crate) mod shape_ipv4_prefix_specification_response;
 

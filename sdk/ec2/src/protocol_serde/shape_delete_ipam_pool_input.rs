@@ -15,6 +15,11 @@ pub fn ser_delete_ipam_pool_input_input_input(
     if let Some(var_4) = &input.ipam_pool_id {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("Cascade");
+    if let Some(var_6) = &input.cascade {
+        scope_5.boolean(*var_6);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

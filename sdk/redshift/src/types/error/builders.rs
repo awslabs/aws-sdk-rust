@@ -121,6 +121,10 @@ pub use crate::types::error::_scheduled_action_not_found_fault::ScheduledActionN
 
 pub use crate::types::error::_invalid_scheduled_action_fault::InvalidScheduledActionFaultBuilder;
 
+pub use crate::types::error::_redshift_idc_application_not_exists_fault::RedshiftIdcApplicationNotExistsFaultBuilder;
+
+pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFaultBuilder;
+
 pub use crate::types::error::_subscription_severity_not_found_fault::SubscriptionSeverityNotFoundFaultBuilder;
 
 pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFoundFaultBuilder;
@@ -216,6 +220,10 @@ pub use crate::types::error::_snapshot_copy_grant_already_exists_fault::Snapshot
 pub use crate::types::error::_scheduled_action_quota_exceeded_fault::ScheduledActionQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_scheduled_action_already_exists_fault::ScheduledActionAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_redshift_idc_application_quota_exceeded_fault::RedshiftIdcApplicationQuotaExceededFaultBuilder;
+
+pub use crate::types::error::_redshift_idc_application_already_exists_fault::RedshiftIdcApplicationAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_hsm_configuration_quota_exceeded_fault::HsmConfigurationQuotaExceededFaultBuilder;
 

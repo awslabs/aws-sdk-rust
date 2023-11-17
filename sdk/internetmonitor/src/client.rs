@@ -171,11 +171,19 @@ mod get_health_event;
 
 mod get_monitor;
 
+mod get_query_results;
+
+mod get_query_status;
+
 mod list_health_events;
 
 mod list_monitors;
 
 mod list_tags_for_resource;
+
+mod start_query;
+
+mod stop_query;
 
 mod tag_resource;
 

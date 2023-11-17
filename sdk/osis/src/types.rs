@@ -3,6 +3,16 @@ pub use crate::types::_validation_message::ValidationMessage;
 
 pub use crate::types::_pipeline::Pipeline;
 
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_service_vpc_endpoint::ServiceVpcEndpoint;
+
+pub use crate::types::_vpc_endpoint_service_name::VpcEndpointServiceName;
+
+pub use crate::types::_encryption_at_rest_options::EncryptionAtRestOptions;
+
+pub use crate::types::_buffer_options::BufferOptions;
+
 pub use crate::types::_vpc_endpoint::VpcEndpoint;
 
 pub use crate::types::_vpc_options::VpcOptions;
@@ -14,8 +24,6 @@ pub use crate::types::_cloud_watch_log_destination::CloudWatchLogDestination;
 pub use crate::types::_pipeline_status_reason::PipelineStatusReason;
 
 pub use crate::types::_pipeline_status::PipelineStatus;
-
-pub use crate::types::_tag::Tag;
 
 pub use crate::types::_pipeline_summary::PipelineSummary;
 
@@ -31,6 +39,8 @@ pub use crate::types::_change_progress_statuses::ChangeProgressStatuses;
 
 pub use crate::types::_pipeline_blueprint::PipelineBlueprint;
 
+mod _buffer_options;
+
 mod _change_progress_stage;
 
 mod _change_progress_stage_statuses;
@@ -40,6 +50,8 @@ mod _change_progress_status;
 mod _change_progress_statuses;
 
 mod _cloud_watch_log_destination;
+
+mod _encryption_at_rest_options;
 
 mod _log_publishing_options;
 
@@ -55,11 +67,15 @@ mod _pipeline_status_reason;
 
 mod _pipeline_summary;
 
+mod _service_vpc_endpoint;
+
 mod _tag;
 
 mod _validation_message;
 
 mod _vpc_endpoint;
+
+mod _vpc_endpoint_service_name;
 
 mod _vpc_options;
 

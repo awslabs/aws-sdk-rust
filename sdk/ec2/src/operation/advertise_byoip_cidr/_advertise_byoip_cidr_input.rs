@@ -5,6 +5,8 @@
 pub struct AdvertiseByoipCidrInput {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub asn: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -12,6 +14,10 @@ impl AdvertiseByoipCidrInput {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn asn(&self) -> ::std::option::Option<&str> {
+        self.asn.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -30,6 +36,7 @@ impl AdvertiseByoipCidrInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AdvertiseByoipCidrInputBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) asn: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AdvertiseByoipCidrInputBuilder {
@@ -47,6 +54,20 @@ impl AdvertiseByoipCidrInputBuilder {
     /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn asn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asn = input;
+        self
+    }
+    /// <p>The public 2-byte or 4-byte ASN that you want to advertise.</p>
+    pub fn get_asn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asn
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -69,6 +90,7 @@ impl AdvertiseByoipCidrInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrInput {
             cidr: self.cidr,
+            asn: self.asn,
             dry_run: self.dry_run,
         })
     }

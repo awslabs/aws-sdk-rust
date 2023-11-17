@@ -15,6 +15,8 @@ pub use crate::types::error::_invalid_client_metadata_exception::InvalidClientMe
 
 pub use crate::types::error::_unsupported_grant_type_exception::UnsupportedGrantTypeExceptionBuilder;
 
+pub use crate::types::error::_invalid_request_region_exception::InvalidRequestRegionExceptionBuilder;
+
 pub use crate::types::error::_invalid_grant_exception::InvalidGrantExceptionBuilder;
 
 pub use crate::types::error::_expired_token_exception::ExpiredTokenExceptionBuilder;

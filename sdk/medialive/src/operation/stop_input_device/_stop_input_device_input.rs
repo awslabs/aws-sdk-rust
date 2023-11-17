@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopInputDeviceInput {
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl StopInputDeviceInput {
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn input_device_id(&self) -> ::std::option::Option<&str> {
         self.input_device_id.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct StopInputDeviceInputBuilder {
     pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl StopInputDeviceInputBuilder {
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     /// This field is required.
     pub fn input_device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_device_id = input;
         self
     }
-    /// The unique ID of the input device to reboot. For example, hd-123456789abcdef.
+    /// The unique ID of the input device to stop. For example, hd-123456789abcdef.
     pub fn get_input_device_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_device_id
     }

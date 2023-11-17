@@ -14,6 +14,7 @@
 /// match knowledgebasetype {
 ///     KnowledgeBaseType::Custom => { /* ... */ },
 ///     KnowledgeBaseType::External => { /* ... */ },
+///     KnowledgeBaseType::QuickResponses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum KnowledgeBaseType {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     External,
+    #[allow(missing_docs)] // documentation missing in model
+    QuickResponses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseType {
         match s {
             "CUSTOM" => KnowledgeBaseType::Custom,
             "EXTERNAL" => KnowledgeBaseType::External,
+            "QUICK_RESPONSES" => KnowledgeBaseType::QuickResponses,
             other => KnowledgeBaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl KnowledgeBaseType {
         match self {
             KnowledgeBaseType::Custom => "CUSTOM",
             KnowledgeBaseType::External => "EXTERNAL",
+            KnowledgeBaseType::QuickResponses => "QUICK_RESPONSES",
             KnowledgeBaseType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "EXTERNAL"]
+        &["CUSTOM", "EXTERNAL", "QUICK_RESPONSES"]
     }
 }
 impl ::std::convert::AsRef<str> for KnowledgeBaseType {

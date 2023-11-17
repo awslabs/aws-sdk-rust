@@ -612,6 +612,27 @@ impl From<crate::operation::associate_instance_event_window::AssociateInstanceEv
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_ipam_byoasn::AssociateIpamByoasnError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_ipam_byoasn::AssociateIpamByoasnError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_ipam_byoasn::AssociateIpamByoasnError> for Error {
+    fn from(err: crate::operation::associate_ipam_byoasn::AssociateIpamByoasnError) -> Self {
+        match err {
+            crate::operation::associate_ipam_byoasn::AssociateIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -5431,6 +5452,29 @@ impl From<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnError> for Error {
+    fn from(err: crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnError) -> Self {
+        match err {
+            crate::operation::deprovision_ipam_byoasn::DeprovisionIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError, R>>
     for Error
 where
@@ -7033,6 +7077,27 @@ impl From<crate::operation::describe_internet_gateways::DescribeInternetGateways
     fn from(err: crate::operation::describe_internet_gateways::DescribeInternetGatewaysError) -> Self {
         match err {
             crate::operation::describe_internet_gateways::DescribeInternetGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError> for Error {
+    fn from(err: crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError) -> Self {
+        match err {
+            crate::operation::describe_ipam_byoasn::DescribeIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10308,6 +10373,29 @@ impl From<crate::operation::disassociate_instance_event_window::DisassociateInst
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnError> for Error {
+    fn from(err: crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnError) -> Self {
+        match err {
+            crate::operation::disassociate_ipam_byoasn::DisassociateIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -11628,6 +11716,40 @@ impl From<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccou
     fn from(err: crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError) -> Self {
         match err {
             crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesError> for Error {
+    fn from(err: crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesError) -> Self {
+        match err {
+            crate::operation::get_ipam_discovered_public_addresses::GetIpamDiscoveredPublicAddressesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -14449,6 +14571,27 @@ impl From<crate::operation::provision_byoip_cidr::ProvisionByoipCidrError> for E
     fn from(err: crate::operation::provision_byoip_cidr::ProvisionByoipCidrError) -> Self {
         match err {
             crate::operation::provision_byoip_cidr::ProvisionByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnError> for Error {
+    fn from(err: crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnError) -> Self {
+        match err {
+            crate::operation::provision_ipam_byoasn::ProvisionIpamByoasnError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

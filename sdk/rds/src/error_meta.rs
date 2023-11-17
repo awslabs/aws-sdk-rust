@@ -1178,6 +1178,7 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
             crate::operation::create_db_cluster::CreateDBClusterError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
             }
+            crate::operation::create_db_cluster::CreateDBClusterError::InvalidDbSubnetGroupFault(inner) => Error::InvalidDbSubnetGroupFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::InvalidDbSubnetGroupStateFault(inner) => {
                 Error::InvalidDbSubnetGroupStateFault(inner)
             }
@@ -1189,6 +1190,7 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
             crate::operation::create_db_cluster::CreateDBClusterError::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
+            crate::operation::create_db_cluster::CreateDBClusterError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4022,6 +4024,7 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidVpcNetworkStateFault(inner) => {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
+            crate::operation::modify_db_cluster::ModifyDBClusterError::OptionGroupNotFoundFault(inner) => Error::OptionGroupNotFoundFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotAvailableFault(inner) => {
                 Error::StorageTypeNotAvailableFault(inner)

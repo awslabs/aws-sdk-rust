@@ -41,6 +41,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "credentialArn" => {
+                            builder = builder.set_credential_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "upstreamRegistry" => {
+                            builder = builder.set_upstream_registry(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UpstreamRegistry::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "updatedAt" => {
+                            builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

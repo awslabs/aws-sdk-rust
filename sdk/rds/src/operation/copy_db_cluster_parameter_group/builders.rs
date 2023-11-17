@@ -22,7 +22,9 @@ impl CopyDbClusterParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyDBClusterParameterGroup`.
 ///
-/// <p>Copies the specified DB cluster parameter group.</p>
+/// <p>Copies the specified DB cluster parameter group.</p> <note>
+/// <p>You can't copy a default DB cluster parameter group. Instead, create a new custom DB cluster parameter group, which copies the default parameters and values for the specified DB cluster parameter group family.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyDBClusterParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

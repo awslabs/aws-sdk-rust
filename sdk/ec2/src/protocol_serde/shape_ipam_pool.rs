@@ -317,6 +317,16 @@ pub fn de_ipam_pool(
                 builder = builder.set_public_ip_source(var_23);
             }
             ,
+            s if s.matches("sourceResource") /* SourceResource com.amazonaws.ec2#IpamPool$SourceResource */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_pool_source_resource::de_ipam_pool_source_resource(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_source_resource(var_24);
+            }
+            ,
             _ => {}
         }
     }

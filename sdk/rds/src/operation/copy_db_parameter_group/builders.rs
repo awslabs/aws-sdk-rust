@@ -22,7 +22,9 @@ impl CopyDbParameterGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CopyDBParameterGroup`.
 ///
-/// <p>Copies the specified DB parameter group.</p>
+/// <p>Copies the specified DB parameter group.</p> <note>
+/// <p>You can't copy a default DB parameter group. Instead, create a new custom DB parameter group, which copies the default parameters and values for the specified DB parameter group family.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyDBParameterGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

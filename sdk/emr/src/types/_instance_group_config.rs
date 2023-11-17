@@ -17,7 +17,7 @@ pub struct InstanceGroupConfig {
     /// <p>Target number of instances for the instance group.</p>
     pub instance_count: ::std::option::Option<i32>,
     /// <note>
-    /// <p>Amazon EMR releases 4.x or higher.</p>
+    /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
@@ -54,7 +54,7 @@ impl InstanceGroupConfig {
         self.instance_count
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or higher.</p>
+    /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     ///
@@ -190,7 +190,7 @@ impl InstanceGroupConfigBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <note>
-    /// <p>Amazon EMR releases 4.x or higher.</p>
+    /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
@@ -200,7 +200,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or higher.</p>
+    /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
@@ -208,7 +208,7 @@ impl InstanceGroupConfigBuilder {
         self
     }
     /// <note>
-    /// <p>Amazon EMR releases 4.x or higher.</p>
+    /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {

@@ -30,6 +30,10 @@ pub struct ScheduleActionSettings {
     pub static_image_activate_settings: ::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings>,
     /// Action to deactivate a static image overlay
     pub static_image_deactivate_settings: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
+    /// Action to activate a static image overlay in one or more specified outputs
+    pub static_image_output_activate_settings: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
+    /// Action to deactivate a static image overlay in one or more specified outputs
+    pub static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
 }
 impl ScheduleActionSettings {
     /// Action to insert HLS ID3 segment tagging
@@ -84,6 +88,14 @@ impl ScheduleActionSettings {
     pub fn static_image_deactivate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageDeactivateScheduleActionSettings> {
         self.static_image_deactivate_settings.as_ref()
     }
+    /// Action to activate a static image overlay in one or more specified outputs
+    pub fn static_image_output_activate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageOutputActivateScheduleActionSettings> {
+        self.static_image_output_activate_settings.as_ref()
+    }
+    /// Action to deactivate a static image overlay in one or more specified outputs
+    pub fn static_image_output_deactivate_settings(&self) -> ::std::option::Option<&crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
+        self.static_image_output_deactivate_settings.as_ref()
+    }
 }
 impl ScheduleActionSettings {
     /// Creates a new builder-style object to manufacture [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
@@ -109,6 +121,8 @@ pub struct ScheduleActionSettingsBuilder {
     pub(crate) scte35_time_signal_settings: ::std::option::Option<crate::types::Scte35TimeSignalScheduleActionSettings>,
     pub(crate) static_image_activate_settings: ::std::option::Option<crate::types::StaticImageActivateScheduleActionSettings>,
     pub(crate) static_image_deactivate_settings: ::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings>,
+    pub(crate) static_image_output_activate_settings: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
+    pub(crate) static_image_output_deactivate_settings: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
 }
 impl ScheduleActionSettingsBuilder {
     /// Action to insert HLS ID3 segment tagging
@@ -313,6 +327,42 @@ impl ScheduleActionSettingsBuilder {
     pub fn get_static_image_deactivate_settings(&self) -> &::std::option::Option<crate::types::StaticImageDeactivateScheduleActionSettings> {
         &self.static_image_deactivate_settings
     }
+    /// Action to activate a static image overlay in one or more specified outputs
+    pub fn static_image_output_activate_settings(mut self, input: crate::types::StaticImageOutputActivateScheduleActionSettings) -> Self {
+        self.static_image_output_activate_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Action to activate a static image overlay in one or more specified outputs
+    pub fn set_static_image_output_activate_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings>,
+    ) -> Self {
+        self.static_image_output_activate_settings = input;
+        self
+    }
+    /// Action to activate a static image overlay in one or more specified outputs
+    pub fn get_static_image_output_activate_settings(&self) -> &::std::option::Option<crate::types::StaticImageOutputActivateScheduleActionSettings> {
+        &self.static_image_output_activate_settings
+    }
+    /// Action to deactivate a static image overlay in one or more specified outputs
+    pub fn static_image_output_deactivate_settings(mut self, input: crate::types::StaticImageOutputDeactivateScheduleActionSettings) -> Self {
+        self.static_image_output_deactivate_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Action to deactivate a static image overlay in one or more specified outputs
+    pub fn set_static_image_output_deactivate_settings(
+        mut self,
+        input: ::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings>,
+    ) -> Self {
+        self.static_image_output_deactivate_settings = input;
+        self
+    }
+    /// Action to deactivate a static image overlay in one or more specified outputs
+    pub fn get_static_image_output_deactivate_settings(
+        &self,
+    ) -> &::std::option::Option<crate::types::StaticImageOutputDeactivateScheduleActionSettings> {
+        &self.static_image_output_deactivate_settings
+    }
     /// Consumes the builder and constructs a [`ScheduleActionSettings`](crate::types::ScheduleActionSettings).
     pub fn build(self) -> crate::types::ScheduleActionSettings {
         crate::types::ScheduleActionSettings {
@@ -329,6 +379,8 @@ impl ScheduleActionSettingsBuilder {
             scte35_time_signal_settings: self.scte35_time_signal_settings,
             static_image_activate_settings: self.static_image_activate_settings,
             static_image_deactivate_settings: self.static_image_deactivate_settings,
+            static_image_output_activate_settings: self.static_image_output_activate_settings,
+            static_image_output_deactivate_settings: self.static_image_output_deactivate_settings,
         }
     }
 }

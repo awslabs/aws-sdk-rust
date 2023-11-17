@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopInputDevice`](crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_device_id(impl Into<String>)`](crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of the input device to reboot. For example, hd-123456789abcdef.<br>
+    ///   - [`input_device_id(impl Into<String>)`](crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder::input_device_id) / [`set_input_device_id(Option<String>)`](crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder::set_input_device_id):<br>required: **true**<br>The unique ID of the input device to stop. For example, hd-123456789abcdef.<br>
     /// - On success, responds with [`StopInputDeviceOutput`](crate::operation::stop_input_device::StopInputDeviceOutput)
     /// - On failure, responds with [`SdkError<StopInputDeviceError>`](crate::operation::stop_input_device::StopInputDeviceError)
     pub fn stop_input_device(&self) -> crate::operation::stop_input_device::builders::StopInputDeviceFluentBuilder {

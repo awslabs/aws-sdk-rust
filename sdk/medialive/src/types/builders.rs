@@ -427,6 +427,10 @@ pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeSched
 
 pub use crate::types::_schedule_action_settings::ScheduleActionSettingsBuilder;
 
+pub use crate::types::_static_image_output_deactivate_schedule_action_settings::StaticImageOutputDeactivateScheduleActionSettingsBuilder;
+
+pub use crate::types::_static_image_output_activate_schedule_action_settings::StaticImageOutputActivateScheduleActionSettingsBuilder;
+
 pub use crate::types::_static_image_deactivate_schedule_action_settings::StaticImageDeactivateScheduleActionSettingsBuilder;
 
 pub use crate::types::_static_image_activate_schedule_action_settings::StaticImageActivateScheduleActionSettingsBuilder;

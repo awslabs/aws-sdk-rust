@@ -3,10 +3,10 @@ pub fn ser_batch_retry_strategy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchRetryStrategy,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.attempts != 0 {
+    if let Some(var_1) = &input.attempts {
         object.key("Attempts").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.attempts).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

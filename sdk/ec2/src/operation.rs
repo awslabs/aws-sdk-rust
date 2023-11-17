@@ -64,6 +64,9 @@ pub mod associate_iam_instance_profile;
 /// Types for the `AssociateInstanceEventWindow` operation.
 pub mod associate_instance_event_window;
 
+/// Types for the `AssociateIpamByoasn` operation.
+pub mod associate_ipam_byoasn;
+
 /// Types for the `AssociateIpamResourceDiscovery` operation.
 pub mod associate_ipam_resource_discovery;
 
@@ -634,6 +637,9 @@ pub mod delete_vpn_gateway;
 /// Types for the `DeprovisionByoipCidr` operation.
 pub mod deprovision_byoip_cidr;
 
+/// Types for the `DeprovisionIpamByoasn` operation.
+pub mod deprovision_ipam_byoasn;
+
 /// Types for the `DeprovisionIpamPoolCidr` operation.
 pub mod deprovision_ipam_pool_cidr;
 
@@ -819,6 +825,9 @@ pub mod describe_instances;
 
 /// Types for the `DescribeInternetGateways` operation.
 pub mod describe_internet_gateways;
+
+/// Types for the `DescribeIpamByoasn` operation.
+pub mod describe_ipam_byoasn;
 
 /// Types for the `DescribeIpamPools` operation.
 pub mod describe_ipam_pools;
@@ -1174,6 +1183,9 @@ pub mod disassociate_iam_instance_profile;
 /// Types for the `DisassociateInstanceEventWindow` operation.
 pub mod disassociate_instance_event_window;
 
+/// Types for the `DisassociateIpamByoasn` operation.
+pub mod disassociate_ipam_byoasn;
+
 /// Types for the `DisassociateIpamResourceDiscovery` operation.
 pub mod disassociate_ipam_resource_discovery;
 
@@ -1317,6 +1329,9 @@ pub mod get_ipam_address_history;
 
 /// Types for the `GetIpamDiscoveredAccounts` operation.
 pub mod get_ipam_discovered_accounts;
+
+/// Types for the `GetIpamDiscoveredPublicAddresses` operation.
+pub mod get_ipam_discovered_public_addresses;
 
 /// Types for the `GetIpamDiscoveredResourceCidrs` operation.
 pub mod get_ipam_discovered_resource_cidrs;
@@ -1632,6 +1647,9 @@ pub mod move_byoip_cidr_to_ipam;
 
 /// Types for the `ProvisionByoipCidr` operation.
 pub mod provision_byoip_cidr;
+
+/// Types for the `ProvisionIpamByoasn` operation.
+pub mod provision_ipam_byoasn;
 
 /// Types for the `ProvisionIpamPoolCidr` operation.
 pub mod provision_ipam_pool_cidr;

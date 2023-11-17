@@ -180,6 +180,8 @@ mod create_hsm_client_certificate;
 
 mod create_hsm_configuration;
 
+mod create_redshift_idc_application;
+
 mod create_scheduled_action;
 
 mod create_snapshot_copy_grant;
@@ -242,6 +244,8 @@ mod delete_hsm_client_certificate;
 mod delete_hsm_configuration;
 
 mod delete_partner;
+
+mod delete_redshift_idc_application;
 
 mod delete_resource_policy;
 
@@ -310,6 +314,8 @@ mod describe_node_configuration_options;
 mod describe_orderable_cluster_options;
 
 mod describe_partners;
+
+mod describe_redshift_idc_applications;
 
 mod describe_reserved_node_exchange_status;
 
@@ -380,6 +386,8 @@ mod modify_custom_domain_association;
 mod modify_endpoint_access;
 
 mod modify_event_subscription;
+
+mod modify_redshift_idc_application;
 
 mod modify_scheduled_action;
 

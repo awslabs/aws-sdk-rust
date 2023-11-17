@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateToken` operation.
 pub mod create_token;
 
+/// Types for the `CreateTokenWithIAM` operation.
+pub mod create_token_with_iam;
+
 /// Types for the `RegisterClient` operation.
 pub mod register_client;
 

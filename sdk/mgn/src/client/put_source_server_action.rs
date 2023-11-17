@@ -21,10 +21,10 @@ impl super::Client {
     ///   - [`action_id(Option<String>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::action_id): <p>Source server post migration custom action ID.</p>
     ///   - [`action_name(Option<String>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::action_name): <p>Source server post migration custom action name.</p>
     ///   - [`document_identifier(Option<String>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::document_identifier): <p>Source server post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::order): <p>Source server post migration custom action order.</p>
+    ///   - [`order(Option<i32>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::order): <p>Source server post migration custom action order.</p>
     ///   - [`document_version(Option<String>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::document_version): <p>Source server post migration custom action document version.</p>
     ///   - [`active(Option<bool>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::active): <p>Source server post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
+    ///   - [`timeout_seconds(Option<i32>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
     ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::must_succeed_for_cutover): <p>Source server post migration custom action must succeed for cutover.</p>
     ///   - [`parameters(Option<HashMap::<String, Vec::<SsmParameterStoreParameter>>>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::parameters): <p>Source server post migration custom action parameters.</p>
     ///   - [`external_parameters(Option<HashMap::<String, SsmExternalParameter>>)`](crate::operation::put_source_server_action::PutSourceServerActionOutput::external_parameters): <p>Source server post migration custom action external parameters.</p>

@@ -35,11 +35,29 @@ pub(crate) fn list_contents_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_import_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder,
+) -> crate::operation::list_import_jobs::builders::ListImportJobsOutputBuilder {
+    if builder.import_job_summaries.is_none() {
+        builder.import_job_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_knowledge_bases_output_output_correct_errors(
     mut builder: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder,
 ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
     if builder.knowledge_base_summaries.is_none() {
         builder.knowledge_base_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_quick_responses_output_output_correct_errors(
+    mut builder: crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder,
+) -> crate::operation::list_quick_responses::builders::ListQuickResponsesOutputBuilder {
+    if builder.quick_response_summaries.is_none() {
+        builder.quick_response_summaries = Some(Default::default())
     }
     builder
 }
@@ -58,6 +76,15 @@ pub(crate) fn search_content_output_output_correct_errors(
 ) -> crate::operation::search_content::builders::SearchContentOutputBuilder {
     if builder.content_summaries.is_none() {
         builder.content_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_quick_responses_output_output_correct_errors(
+    mut builder: crate::operation::search_quick_responses::builders::SearchQuickResponsesOutputBuilder,
+) -> crate::operation::search_quick_responses::builders::SearchQuickResponsesOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
     }
     builder
 }
@@ -210,6 +237,42 @@ pub(crate) fn content_summary_correct_errors(
     builder
 }
 
+pub(crate) fn import_job_data_correct_errors(
+    mut builder: crate::types::builders::ImportJobDataBuilder,
+) -> crate::types::builders::ImportJobDataBuilder {
+    if builder.import_job_id.is_none() {
+        builder.import_job_id = Some(Default::default())
+    }
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.upload_id.is_none() {
+        builder.upload_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.import_job_type.is_none() {
+        builder.import_job_type = "no value was set".parse::<crate::types::ImportJobType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportJobStatus>().ok()
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    if builder.url_expiry.is_none() {
+        builder.url_expiry = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn knowledge_base_data_correct_errors(
     mut builder: crate::types::builders::KnowledgeBaseDataBuilder,
 ) -> crate::types::builders::KnowledgeBaseDataBuilder {
@@ -227,6 +290,39 @@ pub(crate) fn knowledge_base_data_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::KnowledgeBaseStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn quick_response_data_correct_errors(
+    mut builder: crate::types::builders::QuickResponseDataBuilder,
+) -> crate::types::builders::QuickResponseDataBuilder {
+    if builder.quick_response_arn.is_none() {
+        builder.quick_response_arn = Some(Default::default())
+    }
+    if builder.quick_response_id.is_none() {
+        builder.quick_response_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QuickResponseStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -289,6 +385,48 @@ pub(crate) fn assistant_summary_correct_errors(
     builder
 }
 
+pub(crate) fn external_source_configuration_correct_errors(
+    mut builder: crate::types::builders::ExternalSourceConfigurationBuilder,
+) -> crate::types::builders::ExternalSourceConfigurationBuilder {
+    if builder.source.is_none() {
+        builder.source = "no value was set".parse::<crate::types::ExternalSource>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::Configuration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn import_job_summary_correct_errors(
+    mut builder: crate::types::builders::ImportJobSummaryBuilder,
+) -> crate::types::builders::ImportJobSummaryBuilder {
+    if builder.import_job_id.is_none() {
+        builder.import_job_id = Some(Default::default())
+    }
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.upload_id.is_none() {
+        builder.upload_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.import_job_type.is_none() {
+        builder.import_job_type = "no value was set".parse::<crate::types::ImportJobType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportJobStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn knowledge_base_summary_correct_errors(
     mut builder: crate::types::builders::KnowledgeBaseSummaryBuilder,
 ) -> crate::types::builders::KnowledgeBaseSummaryBuilder {
@@ -306,6 +444,81 @@ pub(crate) fn knowledge_base_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::KnowledgeBaseStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn quick_response_search_result_data_correct_errors(
+    mut builder: crate::types::builders::QuickResponseSearchResultDataBuilder,
+) -> crate::types::builders::QuickResponseSearchResultDataBuilder {
+    if builder.quick_response_arn.is_none() {
+        builder.quick_response_arn = Some(Default::default())
+    }
+    if builder.quick_response_id.is_none() {
+        builder.quick_response_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QuickResponseStatus>().ok()
+    }
+    if builder.contents.is_none() {
+        builder.contents = {
+            let builder = crate::types::builders::QuickResponseContentsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.is_active.is_none() {
+        builder.is_active = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn quick_response_summary_correct_errors(
+    mut builder: crate::types::builders::QuickResponseSummaryBuilder,
+) -> crate::types::builders::QuickResponseSummaryBuilder {
+    if builder.quick_response_arn.is_none() {
+        builder.quick_response_arn = Some(Default::default())
+    }
+    if builder.quick_response_id.is_none() {
+        builder.quick_response_id = Some(Default::default())
+    }
+    if builder.knowledge_base_arn.is_none() {
+        builder.knowledge_base_arn = Some(Default::default())
+    }
+    if builder.knowledge_base_id.is_none() {
+        builder.knowledge_base_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QuickResponseStatus>().ok()
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

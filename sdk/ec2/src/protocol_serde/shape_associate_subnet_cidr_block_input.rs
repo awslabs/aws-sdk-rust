@@ -15,6 +15,19 @@ pub fn ser_associate_subnet_cidr_block_input_input_input(
     if let Some(var_4) = &input.subnet_id {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("Ipv6IpamPoolId");
+    if let Some(var_6) = &input.ipv6_ipam_pool_id {
+        scope_5.string(var_6);
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Ipv6NetmaskLength");
+    if let Some(var_8) = &input.ipv6_netmask_length {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

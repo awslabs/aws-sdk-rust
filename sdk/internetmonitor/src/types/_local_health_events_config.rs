@@ -2,6 +2,7 @@
 
 /// <p>A complex type with the configuration information that determines the threshold and other conditions for when Internet Monitor creates a health event for a local performance or availability issue, when scores cross a threshold for one or more city-networks.</p>
 /// <p>Defines the percentages, for performance scores or availability scores, that are the local thresholds for when Amazon CloudWatch Internet Monitor creates a health event. Also defines whether a local threshold is enabled or disabled, and the minimum percentage of overall traffic that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+/// <p>If you don't set a local health event threshold, the default value is 60%.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -11,6 +12,7 @@ pub struct LocalHealthEventsConfig {
     /// <p>The health event threshold percentage set for a local health score.</p>
     pub health_score_threshold: f64,
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+    /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.01%.</p>
     pub min_traffic_impact: f64,
 }
 impl LocalHealthEventsConfig {
@@ -23,6 +25,7 @@ impl LocalHealthEventsConfig {
         self.health_score_threshold
     }
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+    /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.01%.</p>
     pub fn min_traffic_impact(&self) -> f64 {
         self.min_traffic_impact
     }
@@ -72,16 +75,19 @@ impl LocalHealthEventsConfigBuilder {
         &self.health_score_threshold
     }
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+    /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.01%.</p>
     pub fn min_traffic_impact(mut self, input: f64) -> Self {
         self.min_traffic_impact = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+    /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.01%.</p>
     pub fn set_min_traffic_impact(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_traffic_impact = input;
         self
     }
     /// <p>The minimum percentage of overall traffic for an application that must be impacted by an issue before Internet Monitor creates an event when a threshold is crossed for a local health score.</p>
+    /// <p>If you don't set a minimum traffic impact threshold, the default value is 0.01%.</p>
     pub fn get_min_traffic_impact(&self) -> &::std::option::Option<f64> {
         &self.min_traffic_impact
     }

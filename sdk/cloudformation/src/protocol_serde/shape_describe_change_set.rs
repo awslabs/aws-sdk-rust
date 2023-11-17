@@ -330,6 +330,21 @@ pub fn de_describe_change_set(
                 builder = builder.set_on_stack_failure(var_20);
             }
             ,
+            s if s.matches("ImportExistingResources") /* ImportExistingResources com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ImportExistingResources */ =>  {
+                let var_21 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#ImportExistingResources`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_import_existing_resources(var_21);
+            }
+            ,
             _ => {}
         }
         }

@@ -212,6 +212,21 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "OptionGroupNotFoundFault" => crate::operation::modify_db_cluster::ModifyDBClusterError::OptionGroupNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OptionGroupNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_option_group_not_found_fault::de_option_group_not_found_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "StorageQuotaExceeded" => crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -22,7 +22,7 @@ impl DescribeAccountConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAccountConfiguration`.
 ///
-/// Get account configuration
+/// Describe account configuration
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -8,6 +8,8 @@ pub struct ByoipCidr {
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The description of the address range.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The BYOIP CIDR associations with ASNs.</p>
+    pub asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
@@ -21,6 +23,12 @@ impl ByoipCidr {
     /// <p>The description of the address range.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The BYOIP CIDR associations with ASNs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asn_associations.is_none()`.
+    pub fn asn_associations(&self) -> &[crate::types::AsnAssociation] {
+        self.asn_associations.as_deref().unwrap_or_default()
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
@@ -44,6 +52,7 @@ impl ByoipCidr {
 pub struct ByoipCidrBuilder {
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
 }
@@ -75,6 +84,26 @@ impl ByoipCidrBuilder {
     /// <p>The description of the address range.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Appends an item to `asn_associations`.
+    ///
+    /// To override the contents of this collection use [`set_asn_associations`](Self::set_asn_associations).
+    ///
+    /// <p>The BYOIP CIDR associations with ASNs.</p>
+    pub fn asn_associations(mut self, input: crate::types::AsnAssociation) -> Self {
+        let mut v = self.asn_associations.unwrap_or_default();
+        v.push(input);
+        self.asn_associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The BYOIP CIDR associations with ASNs.</p>
+    pub fn set_asn_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>) -> Self {
+        self.asn_associations = input;
+        self
+    }
+    /// <p>The BYOIP CIDR associations with ASNs.</p>
+    pub fn get_asn_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>> {
+        &self.asn_associations
     }
     /// <p>Upon success, contains the ID of the address pool. Otherwise, contains an error message.</p>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,6 +138,7 @@ impl ByoipCidrBuilder {
         crate::types::ByoipCidr {
             cidr: self.cidr,
             description: self.description,
+            asn_associations: self.asn_associations,
             status_message: self.status_message,
             state: self.state,
         }

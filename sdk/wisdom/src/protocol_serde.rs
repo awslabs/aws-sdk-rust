@@ -31,6 +31,8 @@ pub(crate) mod shape_create_content;
 
 pub(crate) mod shape_create_knowledge_base;
 
+pub(crate) mod shape_create_quick_response;
+
 pub(crate) mod shape_create_session;
 
 pub(crate) mod shape_delete_assistant;
@@ -39,7 +41,11 @@ pub(crate) mod shape_delete_assistant_association;
 
 pub(crate) mod shape_delete_content;
 
+pub(crate) mod shape_delete_import_job;
+
 pub(crate) mod shape_delete_knowledge_base;
+
+pub(crate) mod shape_delete_quick_response;
 
 pub(crate) mod shape_get_assistant;
 
@@ -49,7 +55,11 @@ pub(crate) mod shape_get_content;
 
 pub(crate) mod shape_get_content_summary;
 
+pub(crate) mod shape_get_import_job;
+
 pub(crate) mod shape_get_knowledge_base;
+
+pub(crate) mod shape_get_quick_response;
 
 pub(crate) mod shape_get_recommendations;
 
@@ -61,7 +71,11 @@ pub(crate) mod shape_list_assistants;
 
 pub(crate) mod shape_list_contents;
 
+pub(crate) mod shape_list_import_jobs;
+
 pub(crate) mod shape_list_knowledge_bases;
+
+pub(crate) mod shape_list_quick_responses;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -73,9 +87,13 @@ pub(crate) mod shape_remove_knowledge_base_template_uri;
 
 pub(crate) mod shape_search_content;
 
+pub(crate) mod shape_search_quick_responses;
+
 pub(crate) mod shape_search_sessions;
 
 pub(crate) mod shape_start_content_upload;
+
+pub(crate) mod shape_start_import_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -84,6 +102,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_content;
 
 pub(crate) mod shape_update_knowledge_base_template_uri;
+
+pub(crate) mod shape_update_quick_response;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -105,6 +125,8 @@ pub(crate) mod shape_create_content_input;
 
 pub(crate) mod shape_create_knowledge_base_input;
 
+pub(crate) mod shape_create_quick_response_input;
+
 pub(crate) mod shape_create_session_input;
 
 pub(crate) mod shape_notify_recommendations_received_input;
@@ -113,15 +135,21 @@ pub(crate) mod shape_precondition_failed_exception;
 
 pub(crate) mod shape_query_assistant_input;
 
+pub(crate) mod shape_request_timeout_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_content_input;
+
+pub(crate) mod shape_search_quick_responses_input;
 
 pub(crate) mod shape_search_sessions_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_content_upload_input;
+
+pub(crate) mod shape_start_import_job_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -130,6 +158,8 @@ pub(crate) mod shape_too_many_tags_exception;
 pub(crate) mod shape_update_content_input;
 
 pub(crate) mod shape_update_knowledge_base_template_uri_input;
+
+pub(crate) mod shape_update_quick_response_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -149,7 +179,15 @@ pub(crate) mod shape_content_summary;
 
 pub(crate) mod shape_content_summary_list;
 
+pub(crate) mod shape_external_source_configuration;
+
+pub(crate) mod shape_grouping_configuration;
+
 pub(crate) mod shape_headers;
+
+pub(crate) mod shape_import_job_data;
+
+pub(crate) mod shape_import_job_list;
 
 pub(crate) mod shape_knowledge_base_data;
 
@@ -158,6 +196,16 @@ pub(crate) mod shape_knowledge_base_list;
 pub(crate) mod shape_notify_recommendations_received_error_list;
 
 pub(crate) mod shape_query_results_list;
+
+pub(crate) mod shape_quick_response_data;
+
+pub(crate) mod shape_quick_response_data_provider;
+
+pub(crate) mod shape_quick_response_search_expression;
+
+pub(crate) mod shape_quick_response_search_results_list;
+
+pub(crate) mod shape_quick_response_summary_list;
 
 pub(crate) mod shape_recommendation_id_list;
 
@@ -189,13 +237,31 @@ pub(crate) mod shape_assistant_integration_configuration;
 
 pub(crate) mod shape_assistant_summary;
 
+pub(crate) mod shape_channels;
+
+pub(crate) mod shape_configuration;
+
 pub(crate) mod shape_content_metadata;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_import_job_summary;
+
 pub(crate) mod shape_knowledge_base_summary;
 
 pub(crate) mod shape_notify_recommendations_received_error;
+
+pub(crate) mod shape_quick_response_contents;
+
+pub(crate) mod shape_quick_response_filter_field;
+
+pub(crate) mod shape_quick_response_order_field;
+
+pub(crate) mod shape_quick_response_query_field;
+
+pub(crate) mod shape_quick_response_search_result_data;
+
+pub(crate) mod shape_quick_response_summary;
 
 pub(crate) mod shape_recommendation_data;
 
@@ -207,9 +273,17 @@ pub(crate) mod shape_session_integration_configuration;
 
 pub(crate) mod shape_session_summary;
 
+pub(crate) mod shape_connect_configuration;
+
+pub(crate) mod shape_contact_attribute_keys;
+
 pub(crate) mod shape_document;
 
+pub(crate) mod shape_grouping_values;
+
 pub(crate) mod shape_knowledge_base_association_data;
+
+pub(crate) mod shape_quick_response_content_provider;
 
 pub(crate) mod shape_recommendation_trigger_data;
 

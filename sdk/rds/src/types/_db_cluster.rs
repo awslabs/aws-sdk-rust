@@ -61,6 +61,8 @@ pub struct DbCluster {
     pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the read replicas associated with this DB cluster.</p>
     pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Reserved for future use.</p>
+    pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterStatusInfo>>,
     /// <p>The list of DB instances that make up the DB cluster.</p>
     pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     /// <p>The list of VPC security groups that the DB cluster belongs to.</p>
@@ -308,6 +310,12 @@ impl DbCluster {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.read_replica_identifiers.is_none()`.
     pub fn read_replica_identifiers(&self) -> &[::std::string::String] {
         self.read_replica_identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>Reserved for future use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.status_infos.is_none()`.
+    pub fn status_infos(&self) -> &[crate::types::DbClusterStatusInfo] {
+        self.status_infos.as_deref().unwrap_or_default()
     }
     /// <p>The list of DB instances that make up the DB cluster.</p>
     ///
@@ -590,6 +598,7 @@ pub struct DbClusterBuilder {
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     pub(crate) replication_source_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterStatusInfo>>,
     pub(crate) db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
@@ -1034,6 +1043,26 @@ impl DbClusterBuilder {
     /// <p>Contains one or more identifiers of the read replicas associated with this DB cluster.</p>
     pub fn get_read_replica_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.read_replica_identifiers
+    }
+    /// Appends an item to `status_infos`.
+    ///
+    /// To override the contents of this collection use [`set_status_infos`](Self::set_status_infos).
+    ///
+    /// <p>Reserved for future use.</p>
+    pub fn status_infos(mut self, input: crate::types::DbClusterStatusInfo) -> Self {
+        let mut v = self.status_infos.unwrap_or_default();
+        v.push(input);
+        self.status_infos = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn set_status_infos(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterStatusInfo>>) -> Self {
+        self.status_infos = input;
+        self
+    }
+    /// <p>Reserved for future use.</p>
+    pub fn get_status_infos(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterStatusInfo>> {
+        &self.status_infos
     }
     /// Appends an item to `db_cluster_members`.
     ///
@@ -1894,6 +1923,7 @@ impl DbClusterBuilder {
             preferred_maintenance_window: self.preferred_maintenance_window,
             replication_source_identifier: self.replication_source_identifier,
             read_replica_identifiers: self.read_replica_identifiers,
+            status_infos: self.status_infos,
             db_cluster_members: self.db_cluster_members,
             vpc_security_groups: self.vpc_security_groups,
             hosted_zone_id: self.hosted_zone_id,

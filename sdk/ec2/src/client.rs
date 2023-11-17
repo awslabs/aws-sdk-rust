@@ -178,6 +178,8 @@ mod associate_iam_instance_profile;
 
 mod associate_instance_event_window;
 
+mod associate_ipam_byoasn;
+
 mod associate_ipam_resource_discovery;
 
 mod associate_nat_gateway_address;
@@ -585,6 +587,8 @@ mod delete_vpn_gateway;
 
 mod deprovision_byoip_cidr;
 
+mod deprovision_ipam_byoasn;
+
 mod deprovision_ipam_pool_cidr;
 
 mod deprovision_public_ipv4_pool_cidr;
@@ -708,6 +712,8 @@ mod describe_instance_types;
 mod describe_instances;
 
 mod describe_internet_gateways;
+
+mod describe_ipam_byoasn;
 
 mod describe_ipam_pools;
 
@@ -945,6 +951,8 @@ mod disassociate_iam_instance_profile;
 
 mod disassociate_instance_event_window;
 
+mod disassociate_ipam_byoasn;
+
 mod disassociate_ipam_resource_discovery;
 
 mod disassociate_nat_gateway_address;
@@ -1040,6 +1048,8 @@ mod get_instance_uefi_data;
 mod get_ipam_address_history;
 
 mod get_ipam_discovered_accounts;
+
+mod get_ipam_discovered_public_addresses;
 
 mod get_ipam_discovered_resource_cidrs;
 
@@ -1250,6 +1260,8 @@ mod move_address_to_vpc;
 mod move_byoip_cidr_to_ipam;
 
 mod provision_byoip_cidr;
+
+mod provision_ipam_byoasn;
 
 mod provision_ipam_pool_cidr;
 

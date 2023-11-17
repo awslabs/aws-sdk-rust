@@ -38,6 +38,14 @@ pub struct Studio {
     pub idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the Amazon EMR Studio.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>
+    pub idc_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>
+    pub trusted_identity_propagation_enabled: ::std::option::Option<bool>,
+    /// <p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub idc_user_assignment: ::std::option::Option<crate::types::IdcUserAssignment>,
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl Studio {
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -112,6 +120,22 @@ impl Studio {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>
+    pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.idc_instance_arn.as_deref()
+    }
+    /// <p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>
+    pub fn trusted_identity_propagation_enabled(&self) -> ::std::option::Option<bool> {
+        self.trusted_identity_propagation_enabled
+    }
+    /// <p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn idc_user_assignment(&self) -> ::std::option::Option<&crate::types::IdcUserAssignment> {
+        self.idc_user_assignment.as_ref()
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl Studio {
     /// Creates a new builder-style object to manufacture [`Studio`](crate::types::Studio).
@@ -141,6 +165,10 @@ pub struct StudioBuilder {
     pub(crate) idp_auth_url: ::std::option::Option<::std::string::String>,
     pub(crate) idp_relay_state_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) trusted_identity_propagation_enabled: ::std::option::Option<bool>,
+    pub(crate) idc_user_assignment: ::std::option::Option<crate::types::IdcUserAssignment>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl StudioBuilder {
     /// <p>The ID of the Amazon EMR Studio.</p>
@@ -393,6 +421,62 @@ impl StudioBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>
+    pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.idc_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>
+    pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idc_instance_arn = input;
+        self
+    }
+    /// <p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>
+    pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idc_instance_arn
+    }
+    /// <p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>
+    pub fn trusted_identity_propagation_enabled(mut self, input: bool) -> Self {
+        self.trusted_identity_propagation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>
+    pub fn set_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.trusted_identity_propagation_enabled = input;
+        self
+    }
+    /// <p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>
+    pub fn get_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.trusted_identity_propagation_enabled
+    }
+    /// <p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn idc_user_assignment(mut self, input: crate::types::IdcUserAssignment) -> Self {
+        self.idc_user_assignment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn set_idc_user_assignment(mut self, input: ::std::option::Option<crate::types::IdcUserAssignment>) -> Self {
+        self.idc_user_assignment = input;
+        self
+    }
+    /// <p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>
+    pub fn get_idc_user_assignment(&self) -> &::std::option::Option<crate::types::IdcUserAssignment> {
+        &self.idc_user_assignment
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     /// Consumes the builder and constructs a [`Studio`](crate::types::Studio).
     pub fn build(self) -> crate::types::Studio {
         crate::types::Studio {
@@ -413,6 +497,10 @@ impl StudioBuilder {
             idp_auth_url: self.idp_auth_url,
             idp_relay_state_parameter_name: self.idp_relay_state_parameter_name,
             tags: self.tags,
+            idc_instance_arn: self.idc_instance_arn,
+            trusted_identity_propagation_enabled: self.trusted_identity_propagation_enabled,
+            idc_user_assignment: self.idc_user_assignment,
+            encryption_key_arn: self.encryption_key_arn,
         }
     }
 }

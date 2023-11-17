@@ -5,7 +5,7 @@
 pub struct GetHealthEventInput {
     /// <p>The name of the monitor.</p>
     pub monitor_name: ::std::option::Option<::std::string::String>,
-    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInput {
@@ -13,7 +13,7 @@ impl GetHealthEventInput {
     pub fn monitor_name(&self) -> ::std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
-    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -48,18 +48,18 @@ impl GetHealthEventInputBuilder {
     pub fn get_monitor_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.monitor_name
     }
-    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     /// This field is required.
     pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
-    /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
+    /// <p>The internally-generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }

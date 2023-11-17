@@ -23,6 +23,7 @@ impl ListRulesInputBuilder {
 /// Fluent builder constructing a request to `ListRules`.
 ///
 /// <p>Lists your Amazon EventBridge rules. You can either list all the rules or you can provide a prefix to match to the rule names.</p>
+/// <p>The maximum number of results per page for requests is 100.</p>
 /// <p>ListRules does not list the targets of a rule. To see the targets associated with a rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ListTargetsByRule.html">ListTargetsByRule</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRulesFluentBuilder {

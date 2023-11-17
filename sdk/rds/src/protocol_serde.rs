@@ -1107,6 +1107,8 @@ pub(crate) mod shape_db_cluster_roles;
 
 pub(crate) mod shape_db_cluster_snapshot_attribute_list;
 
+pub(crate) mod shape_db_cluster_status_info_list;
+
 pub(crate) mod shape_db_engine_version;
 
 pub(crate) mod shape_db_instance_automated_backups_replication_list;
@@ -1218,6 +1220,8 @@ pub(crate) mod shape_db_cluster_option_group_status;
 pub(crate) mod shape_db_cluster_role;
 
 pub(crate) mod shape_db_cluster_snapshot_attribute;
+
+pub(crate) mod shape_db_cluster_status_info;
 
 pub(crate) mod shape_db_instance_automated_backups_replication;
 

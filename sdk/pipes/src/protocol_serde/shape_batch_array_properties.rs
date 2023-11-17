@@ -3,10 +3,10 @@ pub fn ser_batch_array_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchArrayProperties,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if input.size != 0 {
+    if let Some(var_1) = &input.size {
         object.key("Size").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

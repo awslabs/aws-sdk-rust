@@ -154,4 +154,22 @@ impl StartPipelineExecutionFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    /// Appends an item to `sourceRevisions`.
+    ///
+    /// To override the contents of this collection use [`set_source_revisions`](Self::set_source_revisions).
+    ///
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn source_revisions(mut self, input: crate::types::SourceRevisionOverride) -> Self {
+        self.inner = self.inner.source_revisions(input);
+        self
+    }
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn set_source_revisions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>>) -> Self {
+        self.inner = self.inner.set_source_revisions(input);
+        self
+    }
+    /// <p>A list that allows you to specify, or override, the source revision for a pipeline execution that's being started. A source revision is the version with all the changes to your application code, or source artifact, for the pipeline execution.</p>
+    pub fn get_source_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceRevisionOverride>> {
+        self.inner.get_source_revisions()
+    }
 }

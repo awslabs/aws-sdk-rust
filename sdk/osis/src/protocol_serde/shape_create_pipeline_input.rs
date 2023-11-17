@@ -3,47 +3,59 @@ pub fn ser_create_pipeline_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_pipeline::CreatePipelineInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.log_publishing_options {
+    if let Some(var_1) = &input.buffer_options {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("LogPublishingOptions").start_object();
-        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(&mut object_2, var_1)?;
+        let mut object_2 = object.key("BufferOptions").start_object();
+        crate::protocol_serde::shape_buffer_options::ser_buffer_options(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_units {
+    if let Some(var_3) = &input.encryption_at_rest_options {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("EncryptionAtRestOptions").start_object();
+        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.log_publishing_options {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("LogPublishingOptions").start_object();
+        crate::protocol_serde::shape_log_publishing_options::ser_log_publishing_options(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.max_units {
         object.key("MaxUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.min_units {
+    if let Some(var_8) = &input.min_units {
         object.key("MinUnits").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_5) = &input.pipeline_configuration_body {
-        object.key("PipelineConfigurationBody").string(var_5.as_str());
+    if let Some(var_9) = &input.pipeline_configuration_body {
+        object.key("PipelineConfigurationBody").string(var_9.as_str());
     }
-    if let Some(var_6) = &input.pipeline_name {
-        object.key("PipelineName").string(var_6.as_str());
+    if let Some(var_10) = &input.pipeline_name {
+        object.key("PipelineName").string(var_10.as_str());
     }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("Tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_8.finish();
+        array_12.finish();
     }
-    if let Some(var_11) = &input.vpc_options {
+    if let Some(var_15) = &input.vpc_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("VpcOptions").start_object();
-        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_16 = object.key("VpcOptions").start_object();
+        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

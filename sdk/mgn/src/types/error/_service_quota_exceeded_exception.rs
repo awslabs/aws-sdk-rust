@@ -17,7 +17,7 @@ pub struct ServiceQuotaExceededException {
     /// <p>Exceeded the service quota code.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>Exceeded the service quota value.</p>
-    pub quota_value: i32,
+    pub quota_value: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceQuotaExceededException {
@@ -42,7 +42,7 @@ impl ServiceQuotaExceededException {
         self.quota_code.as_deref()
     }
     /// <p>Exceeded the service quota value.</p>
-    pub fn quota_value(&self) -> i32 {
+    pub fn quota_value(&self) -> ::std::option::Option<i32> {
         self.quota_value
     }
 }
@@ -214,7 +214,7 @@ impl ServiceQuotaExceededExceptionBuilder {
             resource_type: self.resource_type,
             service_code: self.service_code,
             quota_code: self.quota_code,
-            quota_value: self.quota_value.unwrap_or_default(),
+            quota_value: self.quota_value,
             meta: self.meta.unwrap_or_default(),
         }
     }

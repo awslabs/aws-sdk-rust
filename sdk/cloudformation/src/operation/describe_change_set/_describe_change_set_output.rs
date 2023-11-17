@@ -49,6 +49,10 @@ pub struct DescribeChangeSetOutput {
     /// <li> <p> <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a> API operation.</p> </li>
     /// </ul>
     pub on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// </note>
+    pub import_existing_resources: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutput {
@@ -147,6 +151,12 @@ impl DescribeChangeSetOutput {
     pub fn on_stack_failure(&self) -> ::std::option::Option<&crate::types::OnStackFailure> {
         self.on_stack_failure.as_ref()
     }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// </note>
+    pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
+        self.import_existing_resources
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeChangeSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -184,6 +194,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) parent_change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) root_change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) on_stack_failure: ::std::option::Option<crate::types::OnStackFailure>,
+    pub(crate) import_existing_resources: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeChangeSetOutputBuilder {
@@ -512,6 +523,26 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_on_stack_failure(&self) -> &::std::option::Option<crate::types::OnStackFailure> {
         &self.on_stack_failure
     }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// </note>
+    pub fn import_existing_resources(mut self, input: bool) -> Self {
+        self.import_existing_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// </note>
+    pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.import_existing_resources = input;
+        self
+    }
+    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>This parameter can only import resources that have <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">custom names</a> in templates. To import resources that do not accept custom names, such as EC2 instances, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource import</a> feature instead.</p>
+    /// </note>
+    pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
+        &self.import_existing_resources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -544,6 +575,7 @@ impl DescribeChangeSetOutputBuilder {
             parent_change_set_id: self.parent_change_set_id,
             root_change_set_id: self.root_change_set_id,
             on_stack_failure: self.on_stack_failure,
+            import_existing_resources: self.import_existing_resources,
             _request_id: self._request_id,
         }
     }

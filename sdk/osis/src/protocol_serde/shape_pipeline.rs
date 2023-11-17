@@ -84,6 +84,22 @@ where
                         "VpcEndpoints" => {
                             builder = builder.set_vpc_endpoints(crate::protocol_serde::shape_vpc_endpoints_list::de_vpc_endpoints_list(tokens)?);
                         }
+                        "BufferOptions" => {
+                            builder = builder.set_buffer_options(crate::protocol_serde::shape_buffer_options::de_buffer_options(tokens)?);
+                        }
+                        "EncryptionAtRestOptions" => {
+                            builder = builder.set_encryption_at_rest_options(
+                                crate::protocol_serde::shape_encryption_at_rest_options::de_encryption_at_rest_options(tokens)?,
+                            );
+                        }
+                        "ServiceVpcEndpoints" => {
+                            builder = builder.set_service_vpc_endpoints(
+                                crate::protocol_serde::shape_service_vpc_endpoints_list::de_service_vpc_endpoints_list(tokens)?,
+                            );
+                        }
+                        "Tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_token;
 
+pub(crate) mod shape_create_token_with_iam;
+
 pub(crate) mod shape_register_client;
 
 pub(crate) mod shape_start_device_authorization;
@@ -43,6 +45,8 @@ pub(crate) mod shape_authorization_pending_exception;
 
 pub(crate) mod shape_create_token_input;
 
+pub(crate) mod shape_create_token_with_iam_input;
+
 pub(crate) mod shape_expired_token_exception;
 
 pub(crate) mod shape_internal_server_exception;
@@ -55,6 +59,8 @@ pub(crate) mod shape_invalid_grant_exception;
 
 pub(crate) mod shape_invalid_request_exception;
 
+pub(crate) mod shape_invalid_request_region_exception;
+
 pub(crate) mod shape_invalid_scope_exception;
 
 pub(crate) mod shape_register_client_input;
@@ -66,3 +72,5 @@ pub(crate) mod shape_start_device_authorization_input;
 pub(crate) mod shape_unauthorized_client_exception;
 
 pub(crate) mod shape_unsupported_grant_type_exception;
+
+pub(crate) mod shape_scopes;

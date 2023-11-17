@@ -69,6 +69,21 @@ pub fn de_create_pull_through_cache_rule_http_error(
                 tmp
             })
         }
+        "SecretNotFoundException" => crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::SecretNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SecretNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_secret_not_found_exception::de_secret_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServerException" => crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::ServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -84,6 +99,47 @@ pub fn de_create_pull_through_cache_rule_http_error(
             }
             tmp
         }),
+        "UnableToAccessSecretException" => {
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnableToAccessSecretException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnableToAccessSecretExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_unable_to_access_secret_exception::de_unable_to_access_secret_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnableToDecryptSecretValueException" => {
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnableToDecryptSecretValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnableToDecryptSecretValueExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_unable_to_decrypt_secret_value_exception::de_unable_to_decrypt_secret_value_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "UnsupportedUpstreamRegistryException" => {
             crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError::UnsupportedUpstreamRegistryException({
                 #[allow(unused_mut)]
@@ -189,6 +245,20 @@ pub(crate) fn de_create_pull_through_cache_rule(
                 }
                 "registryId" => {
                     builder = builder.set_registry_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "upstreamRegistry" => {
+                    builder = builder.set_upstream_registry(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::UpstreamRegistry::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "credentialArn" => {
+                    builder = builder.set_credential_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

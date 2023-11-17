@@ -56,6 +56,32 @@ pub fn ser_create_subnet_input_input_input(
     if let Some(var_21) = &input.ipv6_native {
         scope_20.boolean(*var_21);
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("Ipv4IpamPoolId");
+    if let Some(var_23) = &input.ipv4_ipam_pool_id {
+        scope_22.string(var_23);
+    }
+    #[allow(unused_mut)]
+    let mut scope_24 = writer.prefix("Ipv4NetmaskLength");
+    if let Some(var_25) = &input.ipv4_netmask_length {
+        scope_24.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("Ipv6IpamPoolId");
+    if let Some(var_27) = &input.ipv6_ipam_pool_id {
+        scope_26.string(var_27);
+    }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("Ipv6NetmaskLength");
+    if let Some(var_29) = &input.ipv6_netmask_length {
+        scope_28.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_29).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

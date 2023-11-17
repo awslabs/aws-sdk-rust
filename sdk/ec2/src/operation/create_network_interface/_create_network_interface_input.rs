@@ -47,6 +47,8 @@ pub struct CreateNetworkInterfaceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>If you’re creating a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>
     pub enable_primary_ipv6: ::std::option::Option<bool>,
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
 impl CreateNetworkInterfaceInput {
     /// <p>A description for the network interface.</p>
@@ -139,6 +141,10 @@ impl CreateNetworkInterfaceInput {
     pub fn enable_primary_ipv6(&self) -> ::std::option::Option<bool> {
         self.enable_primary_ipv6
     }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn connection_tracking_specification(&self) -> ::std::option::Option<&crate::types::ConnectionTrackingSpecificationRequest> {
+        self.connection_tracking_specification.as_ref()
+    }
 }
 impl CreateNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
@@ -168,6 +174,7 @@ pub struct CreateNetworkInterfaceInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) enable_primary_ipv6: ::std::option::Option<bool>,
+    pub(crate) connection_tracking_specification: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
 }
 impl CreateNetworkInterfaceInputBuilder {
     /// <p>A description for the network interface.</p>
@@ -475,6 +482,23 @@ impl CreateNetworkInterfaceInputBuilder {
     pub fn get_enable_primary_ipv6(&self) -> &::std::option::Option<bool> {
         &self.enable_primary_ipv6
     }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn connection_tracking_specification(mut self, input: crate::types::ConnectionTrackingSpecificationRequest) -> Self {
+        self.connection_tracking_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn set_connection_tracking_specification(
+        mut self,
+        input: ::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest>,
+    ) -> Self {
+        self.connection_tracking_specification = input;
+        self
+    }
+    /// <p>A connection tracking specification for the network interface.</p>
+    pub fn get_connection_tracking_specification(&self) -> &::std::option::Option<crate::types::ConnectionTrackingSpecificationRequest> {
+        &self.connection_tracking_specification
+    }
     /// Consumes the builder and constructs a [`CreateNetworkInterfaceInput`](crate::operation::create_network_interface::CreateNetworkInterfaceInput).
     pub fn build(
         self,
@@ -500,6 +524,7 @@ impl CreateNetworkInterfaceInputBuilder {
             tag_specifications: self.tag_specifications,
             client_token: self.client_token,
             enable_primary_ipv6: self.enable_primary_ipv6,
+            connection_tracking_specification: self.connection_tracking_specification,
         })
     }
 }

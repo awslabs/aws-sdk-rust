@@ -23,7 +23,6 @@ impl CreateNamedQueryInputBuilder {
 /// Fluent builder constructing a request to `CreateNamedQuery`.
 ///
 /// <p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p>
-/// <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNamedQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl CreatePullThroughCacheRuleInputBuilder {
 }
 /// Fluent builder constructing a request to `CreatePullThroughCacheRule`.
 ///
-/// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>
+/// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an upstream registry source in your Amazon ECR private registry. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePullThroughCacheRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,50 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ecr_repository_prefix()
     }
-    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
+    /// <ul>
+    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
+    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
+    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
+    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
+    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
+    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <custom>
+    /// .azurecr.io
+    /// </custom></code> </p> </li>
+    /// </ul>
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upstream_registry_url(input.into());
         self
     }
-    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
+    /// <ul>
+    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
+    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
+    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
+    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
+    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
+    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <custom>
+    /// .azurecr.io
+    /// </custom></code> </p> </li>
+    /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upstream_registry_url(input);
         self
     }
-    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
+    /// <ul>
+    /// <li> <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code> </p> </li>
+    /// <li> <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li>
+    /// <li> <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li>
+    /// <li> <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li>
+    /// <li> <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code> </p> </li>
+    /// <li> <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code>
+    /// <custom>
+    /// .azurecr.io
+    /// </custom></code> </p> </li>
+    /// </ul>
     pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upstream_registry_url()
     }
@@ -149,5 +182,33 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registry_id()
+    }
+    /// <p>The name of the upstream registry.</p>
+    pub fn upstream_registry(mut self, input: crate::types::UpstreamRegistry) -> Self {
+        self.inner = self.inner.upstream_registry(input);
+        self
+    }
+    /// <p>The name of the upstream registry.</p>
+    pub fn set_upstream_registry(mut self, input: ::std::option::Option<crate::types::UpstreamRegistry>) -> Self {
+        self.inner = self.inner.set_upstream_registry(input);
+        self
+    }
+    /// <p>The name of the upstream registry.</p>
+    pub fn get_upstream_registry(&self) -> &::std::option::Option<crate::types::UpstreamRegistry> {
+        self.inner.get_upstream_registry()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
+    pub fn credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.credential_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
+    pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_credential_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
+    pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_credential_arn()
     }
 }

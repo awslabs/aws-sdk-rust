@@ -305,6 +305,8 @@ pub(crate) mod shape_pipeline_metadata;
 
 pub(crate) mod shape_pipeline_variable;
 
+pub(crate) mod shape_source_revision_override;
+
 pub(crate) mod shape_stage_state_list;
 
 pub(crate) mod shape_tag;

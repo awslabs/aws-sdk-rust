@@ -10,13 +10,13 @@ pub struct TemplateActionDocument {
     /// <p>Template post migration custom action document identifier.</p>
     pub document_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action order.</p>
-    pub order: i32,
+    pub order: ::std::option::Option<i32>,
     /// <p>Template post migration custom action document version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action active status.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
@@ -45,7 +45,7 @@ impl TemplateActionDocument {
         self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>Template post migration custom action document version.</p>
@@ -57,7 +57,7 @@ impl TemplateActionDocument {
         self.active
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>Template post migration custom action must succeed for cutover.</p>
@@ -330,10 +330,10 @@ impl TemplateActionDocumentBuilder {
             action_id: self.action_id,
             action_name: self.action_name,
             document_identifier: self.document_identifier,
-            order: self.order.unwrap_or_default(),
+            order: self.order,
             document_version: self.document_version,
             active: self.active,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             operating_system: self.operating_system,

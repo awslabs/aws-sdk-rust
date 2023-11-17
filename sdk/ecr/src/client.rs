@@ -243,4 +243,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_pull_through_cache_rule;
+
 mod upload_layer_part;
+
+mod validate_pull_through_cache_rule;

@@ -282,6 +282,16 @@ pub fn de_launch_template_instance_network_interface_specification(
                 builder = builder.set_ena_srd_specification(var_21);
             }
             ,
+            s if s.matches("connectionTrackingSpecification") /* ConnectionTrackingSpecification com.amazonaws.ec2#LaunchTemplateInstanceNetworkInterfaceSpecification$ConnectionTrackingSpecification */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_connection_tracking_specification::de_connection_tracking_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_tracking_specification(var_22);
+            }
+            ,
             _ => {}
         }
     }

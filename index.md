@@ -9,6 +9,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Amplify | [aws-sdk-amplify](https://crates.io/crates/aws-sdk-amplify) ([docs](https://docs.rs/aws-sdk-amplify)) |
 | AWS Amplify UI Builder | [aws-sdk-amplifyuibuilder](https://crates.io/crates/aws-sdk-amplifyuibuilder) ([docs](https://docs.rs/aws-sdk-amplifyuibuilder)) |
 | AWS App Mesh | [aws-sdk-appmesh](https://crates.io/crates/aws-sdk-appmesh) ([docs](https://docs.rs/aws-sdk-appmesh)) |
+| AWS App Mesh | [aws-sdk-appmesh](https://crates.io/crates/aws-sdk-appmesh) ([docs](https://docs.rs/aws-sdk-appmesh)) |
 | AWS App Runner | [aws-sdk-apprunner](https://crates.io/crates/aws-sdk-apprunner) ([docs](https://docs.rs/aws-sdk-apprunner)) |
 | AWS AppConfig Data | [aws-sdk-appconfigdata](https://crates.io/crates/aws-sdk-appconfigdata) ([docs](https://docs.rs/aws-sdk-appconfigdata)) |
 | AWS AppSync | [aws-sdk-appsync](https://crates.io/crates/aws-sdk-appsync) ([docs](https://docs.rs/aws-sdk-appsync)) |
@@ -216,6 +217,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon EC2 Container Registry | [aws-sdk-ecr](https://crates.io/crates/aws-sdk-ecr) ([docs](https://docs.rs/aws-sdk-ecr)) |
 | Amazon EC2 Container Service | [aws-sdk-ecs](https://crates.io/crates/aws-sdk-ecs) ([docs](https://docs.rs/aws-sdk-ecs)) |
 | Amazon EMR | [aws-sdk-emr](https://crates.io/crates/aws-sdk-emr) ([docs](https://docs.rs/aws-sdk-emr)) |
+| Amazon EMR | [aws-sdk-emr](https://crates.io/crates/aws-sdk-emr) ([docs](https://docs.rs/aws-sdk-emr)) |
 | Amazon EMR Containers | [aws-sdk-emrcontainers](https://crates.io/crates/aws-sdk-emrcontainers) ([docs](https://docs.rs/aws-sdk-emrcontainers)) |
 | Amazon ElastiCache | [aws-sdk-elasticache](https://crates.io/crates/aws-sdk-elasticache) ([docs](https://docs.rs/aws-sdk-elasticache)) |
 | Amazon Elastic  Inference | [aws-sdk-elasticinference](https://crates.io/crates/aws-sdk-elasticinference) ([docs](https://docs.rs/aws-sdk-elasticinference)) |
@@ -250,6 +252,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Kinesis Analytics | [aws-sdk-kinesisanalyticsv2](https://crates.io/crates/aws-sdk-kinesisanalyticsv2) ([docs](https://docs.rs/aws-sdk-kinesisanalyticsv2)) |
 | Amazon Kinesis Firehose | [aws-sdk-firehose](https://crates.io/crates/aws-sdk-firehose) ([docs](https://docs.rs/aws-sdk-firehose)) |
 | Amazon Kinesis Video Signaling Channels | [aws-sdk-kinesisvideosignaling](https://crates.io/crates/aws-sdk-kinesisvideosignaling) ([docs](https://docs.rs/aws-sdk-kinesisvideosignaling)) |
+| Amazon Kinesis Video Streams | [aws-sdk-kinesisvideo](https://crates.io/crates/aws-sdk-kinesisvideo) ([docs](https://docs.rs/aws-sdk-kinesisvideo)) |
 | Amazon Kinesis Video Streams | [aws-sdk-kinesisvideo](https://crates.io/crates/aws-sdk-kinesisvideo) ([docs](https://docs.rs/aws-sdk-kinesisvideo)) |
 | Amazon Kinesis Video Streams Archived Media | [aws-sdk-kinesisvideoarchivedmedia](https://crates.io/crates/aws-sdk-kinesisvideoarchivedmedia) ([docs](https://docs.rs/aws-sdk-kinesisvideoarchivedmedia)) |
 | Amazon Kinesis Video Streams Media | [aws-sdk-kinesisvideomedia](https://crates.io/crates/aws-sdk-kinesisvideomedia) ([docs](https://docs.rs/aws-sdk-kinesisvideomedia)) |
@@ -364,3 +367,4 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |
 | Synthetics | [aws-sdk-synthetics](https://crates.io/crates/aws-sdk-synthetics) ([docs](https://docs.rs/aws-sdk-synthetics)) |
+| TrustedAdvisor Public API | [aws-sdk-trustedadvisor](https://crates.io/crates/aws-sdk-trustedadvisor) ([docs](https://docs.rs/aws-sdk-trustedadvisor)) |

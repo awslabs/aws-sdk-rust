@@ -186,6 +186,58 @@ impl From<crate::operation::get_monitor::GetMonitorError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_results::GetQueryResultsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_results::GetQueryResultsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_query_results::GetQueryResultsError> for Error {
+    fn from(err: crate::operation::get_query_results::GetQueryResultsError) -> Self {
+        match err {
+            crate::operation::get_query_results::GetQueryResultsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_status::GetQueryStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query_status::GetQueryStatusError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_query_status::GetQueryStatusError> for Error {
+    fn from(err: crate::operation::get_query_status::GetQueryStatusError) -> Self {
+        match err {
+            crate::operation::get_query_status::GetQueryStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_query_status::GetQueryStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_query_status::GetQueryStatusError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_query_status::GetQueryStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_query_status::GetQueryStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_query_status::GetQueryStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_health_events::ListHealthEventsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -263,6 +315,58 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_query::StartQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_query::StartQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_query::StartQueryError> for Error {
+    fn from(err: crate::operation::start_query::StartQueryError) -> Self {
+        match err {
+            crate::operation::start_query::StartQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_query::StartQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_query::StartQueryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_query::StartQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_query::StartQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_query::StartQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_query::StopQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_query::StopQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_query::StopQueryError> for Error {
+    fn from(err: crate::operation::stop_query::StopQueryError) -> Self {
+        match err {
+            crate::operation::stop_query::StopQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_query::StopQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_query::StopQueryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::stop_query::StopQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_query::StopQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_query::StopQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

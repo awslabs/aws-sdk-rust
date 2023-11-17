@@ -157,5 +157,10 @@ pub fn ser_launch_template_instance_network_interface_specification_request(
     if let Some(var_57) = &input.ena_srd_specification {
         crate::protocol_serde::shape_ena_srd_specification_request::ser_ena_srd_specification_request(scope_56, var_57)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_58 = writer.prefix("ConnectionTrackingSpecification");
+    if let Some(var_59) = &input.connection_tracking_specification {
+        crate::protocol_serde::shape_connection_tracking_specification_request::ser_connection_tracking_specification_request(scope_58, var_59)?;
+    }
     Ok(())
 }

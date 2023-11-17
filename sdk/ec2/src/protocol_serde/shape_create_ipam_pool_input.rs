@@ -106,6 +106,11 @@ pub fn ser_create_ipam_pool_input_input_input(
     if let Some(var_38) = &input.public_ip_source {
         scope_37.string(var_38.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_39 = writer.prefix("SourceResource");
+    if let Some(var_40) = &input.source_resource {
+        crate::protocol_serde::shape_ipam_pool_source_resource_request::ser_ipam_pool_source_resource_request(scope_39, var_40)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

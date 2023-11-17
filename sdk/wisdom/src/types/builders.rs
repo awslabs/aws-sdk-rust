@@ -7,13 +7,39 @@ pub use crate::types::_rendering_configuration::RenderingConfigurationBuilder;
 
 pub use crate::types::_app_integrations_configuration::AppIntegrationsConfigurationBuilder;
 
+pub use crate::types::_import_job_data::ImportJobDataBuilder;
+
+pub use crate::types::_external_source_configuration::ExternalSourceConfigurationBuilder;
+
+pub use crate::types::_connect_configuration::ConnectConfigurationBuilder;
+
+pub use crate::types::_quick_response_search_result_data::QuickResponseSearchResultDataBuilder;
+
+pub use crate::types::_grouping_configuration::GroupingConfigurationBuilder;
+
+pub use crate::types::_quick_response_contents::QuickResponseContentsBuilder;
+
+pub use crate::types::_quick_response_search_expression::QuickResponseSearchExpressionBuilder;
+
+pub use crate::types::_quick_response_order_field::QuickResponseOrderFieldBuilder;
+
+pub use crate::types::_quick_response_filter_field::QuickResponseFilterFieldBuilder;
+
+pub use crate::types::_quick_response_query_field::QuickResponseQueryFieldBuilder;
+
 pub use crate::types::_content_summary::ContentSummaryBuilder;
 
 pub use crate::types::_search_expression::SearchExpressionBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_import_job_summary::ImportJobSummaryBuilder;
+
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
+
+pub use crate::types::_quick_response_summary::QuickResponseSummaryBuilder;
+
+pub use crate::types::_quick_response_data::QuickResponseDataBuilder;
 
 pub use crate::types::_content_data::ContentDataBuilder;
 

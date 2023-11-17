@@ -8,7 +8,7 @@ pub struct SearchPlaceIndexForPositionSummary {
     pub position: ::std::vec::Vec<f64>,
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
     /// <li> <p>Esri</p> </li>
@@ -28,7 +28,7 @@ impl SearchPlaceIndexForPositionSummary {
     }
     /// <p>Contains the optional result count limit that is specified in the request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
@@ -170,7 +170,7 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
                     "position was not specified but it is required when building SearchPlaceIndexForPositionSummary",
                 )
             })?,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             data_source: self.data_source.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "data_source",

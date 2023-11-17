@@ -42,6 +42,11 @@ pub fn ser_create_ipam_input_input_input(
     if let Some(var_16) = &input.client_token {
         scope_15.string(var_16);
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("Tier");
+    if let Some(var_18) = &input.tier {
+        scope_17.string(var_18.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

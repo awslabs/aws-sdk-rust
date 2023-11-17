@@ -380,17 +380,23 @@ impl AssumeRoleFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_provided_contexts`](Self::set_provided_contexts).
     ///
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn provided_contexts(mut self, input: crate::types::ProvidedContext) -> Self {
         self.inner = self.inner.provided_contexts(input);
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn set_provided_contexts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>) -> Self {
         self.inner = self.inner.set_provided_contexts(input);
         self
     }
-    /// <p>Reserved for future use.</p>
+    /// <p>A list of previously acquired trusted context assertions in the format of a JSON array. The trusted context assertion is signed and encrypted by Amazon Web Services STS.</p>
+    /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
+    /// <p> <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code> </p>
     pub fn get_provided_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>> {
         self.inner.get_provided_contexts()
     }

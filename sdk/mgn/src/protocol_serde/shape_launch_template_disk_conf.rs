@@ -60,16 +60,16 @@ pub fn ser_launch_template_disk_conf(
     if let Some(var_1) = &input.volume_type {
         object.key("volumeType").string(var_1.as_str());
     }
-    if input.iops != 0 {
+    if let Some(var_2) = &input.iops {
         object.key("iops").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.iops).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.throughput != 0 {
+    if let Some(var_3) = &input.throughput {
         object.key("throughput").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.throughput).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

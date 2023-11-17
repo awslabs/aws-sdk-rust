@@ -40,8 +40,18 @@ pub fn de_network_interface(
                 builder = builder.set_availability_zone(var_3);
             }
             ,
-            s if s.matches("description") /* Description com.amazonaws.ec2#NetworkInterface$Description */ =>  {
+            s if s.matches("connectionTrackingConfiguration") /* ConnectionTrackingConfiguration com.amazonaws.ec2#NetworkInterface$ConnectionTrackingConfiguration */ =>  {
                 let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_connection_tracking_configuration::de_connection_tracking_configuration(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_tracking_configuration(var_4);
+            }
+            ,
+            s if s.matches("description") /* Description com.amazonaws.ec2#NetworkInterface$Description */ =>  {
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -50,21 +60,21 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_4);
+                builder = builder.set_description(var_5);
             }
             ,
             s if s.matches("groupSet") /* Groups com.amazonaws.ec2#NetworkInterface$Groups */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_group_identifier_list::de_group_identifier_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_groups(var_5);
+                builder = builder.set_groups(var_6);
             }
             ,
             s if s.matches("interfaceType") /* InterfaceType com.amazonaws.ec2#NetworkInterface$InterfaceType */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         Result::<crate::types::NetworkInterfaceType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::NetworkInterfaceType::from(
@@ -74,33 +84,20 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_interface_type(var_6);
+                builder = builder.set_interface_type(var_7);
             }
             ,
             s if s.matches("ipv6AddressesSet") /* Ipv6Addresses com.amazonaws.ec2#NetworkInterface$Ipv6Addresses */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_network_interface_ipv6_addresses_list::de_network_interface_ipv6_addresses_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_addresses(var_7);
+                builder = builder.set_ipv6_addresses(var_8);
             }
             ,
             s if s.matches("macAddress") /* MacAddress com.amazonaws.ec2#NetworkInterface$MacAddress */ =>  {
-                let var_8 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_mac_address(var_8);
-            }
-            ,
-            s if s.matches("networkInterfaceId") /* NetworkInterfaceId com.amazonaws.ec2#NetworkInterface$NetworkInterfaceId */ =>  {
                 let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -110,10 +107,10 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_id(var_9);
+                builder = builder.set_mac_address(var_9);
             }
             ,
-            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#NetworkInterface$OutpostArn */ =>  {
+            s if s.matches("networkInterfaceId") /* NetworkInterfaceId com.amazonaws.ec2#NetworkInterface$NetworkInterfaceId */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -123,10 +120,10 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_outpost_arn(var_10);
+                builder = builder.set_network_interface_id(var_10);
             }
             ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#NetworkInterface$OwnerId */ =>  {
+            s if s.matches("outpostArn") /* OutpostArn com.amazonaws.ec2#NetworkInterface$OutpostArn */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -136,10 +133,10 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_11);
+                builder = builder.set_outpost_arn(var_11);
             }
             ,
-            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#NetworkInterface$PrivateDnsName */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2#NetworkInterface$OwnerId */ =>  {
                 let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -149,10 +146,10 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_private_dns_name(var_12);
+                builder = builder.set_owner_id(var_12);
             }
             ,
-            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#NetworkInterface$PrivateIpAddress */ =>  {
+            s if s.matches("privateDnsName") /* PrivateDnsName com.amazonaws.ec2#NetworkInterface$PrivateDnsName */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -162,41 +159,11 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_private_ip_address(var_13);
+                builder = builder.set_private_dns_name(var_13);
             }
             ,
-            s if s.matches("privateIpAddressesSet") /* PrivateIpAddresses com.amazonaws.ec2#NetworkInterface$PrivateIpAddresses */ =>  {
+            s if s.matches("privateIpAddress") /* PrivateIpAddress com.amazonaws.ec2#NetworkInterface$PrivateIpAddress */ =>  {
                 let var_14 =
-                    Some(
-                        crate::protocol_serde::shape_network_interface_private_ip_address_list::de_network_interface_private_ip_address_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_private_ip_addresses(var_14);
-            }
-            ,
-            s if s.matches("ipv4PrefixSet") /* Ipv4Prefixes com.amazonaws.ec2#NetworkInterface$Ipv4Prefixes */ =>  {
-                let var_15 =
-                    Some(
-                        crate::protocol_serde::shape_ipv4_prefixes_list::de_ipv4_prefixes_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_ipv4_prefixes(var_15);
-            }
-            ,
-            s if s.matches("ipv6PrefixSet") /* Ipv6Prefixes com.amazonaws.ec2#NetworkInterface$Ipv6Prefixes */ =>  {
-                let var_16 =
-                    Some(
-                        crate::protocol_serde::shape_ipv6_prefixes_list::de_ipv6_prefixes_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_ipv6_prefixes(var_16);
-            }
-            ,
-            s if s.matches("requesterId") /* RequesterId com.amazonaws.ec2#NetworkInterface$RequesterId */ =>  {
-                let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -205,25 +172,53 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_requester_id(var_17);
+                builder = builder.set_private_ip_address(var_14);
             }
             ,
-            s if s.matches("requesterManaged") /* RequesterManaged com.amazonaws.ec2#NetworkInterface$RequesterManaged */ =>  {
-                let var_18 =
+            s if s.matches("privateIpAddressesSet") /* PrivateIpAddresses com.amazonaws.ec2#NetworkInterface$PrivateIpAddresses */ =>  {
+                let var_15 =
                     Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
-                        }
+                        crate::protocol_serde::shape_network_interface_private_ip_address_list::de_network_interface_private_ip_address_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_requester_managed(var_18);
+                builder = builder.set_private_ip_addresses(var_15);
             }
             ,
-            s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2#NetworkInterface$SourceDestCheck */ =>  {
+            s if s.matches("ipv4PrefixSet") /* Ipv4Prefixes com.amazonaws.ec2#NetworkInterface$Ipv4Prefixes */ =>  {
+                let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_ipv4_prefixes_list::de_ipv4_prefixes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv4_prefixes(var_16);
+            }
+            ,
+            s if s.matches("ipv6PrefixSet") /* Ipv6Prefixes com.amazonaws.ec2#NetworkInterface$Ipv6Prefixes */ =>  {
+                let var_17 =
+                    Some(
+                        crate::protocol_serde::shape_ipv6_prefixes_list::de_ipv6_prefixes_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_prefixes(var_17);
+            }
+            ,
+            s if s.matches("requesterId") /* RequesterId com.amazonaws.ec2#NetworkInterface$RequesterId */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_requester_id(var_18);
+            }
+            ,
+            s if s.matches("requesterManaged") /* RequesterManaged com.amazonaws.ec2#NetworkInterface$RequesterManaged */ =>  {
                 let var_19 =
                     Some(
                          {
@@ -235,61 +230,11 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_source_dest_check(var_19);
+                builder = builder.set_requester_managed(var_19);
             }
             ,
-            s if s.matches("status") /* Status com.amazonaws.ec2#NetworkInterface$Status */ =>  {
+            s if s.matches("sourceDestCheck") /* SourceDestCheck com.amazonaws.ec2#NetworkInterface$SourceDestCheck */ =>  {
                 let var_20 =
-                    Some(
-                        Result::<crate::types::NetworkInterfaceStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            crate::types::NetworkInterfaceStatus::from(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_status(var_20);
-            }
-            ,
-            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#NetworkInterface$SubnetId */ =>  {
-                let var_21 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_subnet_id(var_21);
-            }
-            ,
-            s if s.matches("tagSet") /* TagSet com.amazonaws.ec2#NetworkInterface$TagSet */ =>  {
-                let var_22 =
-                    Some(
-                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_tag_set(var_22);
-            }
-            ,
-            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#NetworkInterface$VpcId */ =>  {
-                let var_23 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_vpc_id(var_23);
-            }
-            ,
-            s if s.matches("denyAllIgwTraffic") /* DenyAllIgwTraffic com.amazonaws.ec2#NetworkInterface$DenyAllIgwTraffic */ =>  {
-                let var_24 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -300,10 +245,60 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_deny_all_igw_traffic(var_24);
+                builder = builder.set_source_dest_check(var_20);
             }
             ,
-            s if s.matches("ipv6Native") /* Ipv6Native com.amazonaws.ec2#NetworkInterface$Ipv6Native */ =>  {
+            s if s.matches("status") /* Status com.amazonaws.ec2#NetworkInterface$Status */ =>  {
+                let var_21 =
+                    Some(
+                        Result::<crate::types::NetworkInterfaceStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NetworkInterfaceStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_21);
+            }
+            ,
+            s if s.matches("subnetId") /* SubnetId com.amazonaws.ec2#NetworkInterface$SubnetId */ =>  {
+                let var_22 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_subnet_id(var_22);
+            }
+            ,
+            s if s.matches("tagSet") /* TagSet com.amazonaws.ec2#NetworkInterface$TagSet */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_set(var_23);
+            }
+            ,
+            s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#NetworkInterface$VpcId */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_id(var_24);
+            }
+            ,
+            s if s.matches("denyAllIgwTraffic") /* DenyAllIgwTraffic com.amazonaws.ec2#NetworkInterface$DenyAllIgwTraffic */ =>  {
                 let var_25 =
                     Some(
                          {
@@ -315,11 +310,26 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_native(var_25);
+                builder = builder.set_deny_all_igw_traffic(var_25);
+            }
+            ,
+            s if s.matches("ipv6Native") /* Ipv6Native com.amazonaws.ec2#NetworkInterface$Ipv6Native */ =>  {
+                let var_26 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_ipv6_native(var_26);
             }
             ,
             s if s.matches("ipv6Address") /* Ipv6Address com.amazonaws.ec2#NetworkInterface$Ipv6Address */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -328,7 +338,7 @@ pub fn de_network_interface(
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_address(var_26);
+                builder = builder.set_ipv6_address(var_27);
             }
             ,
             _ => {}

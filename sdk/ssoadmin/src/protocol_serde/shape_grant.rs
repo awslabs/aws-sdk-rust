@@ -33,6 +33,16 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'JwtBearer' cannot be null")
                             })?,
                         )),
+                        "RefreshToken" => Some(crate::types::Grant::RefreshToken(
+                            crate::protocol_serde::shape_refresh_token_grant::de_refresh_token_grant(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RefreshToken' cannot be null")
+                            })?,
+                        )),
+                        "TokenExchange" => Some(crate::types::Grant::TokenExchange(
+                            crate::protocol_serde::shape_token_exchange_grant::de_token_exchange_grant(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'TokenExchange' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Grant::Unknown)
@@ -72,6 +82,18 @@ pub fn ser_grant(
             let mut object_2 = object_4.key("JwtBearer").start_object();
             crate::protocol_serde::shape_jwt_bearer_grant::ser_jwt_bearer_grant(&mut object_2, inner)?;
             object_2.finish();
+        }
+        crate::types::Grant::RefreshToken(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("RefreshToken").start_object();
+            crate::protocol_serde::shape_refresh_token_grant::ser_refresh_token_grant(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::Grant::TokenExchange(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_4.key("TokenExchange").start_object();
+            crate::protocol_serde::shape_token_exchange_grant::ser_token_exchange_grant(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::Grant::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Grant")),
     }

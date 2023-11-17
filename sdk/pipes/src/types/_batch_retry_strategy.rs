@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchRetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    pub attempts: i32,
+    pub attempts: ::std::option::Option<i32>,
 }
 impl BatchRetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
-    pub fn attempts(&self) -> i32 {
+    pub fn attempts(&self) -> ::std::option::Option<i32> {
         self.attempts
     }
 }
@@ -43,8 +43,6 @@ impl BatchRetryStrategyBuilder {
     }
     /// Consumes the builder and constructs a [`BatchRetryStrategy`](crate::types::BatchRetryStrategy).
     pub fn build(self) -> crate::types::BatchRetryStrategy {
-        crate::types::BatchRetryStrategy {
-            attempts: self.attempts.unwrap_or_default(),
-        }
+        crate::types::BatchRetryStrategy { attempts: self.attempts }
     }
 }

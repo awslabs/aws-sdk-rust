@@ -26,7 +26,7 @@ pub struct IpamPool {
     pub pool_depth: ::std::option::Option<i32>,
     /// <p>The state of the IPAM pool.</p>
     pub state: ::std::option::Option<crate::types::IpamPoolState>,
-    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    /// <p>The state message.</p>
     pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The description of the IPAM pool.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -51,6 +51,8 @@ pub struct IpamPool {
     pub aws_service: ::std::option::Option<crate::types::IpamPoolAwsService>,
     /// <p>The IP address source for pools in the public scope. Only used for provisioning IP address CIDRs to pools in the public scope. Default is <code>BYOIP</code>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html"> Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub public_ip_source: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub source_resource: ::std::option::Option<crate::types::IpamPoolSourceResource>,
 }
 impl IpamPool {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
@@ -97,7 +99,7 @@ impl IpamPool {
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamPoolState> {
         self.state.as_ref()
     }
-    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    /// <p>The state message.</p>
     pub fn state_message(&self) -> ::std::option::Option<&str> {
         self.state_message.as_deref()
     }
@@ -150,6 +152,10 @@ impl IpamPool {
     pub fn public_ip_source(&self) -> ::std::option::Option<&crate::types::IpamPoolPublicIpSource> {
         self.public_ip_source.as_ref()
     }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn source_resource(&self) -> ::std::option::Option<&crate::types::IpamPoolSourceResource> {
+        self.source_resource.as_ref()
+    }
 }
 impl IpamPool {
     /// Creates a new builder-style object to manufacture [`IpamPool`](crate::types::IpamPool).
@@ -185,6 +191,7 @@ pub struct IpamPoolBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) aws_service: ::std::option::Option<crate::types::IpamPoolAwsService>,
     pub(crate) public_ip_source: ::std::option::Option<crate::types::IpamPoolPublicIpSource>,
+    pub(crate) source_resource: ::std::option::Option<crate::types::IpamPoolSourceResource>,
 }
 impl IpamPoolBuilder {
     /// <p>The Amazon Web Services account ID of the owner of the IPAM pool.</p>
@@ -341,17 +348,17 @@ impl IpamPoolBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamPoolState> {
         &self.state
     }
-    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    /// <p>The state message.</p>
     pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.state_message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    /// <p>The state message.</p>
     pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_message = input;
         self
     }
-    /// <p>A message related to the failed creation of an IPAM pool.</p>
+    /// <p>The state message.</p>
     pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_message
     }
@@ -524,6 +531,20 @@ impl IpamPoolBuilder {
     pub fn get_public_ip_source(&self) -> &::std::option::Option<crate::types::IpamPoolPublicIpSource> {
         &self.public_ip_source
     }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn source_resource(mut self, input: crate::types::IpamPoolSourceResource) -> Self {
+        self.source_resource = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn set_source_resource(mut self, input: ::std::option::Option<crate::types::IpamPoolSourceResource>) -> Self {
+        self.source_resource = input;
+        self
+    }
+    /// <p>The resource used to provision CIDRs to a resource planning pool.</p>
+    pub fn get_source_resource(&self) -> &::std::option::Option<crate::types::IpamPoolSourceResource> {
+        &self.source_resource
+    }
     /// Consumes the builder and constructs a [`IpamPool`](crate::types::IpamPool).
     pub fn build(self) -> crate::types::IpamPool {
         crate::types::IpamPool {
@@ -550,6 +571,7 @@ impl IpamPoolBuilder {
             tags: self.tags,
             aws_service: self.aws_service,
             public_ip_source: self.public_ip_source,
+            source_resource: self.source_resource,
         }
     }
 }

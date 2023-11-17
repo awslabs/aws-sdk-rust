@@ -25,6 +25,10 @@ pub use crate::types::_context_definition::ContextDefinition;
 
 pub use crate::types::_action_identifier::ActionIdentifier;
 
+pub use crate::types::_batch_is_authorized_output_item::BatchIsAuthorizedOutputItem;
+
+pub use crate::types::_batch_is_authorized_input_item::BatchIsAuthorizedInputItem;
+
 pub use crate::types::_policy_store_item::PolicyStoreItem;
 
 pub use crate::types::_validation_settings::ValidationSettings;
@@ -84,6 +88,10 @@ pub use crate::types::_identity_source_details::IdentitySourceDetails;
 mod _action_identifier;
 
 mod _attribute_value;
+
+mod _batch_is_authorized_input_item;
+
+mod _batch_is_authorized_output_item;
 
 mod _cognito_user_pool_configuration;
 

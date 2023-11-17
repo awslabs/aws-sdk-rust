@@ -186,6 +186,33 @@ pub fn de_ipam(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<
                 builder = builder.set_resource_discovery_association_count(var_14);
             }
             ,
+            s if s.matches("stateMessage") /* StateMessage com.amazonaws.ec2#Ipam$StateMessage */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state_message(var_15);
+            }
+            ,
+            s if s.matches("tier") /* Tier com.amazonaws.ec2#Ipam$Tier */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<crate::types::IpamTier, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::IpamTier::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_tier(var_16);
+            }
+            ,
             _ => {}
         }
     }

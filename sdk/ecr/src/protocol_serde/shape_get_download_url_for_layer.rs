@@ -100,6 +100,26 @@ pub fn de_get_download_url_for_layer_http_error(
             }
             tmp
         }),
+        "UnableToGetUpstreamLayerException" => {
+            crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::UnableToGetUpstreamLayerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnableToGetUpstreamLayerExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_unable_to_get_upstream_layer_exception::de_unable_to_get_upstream_layer_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::get_download_url_for_layer::GetDownloadUrlForLayerError::generic(generic),
     })
 }

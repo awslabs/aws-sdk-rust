@@ -62,6 +62,27 @@ pub(crate) fn get_monitor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_query_results_output_output_correct_errors(
+    mut builder: crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder,
+) -> crate::operation::get_query_results::builders::GetQueryResultsOutputBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_query_status_output_output_correct_errors(
+    mut builder: crate::operation::get_query_status::builders::GetQueryStatusOutputBuilder,
+) -> crate::operation::get_query_status::builders::GetQueryStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QueryStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn list_health_events_output_output_correct_errors(
     mut builder: crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder,
 ) -> crate::operation::list_health_events::builders::ListHealthEventsOutputBuilder {
@@ -76,6 +97,15 @@ pub(crate) fn list_monitors_output_output_correct_errors(
 ) -> crate::operation::list_monitors::builders::ListMonitorsOutputBuilder {
     if builder.monitors.is_none() {
         builder.monitors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_query_output_output_correct_errors(
+    mut builder: crate::operation::start_query::builders::StartQueryOutputBuilder,
+) -> crate::operation::start_query::builders::StartQueryOutputBuilder {
+    if builder.query_id.is_none() {
+        builder.query_id = Some(Default::default())
     }
     builder
 }

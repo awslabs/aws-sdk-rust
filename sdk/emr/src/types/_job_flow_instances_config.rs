@@ -13,7 +13,7 @@ pub struct JobFlowInstancesConfig {
     /// <p>Configuration for the instance groups in a cluster.</p>
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroupConfig>>,
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     pub instance_fleets: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleetConfig>>,
@@ -30,7 +30,7 @@ pub struct JobFlowInstancesConfig {
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
     pub ec2_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     pub ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon EC2 security group for the master node. If you specify <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</p>
@@ -64,7 +64,7 @@ impl JobFlowInstancesConfig {
         self.instance_groups.as_deref().unwrap_or_default()
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     ///
@@ -97,7 +97,7 @@ impl JobFlowInstancesConfig {
         self.ec2_subnet_id.as_deref()
     }
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_subnet_ids.is_none()`.
@@ -226,7 +226,7 @@ impl JobFlowInstancesConfigBuilder {
     /// To override the contents of this collection use [`set_instance_fleets`](Self::set_instance_fleets).
     ///
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     pub fn instance_fleets(mut self, input: crate::types::InstanceFleetConfig) -> Self {
@@ -236,7 +236,7 @@ impl JobFlowInstancesConfigBuilder {
         self
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     pub fn set_instance_fleets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceFleetConfig>>) -> Self {
@@ -244,7 +244,7 @@ impl JobFlowInstancesConfigBuilder {
         self
     }
     /// <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     /// <p>Describes the Amazon EC2 instances and instance configurations for clusters that use the instance fleet configuration.</p>
     pub fn get_instance_fleets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceFleetConfig>> {
@@ -339,7 +339,7 @@ impl JobFlowInstancesConfigBuilder {
     /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
     ///
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     pub fn ec2_subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ec2_subnet_ids.unwrap_or_default();
@@ -348,14 +348,14 @@ impl JobFlowInstancesConfigBuilder {
         self
     }
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     pub fn set_ec2_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ec2_subnet_ids = input;
         self
     }
     /// <p>Applies to clusters that use the instance fleet configuration. When multiple Amazon EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in the optimal subnet.</p> <note>
-    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and higher, excluding 5.0.x versions.</p>
+    /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
     /// </note>
     pub fn get_ec2_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ec2_subnet_ids

@@ -121,6 +121,10 @@ pub use crate::types::error::_scheduled_action_not_found_fault::ScheduledActionN
 
 pub use crate::types::error::_invalid_scheduled_action_fault::InvalidScheduledActionFault;
 
+pub use crate::types::error::_redshift_idc_application_not_exists_fault::RedshiftIdcApplicationNotExistsFault;
+
+pub use crate::types::error::_dependent_service_access_denied_fault::DependentServiceAccessDeniedFault;
+
 pub use crate::types::error::_subscription_severity_not_found_fault::SubscriptionSeverityNotFoundFault;
 
 pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFoundFault;
@@ -216,6 +220,10 @@ pub use crate::types::error::_snapshot_copy_grant_already_exists_fault::Snapshot
 pub use crate::types::error::_scheduled_action_quota_exceeded_fault::ScheduledActionQuotaExceededFault;
 
 pub use crate::types::error::_scheduled_action_already_exists_fault::ScheduledActionAlreadyExistsFault;
+
+pub use crate::types::error::_redshift_idc_application_quota_exceeded_fault::RedshiftIdcApplicationQuotaExceededFault;
+
+pub use crate::types::error::_redshift_idc_application_already_exists_fault::RedshiftIdcApplicationAlreadyExistsFault;
 
 pub use crate::types::error::_hsm_configuration_quota_exceeded_fault::HsmConfigurationQuotaExceededFault;
 
@@ -326,6 +334,8 @@ mod _copy_to_region_disabled_fault;
 mod _custom_cname_association_fault;
 
 mod _custom_domain_association_not_found_fault;
+
+mod _dependent_service_access_denied_fault;
 
 mod _dependent_service_request_throttling_fault;
 
@@ -440,6 +450,12 @@ mod _number_of_nodes_per_cluster_limit_exceeded_fault;
 mod _number_of_nodes_quota_exceeded_fault;
 
 mod _partner_not_found_fault;
+
+mod _redshift_idc_application_already_exists_fault;
+
+mod _redshift_idc_application_not_exists_fault;
+
+mod _redshift_idc_application_quota_exceeded_fault;
 
 mod _reserved_node_already_exists_fault;
 

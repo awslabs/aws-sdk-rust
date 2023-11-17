@@ -105,6 +105,18 @@ pub use crate::types::_pause_cluster_message::PauseClusterMessage;
 
 pub use crate::types::_resize_cluster_message::ResizeClusterMessage;
 
+pub use crate::types::_redshift_idc_application::RedshiftIdcApplication;
+
+pub use crate::types::_service_integrations_union::ServiceIntegrationsUnion;
+
+pub use crate::types::_lake_formation_scope_union::LakeFormationScopeUnion;
+
+pub use crate::types::_lake_formation_query::LakeFormationQuery;
+
+pub use crate::types::_service_authorization::ServiceAuthorization;
+
+pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuer;
+
 pub use crate::types::_event_subscription::EventSubscription;
 
 pub use crate::types::_cluster_subnet_group::ClusterSubnetGroup;
@@ -239,6 +251,8 @@ mod _authentication_profile;
 
 mod _authorization_status;
 
+mod _authorized_token_issuer;
+
 mod _availability_zone;
 
 mod _certificate_association;
@@ -317,6 +331,10 @@ mod _integration_error;
 
 mod _ip_range;
 
+mod _lake_formation_query;
+
+mod _lake_formation_scope_union;
+
 mod _log_destination_type;
 
 mod _maintenance_track;
@@ -348,6 +366,8 @@ mod _pause_cluster_message;
 mod _pending_modified_values;
 
 mod _recurring_charge;
+
+mod _redshift_idc_application;
 
 mod _reserved_node;
 
@@ -390,6 +410,10 @@ mod _scheduled_action_type;
 mod _scheduled_action_type_values;
 
 mod _secondary_cluster_info;
+
+mod _service_authorization;
+
+mod _service_integrations_union;
 
 mod _snapshot;
 

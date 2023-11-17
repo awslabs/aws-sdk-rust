@@ -14,6 +14,8 @@ pub struct ModifyIpamInput {
     pub add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     /// <p>The operating Regions to remove.</p>
     pub remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl ModifyIpamInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -41,6 +43,10 @@ impl ModifyIpamInput {
     pub fn remove_operating_regions(&self) -> &[crate::types::RemoveIpamOperatingRegion] {
         self.remove_operating_regions.as_deref().unwrap_or_default()
     }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::IpamTier> {
+        self.tier.as_ref()
+    }
 }
 impl ModifyIpamInput {
     /// Creates a new builder-style object to manufacture [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
@@ -58,6 +64,7 @@ pub struct ModifyIpamInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) add_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::AddIpamOperatingRegion>>,
     pub(crate) remove_operating_regions: ::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>>,
+    pub(crate) tier: ::std::option::Option<crate::types::IpamTier>,
 }
 impl ModifyIpamInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -146,6 +153,20 @@ impl ModifyIpamInputBuilder {
     pub fn get_remove_operating_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RemoveIpamOperatingRegion>> {
         &self.remove_operating_regions
     }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn tier(mut self, input: crate::types::IpamTier) -> Self {
+        self.tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::IpamTier>) -> Self {
+        self.tier = input;
+        self
+    }
+    /// <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information about the features available in each tier and the costs associated with the tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt; IPAM tab</a>.</p>
+    pub fn get_tier(&self) -> &::std::option::Option<crate::types::IpamTier> {
+        &self.tier
+    }
     /// Consumes the builder and constructs a [`ModifyIpamInput`](crate::operation::modify_ipam::ModifyIpamInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::modify_ipam::ModifyIpamInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::modify_ipam::ModifyIpamInput {
@@ -154,6 +175,7 @@ impl ModifyIpamInputBuilder {
             description: self.description,
             add_operating_regions: self.add_operating_regions,
             remove_operating_regions: self.remove_operating_regions,
+            tier: self.tier,
         })
     }
 }

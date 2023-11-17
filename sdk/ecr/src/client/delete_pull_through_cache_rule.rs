@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`upstream_registry_url(Option<String>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::upstream_registry_url): <p>The upstream registry URL associated with the pull through cache rule.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::created_at): <p>The timestamp associated with the pull through cache rule.</p>
     ///   - [`registry_id(Option<String>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::registry_id): <p>The registry ID associated with the request.</p>
+    ///   - [`credential_arn(Option<String>)`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput::credential_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     /// - On failure, responds with [`SdkError<DeletePullThroughCacheRuleError>`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleError)
     pub fn delete_pull_through_cache_rule(
         &self,

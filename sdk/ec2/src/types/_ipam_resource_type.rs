@@ -13,6 +13,7 @@
 /// # let ipamresourcetype = unimplemented!();
 /// match ipamresourcetype {
 ///     IpamResourceType::Eip => { /* ... */ },
+///     IpamResourceType::Eni => { /* ... */ },
 ///     IpamResourceType::Ipv6Pool => { /* ... */ },
 ///     IpamResourceType::PublicIpv4Pool => { /* ... */ },
 ///     IpamResourceType::Subnet => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum IpamResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
+    Eni,
+    #[allow(missing_docs)] // documentation missing in model
     Ipv6Pool,
     #[allow(missing_docs)] // documentation missing in model
     PublicIpv4Pool,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for IpamResourceType {
     fn from(s: &str) -> Self {
         match s {
             "eip" => IpamResourceType::Eip,
+            "eni" => IpamResourceType::Eni,
             "ipv6-pool" => IpamResourceType::Ipv6Pool,
             "public-ipv4-pool" => IpamResourceType::PublicIpv4Pool,
             "subnet" => IpamResourceType::Subnet,
@@ -82,6 +86,7 @@ impl IpamResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             IpamResourceType::Eip => "eip",
+            IpamResourceType::Eni => "eni",
             IpamResourceType::Ipv6Pool => "ipv6-pool",
             IpamResourceType::PublicIpv4Pool => "public-ipv4-pool",
             IpamResourceType::Subnet => "subnet",
@@ -91,7 +96,7 @@ impl IpamResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["eip", "ipv6-pool", "public-ipv4-pool", "subnet", "vpc"]
+        &["eip", "eni", "ipv6-pool", "public-ipv4-pool", "subnet", "vpc"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamResourceType {

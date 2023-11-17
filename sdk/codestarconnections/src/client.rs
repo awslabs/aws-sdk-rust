@@ -140,6 +140,10 @@ mod create_connection;
 
 mod create_host;
 
+mod create_repository_link;
+
+mod create_sync_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -171,13 +175,33 @@ mod delete_connection;
 
 mod delete_host;
 
+mod delete_repository_link;
+
+mod delete_sync_configuration;
+
 mod get_connection;
 
 mod get_host;
 
+mod get_repository_link;
+
+mod get_repository_sync_status;
+
+mod get_resource_sync_status;
+
+mod get_sync_blocker_summary;
+
+mod get_sync_configuration;
+
 mod list_connections;
 
 mod list_hosts;
+
+mod list_repository_links;
+
+mod list_repository_sync_definitions;
+
+mod list_sync_configurations;
 
 mod list_tags_for_resource;
 
@@ -186,3 +210,9 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_host;
+
+mod update_repository_link;
+
+mod update_sync_blocker;
+
+mod update_sync_configuration;

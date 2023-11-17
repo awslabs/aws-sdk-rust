@@ -233,6 +233,16 @@ pub(crate) fn reflens_describe_orderable_cluster_options_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_redshift_idc_applications_output_output_marker(
+    input: &crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_reserved_node_exchange_status_output_output_marker(
     input: &crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -571,6 +581,16 @@ pub(crate) fn lens_describe_orderable_cluster_options_output_output_orderable_cl
     input: crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OrderableClusterOption>> {
     let input = match input.orderable_cluster_options {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_redshift_idc_applications_output_output_redshift_idc_applications(
+    input: crate::operation::describe_redshift_idc_applications::DescribeRedshiftIdcApplicationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RedshiftIdcApplication>> {
+    let input = match input.redshift_idc_applications {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

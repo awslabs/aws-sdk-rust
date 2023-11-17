@@ -22,9 +22,6 @@ impl DescribeTrunkInterfaceAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeTrunkInterfaceAssociations`.
 ///
-/// <note>
-/// <p>This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact your account manager.</p>
-/// </note>
 /// <p>Describes one or more network interface trunk associations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrunkInterfaceAssociationsFluentBuilder {

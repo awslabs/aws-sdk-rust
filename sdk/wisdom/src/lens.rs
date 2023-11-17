@@ -29,8 +29,28 @@ pub(crate) fn reflens_list_contents_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_import_jobs_output_output_next_token(
+    input: &crate::operation::list_import_jobs::ListImportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
     input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_quick_responses_output_output_next_token(
+    input: &crate::operation::list_quick_responses::ListQuickResponsesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -51,6 +71,16 @@ pub(crate) fn reflens_query_assistant_output_output_next_token(
 
 pub(crate) fn reflens_search_content_output_output_next_token(
     input: &crate::operation::search_content::SearchContentOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_quick_responses_output_output_next_token(
+    input: &crate::operation::search_quick_responses::SearchQuickResponsesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -90,10 +120,24 @@ pub(crate) fn lens_list_contents_output_output_content_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_import_jobs_output_output_import_job_summaries(
+    input: crate::operation::list_import_jobs::ListImportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportJobSummary>> {
+    let input = input.import_job_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_knowledge_bases_output_output_knowledge_base_summaries(
     input: crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
     let input = input.knowledge_base_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_quick_responses_output_output_quick_response_summaries(
+    input: crate::operation::list_quick_responses::ListQuickResponsesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSummary>> {
+    let input = input.quick_response_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -108,6 +152,13 @@ pub(crate) fn lens_search_content_output_output_content_summaries(
     input: crate::operation::search_content::SearchContentOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ContentSummary>> {
     let input = input.content_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_quick_responses_output_output_results(
+    input: crate::operation::search_quick_responses::SearchQuickResponsesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuickResponseSearchResultData>> {
+    let input = input.results;
     ::std::option::Option::Some(input)
 }
 

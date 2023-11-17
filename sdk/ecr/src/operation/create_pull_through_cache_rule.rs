@@ -249,8 +249,14 @@ pub enum CreatePullThroughCacheRuleError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A pull through cache rule with these settings already exists for the private registry.</p>
     PullThroughCacheRuleAlreadyExistsException(crate::types::error::PullThroughCacheRuleAlreadyExistsException),
+    /// <p>The ARN of the secret specified in the pull through cache rule was not found. Update the pull through cache rule with a valid secret ARN and try again.</p>
+    SecretNotFoundException(crate::types::error::SecretNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The secret is unable to be accessed. Verify the resource permissions for the secret and try again.</p>
+    UnableToAccessSecretException(crate::types::error::UnableToAccessSecretException),
+    /// <p>The secret is accessible but is unable to be decrypted. Verify the resource permisisons and try again.</p>
+    UnableToDecryptSecretValueException(crate::types::error::UnableToDecryptSecretValueException),
     /// <p>The specified upstream registry isn't supported.</p>
     UnsupportedUpstreamRegistryException(crate::types::error::UnsupportedUpstreamRegistryException),
     /// <p>There was an exception validating this request.</p>
@@ -291,7 +297,10 @@ impl CreatePullThroughCacheRuleError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PullThroughCacheRuleAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SecretNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnableToAccessSecretException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnableToDecryptSecretValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedUpstreamRegistryException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -309,9 +318,21 @@ impl CreatePullThroughCacheRuleError {
     pub fn is_pull_through_cache_rule_already_exists_exception(&self) -> bool {
         matches!(self, Self::PullThroughCacheRuleAlreadyExistsException(_))
     }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleError::SecretNotFoundException`.
+    pub fn is_secret_not_found_exception(&self) -> bool {
+        matches!(self, Self::SecretNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `CreatePullThroughCacheRuleError::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleError::UnableToAccessSecretException`.
+    pub fn is_unable_to_access_secret_exception(&self) -> bool {
+        matches!(self, Self::UnableToAccessSecretException(_))
+    }
+    /// Returns `true` if the error kind is `CreatePullThroughCacheRuleError::UnableToDecryptSecretValueException`.
+    pub fn is_unable_to_decrypt_secret_value_exception(&self) -> bool {
+        matches!(self, Self::UnableToDecryptSecretValueException(_))
     }
     /// Returns `true` if the error kind is `CreatePullThroughCacheRuleError::UnsupportedUpstreamRegistryException`.
     pub fn is_unsupported_upstream_registry_exception(&self) -> bool {
@@ -328,7 +349,10 @@ impl ::std::error::Error for CreatePullThroughCacheRuleError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::PullThroughCacheRuleAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SecretNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnableToAccessSecretException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnableToDecryptSecretValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedUpstreamRegistryException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -341,7 +365,10 @@ impl ::std::fmt::Display for CreatePullThroughCacheRuleError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::PullThroughCacheRuleAlreadyExistsException(_inner) => _inner.fmt(f),
+            Self::SecretNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::UnableToAccessSecretException(_inner) => _inner.fmt(f),
+            Self::UnableToDecryptSecretValueException(_inner) => _inner.fmt(f),
             Self::UnsupportedUpstreamRegistryException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -368,7 +395,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreatePullThr
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PullThroughCacheRuleAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SecretNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnableToAccessSecretException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnableToDecryptSecretValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedUpstreamRegistryException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

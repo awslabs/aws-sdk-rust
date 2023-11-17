@@ -144,6 +144,8 @@ mod create_content;
 
 mod create_knowledge_base;
 
+mod create_quick_response;
+
 mod create_session;
 
 /// Operation customization and supporting types.
@@ -179,7 +181,11 @@ mod delete_assistant_association;
 
 mod delete_content;
 
+mod delete_import_job;
+
 mod delete_knowledge_base;
+
+mod delete_quick_response;
 
 mod get_assistant;
 
@@ -189,7 +195,11 @@ mod get_content;
 
 mod get_content_summary;
 
+mod get_import_job;
+
 mod get_knowledge_base;
+
+mod get_quick_response;
 
 mod get_recommendations;
 
@@ -201,7 +211,11 @@ mod list_assistants;
 
 mod list_contents;
 
+mod list_import_jobs;
+
 mod list_knowledge_bases;
+
+mod list_quick_responses;
 
 mod list_tags_for_resource;
 
@@ -213,9 +227,13 @@ mod remove_knowledge_base_template_uri;
 
 mod search_content;
 
+mod search_quick_responses;
+
 mod search_sessions;
 
 mod start_content_upload;
+
+mod start_import_job;
 
 mod tag_resource;
 
@@ -224,3 +242,5 @@ mod untag_resource;
 mod update_content;
 
 mod update_knowledge_base_template_uri;
+
+mod update_quick_response;

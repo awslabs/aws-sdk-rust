@@ -75,6 +75,12 @@ pub use crate::types::_pause_cluster_message::PauseClusterMessageBuilder;
 
 pub use crate::types::_resize_cluster_message::ResizeClusterMessageBuilder;
 
+pub use crate::types::_redshift_idc_application::RedshiftIdcApplicationBuilder;
+
+pub use crate::types::_lake_formation_query::LakeFormationQueryBuilder;
+
+pub use crate::types::_authorized_token_issuer::AuthorizedTokenIssuerBuilder;
+
 pub use crate::types::_event_subscription::EventSubscriptionBuilder;
 
 pub use crate::types::_cluster_subnet_group::ClusterSubnetGroupBuilder;

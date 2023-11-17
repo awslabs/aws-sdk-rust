@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ServicePreProcessingTimeInMillis" => {
+                            builder = builder.set_service_pre_processing_time_in_millis(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "QueryPlanningTimeInMillis" => {
                             builder = builder.set_query_planning_time_in_millis(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -15,8 +15,7 @@ pub struct CreateSubnetInput {
     /// <p>The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
     /// <p>This parameter is not supported for an IPv6 only subnet.</p>
     pub cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-    /// <p>This parameter is required for an IPv6 only subnet.</p>
+    /// <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.</p>
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify an Outpost ARN, you must also specify the Availability Zone of the Outpost subnet.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
@@ -26,6 +25,14 @@ pub struct CreateSubnetInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Indicates whether to create an IPv6 only subnet.</p>
     pub ipv6_native: ::std::option::Option<bool>,
+    /// <p>An IPv4 IPAM pool ID for the subnet.</p>
+    pub ipv4_ipam_pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>An IPv4 netmask length for the subnet.</p>
+    pub ipv4_netmask_length: ::std::option::Option<i32>,
+    /// <p>An IPv6 IPAM pool ID for the subnet.</p>
+    pub ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>An IPv6 netmask length for the subnet.</p>
+    pub ipv6_netmask_length: ::std::option::Option<i32>,
 }
 impl CreateSubnetInput {
     /// <p>The tags to assign to the subnet.</p>
@@ -50,8 +57,7 @@ impl CreateSubnetInput {
     pub fn cidr_block(&self) -> ::std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
-    /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-    /// <p>This parameter is required for an IPv6 only subnet.</p>
+    /// <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.</p>
     pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
@@ -70,6 +76,22 @@ impl CreateSubnetInput {
     /// <p>Indicates whether to create an IPv6 only subnet.</p>
     pub fn ipv6_native(&self) -> ::std::option::Option<bool> {
         self.ipv6_native
+    }
+    /// <p>An IPv4 IPAM pool ID for the subnet.</p>
+    pub fn ipv4_ipam_pool_id(&self) -> ::std::option::Option<&str> {
+        self.ipv4_ipam_pool_id.as_deref()
+    }
+    /// <p>An IPv4 netmask length for the subnet.</p>
+    pub fn ipv4_netmask_length(&self) -> ::std::option::Option<i32> {
+        self.ipv4_netmask_length
+    }
+    /// <p>An IPv6 IPAM pool ID for the subnet.</p>
+    pub fn ipv6_ipam_pool_id(&self) -> ::std::option::Option<&str> {
+        self.ipv6_ipam_pool_id.as_deref()
+    }
+    /// <p>An IPv6 netmask length for the subnet.</p>
+    pub fn ipv6_netmask_length(&self) -> ::std::option::Option<i32> {
+        self.ipv6_netmask_length
     }
 }
 impl CreateSubnetInput {
@@ -92,6 +114,10 @@ pub struct CreateSubnetInputBuilder {
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) ipv6_native: ::std::option::Option<bool>,
+    pub(crate) ipv4_ipam_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv4_netmask_length: ::std::option::Option<i32>,
+    pub(crate) ipv6_ipam_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_netmask_length: ::std::option::Option<i32>,
 }
 impl CreateSubnetInputBuilder {
     /// Appends an item to `tag_specifications`.
@@ -168,20 +194,17 @@ impl CreateSubnetInputBuilder {
     pub fn get_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_block
     }
-    /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-    /// <p>This parameter is required for an IPv6 only subnet.</p>
+    /// <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.</p>
     pub fn ipv6_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-    /// <p>This parameter is required for an IPv6 only subnet.</p>
+    /// <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.</p>
     pub fn set_ipv6_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_cidr_block = input;
         self
     }
-    /// <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-    /// <p>This parameter is required for an IPv6 only subnet.</p>
+    /// <p>The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.</p>
     pub fn get_ipv6_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6_cidr_block
     }
@@ -242,6 +265,62 @@ impl CreateSubnetInputBuilder {
     pub fn get_ipv6_native(&self) -> &::std::option::Option<bool> {
         &self.ipv6_native
     }
+    /// <p>An IPv4 IPAM pool ID for the subnet.</p>
+    pub fn ipv4_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv4_ipam_pool_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An IPv4 IPAM pool ID for the subnet.</p>
+    pub fn set_ipv4_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv4_ipam_pool_id = input;
+        self
+    }
+    /// <p>An IPv4 IPAM pool ID for the subnet.</p>
+    pub fn get_ipv4_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv4_ipam_pool_id
+    }
+    /// <p>An IPv4 netmask length for the subnet.</p>
+    pub fn ipv4_netmask_length(mut self, input: i32) -> Self {
+        self.ipv4_netmask_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An IPv4 netmask length for the subnet.</p>
+    pub fn set_ipv4_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv4_netmask_length = input;
+        self
+    }
+    /// <p>An IPv4 netmask length for the subnet.</p>
+    pub fn get_ipv4_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.ipv4_netmask_length
+    }
+    /// <p>An IPv6 IPAM pool ID for the subnet.</p>
+    pub fn ipv6_ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_ipam_pool_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An IPv6 IPAM pool ID for the subnet.</p>
+    pub fn set_ipv6_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipv6_ipam_pool_id = input;
+        self
+    }
+    /// <p>An IPv6 IPAM pool ID for the subnet.</p>
+    pub fn get_ipv6_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipv6_ipam_pool_id
+    }
+    /// <p>An IPv6 netmask length for the subnet.</p>
+    pub fn ipv6_netmask_length(mut self, input: i32) -> Self {
+        self.ipv6_netmask_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An IPv6 netmask length for the subnet.</p>
+    pub fn set_ipv6_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ipv6_netmask_length = input;
+        self
+    }
+    /// <p>An IPv6 netmask length for the subnet.</p>
+    pub fn get_ipv6_netmask_length(&self) -> &::std::option::Option<i32> {
+        &self.ipv6_netmask_length
+    }
     /// Consumes the builder and constructs a [`CreateSubnetInput`](crate::operation::create_subnet::CreateSubnetInput).
     pub fn build(
         self,
@@ -256,6 +335,10 @@ impl CreateSubnetInputBuilder {
             vpc_id: self.vpc_id,
             dry_run: self.dry_run,
             ipv6_native: self.ipv6_native,
+            ipv4_ipam_pool_id: self.ipv4_ipam_pool_id,
+            ipv4_netmask_length: self.ipv4_netmask_length,
+            ipv6_ipam_pool_id: self.ipv6_ipam_pool_id,
+            ipv6_netmask_length: self.ipv6_netmask_length,
         })
     }
 }

@@ -118,6 +118,8 @@ impl Client {
     }
 }
 
+mod batch_is_authorized;
+
 mod create_identity_source;
 
 mod create_policy;
