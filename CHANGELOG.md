@@ -43,6 +43,7 @@ November 16th, 2023
 **New this release:**
 - :tada: ([aws-sdk-rust#780](https://github.com/awslabs/aws-sdk-rust/issues/780), [smithy-rs#3189](https://github.com/smithy-lang/smithy-rs/issues/3189)) Add `ProvideErrorMetadata` impl for service `Error` type.
 - :bug: ([smithy-rs#3164](https://github.com/smithy-lang/smithy-rs/issues/3164), @utkarshgupta137) Change `ByteStream::into_async_read` to return `AsyncBufRead`
+- :bug: ([smithy-rs#3210](https://github.com/awslabs/smithy-rs/issues/3210), [aws-sdk-rust#957](https://github.com/awslabs/aws-sdk-rust/issues/957)) Fix broken serialization for SQS
 
 **Service Features:**
 - `aws-sdk-codecatalyst` (0.15.0): This release includes updates to the Dev Environment APIs to include an optional vpcConnectionName parameter that supports using Dev Environments with Amazon VPC.
