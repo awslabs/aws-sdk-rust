@@ -5,13 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Part {
     /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
-    pub part_number: i32,
+    pub part_number: ::std::option::Option<i32>,
     /// <p>Date and time at which the part was uploaded.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -23,7 +23,7 @@ pub struct Part {
 }
 impl Part {
     /// <p>Part number identifying the part. This is a positive integer between 1 and 10,000.</p>
-    pub fn part_number(&self) -> i32 {
+    pub fn part_number(&self) -> ::std::option::Option<i32> {
         self.part_number
     }
     /// <p>Date and time at which the part was uploaded.</p>
@@ -35,7 +35,7 @@ impl Part {
         self.e_tag.as_deref()
     }
     /// <p>Size in bytes of the uploaded part data.</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the base64-encoded, 32-bit CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -191,10 +191,10 @@ impl PartBuilder {
     /// Consumes the builder and constructs a [`Part`](crate::types::Part).
     pub fn build(self) -> crate::types::Part {
         crate::types::Part {
-            part_number: self.part_number.unwrap_or_default(),
+            part_number: self.part_number,
             last_modified: self.last_modified,
             e_tag: self.e_tag,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
             checksum_crc32: self.checksum_crc32,
             checksum_crc32_c: self.checksum_crc32_c,
             checksum_sha1: self.checksum_sha1,

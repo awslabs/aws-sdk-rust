@@ -129,19 +129,19 @@ impl Intercept for RequestInfoInterceptor {
 /// retry information header that is sent with every request. The information conveyed by this
 /// header allows services to anticipate whether a client will time out or retry a request.
 #[derive(Default, Debug)]
-pub struct RequestPairs {
+struct RequestPairs {
     inner: Vec<(Cow<'static, str>, Cow<'static, str>)>,
 }
 
 impl RequestPairs {
     /// Creates a new `RequestPairs` builder.
-    pub fn new() -> Self {
+    fn new() -> Self {
         Default::default()
     }
 
     /// Adds a pair to the `RequestPairs` builder.
     /// Only strings that can be converted to header values are considered valid.
-    pub fn with_pair(
+    fn with_pair(
         mut self,
         pair: (impl Into<Cow<'static, str>>, impl Into<Cow<'static, str>>),
     ) -> Self {
@@ -151,7 +151,7 @@ impl RequestPairs {
     }
 
     /// Converts the `RequestPairs` builder into a `HeaderValue`.
-    pub fn try_into_header_value(self) -> Result<HeaderValue, BoxError> {
+    fn try_into_header_value(self) -> Result<HeaderValue, BoxError> {
         self.try_into()
     }
 }

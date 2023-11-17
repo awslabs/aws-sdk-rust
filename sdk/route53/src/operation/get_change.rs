@@ -261,6 +261,9 @@ mod get_change_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/2013-04-01/change/SOMECHANGEID", "path was incorrect");
     }
 }
 

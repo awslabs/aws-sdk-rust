@@ -338,6 +338,9 @@ mod put_bucket_lifecycle_configuration_request_test {
         ::aws_smithy_protocol_test::assert_ok(
         ::aws_smithy_protocol_test::validate_body(body, "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n    <Rule>\n        <Expiration>\n            <Days>1</Days>\n        </Expiration>\n        <ID>Expire</ID>\n        <Status>Enabled</Status>\n    </Rule>\n</LifecycleConfiguration>\n", ::aws_smithy_protocol_test::MediaType::from("application/xml"))
         );
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/", "path was incorrect");
     }
 }
 

@@ -32,8 +32,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "0.100.0", features = ["behavior-version-latest"] }
-//! aws-sdk-rolesanywhere = "0.22.0"
+//! aws-config = { version = "0.101.0", features = ["behavior-version-latest"] }
+//! aws-sdk-rolesanywhere = "0.23.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -13,9 +13,9 @@ pub fn ser_delete(
             }
         }
     }
-    if input.quiet {
+    if let Some(var_2) = &input.quiet {
         let mut inner_writer = scope.start_el("Quiet").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.quiet).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
     scope.finish();
     Ok(())

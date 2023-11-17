@@ -1,14 +1,6 @@
 allowed_external_types = [
-    "aws_credential_types::*",
     "aws_sigv4::*",
-    "aws_smithy_http::*",
     "aws_smithy_types::*",
     "aws_smithy_runtime_api::*",
     "aws_types::*",
-    # TODO(audit-external-type-usage) We should newtype these or otherwise avoid exposing them
-    "http::header::name::HeaderName",
-    "http::header::value::HeaderValue",
-    "http::request::Request",
-    "http::response::Response",
-    "http::uri::Uri",
 ]

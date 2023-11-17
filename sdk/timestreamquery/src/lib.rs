@@ -26,8 +26,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "0.100.0", features = ["behavior-version-latest"] }
-//! aws-sdk-timestreamquery = "0.9.0"
+//! aws-config = { version = "0.101.0", features = ["behavior-version-latest"] }
+//! aws-sdk-timestreamquery = "0.10.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

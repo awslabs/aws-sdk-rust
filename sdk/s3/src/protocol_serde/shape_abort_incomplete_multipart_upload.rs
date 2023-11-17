@@ -34,9 +34,9 @@ pub fn ser_abort_incomplete_multipart_upload(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if input.days_after_initiation != 0 {
+    if let Some(var_2) = &input.days_after_initiation {
         let mut inner_writer = scope.start_el("DaysAfterInitiation").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days_after_initiation).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
     scope.finish();
     Ok(())

@@ -7,13 +7,11 @@ allowed_external_types = [
    "aws_credential_types::provider::ProvideCredentials",
    "aws_credential_types::provider::Result",
    "aws_credential_types::provider::SharedCredentialsProvider",
-   "aws_sdk_sts::types::_policy_descriptor_type::PolicyDescriptorType",
    "aws_smithy_async::rt::sleep::AsyncSleep",
    "aws_smithy_async::rt::sleep::SharedAsyncSleep",
    "aws_smithy_async::time::SharedTimeSource",
    "aws_smithy_async::time::TimeSource",
-   "aws_smithy_http::endpoint",
-   "aws_smithy_http::endpoint::error::InvalidEndpointError",
+   "aws_smithy_runtime_api::box_error::BoxError",
    "aws_smithy_runtime::client::identity::cache::IdentityCache",
    "aws_smithy_runtime::client::identity::cache::lazy::LazyCacheBuilder",
    "aws_smithy_runtime_api::client::dns::ResolveDns",
@@ -33,12 +31,4 @@ allowed_external_types = [
    "aws_smithy_types::timeout::TimeoutConfig",
    "aws_smithy_types::timeout::TimeoutConfigBuilder",
    "aws_types::*",
-   "http::response::Response",
-   "http::uri::Uri",
-   "tower_service::Service",
-
-   # TODO(https://github.com/smithy-lang/smithy-rs/issues/1193): Decide if the following should be exposed
-   "hyper::client::connect::Connection",
-   "tokio::io::async_read::AsyncRead",
-   "tokio::io::async_write::AsyncWrite",
 ]

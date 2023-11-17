@@ -318,6 +318,9 @@ mod upload_multipart_part_request_test {
             "hello world",
             ::aws_smithy_protocol_test::MediaType::from("unknown"),
         ));
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "PUT", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/multipart-uploads/baz", "path was incorrect");
     }
 }
 

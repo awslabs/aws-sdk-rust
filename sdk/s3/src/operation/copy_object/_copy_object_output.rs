@@ -22,7 +22,7 @@ pub struct CopyObjectOutput {
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    pub bucket_key_enabled: bool,
+    pub bucket_key_enabled: ::std::option::Option<bool>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
@@ -66,7 +66,7 @@ impl CopyObjectOutput {
         self.ssekms_encryption_context.as_deref()
     }
     /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    pub fn bucket_key_enabled(&self) -> bool {
+    pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -313,7 +313,7 @@ impl CopyObjectOutputBuilder {
             sse_customer_key_md5: self.sse_customer_key_md5,
             ssekms_key_id: self.ssekms_key_id,
             ssekms_encryption_context: self.ssekms_encryption_context,
-            bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+            bucket_key_enabled: self.bucket_key_enabled,
             request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,

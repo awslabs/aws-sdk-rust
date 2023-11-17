@@ -18,9 +18,9 @@ pub struct ListMultipartUploadsOutput {
     /// <p>When a list is truncated, this element specifies the value that should be used for the <code>upload-id-marker</code> request parameter in a subsequent request.</p>
     pub next_upload_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
-    pub max_uploads: i32,
+    pub max_uploads: ::std::option::Option<i32>,
     /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
     pub uploads: ::std::option::Option<::std::vec::Vec<crate::types::MultipartUpload>>,
     /// <p>If you specify a delimiter in the request, then the result returns each distinct key prefix containing the delimiter in a <code>CommonPrefixes</code> element. The distinct key prefixes are returned in the <code>Prefix</code> child element.</p>
@@ -64,11 +64,11 @@ impl ListMultipartUploadsOutput {
         self.next_upload_id_marker.as_deref()
     }
     /// <p>Maximum number of multipart uploads that could have been included in the response.</p>
-    pub fn max_uploads(&self) -> i32 {
+    pub fn max_uploads(&self) -> ::std::option::Option<i32> {
         self.max_uploads
     }
     /// <p>Indicates whether the returned list of multipart uploads is truncated. A value of true indicates that the list was truncated. The list can be truncated if the number of multipart uploads exceeds the limit allowed or specified by max uploads.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>Container for elements related to a particular multipart upload. A response can contain zero or more <code>Upload</code> elements.</p>
@@ -360,8 +360,8 @@ impl ListMultipartUploadsOutputBuilder {
             prefix: self.prefix,
             delimiter: self.delimiter,
             next_upload_id_marker: self.next_upload_id_marker,
-            max_uploads: self.max_uploads.unwrap_or_default(),
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            max_uploads: self.max_uploads,
+            is_truncated: self.is_truncated,
             uploads: self.uploads,
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,

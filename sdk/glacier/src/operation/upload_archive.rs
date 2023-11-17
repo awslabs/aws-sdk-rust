@@ -292,6 +292,9 @@ mod upload_archive_request_test {
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
         ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/archives", "path was incorrect");
     }
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierChecksums
@@ -332,6 +335,9 @@ mod upload_archive_request_test {
             "hello world",
             ::aws_smithy_protocol_test::MediaType::from("unknown"),
         ));
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/foo/vaults/bar/archives", "path was incorrect");
     }
     /// Glacier requires that the account id be set, but you can just use a
     /// hyphen (-) to indicate the current account. This should be default
@@ -361,6 +367,9 @@ mod upload_archive_request_test {
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
         ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/-/vaults/bar/archives", "path was incorrect");
     }
     /// Glacier requires that the account id be set, but you can just use a
     /// hyphen (-) to indicate the current account. This should be default
@@ -390,6 +399,9 @@ mod upload_archive_request_test {
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
         ::pretty_assertions::assert_eq!(::std::str::from_utf8(body).unwrap(), "");
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/-/vaults/bar/archives", "path was incorrect");
     }
 }
 

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
@@ -16,7 +16,7 @@ pub struct ListBucketIntelligentTieringConfigurationsOutput {
 }
 impl ListBucketIntelligentTieringConfigurationsOutput {
     /// <p>Indicates whether the returned list of analytics configurations is complete. A value of <code>true</code> indicates that the list is not complete and the <code>NextContinuationToken</code> will be provided for a subsequent request.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>The <code>ContinuationToken</code> that represents a placeholder from where this request should begin.</p>
@@ -152,7 +152,7 @@ impl ListBucketIntelligentTieringConfigurationsOutputBuilder {
     /// Consumes the builder and constructs a [`ListBucketIntelligentTieringConfigurationsOutput`](crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput {
         crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput {
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             continuation_token: self.continuation_token,
             next_continuation_token: self.next_continuation_token,
             intelligent_tiering_configuration_list: self.intelligent_tiering_configuration_list,

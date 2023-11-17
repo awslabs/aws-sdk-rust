@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteObjectOutput {
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
-    pub delete_marker: bool,
+    pub delete_marker: ::std::option::Option<bool>,
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -14,7 +14,7 @@ pub struct DeleteObjectOutput {
 }
 impl DeleteObjectOutput {
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
-    pub fn delete_marker(&self) -> bool {
+    pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
@@ -117,7 +117,7 @@ impl DeleteObjectOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
     pub fn build(self) -> crate::operation::delete_object::DeleteObjectOutput {
         crate::operation::delete_object::DeleteObjectOutput {
-            delete_marker: self.delete_marker.unwrap_or_default(),
+            delete_marker: self.delete_marker,
             version_id: self.version_id,
             request_charged: self.request_charged,
             _extended_request_id: self._extended_request_id,

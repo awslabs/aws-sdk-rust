@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectAttributesOutput {
     /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
-    pub delete_marker: bool,
+    pub delete_marker: ::std::option::Option<bool>,
     /// <p>The creation date of the object.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version ID of the object.</p>
@@ -21,13 +21,13 @@ pub struct GetObjectAttributesOutput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>The size of the object in bytes.</p>
-    pub object_size: i64,
+    pub object_size: ::std::option::Option<i64>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl GetObjectAttributesOutput {
     /// <p>Specifies whether the object retrieved was (<code>true</code>) or was not (<code>false</code>) a delete marker. If <code>false</code>, this response header does not appear in the response.</p>
-    pub fn delete_marker(&self) -> bool {
+    pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
     /// <p>The creation date of the object.</p>
@@ -60,7 +60,7 @@ impl GetObjectAttributesOutput {
         self.storage_class.as_ref()
     }
     /// <p>The size of the object in bytes.</p>
-    pub fn object_size(&self) -> i64 {
+    pub fn object_size(&self) -> ::std::option::Option<i64> {
         self.object_size
     }
 }
@@ -248,7 +248,7 @@ impl GetObjectAttributesOutputBuilder {
     /// Consumes the builder and constructs a [`GetObjectAttributesOutput`](crate::operation::get_object_attributes::GetObjectAttributesOutput).
     pub fn build(self) -> crate::operation::get_object_attributes::GetObjectAttributesOutput {
         crate::operation::get_object_attributes::GetObjectAttributesOutput {
-            delete_marker: self.delete_marker.unwrap_or_default(),
+            delete_marker: self.delete_marker,
             last_modified: self.last_modified,
             version_id: self.version_id,
             request_charged: self.request_charged,
@@ -256,7 +256,7 @@ impl GetObjectAttributesOutputBuilder {
             checksum: self.checksum,
             object_parts: self.object_parts,
             storage_class: self.storage_class,
-            object_size: self.object_size.unwrap_or_default(),
+            object_size: self.object_size,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

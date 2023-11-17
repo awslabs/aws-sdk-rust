@@ -5,33 +5,33 @@ pub fn ser_restore_request(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if input.days != 0 {
+    if let Some(var_1) = &input.days {
         let mut inner_writer = scope.start_el("Days").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
-    if let Some(var_1) = &input.glacier_job_parameters {
+    if let Some(var_2) = &input.glacier_job_parameters {
         let inner_writer = scope.start_el("GlacierJobParameters");
-        crate::protocol_serde::shape_glacier_job_parameters::ser_glacier_job_parameters(var_1, inner_writer)?
+        crate::protocol_serde::shape_glacier_job_parameters::ser_glacier_job_parameters(var_2, inner_writer)?
     }
-    if let Some(var_2) = &input.r#type {
+    if let Some(var_3) = &input.r#type {
         let mut inner_writer = scope.start_el("Type").finish();
-        inner_writer.data(var_2.as_str());
-    }
-    if let Some(var_3) = &input.tier {
-        let mut inner_writer = scope.start_el("Tier").finish();
         inner_writer.data(var_3.as_str());
     }
-    if let Some(var_4) = &input.description {
-        let mut inner_writer = scope.start_el("Description").finish();
+    if let Some(var_4) = &input.tier {
+        let mut inner_writer = scope.start_el("Tier").finish();
         inner_writer.data(var_4.as_str());
     }
-    if let Some(var_5) = &input.select_parameters {
-        let inner_writer = scope.start_el("SelectParameters");
-        crate::protocol_serde::shape_select_parameters::ser_select_parameters(var_5, inner_writer)?
+    if let Some(var_5) = &input.description {
+        let mut inner_writer = scope.start_el("Description").finish();
+        inner_writer.data(var_5.as_str());
     }
-    if let Some(var_6) = &input.output_location {
+    if let Some(var_6) = &input.select_parameters {
+        let inner_writer = scope.start_el("SelectParameters");
+        crate::protocol_serde::shape_select_parameters::ser_select_parameters(var_6, inner_writer)?
+    }
+    if let Some(var_7) = &input.output_location {
         let inner_writer = scope.start_el("OutputLocation");
-        crate::protocol_serde::shape_output_location::ser_output_location(var_6, inner_writer)?
+        crate::protocol_serde::shape_output_location::ser_output_location(var_7, inner_writer)?
     }
     scope.finish();
     Ok(())

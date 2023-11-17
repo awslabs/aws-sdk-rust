@@ -11,7 +11,7 @@ pub struct DeleteMarkerEntry {
     /// <p>Version ID of an object.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    pub is_latest: bool,
+    pub is_latest: ::std::option::Option<bool>,
     /// <p>Date and time the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -29,7 +29,7 @@ impl DeleteMarkerEntry {
         self.version_id.as_deref()
     }
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    pub fn is_latest(&self) -> bool {
+    pub fn is_latest(&self) -> ::std::option::Option<bool> {
         self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
@@ -131,7 +131,7 @@ impl DeleteMarkerEntryBuilder {
             owner: self.owner,
             key: self.key,
             version_id: self.version_id,
-            is_latest: self.is_latest.unwrap_or_default(),
+            is_latest: self.is_latest,
             last_modified: self.last_modified,
         }
     }

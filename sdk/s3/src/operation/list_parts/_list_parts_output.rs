@@ -19,9 +19,9 @@ pub struct ListPartsOutput {
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>part-number-marker</code> request parameter in a subsequent request.</p>
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of parts that were allowed in the response.</p>
-    pub max_parts: i32,
+    pub max_parts: ::std::option::Option<i32>,
     /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::Part>>,
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator is an Amazon Web Services account, this element provides the same information as the <code>Owner</code> element. If the initiator is an IAM User, this element provides the user ARN and display name.</p>
@@ -68,11 +68,11 @@ impl ListPartsOutput {
         self.next_part_number_marker.as_deref()
     }
     /// <p>Maximum number of parts that were allowed in the response.</p>
-    pub fn max_parts(&self) -> i32 {
+    pub fn max_parts(&self) -> ::std::option::Option<i32> {
         self.max_parts
     }
     /// <p> Indicates whether the returned list of parts is truncated. A true value indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the MaxParts element.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p> Container for elements related to a particular part. A response can contain zero or more <code>Part</code> elements.</p>
@@ -389,8 +389,8 @@ impl ListPartsOutputBuilder {
             upload_id: self.upload_id,
             part_number_marker: self.part_number_marker,
             next_part_number_marker: self.next_part_number_marker,
-            max_parts: self.max_parts.unwrap_or_default(),
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            max_parts: self.max_parts,
+            is_truncated: self.is_truncated,
             parts: self.parts,
             initiator: self.initiator,
             owner: self.owner,

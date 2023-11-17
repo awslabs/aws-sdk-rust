@@ -15,7 +15,6 @@ use aws_sdk_s3::Client;
 use aws_smithy_async::test_util::InstantSleep;
 use aws_smithy_async::test_util::ManualTimeSource;
 use aws_smithy_async::time::SharedTimeSource;
-use aws_smithy_protocol_test::MediaType;
 use aws_smithy_runtime::client::http::test_util::dvr::ReplayingClient;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use aws_smithy_runtime_api::box_error::BoxError;
@@ -104,7 +103,7 @@ async fn three_retries_and_then_success() {
     let resp = resp.expect("valid e2e test");
     assert_eq!(resp.name(), Some("test-bucket"));
     http_client
-        .full_validate(MediaType::Xml)
+        .full_validate("application/xml")
         .await
         .expect("failed")
 }

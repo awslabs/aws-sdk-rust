@@ -8,9 +8,9 @@ pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
-    pub expired_object_delete_marker: bool,
+    pub expired_object_delete_marker: ::std::option::Option<bool>,
 }
 impl LifecycleExpiration {
     /// <p>Indicates at what date the object is to be moved or deleted. The date value must conform to the ISO 8601 format. The time is always midnight UTC.</p>
@@ -18,11 +18,11 @@ impl LifecycleExpiration {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
-    pub fn expired_object_delete_marker(&self) -> bool {
+    pub fn expired_object_delete_marker(&self) -> ::std::option::Option<bool> {
         self.expired_object_delete_marker
     }
 }
@@ -88,8 +88,8 @@ impl LifecycleExpirationBuilder {
     pub fn build(self) -> crate::types::LifecycleExpiration {
         crate::types::LifecycleExpiration {
             date: self.date,
-            days: self.days.unwrap_or_default(),
-            expired_object_delete_marker: self.expired_object_delete_marker.unwrap_or_default(),
+            days: self.days,
+            expired_object_delete_marker: self.expired_object_delete_marker,
         }
     }
 }

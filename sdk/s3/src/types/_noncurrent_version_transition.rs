@@ -5,15 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub noncurrent_days: i32,
+    pub noncurrent_days: ::std::option::Option<i32>,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: ::std::option::Option<crate::types::TransitionStorageClass>,
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub newer_noncurrent_versions: i32,
+    pub newer_noncurrent_versions: ::std::option::Option<i32>,
 }
 impl NoncurrentVersionTransition {
     /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn noncurrent_days(&self) -> i32 {
+    pub fn noncurrent_days(&self) -> ::std::option::Option<i32> {
         self.noncurrent_days
     }
     /// <p>The class of storage used to store the object.</p>
@@ -21,7 +21,7 @@ impl NoncurrentVersionTransition {
         self.storage_class.as_ref()
     }
     /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn newer_noncurrent_versions(&self) -> i32 {
+    pub fn newer_noncurrent_versions(&self) -> ::std::option::Option<i32> {
         self.newer_noncurrent_versions
     }
 }
@@ -86,9 +86,9 @@ impl NoncurrentVersionTransitionBuilder {
     /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::types::NoncurrentVersionTransition).
     pub fn build(self) -> crate::types::NoncurrentVersionTransition {
         crate::types::NoncurrentVersionTransition {
-            noncurrent_days: self.noncurrent_days.unwrap_or_default(),
+            noncurrent_days: self.noncurrent_days,
             storage_class: self.storage_class,
-            newer_noncurrent_versions: self.newer_noncurrent_versions.unwrap_or_default(),
+            newer_noncurrent_versions: self.newer_noncurrent_versions,
         }
     }
 }

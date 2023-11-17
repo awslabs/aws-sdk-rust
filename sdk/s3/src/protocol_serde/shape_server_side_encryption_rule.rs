@@ -9,9 +9,9 @@ pub fn ser_server_side_encryption_rule(
         let inner_writer = scope.start_el("ApplyServerSideEncryptionByDefault");
         crate::protocol_serde::shape_server_side_encryption_by_default::ser_server_side_encryption_by_default(var_1, inner_writer)?
     }
-    if input.bucket_key_enabled {
+    if let Some(var_2) = &input.bucket_key_enabled {
         let mut inner_writer = scope.start_el("BucketKeyEnabled").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.bucket_key_enabled).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
     scope.finish();
     Ok(())
@@ -26,17 +26,17 @@ pub fn de_server_side_encryption_rule(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ApplyServerSideEncryptionByDefault") /* ApplyServerSideEncryptionByDefault com.amazonaws.s3#ServerSideEncryptionRule$ApplyServerSideEncryptionByDefault */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         crate::protocol_serde::shape_server_side_encryption_by_default::de_server_side_encryption_by_default(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_apply_server_side_encryption_by_default(var_2);
+                builder = builder.set_apply_server_side_encryption_by_default(var_3);
             }
             ,
             s if s.matches("BucketKeyEnabled") /* BucketKeyEnabled com.amazonaws.s3#ServerSideEncryptionRule$BucketKeyEnabled */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -47,7 +47,7 @@ pub fn de_server_side_encryption_rule(
                         ?
                     )
                 ;
-                builder = builder.set_bucket_key_enabled(var_3);
+                builder = builder.set_bucket_key_enabled(var_4);
             }
             ,
             _ => {}

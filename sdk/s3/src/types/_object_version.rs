@@ -9,7 +9,7 @@ pub struct ObjectVersion {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object.</p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: ::std::option::Option<crate::types::ObjectVersionStorageClass>,
     /// <p>The object key.</p>
@@ -17,7 +17,7 @@ pub struct ObjectVersion {
     /// <p>Version ID of an object.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    pub is_latest: bool,
+    pub is_latest: ::std::option::Option<bool>,
     /// <p>Date and time the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the owner of the object.</p>
@@ -37,7 +37,7 @@ impl ObjectVersion {
         self.checksum_algorithm.as_deref().unwrap_or_default()
     }
     /// <p>Size in bytes of the object.</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>The class of storage used to store the object.</p>
@@ -53,7 +53,7 @@ impl ObjectVersion {
         self.version_id.as_deref()
     }
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
-    pub fn is_latest(&self) -> bool {
+    pub fn is_latest(&self) -> ::std::option::Option<bool> {
         self.is_latest
     }
     /// <p>Date and time the object was last modified.</p>
@@ -243,11 +243,11 @@ impl ObjectVersionBuilder {
         crate::types::ObjectVersion {
             e_tag: self.e_tag,
             checksum_algorithm: self.checksum_algorithm,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
             storage_class: self.storage_class,
             key: self.key,
             version_id: self.version_id,
-            is_latest: self.is_latest.unwrap_or_default(),
+            is_latest: self.is_latest,
             last_modified: self.last_modified,
             owner: self.owner,
             restore_status: self.restore_status,

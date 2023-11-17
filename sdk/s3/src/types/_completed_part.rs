@@ -15,7 +15,7 @@ pub struct CompletedPart {
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
-    pub part_number: i32,
+    pub part_number: ::std::option::Option<i32>,
 }
 impl CompletedPart {
     /// <p>Entity tag returned when the part was uploaded.</p>
@@ -39,7 +39,7 @@ impl CompletedPart {
         self.checksum_sha256.as_deref()
     }
     /// <p>Part number that identifies the part. This is a positive integer between 1 and 10,000.</p>
-    pub fn part_number(&self) -> i32 {
+    pub fn part_number(&self) -> ::std::option::Option<i32> {
         self.part_number
     }
 }
@@ -154,7 +154,7 @@ impl CompletedPartBuilder {
             checksum_crc32_c: self.checksum_crc32_c,
             checksum_sha1: self.checksum_sha1,
             checksum_sha256: self.checksum_sha256,
-            part_number: self.part_number.unwrap_or_default(),
+            part_number: self.part_number,
         }
     }
 }

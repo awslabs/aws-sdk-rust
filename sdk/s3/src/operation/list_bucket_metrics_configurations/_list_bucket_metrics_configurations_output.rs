@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBucketMetricsConfigurationsOutput {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p>The marker used to continue a metrics configuration listing that has been truncated. Use the <code>NextContinuationToken</code> from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
@@ -16,7 +16,7 @@ pub struct ListBucketMetricsConfigurationsOutput {
 }
 impl ListBucketMetricsConfigurationsOutput {
     /// <p>Indicates whether the returned list of metrics configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken will be provided for a subsequent request.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>The marker that is used as a starting point for this metrics configuration list response. This value is present if it was sent in the request.</p>
@@ -146,7 +146,7 @@ impl ListBucketMetricsConfigurationsOutputBuilder {
     /// Consumes the builder and constructs a [`ListBucketMetricsConfigurationsOutput`](crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput {
         crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput {
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             continuation_token: self.continuation_token,
             next_continuation_token: self.next_continuation_token,
             metrics_configuration_list: self.metrics_configuration_list,

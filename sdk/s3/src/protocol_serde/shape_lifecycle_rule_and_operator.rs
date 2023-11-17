@@ -91,13 +91,13 @@ pub fn ser_lifecycle_rule_and_operator(
             }
         }
     }
-    if input.object_size_greater_than != 0 {
+    if let Some(var_9) = &input.object_size_greater_than {
         let mut inner_writer = scope.start_el("ObjectSizeGreaterThan").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.object_size_greater_than).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_9).encode());
     }
-    if input.object_size_less_than != 0 {
+    if let Some(var_10) = &input.object_size_less_than {
         let mut inner_writer = scope.start_el("ObjectSizeLessThan").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.object_size_less_than).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_10).encode());
     }
     scope.finish();
     Ok(())

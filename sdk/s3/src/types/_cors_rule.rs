@@ -15,7 +15,7 @@ pub struct CorsRule {
     /// <p>One or more headers in the response that you want customers to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
     pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
-    pub max_age_seconds: i32,
+    pub max_age_seconds: ::std::option::Option<i32>,
 }
 impl CorsRule {
     /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
@@ -45,7 +45,7 @@ impl CorsRule {
         self.expose_headers.as_deref().unwrap_or_default()
     }
     /// <p>The time in seconds that your browser is to cache the preflight response for the specified resource.</p>
-    pub fn max_age_seconds(&self) -> i32 {
+    pub fn max_age_seconds(&self) -> ::std::option::Option<i32> {
         self.max_age_seconds
     }
 }
@@ -197,7 +197,7 @@ impl CorsRuleBuilder {
                 )
             })?,
             expose_headers: self.expose_headers,
-            max_age_seconds: self.max_age_seconds.unwrap_or_default(),
+            max_age_seconds: self.max_age_seconds,
         })
     }
 }

@@ -67,7 +67,9 @@ async fn test_success() {
                 let stats = stats.details.unwrap();
                 received.push(format!(
                     "scanned:{},processed:{},returned:{}",
-                    stats.bytes_scanned, stats.bytes_processed, stats.bytes_returned
+                    stats.bytes_scanned.unwrap(),
+                    stats.bytes_processed.unwrap(),
+                    stats.bytes_returned.unwrap()
                 ))
             }
             SelectObjectContentEventStream::End(_) => {}

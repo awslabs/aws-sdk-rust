@@ -6,7 +6,7 @@
 pub struct RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,
     /// <p>Type of restore request.</p>
@@ -23,7 +23,7 @@ pub struct RestoreRequest {
 impl RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
@@ -175,7 +175,7 @@ impl RestoreRequestBuilder {
     /// Consumes the builder and constructs a [`RestoreRequest`](crate::types::RestoreRequest).
     pub fn build(self) -> crate::types::RestoreRequest {
         crate::types::RestoreRequest {
-            days: self.days.unwrap_or_default(),
+            days: self.days,
             glacier_job_parameters: self.glacier_job_parameters,
             r#type: self.r#type,
             tier: self.tier,

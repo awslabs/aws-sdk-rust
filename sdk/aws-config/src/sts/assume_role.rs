@@ -161,8 +161,13 @@ impl AssumeRoleProviderBuilder {
     /// This parameter is optional.
     /// For more information, see
     /// [policy_arns](aws_sdk_sts::operation::assume_role::builders::AssumeRoleInputBuilder::policy_arns)
-    pub fn policy_arns(mut self, policy_arns: Vec<PolicyDescriptorType>) -> Self {
-        self.policy_arns = Some(policy_arns);
+    pub fn policy_arns(mut self, policy_arns: Vec<String>) -> Self {
+        self.policy_arns = Some(
+            policy_arns
+                .into_iter()
+                .map(|arn| PolicyDescriptorType::builder().arn(arn).build())
+                .collect::<Vec<_>>(),
+        );
         self
     }
 

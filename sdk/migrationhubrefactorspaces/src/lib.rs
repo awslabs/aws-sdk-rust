@@ -30,8 +30,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "0.100.0", features = ["behavior-version-latest"] }
-//! aws-sdk-migrationhubrefactorspaces = "0.37.0"
+//! aws-config = { version = "0.101.0", features = ["behavior-version-latest"] }
+//! aws-sdk-migrationhubrefactorspaces = "0.38.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

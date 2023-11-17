@@ -20,11 +20,11 @@ libfuzzer-sys = "0.4"
 
 [dependencies.aws-config]
 path = ".."
-version = "0.100.0"
+version = "0.101.0"
 
 [dependencies.aws-types]
 path = "../../../sdk/build/aws-sdk/sdk/aws-types"
-version = "0.100.0"
+version = "0.101.0"
 
 [workspace]
 members = ["."]

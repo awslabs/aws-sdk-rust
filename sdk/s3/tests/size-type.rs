@@ -12,5 +12,5 @@ fn size_type() {
 
     // Should only compile if the type is correctly customized
     let object = Object::builder().size(size).build();
-    assert_eq!(size, object.size);
+    assert_eq!(Some(size), object.size);
 }

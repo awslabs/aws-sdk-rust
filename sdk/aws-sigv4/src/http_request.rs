@@ -49,7 +49,7 @@
 //! let mut my_req = http::Request::new("...");
 //! // Sign and then apply the signature to the request
 //! let (signing_instructions, _signature) = sign(signable_request, &signing_params)?.into_parts();
-//! signing_instructions.apply_to_request(&mut my_req);
+//! signing_instructions.apply_to_request_http0x(&mut my_req);
 //! # Ok(())
 //! # }
 //! ```

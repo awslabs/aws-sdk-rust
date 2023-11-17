@@ -421,7 +421,8 @@ mod test {
     async fn read_timeout_during_credentials_refresh_should_yield_last_retrieved_credentials() {
         let client = crate::imds::Client::builder()
             // 240.* can never be resolved
-            .endpoint(http::Uri::from_static("http://240.0.0.0"))
+            .endpoint("http://240.0.0.0")
+            .unwrap()
             .build();
         let expected = aws_credential_types::Credentials::for_tests();
         let provider = ImdsCredentialsProvider::builder()
@@ -439,7 +440,8 @@ mod test {
     ) {
         let client = crate::imds::Client::builder()
             // 240.* can never be resolved
-            .endpoint(http::Uri::from_static("http://240.0.0.0"))
+            .endpoint("http://240.0.0.0")
+            .unwrap()
             .build();
         let provider = ImdsCredentialsProvider::builder()
             .imds_client(client)
@@ -458,7 +460,8 @@ mod test {
         use aws_smithy_async::rt::sleep::AsyncSleep;
         let client = crate::imds::Client::builder()
             // 240.* can never be resolved
-            .endpoint(http::Uri::from_static("http://240.0.0.0"))
+            .endpoint("http://240.0.0.0")
+            .unwrap()
             .build();
         let expected = aws_credential_types::Credentials::for_tests();
         let provider = ImdsCredentialsProvider::builder()

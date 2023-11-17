@@ -4,7 +4,6 @@
  */
 
 use aws_sdk_s3::{Client, Config};
-use aws_smithy_protocol_test::MediaType;
 use aws_smithy_runtime::client::http::test_util::dvr::ReplayingClient;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 
@@ -34,7 +33,7 @@ async fn list_objects() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, MediaType::Xml)
+        .validate_body_and_headers(None, "application/xml")
         .await
         .unwrap();
 }
@@ -66,7 +65,7 @@ async fn list_objects_v2() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, MediaType::Xml)
+        .validate_body_and_headers(None, "application/xml")
         .await
         .unwrap();
 }
@@ -97,7 +96,7 @@ async fn head_object() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, MediaType::Xml)
+        .validate_body_and_headers(None, "application/xml")
         .await
         .unwrap();
 }
@@ -128,7 +127,7 @@ async fn get_object() {
     dbg!(result).expect("success");
 
     http_client
-        .validate_body_and_headers(None, MediaType::Xml)
+        .validate_body_and_headers(None, "application/xml")
         .await
         .unwrap();
 }

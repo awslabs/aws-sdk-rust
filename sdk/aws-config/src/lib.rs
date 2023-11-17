@@ -96,7 +96,6 @@
 //! # }
 //! ```
 
-pub use aws_smithy_http::endpoint;
 pub use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 // Re-export types from aws-types
 pub use aws_types::{

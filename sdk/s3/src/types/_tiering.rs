@@ -66,10 +66,16 @@ impl TieringBuilder {
     }
     /// Consumes the builder and constructs a [`Tiering`](crate::types::Tiering).
     /// This method will fail if any of the following fields are not set:
+    /// - [`days`](crate::types::builders::TieringBuilder::days)
     /// - [`access_tier`](crate::types::builders::TieringBuilder::access_tier)
     pub fn build(self) -> ::std::result::Result<crate::types::Tiering, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Tiering {
-            days: self.days.unwrap_or_default(),
+            days: self.days.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "days",
+                    "days was not specified but it is required when building Tiering",
+                )
+            })?,
             access_tier: self.access_tier.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "access_tier",

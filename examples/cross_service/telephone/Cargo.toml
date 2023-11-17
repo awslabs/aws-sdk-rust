@@ -11,11 +11,11 @@ anyhow = "1"
 bytes = "1"
 reqwest = "0.11.4"
 serde_json = "1.0"
-aws-config= { version = "0.100.0", path = "../../../sdk/aws-config" }
-aws-sdk-polly= { version = "0.37.0", path = "../../../sdk/polly" }
-aws-sdk-s3= { version = "0.37.0", path = "../../../sdk/s3" }
-aws-sdk-transcribe= { version = "0.37.0", path = "../../../sdk/transcribe" }
-aws-smithy-types= { version = "0.100.0", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
+aws-config= { version = "0.101.0", path = "../../../sdk/aws-config" }
+aws-sdk-polly= { version = "0.38.0", path = "../../../sdk/polly" }
+aws-sdk-s3= { version = "0.38.0", path = "../../../sdk/s3" }
+aws-sdk-transcribe= { version = "0.38.0", path = "../../../sdk/transcribe" }
+aws-smithy-types= { version = "0.101.0", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 
 [dependencies.tokio]
 version = "1.20.1"

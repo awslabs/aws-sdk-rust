@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "0.100.0", features = ["behavior-version-latest"] }
-//! aws-sdk-launchwizard = "0.2.0"
+//! aws-config = { version = "0.101.0", features = ["behavior-version-latest"] }
+//! aws-sdk-launchwizard = "0.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

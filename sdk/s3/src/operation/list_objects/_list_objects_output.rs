@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
     pub marker: ::std::option::Option<::std::string::String>,
     /// <p>When the response is truncated (the <code>IsTruncated</code> element value in the response is <code>true</code>), you can use the key name in this field as the <code>marker</code> parameter in the subsequent request to get the next set of objects. Amazon S3 lists objects in alphabetical order. </p> <note>
@@ -20,7 +20,7 @@ pub struct ListObjectsOutput {
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of keys returned in the response body.</p>
-    pub max_keys: i32,
+    pub max_keys: ::std::option::Option<i32>,
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by the delimiter.</p>
@@ -36,7 +36,7 @@ pub struct ListObjectsOutput {
 }
 impl ListObjectsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>Indicates where in the bucket listing begins. Marker is included in the response if it was sent with the request.</p>
@@ -68,7 +68,7 @@ impl ListObjectsOutput {
         self.delimiter.as_deref()
     }
     /// <p>The maximum number of keys returned in the response body.</p>
-    pub fn max_keys(&self) -> i32 {
+    pub fn max_keys(&self) -> ::std::option::Option<i32> {
         self.max_keys
     }
     /// <p>All of the keys (up to 1,000) rolled up in a common prefix count as a single return when calculating the number of returns. </p>
@@ -331,14 +331,14 @@ impl ListObjectsOutputBuilder {
     /// Consumes the builder and constructs a [`ListObjectsOutput`](crate::operation::list_objects::ListObjectsOutput).
     pub fn build(self) -> crate::operation::list_objects::ListObjectsOutput {
         crate::operation::list_objects::ListObjectsOutput {
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             marker: self.marker,
             next_marker: self.next_marker,
             contents: self.contents,
             name: self.name,
             prefix: self.prefix,
             delimiter: self.delimiter,
-            max_keys: self.max_keys.unwrap_or_default(),
+            max_keys: self.max_keys,
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,
             request_charged: self.request_charged,

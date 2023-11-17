@@ -5,21 +5,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetObjectAttributesParts {
     /// <p>The total number of parts.</p>
-    pub total_parts_count: i32,
+    pub total_parts_count: ::std::option::Option<i32>,
     /// <p>The marker for the current part.</p>
     pub part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>When a list is truncated, this element specifies the last part in the list, as well as the value to use for the <code>PartNumberMarker</code> request parameter in a subsequent request.</p>
     pub next_part_number_marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of parts allowed in the response.</p>
-    pub max_parts: i32,
+    pub max_parts: ::std::option::Option<i32>,
     /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
     pub parts: ::std::option::Option<::std::vec::Vec<crate::types::ObjectPart>>,
 }
 impl GetObjectAttributesParts {
     /// <p>The total number of parts.</p>
-    pub fn total_parts_count(&self) -> i32 {
+    pub fn total_parts_count(&self) -> ::std::option::Option<i32> {
         self.total_parts_count
     }
     /// <p>The marker for the current part.</p>
@@ -31,11 +31,11 @@ impl GetObjectAttributesParts {
         self.next_part_number_marker.as_deref()
     }
     /// <p>The maximum number of parts allowed in the response.</p>
-    pub fn max_parts(&self) -> i32 {
+    pub fn max_parts(&self) -> ::std::option::Option<i32> {
         self.max_parts
     }
     /// <p>Indicates whether the returned list of parts is truncated. A value of <code>true</code> indicates that the list was truncated. A list can be truncated if the number of parts exceeds the limit returned in the <code>MaxParts</code> element.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>A container for elements related to a particular part. A response can contain zero or more <code>Parts</code> elements.</p>
@@ -157,11 +157,11 @@ impl GetObjectAttributesPartsBuilder {
     /// Consumes the builder and constructs a [`GetObjectAttributesParts`](crate::types::GetObjectAttributesParts).
     pub fn build(self) -> crate::types::GetObjectAttributesParts {
         crate::types::GetObjectAttributesParts {
-            total_parts_count: self.total_parts_count.unwrap_or_default(),
+            total_parts_count: self.total_parts_count,
             part_number_marker: self.part_number_marker,
             next_part_number_marker: self.next_part_number_marker,
-            max_parts: self.max_parts.unwrap_or_default(),
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            max_parts: self.max_parts,
+            is_truncated: self.is_truncated,
             parts: self.parts,
         }
     }

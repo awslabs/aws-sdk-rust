@@ -7,7 +7,7 @@ pub struct Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>The storage class to which you want the object to transition.</p>
     pub storage_class: ::std::option::Option<crate::types::TransitionStorageClass>,
 }
@@ -17,7 +17,7 @@ impl Transition {
         self.date.as_ref()
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>The storage class to which you want the object to transition.</p>
@@ -87,7 +87,7 @@ impl TransitionBuilder {
     pub fn build(self) -> crate::types::Transition {
         crate::types::Transition {
             date: self.date,
-            days: self.days.unwrap_or_default(),
+            days: self.days,
             storage_class: self.storage_class,
         }
     }

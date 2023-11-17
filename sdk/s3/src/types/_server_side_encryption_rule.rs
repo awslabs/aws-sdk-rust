@@ -8,7 +8,7 @@ pub struct ServerSideEncryptionRule {
     pub apply_server_side_encryption_by_default: ::std::option::Option<crate::types::ServerSideEncryptionByDefault>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub bucket_key_enabled: bool,
+    pub bucket_key_enabled: ::std::option::Option<bool>,
 }
 impl ServerSideEncryptionRule {
     /// <p>Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.</p>
@@ -17,7 +17,7 @@ impl ServerSideEncryptionRule {
     }
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket_key_enabled(&self) -> bool {
+    pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
 }
@@ -71,7 +71,7 @@ impl ServerSideEncryptionRuleBuilder {
     pub fn build(self) -> crate::types::ServerSideEncryptionRule {
         crate::types::ServerSideEncryptionRule {
             apply_server_side_encryption_by_default: self.apply_server_side_encryption_by_default,
-            bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+            bucket_key_enabled: self.bucket_key_enabled,
         }
     }
 }

@@ -9,7 +9,7 @@ pub struct DeletedObject {
     /// <p>The version ID of the deleted object.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
-    pub delete_marker: bool,
+    pub delete_marker: ::std::option::Option<bool>,
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
     pub delete_marker_version_id: ::std::option::Option<::std::string::String>,
 }
@@ -23,7 +23,7 @@ impl DeletedObject {
         self.version_id.as_deref()
     }
     /// <p>Indicates whether the specified object version that was permanently deleted was (true) or was not (false) a delete marker before deletion. In a simple DELETE, this header indicates whether (true) or not (false) the current version of the object is a delete marker.</p>
-    pub fn delete_marker(&self) -> bool {
+    pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
     /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you delete a specific object version, the value returned by this header is the version ID of the object version deleted.</p>
@@ -109,7 +109,7 @@ impl DeletedObjectBuilder {
         crate::types::DeletedObject {
             key: self.key,
             version_id: self.version_id,
-            delete_marker: self.delete_marker.unwrap_or_default(),
+            delete_marker: self.delete_marker,
             delete_marker_version_id: self.delete_marker_version_id,
         }
     }

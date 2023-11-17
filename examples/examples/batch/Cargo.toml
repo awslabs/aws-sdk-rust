@@ -7,8 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "0.100.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-batch= { version = "0.37.0", path = "../../../sdk/batch" }
+aws-config= { version = "0.101.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-batch= { version = "0.38.0", path = "../../../sdk/batch" }
 
 [dependencies.tokio]
 version = "1.20.1"

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectVersionsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request by using the <code>NextKeyMarker</code> and <code>NextVersionIdMarker</code> response parameters as a starting place in another request to return the rest of the results.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>Marks the last key returned in a truncated response.</p>
     pub key_marker: ::std::option::Option<::std::string::String>,
     /// <p>Marks the last version of the key returned in a truncated response.</p>
@@ -24,7 +24,7 @@ pub struct ListObjectVersionsOutput {
     /// <p>The delimiter grouping the included keys. A delimiter is a character that you specify to group keys. All keys that contain the same string between the prefix and the first occurrence of the delimiter are grouped under a single result element in <code>CommonPrefixes</code>. These groups are counted as one result against the <code>max-keys</code> limitation. These keys are not returned elsewhere in the response.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of objects to return.</p>
-    pub max_keys: i32,
+    pub max_keys: ::std::option::Option<i32>,
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     pub common_prefixes: ::std::option::Option<::std::vec::Vec<crate::types::CommonPrefix>>,
     /// <p> Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
@@ -38,7 +38,7 @@ pub struct ListObjectVersionsOutput {
 }
 impl ListObjectVersionsOutput {
     /// <p>A flag that indicates whether Amazon S3 returned all of the results that satisfied the search criteria. If your results were truncated, you can make a follow-up paginated request by using the <code>NextKeyMarker</code> and <code>NextVersionIdMarker</code> response parameters as a starting place in another request to return the rest of the results.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>Marks the last key returned in a truncated response.</p>
@@ -82,7 +82,7 @@ impl ListObjectVersionsOutput {
         self.delimiter.as_deref()
     }
     /// <p>Specifies the maximum number of objects to return.</p>
-    pub fn max_keys(&self) -> i32 {
+    pub fn max_keys(&self) -> ::std::option::Option<i32> {
         self.max_keys
     }
     /// <p>All of the keys rolled up into a common prefix count as a single return when calculating the number of returns.</p>
@@ -382,7 +382,7 @@ impl ListObjectVersionsOutputBuilder {
     /// Consumes the builder and constructs a [`ListObjectVersionsOutput`](crate::operation::list_object_versions::ListObjectVersionsOutput).
     pub fn build(self) -> crate::operation::list_object_versions::ListObjectVersionsOutput {
         crate::operation::list_object_versions::ListObjectVersionsOutput {
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             key_marker: self.key_marker,
             version_id_marker: self.version_id_marker,
             next_key_marker: self.next_key_marker,
@@ -392,7 +392,7 @@ impl ListObjectVersionsOutputBuilder {
             name: self.name,
             prefix: self.prefix,
             delimiter: self.delimiter,
-            max_keys: self.max_keys.unwrap_or_default(),
+            max_keys: self.max_keys,
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,
             request_charged: self.request_charged,

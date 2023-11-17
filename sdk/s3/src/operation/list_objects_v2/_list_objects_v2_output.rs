@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListObjectsV2Output {
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>Metadata about each object returned.</p>
     pub contents: ::std::option::Option<::std::vec::Vec<crate::types::Object>>,
     /// <p>The bucket name.</p>
@@ -16,7 +16,7 @@ pub struct ListObjectsV2Output {
     /// <p>Causes keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter to be rolled up into a single result element in the <code>CommonPrefixes</code> collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
-    pub max_keys: i32,
+    pub max_keys: ::std::option::Option<i32>,
     /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
     /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
     /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
@@ -28,7 +28,7 @@ pub struct ListObjectsV2Output {
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
     /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
-    pub key_count: i32,
+    pub key_count: ::std::option::Option<i32>,
     /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response.</p>
     pub continuation_token: ::std::option::Option<::std::string::String>,
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
@@ -42,7 +42,7 @@ pub struct ListObjectsV2Output {
 }
 impl ListObjectsV2Output {
     /// <p>Set to <code>false</code> if all of the results were returned. Set to <code>true</code> if more keys are available to return. If the number of results exceeds that specified by <code>MaxKeys</code>, all of the results might not be returned.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>Metadata about each object returned.</p>
@@ -66,7 +66,7 @@ impl ListObjectsV2Output {
         self.delimiter.as_deref()
     }
     /// <p>Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
-    pub fn max_keys(&self) -> i32 {
+    pub fn max_keys(&self) -> ::std::option::Option<i32> {
         self.max_keys
     }
     /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
@@ -86,7 +86,7 @@ impl ListObjectsV2Output {
         self.encoding_type.as_ref()
     }
     /// <p> <code>KeyCount</code> is the number of keys returned with this request. <code>KeyCount</code> will always be less than or equal to the <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result will include 50 keys or fewer.</p>
-    pub fn key_count(&self) -> i32 {
+    pub fn key_count(&self) -> ::std::option::Option<i32> {
         self.key_count
     }
     /// <p> If <code>ContinuationToken</code> was sent with the request, it is included in the response.</p>
@@ -383,15 +383,15 @@ impl ListObjectsV2OutputBuilder {
     /// Consumes the builder and constructs a [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
     pub fn build(self) -> crate::operation::list_objects_v2::ListObjectsV2Output {
         crate::operation::list_objects_v2::ListObjectsV2Output {
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             contents: self.contents,
             name: self.name,
             prefix: self.prefix,
             delimiter: self.delimiter,
-            max_keys: self.max_keys.unwrap_or_default(),
+            max_keys: self.max_keys,
             common_prefixes: self.common_prefixes,
             encoding_type: self.encoding_type,
-            key_count: self.key_count.unwrap_or_default(),
+            key_count: self.key_count,
             continuation_token: self.continuation_token,
             next_continuation_token: self.next_continuation_token,
             start_after: self.start_after,

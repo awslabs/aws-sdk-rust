@@ -20,39 +20,39 @@ tower = "0.4.13"
 path = "../../sdk/aws-config"
 default-features = false
 features = ["rt-tokio", "behavior-version-latest"]
-version = "0.100.0"
+version = "0.101.0"
 
 [dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["hardcoded-credentials"]
-version = "0.58.0"
+version = "0.101.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "0.37.0"
+version = "0.38.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.58.0"
+version = "0.59.0"
 
 [dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["client"]
-version = "0.58.0"
+version = "0.101.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../../sdk/aws-smithy-runtime-api"
 features = ["client"]
-version = "0.100.0"
+version = "0.101.0"
 
 [dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "0.100.0"
+version = "0.101.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.100.0"
+version = "0.101.0"
 
 [dependencies.tokio]
 version = "1.24.2"

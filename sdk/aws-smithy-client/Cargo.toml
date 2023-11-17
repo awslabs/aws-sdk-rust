@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-client"
-version = "0.58.0"
+version = "0.59.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
 description = "This crate is no longer used by smithy-rs and is deprecated."
 edition = "2021"

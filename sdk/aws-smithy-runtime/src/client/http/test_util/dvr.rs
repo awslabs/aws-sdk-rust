@@ -20,7 +20,6 @@ use std::collections::HashMap;
 mod record;
 mod replay;
 
-pub use aws_smithy_protocol_test::MediaType;
 pub use record::RecordingClient;
 pub use replay::ReplayingClient;
 

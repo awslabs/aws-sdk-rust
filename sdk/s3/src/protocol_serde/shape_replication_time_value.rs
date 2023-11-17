@@ -5,9 +5,9 @@ pub fn ser_replication_time_value(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if input.minutes != 0 {
+    if let Some(var_1) = &input.minutes {
         let mut inner_writer = scope.start_el("Minutes").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.minutes).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
     scope.finish();
     Ok(())
@@ -22,7 +22,7 @@ pub fn de_replication_time_value(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Minutes") /* Minutes com.amazonaws.s3#ReplicationTimeValue$Minutes */ =>  {
-                let var_1 =
+                let var_2 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -33,7 +33,7 @@ pub fn de_replication_time_value(
                         ?
                     )
                 ;
-                builder = builder.set_minutes(var_1);
+                builder = builder.set_minutes(var_2);
             }
             ,
             _ => {}

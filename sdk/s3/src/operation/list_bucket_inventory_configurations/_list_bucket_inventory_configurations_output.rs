@@ -8,7 +8,7 @@ pub struct ListBucketInventoryConfigurationsOutput {
     /// <p>The list of inventory configurations for a bucket.</p>
     pub inventory_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::InventoryConfiguration>>,
     /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
-    pub is_truncated: bool,
+    pub is_truncated: ::std::option::Option<bool>,
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub next_continuation_token: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
@@ -26,7 +26,7 @@ impl ListBucketInventoryConfigurationsOutput {
         self.inventory_configuration_list.as_deref().unwrap_or_default()
     }
     /// <p>Tells whether the returned list of inventory configurations is complete. A value of true indicates that the list is not complete and the NextContinuationToken is provided for a subsequent request.</p>
-    pub fn is_truncated(&self) -> bool {
+    pub fn is_truncated(&self) -> ::std::option::Option<bool> {
         self.is_truncated
     }
     /// <p>The marker used to continue this inventory configuration listing. Use the <code>NextContinuationToken</code> from this response to continue the listing in a subsequent request. The continuation token is an opaque value that Amazon S3 understands.</p>
@@ -148,7 +148,7 @@ impl ListBucketInventoryConfigurationsOutputBuilder {
         crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsOutput {
             continuation_token: self.continuation_token,
             inventory_configuration_list: self.inventory_configuration_list,
-            is_truncated: self.is_truncated.unwrap_or_default(),
+            is_truncated: self.is_truncated,
             next_continuation_token: self.next_continuation_token,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,

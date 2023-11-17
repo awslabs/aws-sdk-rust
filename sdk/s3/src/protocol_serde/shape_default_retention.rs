@@ -9,13 +9,13 @@ pub fn ser_default_retention(
         let mut inner_writer = scope.start_el("Mode").finish();
         inner_writer.data(var_1.as_str());
     }
-    if input.days != 0 {
+    if let Some(var_2) = &input.days {
         let mut inner_writer = scope.start_el("Days").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
-    if input.years != 0 {
+    if let Some(var_3) = &input.years {
         let mut inner_writer = scope.start_el("Years").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.years).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
     }
     scope.finish();
     Ok(())
@@ -30,7 +30,7 @@ pub fn de_default_retention(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Mode") /* Mode com.amazonaws.s3#DefaultRetention$Mode */ =>  {
-                let var_2 =
+                let var_4 =
                     Some(
                         Result::<crate::types::ObjectLockRetentionMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ObjectLockRetentionMode::from(
@@ -40,11 +40,11 @@ pub fn de_default_retention(
                         ?
                     )
                 ;
-                builder = builder.set_mode(var_2);
+                builder = builder.set_mode(var_4);
             }
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#DefaultRetention$Days */ =>  {
-                let var_3 =
+                let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -55,11 +55,11 @@ pub fn de_default_retention(
                         ?
                     )
                 ;
-                builder = builder.set_days(var_3);
+                builder = builder.set_days(var_5);
             }
             ,
             s if s.matches("Years") /* Years com.amazonaws.s3#DefaultRetention$Years */ =>  {
-                let var_4 =
+                let var_6 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -70,7 +70,7 @@ pub fn de_default_retention(
                         ?
                     )
                 ;
-                builder = builder.set_years(var_4);
+                builder = builder.set_years(var_6);
             }
             ,
             _ => {}

@@ -26,7 +26,7 @@ pub struct CsvInput {
     /// <p>Ancestors: <code>CSV</code> </p>
     pub quote_character: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
-    pub allow_quoted_record_delimiter: bool,
+    pub allow_quoted_record_delimiter: ::std::option::Option<bool>,
 }
 impl CsvInput {
     /// <p>Describes the first line of input. Valid values are:</p>
@@ -63,7 +63,7 @@ impl CsvInput {
         self.quote_character.as_deref()
     }
     /// <p>Specifies that CSV field values may contain quoted record delimiters and such records should be allowed. Default value is FALSE. Setting this value to TRUE may lower performance.</p>
-    pub fn allow_quoted_record_delimiter(&self) -> bool {
+    pub fn allow_quoted_record_delimiter(&self) -> ::std::option::Option<bool> {
         self.allow_quoted_record_delimiter
     }
 }
@@ -221,7 +221,7 @@ impl CsvInputBuilder {
             record_delimiter: self.record_delimiter,
             field_delimiter: self.field_delimiter,
             quote_character: self.quote_character,
-            allow_quoted_record_delimiter: self.allow_quoted_record_delimiter.unwrap_or_default(),
+            allow_quoted_record_delimiter: self.allow_quoted_record_delimiter,
         }
     }
 }

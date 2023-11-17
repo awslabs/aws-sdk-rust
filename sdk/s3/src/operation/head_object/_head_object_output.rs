@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HeadObjectOutput {
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
-    pub delete_marker: bool,
+    pub delete_marker: ::std::option::Option<bool>,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: ::std::option::Option<::std::string::String>,
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
@@ -20,7 +20,7 @@ pub struct HeadObjectOutput {
     /// <p>Creation date of the object.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
-    pub content_length: i64,
+    pub content_length: ::std::option::Option<i64>,
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -32,7 +32,7 @@ pub struct HeadObjectOutput {
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
-    pub missing_meta: i32,
+    pub missing_meta: ::std::option::Option<i32>,
     /// <p>Version of the object.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies caching behavior along the request/reply chain.</p>
@@ -60,7 +60,7 @@ pub struct HeadObjectOutput {
     /// <p>If present, specifies the ID of the Key Management Service (KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    pub bucket_key_enabled: bool,
+    pub bucket_key_enabled: ::std::option::Option<bool>,
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub storage_class: ::std::option::Option<crate::types::StorageClass>,
@@ -76,7 +76,7 @@ pub struct HeadObjectOutput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
-    pub parts_count: i32,
+    pub parts_count: ::std::option::Option<i32>,
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
     pub object_lock_mode: ::std::option::Option<crate::types::ObjectLockMode>,
     /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
@@ -88,7 +88,7 @@ pub struct HeadObjectOutput {
 }
 impl HeadObjectOutput {
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
-    pub fn delete_marker(&self) -> bool {
+    pub fn delete_marker(&self) -> ::std::option::Option<bool> {
         self.delete_marker
     }
     /// <p>Indicates that a range of bytes was specified.</p>
@@ -116,7 +116,7 @@ impl HeadObjectOutput {
         self.last_modified.as_ref()
     }
     /// <p>Size of the body in bytes.</p>
-    pub fn content_length(&self) -> i64 {
+    pub fn content_length(&self) -> ::std::option::Option<i64> {
         self.content_length
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -140,7 +140,7 @@ impl HeadObjectOutput {
         self.e_tag.as_deref()
     }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
-    pub fn missing_meta(&self) -> i32 {
+    pub fn missing_meta(&self) -> ::std::option::Option<i32> {
         self.missing_meta
     }
     /// <p>Version of the object.</p>
@@ -196,7 +196,7 @@ impl HeadObjectOutput {
         self.ssekms_key_id.as_deref()
     }
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
-    pub fn bucket_key_enabled(&self) -> bool {
+    pub fn bucket_key_enabled(&self) -> ::std::option::Option<bool> {
         self.bucket_key_enabled
     }
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
@@ -220,7 +220,7 @@ impl HeadObjectOutput {
         self.replication_status.as_ref()
     }
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
-    pub fn parts_count(&self) -> i32 {
+    pub fn parts_count(&self) -> ::std::option::Option<i32> {
         self.parts_count
     }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
@@ -876,19 +876,19 @@ impl HeadObjectOutputBuilder {
     /// Consumes the builder and constructs a [`HeadObjectOutput`](crate::operation::head_object::HeadObjectOutput).
     pub fn build(self) -> crate::operation::head_object::HeadObjectOutput {
         crate::operation::head_object::HeadObjectOutput {
-            delete_marker: self.delete_marker.unwrap_or_default(),
+            delete_marker: self.delete_marker,
             accept_ranges: self.accept_ranges,
             expiration: self.expiration,
             restore: self.restore,
             archive_status: self.archive_status,
             last_modified: self.last_modified,
-            content_length: self.content_length.unwrap_or_default(),
+            content_length: self.content_length,
             checksum_crc32: self.checksum_crc32,
             checksum_crc32_c: self.checksum_crc32_c,
             checksum_sha1: self.checksum_sha1,
             checksum_sha256: self.checksum_sha256,
             e_tag: self.e_tag,
-            missing_meta: self.missing_meta.unwrap_or_default(),
+            missing_meta: self.missing_meta,
             version_id: self.version_id,
             cache_control: self.cache_control,
             content_disposition: self.content_disposition,
@@ -902,11 +902,11 @@ impl HeadObjectOutputBuilder {
             sse_customer_algorithm: self.sse_customer_algorithm,
             sse_customer_key_md5: self.sse_customer_key_md5,
             ssekms_key_id: self.ssekms_key_id,
-            bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+            bucket_key_enabled: self.bucket_key_enabled,
             storage_class: self.storage_class,
             request_charged: self.request_charged,
             replication_status: self.replication_status,
-            parts_count: self.parts_count.unwrap_or_default(),
+            parts_count: self.parts_count,
             object_lock_mode: self.object_lock_mode,
             object_lock_retain_until_date: self.object_lock_retain_until_date,
             object_lock_legal_hold_status: self.object_lock_legal_hold_status,

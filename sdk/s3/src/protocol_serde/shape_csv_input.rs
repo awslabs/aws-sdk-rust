@@ -29,9 +29,9 @@ pub fn ser_csv_input(
         let mut inner_writer = scope.start_el("QuoteCharacter").finish();
         inner_writer.data(var_6.as_str());
     }
-    if input.allow_quoted_record_delimiter {
+    if let Some(var_7) = &input.allow_quoted_record_delimiter {
         let mut inner_writer = scope.start_el("AllowQuotedRecordDelimiter").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.allow_quoted_record_delimiter).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_7).encode());
     }
     scope.finish();
     Ok(())

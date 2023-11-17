@@ -299,6 +299,9 @@ mod head_object_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "HEAD", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/%3C%3E%20%60%3F%F0%9F%90%B1", "path was incorrect");
     }
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody

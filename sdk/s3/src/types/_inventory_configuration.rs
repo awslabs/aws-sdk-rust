@@ -183,12 +183,18 @@ impl InventoryConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`InventoryConfiguration`](crate::types::InventoryConfiguration).
     /// This method will fail if any of the following fields are not set:
+    /// - [`is_enabled`](crate::types::builders::InventoryConfigurationBuilder::is_enabled)
     /// - [`id`](crate::types::builders::InventoryConfigurationBuilder::id)
     /// - [`included_object_versions`](crate::types::builders::InventoryConfigurationBuilder::included_object_versions)
     pub fn build(self) -> ::std::result::Result<crate::types::InventoryConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::InventoryConfiguration {
             destination: self.destination,
-            is_enabled: self.is_enabled.unwrap_or_default(),
+            is_enabled: self.is_enabled.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "is_enabled",
+                    "is_enabled was not specified but it is required when building InventoryConfiguration",
+                )
+            })?,
             filter: self.filter,
             id: self.id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

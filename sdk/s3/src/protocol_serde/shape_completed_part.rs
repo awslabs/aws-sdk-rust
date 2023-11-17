@@ -25,9 +25,9 @@ pub fn ser_completed_part(
         let mut inner_writer = scope.start_el("ChecksumSHA256").finish();
         inner_writer.data(var_5.as_str());
     }
-    if input.part_number != 0 {
+    if let Some(var_6) = &input.part_number {
         let mut inner_writer = scope.start_el("PartNumber").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.part_number).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
     }
     scope.finish();
     Ok(())

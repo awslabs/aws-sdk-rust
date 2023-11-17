@@ -6,12 +6,12 @@
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
-    pub minutes: i32,
+    pub minutes: ::std::option::Option<i32>,
 }
 impl ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
     /// <p> Valid value: 15</p>
-    pub fn minutes(&self) -> i32 {
+    pub fn minutes(&self) -> ::std::option::Option<i32> {
         self.minutes
     }
 }
@@ -48,8 +48,6 @@ impl ReplicationTimeValueBuilder {
     }
     /// Consumes the builder and constructs a [`ReplicationTimeValue`](crate::types::ReplicationTimeValue).
     pub fn build(self) -> crate::types::ReplicationTimeValue {
-        crate::types::ReplicationTimeValue {
-            minutes: self.minutes.unwrap_or_default(),
-        }
+        crate::types::ReplicationTimeValue { minutes: self.minutes }
     }
 }

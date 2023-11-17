@@ -295,6 +295,9 @@ mod create_multipart_upload_request_test {
         let http_request = request_receiver.expect_request();
         let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_query_string(&http_request, expected_query_params));
+        let uri: ::http::Uri = http_request.uri().parse().expect("invalid URI sent");
+        ::pretty_assertions::assert_eq!(http_request.method(), "POST", "method was incorrect");
+        ::pretty_assertions::assert_eq!(uri.path(), "/object.txt", "path was incorrect");
     }
 }
 

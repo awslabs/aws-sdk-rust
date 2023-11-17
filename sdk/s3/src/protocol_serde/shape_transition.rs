@@ -66,13 +66,13 @@ pub fn ser_transition(
         let mut inner_writer = scope.start_el("Date").finish();
         inner_writer.data(var_4.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
-    if input.days != 0 {
+    if let Some(var_5) = &input.days {
         let mut inner_writer = scope.start_el("Days").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
-    if let Some(var_5) = &input.storage_class {
+    if let Some(var_6) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_5.as_str());
+        inner_writer.data(var_6.as_str());
     }
     scope.finish();
     Ok(())

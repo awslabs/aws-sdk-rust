@@ -7,7 +7,7 @@ pub struct Delete {
     /// <p>The object to delete.</p>
     pub objects: ::std::vec::Vec<crate::types::ObjectIdentifier>,
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
-    pub quiet: bool,
+    pub quiet: ::std::option::Option<bool>,
 }
 impl Delete {
     /// <p>The object to delete.</p>
@@ -16,7 +16,7 @@ impl Delete {
         self.objects.deref()
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
-    pub fn quiet(&self) -> bool {
+    pub fn quiet(&self) -> ::std::option::Option<bool> {
         self.quiet
     }
 }
@@ -80,7 +80,7 @@ impl DeleteBuilder {
                     "objects was not specified but it is required when building Delete",
                 )
             })?,
-            quiet: self.quiet.unwrap_or_default(),
+            quiet: self.quiet,
         })
     }
 }

@@ -12,9 +12,9 @@ pub struct DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     pub mode: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub days: i32,
+    pub days: ::std::option::Option<i32>,
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub years: i32,
+    pub years: ::std::option::Option<i32>,
 }
 impl DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
@@ -22,11 +22,11 @@ impl DefaultRetention {
         self.mode.as_ref()
     }
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub fn days(&self) -> i32 {
+    pub fn days(&self) -> ::std::option::Option<i32> {
         self.days
     }
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub fn years(&self) -> i32 {
+    pub fn years(&self) -> ::std::option::Option<i32> {
         self.years
     }
 }
@@ -92,8 +92,8 @@ impl DefaultRetentionBuilder {
     pub fn build(self) -> crate::types::DefaultRetention {
         crate::types::DefaultRetention {
             mode: self.mode,
-            days: self.days.unwrap_or_default(),
-            years: self.years.unwrap_or_default(),
+            days: self.days,
+            years: self.years,
         }
     }
 }

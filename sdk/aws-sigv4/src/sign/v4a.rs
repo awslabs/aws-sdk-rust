@@ -5,7 +5,7 @@
 
 use aws_smithy_runtime_api::client::identity::Identity;
 use bytes::{BufMut, BytesMut};
-use num_bigint::BigInt;
+use crypto_bigint::{CheckedAdd, CheckedSub, Encoding, U256};
 use once_cell::sync::Lazy;
 use p256::ecdsa::signature::Signer;
 use p256::ecdsa::{Signature, SigningKey};
@@ -14,16 +14,13 @@ use std::time::SystemTime;
 use zeroize::Zeroizing;
 
 const ALGORITHM: &[u8] = b"AWS4-ECDSA-P256-SHA256";
-static BIG_N_MINUS_2: Lazy<BigInt> = Lazy::new(|| {
+static BIG_N_MINUS_2: Lazy<U256> = Lazy::new(|| {
     // The N value from section 3.2.1.3 of https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-186.pdf
     // Used as the N value for the algorithm described in section A.2.2 of https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf
     // *(Basically a prime number blessed by the NSA for use in p256)*
-    const ORDER: &[u32] = &[
-        0xFFFFFFFF, 0x00000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xBCE6FAAD, 0xA7179E84, 0xF3B9CAC2,
-        0xFC632551,
-    ];
-    let big_n = BigInt::from_slice(num_bigint::Sign::Plus, ORDER);
-    big_n - BigInt::from(2i32)
+    const ORDER: U256 =
+        U256::from_be_hex("ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551");
+    ORDER.checked_sub(&U256::from(2u32)).unwrap()
 });
 
 /// Calculates a Sigv4a signature
@@ -64,14 +61,16 @@ pub fn generate_signing_key(access_key: &str, secret_access_key: &str) -> impl A
         let tag = ring::hmac::sign(&key, &buf);
         let tag = &tag.as_ref()[0..32];
 
-        let k0 = BigInt::from_bytes_be(num_bigint::Sign::Plus, tag);
+        let k0 = U256::from_be_bytes(tag.try_into().expect("convert to [u8; 32]"));
 
         // It would be more secure for this to be a constant time comparison, but because this
         // is for client usage, that's not as big a deal.
         if k0 <= *BIG_N_MINUS_2 {
-            let pk = k0 + BigInt::from(1i32);
-            let d = Zeroizing::new(pk.to_bytes_be().1);
-            break SigningKey::from_bytes(&d).unwrap();
+            let pk = k0
+                .checked_add(&U256::ONE)
+                .expect("k0 is always less than U256::MAX");
+            let d = Zeroizing::new(pk.to_be_bytes());
+            break SigningKey::from_bytes(d.as_ref()).unwrap();
         }
 
         *counter = counter

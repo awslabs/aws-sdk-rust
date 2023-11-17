@@ -67,13 +67,13 @@ pub fn ser_lifecycle_expiration(
         let mut inner_writer = scope.start_el("Date").finish();
         inner_writer.data(var_4.fmt(::aws_smithy_types::date_time::Format::DateTimeWithOffset)?.as_ref());
     }
-    if input.days != 0 {
+    if let Some(var_5) = &input.days {
         let mut inner_writer = scope.start_el("Days").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
-    if input.expired_object_delete_marker {
+    if let Some(var_6) = &input.expired_object_delete_marker {
         let mut inner_writer = scope.start_el("ExpiredObjectDeleteMarker").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.expired_object_delete_marker).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
     }
     scope.finish();
     Ok(())

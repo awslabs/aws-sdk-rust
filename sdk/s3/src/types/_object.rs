@@ -18,7 +18,7 @@ pub struct Object {
     /// <p>The algorithm that was used to create a checksum of the object.</p>
     pub checksum_algorithm: ::std::option::Option<::std::vec::Vec<crate::types::ChecksumAlgorithm>>,
     /// <p>Size in bytes of the object</p>
-    pub size: i64,
+    pub size: ::std::option::Option<i64>,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: ::std::option::Option<crate::types::ObjectStorageClass>,
     /// <p>The owner of the object</p>
@@ -51,7 +51,7 @@ impl Object {
         self.checksum_algorithm.as_deref().unwrap_or_default()
     }
     /// <p>Size in bytes of the object</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>The class of storage used to store the object.</p>
@@ -228,7 +228,7 @@ impl ObjectBuilder {
             last_modified: self.last_modified,
             e_tag: self.e_tag,
             checksum_algorithm: self.checksum_algorithm,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
             storage_class: self.storage_class,
             owner: self.owner,
             restore_status: self.restore_status,

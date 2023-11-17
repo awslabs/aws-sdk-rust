@@ -11,16 +11,16 @@ pub struct PublicAccessBlockConfiguration {
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-    pub block_public_acls: bool,
+    pub block_public_acls: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-    pub ignore_public_acls: bool,
+    pub ignore_public_acls: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-    pub block_public_policy: bool,
+    pub block_public_policy: ::std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-    pub restrict_public_buckets: bool,
+    pub restrict_public_buckets: ::std::option::Option<bool>,
 }
 impl PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes the following behavior:</p>
@@ -30,22 +30,22 @@ impl PublicAccessBlockConfiguration {
     /// <li> <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-    pub fn block_public_acls(&self) -> bool {
+    pub fn block_public_acls(&self) -> ::std::option::Option<bool> {
         self.block_public_acls
     }
     /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs on this bucket and objects in this bucket.</p>
     /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't prevent new public ACLs from being set.</p>
-    pub fn ignore_public_acls(&self) -> bool {
+    pub fn ignore_public_acls(&self) -> ::std::option::Option<bool> {
         self.ignore_public_acls
     }
     /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the specified bucket policy allows public access. </p>
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-    pub fn block_public_policy(&self) -> bool {
+    pub fn block_public_policy(&self) -> ::std::option::Option<bool> {
         self.block_public_policy
     }
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service principals and authorized users within this account if the bucket has a public policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public and cross-account access within any public bucket policy, including non-public delegation to specific accounts, is blocked.</p>
-    pub fn restrict_public_buckets(&self) -> bool {
+    pub fn restrict_public_buckets(&self) -> ::std::option::Option<bool> {
         self.restrict_public_buckets
     }
 }
@@ -152,10 +152,10 @@ impl PublicAccessBlockConfigurationBuilder {
     /// Consumes the builder and constructs a [`PublicAccessBlockConfiguration`](crate::types::PublicAccessBlockConfiguration).
     pub fn build(self) -> crate::types::PublicAccessBlockConfiguration {
         crate::types::PublicAccessBlockConfiguration {
-            block_public_acls: self.block_public_acls.unwrap_or_default(),
-            ignore_public_acls: self.ignore_public_acls.unwrap_or_default(),
-            block_public_policy: self.block_public_policy.unwrap_or_default(),
-            restrict_public_buckets: self.restrict_public_buckets.unwrap_or_default(),
+            block_public_acls: self.block_public_acls,
+            ignore_public_acls: self.ignore_public_acls,
+            block_public_policy: self.block_public_policy,
+            restrict_public_buckets: self.restrict_public_buckets,
         }
     }
 }

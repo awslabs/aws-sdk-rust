@@ -5,13 +5,13 @@ pub fn ser_scan_range(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if input.start != 0 {
+    if let Some(var_1) = &input.start {
         let mut inner_writer = scope.start_el("Start").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.start).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
     }
-    if input.end != 0 {
+    if let Some(var_2) = &input.end {
         let mut inner_writer = scope.start_el("End").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.end).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_2).encode());
     }
     scope.finish();
     Ok(())

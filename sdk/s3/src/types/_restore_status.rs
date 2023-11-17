@@ -9,7 +9,7 @@ pub struct RestoreStatus {
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
     /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
-    pub is_restore_in_progress: bool,
+    pub is_restore_in_progress: ::std::option::Option<bool>,
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
     /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
     pub restore_expiry_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -20,7 +20,7 @@ impl RestoreStatus {
     /// <p>If the object restoration has completed, the header returns the value <code>FALSE</code>. For example:</p>
     /// <p> <code>x-amz-optional-object-attributes: IsRestoreInProgress="false", RestoreExpiryDate="2012-12-21T00:00:00.000Z"</code> </p>
     /// <p>If the object hasn't been restored, there is no header response.</p>
-    pub fn is_restore_in_progress(&self) -> bool {
+    pub fn is_restore_in_progress(&self) -> ::std::option::Option<bool> {
         self.is_restore_in_progress
     }
     /// <p>Indicates when the restored copy will expire. This value is populated only if the object has already been restored. For example:</p>
@@ -90,7 +90,7 @@ impl RestoreStatusBuilder {
     /// Consumes the builder and constructs a [`RestoreStatus`](crate::types::RestoreStatus).
     pub fn build(self) -> crate::types::RestoreStatus {
         crate::types::RestoreStatus {
-            is_restore_in_progress: self.is_restore_in_progress.unwrap_or_default(),
+            is_restore_in_progress: self.is_restore_in_progress,
             restore_expiry_date: self.restore_expiry_date,
         }
     }

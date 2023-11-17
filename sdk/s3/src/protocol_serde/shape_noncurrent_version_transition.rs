@@ -63,17 +63,17 @@ pub fn ser_noncurrent_version_transition(
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if input.noncurrent_days != 0 {
+    if let Some(var_4) = &input.noncurrent_days {
         let mut inner_writer = scope.start_el("NoncurrentDays").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.noncurrent_days).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
     }
-    if let Some(var_4) = &input.storage_class {
+    if let Some(var_5) = &input.storage_class {
         let mut inner_writer = scope.start_el("StorageClass").finish();
-        inner_writer.data(var_4.as_str());
+        inner_writer.data(var_5.as_str());
     }
-    if input.newer_noncurrent_versions != 0 {
+    if let Some(var_6) = &input.newer_noncurrent_versions {
         let mut inner_writer = scope.start_el("NewerNoncurrentVersions").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.newer_noncurrent_versions).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_6).encode());
     }
     scope.finish();
     Ok(())

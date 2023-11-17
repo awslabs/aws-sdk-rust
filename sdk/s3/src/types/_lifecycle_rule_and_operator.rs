@@ -9,9 +9,9 @@ pub struct LifecycleRuleAndOperator {
     /// <p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Minimum object size to which the rule applies.</p>
-    pub object_size_greater_than: i64,
+    pub object_size_greater_than: ::std::option::Option<i64>,
     /// <p>Maximum object size to which the rule applies.</p>
-    pub object_size_less_than: i64,
+    pub object_size_less_than: ::std::option::Option<i64>,
 }
 impl LifecycleRuleAndOperator {
     /// <p>Prefix identifying one or more objects to which the rule applies.</p>
@@ -25,11 +25,11 @@ impl LifecycleRuleAndOperator {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Minimum object size to which the rule applies.</p>
-    pub fn object_size_greater_than(&self) -> i64 {
+    pub fn object_size_greater_than(&self) -> ::std::option::Option<i64> {
         self.object_size_greater_than
     }
     /// <p>Maximum object size to which the rule applies.</p>
-    pub fn object_size_less_than(&self) -> i64 {
+    pub fn object_size_less_than(&self) -> ::std::option::Option<i64> {
         self.object_size_less_than
     }
 }
@@ -117,8 +117,8 @@ impl LifecycleRuleAndOperatorBuilder {
         crate::types::LifecycleRuleAndOperator {
             prefix: self.prefix,
             tags: self.tags,
-            object_size_greater_than: self.object_size_greater_than.unwrap_or_default(),
-            object_size_less_than: self.object_size_less_than.unwrap_or_default(),
+            object_size_greater_than: self.object_size_greater_than,
+            object_size_less_than: self.object_size_less_than,
         }
     }
 }

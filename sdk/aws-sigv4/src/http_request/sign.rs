@@ -162,7 +162,7 @@ impl SigningInstructions {
 
     #[cfg(any(feature = "http0-compat", test))]
     /// Applies the instructions to the given `request`.
-    pub fn apply_to_request<B>(self, request: &mut http::Request<B>) {
+    pub fn apply_to_request_http0x<B>(self, request: &mut http::Request<B>) {
         let (new_headers, new_query) = self.into_parts();
         for header in new_headers.into_iter() {
             let mut value = http::HeaderValue::from_str(&header.value).unwrap();
@@ -492,7 +492,7 @@ mod tests {
         );
 
         let mut signed = original.as_http_request();
-        out.output.apply_to_request(&mut signed);
+        out.output.apply_to_request_http0x(&mut signed);
 
         let expected = test::v4::test_signed_request("get-vanilla-query-order-key-case");
         assert_req_eq!(expected, signed);
@@ -547,7 +547,8 @@ mod tests {
 
             let out = sign(signable_req, &params).unwrap();
             // Sigv4a signatures are non-deterministic, so we can't compare the signature directly.
-            out.output.apply_to_request(&mut req.as_http_request());
+            out.output
+                .apply_to_request_http0x(&mut req.as_http_request());
 
             let creds = params.credentials().unwrap();
             let signing_key =
@@ -777,7 +778,7 @@ mod tests {
         );
 
         let mut signed = original.as_http_request();
-        out.output.apply_to_request(&mut signed);
+        out.output.apply_to_request_http0x(&mut signed);
 
         let expected = test::v4::test_signed_request(test);
         assert_req_eq!(expected, signed);
@@ -809,7 +810,7 @@ mod tests {
         );
 
         let mut signed = original.as_http_request();
-        out.output.apply_to_request(&mut signed);
+        out.output.apply_to_request_http0x(&mut signed);
 
         let expected =
             test::v4::test_signed_request_query_params("get-vanilla-query-order-key-case");
@@ -843,7 +844,7 @@ mod tests {
         );
 
         let mut signed = original.as_http_request();
-        out.output.apply_to_request(&mut signed);
+        out.output.apply_to_request_http0x(&mut signed);
 
         let expected = http::Request::builder()
             .uri("https://some-endpoint.some-region.amazonaws.com")
@@ -904,7 +905,7 @@ mod tests {
         let mut signed = original.as_http_request();
         out_with_session_token_but_excluded
             .output
-            .apply_to_request(&mut signed);
+            .apply_to_request_http0x(&mut signed);
 
         let expected = http::Request::builder()
             .uri("https://some-endpoint.some-region.amazonaws.com")
@@ -961,7 +962,7 @@ mod tests {
         );
 
         let mut signed = original.as_http_request();
-        out.output.apply_to_request(&mut signed);
+        out.output.apply_to_request_http0x(&mut signed);
 
         let expected = http::Request::builder()
             .uri("https://some-endpoint.some-region.amazonaws.com")
@@ -1031,7 +1032,7 @@ mod tests {
             .body("")
             .unwrap();
 
-        instructions.apply_to_request(&mut request);
+        instructions.apply_to_request_http0x(&mut request);
 
         let get_header = |n: &str| request.headers().get(n).unwrap().to_str().unwrap();
         assert_eq!("foo", get_header("some-header"));
@@ -1051,7 +1052,7 @@ mod tests {
             .body("")
             .unwrap();
 
-        instructions.apply_to_request(&mut request);
+        instructions.apply_to_request_http0x(&mut request);
 
         assert_eq!(
             "/some/path?some-param=f%26o%3Fo&some-other-param%3F=bar",

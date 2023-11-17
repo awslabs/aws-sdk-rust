@@ -5,7 +5,6 @@
 
 //! Error types for [`ImdsClient`](crate::imds::client::Client)
 
-use aws_smithy_http::endpoint::error::InvalidEndpointError;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::result::SdkError;
 use std::error::Error;
@@ -220,14 +219,6 @@ impl Error for BuildError {
         match &self.kind {
             InvalidEndpointMode(e) => Some(e),
             InvalidEndpointUri(e) => Some(e.as_ref()),
-        }
-    }
-}
-
-impl From<InvalidEndpointError> for BuildError {
-    fn from(err: InvalidEndpointError) -> Self {
-        Self {
-            kind: BuildErrorKind::InvalidEndpointUri(err.into()),
         }
     }
 }

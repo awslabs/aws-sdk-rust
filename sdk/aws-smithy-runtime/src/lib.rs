@@ -17,6 +17,7 @@
     unreachable_pub,
     rust_2018_idioms
 )]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
 /// Runtime support logic for generated clients.
 #[cfg(feature = "client")]
