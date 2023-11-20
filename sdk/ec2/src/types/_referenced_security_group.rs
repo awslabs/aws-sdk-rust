@@ -12,7 +12,7 @@ pub struct ReferencedSecurityGroup {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable).</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
 }
 impl ReferencedSecurityGroup {
@@ -32,7 +32,7 @@ impl ReferencedSecurityGroup {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable).</p>
     pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
@@ -111,17 +111,17 @@ impl ReferencedSecurityGroupBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable).</p>
     pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable).</p>
     pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable).</p>
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_peering_connection_id
     }

@@ -86,6 +86,11 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
     if let Some(var_33) = &input.deletion_protection {
         scope_32.boolean(*var_33);
     }
+    #[allow(unused_mut)]
+    let mut scope_34 = writer.prefix("StorageType");
+    if let Some(var_35) = &input.storage_type {
+        scope_34.string(var_35);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

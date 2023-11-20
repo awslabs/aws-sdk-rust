@@ -16,6 +16,8 @@ pub struct OrderableDbInstanceOption {
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
     pub vpc: ::std::option::Option<bool>,
+    /// <p>The storage type to associate with the DB cluster</p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
@@ -44,6 +46,10 @@ impl OrderableDbInstanceOption {
     pub fn vpc(&self) -> ::std::option::Option<bool> {
         self.vpc
     }
+    /// <p>The storage type to associate with the DB cluster</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl OrderableDbInstanceOption {
     /// Creates a new builder-style object to manufacture [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
@@ -62,6 +68,7 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) license_model: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) vpc: ::std::option::Option<bool>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl OrderableDbInstanceOptionBuilder {
     /// <p>The engine type of an instance.</p>
@@ -154,6 +161,20 @@ impl OrderableDbInstanceOptionBuilder {
     pub fn get_vpc(&self) -> &::std::option::Option<bool> {
         &self.vpc
     }
+    /// <p>The storage type to associate with the DB cluster</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
@@ -163,6 +184,7 @@ impl OrderableDbInstanceOptionBuilder {
             license_model: self.license_model,
             availability_zones: self.availability_zones,
             vpc: self.vpc,
+            storage_type: self.storage_type,
         }
     }
 }

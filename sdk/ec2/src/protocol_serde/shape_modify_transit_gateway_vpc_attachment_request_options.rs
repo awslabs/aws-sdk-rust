@@ -10,14 +10,19 @@ pub fn ser_modify_transit_gateway_vpc_attachment_request_options(
         scope_1.string(var_2.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("Ipv6Support");
-    if let Some(var_4) = &input.ipv6_support {
+    let mut scope_3 = writer.prefix("SecurityGroupReferencingSupport");
+    if let Some(var_4) = &input.security_group_referencing_support {
         scope_3.string(var_4.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_5 = writer.prefix("ApplianceModeSupport");
-    if let Some(var_6) = &input.appliance_mode_support {
+    let mut scope_5 = writer.prefix("Ipv6Support");
+    if let Some(var_6) = &input.ipv6_support {
         scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("ApplianceModeSupport");
+    if let Some(var_8) = &input.appliance_mode_support {
+        scope_7.string(var_8.as_str());
     }
     Ok(())
 }

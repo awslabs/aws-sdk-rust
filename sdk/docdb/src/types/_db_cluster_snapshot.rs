@@ -38,6 +38,11 @@ pub struct DbClusterSnapshot {
     pub db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>If the cluster snapshot was copied from a source cluster snapshot, the ARN for the source cluster snapshot; otherwise, a null value.</p>
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Storage type associated with your cluster snapshot </p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster snapshot can be restored in.</p>
@@ -110,6 +115,13 @@ impl DbClusterSnapshot {
     pub fn source_db_cluster_snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_snapshot_arn.as_deref()
     }
+    /// <p>Storage type associated with your cluster snapshot </p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl DbClusterSnapshot {
     /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
@@ -139,6 +151,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -385,6 +398,29 @@ impl DbClusterSnapshotBuilder {
     pub fn get_source_db_cluster_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_snapshot_arn
     }
+    /// <p>Storage type associated with your cluster snapshot </p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Storage type associated with your cluster snapshot </p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Storage type associated with your cluster snapshot </p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
         crate::types::DbClusterSnapshot {
@@ -405,6 +441,7 @@ impl DbClusterSnapshotBuilder {
             kms_key_id: self.kms_key_id,
             db_cluster_snapshot_arn: self.db_cluster_snapshot_arn,
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,
+            storage_type: self.storage_type,
         }
     }
 }

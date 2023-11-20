@@ -27,41 +27,17 @@ pub(crate) mod shape_create_connection;
 
 pub(crate) mod shape_create_host;
 
-pub(crate) mod shape_create_repository_link;
-
-pub(crate) mod shape_create_sync_configuration;
-
 pub(crate) mod shape_delete_connection;
 
 pub(crate) mod shape_delete_host;
-
-pub(crate) mod shape_delete_repository_link;
-
-pub(crate) mod shape_delete_sync_configuration;
 
 pub(crate) mod shape_get_connection;
 
 pub(crate) mod shape_get_host;
 
-pub(crate) mod shape_get_repository_link;
-
-pub(crate) mod shape_get_repository_sync_status;
-
-pub(crate) mod shape_get_resource_sync_status;
-
-pub(crate) mod shape_get_sync_blocker_summary;
-
-pub(crate) mod shape_get_sync_configuration;
-
 pub(crate) mod shape_list_connections;
 
 pub(crate) mod shape_list_hosts;
-
-pub(crate) mod shape_list_repository_links;
-
-pub(crate) mod shape_list_repository_sync_definitions;
-
-pub(crate) mod shape_list_sync_configurations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -71,12 +47,6 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_host;
 
-pub(crate) mod shape_update_repository_link;
-
-pub(crate) mod shape_update_sync_blocker;
-
-pub(crate) mod shape_update_sync_configuration;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -85,47 +55,19 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
-pub(crate) mod shape_access_denied_exception;
-
-pub(crate) mod shape_concurrent_modification_exception;
-
-pub(crate) mod shape_conditional_check_failed_exception;
-
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_connection_input;
 
 pub(crate) mod shape_create_host_input;
 
-pub(crate) mod shape_create_repository_link_input;
-
-pub(crate) mod shape_create_sync_configuration_input;
-
 pub(crate) mod shape_delete_connection_input;
 
 pub(crate) mod shape_delete_host_input;
 
-pub(crate) mod shape_delete_repository_link_input;
-
-pub(crate) mod shape_delete_sync_configuration_input;
-
 pub(crate) mod shape_get_connection_input;
 
 pub(crate) mod shape_get_host_input;
-
-pub(crate) mod shape_get_repository_link_input;
-
-pub(crate) mod shape_get_repository_sync_status_input;
-
-pub(crate) mod shape_get_resource_sync_status_input;
-
-pub(crate) mod shape_get_sync_blocker_summary_input;
-
-pub(crate) mod shape_get_sync_configuration_input;
-
-pub(crate) mod shape_internal_server_exception;
-
-pub(crate) mod shape_invalid_input_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
@@ -133,71 +75,25 @@ pub(crate) mod shape_list_connections_input;
 
 pub(crate) mod shape_list_hosts_input;
 
-pub(crate) mod shape_list_repository_links_input;
-
-pub(crate) mod shape_list_repository_sync_definitions_input;
-
-pub(crate) mod shape_list_sync_configurations_input;
-
 pub(crate) mod shape_list_tags_for_resource_input;
-
-pub(crate) mod shape_resource_already_exists_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_unavailable_exception;
 
-pub(crate) mod shape_retry_latest_commit_failed_exception;
-
-pub(crate) mod shape_sync_blocker_does_not_exist_exception;
-
-pub(crate) mod shape_sync_configuration_still_exists_exception;
-
 pub(crate) mod shape_tag_resource_input;
 
-pub(crate) mod shape_throttling_exception;
-
 pub(crate) mod shape_unsupported_operation_exception;
-
-pub(crate) mod shape_unsupported_provider_type_exception;
 
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_host_input;
-
-pub(crate) mod shape_update_out_of_sync_exception;
-
-pub(crate) mod shape_update_repository_link_input;
-
-pub(crate) mod shape_update_sync_blocker_input;
-
-pub(crate) mod shape_update_sync_configuration_input;
 
 pub(crate) mod shape_connection;
 
 pub(crate) mod shape_connection_list;
 
 pub(crate) mod shape_host_list;
-
-pub(crate) mod shape_repository_link_info;
-
-pub(crate) mod shape_repository_link_list;
-
-pub(crate) mod shape_repository_sync_attempt;
-
-pub(crate) mod shape_repository_sync_definition_list;
-
-pub(crate) mod shape_resource_sync_attempt;
-
-pub(crate) mod shape_revision;
-
-pub(crate) mod shape_sync_blocker;
-
-pub(crate) mod shape_sync_blocker_summary;
-
-pub(crate) mod shape_sync_configuration;
-
-pub(crate) mod shape_sync_configuration_list;
 
 pub(crate) mod shape_tag;
 
@@ -207,22 +103,6 @@ pub(crate) mod shape_vpc_configuration;
 
 pub(crate) mod shape_host;
 
-pub(crate) mod shape_latest_sync_blocker_list;
-
-pub(crate) mod shape_repository_sync_definition;
-
-pub(crate) mod shape_repository_sync_event_list;
-
-pub(crate) mod shape_resource_sync_event_list;
-
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
-
-pub(crate) mod shape_sync_blocker_context_list;
-
-pub(crate) mod shape_repository_sync_event;
-
-pub(crate) mod shape_resource_sync_event;
-
-pub(crate) mod shape_sync_blocker_context;

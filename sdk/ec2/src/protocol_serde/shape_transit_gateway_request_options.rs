@@ -38,20 +38,25 @@ pub fn ser_transit_gateway_request_options(
         scope_11.string(var_12.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("MulticastSupport");
-    if let Some(var_14) = &input.multicast_support {
+    let mut scope_13 = writer.prefix("SecurityGroupReferencingSupport");
+    if let Some(var_14) = &input.security_group_referencing_support {
         scope_13.string(var_14.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("TransitGatewayCidrBlocks");
-    if let Some(var_16) = &input.transit_gateway_cidr_blocks {
-        let mut list_18 = scope_15.start_list(true, Some("item"));
-        for item_17 in var_16 {
+    let mut scope_15 = writer.prefix("MulticastSupport");
+    if let Some(var_16) = &input.multicast_support {
+        scope_15.string(var_16.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("TransitGatewayCidrBlocks");
+    if let Some(var_18) = &input.transit_gateway_cidr_blocks {
+        let mut list_20 = scope_17.start_list(true, Some("item"));
+        for item_19 in var_18 {
             #[allow(unused_mut)]
-            let mut entry_19 = list_18.entry();
-            entry_19.string(item_17);
+            let mut entry_21 = list_20.entry();
+            entry_21.string(item_19);
         }
-        list_18.finish();
+        list_20.finish();
     }
     Ok(())
 }

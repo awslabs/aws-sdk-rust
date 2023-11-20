@@ -8,8 +8,10 @@ pub struct SecurityGroupReference {
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC with the referencing security group.</p>
     pub referencing_vpc_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the transit gateway (if applicable). For more information about security group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub transit_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupReference {
     /// <p>The ID of your security group.</p>
@@ -20,9 +22,13 @@ impl SecurityGroupReference {
     pub fn referencing_vpc_id(&self) -> ::std::option::Option<&str> {
         self.referencing_vpc_id.as_deref()
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
+    }
+    /// <p>The ID of the transit gateway (if applicable). For more information about security group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_id.as_deref()
     }
 }
 impl SecurityGroupReference {
@@ -39,6 +45,7 @@ pub struct SecurityGroupReferenceBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) referencing_vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupReferenceBuilder {
     /// <p>The ID of your security group.</p>
@@ -69,19 +76,33 @@ impl SecurityGroupReferenceBuilder {
     pub fn get_referencing_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.referencing_vpc_id
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub fn vpc_peering_connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub fn set_vpc_peering_connection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_peering_connection_id = input;
         self
     }
-    /// <p>The ID of the VPC peering connection.</p>
+    /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_peering_connection_id
+    }
+    /// <p>The ID of the transit gateway (if applicable). For more information about security group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the transit gateway (if applicable). For more information about security group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_id = input;
+        self
+    }
+    /// <p>The ID of the transit gateway (if applicable). For more information about security group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_id
     }
     /// Consumes the builder and constructs a [`SecurityGroupReference`](crate::types::SecurityGroupReference).
     pub fn build(self) -> crate::types::SecurityGroupReference {
@@ -89,6 +110,7 @@ impl SecurityGroupReferenceBuilder {
             group_id: self.group_id,
             referencing_vpc_id: self.referencing_vpc_id,
             vpc_peering_connection_id: self.vpc_peering_connection_id,
+            transit_gateway_id: self.transit_gateway_id,
         }
     }
 }

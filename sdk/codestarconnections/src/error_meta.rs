@@ -3,40 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient access to perform this action.</p>
-    AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Exception thrown as a result of concurrent modification to an application. For example, two individuals attempting to edit the same application at the same time. </p>
-    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// <p>The conditional check failed. Try again later.</p>
-    ConditionalCheckFailedException(crate::types::error::ConditionalCheckFailedException),
     /// <p>Two conflicting operations have been made on the same resource.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Received an internal server exception. Try again later.</p>
-    InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The input is not valid. Verify that the action is typed correctly.</p>
-    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>Exceeded the maximum limit for connections.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>Unable to create resource. Resource already exists.</p>
-    ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
-    /// <p>Retrying the latest commit failed. Try again later.</p>
-    RetryLatestCommitFailedException(crate::types::error::RetryLatestCommitFailedException),
-    /// <p>Unable to continue. The sync blocker does not exist.</p>
-    SyncBlockerDoesNotExistException(crate::types::error::SyncBlockerDoesNotExistException),
-    /// <p>Unable to continue. The sync blocker still exists.</p>
-    SyncConfigurationStillExistsException(crate::types::error::SyncConfigurationStillExistsException),
-    /// <p>The request was denied due to request throttling.</p>
-    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The operation is not supported. Check the connection status and try again.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
-    /// <p>The specified provider type is not supported for connections.</p>
-    UnsupportedProviderTypeException(crate::types::error::UnsupportedProviderTypeException),
-    /// <p>The update is out of sync. Try syncing again.</p>
-    UpdateOutOfSyncException(crate::types::error::UpdateOutOfSyncException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -49,23 +25,11 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Error::AccessDeniedException(inner) => inner.fmt(f),
-            Error::ConcurrentModificationException(inner) => inner.fmt(f),
-            Error::ConditionalCheckFailedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
-            Error::InternalServerException(inner) => inner.fmt(f),
-            Error::InvalidInputException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
-            Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceUnavailableException(inner) => inner.fmt(f),
-            Error::RetryLatestCommitFailedException(inner) => inner.fmt(f),
-            Error::SyncBlockerDoesNotExistException(inner) => inner.fmt(f),
-            Error::SyncConfigurationStillExistsException(inner) => inner.fmt(f),
-            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnsupportedOperationException(inner) => inner.fmt(f),
-            Error::UnsupportedProviderTypeException(inner) => inner.fmt(f),
-            Error::UpdateOutOfSyncException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -87,23 +51,11 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
-            Self::AccessDeniedException(inner) => inner.meta(),
-            Self::ConcurrentModificationException(inner) => inner.meta(),
-            Self::ConditionalCheckFailedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
-            Self::InternalServerException(inner) => inner.meta(),
-            Self::InvalidInputException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
-            Self::ResourceAlreadyExistsException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourceUnavailableException(inner) => inner.meta(),
-            Self::RetryLatestCommitFailedException(inner) => inner.meta(),
-            Self::SyncBlockerDoesNotExistException(inner) => inner.meta(),
-            Self::SyncConfigurationStillExistsException(inner) => inner.meta(),
-            Self::ThrottlingException(inner) => inner.meta(),
             Self::UnsupportedOperationException(inner) => inner.meta(),
-            Self::UnsupportedProviderTypeException(inner) => inner.meta(),
-            Self::UpdateOutOfSyncException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -156,87 +108,6 @@ impl From<crate::operation::create_host::CreateHostError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_repository_link::CreateRepositoryLinkError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_repository_link::CreateRepositoryLinkError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::create_repository_link::CreateRepositoryLinkError> for Error {
-    fn from(err: crate::operation::create_repository_link::CreateRepositoryLinkError) -> Self {
-        match err {
-            crate::operation::create_repository_link::CreateRepositoryLinkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_repository_link::CreateRepositoryLinkError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::create_repository_link::CreateRepositoryLinkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_repository_link::CreateRepositoryLinkError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::create_repository_link::CreateRepositoryLinkError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_repository_link::CreateRepositoryLinkError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::operation::create_repository_link::CreateRepositoryLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_repository_link::CreateRepositoryLinkError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sync_configuration::CreateSyncConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sync_configuration::CreateSyncConfigurationError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::create_sync_configuration::CreateSyncConfigurationError> for Error {
-    fn from(err: crate::operation::create_sync_configuration::CreateSyncConfigurationError) -> Self {
-        match err {
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::create_sync_configuration::CreateSyncConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connection::DeleteConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -279,87 +150,6 @@ impl From<crate::operation::delete_host::DeleteHostError> for Error {
             crate::operation::delete_host::DeleteHostError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_host::DeleteHostError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::delete_host::DeleteHostError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_repository_link::DeleteRepositoryLinkError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_repository_link::DeleteRepositoryLinkError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::delete_repository_link::DeleteRepositoryLinkError> for Error {
-    fn from(err: crate::operation::delete_repository_link::DeleteRepositoryLinkError) -> Self {
-        match err {
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::SyncConfigurationStillExistsException(inner) => {
-                Error::SyncConfigurationStillExistsException(inner)
-            }
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::UnsupportedProviderTypeException(inner) => {
-                Error::UnsupportedProviderTypeException(inner)
-            }
-            crate::operation::delete_repository_link::DeleteRepositoryLinkError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sync_configuration::DeleteSyncConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sync_configuration::DeleteSyncConfigurationError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::delete_sync_configuration::DeleteSyncConfigurationError> for Error {
-    fn from(err: crate::operation::delete_sync_configuration::DeleteSyncConfigurationError) -> Self {
-        match err {
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_sync_configuration::DeleteSyncConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -409,178 +199,6 @@ impl From<crate::operation::get_host::GetHostError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_repository_link::GetRepositoryLinkError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_repository_link::GetRepositoryLinkError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::get_repository_link::GetRepositoryLinkError> for Error {
-    fn from(err: crate::operation::get_repository_link::GetRepositoryLinkError) -> Self {
-        match err {
-            crate::operation::get_repository_link::GetRepositoryLinkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_repository_link::GetRepositoryLinkError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::get_repository_link::GetRepositoryLinkError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_repository_link::GetRepositoryLinkError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::get_repository_link::GetRepositoryLinkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_repository_link::GetRepositoryLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_repository_link::GetRepositoryLinkError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::get_repository_sync_status::GetRepositorySyncStatusError> for Error {
-    fn from(err: crate::operation::get_repository_sync_status::GetRepositorySyncStatusError) -> Self {
-        match err {
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_sync_status::GetResourceSyncStatusError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_sync_status::GetResourceSyncStatusError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::get_resource_sync_status::GetResourceSyncStatusError> for Error {
-    fn from(err: crate::operation::get_resource_sync_status::GetResourceSyncStatusError) -> Self {
-        match err {
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_resource_sync_status::GetResourceSyncStatusError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError> for Error {
-    fn from(err: crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError) -> Self {
-        match err {
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sync_configuration::GetSyncConfigurationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_sync_configuration::GetSyncConfigurationError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::get_sync_configuration::GetSyncConfigurationError> for Error {
-    fn from(err: crate::operation::get_sync_configuration::GetSyncConfigurationError) -> Self {
-        match err {
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_sync_configuration::GetSyncConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connections::ListConnectionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -621,119 +239,6 @@ impl From<crate::operation::list_hosts::ListHostsError> for Error {
     fn from(err: crate::operation::list_hosts::ListHostsError) -> Self {
         match err {
             crate::operation::list_hosts::ListHostsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_links::ListRepositoryLinksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_links::ListRepositoryLinksError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::list_repository_links::ListRepositoryLinksError> for Error {
-    fn from(err: crate::operation::list_repository_links::ListRepositoryLinksError) -> Self {
-        match err {
-            crate::operation::list_repository_links::ListRepositoryLinksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::list_repository_links::ListRepositoryLinksError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::list_repository_links::ListRepositoryLinksError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_repository_links::ListRepositoryLinksError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::list_repository_links::ListRepositoryLinksError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_repository_links::ListRepositoryLinksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_repository_links::ListRepositoryLinksError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError> for Error {
-    fn from(err: crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError) -> Self {
-        match err {
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sync_configurations::ListSyncConfigurationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sync_configurations::ListSyncConfigurationsError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::list_sync_configurations::ListSyncConfigurationsError> for Error {
-    fn from(err: crate::operation::list_sync_configurations::ListSyncConfigurationsError) -> Self {
-        match err {
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::list_sync_configurations::ListSyncConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -831,141 +336,14 @@ impl From<crate::operation::update_host::UpdateHostError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_repository_link::UpdateRepositoryLinkError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_repository_link::UpdateRepositoryLinkError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::update_repository_link::UpdateRepositoryLinkError> for Error {
-    fn from(err: crate::operation::update_repository_link::UpdateRepositoryLinkError) -> Self {
-        match err {
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::ConditionalCheckFailedException(inner) => {
-                Error::ConditionalCheckFailedException(inner)
-            }
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::UpdateOutOfSyncException(inner) => {
-                Error::UpdateOutOfSyncException(inner)
-            }
-            crate::operation::update_repository_link::UpdateRepositoryLinkError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sync_blocker::UpdateSyncBlockerError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sync_blocker::UpdateSyncBlockerError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::update_sync_blocker::UpdateSyncBlockerError> for Error {
-    fn from(err: crate::operation::update_sync_blocker::UpdateSyncBlockerError) -> Self {
-        match err {
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::RetryLatestCommitFailedException(inner) => {
-                Error::RetryLatestCommitFailedException(inner)
-            }
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::SyncBlockerDoesNotExistException(inner) => {
-                Error::SyncBlockerDoesNotExistException(inner)
-            }
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_sync_blocker::UpdateSyncBlockerError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sync_configuration::UpdateSyncConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sync_configuration::UpdateSyncConfigurationError, R>,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::update_sync_configuration::UpdateSyncConfigurationError> for Error {
-    fn from(err: crate::operation::update_sync_configuration::UpdateSyncConfigurationError) -> Self {
-        match err {
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::ConcurrentModificationException(inner) => {
-                Error::ConcurrentModificationException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::InvalidInputException(inner) => {
-                Error::InvalidInputException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::UpdateOutOfSyncException(inner) => {
-                Error::UpdateOutOfSyncException(inner)
-            }
-            crate::operation::update_sync_configuration::UpdateSyncConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Error::AccessDeniedException(inner) => inner.source(),
-            Error::ConcurrentModificationException(inner) => inner.source(),
-            Error::ConditionalCheckFailedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
-            Error::InternalServerException(inner) => inner.source(),
-            Error::InvalidInputException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
-            Error::ResourceAlreadyExistsException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceUnavailableException(inner) => inner.source(),
-            Error::RetryLatestCommitFailedException(inner) => inner.source(),
-            Error::SyncBlockerDoesNotExistException(inner) => inner.source(),
-            Error::SyncConfigurationStillExistsException(inner) => inner.source(),
-            Error::ThrottlingException(inner) => inner.source(),
             Error::UnsupportedOperationException(inner) => inner.source(),
-            Error::UnsupportedProviderTypeException(inner) => inner.source(),
-            Error::UpdateOutOfSyncException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -973,23 +351,11 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
-            Self::AccessDeniedException(e) => e.request_id(),
-            Self::ConcurrentModificationException(e) => e.request_id(),
-            Self::ConditionalCheckFailedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
-            Self::InternalServerException(e) => e.request_id(),
-            Self::InvalidInputException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
-            Self::ResourceAlreadyExistsException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceUnavailableException(e) => e.request_id(),
-            Self::RetryLatestCommitFailedException(e) => e.request_id(),
-            Self::SyncBlockerDoesNotExistException(e) => e.request_id(),
-            Self::SyncConfigurationStillExistsException(e) => e.request_id(),
-            Self::ThrottlingException(e) => e.request_id(),
             Self::UnsupportedOperationException(e) => e.request_id(),
-            Self::UnsupportedProviderTypeException(e) => e.request_id(),
-            Self::UpdateOutOfSyncException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -21,8 +21,22 @@ pub fn de_transit_gateway_vpc_attachment_options(
                 builder = builder.set_dns_support(var_1);
             }
             ,
-            s if s.matches("ipv6Support") /* Ipv6Support com.amazonaws.ec2#TransitGatewayVpcAttachmentOptions$Ipv6Support */ =>  {
+            s if s.matches("securityGroupReferencingSupport") /* SecurityGroupReferencingSupport com.amazonaws.ec2#TransitGatewayVpcAttachmentOptions$SecurityGroupReferencingSupport */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<crate::types::SecurityGroupReferencingSupportValue, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SecurityGroupReferencingSupportValue::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_referencing_support(var_2);
+            }
+            ,
+            s if s.matches("ipv6Support") /* Ipv6Support com.amazonaws.ec2#TransitGatewayVpcAttachmentOptions$Ipv6Support */ =>  {
+                let var_3 =
                     Some(
                         Result::<crate::types::Ipv6SupportValue, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Ipv6SupportValue::from(
@@ -32,11 +46,11 @@ pub fn de_transit_gateway_vpc_attachment_options(
                         ?
                     )
                 ;
-                builder = builder.set_ipv6_support(var_2);
+                builder = builder.set_ipv6_support(var_3);
             }
             ,
             s if s.matches("applianceModeSupport") /* ApplianceModeSupport com.amazonaws.ec2#TransitGatewayVpcAttachmentOptions$ApplianceModeSupport */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                         Result::<crate::types::ApplianceModeSupportValue, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ApplianceModeSupportValue::from(
@@ -46,7 +60,7 @@ pub fn de_transit_gateway_vpc_attachment_options(
                         ?
                     )
                 ;
-                builder = builder.set_appliance_mode_support(var_3);
+                builder = builder.set_appliance_mode_support(var_4);
             }
             ,
             _ => {}

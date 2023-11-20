@@ -233,6 +233,19 @@ pub fn de_db_cluster_snapshot(
                 builder = builder.set_source_db_cluster_snapshot_arn(var_17);
             }
             ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.docdb#DBClusterSnapshot$StorageType */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_18);
+            }
+            ,
             _ => {}
         }
     }

@@ -128,8 +128,22 @@ pub fn de_transit_gateway_options(
                 builder = builder.set_dns_support(var_9);
             }
             ,
-            s if s.matches("multicastSupport") /* MulticastSupport com.amazonaws.ec2#TransitGatewayOptions$MulticastSupport */ =>  {
+            s if s.matches("securityGroupReferencingSupport") /* SecurityGroupReferencingSupport com.amazonaws.ec2#TransitGatewayOptions$SecurityGroupReferencingSupport */ =>  {
                 let var_10 =
+                    Some(
+                        Result::<crate::types::SecurityGroupReferencingSupportValue, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::SecurityGroupReferencingSupportValue::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_security_group_referencing_support(var_10);
+            }
+            ,
+            s if s.matches("multicastSupport") /* MulticastSupport com.amazonaws.ec2#TransitGatewayOptions$MulticastSupport */ =>  {
+                let var_11 =
                     Some(
                         Result::<crate::types::MulticastSupportValue, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::MulticastSupportValue::from(
@@ -139,7 +153,7 @@ pub fn de_transit_gateway_options(
                         ?
                     )
                 ;
-                builder = builder.set_multicast_support(var_10);
+                builder = builder.set_multicast_support(var_11);
             }
             ,
             _ => {}

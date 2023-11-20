@@ -7,23 +7,11 @@ pub mod create_connection;
 /// Types for the `CreateHost` operation.
 pub mod create_host;
 
-/// Types for the `CreateRepositoryLink` operation.
-pub mod create_repository_link;
-
-/// Types for the `CreateSyncConfiguration` operation.
-pub mod create_sync_configuration;
-
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
 
 /// Types for the `DeleteHost` operation.
 pub mod delete_host;
-
-/// Types for the `DeleteRepositoryLink` operation.
-pub mod delete_repository_link;
-
-/// Types for the `DeleteSyncConfiguration` operation.
-pub mod delete_sync_configuration;
 
 /// Types for the `GetConnection` operation.
 pub mod get_connection;
@@ -31,35 +19,11 @@ pub mod get_connection;
 /// Types for the `GetHost` operation.
 pub mod get_host;
 
-/// Types for the `GetRepositoryLink` operation.
-pub mod get_repository_link;
-
-/// Types for the `GetRepositorySyncStatus` operation.
-pub mod get_repository_sync_status;
-
-/// Types for the `GetResourceSyncStatus` operation.
-pub mod get_resource_sync_status;
-
-/// Types for the `GetSyncBlockerSummary` operation.
-pub mod get_sync_blocker_summary;
-
-/// Types for the `GetSyncConfiguration` operation.
-pub mod get_sync_configuration;
-
 /// Types for the `ListConnections` operation.
 pub mod list_connections;
 
 /// Types for the `ListHosts` operation.
 pub mod list_hosts;
-
-/// Types for the `ListRepositoryLinks` operation.
-pub mod list_repository_links;
-
-/// Types for the `ListRepositorySyncDefinitions` operation.
-pub mod list_repository_sync_definitions;
-
-/// Types for the `ListSyncConfigurations` operation.
-pub mod list_sync_configurations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -72,12 +36,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateHost` operation.
 pub mod update_host;
-
-/// Types for the `UpdateRepositoryLink` operation.
-pub mod update_repository_link;
-
-/// Types for the `UpdateSyncBlocker` operation.
-pub mod update_sync_blocker;
-
-/// Types for the `UpdateSyncConfiguration` operation.
-pub mod update_sync_configuration;

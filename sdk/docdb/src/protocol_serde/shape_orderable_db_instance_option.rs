@@ -84,6 +84,19 @@ pub fn de_orderable_db_instance_option(
                 builder = builder.set_vpc(var_6);
             }
             ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.docdb#OrderableDBInstanceOption$StorageType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_7);
+            }
+            ,
             _ => {}
         }
     }

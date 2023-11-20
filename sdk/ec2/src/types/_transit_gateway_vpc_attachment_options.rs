@@ -6,6 +6,8 @@
 pub struct TransitGatewayVpcAttachmentOptions {
     /// <p>Indicates whether DNS support is enabled.</p>
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
     /// <p>Indicates whether appliance mode support is enabled.</p>
@@ -15,6 +17,10 @@ impl TransitGatewayVpcAttachmentOptions {
     /// <p>Indicates whether DNS support is enabled.</p>
     pub fn dns_support(&self) -> ::std::option::Option<&crate::types::DnsSupportValue> {
         self.dns_support.as_ref()
+    }
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn security_group_referencing_support(&self) -> ::std::option::Option<&crate::types::SecurityGroupReferencingSupportValue> {
+        self.security_group_referencing_support.as_ref()
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub fn ipv6_support(&self) -> ::std::option::Option<&crate::types::Ipv6SupportValue> {
@@ -37,6 +43,7 @@ impl TransitGatewayVpcAttachmentOptions {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TransitGatewayVpcAttachmentOptionsBuilder {
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
+    pub(crate) security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     pub(crate) ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
     pub(crate) appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
 }
@@ -54,6 +61,23 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     /// <p>Indicates whether DNS support is enabled.</p>
     pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
         &self.dns_support
+    }
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn security_group_referencing_support(mut self, input: crate::types::SecurityGroupReferencingSupportValue) -> Self {
+        self.security_group_referencing_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn set_security_group_referencing_support(
+        mut self,
+        input: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
+    ) -> Self {
+        self.security_group_referencing_support = input;
+        self
+    }
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<crate::types::SecurityGroupReferencingSupportValue> {
+        &self.security_group_referencing_support
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub fn ipv6_support(mut self, input: crate::types::Ipv6SupportValue) -> Self {
@@ -87,6 +111,7 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
     pub fn build(self) -> crate::types::TransitGatewayVpcAttachmentOptions {
         crate::types::TransitGatewayVpcAttachmentOptions {
             dns_support: self.dns_support,
+            security_group_referencing_support: self.security_group_referencing_support,
             ipv6_support: self.ipv6_support,
             appliance_mode_support: self.appliance_mode_support,
         }

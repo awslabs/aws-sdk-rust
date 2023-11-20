@@ -445,6 +445,8 @@ pub use crate::types::_appliance_mode_support_value::ApplianceModeSupportValue;
 
 pub use crate::types::_ipv6_support_value::Ipv6SupportValue;
 
+pub use crate::types::_security_group_referencing_support_value::SecurityGroupReferencingSupportValue;
+
 pub use crate::types::_dns_support_value::DnsSupportValue;
 
 pub use crate::types::_transit_gateway_attachment_state::TransitGatewayAttachmentState;
@@ -3700,6 +3702,8 @@ mod _security_group_for_vpc;
 mod _security_group_identifier;
 
 mod _security_group_reference;
+
+mod _security_group_referencing_support_value;
 
 mod _security_group_rule;
 

@@ -84,6 +84,13 @@ pub struct CreateDbClusterInput {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The cluster identifier of the new global cluster.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
@@ -214,6 +221,15 @@ impl CreateDbClusterInput {
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl CreateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
@@ -246,6 +262,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -674,6 +691,35 @@ impl CreateDbClusterInputBuilder {
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -699,6 +745,7 @@ impl CreateDbClusterInputBuilder {
             enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
             global_cluster_identifier: self.global_cluster_identifier,
+            storage_type: self.storage_type,
         })
     }
 }

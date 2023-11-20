@@ -524,4 +524,33 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p> <note>
+    /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
+    }
 }

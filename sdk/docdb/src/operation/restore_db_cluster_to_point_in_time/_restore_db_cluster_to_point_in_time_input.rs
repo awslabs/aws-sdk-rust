@@ -67,6 +67,11 @@ pub struct RestoreDbClusterToPointInTimeInput {
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new cluster to be created.</p>
@@ -162,6 +167,13 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -186,6 +198,7 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new cluster to be created.</p>
@@ -493,6 +506,29 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -514,6 +550,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 kms_key_id: self.kms_key_id,
                 enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
                 deletion_protection: self.deletion_protection,
+                storage_type: self.storage_type,
             },
         )
     }

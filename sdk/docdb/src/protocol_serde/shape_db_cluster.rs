@@ -418,6 +418,19 @@ pub fn de_db_cluster(
                 builder = builder.set_deletion_protection(var_32);
             }
             ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.docdb#DBCluster$StorageType */ =>  {
+                let var_33 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_33);
+            }
+            ,
             _ => {}
         }
     }

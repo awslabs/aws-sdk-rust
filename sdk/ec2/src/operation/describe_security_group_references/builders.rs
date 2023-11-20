@@ -22,7 +22,7 @@ impl DescribeSecurityGroupReferencesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSecurityGroupReferences`.
 ///
-/// <p>Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've specified in this request.</p>
+/// <p>Describes the VPCs on the other side of a VPC peering connection or the VPCs attached to a transit gateway that are referencing the security groups you've specified in this request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSecurityGroupReferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

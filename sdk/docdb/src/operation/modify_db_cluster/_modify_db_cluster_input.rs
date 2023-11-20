@@ -68,6 +68,11 @@ pub struct ModifyDbClusterInput {
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -164,6 +169,13 @@ impl ModifyDbClusterInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -190,6 +202,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) allow_major_version_upgrade: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -503,6 +516,29 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -522,6 +558,7 @@ impl ModifyDbClusterInputBuilder {
             engine_version: self.engine_version,
             allow_major_version_upgrade: self.allow_major_version_upgrade,
             deletion_protection: self.deletion_protection,
+            storage_type: self.storage_type,
         })
     }
 }

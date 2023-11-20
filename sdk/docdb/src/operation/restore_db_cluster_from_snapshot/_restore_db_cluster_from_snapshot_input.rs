@@ -56,6 +56,11 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p> <i>Type:</i> String. &nbsp; &nbsp; &nbsp; <i>Required:</i> No.</p>
     /// <p>If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -144,6 +149,13 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -169,6 +181,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -458,6 +471,29 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_parameter_group_name
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -479,6 +515,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             enable_cloudwatch_logs_exports: self.enable_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
             db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+            storage_type: self.storage_type,
         })
     }
 }

@@ -87,6 +87,11 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_31) = &input.deletion_protection {
         scope_30.boolean(*var_31);
     }
+    #[allow(unused_mut)]
+    let mut scope_32 = writer.prefix("StorageType");
+    if let Some(var_33) = &input.storage_type {
+        scope_32.string(var_33);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

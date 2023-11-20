@@ -69,6 +69,12 @@ pub struct DbCluster {
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
@@ -212,6 +218,14 @@ impl DbCluster {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -256,6 +270,7 @@ pub struct DbClusterBuilder {
     pub(crate) cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBuilder {
     /// Appends an item to `availability_zones`.
@@ -745,6 +760,32 @@ impl DbClusterBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>Storage type associated with your cluster</p>
+    /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>Valid values for storage type - <code>standard | iopt1</code> </p>
+    /// <p>Default value is <code>standard </code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -780,6 +821,7 @@ impl DbClusterBuilder {
             cluster_create_time: self.cluster_create_time,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             deletion_protection: self.deletion_protection,
+            storage_type: self.storage_type,
         }
     }
 }

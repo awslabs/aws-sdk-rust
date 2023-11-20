@@ -37,36 +37,41 @@ pub fn ser_modify_transit_gateway_options(
         scope_13.string(var_14.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("AutoAcceptSharedAttachments");
-    if let Some(var_16) = &input.auto_accept_shared_attachments {
+    let mut scope_15 = writer.prefix("SecurityGroupReferencingSupport");
+    if let Some(var_16) = &input.security_group_referencing_support {
         scope_15.string(var_16.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("DefaultRouteTableAssociation");
-    if let Some(var_18) = &input.default_route_table_association {
+    let mut scope_17 = writer.prefix("AutoAcceptSharedAttachments");
+    if let Some(var_18) = &input.auto_accept_shared_attachments {
         scope_17.string(var_18.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_19 = writer.prefix("AssociationDefaultRouteTableId");
-    if let Some(var_20) = &input.association_default_route_table_id {
-        scope_19.string(var_20);
+    let mut scope_19 = writer.prefix("DefaultRouteTableAssociation");
+    if let Some(var_20) = &input.default_route_table_association {
+        scope_19.string(var_20.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_21 = writer.prefix("DefaultRouteTablePropagation");
-    if let Some(var_22) = &input.default_route_table_propagation {
-        scope_21.string(var_22.as_str());
+    let mut scope_21 = writer.prefix("AssociationDefaultRouteTableId");
+    if let Some(var_22) = &input.association_default_route_table_id {
+        scope_21.string(var_22);
     }
     #[allow(unused_mut)]
-    let mut scope_23 = writer.prefix("PropagationDefaultRouteTableId");
-    if let Some(var_24) = &input.propagation_default_route_table_id {
-        scope_23.string(var_24);
+    let mut scope_23 = writer.prefix("DefaultRouteTablePropagation");
+    if let Some(var_24) = &input.default_route_table_propagation {
+        scope_23.string(var_24.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_25 = writer.prefix("AmazonSideAsn");
-    if let Some(var_26) = &input.amazon_side_asn {
-        scope_25.number(
+    let mut scope_25 = writer.prefix("PropagationDefaultRouteTableId");
+    if let Some(var_26) = &input.propagation_default_route_table_id {
+        scope_25.string(var_26);
+    }
+    #[allow(unused_mut)]
+    let mut scope_27 = writer.prefix("AmazonSideAsn");
+    if let Some(var_28) = &input.amazon_side_asn {
+        scope_27.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
     Ok(())

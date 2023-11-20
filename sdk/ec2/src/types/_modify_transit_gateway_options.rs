@@ -12,6 +12,9 @@ pub struct ModifyTransitGatewayOptions {
     pub vpn_ecmp_support: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
     /// <p>Enable or disable DNS support.</p>
     pub dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
+    /// <p>Enables you to reference a security group across VPCs attached to a transit gateway (TGW). Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create a transit gateway</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     /// <p>Enable or disable automatic acceptance of attachment requests.</p>
     pub auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
     /// <p>Enable or disable automatic association with the default association route table.</p>
@@ -46,6 +49,11 @@ impl ModifyTransitGatewayOptions {
     /// <p>Enable or disable DNS support.</p>
     pub fn dns_support(&self) -> ::std::option::Option<&crate::types::DnsSupportValue> {
         self.dns_support.as_ref()
+    }
+    /// <p>Enables you to reference a security group across VPCs attached to a transit gateway (TGW). Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create a transit gateway</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn security_group_referencing_support(&self) -> ::std::option::Option<&crate::types::SecurityGroupReferencingSupportValue> {
+        self.security_group_referencing_support.as_ref()
     }
     /// <p>Enable or disable automatic acceptance of attachment requests.</p>
     pub fn auto_accept_shared_attachments(&self) -> ::std::option::Option<&crate::types::AutoAcceptSharedAttachmentsValue> {
@@ -88,6 +96,7 @@ pub struct ModifyTransitGatewayOptionsBuilder {
     pub(crate) remove_transit_gateway_cidr_blocks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpn_ecmp_support: ::std::option::Option<crate::types::VpnEcmpSupportValue>,
     pub(crate) dns_support: ::std::option::Option<crate::types::DnsSupportValue>,
+    pub(crate) security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
     pub(crate) auto_accept_shared_attachments: ::std::option::Option<crate::types::AutoAcceptSharedAttachmentsValue>,
     pub(crate) default_route_table_association: ::std::option::Option<crate::types::DefaultRouteTableAssociationValue>,
     pub(crate) association_default_route_table_id: ::std::option::Option<::std::string::String>,
@@ -163,6 +172,26 @@ impl ModifyTransitGatewayOptionsBuilder {
     /// <p>Enable or disable DNS support.</p>
     pub fn get_dns_support(&self) -> &::std::option::Option<crate::types::DnsSupportValue> {
         &self.dns_support
+    }
+    /// <p>Enables you to reference a security group across VPCs attached to a transit gateway (TGW). Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create a transit gateway</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn security_group_referencing_support(mut self, input: crate::types::SecurityGroupReferencingSupportValue) -> Self {
+        self.security_group_referencing_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables you to reference a security group across VPCs attached to a transit gateway (TGW). Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create a transit gateway</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn set_security_group_referencing_support(
+        mut self,
+        input: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
+    ) -> Self {
+        self.security_group_referencing_support = input;
+        self
+    }
+    /// <p>Enables you to reference a security group across VPCs attached to a transit gateway (TGW). Use this option to simplify security group management and control of instance-to-instance traffic across VPCs that are connected by transit gateway. You can also use this option to migrate from VPC peering (which was the only option that supported security group referencing) to transit gateways (which now also support security group referencing). This option is disabled by default and there are no additional costs to use this feature.</p>
+    /// <p>For important information about this feature, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">Create a transit gateway</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<crate::types::SecurityGroupReferencingSupportValue> {
+        &self.security_group_referencing_support
     }
     /// <p>Enable or disable automatic acceptance of attachment requests.</p>
     pub fn auto_accept_shared_attachments(mut self, input: crate::types::AutoAcceptSharedAttachmentsValue) -> Self {
@@ -258,6 +287,7 @@ impl ModifyTransitGatewayOptionsBuilder {
             remove_transit_gateway_cidr_blocks: self.remove_transit_gateway_cidr_blocks,
             vpn_ecmp_support: self.vpn_ecmp_support,
             dns_support: self.dns_support,
+            security_group_referencing_support: self.security_group_referencing_support,
             auto_accept_shared_attachments: self.auto_accept_shared_attachments,
             default_route_table_association: self.default_route_table_association,
             association_default_route_table_id: self.association_default_route_table_id,
