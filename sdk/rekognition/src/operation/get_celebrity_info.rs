@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetCelebrityInfo`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetCelebrityInfo;
 impl GetCelebrityInfo {
-    #[doc(hidden)]
+    /// Creates a new `GetCelebrityInfo`
     pub fn new() -> Self {
         Self
     }
@@ -111,19 +110,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCele
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetCelebrityInfo")
-                .with_interceptor(GetCelebrityInfoEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_celebrity_info::GetCelebrityInfoError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_celebrity_info::GetCelebrityInfoError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_celebrity_info::GetCelebrityInfoError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetCelebrityInfo")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetCelebrityInfoEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_celebrity_info::GetCelebrityInfoError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_celebrity_info::GetCelebrityInfoError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_celebrity_info::GetCelebrityInfoError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

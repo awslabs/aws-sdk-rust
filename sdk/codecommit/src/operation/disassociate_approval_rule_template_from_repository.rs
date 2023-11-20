@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DisassociateApprovalRuleTemplateFromRepository`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DisassociateApprovalRuleTemplateFromRepository;
 impl DisassociateApprovalRuleTemplateFromRepository {
-    #[doc(hidden)]
+    /// Creates a new `DisassociateApprovalRuleTemplateFromRepository`
     pub fn new() -> Self {
         Self
     }
@@ -115,8 +114,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateApprovalRuleTemplateFromRepository")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(DisassociateApprovalRuleTemplateFromRepositoryEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError,
@@ -126,8 +131,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreatePublicKey`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreatePublicKey;
 impl CreatePublicKey {
-    #[doc(hidden)]
+    /// Creates a new `CreatePublicKey`
     pub fn new() -> Self {
         Self
     }
@@ -110,19 +109,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateP
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreatePublicKey")
-                .with_interceptor(CreatePublicKeyEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_public_key::CreatePublicKeyError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_public_key::CreatePublicKeyError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_public_key::CreatePublicKeyError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreatePublicKey")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreatePublicKeyEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_public_key::CreatePublicKeyError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_public_key::CreatePublicKeyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_public_key::CreatePublicKeyError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

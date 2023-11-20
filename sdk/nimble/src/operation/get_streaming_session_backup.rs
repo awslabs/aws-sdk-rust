@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetStreamingSessionBackup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetStreamingSessionBackup;
 impl GetStreamingSessionBackup {
-    #[doc(hidden)]
+    /// Creates a new `GetStreamingSessionBackup`
     pub fn new() -> Self {
         Self
     }
@@ -111,19 +110,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStre
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetStreamingSessionBackup")
-                .with_interceptor(GetStreamingSessionBackupEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetStreamingSessionBackup")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetStreamingSessionBackupEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_streaming_session_backup::GetStreamingSessionBackupError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

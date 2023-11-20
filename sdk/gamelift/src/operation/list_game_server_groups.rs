@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ListGameServerGroups`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ListGameServerGroups;
 impl ListGameServerGroups {
-    #[doc(hidden)]
+    /// Creates a new `ListGameServerGroups`
     pub fn new() -> Self {
         Self
     }
@@ -111,19 +110,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListGam
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListGameServerGroups")
-                .with_interceptor(ListGameServerGroupsEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::list_game_server_groups::ListGameServerGroupsError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::list_game_server_groups::ListGameServerGroupsError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::list_game_server_groups::ListGameServerGroupsError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListGameServerGroups")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ListGameServerGroupsEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

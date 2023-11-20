@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `UpdateSipMediaApplicationCall`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct UpdateSipMediaApplicationCall;
 impl UpdateSipMediaApplicationCall {
-    #[doc(hidden)]
+    /// Creates a new `UpdateSipMediaApplicationCall`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateS
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateSipMediaApplicationCall")
-                .with_interceptor(UpdateSipMediaApplicationCallEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateSipMediaApplicationCall")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(UpdateSipMediaApplicationCallEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

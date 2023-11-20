@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetConsoleScreenshot`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetConsoleScreenshot;
 impl GetConsoleScreenshot {
-    #[doc(hidden)]
+    /// Creates a new `GetConsoleScreenshot`
     pub fn new() -> Self {
         Self
     }
@@ -110,19 +109,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCons
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetConsoleScreenshot")
-                .with_interceptor(GetConsoleScreenshotEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_console_screenshot::GetConsoleScreenshotError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetConsoleScreenshot")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetConsoleScreenshotEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_console_screenshot::GetConsoleScreenshotError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_console_screenshot::GetConsoleScreenshotError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_console_screenshot::GetConsoleScreenshotError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

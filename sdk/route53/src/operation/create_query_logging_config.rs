@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreateQueryLoggingConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreateQueryLoggingConfig;
 impl CreateQueryLoggingConfig {
-    #[doc(hidden)]
+    /// Creates a new `CreateQueryLoggingConfig`
     pub fn new() -> Self {
         Self
     }
@@ -111,19 +110,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateQ
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateQueryLoggingConfig")
-                .with_interceptor(CreateQueryLoggingConfigEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateQueryLoggingConfig")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreateQueryLoggingConfigEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

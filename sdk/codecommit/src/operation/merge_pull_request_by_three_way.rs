@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `MergePullRequestByThreeWay`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct MergePullRequestByThreeWay;
 impl MergePullRequestByThreeWay {
-    #[doc(hidden)]
+    /// Creates a new `MergePullRequestByThreeWay`
     pub fn new() -> Self {
         Self
     }
@@ -117,19 +116,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for MergePu
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("MergePullRequestByThreeWay")
-                .with_interceptor(MergePullRequestByThreeWayEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("MergePullRequestByThreeWay")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(MergePullRequestByThreeWayEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

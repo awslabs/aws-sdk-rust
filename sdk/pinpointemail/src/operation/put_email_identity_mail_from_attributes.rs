@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `PutEmailIdentityMailFromAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct PutEmailIdentityMailFromAttributes;
 impl PutEmailIdentityMailFromAttributes {
-    #[doc(hidden)]
+    /// Creates a new `PutEmailIdentityMailFromAttributes`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutEmai
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutEmailIdentityMailFromAttributes")
-                .with_interceptor(PutEmailIdentityMailFromAttributesEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutEmailIdentityMailFromAttributes")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(PutEmailIdentityMailFromAttributesEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

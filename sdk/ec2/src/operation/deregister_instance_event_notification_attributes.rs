@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DeregisterInstanceEventNotificationAttributes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DeregisterInstanceEventNotificationAttributes;
 impl DeregisterInstanceEventNotificationAttributes {
-    #[doc(hidden)]
+    /// Creates a new `DeregisterInstanceEventNotificationAttributes`
     pub fn new() -> Self {
         Self
     }
@@ -120,8 +119,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeregisterInstanceEventNotificationAttributes")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(DeregisterInstanceEventNotificationAttributesEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesError,
@@ -131,8 +136,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

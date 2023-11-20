@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ListTagsForVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ListTagsForVault;
 impl ListTagsForVault {
-    #[doc(hidden)]
+    /// Creates a new `ListTagsForVault`
     pub fn new() -> Self {
         Self
     }
@@ -110,22 +109,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTag
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTagsForVault")
-                .with_interceptor(ListTagsForVaultEndpointParamsInterceptor)
-                .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                    crate::operation::list_tags_for_vault::ListTagsForVaultInput,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::list_tags_for_vault::ListTagsForVaultError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::list_tags_for_vault::ListTagsForVaultError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::list_tags_for_vault::ListTagsForVaultError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTagsForVault")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ListTagsForVaultEndpointParamsInterceptor)
+            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                crate::operation::list_tags_for_vault::ListTagsForVaultInput,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::list_tags_for_vault::ListTagsForVaultError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::list_tags_for_vault::ListTagsForVaultError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::list_tags_for_vault::ListTagsForVaultError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

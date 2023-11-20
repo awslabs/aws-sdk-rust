@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreateQuerySuggestionsBlockList`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreateQuerySuggestionsBlockList;
 impl CreateQuerySuggestionsBlockList {
-    #[doc(hidden)]
+    /// Creates a new `CreateQuerySuggestionsBlockList`
     pub fn new() -> Self {
         Self
     }
@@ -127,19 +126,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateQ
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateQuerySuggestionsBlockList")
-                .with_interceptor(CreateQuerySuggestionsBlockListEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateQuerySuggestionsBlockList")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreateQuerySuggestionsBlockListEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

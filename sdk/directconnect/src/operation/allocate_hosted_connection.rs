@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AllocateHostedConnection`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AllocateHostedConnection;
 impl AllocateHostedConnection {
-    #[doc(hidden)]
+    /// Creates a new `AllocateHostedConnection`
     pub fn new() -> Self {
         Self
     }
@@ -117,19 +116,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocateHostedConnection")
-                .with_interceptor(AllocateHostedConnectionEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocateHostedConnection")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AllocateHostedConnectionEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

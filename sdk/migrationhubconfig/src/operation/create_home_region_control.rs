@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreateHomeRegionControl`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreateHomeRegionControl;
 impl CreateHomeRegionControl {
-    #[doc(hidden)]
+    /// Creates a new `CreateHomeRegionControl`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateH
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateHomeRegionControl")
-                .with_interceptor(CreateHomeRegionControlEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_home_region_control::CreateHomeRegionControlError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_home_region_control::CreateHomeRegionControlError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_home_region_control::CreateHomeRegionControlError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateHomeRegionControl")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreateHomeRegionControlEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -131,6 +131,8 @@ impl PitPolicyRuleBuilder {
     /// Consumes the builder and constructs a [`PitPolicyRule`](crate::types::PitPolicyRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`units`](crate::types::builders::PitPolicyRuleBuilder::units)
+    /// - [`interval`](crate::types::builders::PitPolicyRuleBuilder::interval)
+    /// - [`retention_duration`](crate::types::builders::PitPolicyRuleBuilder::retention_duration)
     pub fn build(self) -> ::std::result::Result<crate::types::PitPolicyRule, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::PitPolicyRule {
             rule_id: self.rule_id.unwrap_or_default(),
@@ -140,8 +142,18 @@ impl PitPolicyRuleBuilder {
                     "units was not specified but it is required when building PitPolicyRule",
                 )
             })?,
-            interval: self.interval.unwrap_or_default(),
-            retention_duration: self.retention_duration.unwrap_or_default(),
+            interval: self.interval.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "interval",
+                    "interval was not specified but it is required when building PitPolicyRule",
+                )
+            })?,
+            retention_duration: self.retention_duration.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "retention_duration",
+                    "retention_duration was not specified but it is required when building PitPolicyRule",
+                )
+            })?,
             enabled: self.enabled,
         })
     }

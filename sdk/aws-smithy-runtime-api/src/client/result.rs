@@ -438,7 +438,6 @@ impl<E, R> SdkError<E, R> {
     }
 
     /// Maps the service error type in `SdkError::ServiceError`
-    #[doc(hidden)]
     pub fn map_service_error<E2>(self, map: impl FnOnce(E) -> E2) -> SdkError<E2, R> {
         match self {
             SdkError::ServiceError(context) => SdkError::<E2, R>::ServiceError(ServiceError {
@@ -493,7 +492,7 @@ impl<E, R> ProvideErrorMetadata for SdkError<E, R>
 where
     E: ProvideErrorMetadata,
 {
-    fn meta(&self) -> &aws_smithy_types::Error {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             SdkError::ConstructionFailure(_) => &EMPTY_ERROR_METADATA,
             SdkError::TimeoutError(_) => &EMPTY_ERROR_METADATA,

@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ModifyClusterSnapshotSchedule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ModifyClusterSnapshotSchedule;
 impl ModifyClusterSnapshotSchedule {
-    #[doc(hidden)]
+    /// Creates a new `ModifyClusterSnapshotSchedule`
     pub fn new() -> Self {
         Self
     }
@@ -117,19 +116,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyC
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyClusterSnapshotSchedule")
-                .with_interceptor(ModifyClusterSnapshotScheduleEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyClusterSnapshotSchedule")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ModifyClusterSnapshotScheduleEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

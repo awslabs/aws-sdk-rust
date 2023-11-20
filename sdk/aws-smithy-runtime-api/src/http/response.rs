@@ -5,10 +5,9 @@
 
 //! Http Response Types
 
-use crate::http::{HeaderValue, Headers, HttpError};
+use crate::http::{Headers, HttpError};
 use aws_smithy_types::body::SdkBody;
 use http as http0;
-use http0::{Extensions, HeaderMap};
 use std::fmt;
 
 /// HTTP response status code
@@ -49,6 +48,7 @@ impl TryFrom<u16> for StatusCode {
     }
 }
 
+#[cfg(feature = "http-02x")]
 impl From<http0::StatusCode> for StatusCode {
     fn from(value: http0::StatusCode) -> Self {
         Self(value.as_u16())
@@ -73,7 +73,7 @@ pub struct Response<B = SdkBody> {
     status: StatusCode,
     headers: Headers,
     body: B,
-    extensions: Extensions,
+    extensions: http0::Extensions,
 }
 
 impl<B> Response<B> {
@@ -81,6 +81,7 @@ impl<B> Response<B> {
     ///
     /// Depending on the internal storage type, this operation may be free or it may have an internal
     /// cost.
+    #[cfg(feature = "http-02x")]
     pub fn try_into_http02x(self) -> Result<http0::Response<B>, HttpError> {
         let mut res = http::Response::builder()
             .status(
@@ -89,7 +90,7 @@ impl<B> Response<B> {
             )
             .body(self.body)
             .expect("known valid");
-        let mut headers = HeaderMap::new();
+        let mut headers = http0::HeaderMap::new();
         headers.extend(
             self.headers
                 .headers
@@ -169,10 +170,13 @@ impl Response<SdkBody> {
     }
 }
 
+#[cfg(feature = "http-02x")]
 impl<B> TryFrom<http0::Response<B>> for Response<B> {
     type Error = HttpError;
 
     fn try_from(value: http0::Response<B>) -> Result<Self, Self::Error> {
+        use crate::http::headers::HeaderValue;
+        use http0::HeaderMap;
         if let Some(e) = value
             .headers()
             .values()
@@ -201,7 +205,7 @@ impl<B> TryFrom<http0::Response<B>> for Response<B> {
     }
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "http-02x"))]
 mod test {
     use super::*;
     use aws_smithy_types::body::SdkBody;

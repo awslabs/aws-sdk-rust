@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetAggregateComplianceDetailsByConfigRule`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetAggregateComplianceDetailsByConfigRule;
 impl GetAggregateComplianceDetailsByConfigRule {
-    #[doc(hidden)]
+    /// Creates a new `GetAggregateComplianceDetailsByConfigRule`
     pub fn new() -> Self {
         Self
     }
@@ -120,8 +119,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAggr
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAggregateComplianceDetailsByConfigRule")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(GetAggregateComplianceDetailsByConfigRuleEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError,
@@ -131,8 +136,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAggr
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

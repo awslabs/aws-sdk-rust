@@ -41,11 +41,10 @@ pub struct Builder {
 }
 
 impl Builder {
-    #[doc(hidden)]
     /// Configure the default chain
     ///
     /// Exposed for overriding the environment when unit-testing providers
-    pub fn configure(self, configuration: &ProviderConfig) -> Self {
+    pub(crate) fn configure(self, configuration: &ProviderConfig) -> Self {
         Self {
             provider_config: configuration.clone(),
         }

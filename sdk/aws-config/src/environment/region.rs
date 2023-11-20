@@ -22,11 +22,10 @@ impl EnvironmentVariableRegionProvider {
         EnvironmentVariableRegionProvider { env: Env::real() }
     }
 
-    #[doc(hidden)]
     /// Create an region provider from a given `Env`
     ///
     /// This method is used for tests that need to override environment variables.
-    pub fn new_with_env(env: Env) -> Self {
+    pub(crate) fn new_with_env(env: Env) -> Self {
         EnvironmentVariableRegionProvider { env }
     }
 }

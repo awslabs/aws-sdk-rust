@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DeleteReusableDelegationSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DeleteReusableDelegationSet;
 impl DeleteReusableDelegationSet {
-    #[doc(hidden)]
+    /// Creates a new `DeleteReusableDelegationSet`
     pub fn new() -> Self {
         Self
     }
@@ -117,22 +116,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteR
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteReusableDelegationSet")
-                .with_interceptor(DeleteReusableDelegationSetEndpointParamsInterceptor)
-                .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
-                    |input: &mut crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput| &mut input.id,
-                ))
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteReusableDelegationSet")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DeleteReusableDelegationSetEndpointParamsInterceptor)
+            .with_interceptor(crate::route53_resource_id_preprocessor::Route53ResourceIdInterceptor::new(
+                |input: &mut crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetInput| &mut input.id,
+            ))
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

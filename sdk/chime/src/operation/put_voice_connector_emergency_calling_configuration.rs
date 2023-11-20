@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `PutVoiceConnectorEmergencyCallingConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct PutVoiceConnectorEmergencyCallingConfiguration;
 impl PutVoiceConnectorEmergencyCallingConfiguration {
-    #[doc(hidden)]
+    /// Creates a new `PutVoiceConnectorEmergencyCallingConfiguration`
     pub fn new() -> Self {
         Self
     }
@@ -116,8 +115,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutVoic
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutVoiceConnectorEmergencyCallingConfiguration")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(PutVoiceConnectorEmergencyCallingConfigurationEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
@@ -127,8 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutVoic
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

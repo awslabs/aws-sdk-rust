@@ -215,7 +215,6 @@ impl<E> OrchestratorError<E> {
     }
 
     /// Maps the error type in `ErrorKind::Operation`
-    #[doc(hidden)]
     pub fn map_operation_error<E2>(self, map: impl FnOnce(E) -> E2) -> OrchestratorError<E2> {
         let kind = match self.kind {
             ErrorKind::Connector { source } => ErrorKind::Connector { source },

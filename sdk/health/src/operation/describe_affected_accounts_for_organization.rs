@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DescribeAffectedAccountsForOrganization`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DescribeAffectedAccountsForOrganization;
 impl DescribeAffectedAccountsForOrganization {
-    #[doc(hidden)]
+    /// Creates a new `DescribeAffectedAccountsForOrganization`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeAffectedAccountsForOrganization")
-                .with_interceptor(DescribeAffectedAccountsForOrganizationEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeAffectedAccountsForOrganization")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DescribeAffectedAccountsForOrganizationEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

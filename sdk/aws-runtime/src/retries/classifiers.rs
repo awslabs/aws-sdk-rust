@@ -167,7 +167,7 @@ mod test {
     #[test]
     fn classify_generic() {
         let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
-        let err = aws_smithy_types::Error::builder().code("SlowDown").build();
+        let err = ErrorMetadata::builder().code("SlowDown").build();
         let test_response = http::Response::new("OK").map(SdkBody::from);
 
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
@@ -180,7 +180,7 @@ mod test {
     #[test]
     fn test_retry_after_header() {
         let policy = AwsErrorCodeClassifier::<ErrorMetadata>::new();
-        let err = aws_smithy_types::Error::builder().code("SlowDown").build();
+        let err = ErrorMetadata::builder().code("SlowDown").build();
         let res = http::Response::builder()
             .header("x-amz-retry-after", "5000")
             .body("retry later")

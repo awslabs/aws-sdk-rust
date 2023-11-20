@@ -13,9 +13,6 @@ use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use std::fmt;
 use std::sync::Arc;
 
-#[deprecated(note = "Renamed to SerializeRequest.")]
-pub use SerializeRequest as RequestSerializer;
-
 /// Serialization implementation that converts an [`Input`] into an [`HttpRequest`].
 pub trait SerializeRequest: Send + Sync + fmt::Debug {
     /// Serializes the input into an HTTP request.
@@ -53,9 +50,6 @@ impl Storable for SharedRequestSerializer {
 }
 
 impl_shared_conversions!(convert SharedRequestSerializer from SerializeRequest using SharedRequestSerializer::new);
-
-#[deprecated(note = "Renamed to DeserializeResponse.")]
-pub use DeserializeResponse as ResponseDeserializer;
 
 /// Deserialization implementation that converts an [`HttpResponse`] into an [`Output`] or [`Error`].
 pub trait DeserializeResponse: Send + Sync + fmt::Debug {

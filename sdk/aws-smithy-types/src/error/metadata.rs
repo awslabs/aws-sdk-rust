@@ -27,7 +27,6 @@ pub trait ProvideErrorMetadata {
 }
 
 /// Empty error metadata
-#[doc(hidden)]
 pub const EMPTY_ERROR_METADATA: ErrorMetadata = ErrorMetadata {
     code: None,
     message: None,
@@ -75,13 +74,13 @@ impl Builder {
     ///
     /// Typically, these will be accessed with an extension trait:
     /// ```rust
-    /// use aws_smithy_types::Error;
+    /// use aws_smithy_types::error::ErrorMetadata;
     /// const HOST_ID: &str = "host_id";
     /// trait S3ErrorExt {
     ///     fn extended_request_id(&self) -> Option<&str>;
     /// }
     ///
-    /// impl S3ErrorExt for Error {
+    /// impl S3ErrorExt for ErrorMetadata {
     ///     fn extended_request_id(&self) -> Option<&str> {
     ///         self.extra(HOST_ID)
     ///     }
@@ -90,7 +89,7 @@ impl Builder {
     /// fn main() {
     ///     // Extension trait must be brought into scope
     ///     use S3ErrorExt;
-    ///     let sdk_response: Result<(), Error> = Err(Error::builder().custom(HOST_ID, "x-1234").build());
+    ///     let sdk_response: Result<(), ErrorMetadata> = Err(ErrorMetadata::builder().custom(HOST_ID, "x-1234").build());
     ///     if let Err(err) = sdk_response {
     ///         println!("extended request id: {:?}", err.extended_request_id());
     ///     }

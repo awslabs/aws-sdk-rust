@@ -14,7 +14,6 @@ pub(crate) mod sealed {
     ///
     /// Currently the trait may not be implemented by clients so we can make changes in the future
     /// without breaking code depending on it.
-    #[doc(hidden)]
     pub trait Collectable<T> {
         type Collection;
 

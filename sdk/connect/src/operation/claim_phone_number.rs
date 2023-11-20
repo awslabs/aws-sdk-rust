@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ClaimPhoneNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ClaimPhoneNumber;
 impl ClaimPhoneNumber {
-    #[doc(hidden)]
+    /// Creates a new `ClaimPhoneNumber`
     pub fn new() -> Self {
         Self
     }
@@ -119,19 +118,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ClaimPh
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ClaimPhoneNumber")
-                .with_interceptor(ClaimPhoneNumberEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::claim_phone_number::ClaimPhoneNumberError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::claim_phone_number::ClaimPhoneNumberError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::claim_phone_number::ClaimPhoneNumberError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ClaimPhoneNumber")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ClaimPhoneNumberEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::claim_phone_number::ClaimPhoneNumberError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::claim_phone_number::ClaimPhoneNumberError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::claim_phone_number::ClaimPhoneNumberError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

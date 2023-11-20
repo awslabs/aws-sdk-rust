@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DisassociateServiceQuotaTemplate`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DisassociateServiceQuotaTemplate;
 impl DisassociateServiceQuotaTemplate {
-    #[doc(hidden)]
+    /// Creates a new `DisassociateServiceQuotaTemplate`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateServiceQuotaTemplate")
-                .with_interceptor(DisassociateServiceQuotaTemplateEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateServiceQuotaTemplate")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DisassociateServiceQuotaTemplateEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplateError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

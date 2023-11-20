@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ListActivatedRulesInRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ListActivatedRulesInRuleGroup;
 impl ListActivatedRulesInRuleGroup {
-    #[doc(hidden)]
+    /// Creates a new `ListActivatedRulesInRuleGroup`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAct
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListActivatedRulesInRuleGroup")
-                .with_interceptor(ListActivatedRulesInRuleGroupEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListActivatedRulesInRuleGroup")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ListActivatedRulesInRuleGroupEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

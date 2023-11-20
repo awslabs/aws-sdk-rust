@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CancelResourceRequest`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CancelResourceRequest;
 impl CancelResourceRequest {
-    #[doc(hidden)]
+    /// Creates a new `CancelResourceRequest`
     pub fn new() -> Self {
         Self
     }
@@ -118,19 +117,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelR
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CancelResourceRequest")
-                .with_interceptor(CancelResourceRequestEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::cancel_resource_request::CancelResourceRequestError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::cancel_resource_request::CancelResourceRequestError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::cancel_resource_request::CancelResourceRequestError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CancelResourceRequest")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CancelResourceRequestEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::cancel_resource_request::CancelResourceRequestError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::cancel_resource_request::CancelResourceRequestError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::cancel_resource_request::CancelResourceRequestError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

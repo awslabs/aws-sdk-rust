@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `UpdateRoutingProfileAgentAvailabilityTimer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct UpdateRoutingProfileAgentAvailabilityTimer;
 impl UpdateRoutingProfileAgentAvailabilityTimer {
-    #[doc(hidden)]
+    /// Creates a new `UpdateRoutingProfileAgentAvailabilityTimer`
     pub fn new() -> Self {
         Self
     }
@@ -120,8 +119,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateR
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateRoutingProfileAgentAvailabilityTimer")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(UpdateRoutingProfileAgentAvailabilityTimerEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError,
@@ -131,8 +136,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateR
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::update_routing_profile_agent_availability_timer::UpdateRoutingProfileAgentAvailabilityTimerError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -2,8 +2,6 @@
 
 AWS SDK config and credential provider implementations.
 
-**Please Note: The SDK is currently released as an alpha and is intended strictly for feedback purposes only. Do not use this SDK for production workloads.**
-
  The implementations can be used either via the default chain implementation `from_env`/`ConfigLoader` or ad-hoc individual credential and region providers.
 
 A `ConfigLoader` can combine different configuration sources into an AWS shared-config `Config`. The `Config` can then be used to configure one or more AWS service clients.
@@ -46,7 +44,8 @@ tokio = { version = "1", features = ["full"] }
 
 ## Using the SDK
 
-Until the SDK is released, we will be adding information about using the SDK to the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest additional sections for the guide by opening an issue and describing what you are trying to do.
+Detailed usage instructions are available in the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html).
+Suggestions for additional sections or improvements for the guide are welcome. Please open an issue describing what you are trying to do.
 
 ## Getting Help
 

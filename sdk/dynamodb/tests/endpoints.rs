@@ -17,6 +17,9 @@ async fn expect_uri(
     let conf = customize(
         aws_sdk_dynamodb::config::Builder::from(&conf)
             .credentials_provider(Credentials::for_tests())
+            .stalled_stream_protection(
+                aws_sdk_dynamodb::config::StalledStreamProtectionConfig::disabled(),
+            )
             .http_client(http_client),
     )
     .build();

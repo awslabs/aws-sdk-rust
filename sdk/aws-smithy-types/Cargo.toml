@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "0.101.0"
+version = "1.0.0"
 authors = [
     "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
     "Russell Cohen <rcoh@amazon.com>",
@@ -14,7 +14,15 @@ repository = "https://github.com/smithy-lang/smithy-rs"
 byte-stream-poll-next = []
 http-body-0-4-x = ["dep:http-body-0-4"]
 hyper-0-14-x = ["dep:hyper-0-14"]
-rt-tokio = ["dep:http-body-0-4", "dep:tokio-util", "dep:tokio", "tokio?/rt", "tokio?/fs", "tokio?/io-util", "tokio-util?/io"]
+rt-tokio = [
+    "dep:http-body-0-4",
+    "dep:tokio-util",
+    "dep:tokio",
+    "tokio?/rt",
+    "tokio?/fs",
+    "tokio?/io-util",
+    "tokio-util?/io",
+]
 test-util = []
 serde-serialize = []
 serde-deserialize = []

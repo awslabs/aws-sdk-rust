@@ -75,7 +75,6 @@ type Matcher = (
 );
 
 /// This method should only be used by the macro
-#[doc(hidden)]
 pub fn check_matches(events: &[RecordedEvent], matchers: &[Matcher]) {
     let mut events_iter = events.iter();
     let mut matcher_iter = matchers.iter();

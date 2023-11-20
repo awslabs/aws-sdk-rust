@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DetachVerifiedAccessTrustProvider`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DetachVerifiedAccessTrustProvider;
 impl DetachVerifiedAccessTrustProvider {
-    #[doc(hidden)]
+    /// Creates a new `DetachVerifiedAccessTrustProvider`
     pub fn new() -> Self {
         Self
     }
@@ -128,19 +127,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DetachV
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DetachVerifiedAccessTrustProvider")
-                .with_interceptor(DetachVerifiedAccessTrustProviderEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DetachVerifiedAccessTrustProvider")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DetachVerifiedAccessTrustProviderEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::detach_verified_access_trust_provider::DetachVerifiedAccessTrustProviderError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

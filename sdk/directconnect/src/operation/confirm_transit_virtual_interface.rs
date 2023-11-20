@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ConfirmTransitVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ConfirmTransitVirtualInterface;
 impl ConfirmTransitVirtualInterface {
-    #[doc(hidden)]
+    /// Creates a new `ConfirmTransitVirtualInterface`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Confirm
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ConfirmTransitVirtualInterface")
-                .with_interceptor(ConfirmTransitVirtualInterfaceEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ConfirmTransitVirtualInterface")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ConfirmTransitVirtualInterfaceEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

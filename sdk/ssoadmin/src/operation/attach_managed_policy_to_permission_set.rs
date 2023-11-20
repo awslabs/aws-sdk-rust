@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AttachManagedPolicyToPermissionSet`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AttachManagedPolicyToPermissionSet;
 impl AttachManagedPolicyToPermissionSet {
-    #[doc(hidden)]
+    /// Creates a new `AttachManagedPolicyToPermissionSet`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AttachM
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AttachManagedPolicyToPermissionSet")
-                .with_interceptor(AttachManagedPolicyToPermissionSetEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AttachManagedPolicyToPermissionSet")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AttachManagedPolicyToPermissionSetEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

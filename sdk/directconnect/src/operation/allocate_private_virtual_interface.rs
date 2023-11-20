@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AllocatePrivateVirtualInterface`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AllocatePrivateVirtualInterface;
 impl AllocatePrivateVirtualInterface {
-    #[doc(hidden)]
+    /// Creates a new `AllocatePrivateVirtualInterface`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocatePrivateVirtualInterface")
-                .with_interceptor(AllocatePrivateVirtualInterfaceEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocatePrivateVirtualInterface")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AllocatePrivateVirtualInterfaceEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterfaceError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

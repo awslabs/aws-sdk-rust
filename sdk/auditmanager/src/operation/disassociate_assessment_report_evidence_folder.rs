@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DisassociateAssessmentReportEvidenceFolder`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DisassociateAssessmentReportEvidenceFolder;
 impl DisassociateAssessmentReportEvidenceFolder {
-    #[doc(hidden)]
+    /// Creates a new `DisassociateAssessmentReportEvidenceFolder`
     pub fn new() -> Self {
         Self
     }
@@ -120,8 +119,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateAssessmentReportEvidenceFolder")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(DisassociateAssessmentReportEvidenceFolderEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError,
@@ -131,8 +136,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

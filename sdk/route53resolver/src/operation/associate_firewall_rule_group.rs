@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AssociateFirewallRuleGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AssociateFirewallRuleGroup;
 impl AssociateFirewallRuleGroup {
-    #[doc(hidden)]
+    /// Creates a new `AssociateFirewallRuleGroup`
     pub fn new() -> Self {
         Self
     }
@@ -130,19 +129,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateFirewallRuleGroup")
-                .with_interceptor(AssociateFirewallRuleGroupEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateFirewallRuleGroup")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AssociateFirewallRuleGroupEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

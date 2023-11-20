@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `StartPiiEntitiesDetectionJob`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct StartPiiEntitiesDetectionJob;
 impl StartPiiEntitiesDetectionJob {
-    #[doc(hidden)]
+    /// Creates a new `StartPiiEntitiesDetectionJob`
     pub fn new() -> Self {
         Self
     }
@@ -127,19 +126,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartPi
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartPiiEntitiesDetectionJob")
-                .with_interceptor(StartPiiEntitiesDetectionJobEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartPiiEntitiesDetectionJob")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(StartPiiEntitiesDetectionJobEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

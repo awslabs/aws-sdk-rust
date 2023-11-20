@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `SetLoadBalancerPoliciesForBackendServer`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct SetLoadBalancerPoliciesForBackendServer;
 impl SetLoadBalancerPoliciesForBackendServer {
-    #[doc(hidden)]
+    /// Creates a new `SetLoadBalancerPoliciesForBackendServer`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetLoad
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetLoadBalancerPoliciesForBackendServer")
-                .with_interceptor(SetLoadBalancerPoliciesForBackendServerEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetLoadBalancerPoliciesForBackendServer")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(SetLoadBalancerPoliciesForBackendServerEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

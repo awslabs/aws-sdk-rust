@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ClaimDevicesByClaimCode`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ClaimDevicesByClaimCode;
 impl ClaimDevicesByClaimCode {
-    #[doc(hidden)]
+    /// Creates a new `ClaimDevicesByClaimCode`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ClaimDe
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ClaimDevicesByClaimCode")
-                .with_interceptor(ClaimDevicesByClaimCodeEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ClaimDevicesByClaimCode")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ClaimDevicesByClaimCodeEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

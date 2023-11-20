@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `SubmitMultiRegionAccessPointRoutes`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct SubmitMultiRegionAccessPointRoutes;
 impl SubmitMultiRegionAccessPointRoutes {
-    #[doc(hidden)]
+    /// Creates a new `SubmitMultiRegionAccessPointRoutes`
     pub fn new() -> Self {
         Self
     }
@@ -122,19 +121,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitM
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SubmitMultiRegionAccessPointRoutes")
-                .with_interceptor(SubmitMultiRegionAccessPointRoutesEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SubmitMultiRegionAccessPointRoutes")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(SubmitMultiRegionAccessPointRoutesEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

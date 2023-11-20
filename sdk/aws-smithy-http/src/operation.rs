@@ -9,19 +9,6 @@
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use std::borrow::Cow;
 
-//TODO(runtimeCratesVersioningCleanup): Re-point those who use the deprecated type aliases to
-// directly depend on `aws_smithy_types` and remove the type aliases below.
-/// Errors for operations
-pub mod error {
-    /// An error occurred attempting to build an `Operation` from an input.
-    #[deprecated(note = "Moved to `aws_smithy_types::error::operation::BuildError`.")]
-    pub type BuildError = aws_smithy_types::error::operation::BuildError;
-
-    /// An error that occurs when serialization of an operation fails.
-    #[deprecated(note = "Moved to `aws_smithy_types::error::operation::SerializationError`.")]
-    pub type SerializationError = aws_smithy_types::error::operation::SerializationError;
-}
-
 /// Metadata added to the [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) that identifies the API being called.
 #[derive(Clone, Debug)]
 pub struct Metadata {

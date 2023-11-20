@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DisassociateAppBlockBuilderAppBlock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DisassociateAppBlockBuilderAppBlock;
 impl DisassociateAppBlockBuilderAppBlock {
-    #[doc(hidden)]
+    /// Creates a new `DisassociateAppBlockBuilderAppBlock`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateAppBlockBuilderAppBlock")
-                .with_interceptor(DisassociateAppBlockBuilderAppBlockEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateAppBlockBuilderAppBlock")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DisassociateAppBlockBuilderAppBlockEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::disassociate_app_block_builder_app_block::DisassociateAppBlockBuilderAppBlockError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

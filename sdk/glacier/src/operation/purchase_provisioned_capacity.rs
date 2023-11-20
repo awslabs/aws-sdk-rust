@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `PurchaseProvisionedCapacity`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct PurchaseProvisionedCapacity;
 impl PurchaseProvisionedCapacity {
-    #[doc(hidden)]
+    /// Creates a new `PurchaseProvisionedCapacity`
     pub fn new() -> Self {
         Self
     }
@@ -117,22 +116,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Purchas
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PurchaseProvisionedCapacity")
-                .with_interceptor(PurchaseProvisionedCapacityEndpointParamsInterceptor)
-                .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                    crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PurchaseProvisionedCapacity")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(PurchaseProvisionedCapacityEndpointParamsInterceptor)
+            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityInput,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

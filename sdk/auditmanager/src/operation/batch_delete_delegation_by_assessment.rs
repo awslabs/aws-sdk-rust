@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `BatchDeleteDelegationByAssessment`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct BatchDeleteDelegationByAssessment;
 impl BatchDeleteDelegationByAssessment {
-    #[doc(hidden)]
+    /// Creates a new `BatchDeleteDelegationByAssessment`
     pub fn new() -> Self {
         Self
     }
@@ -121,19 +120,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchDe
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchDeleteDelegationByAssessment")
-                .with_interceptor(BatchDeleteDelegationByAssessmentEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("BatchDeleteDelegationByAssessment")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(BatchDeleteDelegationByAssessmentEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

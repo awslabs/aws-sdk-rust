@@ -7,7 +7,7 @@
 
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region, StalledStreamProtectionConfig};
 use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
 use aws_sdk_s3::{Client, Config};
@@ -350,6 +350,7 @@ async fn test_get_multipart_upload_part_checksum_validation() {
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .build();
     let client = Client::new(&sdk_config);
 
@@ -394,6 +395,7 @@ async fn test_response_checksum_ignores_invalid_base64() {
     ));
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
         .build();

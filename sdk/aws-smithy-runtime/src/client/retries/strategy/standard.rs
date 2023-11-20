@@ -286,7 +286,10 @@ fn check_rate_limiter_for_delay(
 }
 
 fn calculate_exponential_backoff(base: f64, initial_backoff: f64, retry_attempts: u32) -> f64 {
-    base * initial_backoff * 2_u32.pow(retry_attempts) as f64
+    2_u32
+        .checked_pow(retry_attempts)
+        .map(|backoff| (backoff as f64) * base * initial_backoff)
+        .unwrap_or(f64::MAX)
 }
 
 fn get_seconds_since_unix_epoch(runtime_components: &RuntimeComponents) -> f64 {
@@ -792,5 +795,14 @@ mod tests {
                 calculate_exponential_backoff(1.0, initial_backoff, attempt as u32);
             assert_eq!(expected_backoff, actual_backoff);
         }
+    }
+
+    #[test]
+    fn calculate_backoff_overflow() {
+        // avoid overflow for a silly large amount of retry attempts
+        assert_eq!(
+            calculate_exponential_backoff(1_f64, 10_f64, 100000),
+            f64::MAX
+        );
     }
 }

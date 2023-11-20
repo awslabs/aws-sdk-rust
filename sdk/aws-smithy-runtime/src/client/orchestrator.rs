@@ -43,7 +43,6 @@ pub mod endpoints;
 mod http;
 
 /// Utility for making one-off unmodeled requests with the orchestrator.
-#[doc(hidden)]
 pub mod operation;
 
 macro_rules! halt {

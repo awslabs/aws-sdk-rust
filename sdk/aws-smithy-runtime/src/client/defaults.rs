@@ -23,11 +23,13 @@ use aws_smithy_runtime_api::client::runtime_components::{
 use aws_smithy_runtime_api::client::runtime_plugin::{
     Order, SharedRuntimePlugin, StaticRuntimePlugin,
 };
+use aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::borrow::Cow;
+use std::time::Duration;
 
 fn default_plugin<CompFn>(name: &'static str, components_fn: CompFn) -> StaticRuntimePlugin
 where
@@ -164,6 +166,59 @@ pub fn default_identity_cache_plugin() -> Option<SharedRuntimePlugin> {
     )
 }
 
+/// Runtime plugin that sets the default stalled stream protection config.
+///
+/// By default, when throughput falls below 1/Bs for more than 5 seconds, the
+/// stream is cancelled.
+pub fn default_stalled_stream_protection_config_plugin() -> Option<SharedRuntimePlugin> {
+    Some(
+        default_plugin(
+            "default_stalled_stream_protection_config_plugin",
+            |components| {
+                components.with_config_validator(SharedConfigValidator::base_client_config_fn(
+                    validate_stalled_stream_protection_config,
+                ))
+            },
+        )
+        .with_config(layer("default_stalled_stream_protection_config", |layer| {
+            layer.store_put(
+                StalledStreamProtectionConfig::enabled()
+                    .grace_period(Duration::from_secs(5))
+                    .build(),
+            );
+        }))
+        .into_shared(),
+    )
+}
+
+fn validate_stalled_stream_protection_config(
+    components: &RuntimeComponentsBuilder,
+    cfg: &ConfigBag,
+) -> Result<(), BoxError> {
+    if let Some(stalled_stream_protection_config) = cfg.load::<StalledStreamProtectionConfig>() {
+        if stalled_stream_protection_config.is_enabled() {
+            if components.sleep_impl().is_none() {
+                return Err(
+                    "An async sleep implementation is required for stalled stream protection to work. \
+                     Please provide a `sleep_impl` on the config, or disable stalled stream protection.".into());
+            }
+
+            if components.time_source().is_none() {
+                return Err(
+                    "A time source is required for stalled stream protection to work.\
+                     Please provide a `time_source` on the config, or disable stalled stream protection.".into());
+            }
+        }
+
+        Ok(())
+    } else {
+        Err(
+            "The default stalled stream protection config was removed, and no other config was put in its place."
+                .into(),
+        )
+    }
+}
+
 /// Arguments for the [`default_plugins`] method.
 ///
 /// This is a struct to enable adding new parameters in the future without breaking the API.
@@ -208,6 +263,7 @@ pub fn default_plugins(
         default_sleep_impl_plugin(),
         default_time_source_plugin(),
         default_timeout_config_plugin(),
+        default_stalled_stream_protection_config_plugin(),
     ]
     .into_iter()
     .flatten()

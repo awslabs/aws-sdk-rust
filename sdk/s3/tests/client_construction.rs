@@ -6,6 +6,7 @@
 mod with_sdk_config {
     use aws_config::SdkConfig;
     use aws_sdk_s3 as s3;
+    use s3::config::StalledStreamProtectionConfig;
 
     #[tokio::test]
     async fn using_config_loader() {
@@ -21,7 +22,9 @@ mod with_sdk_config {
         // When manually constructing `SdkConfig` with everything unset,
         // it should work since there will be no timeouts or retries enabled,
         // and thus, no sleep impl is required.
-        let config = SdkConfig::builder().build();
+        let config = SdkConfig::builder()
+            .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
+            .build();
         assert!(config.timeout_config().is_none());
         assert!(config.retry_config().is_none());
         let _s3 = s3::Client::new(&config);

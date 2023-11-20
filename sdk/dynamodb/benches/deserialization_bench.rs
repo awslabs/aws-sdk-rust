@@ -6,7 +6,7 @@
 use aws_sdk_dynamodb::operation::query::QueryOutput;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_runtime_api::client::ser_de::{ResponseDeserializer, SharedResponseDeserializer};
+use aws_smithy_runtime_api::client::ser_de::{DeserializeResponse, SharedResponseDeserializer};
 use aws_smithy_types::body::SdkBody;
 use criterion::{criterion_group, criterion_main, Criterion};
 

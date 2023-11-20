@@ -5,6 +5,7 @@
 
 use aws_smithy_eventstream::frame::{write_message_to, MarshallMessage, SignMessage};
 use aws_smithy_runtime_api::client::result::SdkError;
+use aws_smithy_types::error::ErrorMetadata;
 use bytes::Bytes;
 use futures_core::Stream;
 use std::error::Error as StdError;
@@ -55,7 +56,7 @@ where
 #[derive(Debug)]
 pub struct MessageStreamError {
     kind: MessageStreamErrorKind,
-    pub(crate) meta: aws_smithy_types::Error,
+    pub(crate) meta: ErrorMetadata,
 }
 
 #[derive(Debug)]
@@ -72,8 +73,8 @@ impl MessageStreamError {
         }
     }
 
-    /// Creates the `MessageStreamError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
+    /// Creates the `MessageStreamError::Unhandled` variant from an [`ErrorMetadata`].
+    pub fn generic(err: ErrorMetadata) -> Self {
         Self {
             meta: err.clone(),
             kind: MessageStreamErrorKind::Unhandled(err.into()),
@@ -82,7 +83,7 @@ impl MessageStreamError {
 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
+    pub fn meta(&self) -> &ErrorMetadata {
         &self.meta
     }
 }

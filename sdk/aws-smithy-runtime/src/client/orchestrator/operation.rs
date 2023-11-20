@@ -104,7 +104,6 @@ impl<F, O, E> fmt::Debug for FnDeserializer<F, O, E> {
 }
 
 /// Orchestrates execution of a HTTP request without any modeled input or output.
-#[doc(hidden)]
 #[derive(Debug)]
 pub struct Operation<I, O, E> {
     service_name: Cow<'static, str>,
@@ -126,6 +125,7 @@ impl<I, O, E> Clone for Operation<I, O, E> {
 }
 
 impl Operation<(), (), ()> {
+    /// Returns a new `OperationBuilder` for the `Operation`.
     pub fn builder() -> OperationBuilder {
         OperationBuilder::new()
     }
@@ -137,6 +137,8 @@ where
     O: fmt::Debug + Send + Sync + 'static,
     E: std::error::Error + fmt::Debug + Send + Sync + 'static,
 {
+    /// Invokes this `Operation` with the given `input` and returns either an output for success
+    /// or an [`SdkError`] for failure
     pub async fn invoke(&self, input: I) -> Result<O, SdkError<E, HttpResponse>> {
         let input = Input::erase(input);
 
@@ -153,7 +155,7 @@ where
     }
 }
 
-#[doc(hidden)]
+/// Builder for [`Operation`].
 #[derive(Debug)]
 pub struct OperationBuilder<I = (), O = (), E = ()> {
     service_name: Option<Cow<'static, str>>,
@@ -171,6 +173,7 @@ impl Default for OperationBuilder<(), (), ()> {
 }
 
 impl OperationBuilder<(), (), ()> {
+    /// Creates a new [`OperationBuilder`].
     pub fn new() -> Self {
         Self {
             service_name: None,
@@ -184,21 +187,25 @@ impl OperationBuilder<(), (), ()> {
 }
 
 impl<I, O, E> OperationBuilder<I, O, E> {
+    /// Configures the service name for the builder.
     pub fn service_name(mut self, service_name: impl Into<Cow<'static, str>>) -> Self {
         self.service_name = Some(service_name.into());
         self
     }
 
+    /// Configures the operation name for the builder.
     pub fn operation_name(mut self, operation_name: impl Into<Cow<'static, str>>) -> Self {
         self.operation_name = Some(operation_name.into());
         self
     }
 
+    /// Configures the http client for the builder.
     pub fn http_client(mut self, connector: impl HttpClient + 'static) -> Self {
         self.runtime_components.set_http_client(Some(connector));
         self
     }
 
+    /// Configures the endpoint URL for the builder.
     pub fn endpoint_url(mut self, url: &str) -> Self {
         self.config.store_put(EndpointResolverParams::new(()));
         self.runtime_components
@@ -208,18 +215,21 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
+    /// Configures the retry classifier for the builder.
     pub fn retry_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
         self.runtime_components
             .push_retry_classifier(retry_classifier);
         self
     }
 
+    /// Disables the retry for the operation.
     pub fn no_retry(mut self) -> Self {
         self.runtime_components
             .set_retry_strategy(Some(SharedRetryStrategy::new(NeverRetryStrategy::new())));
         self
     }
 
+    /// Configures the standard retry for the builder.
     pub fn standard_retry(mut self, retry_config: &RetryConfig) -> Self {
         self.config.store_put(retry_config.clone());
         self.runtime_components
@@ -227,11 +237,13 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
+    /// Configures the timeout configuration for the builder.
     pub fn timeout_config(mut self, timeout_config: TimeoutConfig) -> Self {
         self.config.store_put(timeout_config);
         self
     }
 
+    /// Disables auth for the operation.
     pub fn no_auth(mut self) -> Self {
         self.config
             .store_put(AuthSchemeOptionResolverParams::new(()));
@@ -250,18 +262,21 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
+    /// Configures the sleep for the builder.
     pub fn sleep_impl(mut self, async_sleep: impl AsyncSleep + 'static) -> Self {
         self.runtime_components
             .set_sleep_impl(Some(async_sleep.into_shared()));
         self
     }
 
+    /// Configures the time source for the builder.
     pub fn time_source(mut self, time_source: impl TimeSource + 'static) -> Self {
         self.runtime_components
             .set_time_source(Some(time_source.into_shared()));
         self
     }
 
+    /// Configures the interceptor for the builder.
     pub fn interceptor(mut self, interceptor: impl Intercept + 'static) -> Self {
         self.runtime_components.push_interceptor(interceptor);
         self
@@ -272,11 +287,13 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self.interceptor(ConnectionPoisoningInterceptor::new())
     }
 
+    /// Configures the runtime plugin for the builder.
     pub fn runtime_plugin(mut self, runtime_plugin: impl RuntimePlugin + 'static) -> Self {
         self.runtime_plugins.push(runtime_plugin.into_shared());
         self
     }
 
+    /// Configures the serializer for the builder.
     pub fn serializer<I2>(
         mut self,
         serializer: impl Fn(I2) -> Result<HttpRequest, BoxError> + Send + Sync + 'static,
@@ -296,6 +313,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         }
     }
 
+    /// Configures the deserializer for the builder.
     pub fn deserializer<O2, E2>(
         mut self,
         deserializer: impl Fn(&HttpResponse) -> Result<O2, OrchestratorError<E2>>
@@ -321,6 +339,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         }
     }
 
+    /// Creates an `Operation` from the builder.
     pub fn build(self) -> Operation<I, O, E> {
         let service_name = self.service_name.expect("service_name required");
         let operation_name = self.operation_name.expect("operation_name required");

@@ -403,24 +403,6 @@ impl ByteStream {
             .await
     }
 
-    /// Create a ByteStream from a file
-    ///
-    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
-    /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
-    #[deprecated(
-        since = "0.40.0",
-        note = "Prefer the more extensible ByteStream::read_from() API"
-    )]
-    #[cfg(feature = "rt-tokio")]
-    pub async fn from_file(
-        file: tokio::fs::File,
-    ) -> Result<Self, crate::byte_stream::error::Error> {
-        crate::byte_stream::FsBuilder::new()
-            .file(file)
-            .build()
-            .await
-    }
-
     #[cfg(feature = "rt-tokio")]
     /// Convert this `ByteStream` into a struct that implements [`AsyncBufRead`](tokio::io::AsyncBufRead).
     ///

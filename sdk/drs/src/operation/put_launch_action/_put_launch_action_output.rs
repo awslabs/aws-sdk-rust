@@ -16,7 +16,7 @@ pub struct PutLaunchActionOutput {
     /// <p>Whether the launch action is active.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>Launch action order.</p>
-    pub order: i32,
+    pub order: ::std::option::Option<i32>,
     /// <p>Launch action version.</p>
     pub action_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether the launch will not be marked as failed if this action fails.</p>
@@ -55,7 +55,7 @@ impl PutLaunchActionOutput {
         self.active
     }
     /// <p>Launch action order.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>Launch action version.</p>
@@ -305,7 +305,7 @@ impl PutLaunchActionOutputBuilder {
             r#type: self.r#type,
             name: self.name,
             active: self.active,
-            order: self.order.unwrap_or_default(),
+            order: self.order,
             action_version: self.action_version,
             optional: self.optional,
             parameters: self.parameters,

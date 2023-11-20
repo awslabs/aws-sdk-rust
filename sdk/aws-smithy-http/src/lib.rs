@@ -15,7 +15,6 @@
 //! - Endpoint support
 //! - HTTP header deserialization
 //! - Event streams
-//! - [`ByteStream`](byte_stream::ByteStream): a misuse-resistant abstraction for streaming binary data
 //!
 //! | Feature        | Description |
 //! |----------------|-------------|
@@ -25,8 +24,6 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
-pub mod body;
-pub mod byte_stream;
 pub mod endpoint;
 // Marked as `doc(hidden)` because a type in the module is used both by this crate and by the code
 // generator, but not by external users. Also, by the module being `doc(hidden)` instead of it being
@@ -40,10 +37,8 @@ pub mod operation;
 pub mod query;
 #[doc(hidden)]
 pub mod query_writer;
-pub mod result;
 
 #[cfg(feature = "event-stream")]
 pub mod event_stream;
 
-pub mod connection;
 mod urlencode;

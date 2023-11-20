@@ -7,19 +7,21 @@
 //!
 //! If data is being streamed too slowly, this body type will emit an error next time it's polled.
 
+/// An implementation of v0.4 `http_body::Body` for `MinimumThroughputBody` and related code.
+pub mod http_body_0_4_x;
+
+/// Options for a [`MinimumThroughputBody`].
+pub mod options;
+mod throughput;
+
 use aws_smithy_async::rt::sleep::Sleep;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::shared::IntoShared;
+use options::MinimumThroughputBodyOptions;
 use std::fmt;
-use std::time::Duration;
 use throughput::{Throughput, ThroughputLogs};
-
-/// An implementation of v0.4 `http_body::Body` for `MinimumThroughputBody` and related code.
-pub mod http_body_0_4_x;
-
-mod throughput;
 
 pin_project_lite::pin_project! {
     /// A body-wrapping type that ensures data is being streamed faster than some lower limit.
@@ -28,10 +30,12 @@ pin_project_lite::pin_project! {
     pub struct MinimumThroughputBody<B> {
         async_sleep: SharedAsyncSleep,
         time_source: SharedTimeSource,
-        minimum_throughput: Throughput,
+        options: MinimumThroughputBodyOptions,
         throughput_logs: ThroughputLogs,
         #[pin]
         sleep_fut: Option<Sleep>,
+        #[pin]
+        grace_period_fut: Option<Sleep>,
         #[pin]
         inner: B,
     }
@@ -46,26 +50,26 @@ impl<B> MinimumThroughputBody<B> {
         time_source: impl TimeSource + 'static,
         async_sleep: impl AsyncSleep + 'static,
         body: B,
-        (bytes_read, per_time_elapsed): (u64, Duration),
+        options: MinimumThroughputBodyOptions,
     ) -> Self {
-        let minimum_throughput = Throughput::new(bytes_read as f64, per_time_elapsed);
         Self {
             throughput_logs: ThroughputLogs::new(
                 // Never keep more than 10KB of logs in memory. This currently
                 // equates to 426 logs.
                 (NUMBER_OF_LOGS_IN_ONE_KB * 10.0) as usize,
-                minimum_throughput.per_time_elapsed(),
+                options.minimum_throughput().per_time_elapsed(),
             ),
             async_sleep: async_sleep.into_shared(),
             time_source: time_source.into_shared(),
-            minimum_throughput,
             inner: body,
             sleep_fut: None,
+            grace_period_fut: None,
+            options,
         }
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum Error {
     ThroughputBelowMinimum {
         expected: Throughput,

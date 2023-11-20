@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DescribeReplicationTaskIndividualAssessments`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DescribeReplicationTaskIndividualAssessments;
 impl DescribeReplicationTaskIndividualAssessments {
-    #[doc(hidden)]
+    /// Creates a new `DescribeReplicationTaskIndividualAssessments`
     pub fn new() -> Self {
         Self
     }
@@ -121,8 +120,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeReplicationTaskIndividualAssessments")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(DescribeReplicationTaskIndividualAssessmentsEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsError,
@@ -132,8 +137,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

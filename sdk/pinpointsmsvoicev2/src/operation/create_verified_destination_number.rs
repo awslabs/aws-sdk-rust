@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreateVerifiedDestinationNumber`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreateVerifiedDestinationNumber;
 impl CreateVerifiedDestinationNumber {
-    #[doc(hidden)]
+    /// Creates a new `CreateVerifiedDestinationNumber`
     pub fn new() -> Self {
         Self
     }
@@ -130,19 +129,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateV
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateVerifiedDestinationNumber")
-                .with_interceptor(CreateVerifiedDestinationNumberEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateVerifiedDestinationNumber")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreateVerifiedDestinationNumberEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

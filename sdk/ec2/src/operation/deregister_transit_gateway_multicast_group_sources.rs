@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DeregisterTransitGatewayMulticastGroupSources`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DeregisterTransitGatewayMulticastGroupSources;
 impl DeregisterTransitGatewayMulticastGroupSources {
-    #[doc(hidden)]
+    /// Creates a new `DeregisterTransitGatewayMulticastGroupSources`
     pub fn new() -> Self {
         Self
     }
@@ -115,8 +114,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeregisterTransitGatewayMulticastGroupSources")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(DeregisterTransitGatewayMulticastGroupSourcesEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesError,
@@ -126,8 +131,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

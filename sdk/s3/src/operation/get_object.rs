@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetObject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetObject;
 impl GetObject {
-    #[doc(hidden)]
+    /// Creates a new `GetObject`
     pub fn new() -> Self {
         Self
     }
@@ -116,26 +115,32 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetObject")
-                .with_interceptor(GetObjectEndpointParamsInterceptor)
-                .with_interceptor(crate::http_response_checksum::ResponseChecksumInterceptor::new(
-                    ["crc32", "crc32c", "sha256", "sha1"].as_slice(),
-                    |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
-                        let input: &crate::operation::get_object::GetObjectInput = input.downcast_ref().expect("correct type");
-                        matches!(input.checksum_mode(), ::std::option::Option::Some(crate::types::ChecksumMode::Enabled))
-                    },
-                ))
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_object::GetObjectError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_object::GetObjectError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_object::GetObjectError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetObject")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetObjectEndpointParamsInterceptor)
+            .with_interceptor(crate::http_response_checksum::ResponseChecksumInterceptor::new(
+                ["crc32", "crc32c", "sha256", "sha1"].as_slice(),
+                |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
+                    let input: &crate::operation::get_object::GetObjectInput = input.downcast_ref().expect("correct type");
+                    matches!(input.checksum_mode(), ::std::option::Option::Some(crate::types::ChecksumMode::Enabled))
+                },
+            ))
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_object::GetObjectError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_object::GetObjectError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_object::GetObjectError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

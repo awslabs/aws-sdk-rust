@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetClusterCredentialsWithIAM`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetClusterCredentialsWithIAM;
 impl GetClusterCredentialsWithIAM {
-    #[doc(hidden)]
+    /// Creates a new `GetClusterCredentialsWithIAM`
     pub fn new() -> Self {
         Self
     }
@@ -118,19 +117,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetClus
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetClusterCredentialsWithIAM")
-                .with_interceptor(GetClusterCredentialsWithIAMEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetClusterCredentialsWithIAM")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetClusterCredentialsWithIAMEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

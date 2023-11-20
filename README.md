@@ -6,11 +6,12 @@ To update it, edit the `aws/SDK_README.md.hb` Handlebars template in that reposi
 
 # The AWS SDK for Rust [![Docs](https://img.shields.io/badge/docs-blue)](https://awslabs.github.io/aws-sdk-rust/) ![MSRV](https://img.shields.io/badge/msrv-1.70.0-red) [![Usage Guide](https://img.shields.io/badge/Developer_Guide-blue)](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
 
-This repo contains the new AWS SDK for Rust (the SDK) and its [public roadmap](https://github.com/orgs/awslabs/projects/50/views/1).
+This repo contains the AWS SDK for Rust and its [public roadmap](https://github.com/orgs/awslabs/projects/50/views/1).
 
 **Please Note**: The SDK is currently released as a developer preview, without support or assistance for use on production workloads. Any use in production is at your own risk.
 
-The SDK is code generated from [Smithy models](https://awslabs.github.io/smithy/) that represent each AWS service. The code used to generate the SDK can be found in [smithy-rs](https://github.com/smithy-lang/smithy-rs).
+The SDK is code generated from [Smithy models](https://smithy.io/2.0/index.html) that represent each AWS service.
+The code used to generate the SDK can be found in [smithy-rs](https://github.com/smithy-lang/smithy-rs).
 
 ## Getting Started with the SDK
 
@@ -25,8 +26,8 @@ The SDK provides one crate per AWS service. You must add [Tokio](https://crates.
 
     ```toml
     [dependencies]
-    aws-config = { version= "0.101.0", features = ["behavior-version-latest"] }
-    aws-sdk-dynamodb = "0.38.0"
+    aws-config = { version= "1.0.0", features = ["behavior-version-latest"] }
+    aws-sdk-dynamodb = "0.39.0"
     tokio = { version = "1", features = ["full"] }
     ```
 
@@ -59,7 +60,8 @@ In order to use the SDK, you must already have Rust and Cargo installed. If you 
 
 ## Using the SDK
 
-While we're working on the SDK, detailed usage instructions will be added to the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Please suggest additional sections for the guide by opening an issue and describing what you are trying to do.
+Detailed usage instructions are available in the [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html).
+Suggestions for additional sections or improvements for the guide are welcome. Please open an issue describing what you are trying to do.
 
 ## Getting Help
 * [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html)
@@ -74,7 +76,9 @@ While we're working on the SDK, detailed usage instructions will be added to the
 
 The SDK uses **GitHub Issues** to track feature requests and issues with the SDK. In addition, we use **GitHub Projects** to provide users with a high level view of our roadmap and the features we're actively working on.
 
-You can provide feedback or report a bug  by submitting a **GitHub issue**. This is the preferred mechanism to give feedback so that other users can engage in the conversation, +1 issues, etc. Issues you open will be evaluated for our roadmap in the Developer Preview launch.
+You can provide feedback or report a bug  by submitting a **GitHub issue**.
+This is the preferred mechanism to give feedback so that other users can engage in the conversation, +1 issues, etc.
+Issues you open will be evaluated for our roadmap.
 
 ### Contributing
 

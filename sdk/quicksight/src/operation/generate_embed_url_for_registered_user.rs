@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GenerateEmbedUrlForRegisteredUser`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GenerateEmbedUrlForRegisteredUser;
 impl GenerateEmbedUrlForRegisteredUser {
-    #[doc(hidden)]
+    /// Creates a new `GenerateEmbedUrlForRegisteredUser`
     pub fn new() -> Self {
         Self
     }
@@ -121,19 +120,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Generat
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GenerateEmbedUrlForRegisteredUser")
-                .with_interceptor(GenerateEmbedUrlForRegisteredUserEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GenerateEmbedUrlForRegisteredUser")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GenerateEmbedUrlForRegisteredUserEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetEC2RecommendationProjectedMetrics`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetEC2RecommendationProjectedMetrics;
 impl GetEC2RecommendationProjectedMetrics {
-    #[doc(hidden)]
+    /// Creates a new `GetEC2RecommendationProjectedMetrics`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEC2R
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEC2RecommendationProjectedMetrics")
-                .with_interceptor(GetEC2RecommendationProjectedMetricsEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEC2RecommendationProjectedMetrics")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetEC2RecommendationProjectedMetricsEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

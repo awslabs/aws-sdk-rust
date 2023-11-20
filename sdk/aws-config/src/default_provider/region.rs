@@ -45,11 +45,10 @@ pub struct Builder {
 }
 
 impl Builder {
-    #[doc(hidden)]
     /// Configure the default chain
     ///
     /// Exposed for overriding the environment when unit-testing providers
-    pub fn configure(mut self, configuration: &ProviderConfig) -> Self {
+    pub(crate) fn configure(mut self, configuration: &ProviderConfig) -> Self {
         self.env_provider = EnvironmentVariableRegionProvider::new_with_env(configuration.env());
         self.profile_file = self.profile_file.configure(configuration);
         self.imds = self.imds.configure(configuration);

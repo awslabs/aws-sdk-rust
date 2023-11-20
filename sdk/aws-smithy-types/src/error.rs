@@ -10,12 +10,8 @@ use std::fmt;
 pub mod display;
 pub mod metadata;
 pub mod operation;
-mod unhandled;
 
 pub use metadata::ErrorMetadata;
-
-#[allow(deprecated)]
-pub use unhandled::Unhandled;
 
 #[derive(Debug)]
 pub(super) enum TryFromNumberErrorKind {

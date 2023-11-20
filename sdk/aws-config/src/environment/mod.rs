@@ -5,9 +5,6 @@
 
 //! Providers that load configuration from environment variables
 
-/// Load app name from the environment
-pub mod app_name;
-
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 

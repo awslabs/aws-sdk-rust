@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `EnableSagemakerServicecatalogPortfolio`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct EnableSagemakerServicecatalogPortfolio;
 impl EnableSagemakerServicecatalogPortfolio {
-    #[doc(hidden)]
+    /// Creates a new `EnableSagemakerServicecatalogPortfolio`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableS
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("EnableSagemakerServicecatalogPortfolio")
-                .with_interceptor(EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("EnableSagemakerServicecatalogPortfolio")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

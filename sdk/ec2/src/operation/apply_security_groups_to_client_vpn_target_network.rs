@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ApplySecurityGroupsToClientVpnTargetNetwork`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ApplySecurityGroupsToClientVpnTargetNetwork;
 impl ApplySecurityGroupsToClientVpnTargetNetwork {
-    #[doc(hidden)]
+    /// Creates a new `ApplySecurityGroupsToClientVpnTargetNetwork`
     pub fn new() -> Self {
         Self
     }
@@ -119,8 +118,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ApplySe
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ApplySecurityGroupsToClientVpnTargetNetwork")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(ApplySecurityGroupsToClientVpnTargetNetworkEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkError,
@@ -130,8 +135,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ApplySe
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

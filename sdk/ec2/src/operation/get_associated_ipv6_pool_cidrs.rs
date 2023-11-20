@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetAssociatedIpv6PoolCidrs`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetAssociatedIpv6PoolCidrs;
 impl GetAssociatedIpv6PoolCidrs {
-    #[doc(hidden)]
+    /// Creates a new `GetAssociatedIpv6PoolCidrs`
     pub fn new() -> Self {
         Self
     }
@@ -111,19 +110,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAsso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAssociatedIpv6PoolCidrs")
-                .with_interceptor(GetAssociatedIpv6PoolCidrsEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAssociatedIpv6PoolCidrs")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetAssociatedIpv6PoolCidrsEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

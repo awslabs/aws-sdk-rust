@@ -34,9 +34,4 @@ impl BehaviorVersion {
     pub fn v2023_11_09() -> Self {
         Self {}
     }
-
-    /// Returns whether the current version is `v2023_11_09`
-    pub fn supports_v2023_11_09(&self) -> bool {
-        true
-    }
 }

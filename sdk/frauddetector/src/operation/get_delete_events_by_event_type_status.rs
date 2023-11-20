@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetDeleteEventsByEventTypeStatus`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetDeleteEventsByEventTypeStatus;
 impl GetDeleteEventsByEventTypeStatus {
-    #[doc(hidden)]
+    /// Creates a new `GetDeleteEventsByEventTypeStatus`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDele
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDeleteEventsByEventTypeStatus")
-                .with_interceptor(GetDeleteEventsByEventTypeStatusEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDeleteEventsByEventTypeStatus")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetDeleteEventsByEventTypeStatusEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

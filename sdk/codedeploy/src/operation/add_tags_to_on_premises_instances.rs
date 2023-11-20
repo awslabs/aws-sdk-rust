@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AddTagsToOnPremisesInstances`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AddTagsToOnPremisesInstances;
 impl AddTagsToOnPremisesInstances {
-    #[doc(hidden)]
+    /// Creates a new `AddTagsToOnPremisesInstances`
     pub fn new() -> Self {
         Self
     }
@@ -117,19 +116,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddTags
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AddTagsToOnPremisesInstances")
-                .with_interceptor(AddTagsToOnPremisesInstancesEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AddTagsToOnPremisesInstances")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AddTagsToOnPremisesInstancesEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

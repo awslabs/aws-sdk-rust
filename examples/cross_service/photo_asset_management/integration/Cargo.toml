@@ -9,9 +9,9 @@ publish = false
 
 [dependencies]
 tracing = "0.1.37"
-aws-config= { version = "0.101.0", path = "../../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "0.38.0", path = "../../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "0.38.0", path = "../../../../sdk/rekognition" }
+aws-config= { version = "1.0.0", path = "../../../../sdk/aws-config" }
+aws-sdk-dynamodb= { version = "0.39.0", path = "../../../../sdk/dynamodb" }
+aws-sdk-rekognition= { version = "0.39.0", path = "../../../../sdk/rekognition" }
 
 [dependencies.photo_asset_management]
 path = "../"

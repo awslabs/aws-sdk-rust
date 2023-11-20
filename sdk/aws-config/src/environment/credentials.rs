@@ -58,11 +58,10 @@ impl EnvironmentVariableCredentialsProvider {
         Self::new_with_env(Env::real())
     }
 
-    #[doc(hidden)]
     /// Create a new `EnvironmentVariableCredentialsProvider` with `Env` overridden
     ///
     /// This function is intended for tests that mock out the process environment.
-    pub fn new_with_env(env: Env) -> Self {
+    pub(crate) fn new_with_env(env: Env) -> Self {
         Self { env }
     }
 }

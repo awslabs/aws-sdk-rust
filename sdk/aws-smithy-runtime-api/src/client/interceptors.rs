@@ -55,9 +55,6 @@ macro_rules! interceptor_trait_fn {
     };
 }
 
-#[deprecated(note = "Renamed to Intercept.")]
-pub use Intercept as Interceptor;
-
 /// An interceptor allows injecting code into the SDK ’s request execution pipeline.
 ///
 /// ## Terminology:

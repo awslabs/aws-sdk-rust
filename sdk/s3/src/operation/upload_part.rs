@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `UploadPart`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct UploadPart;
 impl UploadPart {
-    #[doc(hidden)]
+    /// Creates a new `UploadPart`
     pub fn new() -> Self {
         Self
     }
@@ -116,34 +115,40 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadP
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadPart")
-                .with_interceptor(UploadPartEndpointParamsInterceptor)
-                .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
-                    |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
-                        let input: &crate::operation::upload_part::UploadPartInput = input.downcast_ref().expect("correct type");
-                        let checksum_algorithm = input.checksum_algorithm();
-                        let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
-                        let checksum_algorithm = match checksum_algorithm {
-                            Some(algo) => Some(
-                                algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
-                                    .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
-                            ),
-                            None => None,
-                        };
-                        ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
-                    },
-                ))
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::upload_part::UploadPartError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::upload_part::UploadPartError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::upload_part::UploadPartError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadPart")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(UploadPartEndpointParamsInterceptor)
+            .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
+                |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
+                    let input: &crate::operation::upload_part::UploadPartInput = input.downcast_ref().expect("correct type");
+                    let checksum_algorithm = input.checksum_algorithm();
+                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+                    let checksum_algorithm = match checksum_algorithm {
+                        Some(algo) => Some(
+                            algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
+                                .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
+                        ),
+                        None => None,
+                    };
+                    ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
+                },
+            ))
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::upload_part::UploadPartError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::upload_part::UploadPartError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::upload_part::UploadPartError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

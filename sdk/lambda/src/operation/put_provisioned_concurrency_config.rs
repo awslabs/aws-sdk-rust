@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `PutProvisionedConcurrencyConfig`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct PutProvisionedConcurrencyConfig;
 impl PutProvisionedConcurrencyConfig {
-    #[doc(hidden)]
+    /// Creates a new `PutProvisionedConcurrencyConfig`
     pub fn new() -> Self {
         Self
     }
@@ -117,19 +116,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutProv
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutProvisionedConcurrencyConfig")
-                .with_interceptor(PutProvisionedConcurrencyConfigEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutProvisionedConcurrencyConfig")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(PutProvisionedConcurrencyConfigEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

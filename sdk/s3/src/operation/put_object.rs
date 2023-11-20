@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `PutObject`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct PutObject;
 impl PutObject {
-    #[doc(hidden)]
+    /// Creates a new `PutObject`
     pub fn new() -> Self {
         Self
     }
@@ -116,34 +115,40 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutObject")
-                .with_interceptor(PutObjectEndpointParamsInterceptor)
-                .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
-                    |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
-                        let input: &crate::operation::put_object::PutObjectInput = input.downcast_ref().expect("correct type");
-                        let checksum_algorithm = input.checksum_algorithm();
-                        let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
-                        let checksum_algorithm = match checksum_algorithm {
-                            Some(algo) => Some(
-                                algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
-                                    .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
-                            ),
-                            None => None,
-                        };
-                        ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
-                    },
-                ))
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::put_object::PutObjectError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::put_object::PutObjectError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::put_object::PutObjectError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutObject")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(PutObjectEndpointParamsInterceptor)
+            .with_interceptor(crate::http_request_checksum::RequestChecksumInterceptor::new(
+                |input: &::aws_smithy_runtime_api::client::interceptors::context::Input| {
+                    let input: &crate::operation::put_object::PutObjectInput = input.downcast_ref().expect("correct type");
+                    let checksum_algorithm = input.checksum_algorithm();
+                    let checksum_algorithm = checksum_algorithm.map(|algorithm| algorithm.as_str());
+                    let checksum_algorithm = match checksum_algorithm {
+                        Some(algo) => Some(
+                            algo.parse::<::aws_smithy_checksums::ChecksumAlgorithm>()
+                                .map_err(::aws_smithy_types::error::operation::BuildError::other)?,
+                        ),
+                        None => None,
+                    };
+                    ::std::result::Result::<_, ::aws_smithy_runtime_api::box_error::BoxError>::Ok(checksum_algorithm)
+                },
+            ))
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::put_object::PutObjectError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::put_object::PutObjectError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::put_object::PutObjectError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

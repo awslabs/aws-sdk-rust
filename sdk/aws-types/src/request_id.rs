@@ -8,12 +8,7 @@
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_runtime_api::http::Headers;
 use aws_smithy_runtime_api::http::Response;
-use aws_smithy_types::error::metadata::{
-    Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata,
-};
-
-#[allow(deprecated)]
-use aws_smithy_types::error::Unhandled;
+use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
 
 /// Constant for the [`ErrorMetadata`] extra field that contains the request ID
 const AWS_REQUEST_ID: &str = "aws_request_id";
@@ -37,13 +32,6 @@ impl<E> RequestId for SdkError<E, Response> {
 impl RequestId for ErrorMetadata {
     fn request_id(&self) -> Option<&str> {
         self.extra(AWS_REQUEST_ID)
-    }
-}
-
-#[allow(deprecated)]
-impl RequestId for Unhandled {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
     }
 }
 

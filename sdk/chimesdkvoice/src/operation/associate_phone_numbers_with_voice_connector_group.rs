@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AssociatePhoneNumbersWithVoiceConnectorGroup`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorGroup;
 impl AssociatePhoneNumbersWithVoiceConnectorGroup {
-    #[doc(hidden)]
+    /// Creates a new `AssociatePhoneNumbersWithVoiceConnectorGroup`
     pub fn new() -> Self {
         Self
     }
@@ -121,8 +120,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociatePhoneNumbersWithVoiceConnectorGroup")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(AssociatePhoneNumbersWithVoiceConnectorGroupEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
@@ -132,8 +137,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

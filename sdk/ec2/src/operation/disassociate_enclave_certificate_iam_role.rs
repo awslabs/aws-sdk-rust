@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DisassociateEnclaveCertificateIamRole`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DisassociateEnclaveCertificateIamRole;
 impl DisassociateEnclaveCertificateIamRole {
-    #[doc(hidden)]
+    /// Creates a new `DisassociateEnclaveCertificateIamRole`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateEnclaveCertificateIamRole")
-                .with_interceptor(DisassociateEnclaveCertificateIamRoleEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisassociateEnclaveCertificateIamRole")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DisassociateEnclaveCertificateIamRoleEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

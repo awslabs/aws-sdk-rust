@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `SetVaultAccessPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct SetVaultAccessPolicy;
 impl SetVaultAccessPolicy {
-    #[doc(hidden)]
+    /// Creates a new `SetVaultAccessPolicy`
     pub fn new() -> Self {
         Self
     }
@@ -111,22 +110,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetVaul
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVaultAccessPolicy")
-                .with_interceptor(SetVaultAccessPolicyEndpointParamsInterceptor)
-                .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                    crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVaultAccessPolicy")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(SetVaultAccessPolicyEndpointParamsInterceptor)
+            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                crate::operation::set_vault_access_policy::SetVaultAccessPolicyInput,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

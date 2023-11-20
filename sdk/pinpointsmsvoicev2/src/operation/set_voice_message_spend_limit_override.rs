@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `SetVoiceMessageSpendLimitOverride`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct SetVoiceMessageSpendLimitOverride;
 impl SetVoiceMessageSpendLimitOverride {
-    #[doc(hidden)]
+    /// Creates a new `SetVoiceMessageSpendLimitOverride`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetVoic
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVoiceMessageSpendLimitOverride")
-                .with_interceptor(SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetVoiceMessageSpendLimitOverride")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(SetVoiceMessageSpendLimitOverrideEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -6,13 +6,12 @@
 use std::time::Duration;
 
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_credential_types::Credentials;
+use aws_sdk_dynamodb::config::{Credentials, Region, StalledStreamProtectionConfig};
 use aws_sdk_dynamodb::error::SdkError;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 use aws_smithy_runtime::client::http::test_util::NeverClient;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
-use aws_types::region::Region;
 use aws_types::SdkConfig;
 
 #[derive(Debug, Clone)]
@@ -36,9 +35,10 @@ async fn api_call_timeout_retries() {
                 .build(),
         )
         .retry_config(RetryConfig::standard())
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .sleep_impl(SharedAsyncSleep::new(InstantSleep))
         .build();
-    let client = aws_sdk_dynamodb::Client::from_conf(aws_sdk_dynamodb::Config::new(&conf));
+    let client = aws_sdk_dynamodb::Client::new(&conf);
     let resp = client
         .list_tables()
         .send()
@@ -68,6 +68,7 @@ async fn no_retries_on_operation_timeout() {
                 .operation_timeout(Duration::new(123, 0))
                 .build(),
         )
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .retry_config(RetryConfig::standard())
         .sleep_impl(SharedAsyncSleep::new(InstantSleep))
         .build();

@@ -41,12 +41,10 @@ impl Config {
             behavior_version: self.behavior_version.clone(),
         }
     }
-    /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn http_connector(&self) -> Option<crate::config::SharedHttpClient> {
-        self.runtime_components.http_client()
+    /// Return a reference to the stalled stream protection configuration contained in this config, if any.
+    pub fn stalled_stream_protection(&self) -> ::std::option::Option<&crate::config::StalledStreamProtectionConfig> {
+        self.config.load::<crate::config::StalledStreamProtectionConfig>()
     }
-
     /// Return the [`SharedHttpClient`](crate::config::SharedHttpClient) to use when making requests, if any.
     pub fn http_client(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
@@ -70,7 +68,6 @@ impl Config {
         self.config.load::<::aws_smithy_types::timeout::TimeoutConfig>()
     }
 
-    #[doc(hidden)]
     /// Returns a reference to the retry partition contained in this config, if any.
     ///
     /// WARNING: This method is unstable and may be removed at any time. Do not rely on this
@@ -150,18 +147,21 @@ impl Builder {
     pub fn new() -> Self {
         Self::default()
     }
-    /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn http_connector(self, http_client: impl crate::config::HttpClient + 'static) -> Self {
-        self.http_client(http_client)
+    /// Set the [`StalledStreamProtectionConfig`](crate::config::StalledStreamProtectionConfig)
+    /// to configure protection for stalled streams.
+    pub fn stalled_stream_protection(mut self, stalled_stream_protection_config: crate::config::StalledStreamProtectionConfig) -> Self {
+        self.set_stalled_stream_protection(::std::option::Option::Some(stalled_stream_protection_config));
+        self
     }
-
-    /// Deprecated. Don't use.
-    #[deprecated(note = "HTTP connector configuration changed. See https://github.com/smithy-lang/smithy-rs/discussions/3022 for upgrade guidance.")]
-    pub fn set_http_connector(&mut self, http_client: Option<crate::config::SharedHttpClient>) -> &mut Self {
-        self.set_http_client(http_client)
+    /// Set the [`StalledStreamProtectionConfig`](crate::config::StalledStreamProtectionConfig)
+    /// to configure protection for stalled streams.
+    pub fn set_stalled_stream_protection(
+        &mut self,
+        stalled_stream_protection_config: ::std::option::Option<crate::config::StalledStreamProtectionConfig>,
+    ) -> &mut Self {
+        self.config.store_or_unset(stalled_stream_protection_config);
+        self
     }
-
     /// Sets the HTTP client to use when making requests.
     ///
     /// # Examples
@@ -404,7 +404,6 @@ impl Builder {
         timeout_config.map(|t| self.config.store_put(t));
         self
     }
-    #[doc(hidden)]
     /// Set the partition for retry-related state. When clients share a retry partition, they will
     /// also share things like token buckets and client rate limiters. By default, all clients
     /// for the same service will share a partition.
@@ -412,7 +411,6 @@ impl Builder {
         self.set_retry_partition(Some(retry_partition));
         self
     }
-    #[doc(hidden)]
     /// Set the partition for retry-related state. When clients share a retry partition, they will
     /// also share things like token buckets and client rate limiters. By default, all clients
     /// for the same service will share a partition.
@@ -1200,6 +1198,10 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_http_client(input.http_client());
         builder.set_time_source(input.time_source());
         builder.set_behavior_version(input.behavior_version());
+        // setting `None` here removes the default
+        if let Some(config) = input.stalled_stream_protection() {
+            builder.set_stalled_stream_protection(Some(config));
+        }
 
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
@@ -1262,6 +1264,8 @@ pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsB
 pub use ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin;
 
 pub use ::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
+
+pub use ::aws_smithy_runtime_api::client::stalled_stream_protection::StalledStreamProtectionConfig;
 
 pub use ::aws_smithy_runtime_api::client::http::SharedHttpClient;
 

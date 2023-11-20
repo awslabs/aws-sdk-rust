@@ -18,11 +18,10 @@ use std::fmt;
 pub use client_rate_limiter::ClientRateLimiter;
 pub use token_bucket::TokenBucket;
 
-#[doc(hidden)]
 pub use client_rate_limiter::ClientRateLimiterPartition;
 use std::borrow::Cow;
 
-#[doc(hidden)]
+/// Represents the retry partition, e.g. an endpoint, a region
 #[non_exhaustive]
 #[derive(Clone, Debug, Hash, PartialEq, Eq)]
 pub struct RetryPartition {
@@ -30,6 +29,7 @@ pub struct RetryPartition {
 }
 
 impl RetryPartition {
+    /// Creates a new `RetryPartition` from the given `name`.
     pub fn new(name: impl Into<Cow<'static, str>>) -> Self {
         Self { name: name.into() }
     }

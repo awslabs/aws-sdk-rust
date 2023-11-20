@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetSipMediaApplicationAlexaSkillConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetSipMediaApplicationAlexaSkillConfiguration;
 impl GetSipMediaApplicationAlexaSkillConfiguration {
-    #[doc(hidden)]
+    /// Creates a new `GetSipMediaApplicationAlexaSkillConfiguration`
     pub fn new() -> Self {
         Self
     }
@@ -116,8 +115,14 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSipM
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
+        #[allow(unused_mut)]
+        let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetSipMediaApplicationAlexaSkillConfiguration")
+                .with_interceptor(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                        ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                    ),
+                )
                 .with_interceptor(GetSipMediaApplicationAlexaSkillConfigurationEndpointParamsInterceptor)
                 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                     crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError,
@@ -127,8 +132,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSipM
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationError,
-                >::new()),
-        )
+                >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

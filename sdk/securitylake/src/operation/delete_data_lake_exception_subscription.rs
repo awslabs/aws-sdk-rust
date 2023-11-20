@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `DeleteDataLakeExceptionSubscription`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct DeleteDataLakeExceptionSubscription;
 impl DeleteDataLakeExceptionSubscription {
-    #[doc(hidden)]
+    /// Creates a new `DeleteDataLakeExceptionSubscription`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteD
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteDataLakeExceptionSubscription")
-                .with_interceptor(DeleteDataLakeExceptionSubscriptionEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DeleteDataLakeExceptionSubscription")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(DeleteDataLakeExceptionSubscriptionEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::delete_data_lake_exception_subscription::DeleteDataLakeExceptionSubscriptionError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

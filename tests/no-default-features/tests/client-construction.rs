@@ -7,7 +7,7 @@ use aws_sdk_s3::config::IdentityCache;
 
 use aws_sdk_s3::config::{
     retry::RetryConfig, timeout::TimeoutConfig, BehaviorVersion, Config, Credentials, Region,
-    SharedAsyncSleep, Sleep,
+    SharedAsyncSleep, Sleep, StalledStreamProtectionConfig,
 };
 use aws_sdk_s3::primitives::SdkBody;
 use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
@@ -143,6 +143,7 @@ async fn test_time_source_for_identity_cache() {
         .identity_cache(IdentityCache::lazy().build())
         .credentials_provider(Credentials::for_tests())
         .retry_config(RetryConfig::disabled())
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .timeout_config(TimeoutConfig::disabled())
         .behavior_version(BehaviorVersion::latest())
         .build();
@@ -160,6 +161,7 @@ async fn behavior_mv_from_aws_config() {
         .credentials_provider(Credentials::for_tests())
         .identity_cache(IdentityCache::no_cache())
         .timeout_config(TimeoutConfig::disabled())
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .region(Region::new("us-west-2"))
         .load()
         .await;
@@ -183,6 +185,7 @@ async fn behavior_mv_from_client_construction() {
         .retry_config(RetryConfig::disabled())
         .identity_cache(IdentityCache::no_cache())
         .timeout_config(TimeoutConfig::disabled())
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .region(Region::new("us-west-2"))
         .build();
     let s3_client = aws_sdk_s3::Client::from_conf(

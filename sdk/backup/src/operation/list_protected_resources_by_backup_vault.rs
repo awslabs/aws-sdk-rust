@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ListProtectedResourcesByBackupVault`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ListProtectedResourcesByBackupVault;
 impl ListProtectedResourcesByBackupVault {
-    #[doc(hidden)]
+    /// Creates a new `ListProtectedResourcesByBackupVault`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPro
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListProtectedResourcesByBackupVault")
-                .with_interceptor(ListProtectedResourcesByBackupVaultEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListProtectedResourcesByBackupVault")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ListProtectedResourcesByBackupVaultEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

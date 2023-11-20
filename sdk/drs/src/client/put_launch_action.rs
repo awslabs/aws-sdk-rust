@@ -21,7 +21,7 @@ impl super::Client {
     ///   - [`r#type(Option<LaunchActionType>)`](crate::operation::put_launch_action::PutLaunchActionOutput::type): <p>Launch action type.</p>
     ///   - [`name(Option<String>)`](crate::operation::put_launch_action::PutLaunchActionOutput::name): <p>Launch action name.</p>
     ///   - [`active(Option<bool>)`](crate::operation::put_launch_action::PutLaunchActionOutput::active): <p>Whether the launch action is active.</p>
-    ///   - [`order(i32)`](crate::operation::put_launch_action::PutLaunchActionOutput::order): <p>Launch action order.</p>
+    ///   - [`order(Option<i32>)`](crate::operation::put_launch_action::PutLaunchActionOutput::order): <p>Launch action order.</p>
     ///   - [`action_version(Option<String>)`](crate::operation::put_launch_action::PutLaunchActionOutput::action_version): <p>Launch action version.</p>
     ///   - [`optional(Option<bool>)`](crate::operation::put_launch_action::PutLaunchActionOutput::optional): <p>Whether the launch will not be marked as failed if this action fails.</p>
     ///   - [`parameters(Option<HashMap::<String, LaunchActionParameter>>)`](crate::operation::put_launch_action::PutLaunchActionOutput::parameters): <p>Launch action parameters.</p>

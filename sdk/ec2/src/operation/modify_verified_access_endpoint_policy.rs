@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ModifyVerifiedAccessEndpointPolicy`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ModifyVerifiedAccessEndpointPolicy;
 impl ModifyVerifiedAccessEndpointPolicy {
-    #[doc(hidden)]
+    /// Creates a new `ModifyVerifiedAccessEndpointPolicy`
     pub fn new() -> Self {
         Self
     }
@@ -127,19 +126,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyV
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyVerifiedAccessEndpointPolicy")
-                .with_interceptor(ModifyVerifiedAccessEndpointPolicyEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyVerifiedAccessEndpointPolicy")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ModifyVerifiedAccessEndpointPolicyEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

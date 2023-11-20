@@ -64,10 +64,17 @@ impl InitialCapacityConfigBuilder {
         &self.worker_configuration
     }
     /// Consumes the builder and constructs a [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
-    pub fn build(self) -> crate::types::InitialCapacityConfig {
-        crate::types::InitialCapacityConfig {
-            worker_count: self.worker_count.unwrap_or_default(),
+    /// This method will fail if any of the following fields are not set:
+    /// - [`worker_count`](crate::types::builders::InitialCapacityConfigBuilder::worker_count)
+    pub fn build(self) -> ::std::result::Result<crate::types::InitialCapacityConfig, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::InitialCapacityConfig {
+            worker_count: self.worker_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "worker_count",
+                    "worker_count was not specified but it is required when building InitialCapacityConfig",
+                )
+            })?,
             worker_configuration: self.worker_configuration,
-        }
+        })
     }
 }

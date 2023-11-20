@@ -8,13 +8,14 @@ use std::fmt;
 use std::time::{Duration, SystemTime};
 
 #[derive(Debug, Clone, Copy)]
-pub(super) struct Throughput {
-    bytes_read: f64,
-    per_time_elapsed: Duration,
+pub struct Throughput {
+    pub(super) bytes_read: f64,
+    pub(super) per_time_elapsed: Duration,
 }
 
 impl Throughput {
-    pub(super) fn new(bytes_read: f64, per_time_elapsed: Duration) -> Self {
+    /// Create a new throughput with the given bytes read and time elapsed.
+    pub fn new(bytes_read: f64, per_time_elapsed: Duration) -> Self {
         debug_assert!(
             !bytes_read.is_nan(),
             "cannot create a throughput if bytes_read == NaN"
@@ -31,6 +32,30 @@ impl Throughput {
         Self {
             bytes_read,
             per_time_elapsed,
+        }
+    }
+
+    /// Create a new throughput in bytes per second.
+    pub fn new_bytes_per_second(bytes: f64) -> Self {
+        Self {
+            bytes_read: bytes,
+            per_time_elapsed: Duration::from_secs(1),
+        }
+    }
+
+    /// Create a new throughput in kilobytes per second.
+    pub fn new_kilobytes_per_second(kilobytes: f64) -> Self {
+        Self {
+            bytes_read: kilobytes * 1000.0,
+            per_time_elapsed: Duration::from_secs(1),
+        }
+    }
+
+    /// Create a new throughput in megabytes per second.
+    pub fn new_megabytes_per_second(megabytes: f64) -> Self {
+        Self {
+            bytes_read: megabytes * 1000.0 * 1000.0,
+            per_time_elapsed: Duration::from_secs(1),
         }
     }
 

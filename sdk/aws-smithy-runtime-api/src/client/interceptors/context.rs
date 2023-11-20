@@ -147,73 +147,101 @@ impl InterceptorContext<Input, Output, Error> {
 
 impl<I, O, E> InterceptorContext<I, O, E> {
     /// Retrieve the input for the operation being invoked.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn input(&self) -> Option<&I> {
         self.input.as_ref()
     }
 
     /// Retrieve the input for the operation being invoked.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn input_mut(&mut self) -> Option<&mut I> {
         self.input.as_mut()
     }
 
     /// Takes ownership of the input.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn take_input(&mut self) -> Option<I> {
         self.input.take()
     }
 
     /// Set the request for the operation being invoked.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn set_request(&mut self, request: Request) {
         self.request = Some(request);
     }
 
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn request(&self) -> Option<&Request> {
         self.request.as_ref()
     }
 
     /// Retrieve the transmittable request for the operation being invoked.
     /// This will only be available once request marshalling has completed.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn request_mut(&mut self) -> Option<&mut Request> {
         self.request.as_mut()
     }
 
     /// Takes ownership of the request.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn take_request(&mut self) -> Option<Request> {
         self.request.take()
     }
 
     /// Set the response for the operation being invoked.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn set_response(&mut self, response: Response) {
         self.response = Some(response);
     }
 
     /// Returns the response.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn response(&self) -> Option<&Response> {
         self.response.as_ref()
     }
 
     /// Returns a mutable reference to the response.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn response_mut(&mut self) -> Option<&mut Response> {
         self.response.as_mut()
     }
 
     /// Set the output or error for the operation being invoked.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn set_output_or_error(&mut self, output: Result<O, OrchestratorError<E>>) {
         self.output_or_error = Some(output);
     }
 
     /// Returns the deserialized output or error.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn output_or_error(&self) -> Option<Result<&O, &OrchestratorError<E>>> {
         self.output_or_error.as_ref().map(Result::as_ref)
     }
 
     /// Returns the mutable reference to the deserialized output or error.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn output_or_error_mut(&mut self) -> Option<&mut Result<O, OrchestratorError<E>>> {
         self.output_or_error.as_mut()
     }
 
     /// Return `true` if this context's `output_or_error` is an error. Otherwise, return `false`.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn is_failed(&self) -> bool {
         self.output_or_error
             .as_ref()
@@ -222,7 +250,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the Serialization phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_serialization_phase(&mut self) {
         debug!("entering \'serialization\' phase");
         debug_assert!(
@@ -233,7 +262,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the BeforeTransmit phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_before_transmit_phase(&mut self) {
         debug!("entering \'before transmit\' phase");
         debug_assert!(
@@ -253,7 +283,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the Transmit phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_transmit_phase(&mut self) {
         debug!("entering \'transmit\' phase");
         debug_assert!(
@@ -264,7 +295,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the BeforeDeserialization phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_before_deserialization_phase(&mut self) {
         debug!("entering \'before deserialization\' phase");
         debug_assert!(
@@ -283,7 +315,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the Deserialization phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_deserialization_phase(&mut self) {
         debug!("entering \'deserialization\' phase");
         debug_assert!(
@@ -294,7 +327,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Advance to the AfterDeserialization phase.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn enter_after_deserialization_phase(&mut self) {
         debug!("entering \'after deserialization\' phase");
         debug_assert!(
@@ -309,7 +343,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Set the request checkpoint. This should only be called once, right before entering the retry loop.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn save_checkpoint(&mut self) {
         trace!("saving request checkpoint...");
         self.request_checkpoint = self.request().and_then(|r| r.try_clone());
@@ -320,7 +355,8 @@ impl<I, O, E> InterceptorContext<I, O, E> {
     }
 
     /// Returns false if rewinding isn't possible
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn rewind(&mut self, _cfg: &mut ConfigBag) -> RewindResult {
         // If request_checkpoint was never set, but we've already made one attempt,
         // then this is not a retryable request
@@ -351,7 +387,8 @@ where
     E: Debug,
 {
     /// Decomposes the context into its constituent parts.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     #[allow(clippy::type_complexity)]
     pub fn into_parts(
         self,
@@ -370,7 +407,8 @@ where
     }
 
     /// Convert this context into the final operation result that is returned in client's the public API.
-    #[doc(hidden)]
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn finalize(self) -> Result<O, SdkError<E, HttpResponse>> {
         let Self {
             output_or_error,
@@ -385,6 +423,8 @@ where
 
     /// Mark this context as failed due to errors during the operation. Any errors already contained
     /// by the context will be replaced by the given error.
+    ///
+    /// Note: This method is intended for internal use only.
     pub fn fail(&mut self, error: OrchestratorError<E>) {
         if !self.is_failed() {
             trace!(
@@ -399,8 +439,10 @@ where
 }
 
 /// The result of attempting to rewind a request.
+///
+/// Note: This is intended for internal use only.
+#[non_exhaustive]
 #[derive(Debug, PartialEq, Eq, Clone, Copy)]
-#[doc(hidden)]
 pub enum RewindResult {
     /// The request couldn't be rewound because it wasn't cloneable.
     Impossible,
@@ -425,7 +467,7 @@ impl fmt::Display for RewindResult {
     }
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(all(test, feature = "test-util", feature = "http-02x"))]
 mod tests {
     use super::*;
     use aws_smithy_types::body::SdkBody;

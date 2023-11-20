@@ -9,7 +9,7 @@ use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::identity::{
-    Identity, IdentityCachePartition, IdentityFuture, IdentityResolver, ResolveCachedIdentity,
+    Identity, IdentityCachePartition, IdentityFuture, ResolveCachedIdentity, ResolveIdentity,
     SharedIdentityCache, SharedIdentityResolver,
 };
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -402,7 +402,7 @@ mod tests {
             f.write_str("ResolverFn")
         }
     }
-    impl<F> IdentityResolver for ResolverFn<F>
+    impl<F> ResolveIdentity for ResolverFn<F>
     where
         F: Fn() -> IdentityFuture<'static> + Send + Sync,
     {
@@ -428,7 +428,7 @@ mod tests {
     ) -> (LazyCache, SharedIdentityResolver) {
         #[derive(Debug)]
         struct Resolver(Mutex<Vec<Result<Identity, BoxError>>>);
-        impl IdentityResolver for Resolver {
+        impl ResolveIdentity for Resolver {
             fn resolve_identity<'a>(
                 &'a self,
                 _: &'a RuntimeComponents,
@@ -689,6 +689,7 @@ mod tests {
             .unwrap();
         let (cache, _) = test_cache(BUFFER_TIME_NO_JITTER, Vec::new());
 
+        #[allow(clippy::disallowed_methods)]
         let far_future = SystemTime::now() + Duration::from_secs(10_000);
 
         // Resolver A and B both return an identical identity type with different tokens with an expiration

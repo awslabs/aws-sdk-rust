@@ -4,7 +4,7 @@
  */
 
 use aws_smithy_runtime_api::client::identity::{
-    IdentityFuture, IdentityResolver, ResolveCachedIdentity, SharedIdentityCache,
+    IdentityFuture, ResolveCachedIdentity, ResolveIdentity, SharedIdentityCache,
     SharedIdentityResolver,
 };
 use aws_smithy_runtime_api::shared::IntoShared;

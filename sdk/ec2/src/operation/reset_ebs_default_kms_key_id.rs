@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ResetEbsDefaultKmsKeyId`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ResetEbsDefaultKmsKeyId;
 impl ResetEbsDefaultKmsKeyId {
-    #[doc(hidden)]
+    /// Creates a new `ResetEbsDefaultKmsKeyId`
     pub fn new() -> Self {
         Self
     }
@@ -110,19 +109,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResetEb
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ResetEbsDefaultKmsKeyId")
-                .with_interceptor(ResetEbsDefaultKmsKeyIdEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ResetEbsDefaultKmsKeyId")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ResetEbsDefaultKmsKeyIdEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

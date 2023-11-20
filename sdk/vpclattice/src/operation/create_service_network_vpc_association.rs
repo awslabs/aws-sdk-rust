@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `CreateServiceNetworkVpcAssociation`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct CreateServiceNetworkVpcAssociation;
 impl CreateServiceNetworkVpcAssociation {
-    #[doc(hidden)]
+    /// Creates a new `CreateServiceNetworkVpcAssociation`
     pub fn new() -> Self {
         Self
     }
@@ -130,19 +129,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateServiceNetworkVpcAssociation")
-                .with_interceptor(CreateServiceNetworkVpcAssociationEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateServiceNetworkVpcAssociation")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(CreateServiceNetworkVpcAssociationEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

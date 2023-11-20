@@ -109,7 +109,6 @@ impl<'a, S: Default> SigningParams<'a, S> {
 /// Builder and error for creating [`SigningParams`]
 pub mod signing_params {
     use super::SigningParams;
-    use aws_smithy_runtime_api::builder_methods;
     use aws_smithy_runtime_api::client::identity::Identity;
     use std::error::Error;
     use std::fmt;

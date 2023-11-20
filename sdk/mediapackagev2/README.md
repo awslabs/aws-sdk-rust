@@ -18,8 +18,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "0.101.0", features = ["behavior-version-latest"] }
-aws-sdk-mediapackagev2 = "0.10.0"
+aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
+aws-sdk-mediapackagev2 = "0.11.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

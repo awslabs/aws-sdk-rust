@@ -7,7 +7,7 @@ use aws_sdk_dynamodb::operation::put_item::{PutItem, PutItemInput};
 use aws_sdk_dynamodb::types::AttributeValue;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-use aws_smithy_runtime_api::client::ser_de::{RequestSerializer, SharedRequestSerializer};
+use aws_smithy_runtime_api::client::ser_de::{SerializeRequest, SharedRequestSerializer};
 use aws_smithy_types::config_bag::ConfigBag;
 use criterion::{criterion_group, criterion_main, Criterion};
 

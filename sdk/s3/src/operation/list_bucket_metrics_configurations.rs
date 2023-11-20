@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `ListBucketMetricsConfigurations`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct ListBucketMetricsConfigurations;
 impl ListBucketMetricsConfigurations {
-    #[doc(hidden)]
+    /// Creates a new `ListBucketMetricsConfigurations`
     pub fn new() -> Self {
         Self
     }
@@ -122,19 +121,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListBuc
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBucketMetricsConfigurations")
-                .with_interceptor(ListBucketMetricsConfigurationsEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListBucketMetricsConfigurations")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(ListBucketMetricsConfigurationsEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

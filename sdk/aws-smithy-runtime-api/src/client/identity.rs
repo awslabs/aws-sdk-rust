@@ -139,9 +139,6 @@ impl ValidateConfig for SharedIdentityCache {
 
 impl_shared_conversions!(convert SharedIdentityCache from ResolveCachedIdentity using SharedIdentityCache::new);
 
-#[deprecated(note = "Renamed to ResolveIdentity.")]
-pub use ResolveIdentity as IdentityResolver;
-
 /// Resolver for identities.
 ///
 /// Every [`AuthScheme`](crate::client::auth::AuthScheme) has one or more compatible

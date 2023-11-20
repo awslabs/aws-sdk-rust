@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `AbortVaultLock`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct AbortVaultLock;
 impl AbortVaultLock {
-    #[doc(hidden)]
+    /// Creates a new `AbortVaultLock`
     pub fn new() -> Self {
         Self
     }
@@ -110,22 +109,28 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AbortVa
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AbortVaultLock")
-                .with_interceptor(AbortVaultLockEndpointParamsInterceptor)
-                .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
-                    crate::operation::abort_vault_lock::AbortVaultLockInput,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::abort_vault_lock::AbortVaultLockError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::abort_vault_lock::AbortVaultLockError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::abort_vault_lock::AbortVaultLockError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AbortVaultLock")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(AbortVaultLockEndpointParamsInterceptor)
+            .with_interceptor(crate::glacier_interceptors::GlacierAccountIdAutofillInterceptor::<
+                crate::operation::abort_vault_lock::AbortVaultLockInput,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::abort_vault_lock::AbortVaultLockError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::abort_vault_lock::AbortVaultLockError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::abort_vault_lock::AbortVaultLockError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `GetEc2DeepInspectionConfiguration`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct GetEc2DeepInspectionConfiguration;
 impl GetEc2DeepInspectionConfiguration {
-    #[doc(hidden)]
+    /// Creates a new `GetEc2DeepInspectionConfiguration`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEc2D
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEc2DeepInspectionConfiguration")
-                .with_interceptor(GetEc2DeepInspectionConfigurationEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEc2DeepInspectionConfiguration")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(GetEc2DeepInspectionConfigurationEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

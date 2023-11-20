@@ -80,7 +80,7 @@ pub fn parse_error_metadata(payload: &[u8], headers: &Headers) -> Result<ErrorMe
 mod test {
     use crate::json_errors::{parse_error_body, parse_error_metadata, sanitize_error_code};
     use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
-    use aws_smithy_types::{body::SdkBody, Error};
+    use aws_smithy_types::{body::SdkBody, error::ErrorMetadata};
     use std::borrow::Cow;
 
     #[test]
@@ -95,7 +95,7 @@ mod test {
             parse_error_metadata(response.body().bytes().unwrap(), response.headers())
                 .unwrap()
                 .build(),
-            Error::builder().code("FooError").message("Go to foo").build()
+            ErrorMetadata::builder().code("FooError").message("Go to foo").build()
         )
     }
 
@@ -170,7 +170,7 @@ mod test {
             parse_error_metadata(response.body().bytes().unwrap(), response.headers())
                 .unwrap()
                 .build(),
-            Error::builder()
+            ErrorMetadata::builder()
                 .code("ResourceNotFoundException")
                 .message("Functions from 'us-west-2' are not reachable from us-east-1")
                 .build()

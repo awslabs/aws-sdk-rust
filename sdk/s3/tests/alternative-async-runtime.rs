@@ -5,7 +5,7 @@
 
 use aws_config::retry::RetryConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region, StalledStreamProtectionConfig};
 use aws_sdk_s3::types::{
     CompressionType, CsvInput, CsvOutput, ExpressionType, FileHeaderInfo, InputSerialization,
     OutputSerialization,
@@ -147,6 +147,7 @@ async fn retry_test(sleep_impl: SharedAsyncSleep) -> Result<(), Box<dyn std::err
         .http_client(http_client.clone())
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .retry_config(RetryConfig::standard().with_max_attempts(3))
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .timeout_config(
             TimeoutConfig::builder()
                 .operation_attempt_timeout(Duration::from_secs_f64(0.1))

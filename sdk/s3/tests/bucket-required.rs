@@ -5,7 +5,7 @@
 
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::config::{Credentials, Region, StalledStreamProtectionConfig};
 use aws_sdk_s3::Client;
 use aws_smithy_runtime::client::http::test_util::capture_request;
 
@@ -15,6 +15,7 @@ async fn dont_dispatch_when_bucket_is_unset() {
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
+        .stalled_stream_protection(StalledStreamProtectionConfig::disabled())
         .http_client(http_client.clone())
         .build();
     let client = Client::new(&sdk_config);

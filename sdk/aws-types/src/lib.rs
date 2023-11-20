@@ -17,7 +17,6 @@
 pub mod app_name;
 pub mod build_metadata;
 pub mod endpoint_config;
-#[doc(hidden)]
 pub mod os_shim_internal;
 pub mod region;
 pub mod request_id;

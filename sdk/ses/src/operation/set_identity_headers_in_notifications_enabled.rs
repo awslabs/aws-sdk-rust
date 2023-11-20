@@ -2,10 +2,9 @@
 /// Orchestration and serialization glue logic for `SetIdentityHeadersInNotificationsEnabled`.
 #[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-#[doc(hidden)]
 pub struct SetIdentityHeadersInNotificationsEnabled;
 impl SetIdentityHeadersInNotificationsEnabled {
-    #[doc(hidden)]
+    /// Creates a new `SetIdentityHeadersInNotificationsEnabled`
     pub fn new() -> Self {
         Self
     }
@@ -120,19 +119,25 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetIden
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        ::std::borrow::Cow::Owned(
-            ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetIdentityHeadersInNotificationsEnabled")
-                .with_interceptor(SetIdentityHeadersInNotificationsEnabledEndpointParamsInterceptor)
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
-                    crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
-                >::new())
-                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
-                    crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
-                >::new())
-                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                    crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
-                >::new()),
-        )
+        #[allow(unused_mut)]
+        let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SetIdentityHeadersInNotificationsEnabled")
+            .with_interceptor(
+                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::new(
+                    ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptorKind::ResponseBody,
+                ),
+            )
+            .with_interceptor(SetIdentityHeadersInNotificationsEnabledEndpointParamsInterceptor)
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+            >::new())
+            .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledError,
+            >::new());
+
+        ::std::borrow::Cow::Owned(rcb)
     }
 }
 

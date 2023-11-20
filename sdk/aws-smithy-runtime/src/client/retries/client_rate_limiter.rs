@@ -9,12 +9,11 @@
 #![allow(dead_code)]
 
 use crate::client::retries::RetryPartition;
-use aws_smithy_runtime_api::{builder, builder_methods, builder_struct};
 use std::sync::{Arc, Mutex};
 use std::time::Duration;
 use tracing::debug;
 
-#[doc(hidden)]
+/// Represents a partition for the rate limiter, e.g. an endpoint, a region
 #[non_exhaustive]
 #[derive(Clone, Debug, Hash, PartialEq, Eq)]
 pub struct ClientRateLimiterPartition {
@@ -22,6 +21,7 @@ pub struct ClientRateLimiterPartition {
 }
 
 impl ClientRateLimiterPartition {
+    /// Creates a `ClientRateLimiterPartition` from the given [`RetryPartition`]
     pub fn new(retry_partition: RetryPartition) -> Self {
         Self { retry_partition }
     }
@@ -78,7 +78,7 @@ pub(crate) enum RequestReason {
 }
 
 impl ClientRateLimiter {
-    /// Creates a new [`ClientRateLimiter`].
+    /// Creates a new `ClientRateLimiter`
     pub fn new(seconds_since_unix_epoch: f64) -> Self {
         Self::builder()
             .tokens_retrieved_per_second(MIN_FILL_RATE)
@@ -231,20 +231,146 @@ fn cubic_throttle(rate_to_use: f64) -> f64 {
     rate_to_use * BETA
 }
 
-builder!(
-    set_token_refill_rate, token_refill_rate, f64, "The rate at which token are replenished.",
-    set_maximum_bucket_capacity, maximum_bucket_capacity, f64, "The maximum capacity allowed in the token bucket.",
-    set_current_bucket_capacity, current_bucket_capacity, f64, "The current capacity of the token bucket. The minimum this can be is 1.0",
-    set_time_of_last_refill, time_of_last_refill, f64, "The last time the token bucket was refilled.",
-    set_tokens_retrieved_per_second, tokens_retrieved_per_second, f64, "The smoothed rate which tokens are being retrieved.",
-    set_previous_time_bucket, previous_time_bucket, f64, "The last half second time bucket used.",
-    set_request_count, request_count, u64, "The number of requests seen within the current time bucket.",
-    set_enable_throttling, enable_throttling, bool, "Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.",
-    set_tokens_retrieved_per_second_at_time_of_last_throttle, tokens_retrieved_per_second_at_time_of_last_throttle, f64, "The maximum rate when the client was last throttled.",
-    set_time_of_last_throttle, time_of_last_throttle, f64, "The last time when the client was throttled."
-);
+#[derive(Clone, Debug, Default)]
+struct Builder {
+    ///The rate at which token are replenished.
+    token_refill_rate: Option<f64>,
+    ///The maximum capacity allowed in the token bucket.
+    maximum_bucket_capacity: Option<f64>,
+    ///The current capacity of the token bucket. The minimum this can be is 1.0
+    current_bucket_capacity: Option<f64>,
+    ///The last time the token bucket was refilled.
+    time_of_last_refill: Option<f64>,
+    ///The smoothed rate which tokens are being retrieved.
+    tokens_retrieved_per_second: Option<f64>,
+    ///The last half second time bucket used.
+    previous_time_bucket: Option<f64>,
+    ///The number of requests seen within the current time bucket.
+    request_count: Option<u64>,
+    ///Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
+    enable_throttling: Option<bool>,
+    ///The maximum rate when the client was last throttled.
+    tokens_retrieved_per_second_at_time_of_last_throttle: Option<f64>,
+    ///The last time when the client was throttled.
+    time_of_last_throttle: Option<f64>,
+}
 
 impl Builder {
+    fn new() -> Self {
+        Builder::default()
+    }
+    ///The rate at which token are replenished.
+    fn set_token_refill_rate(&mut self, token_refill_rate: Option<f64>) -> &mut Self {
+        self.token_refill_rate = token_refill_rate;
+        self
+    }
+    ///The rate at which token are replenished.
+    fn token_refill_rate(mut self, token_refill_rate: f64) -> Self {
+        self.token_refill_rate = Some(token_refill_rate);
+        self
+    }
+    ///The maximum capacity allowed in the token bucket.
+    fn set_maximum_bucket_capacity(&mut self, maximum_bucket_capacity: Option<f64>) -> &mut Self {
+        self.maximum_bucket_capacity = maximum_bucket_capacity;
+        self
+    }
+    ///The maximum capacity allowed in the token bucket.
+    fn maximum_bucket_capacity(mut self, maximum_bucket_capacity: f64) -> Self {
+        self.maximum_bucket_capacity = Some(maximum_bucket_capacity);
+        self
+    }
+    ///The current capacity of the token bucket. The minimum this can be is 1.0
+    fn set_current_bucket_capacity(&mut self, current_bucket_capacity: Option<f64>) -> &mut Self {
+        self.current_bucket_capacity = current_bucket_capacity;
+        self
+    }
+    ///The current capacity of the token bucket. The minimum this can be is 1.0
+    fn current_bucket_capacity(mut self, current_bucket_capacity: f64) -> Self {
+        self.current_bucket_capacity = Some(current_bucket_capacity);
+        self
+    }
+    ///The last time the token bucket was refilled.
+    fn set_time_of_last_refill(&mut self, time_of_last_refill: Option<f64>) -> &mut Self {
+        self.time_of_last_refill = time_of_last_refill;
+        self
+    }
+    ///The last time the token bucket was refilled.
+    fn time_of_last_refill(mut self, time_of_last_refill: f64) -> Self {
+        self.time_of_last_refill = Some(time_of_last_refill);
+        self
+    }
+    ///The smoothed rate which tokens are being retrieved.
+    fn set_tokens_retrieved_per_second(
+        &mut self,
+        tokens_retrieved_per_second: Option<f64>,
+    ) -> &mut Self {
+        self.tokens_retrieved_per_second = tokens_retrieved_per_second;
+        self
+    }
+    ///The smoothed rate which tokens are being retrieved.
+    fn tokens_retrieved_per_second(mut self, tokens_retrieved_per_second: f64) -> Self {
+        self.tokens_retrieved_per_second = Some(tokens_retrieved_per_second);
+        self
+    }
+    ///The last half second time bucket used.
+    fn set_previous_time_bucket(&mut self, previous_time_bucket: Option<f64>) -> &mut Self {
+        self.previous_time_bucket = previous_time_bucket;
+        self
+    }
+    ///The last half second time bucket used.
+    fn previous_time_bucket(mut self, previous_time_bucket: f64) -> Self {
+        self.previous_time_bucket = Some(previous_time_bucket);
+        self
+    }
+    ///The number of requests seen within the current time bucket.
+    fn set_request_count(&mut self, request_count: Option<u64>) -> &mut Self {
+        self.request_count = request_count;
+        self
+    }
+    ///The number of requests seen within the current time bucket.
+    fn request_count(mut self, request_count: u64) -> Self {
+        self.request_count = Some(request_count);
+        self
+    }
+    ///Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
+    fn set_enable_throttling(&mut self, enable_throttling: Option<bool>) -> &mut Self {
+        self.enable_throttling = enable_throttling;
+        self
+    }
+    ///Boolean indicating if the token bucket is enabled. The token bucket is initially disabled. When a throttling error is encountered it is enabled.
+    fn enable_throttling(mut self, enable_throttling: bool) -> Self {
+        self.enable_throttling = Some(enable_throttling);
+        self
+    }
+    ///The maximum rate when the client was last throttled.
+    fn set_tokens_retrieved_per_second_at_time_of_last_throttle(
+        &mut self,
+        tokens_retrieved_per_second_at_time_of_last_throttle: Option<f64>,
+    ) -> &mut Self {
+        self.tokens_retrieved_per_second_at_time_of_last_throttle =
+            tokens_retrieved_per_second_at_time_of_last_throttle;
+        self
+    }
+    ///The maximum rate when the client was last throttled.
+    fn tokens_retrieved_per_second_at_time_of_last_throttle(
+        mut self,
+        tokens_retrieved_per_second_at_time_of_last_throttle: f64,
+    ) -> Self {
+        self.tokens_retrieved_per_second_at_time_of_last_throttle =
+            Some(tokens_retrieved_per_second_at_time_of_last_throttle);
+        self
+    }
+    ///The last time when the client was throttled.
+    fn set_time_of_last_throttle(&mut self, time_of_last_throttle: Option<f64>) -> &mut Self {
+        self.time_of_last_throttle = time_of_last_throttle;
+        self
+    }
+    ///The last time when the client was throttled.
+    fn time_of_last_throttle(mut self, time_of_last_throttle: f64) -> Self {
+        self.time_of_last_throttle = Some(time_of_last_throttle);
+        self
+    }
+
     fn build(self) -> ClientRateLimiter {
         ClientRateLimiter {
             inner: Arc::new(Mutex::new(Inner {
