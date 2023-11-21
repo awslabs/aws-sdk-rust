@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSummary {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -23,9 +23,11 @@ pub struct AssetSummary {
     pub hierarchies: ::std::vec::Vec<crate::types::AssetHierarchy>,
     /// <p>A description for the asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetSummary {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -67,6 +69,10 @@ impl AssetSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl AssetSummary {
     /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::types::AssetSummary).
@@ -88,20 +94,21 @@ pub struct AssetSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AssetStatus>,
     pub(crate) hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetHierarchy>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetSummaryBuilder {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -232,6 +239,20 @@ impl AssetSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AssetSummaryBuilder::id)
@@ -287,6 +308,7 @@ impl AssetSummaryBuilder {
                 )
             })?,
             description: self.description,
+            external_id: self.external_id,
         })
     }
 }

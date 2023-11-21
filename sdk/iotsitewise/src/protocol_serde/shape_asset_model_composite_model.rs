@@ -27,6 +27,9 @@ pub fn ser_asset_model_composite_model(
     if let Some(var_6) = &input.id {
         object.key("id").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.external_id {
+        object.key("externalId").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -71,6 +74,13 @@ where
                         }
                         "id" => {
                             builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "externalId" => {
+                            builder = builder.set_external_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

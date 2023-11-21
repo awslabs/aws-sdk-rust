@@ -129,6 +129,20 @@ impl GetPropertyValueFluentBuilder {
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_name()
     }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.component_path(input.into());
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_component_path(input);
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_component_path()
+    }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_type_id(input.into());

@@ -111,17 +111,17 @@ impl UpdateAssetModelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the asset model to update.</p>
+    /// <p>The ID of the asset model to update. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
-    /// <p>The ID of the asset model to update.</p>
+    /// <p>The ID of the asset model to update. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
-    /// <p>The ID of the asset model to update.</p>
+    /// <p>The ID of the asset model to update. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_model_id()
     }
@@ -199,17 +199,26 @@ impl UpdateAssetModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModel) -> Self {
         self.inner = self.inner.asset_model_composite_models(input);
         self
     }
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn set_asset_model_composite_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>) -> Self {
         self.inner = self.inner.set_asset_model_composite_models(input);
         self
     }
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
         self.inner.get_asset_model_composite_models()
     }
@@ -226,5 +235,19 @@ impl UpdateAssetModelFluentBuilder {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>An external ID to assign to the asset model. The asset model must not already have an external ID. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_model_external_id(input.into());
+        self
+    }
+    /// <p>An external ID to assign to the asset model. The asset model must not already have an external ID. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_asset_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asset_model_external_id(input);
+        self
+    }
+    /// <p>An external ID to assign to the asset model. The asset model must not already have an external ID. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_model_external_id()
     }
 }

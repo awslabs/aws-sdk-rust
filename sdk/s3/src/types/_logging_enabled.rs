@@ -11,6 +11,8 @@ pub struct LoggingEnabled {
     pub target_grants: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     pub target_prefix: ::std::string::String,
+    /// <p>Amazon S3 key format for log objects.</p>
+    pub target_object_key_format: ::std::option::Option<crate::types::TargetObjectKeyFormat>,
 }
 impl LoggingEnabled {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
@@ -30,6 +32,10 @@ impl LoggingEnabled {
         use std::ops::Deref;
         self.target_prefix.deref()
     }
+    /// <p>Amazon S3 key format for log objects.</p>
+    pub fn target_object_key_format(&self) -> ::std::option::Option<&crate::types::TargetObjectKeyFormat> {
+        self.target_object_key_format.as_ref()
+    }
 }
 impl LoggingEnabled {
     /// Creates a new builder-style object to manufacture [`LoggingEnabled`](crate::types::LoggingEnabled).
@@ -45,6 +51,7 @@ pub struct LoggingEnabledBuilder {
     pub(crate) target_bucket: ::std::option::Option<::std::string::String>,
     pub(crate) target_grants: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,
     pub(crate) target_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) target_object_key_format: ::std::option::Option<crate::types::TargetObjectKeyFormat>,
 }
 impl LoggingEnabledBuilder {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
@@ -100,6 +107,20 @@ impl LoggingEnabledBuilder {
     pub fn get_target_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_prefix
     }
+    /// <p>Amazon S3 key format for log objects.</p>
+    pub fn target_object_key_format(mut self, input: crate::types::TargetObjectKeyFormat) -> Self {
+        self.target_object_key_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Amazon S3 key format for log objects.</p>
+    pub fn set_target_object_key_format(mut self, input: ::std::option::Option<crate::types::TargetObjectKeyFormat>) -> Self {
+        self.target_object_key_format = input;
+        self
+    }
+    /// <p>Amazon S3 key format for log objects.</p>
+    pub fn get_target_object_key_format(&self) -> &::std::option::Option<crate::types::TargetObjectKeyFormat> {
+        &self.target_object_key_format
+    }
     /// Consumes the builder and constructs a [`LoggingEnabled`](crate::types::LoggingEnabled).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_bucket`](crate::types::builders::LoggingEnabledBuilder::target_bucket)
@@ -119,6 +140,7 @@ impl LoggingEnabledBuilder {
                     "target_prefix was not specified but it is required when building LoggingEnabled",
                 )
             })?,
+            target_object_key_format: self.target_object_key_format,
         })
     }
 }

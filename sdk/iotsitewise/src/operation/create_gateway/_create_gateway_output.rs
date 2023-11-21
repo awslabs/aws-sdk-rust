@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayOutput {
-    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub gateway_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the gateway, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:gateway/${GatewayId}</code> </p>
@@ -11,7 +11,7 @@ pub struct CreateGatewayOutput {
     _request_id: Option<String>,
 }
 impl CreateGatewayOutput {
-    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn gateway_id(&self) -> &str {
         use std::ops::Deref;
         self.gateway_id.deref()
@@ -44,18 +44,18 @@ pub struct CreateGatewayOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateGatewayOutputBuilder {
-    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise API operations.</p>
     /// This field is required.
     pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
-    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the gateway device. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn get_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_id
     }

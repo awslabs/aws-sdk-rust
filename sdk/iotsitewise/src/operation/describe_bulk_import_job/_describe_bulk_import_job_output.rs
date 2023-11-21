@@ -7,7 +7,7 @@ pub struct DescribeBulkImportJobOutput {
     pub job_id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
     pub job_name: ::std::string::String,
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -29,6 +29,10 @@ pub struct DescribeBulkImportJobOutput {
     pub job_creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the job was last updated, in Unix epoch time.</p>
     pub job_last_update_date: ::aws_smithy_types::DateTime,
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub adaptive_ingestion: ::std::option::Option<bool>,
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub delete_files_after_import: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeBulkImportJobOutput {
@@ -42,7 +46,7 @@ impl DescribeBulkImportJobOutput {
         use std::ops::Deref;
         self.job_name.deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -80,6 +84,14 @@ impl DescribeBulkImportJobOutput {
     pub fn job_last_update_date(&self) -> &::aws_smithy_types::DateTime {
         &self.job_last_update_date
     }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn adaptive_ingestion(&self) -> ::std::option::Option<bool> {
+        self.adaptive_ingestion
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn delete_files_after_import(&self) -> ::std::option::Option<bool> {
+        self.delete_files_after_import
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeBulkImportJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -106,6 +118,8 @@ pub struct DescribeBulkImportJobOutputBuilder {
     pub(crate) job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
     pub(crate) job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) job_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) adaptive_ingestion: ::std::option::Option<bool>,
+    pub(crate) delete_files_after_import: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeBulkImportJobOutputBuilder {
@@ -139,7 +153,7 @@ impl DescribeBulkImportJobOutputBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -153,7 +167,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -166,7 +180,7 @@ impl DescribeBulkImportJobOutputBuilder {
         self.job_status = input;
         self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -273,6 +287,34 @@ impl DescribeBulkImportJobOutputBuilder {
     pub fn get_job_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.job_last_update_date
     }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn adaptive_ingestion(mut self, input: bool) -> Self {
+        self.adaptive_ingestion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn set_adaptive_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.adaptive_ingestion = input;
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn get_adaptive_ingestion(&self) -> &::std::option::Option<bool> {
+        &self.adaptive_ingestion
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn delete_files_after_import(mut self, input: bool) -> Self {
+        self.delete_files_after_import = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn set_delete_files_after_import(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_files_after_import = input;
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
+        &self.delete_files_after_import
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -342,6 +384,8 @@ impl DescribeBulkImportJobOutputBuilder {
                     "job_last_update_date was not specified but it is required when building DescribeBulkImportJobOutput",
                 )
             })?,
+            adaptive_ingestion: self.adaptive_ingestion,
+            delete_files_after_import: self.delete_files_after_import,
             _request_id: self._request_id,
         })
     }

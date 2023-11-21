@@ -6,38 +6,41 @@ pub fn ser_get_property_value_input_input(
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.component_type_id {
-        object.key("componentTypeId").string(var_2.as_str());
+    if let Some(var_2) = &input.component_path {
+        object.key("componentPath").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.entity_id {
-        object.key("entityId").string(var_3.as_str());
+    if let Some(var_3) = &input.component_type_id {
+        object.key("componentTypeId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_4) = &input.entity_id {
+        object.key("entityId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("nextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.property_group_name {
-        object.key("propertyGroupName").string(var_6.as_str());
+    if let Some(var_7) = &input.property_group_name {
+        object.key("propertyGroupName").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.selected_properties {
-        let mut array_8 = object.key("selectedProperties").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.selected_properties {
+        let mut array_9 = object.key("selectedProperties").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.tabular_conditions {
+    if let Some(var_11) = &input.tabular_conditions {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tabularConditions").start_object();
-        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("tabularConditions").start_object();
+        crate::protocol_serde::shape_tabular_conditions::ser_tabular_conditions(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

@@ -13,6 +13,10 @@ pub fn ser_function_config(
         let mut inner_writer = scope.start_el("Runtime").finish();
         inner_writer.data(input.runtime.as_str());
     }
+    if let Some(var_1) = &input.key_value_store_associations {
+        let inner_writer = scope.start_el("KeyValueStoreAssociations");
+        crate::protocol_serde::shape_key_value_store_associations::ser_key_value_store_associations(var_1, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -26,7 +30,7 @@ pub fn de_function_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.cloudfront#FunctionConfig$Comment */ =>  {
-                let var_1 =
+                let var_2 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -35,11 +39,11 @@ pub fn de_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_1);
+                builder = builder.set_comment(var_2);
             }
             ,
             s if s.matches("Runtime") /* Runtime com.amazonaws.cloudfront#FunctionConfig$Runtime */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         Result::<crate::types::FunctionRuntime, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FunctionRuntime::from(
@@ -49,7 +53,17 @@ pub fn de_function_config(
                         ?
                     )
                 ;
-                builder = builder.set_runtime(var_2);
+                builder = builder.set_runtime(var_3);
+            }
+            ,
+            s if s.matches("KeyValueStoreAssociations") /* KeyValueStoreAssociations com.amazonaws.cloudfront#FunctionConfig$KeyValueStoreAssociations */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_key_value_store_associations::de_key_value_store_associations(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_key_value_store_associations(var_4);
             }
             ,
             _ => {}

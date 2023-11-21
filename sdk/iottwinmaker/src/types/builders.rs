@@ -5,7 +5,7 @@ pub use crate::types::_bundle_information::BundleInformationBuilder;
 
 pub use crate::types::_parent_entity_update_request::ParentEntityUpdateRequestBuilder;
 
-pub use crate::types::_component_update_request::ComponentUpdateRequestBuilder;
+pub use crate::types::_composite_component_update_request::CompositeComponentUpdateRequestBuilder;
 
 pub use crate::types::_component_property_group_request::ComponentPropertyGroupRequestBuilder;
 
@@ -20,6 +20,10 @@ pub use crate::types::_property_definition_request::PropertyDefinitionRequestBui
 pub use crate::types::_data_type::DataTypeBuilder;
 
 pub use crate::types::_relationship::RelationshipBuilder;
+
+pub use crate::types::_component_update_request::ComponentUpdateRequestBuilder;
+
+pub use crate::types::_composite_component_type_request::CompositeComponentTypeRequestBuilder;
 
 pub use crate::types::_property_group_request::PropertyGroupRequestBuilder;
 
@@ -43,11 +47,25 @@ pub use crate::types::_sync_job_status::SyncJobStatusBuilder;
 
 pub use crate::types::_scene_summary::SceneSummaryBuilder;
 
+pub use crate::types::_property_summary::PropertySummaryBuilder;
+
+pub use crate::types::_property_definition_response::PropertyDefinitionResponseBuilder;
+
+pub use crate::types::_metadata_transfer_job_summary::MetadataTransferJobSummaryBuilder;
+
+pub use crate::types::_metadata_transfer_job_progress::MetadataTransferJobProgressBuilder;
+
+pub use crate::types::_metadata_transfer_job_status::MetadataTransferJobStatusBuilder;
+
 pub use crate::types::_entity_summary::EntitySummaryBuilder;
 
 pub use crate::types::_status::StatusBuilder;
 
 pub use crate::types::_component_type_summary::ComponentTypeSummaryBuilder;
+
+pub use crate::types::_component_summary::ComponentSummaryBuilder;
+
+pub use crate::types::_component_property_group_response::ComponentPropertyGroupResponseBuilder;
 
 pub use crate::types::_scene_error::SceneErrorBuilder;
 
@@ -67,13 +85,33 @@ pub use crate::types::_tabular_conditions::TabularConditionsBuilder;
 
 pub use crate::types::_order_by::OrderByBuilder;
 
-pub use crate::types::_component_response::ComponentResponseBuilder;
+pub use crate::types::_destination_configuration::DestinationConfigurationBuilder;
 
-pub use crate::types::_component_property_group_response::ComponentPropertyGroupResponseBuilder;
+pub use crate::types::_iot_twin_maker_destination_configuration::IotTwinMakerDestinationConfigurationBuilder;
+
+pub use crate::types::_s3_destination_configuration::S3DestinationConfigurationBuilder;
+
+pub use crate::types::_source_configuration::SourceConfigurationBuilder;
+
+pub use crate::types::_iot_twin_maker_source_configuration::IotTwinMakerSourceConfigurationBuilder;
+
+pub use crate::types::_filter_by_entity::FilterByEntityBuilder;
+
+pub use crate::types::_filter_by_component_type::FilterByComponentTypeBuilder;
+
+pub use crate::types::_iot_site_wise_source_configuration::IotSiteWiseSourceConfigurationBuilder;
+
+pub use crate::types::_filter_by_asset::FilterByAssetBuilder;
+
+pub use crate::types::_filter_by_asset_model::FilterByAssetModelBuilder;
+
+pub use crate::types::_s3_source_configuration::S3SourceConfigurationBuilder;
+
+pub use crate::types::_component_response::ComponentResponseBuilder;
 
 pub use crate::types::_property_response::PropertyResponseBuilder;
 
-pub use crate::types::_property_definition_response::PropertyDefinitionResponseBuilder;
+pub use crate::types::_composite_component_type_response::CompositeComponentTypeResponseBuilder;
 
 pub use crate::types::_property_group_response::PropertyGroupResponseBuilder;
 
@@ -82,6 +120,8 @@ pub use crate::types::_function_response::FunctionResponseBuilder;
 pub use crate::types::_row::RowBuilder;
 
 pub use crate::types::_column_description::ColumnDescriptionBuilder;
+
+pub use crate::types::_composite_component_request::CompositeComponentRequestBuilder;
 
 pub use crate::types::_component_request::ComponentRequestBuilder;
 

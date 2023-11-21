@@ -192,6 +192,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetMod
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.asset_model_types {
+                    {
+                        for inner_4 in inner_3 {
+                            query.push_kv("assetModelTypes", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        }
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

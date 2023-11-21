@@ -43,6 +43,16 @@ pub fn de_logging_enabled(
                 builder = builder.set_target_prefix(var_3);
             }
             ,
+            s if s.matches("TargetObjectKeyFormat") /* TargetObjectKeyFormat com.amazonaws.s3#LoggingEnabled$TargetObjectKeyFormat */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_target_object_key_format::de_target_object_key_format(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_target_object_key_format(var_4);
+            }
+            ,
             _ => {}
         }
     }
@@ -61,18 +71,22 @@ pub fn ser_logging_enabled(
         let mut inner_writer = scope.start_el("TargetBucket").finish();
         inner_writer.data(input.target_bucket.as_str());
     }
-    if let Some(var_4) = &input.target_grants {
+    if let Some(var_5) = &input.target_grants {
         let mut inner_writer = scope.start_el("TargetGrants").finish();
-        for list_item_5 in var_4 {
+        for list_item_6 in var_5 {
             {
                 let inner_writer = inner_writer.start_el("Grant");
-                crate::protocol_serde::shape_target_grant::ser_target_grant(list_item_5, inner_writer)?
+                crate::protocol_serde::shape_target_grant::ser_target_grant(list_item_6, inner_writer)?
             }
         }
     }
     {
         let mut inner_writer = scope.start_el("TargetPrefix").finish();
         inner_writer.data(input.target_prefix.as_str());
+    }
+    if let Some(var_7) = &input.target_object_key_format {
+        let inner_writer = scope.start_el("TargetObjectKeyFormat");
+        crate::protocol_serde::shape_target_object_key_format::ser_target_object_key_format(var_7, inner_writer)?
     }
     scope.finish();
     Ok(())

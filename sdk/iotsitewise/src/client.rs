@@ -158,6 +158,8 @@ mod create_asset;
 
 mod create_asset_model;
 
+mod create_asset_model_composite_model;
+
 mod create_bulk_import_job;
 
 mod create_dashboard;
@@ -201,6 +203,8 @@ mod delete_asset;
 
 mod delete_asset_model;
 
+mod delete_asset_model_composite_model;
+
 mod delete_dashboard;
 
 mod delete_gateway;
@@ -213,9 +217,15 @@ mod delete_time_series;
 
 mod describe_access_policy;
 
+mod describe_action;
+
 mod describe_asset;
 
+mod describe_asset_composite_model;
+
 mod describe_asset_model;
+
+mod describe_asset_model_composite_model;
 
 mod describe_asset_property;
 
@@ -243,6 +253,10 @@ mod disassociate_assets;
 
 mod disassociate_time_series_from_asset_property;
 
+mod execute_action;
+
+mod execute_query;
+
 mod get_asset_property_aggregates;
 
 mod get_asset_property_value;
@@ -252,6 +266,10 @@ mod get_asset_property_value_history;
 mod get_interpolated_asset_property_values;
 
 mod list_access_policies;
+
+mod list_actions;
+
+mod list_asset_model_composite_models;
 
 mod list_asset_model_properties;
 
@@ -266,6 +284,8 @@ mod list_assets;
 mod list_associated_assets;
 
 mod list_bulk_import_jobs;
+
+mod list_composition_relationships;
 
 mod list_dashboards;
 
@@ -296,6 +316,8 @@ mod update_access_policy;
 mod update_asset;
 
 mod update_asset_model;
+
+mod update_asset_model_composite_model;
 
 mod update_asset_property;
 

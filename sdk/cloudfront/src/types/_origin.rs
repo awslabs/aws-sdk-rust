@@ -8,8 +8,8 @@
 /// <ul>
 /// <li> <p>An Amazon S3 bucket that is configured with static website hosting</p> </li>
 /// <li> <p>An Elastic Load Balancing load balancer</p> </li>
-/// <li> <p>An AWS Elemental MediaPackage endpoint</p> </li>
-/// <li> <p>An AWS Elemental MediaStore container</p> </li>
+/// <li> <p>An Elemental MediaPackage endpoint</p> </li>
+/// <li> <p>An Elemental MediaStore container</p> </li>
 /// <li> <p>Any other HTTP server, running on an Amazon EC2 instance or any other kind of host</p> </li>
 /// </ul> </li>
 /// </ul>

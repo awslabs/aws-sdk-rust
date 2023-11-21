@@ -9,6 +9,8 @@ pub struct UpdateWorkspaceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub role: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub s3_location: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
@@ -22,6 +24,10 @@ impl UpdateWorkspaceInput {
     /// <p>The ARN of the execution role associated with the workspace.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
+    }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn s3_location(&self) -> ::std::option::Option<&str> {
+        self.s3_location.as_deref()
     }
 }
 impl UpdateWorkspaceInput {
@@ -38,6 +44,7 @@ pub struct UpdateWorkspaceInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_location: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceInputBuilder {
     /// <p>The ID of the workspace.</p>
@@ -83,6 +90,20 @@ impl UpdateWorkspaceInputBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_location = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn set_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_location = input;
+        self
+    }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_location
+    }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl UpdateWorkspaceInputBuilder {
             workspace_id: self.workspace_id,
             description: self.description,
             role: self.role,
+            s3_location: self.s3_location,
         })
     }
 }

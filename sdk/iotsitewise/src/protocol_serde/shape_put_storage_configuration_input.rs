@@ -21,5 +21,14 @@ pub fn ser_put_storage_configuration_input_input(
     if let Some(var_6) = &input.storage_type {
         object.key("storageType").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.warm_tier {
+        object.key("warmTier").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.warm_tier_retention_period {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("warmTierRetentionPeriod").start_object();
+        crate::protocol_serde::shape_warm_tier_retention_period::ser_warm_tier_retention_period(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

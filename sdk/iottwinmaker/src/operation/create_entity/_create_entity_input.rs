@@ -13,6 +13,8 @@ pub struct CreateEntityInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
     /// <p>The ID of the entity's parent entity.</p>
     pub parent_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that you can use to manage the entity.</p>
@@ -39,6 +41,12 @@ impl CreateEntityInput {
     pub fn components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
         self.components.as_ref()
     }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_components(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>> {
+        self.composite_components.as_ref()
+    }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(&self) -> ::std::option::Option<&str> {
         self.parent_entity_id.as_deref()
@@ -64,6 +72,8 @@ pub struct CreateEntityInputBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>>,
+    pub(crate) composite_components:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
     pub(crate) parent_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -149,6 +159,31 @@ impl CreateEntityInputBuilder {
     pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
         &self.components
     }
+    /// Adds a key-value pair to `composite_components`.
+    ///
+    /// To override the contents of this collection use [`set_composite_components`](Self::set_composite_components).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CompositeComponentRequest) -> Self {
+        let mut hash_map = self.composite_components.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.composite_components = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn set_composite_components(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
+    ) -> Self {
+        self.composite_components = input;
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn get_composite_components(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>> {
+        &self.composite_components
+    }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_entity_id = ::std::option::Option::Some(input.into());
@@ -193,6 +228,7 @@ impl CreateEntityInputBuilder {
             entity_name: self.entity_name,
             description: self.description,
             components: self.components,
+            composite_components: self.composite_components,
             parent_entity_id: self.parent_entity_id,
             tags: self.tags,
         })

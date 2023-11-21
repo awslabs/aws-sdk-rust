@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetOutput {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
@@ -27,10 +27,14 @@ pub struct DescribeAssetOutput {
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     /// <p>A description for the asset.</p>
     pub asset_description: ::std::option::Option<::std::string::String>,
+    /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
+    pub asset_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>>,
+    /// <p>The external ID of the asset, if any.</p>
+    pub asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetOutput {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn asset_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_id.deref()
@@ -84,6 +88,16 @@ impl DescribeAssetOutput {
     pub fn asset_description(&self) -> ::std::option::Option<&str> {
         self.asset_description.as_deref()
     }
+    /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_composite_model_summaries.is_none()`.
+    pub fn asset_composite_model_summaries(&self) -> &[crate::types::AssetCompositeModelSummary] {
+        self.asset_composite_model_summaries.as_deref().unwrap_or_default()
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn asset_external_id(&self) -> ::std::option::Option<&str> {
+        self.asset_external_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -112,21 +126,23 @@ pub struct DescribeAssetOutputBuilder {
     pub(crate) asset_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
     pub(crate) asset_description: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>>,
+    pub(crate) asset_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetOutputBuilder {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
@@ -300,6 +316,43 @@ impl DescribeAssetOutputBuilder {
     pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_description
     }
+    /// Appends an item to `asset_composite_model_summaries`.
+    ///
+    /// To override the contents of this collection use [`set_asset_composite_model_summaries`](Self::set_asset_composite_model_summaries).
+    ///
+    /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
+    pub fn asset_composite_model_summaries(mut self, input: crate::types::AssetCompositeModelSummary) -> Self {
+        let mut v = self.asset_composite_model_summaries.unwrap_or_default();
+        v.push(input);
+        self.asset_composite_model_summaries = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
+    pub fn set_asset_composite_model_summaries(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>>,
+    ) -> Self {
+        self.asset_composite_model_summaries = input;
+        self
+    }
+    /// <p>The list of the immediate child custom composite model summaries for the asset.</p>
+    pub fn get_asset_composite_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetCompositeModelSummary>> {
+        &self.asset_composite_model_summaries
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn asset_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn set_asset_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset, if any.</p>
+    pub fn get_asset_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_external_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -374,6 +427,8 @@ impl DescribeAssetOutputBuilder {
             })?,
             asset_status: self.asset_status,
             asset_description: self.asset_description,
+            asset_composite_model_summaries: self.asset_composite_model_summaries,
+            asset_external_id: self.asset_external_id,
             _request_id: self._request_id,
         })
     }

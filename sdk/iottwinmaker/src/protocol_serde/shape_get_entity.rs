@@ -128,6 +128,9 @@ pub(crate) fn de_get_entity(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "areAllComponentsReturned" => {
+                    builder = builder.set_are_all_components_returned(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -6,18 +6,21 @@ pub fn ser_entity_property_reference(
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.external_id_property {
+    if let Some(var_2) = &input.component_path {
+        object.key("componentPath").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.external_id_property {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("externalIdProperty").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("externalIdProperty").start_object();
+        for (key_5, value_6) in var_3 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_4.key(key_5.as_str()).string(value_6.as_str());
             }
         }
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_6) = &input.entity_id {
-        object.key("entityId").string(var_6.as_str());
+    if let Some(var_7) = &input.entity_id {
+        object.key("entityId").string(var_7.as_str());
     }
     {
         object.key("propertyName").string(input.property_name.as_str());
@@ -42,6 +45,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "componentName" => {
                             builder = builder.set_component_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "componentPath" => {
+                            builder = builder.set_component_path(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

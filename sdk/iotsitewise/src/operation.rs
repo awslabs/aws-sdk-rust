@@ -34,6 +34,9 @@ pub mod create_asset;
 /// Types for the `CreateAssetModel` operation.
 pub mod create_asset_model;
 
+/// Types for the `CreateAssetModelCompositeModel` operation.
+pub mod create_asset_model_composite_model;
+
 /// Types for the `CreateBulkImportJob` operation.
 pub mod create_bulk_import_job;
 
@@ -58,6 +61,9 @@ pub mod delete_asset;
 /// Types for the `DeleteAssetModel` operation.
 pub mod delete_asset_model;
 
+/// Types for the `DeleteAssetModelCompositeModel` operation.
+pub mod delete_asset_model_composite_model;
+
 /// Types for the `DeleteDashboard` operation.
 pub mod delete_dashboard;
 
@@ -76,11 +82,20 @@ pub mod delete_time_series;
 /// Types for the `DescribeAccessPolicy` operation.
 pub mod describe_access_policy;
 
+/// Types for the `DescribeAction` operation.
+pub mod describe_action;
+
 /// Types for the `DescribeAsset` operation.
 pub mod describe_asset;
 
+/// Types for the `DescribeAssetCompositeModel` operation.
+pub mod describe_asset_composite_model;
+
 /// Types for the `DescribeAssetModel` operation.
 pub mod describe_asset_model;
+
+/// Types for the `DescribeAssetModelCompositeModel` operation.
+pub mod describe_asset_model_composite_model;
 
 /// Types for the `DescribeAssetProperty` operation.
 pub mod describe_asset_property;
@@ -121,6 +136,12 @@ pub mod disassociate_assets;
 /// Types for the `DisassociateTimeSeriesFromAssetProperty` operation.
 pub mod disassociate_time_series_from_asset_property;
 
+/// Types for the `ExecuteAction` operation.
+pub mod execute_action;
+
+/// Types for the `ExecuteQuery` operation.
+pub mod execute_query;
+
 /// Types for the `GetAssetPropertyAggregates` operation.
 pub mod get_asset_property_aggregates;
 
@@ -135,6 +156,12 @@ pub mod get_interpolated_asset_property_values;
 
 /// Types for the `ListAccessPolicies` operation.
 pub mod list_access_policies;
+
+/// Types for the `ListActions` operation.
+pub mod list_actions;
+
+/// Types for the `ListAssetModelCompositeModels` operation.
+pub mod list_asset_model_composite_models;
 
 /// Types for the `ListAssetModelProperties` operation.
 pub mod list_asset_model_properties;
@@ -156,6 +183,9 @@ pub mod list_associated_assets;
 
 /// Types for the `ListBulkImportJobs` operation.
 pub mod list_bulk_import_jobs;
+
+/// Types for the `ListCompositionRelationships` operation.
+pub mod list_composition_relationships;
 
 /// Types for the `ListDashboards` operation.
 pub mod list_dashboards;
@@ -201,6 +231,9 @@ pub mod update_asset;
 
 /// Types for the `UpdateAssetModel` operation.
 pub mod update_asset_model;
+
+/// Types for the `UpdateAssetModelCompositeModel` operation.
+pub mod update_asset_model_composite_model;
 
 /// Types for the `UpdateAssetProperty` operation.
 pub mod update_asset_property;

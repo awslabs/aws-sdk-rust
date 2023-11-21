@@ -105,6 +105,8 @@ pub use crate::types::_origin_access_control_signing_behaviors::OriginAccessCont
 
 pub use crate::types::_origin_access_control_signing_protocols::OriginAccessControlSigningProtocols;
 
+pub use crate::types::_key_value_store::KeyValueStore;
+
 pub use crate::types::_key_group::KeyGroup;
 
 pub use crate::types::_key_group_config::KeyGroupConfig;
@@ -116,6 +118,10 @@ pub use crate::types::_function_metadata::FunctionMetadata;
 pub use crate::types::_function_stage::FunctionStage;
 
 pub use crate::types::_function_config::FunctionConfig;
+
+pub use crate::types::_key_value_store_associations::KeyValueStoreAssociations;
+
+pub use crate::types::_key_value_store_association::KeyValueStoreAssociation;
 
 pub use crate::types::_function_runtime::FunctionRuntime;
 
@@ -319,6 +325,8 @@ pub use crate::types::_origin_access_control_list::OriginAccessControlList;
 
 pub use crate::types::_origin_access_control_summary::OriginAccessControlSummary;
 
+pub use crate::types::_key_value_store_list::KeyValueStoreList;
+
 pub use crate::types::_key_group_list::KeyGroupList;
 
 pub use crate::types::_key_group_summary::KeyGroupSummary;
@@ -374,6 +382,10 @@ pub use crate::types::_invalidation_batch::InvalidationBatch;
 pub use crate::types::_paths::Paths;
 
 pub use crate::types::_streaming_distribution_config_with_tags::StreamingDistributionConfigWithTags;
+
+pub use crate::types::_import_source::ImportSource;
+
+pub use crate::types::_import_source_type::ImportSourceType;
 
 pub use crate::types::_distribution_config_with_tags::DistributionConfigWithTags;
 
@@ -533,6 +545,10 @@ mod _http_version;
 
 mod _icp_recordal_status;
 
+mod _import_source;
+
+mod _import_source_type;
+
 mod _invalidation;
 
 mod _invalidation_batch;
@@ -552,6 +568,14 @@ mod _key_group_list;
 mod _key_group_summary;
 
 mod _key_pair_ids;
+
+mod _key_value_store;
+
+mod _key_value_store_association;
+
+mod _key_value_store_associations;
+
+mod _key_value_store_list;
 
 mod _kg_key_pair_ids;
 

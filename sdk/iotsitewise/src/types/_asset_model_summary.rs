@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetModelSummary {
-    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -19,9 +19,17 @@ pub struct AssetModelSummary {
     pub last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The current status of the asset model.</p>
     pub status: ::std::option::Option<crate::types::AssetModelStatus>,
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelSummary {
-    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -54,6 +62,18 @@ impl AssetModelSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
         self.status.as_ref()
     }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
+        self.asset_model_type.as_ref()
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl AssetModelSummary {
     /// Creates a new builder-style object to manufacture [`AssetModelSummary`](crate::types::AssetModelSummary).
@@ -73,20 +93,22 @@ pub struct AssetModelSummaryBuilder {
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::AssetModelStatus>,
+    pub(crate) asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelSummaryBuilder {
-    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The ID of the asset model (used with IoT SiteWise APIs).</p>
+    /// <p>The ID of the asset model (used with IoT SiteWise API operations).</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -183,6 +205,46 @@ impl AssetModelSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.status
     }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
+        self.asset_model_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
+        self.asset_model_type = input;
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
+        &self.asset_model_type
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetModelSummary`](crate::types::AssetModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AssetModelSummaryBuilder::id)
@@ -230,6 +292,8 @@ impl AssetModelSummaryBuilder {
                 )
             })?,
             status: self.status,
+            asset_model_type: self.asset_model_type,
+            external_id: self.external_id,
         })
     }
 }

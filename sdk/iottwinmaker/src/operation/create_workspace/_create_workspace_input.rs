@@ -84,7 +84,6 @@ impl CreateWorkspaceInputBuilder {
         &self.description
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    /// This field is required.
     pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_location = ::std::option::Option::Some(input.into());
         self
@@ -99,7 +98,6 @@ impl CreateWorkspaceInputBuilder {
         &self.s3_location
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self

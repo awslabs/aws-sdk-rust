@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`creation_date_time(DateTime)`](crate::operation::get_entity::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
     ///   - [`update_date_time(DateTime)`](crate::operation::get_entity::GetEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
     ///   - [`sync_source(Option<String>)`](crate::operation::get_entity::GetEntityOutput::sync_source): <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+    ///   - [`are_all_components_returned(Option<bool>)`](crate::operation::get_entity::GetEntityOutput::are_all_components_returned): <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
     /// - On failure, responds with [`SdkError<GetEntityError>`](crate::operation::get_entity::GetEntityError)
     pub fn get_entity(&self) -> crate::operation::get_entity::builders::GetEntityFluentBuilder {
         crate::operation::get_entity::builders::GetEntityFluentBuilder::new(self.handle.clone())

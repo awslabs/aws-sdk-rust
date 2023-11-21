@@ -55,6 +55,16 @@ where
                         "type" => {
                             builder = builder.set_type(crate::protocol_serde::shape_property_type::de_property_type(tokens)?);
                         }
+                        "path" => {
+                            builder = builder.set_path(crate::protocol_serde::shape_asset_property_path::de_asset_property_path(tokens)?);
+                        }
+                        "externalId" => {
+                            builder = builder.set_external_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

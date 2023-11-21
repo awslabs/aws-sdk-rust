@@ -6,7 +6,7 @@
 pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
     pub id: ::std::string::String,
-    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub last_modified_time: ::aws_smithy_types::DateTime,
     /// <p>Name for the field-level encryption profile summary.</p>
     pub name: ::std::string::String,
@@ -21,7 +21,7 @@ impl FieldLevelEncryptionProfileSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub fn last_modified_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modified_time
     }
@@ -72,18 +72,18 @@ impl FieldLevelEncryptionProfileSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// <p>The time when the field-level encryption profile summary was last updated.</p>
     /// This field is required.
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// <p>The time when the the field-level encryption profile summary was last updated.</p>
+    /// <p>The time when the field-level encryption profile summary was last updated.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }

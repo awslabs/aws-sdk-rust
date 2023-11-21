@@ -145,4 +145,34 @@ impl ListAssetModelsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// Appends an item to `assetModelTypes`.
+    ///
+    /// To override the contents of this collection use [`set_asset_model_types`](Self::set_asset_model_types).
+    ///
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_types(mut self, input: crate::types::AssetModelType) -> Self {
+        self.inner = self.inner.asset_model_types(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn set_asset_model_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>) -> Self {
+        self.inner = self.inner.set_asset_model_types(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn get_asset_model_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>> {
+        self.inner.get_asset_model_types()
+    }
 }

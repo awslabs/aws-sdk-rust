@@ -115,6 +115,12 @@ pub(crate) fn de_describe_bulk_import_job(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "adaptiveIngestion" => {
+                    builder = builder.set_adaptive_ingestion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "deleteFilesAfterImport" => {
+                    builder = builder.set_delete_files_after_import(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "errorReportLocation" => {
                     builder =
                         builder.set_error_report_location(crate::protocol_serde::shape_error_report_location::de_error_report_location(tokens)?);

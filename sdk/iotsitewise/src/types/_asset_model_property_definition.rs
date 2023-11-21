@@ -16,6 +16,10 @@ pub struct AssetModelPropertyDefinition {
     pub unit: ::std::option::Option<::std::string::String>,
     /// <p>The property definition type (see <code>PropertyType</code>). You can only specify one type in a property definition.</p>
     pub r#type: ::std::option::Option<crate::types::PropertyType>,
+    /// <p>The ID to assign to the asset model property, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub id: ::std::option::Option<::std::string::String>,
+    /// <p>An external ID to assign to the property definition. The external ID must be unique among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelPropertyDefinition {
     /// <p>The name of the property definition.</p>
@@ -41,6 +45,14 @@ impl AssetModelPropertyDefinition {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::PropertyType> {
         self.r#type.as_ref()
     }
+    /// <p>The ID to assign to the asset model property, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An external ID to assign to the property definition. The external ID must be unique among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl AssetModelPropertyDefinition {
     /// Creates a new builder-style object to manufacture [`AssetModelPropertyDefinition`](crate::types::AssetModelPropertyDefinition).
@@ -58,6 +70,8 @@ pub struct AssetModelPropertyDefinitionBuilder {
     pub(crate) data_type_spec: ::std::option::Option<::std::string::String>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PropertyType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelPropertyDefinitionBuilder {
     /// <p>The name of the property definition.</p>
@@ -139,6 +153,34 @@ impl AssetModelPropertyDefinitionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
         &self.r#type
     }
+    /// <p>The ID to assign to the asset model property, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID to assign to the asset model property, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The ID to assign to the asset model property, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
+    /// <p>An external ID to assign to the property definition. The external ID must be unique among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An external ID to assign to the property definition. The external ID must be unique among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>An external ID to assign to the property definition. The external ID must be unique among property definitions within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetModelPropertyDefinition`](crate::types::AssetModelPropertyDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetModelPropertyDefinitionBuilder::name)
@@ -160,6 +202,8 @@ impl AssetModelPropertyDefinitionBuilder {
             data_type_spec: self.data_type_spec,
             unit: self.unit,
             r#type: self.r#type,
+            id: self.id,
+            external_id: self.external_id,
         })
     }
 }

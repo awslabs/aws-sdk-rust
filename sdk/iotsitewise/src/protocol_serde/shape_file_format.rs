@@ -9,6 +9,12 @@ pub fn ser_file_format(
         crate::protocol_serde::shape_csv::ser_csv(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.parquet {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("parquet").start_object();
+        crate::protocol_serde::shape_parquet::ser_parquet(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "csv" => {
                             builder = builder.set_csv(crate::protocol_serde::shape_csv::de_csv(tokens)?);
+                        }
+                        "parquet" => {
+                            builder = builder.set_parquet(crate::protocol_serde::shape_parquet::de_parquet(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -8,6 +8,8 @@ pub struct AssetHierarchy {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The hierarchy name provided in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub name: ::std::string::String,
+    /// <p>The external ID of the hierarchy, if it has one. When you update an asset hierarchy, you may assign an external ID if it doesn't already have one. You can't change the external ID of an asset hierarchy that already has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetHierarchy {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
@@ -18,6 +20,10 @@ impl AssetHierarchy {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>The external ID of the hierarchy, if it has one. When you update an asset hierarchy, you may assign an external ID if it doesn't already have one. You can't change the external ID of an asset hierarchy that already has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
     }
 }
 impl AssetHierarchy {
@@ -33,6 +39,7 @@ impl AssetHierarchy {
 pub struct AssetHierarchyBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetHierarchyBuilder {
     /// <p>The ID of the hierarchy. This ID is a <code>hierarchyId</code>.</p>
@@ -64,6 +71,20 @@ impl AssetHierarchyBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The external ID of the hierarchy, if it has one. When you update an asset hierarchy, you may assign an external ID if it doesn't already have one. You can't change the external ID of an asset hierarchy that already has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the hierarchy, if it has one. When you update an asset hierarchy, you may assign an external ID if it doesn't already have one. You can't change the external ID of an asset hierarchy that already has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the hierarchy, if it has one. When you update an asset hierarchy, you may assign an external ID if it doesn't already have one. You can't change the external ID of an asset hierarchy that already has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetHierarchy`](crate::types::AssetHierarchy).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetHierarchyBuilder::name)
@@ -76,6 +97,7 @@ impl AssetHierarchyBuilder {
                     "name was not specified but it is required when building AssetHierarchy",
                 )
             })?,
+            external_id: self.external_id,
         })
     }
 }

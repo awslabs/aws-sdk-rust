@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`property_groups(Option<HashMap::<String, PropertyGroupResponse>>)`](crate::operation::get_component_type::GetComponentTypeOutput::property_groups): <p>The maximum number of results to return at one time. The default is 25.</p>  <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     ///   - [`sync_source(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::sync_source): <p>The syncSource of the SyncJob, if this entity was created by a SyncJob.</p>
     ///   - [`component_type_name(Option<String>)`](crate::operation::get_component_type::GetComponentTypeOutput::component_type_name): <p>The component type name.</p>
+    ///   - [`composite_component_types(Option<HashMap::<String, CompositeComponentTypeResponse>>)`](crate::operation::get_component_type::GetComponentTypeOutput::composite_component_types): <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
     /// - On failure, responds with [`SdkError<GetComponentTypeError>`](crate::operation::get_component_type::GetComponentTypeError)
     pub fn get_component_type(&self) -> crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder {
         crate::operation::get_component_type::builders::GetComponentTypeFluentBuilder::new(self.handle.clone())

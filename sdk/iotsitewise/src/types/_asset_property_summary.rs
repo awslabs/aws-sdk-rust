@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetPropertySummary {
     /// <p>The ID of the property.</p>
-    pub id: ::std::option::Option<::std::string::String>,
+    pub id: ::std::string::String,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
     /// <p> The unit of measure (such as Newtons or RPM) of the asset property. </p>
@@ -14,11 +14,16 @@ pub struct AssetPropertySummary {
     pub notification: ::std::option::Option<crate::types::PropertyNotification>,
     /// <p> The ID of the composite model that contains the asset property. </p>
     pub asset_composite_model_id: ::std::option::Option<::std::string::String>,
+    /// <p>The structured path to the property from the root of the asset.</p>
+    pub path: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>,
+    /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertySummary {
     /// <p>The ID of the property.</p>
-    pub fn id(&self) -> ::std::option::Option<&str> {
-        self.id.as_deref()
+    pub fn id(&self) -> &str {
+        use std::ops::Deref;
+        self.id.deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn alias(&self) -> ::std::option::Option<&str> {
@@ -35,6 +40,16 @@ impl AssetPropertySummary {
     /// <p> The ID of the composite model that contains the asset property. </p>
     pub fn asset_composite_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_composite_model_id.as_deref()
+    }
+    /// <p>The structured path to the property from the root of the asset.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path.is_none()`.
+    pub fn path(&self) -> &[crate::types::AssetPropertyPathSegment] {
+        self.path.as_deref().unwrap_or_default()
+    }
+    /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
     }
 }
 impl AssetPropertySummary {
@@ -53,9 +68,12 @@ pub struct AssetPropertySummaryBuilder {
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) notification: ::std::option::Option<crate::types::PropertyNotification>,
     pub(crate) asset_composite_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetPropertySummaryBuilder {
     /// <p>The ID of the property.</p>
+    /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
@@ -125,14 +143,57 @@ impl AssetPropertySummaryBuilder {
     pub fn get_asset_composite_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_composite_model_id
     }
+    /// Appends an item to `path`.
+    ///
+    /// To override the contents of this collection use [`set_path`](Self::set_path).
+    ///
+    /// <p>The structured path to the property from the root of the asset.</p>
+    pub fn path(mut self, input: crate::types::AssetPropertyPathSegment) -> Self {
+        let mut v = self.path.unwrap_or_default();
+        v.push(input);
+        self.path = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The structured path to the property from the root of the asset.</p>
+    pub fn set_path(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>>) -> Self {
+        self.path = input;
+        self
+    }
+    /// <p>The structured path to the property from the root of the asset.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetPropertyPathSegment>> {
+        &self.path
+    }
+    /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetPropertySummary`](crate::types::AssetPropertySummary).
-    pub fn build(self) -> crate::types::AssetPropertySummary {
-        crate::types::AssetPropertySummary {
-            id: self.id,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`id`](crate::types::builders::AssetPropertySummaryBuilder::id)
+    pub fn build(self) -> ::std::result::Result<crate::types::AssetPropertySummary, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::AssetPropertySummary {
+            id: self.id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "id",
+                    "id was not specified but it is required when building AssetPropertySummary",
+                )
+            })?,
             alias: self.alias,
             unit: self.unit,
             notification: self.notification,
             asset_composite_model_id: self.asset_composite_model_id,
-        }
+            path: self.path,
+            external_id: self.external_id,
+        })
     }
 }

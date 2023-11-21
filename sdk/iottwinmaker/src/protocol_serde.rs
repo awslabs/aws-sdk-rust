@@ -25,9 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_put_property_values;
 
+pub(crate) mod shape_cancel_metadata_transfer_job;
+
 pub(crate) mod shape_create_component_type;
 
 pub(crate) mod shape_create_entity;
+
+pub(crate) mod shape_create_metadata_transfer_job;
 
 pub(crate) mod shape_create_scene;
 
@@ -51,6 +55,8 @@ pub(crate) mod shape_get_component_type;
 
 pub(crate) mod shape_get_entity;
 
+pub(crate) mod shape_get_metadata_transfer_job;
+
 pub(crate) mod shape_get_pricing_plan;
 
 pub(crate) mod shape_get_property_value;
@@ -65,7 +71,13 @@ pub(crate) mod shape_get_workspace;
 
 pub(crate) mod shape_list_component_types;
 
+pub(crate) mod shape_list_components;
+
 pub(crate) mod shape_list_entities;
+
+pub(crate) mod shape_list_metadata_transfer_jobs;
+
+pub(crate) mod shape_list_properties;
 
 pub(crate) mod shape_list_scenes;
 
@@ -113,6 +125,8 @@ pub(crate) mod shape_create_component_type_input;
 
 pub(crate) mod shape_create_entity_input;
 
+pub(crate) mod shape_create_metadata_transfer_job_input;
+
 pub(crate) mod shape_create_scene_input;
 
 pub(crate) mod shape_create_sync_job_input;
@@ -129,7 +143,13 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_component_types_input;
 
+pub(crate) mod shape_list_components_input;
+
 pub(crate) mod shape_list_entities_input;
+
+pub(crate) mod shape_list_metadata_transfer_jobs_input;
+
+pub(crate) mod shape_list_properties_input;
 
 pub(crate) mod shape_list_scenes_input;
 
@@ -169,11 +189,23 @@ pub(crate) mod shape_column_descriptions;
 
 pub(crate) mod shape_component_request;
 
+pub(crate) mod shape_component_summaries;
+
 pub(crate) mod shape_component_type_summaries;
 
 pub(crate) mod shape_component_update_request;
 
 pub(crate) mod shape_components_map;
+
+pub(crate) mod shape_composite_component_request;
+
+pub(crate) mod shape_composite_component_type_request;
+
+pub(crate) mod shape_composite_component_types_response;
+
+pub(crate) mod shape_composite_component_update_request;
+
+pub(crate) mod shape_destination_configuration;
 
 pub(crate) mod shape_entity_summaries;
 
@@ -189,9 +221,19 @@ pub(crate) mod shape_generated_scene_metadata_map;
 
 pub(crate) mod shape_interpolation_parameters;
 
+pub(crate) mod shape_linked_services;
+
 pub(crate) mod shape_list_component_types_filter;
 
 pub(crate) mod shape_list_entities_filter;
+
+pub(crate) mod shape_list_metadata_transfer_jobs_filter;
+
+pub(crate) mod shape_metadata_transfer_job_progress;
+
+pub(crate) mod shape_metadata_transfer_job_status;
+
+pub(crate) mod shape_metadata_transfer_job_summaries;
 
 pub(crate) mod shape_parent_entity_update_request;
 
@@ -209,6 +251,8 @@ pub(crate) mod shape_property_groups_response;
 
 pub(crate) mod shape_property_latest_value_map;
 
+pub(crate) mod shape_property_summaries;
+
 pub(crate) mod shape_property_value_entry;
 
 pub(crate) mod shape_property_value_list;
@@ -222,6 +266,10 @@ pub(crate) mod shape_scene_error;
 pub(crate) mod shape_scene_metadata_map;
 
 pub(crate) mod shape_scene_summaries;
+
+pub(crate) mod shape_source_configuration;
+
+pub(crate) mod shape_source_configurations;
 
 pub(crate) mod shape_status;
 
@@ -251,7 +299,11 @@ pub(crate) mod shape_component_property_group_request;
 
 pub(crate) mod shape_component_response;
 
+pub(crate) mod shape_component_summary;
+
 pub(crate) mod shape_component_type_summary;
+
+pub(crate) mod shape_composite_component_type_response;
 
 pub(crate) mod shape_data_connector;
 
@@ -267,6 +319,14 @@ pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_function_response;
 
+pub(crate) mod shape_iot_site_wise_source_configuration;
+
+pub(crate) mod shape_iot_twin_maker_destination_configuration;
+
+pub(crate) mod shape_iot_twin_maker_source_configuration;
+
+pub(crate) mod shape_metadata_transfer_job_summary;
+
 pub(crate) mod shape_order_by;
 
 pub(crate) mod shape_property_definition_response;
@@ -277,11 +337,17 @@ pub(crate) mod shape_property_latest_value;
 
 pub(crate) mod shape_property_request;
 
+pub(crate) mod shape_property_summary;
+
 pub(crate) mod shape_property_value;
 
 pub(crate) mod shape_property_value_history;
 
 pub(crate) mod shape_row;
+
+pub(crate) mod shape_s3_destination_configuration;
+
+pub(crate) mod shape_s3_source_configuration;
 
 pub(crate) mod shape_scene_summary;
 
@@ -295,9 +361,15 @@ pub(crate) mod shape_workspace_summary;
 
 pub(crate) mod shape_component_property_group_responses;
 
+pub(crate) mod shape_composite_component_response;
+
 pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_errors;
+
+pub(crate) mod shape_iot_site_wise_source_configuration_filter;
+
+pub(crate) mod shape_iot_twin_maker_source_configuration_filter;
 
 pub(crate) mod shape_lambda_function;
 
@@ -330,6 +402,18 @@ pub(crate) mod shape_data_value_list;
 pub(crate) mod shape_data_value_map;
 
 pub(crate) mod shape_external_id_property;
+
+pub(crate) mod shape_filter_by_asset;
+
+pub(crate) mod shape_filter_by_asset_model;
+
+pub(crate) mod shape_filter_by_component_type;
+
+pub(crate) mod shape_filter_by_entity;
+
+pub(crate) mod shape_iot_site_wise_source_configuration_filters;
+
+pub(crate) mod shape_iot_twin_maker_source_configuration_filters;
 
 pub(crate) mod shape_property_response;
 

@@ -6,8 +6,10 @@
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
     pub comment: ::std::string::String,
-    /// <p>The function's runtime environment verion.</p>
+    /// <p>The function's runtime environment version.</p>
     pub runtime: crate::types::FunctionRuntime,
+    /// <p>The configuration for the Key Value Store associations.</p>
+    pub key_value_store_associations: ::std::option::Option<crate::types::KeyValueStoreAssociations>,
 }
 impl FunctionConfig {
     /// <p>A comment to describe the function.</p>
@@ -15,9 +17,13 @@ impl FunctionConfig {
         use std::ops::Deref;
         self.comment.deref()
     }
-    /// <p>The function's runtime environment verion.</p>
+    /// <p>The function's runtime environment version.</p>
     pub fn runtime(&self) -> &crate::types::FunctionRuntime {
         &self.runtime
+    }
+    /// <p>The configuration for the Key Value Store associations.</p>
+    pub fn key_value_store_associations(&self) -> ::std::option::Option<&crate::types::KeyValueStoreAssociations> {
+        self.key_value_store_associations.as_ref()
     }
 }
 impl FunctionConfig {
@@ -33,6 +39,7 @@ impl FunctionConfig {
 pub struct FunctionConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) runtime: ::std::option::Option<crate::types::FunctionRuntime>,
+    pub(crate) key_value_store_associations: ::std::option::Option<crate::types::KeyValueStoreAssociations>,
 }
 impl FunctionConfigBuilder {
     /// <p>A comment to describe the function.</p>
@@ -50,20 +57,34 @@ impl FunctionConfigBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The function's runtime environment verion.</p>
+    /// <p>The function's runtime environment version.</p>
     /// This field is required.
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
         self.runtime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The function's runtime environment verion.</p>
+    /// <p>The function's runtime environment version.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::FunctionRuntime>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>The function's runtime environment verion.</p>
+    /// <p>The function's runtime environment version.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<crate::types::FunctionRuntime> {
         &self.runtime
+    }
+    /// <p>The configuration for the Key Value Store associations.</p>
+    pub fn key_value_store_associations(mut self, input: crate::types::KeyValueStoreAssociations) -> Self {
+        self.key_value_store_associations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the Key Value Store associations.</p>
+    pub fn set_key_value_store_associations(mut self, input: ::std::option::Option<crate::types::KeyValueStoreAssociations>) -> Self {
+        self.key_value_store_associations = input;
+        self
+    }
+    /// <p>The configuration for the Key Value Store associations.</p>
+    pub fn get_key_value_store_associations(&self) -> &::std::option::Option<crate::types::KeyValueStoreAssociations> {
+        &self.key_value_store_associations
     }
     /// Consumes the builder and constructs a [`FunctionConfig`](crate::types::FunctionConfig).
     /// This method will fail if any of the following fields are not set:
@@ -83,6 +104,7 @@ impl FunctionConfigBuilder {
                     "runtime was not specified but it is required when building FunctionConfig",
                 )
             })?,
+            key_value_store_associations: self.key_value_store_associations,
         })
     }
 }

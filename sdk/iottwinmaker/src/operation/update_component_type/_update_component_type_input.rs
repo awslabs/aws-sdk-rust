@@ -21,6 +21,9 @@ pub struct UpdateComponentTypeInput {
     pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>>,
     /// <p>The component type name.</p>
     pub component_type_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub composite_component_types:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>>,
 }
 impl UpdateComponentTypeInput {
     /// <p>The ID of the workspace.</p>
@@ -63,6 +66,12 @@ impl UpdateComponentTypeInput {
     pub fn component_type_name(&self) -> ::std::option::Option<&str> {
         self.component_type_name.as_deref()
     }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn composite_component_types(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>> {
+        self.composite_component_types.as_ref()
+    }
 }
 impl UpdateComponentTypeInput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
@@ -85,6 +94,8 @@ pub struct UpdateComponentTypeInputBuilder {
     pub(crate) functions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::FunctionRequest>>,
     pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupRequest>>,
     pub(crate) component_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) composite_component_types:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>>,
 }
 impl UpdateComponentTypeInputBuilder {
     /// <p>The ID of the workspace.</p>
@@ -252,6 +263,35 @@ impl UpdateComponentTypeInputBuilder {
     pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type_name
     }
+    /// Adds a key-value pair to `composite_component_types`.
+    ///
+    /// To override the contents of this collection use [`set_composite_component_types`](Self::set_composite_component_types).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn composite_component_types(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::CompositeComponentTypeRequest,
+    ) -> Self {
+        let mut hash_map = self.composite_component_types.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.composite_component_types = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn set_composite_component_types(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>>,
+    ) -> Self {
+        self.composite_component_types = input;
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn get_composite_component_types(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>> {
+        &self.composite_component_types
+    }
     /// Consumes the builder and constructs a [`UpdateComponentTypeInput`](crate::operation::update_component_type::UpdateComponentTypeInput).
     pub fn build(
         self,
@@ -267,6 +307,7 @@ impl UpdateComponentTypeInputBuilder {
             functions: self.functions,
             property_groups: self.property_groups,
             component_type_name: self.component_type_name,
+            composite_component_types: self.composite_component_types,
         })
     }
 }

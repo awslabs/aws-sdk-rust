@@ -119,31 +119,31 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator {
         crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_id(input);
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_id()
     }
-    /// <p>The ID of the asset property.</p>
+    /// <p>The ID of the asset property, in UUID format.</p>
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.property_id(input.into());
         self
     }
-    /// <p>The ID of the asset property.</p>
+    /// <p>The ID of the asset property, in UUID format.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_property_id(input);
         self
     }
-    /// <p>The ID of the asset property.</p>
+    /// <p>The ID of the asset property, in UUID format.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_property_id()
     }
@@ -273,7 +273,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -282,7 +282,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -291,7 +291,7 @@ impl GetAssetPropertyAggregatesFluentBuilder {
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
     /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 2500.</p> </li>
     /// </ul>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()

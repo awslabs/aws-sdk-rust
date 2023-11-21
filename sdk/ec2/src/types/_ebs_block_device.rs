@@ -9,25 +9,26 @@ pub struct EbsBlockDevice {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     pub volume_size: ::std::option::Option<i32>,
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under which the EBS volume is encrypted.</p>
     /// <p>This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
@@ -60,12 +61,12 @@ impl EbsBlockDevice {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -74,17 +75,18 @@ impl EbsBlockDevice {
         self.snapshot_id.as_deref()
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
@@ -158,12 +160,12 @@ impl EbsBlockDeviceBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
@@ -171,12 +173,12 @@ impl EbsBlockDeviceBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
@@ -184,12 +186,12 @@ impl EbsBlockDeviceBuilder {
     /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
-    /// <p>For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.</p>
-    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>This parameter is required for <code>io1</code> and <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000 IOPS.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
@@ -208,51 +210,54 @@ impl EbsBlockDeviceBuilder {
         &self.snapshot_id
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
     /// <p>The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size.</p>
-    /// <p>The following are the supported volumes sizes for each volume type:</p>
+    /// <p>The following are the supported sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume supports.</p>
+    /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
         &self.volume_type
     }

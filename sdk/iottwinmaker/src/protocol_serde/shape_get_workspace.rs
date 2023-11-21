@@ -148,6 +148,9 @@ pub(crate) fn de_get_workspace(
                             .transpose()?,
                     );
                 }
+                "linkedServices" => {
+                    builder = builder.set_linked_services(crate::protocol_serde::shape_linked_services::de_linked_services(tokens)?);
+                }
                 "role" => {
                     builder = builder.set_role(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetErrorDetails {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub asset_id: ::std::string::String,
     /// <p>The error code.</p>
     pub code: crate::types::AssetErrorCode,
@@ -12,7 +12,7 @@ pub struct AssetErrorDetails {
     pub message: ::std::string::String,
 }
 impl AssetErrorDetails {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn asset_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_id.deref()
@@ -43,18 +43,18 @@ pub struct AssetErrorDetailsBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl AssetErrorDetailsBuilder {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset, in UUID format.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }

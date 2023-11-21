@@ -133,7 +133,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li> <p> <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.</p> </li>
-    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
     /// <li> <p> <code>launch.group-id</code> - The ID of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.group-name</code> - The name of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li>
@@ -180,7 +180,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li> <p> <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.</p> </li>
-    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
     /// <li> <p> <code>launch.group-id</code> - The ID of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.group-name</code> - The name of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li>
@@ -227,7 +227,7 @@ impl DescribeSpotInstanceRequestsFluentBuilder {
     /// <li> <p> <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.</p> </li>
     /// <li> <p> <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.</p> </li>
-    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
+    /// <li> <p> <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> or <code>gp3</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic.</p> </li>
     /// <li> <p> <code>launch.group-id</code> - The ID of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.group-name</code> - The name of the security group for the instance.</p> </li>
     /// <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li>

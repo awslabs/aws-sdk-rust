@@ -23,7 +23,7 @@ impl HeadObjectInputBuilder {
 /// Fluent builder constructing a request to `HeadObject`.
 ///
 /// <p>The <code>HEAD</code> action retrieves metadata from an object without returning the object itself. This action is useful if you're only interested in an object's metadata. To use <code>HEAD</code>, you must have READ access to the object.</p>
-/// <p>A <code>HEAD</code> request has the same options as a <code>GET</code> action on an object. The response is identical to the <code>GET</code> response except that there is no response body. Because of this, if the <code>HEAD</code> request generates an error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception beyond these error codes.</p>
+/// <p>A <code>HEAD</code> request has the same options as a <code>GET</code> action on an object. The response is identical to the <code>GET</code> response except that there is no response body. Because of this, if the <code>HEAD</code> request generates an error, it returns a generic code, such as <code>400 Bad Request</code>, <code>403 Forbidden</code>, <code>404 Not Found</code>, <code>405 Method Not Allowed</code>, <code>412 Precondition Failed</code>, or <code>304 Not Modified</code>. It's not possible to retrieve the exact exception of these error codes.</p>
 /// <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store the object in Amazon S3, then when you retrieve the metadata from the object, you must use the following headers:</p>
 /// <ul>
 /// <li> <p> <code>x-amz-server-side-encryption-customer-algorithm</code> </p> </li>
@@ -60,6 +60,15 @@ impl HeadObjectInputBuilder {
 /// <ul>
 /// <li> <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns an HTTP status code 404 error.</p> </li>
 /// <li> <p>If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an HTTP status code 403 error.</p> </li>
+/// </ul>
+/// </dd>
+/// <dt>
+/// Versioning
+/// </dt>
+/// <dd>
+/// <ul>
+/// <li> <p>If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
+/// <li> <p>If the specified version is a delete marker, the response returns a 405 (Method Not Allowed) error and the <code>Last-Modified: timestamp</code> response header.</p> </li>
 /// </ul>
 /// </dd>
 /// </dl>

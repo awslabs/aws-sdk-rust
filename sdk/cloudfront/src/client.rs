@@ -160,6 +160,8 @@ mod create_invalidation;
 
 mod create_key_group;
 
+mod create_key_value_store;
+
 mod create_monitoring_subscription;
 
 mod create_origin_access_control;
@@ -219,6 +221,8 @@ mod delete_function;
 
 mod delete_key_group;
 
+mod delete_key_value_store;
+
 mod delete_monitoring_subscription;
 
 mod delete_origin_access_control;
@@ -234,6 +238,8 @@ mod delete_response_headers_policy;
 mod delete_streaming_distribution;
 
 mod describe_function;
+
+mod describe_key_value_store;
 
 mod get_cache_policy;
 
@@ -323,6 +329,8 @@ mod list_invalidations;
 
 mod list_key_groups;
 
+mod list_key_value_stores;
+
 mod list_origin_access_controls;
 
 mod list_origin_request_policies;
@@ -362,6 +370,8 @@ mod update_field_level_encryption_profile;
 mod update_function;
 
 mod update_key_group;
+
+mod update_key_value_store;
 
 mod update_origin_access_control;
 

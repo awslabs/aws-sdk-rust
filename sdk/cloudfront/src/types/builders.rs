@@ -85,6 +85,8 @@ pub use crate::types::_origin_access_control::OriginAccessControlBuilder;
 
 pub use crate::types::_origin_access_control_config::OriginAccessControlConfigBuilder;
 
+pub use crate::types::_key_value_store::KeyValueStoreBuilder;
+
 pub use crate::types::_key_group::KeyGroupBuilder;
 
 pub use crate::types::_key_group_config::KeyGroupConfigBuilder;
@@ -94,6 +96,10 @@ pub use crate::types::_function_summary::FunctionSummaryBuilder;
 pub use crate::types::_function_metadata::FunctionMetadataBuilder;
 
 pub use crate::types::_function_config::FunctionConfigBuilder;
+
+pub use crate::types::_key_value_store_associations::KeyValueStoreAssociationsBuilder;
+
+pub use crate::types::_key_value_store_association::KeyValueStoreAssociationBuilder;
 
 pub use crate::types::_field_level_encryption_profile::FieldLevelEncryptionProfileBuilder;
 
@@ -257,6 +263,8 @@ pub use crate::types::_origin_access_control_list::OriginAccessControlListBuilde
 
 pub use crate::types::_origin_access_control_summary::OriginAccessControlSummaryBuilder;
 
+pub use crate::types::_key_value_store_list::KeyValueStoreListBuilder;
+
 pub use crate::types::_key_group_list::KeyGroupListBuilder;
 
 pub use crate::types::_key_group_summary::KeyGroupSummaryBuilder;
@@ -308,5 +316,7 @@ pub use crate::types::_invalidation_batch::InvalidationBatchBuilder;
 pub use crate::types::_paths::PathsBuilder;
 
 pub use crate::types::_streaming_distribution_config_with_tags::StreamingDistributionConfigWithTagsBuilder;
+
+pub use crate::types::_import_source::ImportSourceBuilder;
 
 pub use crate::types::_distribution_config_with_tags::DistributionConfigWithTagsBuilder;

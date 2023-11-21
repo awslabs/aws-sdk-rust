@@ -8,7 +8,7 @@ pub struct ListAssetsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
     /// <ul>
@@ -28,7 +28,7 @@ impl ListAssetsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl ListAssetsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
-    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
+    /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }

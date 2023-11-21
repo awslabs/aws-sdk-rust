@@ -35,6 +35,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "linkedServices" => {
+                            builder = builder.set_linked_services(crate::protocol_serde::shape_linked_services::de_linked_services(tokens)?);
+                        }
                         "creationDateTime" => {
                             builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssetModelOutput {
-    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -13,7 +13,7 @@ pub struct CreateAssetModelOutput {
     _request_id: Option<String>,
 }
 impl CreateAssetModelOutput {
-    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn asset_model_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_model_id.deref()
@@ -51,18 +51,18 @@ pub struct CreateAssetModelOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateAssetModelOutputBuilder {
-    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.</p>
     /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
-    /// <p>The ID of the asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
+    /// <p>The ID of the asset model, in UUID format. You can use this ID when you call other IoT SiteWise API operations.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }

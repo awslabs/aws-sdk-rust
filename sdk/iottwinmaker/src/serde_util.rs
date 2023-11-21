@@ -8,6 +8,27 @@ pub(crate) fn batch_put_property_values_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn cancel_metadata_transfer_job_output_output_correct_errors(
+    mut builder: crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder,
+) -> crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder {
+    if builder.metadata_transfer_job_id.is_none() {
+        builder.metadata_transfer_job_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.update_date_time.is_none() {
+        builder.update_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::MetadataTransferJobStatusBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_component_type_output_output_correct_errors(
     mut builder: crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder,
 ) -> crate::operation::create_component_type::builders::CreateComponentTypeOutputBuilder {
@@ -37,6 +58,27 @@ pub(crate) fn create_entity_output_output_correct_errors(
     }
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::State>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_metadata_transfer_job_output_output_correct_errors(
+    mut builder: crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder,
+) -> crate::operation::create_metadata_transfer_job::builders::CreateMetadataTransferJobOutputBuilder {
+    if builder.metadata_transfer_job_id.is_none() {
+        builder.metadata_transfer_job_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.creation_date_time.is_none() {
+        builder.creation_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::MetadataTransferJobStatusBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -164,6 +206,42 @@ pub(crate) fn get_entity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_metadata_transfer_job_output_output_correct_errors(
+    mut builder: crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder,
+) -> crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder {
+    if builder.metadata_transfer_job_id.is_none() {
+        builder.metadata_transfer_job_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::DestinationConfigurationBuilder::default();
+            crate::serde_util::destination_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.metadata_transfer_job_role.is_none() {
+        builder.metadata_transfer_job_role = Some(Default::default())
+    }
+    if builder.creation_date_time.is_none() {
+        builder.creation_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_date_time.is_none() {
+        builder.update_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::MetadataTransferJobStatusBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_pricing_plan_output_output_correct_errors(
     mut builder: crate::operation::get_pricing_plan::builders::GetPricingPlanOutputBuilder,
 ) -> crate::operation::get_pricing_plan::builders::GetPricingPlanOutputBuilder {
@@ -248,12 +326,6 @@ pub(crate) fn get_workspace_output_output_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.s3_location.is_none() {
-        builder.s3_location = Some(Default::default())
-    }
-    if builder.role.is_none() {
-        builder.role = Some(Default::default())
-    }
     if builder.creation_date_time.is_none() {
         builder.creation_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
@@ -271,6 +343,33 @@ pub(crate) fn list_component_types_output_output_correct_errors(
     }
     if builder.component_type_summaries.is_none() {
         builder.component_type_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_components_output_output_correct_errors(
+    mut builder: crate::operation::list_components::builders::ListComponentsOutputBuilder,
+) -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
+    if builder.component_summaries.is_none() {
+        builder.component_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_metadata_transfer_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_metadata_transfer_jobs::builders::ListMetadataTransferJobsOutputBuilder,
+) -> crate::operation::list_metadata_transfer_jobs::builders::ListMetadataTransferJobsOutputBuilder {
+    if builder.metadata_transfer_job_summaries.is_none() {
+        builder.metadata_transfer_job_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_properties_output_output_correct_errors(
+    mut builder: crate::operation::list_properties::builders::ListPropertiesOutputBuilder,
+) -> crate::operation::list_properties::builders::ListPropertiesOutputBuilder {
+    if builder.property_summaries.is_none() {
+        builder.property_summaries = Some(Default::default())
     }
     builder
 }
@@ -335,6 +434,15 @@ pub(crate) fn update_workspace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn destination_configuration_correct_errors(
+    mut builder: crate::types::builders::DestinationConfigurationBuilder,
+) -> crate::types::builders::DestinationConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DestinationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn pricing_plan_correct_errors(mut builder: crate::types::builders::PricingPlanBuilder) -> crate::types::builders::PricingPlanBuilder {
     if builder.effective_date_time.is_none() {
         builder.effective_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -365,6 +473,24 @@ pub(crate) fn bundle_information_correct_errors(
 ) -> crate::types::builders::BundleInformationBuilder {
     if builder.bundle_names.is_none() {
         builder.bundle_names = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn component_summary_correct_errors(
+    mut builder: crate::types::builders::ComponentSummaryBuilder,
+) -> crate::types::builders::ComponentSummaryBuilder {
+    if builder.component_name.is_none() {
+        builder.component_name = Some(Default::default())
+    }
+    if builder.component_type_id.is_none() {
+        builder.component_type_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::StatusBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -410,6 +536,39 @@ pub(crate) fn entity_summary_correct_errors(
     }
     if builder.update_date_time.is_none() {
         builder.update_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn iot_twin_maker_destination_configuration_correct_errors(
+    mut builder: crate::types::builders::IotTwinMakerDestinationConfigurationBuilder,
+) -> crate::types::builders::IotTwinMakerDestinationConfigurationBuilder {
+    if builder.workspace.is_none() {
+        builder.workspace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metadata_transfer_job_summary_correct_errors(
+    mut builder: crate::types::builders::MetadataTransferJobSummaryBuilder,
+) -> crate::types::builders::MetadataTransferJobSummaryBuilder {
+    if builder.metadata_transfer_job_id.is_none() {
+        builder.metadata_transfer_job_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.creation_date_time.is_none() {
+        builder.creation_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_date_time.is_none() {
+        builder.update_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::MetadataTransferJobStatusBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -474,6 +633,15 @@ pub(crate) fn property_latest_value_correct_errors(
     builder
 }
 
+pub(crate) fn property_summary_correct_errors(
+    mut builder: crate::types::builders::PropertySummaryBuilder,
+) -> crate::types::builders::PropertySummaryBuilder {
+    if builder.property_name.is_none() {
+        builder.property_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn property_value_history_correct_errors(
     mut builder: crate::types::builders::PropertyValueHistoryBuilder,
 ) -> crate::types::builders::PropertyValueHistoryBuilder {
@@ -482,6 +650,15 @@ pub(crate) fn property_value_history_correct_errors(
             let builder = crate::types::builders::EntityPropertyReferenceBuilder::default();
             crate::serde_util::entity_property_reference_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn s3_destination_configuration_correct_errors(
+    mut builder: crate::types::builders::S3DestinationConfigurationBuilder,
+) -> crate::types::builders::S3DestinationConfigurationBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
     }
     builder
 }
@@ -501,6 +678,15 @@ pub(crate) fn scene_summary_correct_errors(mut builder: crate::types::builders::
     }
     if builder.update_date_time.is_none() {
         builder.update_date_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn source_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceConfigurationBuilder,
+) -> crate::types::builders::SourceConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SourceType>().ok()
     }
     builder
 }
@@ -535,6 +721,24 @@ pub(crate) fn entity_property_reference_correct_errors(
 ) -> crate::types::builders::EntityPropertyReferenceBuilder {
     if builder.property_name.is_none() {
         builder.property_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iot_twin_maker_source_configuration_correct_errors(
+    mut builder: crate::types::builders::IotTwinMakerSourceConfigurationBuilder,
+) -> crate::types::builders::IotTwinMakerSourceConfigurationBuilder {
+    if builder.workspace.is_none() {
+        builder.workspace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_source_configuration_correct_errors(
+    mut builder: crate::types::builders::S3SourceConfigurationBuilder,
+) -> crate::types::builders::S3SourceConfigurationBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
     }
     builder
 }
@@ -601,6 +805,24 @@ pub(crate) fn property_value_entry_correct_errors(
             let builder = crate::types::builders::EntityPropertyReferenceBuilder::default();
             crate::serde_util::entity_property_reference_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn filter_by_component_type_correct_errors(
+    mut builder: crate::types::builders::FilterByComponentTypeBuilder,
+) -> crate::types::builders::FilterByComponentTypeBuilder {
+    if builder.component_type_id.is_none() {
+        builder.component_type_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn filter_by_entity_correct_errors(
+    mut builder: crate::types::builders::FilterByEntityBuilder,
+) -> crate::types::builders::FilterByEntityBuilder {
+    if builder.entity_id.is_none() {
+        builder.entity_id = Some(Default::default())
     }
     builder
 }

@@ -21,5 +21,11 @@ pub fn ser_asset_model_property_definition(
         crate::protocol_serde::shape_property_type::ser_property_type(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.id {
+        object.key("id").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.external_id {
+        object.key("externalId").string(var_6.as_str());
+    }
     Ok(())
 }

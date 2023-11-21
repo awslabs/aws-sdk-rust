@@ -15,9 +15,11 @@ pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_detailed_error::DetailedErrorBuilder;
 
-pub use crate::types::_asset_model_composite_model::AssetModelCompositeModelBuilder;
+pub use crate::types::_asset_model_composite_model_path_segment::AssetModelCompositeModelPathSegmentBuilder;
 
 pub use crate::types::_asset_model_property::AssetModelPropertyBuilder;
+
+pub use crate::types::_asset_model_property_path_segment::AssetModelPropertyPathSegmentBuilder;
 
 pub use crate::types::_property_type::PropertyTypeBuilder;
 
@@ -45,6 +47,8 @@ pub use crate::types::_measurement_processing_config::MeasurementProcessingConfi
 
 pub use crate::types::_attribute::AttributeBuilder;
 
+pub use crate::types::_asset_model_composite_model::AssetModelCompositeModelBuilder;
+
 pub use crate::types::_asset_model_hierarchy::AssetModelHierarchyBuilder;
 
 pub use crate::types::_asset_status::AssetStatusBuilder;
@@ -64,6 +68,8 @@ pub use crate::types::_iam_user_identity::IamUserIdentityBuilder;
 pub use crate::types::_group_identity::GroupIdentityBuilder;
 
 pub use crate::types::_user_identity::UserIdentityBuilder;
+
+pub use crate::types::_warm_tier_retention_period::WarmTierRetentionPeriodBuilder;
 
 pub use crate::types::_configuration_status::ConfigurationStatusBuilder;
 
@@ -95,6 +101,8 @@ pub use crate::types::_greengrass::GreengrassBuilder;
 
 pub use crate::types::_dashboard_summary::DashboardSummaryBuilder;
 
+pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummaryBuilder;
+
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_associated_assets_summary::AssociatedAssetsSummaryBuilder;
@@ -109,11 +117,19 @@ pub use crate::types::_asset_hierarchy_info::AssetHierarchyInfoBuilder;
 
 pub use crate::types::_asset_property_summary::AssetPropertySummaryBuilder;
 
+pub use crate::types::_asset_property_path_segment::AssetPropertyPathSegmentBuilder;
+
 pub use crate::types::_property_notification::PropertyNotificationBuilder;
 
 pub use crate::types::_asset_model_summary::AssetModelSummaryBuilder;
 
 pub use crate::types::_asset_model_property_summary::AssetModelPropertySummaryBuilder;
+
+pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummaryBuilder;
+
+pub use crate::types::_action_summary::ActionSummaryBuilder;
+
+pub use crate::types::_target_resource::TargetResourceBuilder;
 
 pub use crate::types::_access_policy_summary::AccessPolicySummaryBuilder;
 
@@ -129,11 +145,23 @@ pub use crate::types::_aggregated_value::AggregatedValueBuilder;
 
 pub use crate::types::_aggregates::AggregatesBuilder;
 
+pub use crate::types::_row::RowBuilder;
+
+pub use crate::types::_datum::DatumBuilder;
+
+pub use crate::types::_column_info::ColumnInfoBuilder;
+
+pub use crate::types::_column_type::ColumnTypeBuilder;
+
+pub use crate::types::_action_payload::ActionPayloadBuilder;
+
 pub use crate::types::_image_location::ImageLocationBuilder;
 
 pub use crate::types::_job_configuration::JobConfigurationBuilder;
 
 pub use crate::types::_file_format::FileFormatBuilder;
+
+pub use crate::types::_parquet::ParquetBuilder;
 
 pub use crate::types::_csv::CsvBuilder;
 
@@ -145,13 +173,23 @@ pub use crate::types::_composite_model_property::CompositeModelPropertyBuilder;
 
 pub use crate::types::_property::PropertyBuilder;
 
-pub use crate::types::_asset_composite_model::AssetCompositeModelBuilder;
+pub use crate::types::_action_definition::ActionDefinitionBuilder;
+
+pub use crate::types::_composition_details::CompositionDetailsBuilder;
+
+pub use crate::types::_composition_relationship_item::CompositionRelationshipItemBuilder;
+
+pub use crate::types::_asset_composite_model_summary::AssetCompositeModelSummaryBuilder;
+
+pub use crate::types::_asset_composite_model_path_segment::AssetCompositeModelPathSegmentBuilder;
 
 pub use crate::types::_asset_property::AssetPropertyBuilder;
 
-pub use crate::types::_asset_model_composite_model_definition::AssetModelCompositeModelDefinitionBuilder;
+pub use crate::types::_asset_composite_model::AssetCompositeModelBuilder;
 
 pub use crate::types::_asset_model_property_definition::AssetModelPropertyDefinitionBuilder;
+
+pub use crate::types::_asset_model_composite_model_definition::AssetModelCompositeModelDefinitionBuilder;
 
 pub use crate::types::_asset_model_hierarchy_definition::AssetModelHierarchyDefinitionBuilder;
 

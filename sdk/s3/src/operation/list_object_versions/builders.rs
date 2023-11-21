@@ -28,7 +28,6 @@ impl ListObjectVersionsInputBuilder {
 /// <p> A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design your application to parse the contents of the response and handle it appropriately.</p>
 /// </note>
 /// <p>To use this operation, you must have READ access to the bucket.</p>
-/// <p>This action is not supported by Amazon S3 on Outposts.</p>
 /// <p>The following operations are related to <code>ListObjectVersions</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a> </p> </li>

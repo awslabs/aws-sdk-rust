@@ -5,6 +5,8 @@
 pub struct GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub component_path: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity whose property values the operation returns.</p>
@@ -27,6 +29,10 @@ impl GetPropertyValueInput {
     /// <p>The name of the component whose property values the operation returns.</p>
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(&self) -> ::std::option::Option<&str> {
+        self.component_path.as_deref()
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn component_type_id(&self) -> ::std::option::Option<&str> {
@@ -76,6 +82,7 @@ impl GetPropertyValueInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetPropertyValueInputBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_path: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -99,6 +106,20 @@ impl GetPropertyValueInputBuilder {
     /// <p>The name of the component whose property values the operation returns.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_path = input;
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_path
     }
     /// <p>The ID of the component type whose property values the operation returns.</p>
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,6 +249,7 @@ impl GetPropertyValueInputBuilder {
     ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_property_value::GetPropertyValueInput {
             component_name: self.component_name,
+            component_path: self.component_path,
             component_type_id: self.component_type_id,
             entity_id: self.entity_id,
             selected_properties: self.selected_properties,

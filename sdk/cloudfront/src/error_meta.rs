@@ -15,6 +15,8 @@ pub enum Error {
     CachePolicyInUse(crate::types::error::CachePolicyInUse),
     /// <p>You can't change the value of a public key.</p>
     CannotChangeImmutablePublicKeyFields(crate::types::error::CannotChangeImmutablePublicKeyFields),
+    /// <p>The Key Value Store entity cannot be deleted while it is in use.</p>
+    CannotDeleteEntityWhileInUse(crate::types::error::CannotDeleteEntityWhileInUse),
     /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
     CloudFrontOriginAccessIdentityAlreadyExists(crate::types::error::CloudFrontOriginAccessIdentityAlreadyExists),
     /// <p>The Origin Access Identity specified is already in use.</p>
@@ -27,6 +29,14 @@ pub enum Error {
     DistributionAlreadyExists(crate::types::error::DistributionAlreadyExists),
     /// <p>The specified CloudFront distribution is not disabled. You must disable the distribution before you can delete it.</p>
     DistributionNotDisabled(crate::types::error::DistributionNotDisabled),
+    /// <p>The Key Value Store entity already exists. You must provide a unique Key Value Store entity.</p>
+    EntityAlreadyExists(crate::types::error::EntityAlreadyExists),
+    /// <p>The Key Value Store entity limit has been exceeded.</p>
+    EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
+    /// <p>The Key Value Store entity was not found.</p>
+    EntityNotFound(crate::types::error::EntityNotFound),
+    /// <p>The Key Value Store entity size limit was exceeded.</p>
+    EntitySizeLimitExceeded(crate::types::error::EntitySizeLimitExceeded),
     /// <p>The specified configuration for field-level encryption already exists.</p>
     FieldLevelEncryptionConfigAlreadyExists(crate::types::error::FieldLevelEncryptionConfigAlreadyExists),
     /// <p>The specified configuration for field-level encryption is in use.</p>
@@ -316,12 +326,17 @@ impl ::std::fmt::Display for Error {
             Error::CachePolicyAlreadyExists(inner) => inner.fmt(f),
             Error::CachePolicyInUse(inner) => inner.fmt(f),
             Error::CannotChangeImmutablePublicKeyFields(inner) => inner.fmt(f),
+            Error::CannotDeleteEntityWhileInUse(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.fmt(f),
             Error::CloudFrontOriginAccessIdentityInUse(inner) => inner.fmt(f),
             Error::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.fmt(f),
             Error::ContinuousDeploymentPolicyInUse(inner) => inner.fmt(f),
             Error::DistributionAlreadyExists(inner) => inner.fmt(f),
             Error::DistributionNotDisabled(inner) => inner.fmt(f),
+            Error::EntityAlreadyExists(inner) => inner.fmt(f),
+            Error::EntityLimitExceeded(inner) => inner.fmt(f),
+            Error::EntityNotFound(inner) => inner.fmt(f),
+            Error::EntitySizeLimitExceeded(inner) => inner.fmt(f),
             Error::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.fmt(f),
             Error::FieldLevelEncryptionConfigInUse(inner) => inner.fmt(f),
             Error::FieldLevelEncryptionProfileAlreadyExists(inner) => inner.fmt(f),
@@ -481,12 +496,17 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CachePolicyAlreadyExists(inner) => inner.meta(),
             Self::CachePolicyInUse(inner) => inner.meta(),
             Self::CannotChangeImmutablePublicKeyFields(inner) => inner.meta(),
+            Self::CannotDeleteEntityWhileInUse(inner) => inner.meta(),
             Self::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.meta(),
             Self::CloudFrontOriginAccessIdentityInUse(inner) => inner.meta(),
             Self::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.meta(),
             Self::ContinuousDeploymentPolicyInUse(inner) => inner.meta(),
             Self::DistributionAlreadyExists(inner) => inner.meta(),
             Self::DistributionNotDisabled(inner) => inner.meta(),
+            Self::EntityAlreadyExists(inner) => inner.meta(),
+            Self::EntityLimitExceeded(inner) => inner.meta(),
+            Self::EntityNotFound(inner) => inner.meta(),
+            Self::EntitySizeLimitExceeded(inner) => inner.meta(),
             Self::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.meta(),
             Self::FieldLevelEncryptionConfigInUse(inner) => inner.meta(),
             Self::FieldLevelEncryptionProfileAlreadyExists(inner) => inner.meta(),
@@ -1325,6 +1345,34 @@ impl From<crate::operation::create_key_group::CreateKeyGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_value_store::CreateKeyValueStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_key_value_store::CreateKeyValueStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_key_value_store::CreateKeyValueStoreError> for Error {
+    fn from(err: crate::operation::create_key_value_store::CreateKeyValueStoreError) -> Self {
+        match err {
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::EntityAlreadyExists(inner) => Error::EntityAlreadyExists(inner),
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::EntitySizeLimitExceeded(inner) => {
+                Error::EntitySizeLimitExceeded(inner)
+            }
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::create_key_value_store::CreateKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError, R>>
     for Error
@@ -1936,6 +1984,34 @@ impl From<crate::operation::delete_key_group::DeleteKeyGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_value_store::DeleteKeyValueStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_key_value_store::DeleteKeyValueStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_key_value_store::DeleteKeyValueStoreError> for Error {
+    fn from(err: crate::operation::delete_key_value_store::DeleteKeyValueStoreError) -> Self {
+        match err {
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::CannotDeleteEntityWhileInUse(inner) => {
+                Error::CannotDeleteEntityWhileInUse(inner)
+            }
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::delete_key_value_store::DeleteKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_monitoring_subscription::DeleteMonitoringSubscriptionError, R>>
     for Error
@@ -2206,6 +2282,32 @@ impl From<crate::operation::describe_function::DescribeFunctionError> for Error 
             crate::operation::describe_function::DescribeFunctionError::NoSuchFunctionExists(inner) => Error::NoSuchFunctionExists(inner),
             crate::operation::describe_function::DescribeFunctionError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::describe_function::DescribeFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_key_value_store::DescribeKeyValueStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_key_value_store::DescribeKeyValueStoreError> for Error {
+    fn from(err: crate::operation::describe_key_value_store::DescribeKeyValueStoreError) -> Self {
+        match err {
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::describe_key_value_store::DescribeKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3543,6 +3645,29 @@ impl From<crate::operation::list_key_groups::ListKeyGroupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_value_stores::ListKeyValueStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_key_value_stores::ListKeyValueStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_key_value_stores::ListKeyValueStoresError> for Error {
+    fn from(err: crate::operation::list_key_value_stores::ListKeyValueStoresError) -> Self {
+        match err {
+            crate::operation::list_key_value_stores::ListKeyValueStoresError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::list_key_value_stores::ListKeyValueStoresError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::list_key_value_stores::ListKeyValueStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_origin_access_controls::ListOriginAccessControlsError, R>>
     for Error
 where
@@ -4363,6 +4488,32 @@ impl From<crate::operation::update_key_group::UpdateKeyGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_value_store::UpdateKeyValueStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_key_value_store::UpdateKeyValueStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_key_value_store::UpdateKeyValueStoreError> for Error {
+    fn from(err: crate::operation::update_key_value_store::UpdateKeyValueStoreError) -> Self {
+        match err {
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::EntityNotFound(inner) => Error::EntityNotFound(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::operation::update_key_value_store::UpdateKeyValueStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_origin_access_control::UpdateOriginAccessControlError, R>>
     for Error
 where
@@ -4638,12 +4789,17 @@ impl ::std::error::Error for Error {
             Error::CachePolicyAlreadyExists(inner) => inner.source(),
             Error::CachePolicyInUse(inner) => inner.source(),
             Error::CannotChangeImmutablePublicKeyFields(inner) => inner.source(),
+            Error::CannotDeleteEntityWhileInUse(inner) => inner.source(),
             Error::CloudFrontOriginAccessIdentityAlreadyExists(inner) => inner.source(),
             Error::CloudFrontOriginAccessIdentityInUse(inner) => inner.source(),
             Error::ContinuousDeploymentPolicyAlreadyExists(inner) => inner.source(),
             Error::ContinuousDeploymentPolicyInUse(inner) => inner.source(),
             Error::DistributionAlreadyExists(inner) => inner.source(),
             Error::DistributionNotDisabled(inner) => inner.source(),
+            Error::EntityAlreadyExists(inner) => inner.source(),
+            Error::EntityLimitExceeded(inner) => inner.source(),
+            Error::EntityNotFound(inner) => inner.source(),
+            Error::EntitySizeLimitExceeded(inner) => inner.source(),
             Error::FieldLevelEncryptionConfigAlreadyExists(inner) => inner.source(),
             Error::FieldLevelEncryptionConfigInUse(inner) => inner.source(),
             Error::FieldLevelEncryptionProfileAlreadyExists(inner) => inner.source(),
@@ -4789,12 +4945,17 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CachePolicyAlreadyExists(e) => e.request_id(),
             Self::CachePolicyInUse(e) => e.request_id(),
             Self::CannotChangeImmutablePublicKeyFields(e) => e.request_id(),
+            Self::CannotDeleteEntityWhileInUse(e) => e.request_id(),
             Self::CloudFrontOriginAccessIdentityAlreadyExists(e) => e.request_id(),
             Self::CloudFrontOriginAccessIdentityInUse(e) => e.request_id(),
             Self::ContinuousDeploymentPolicyAlreadyExists(e) => e.request_id(),
             Self::ContinuousDeploymentPolicyInUse(e) => e.request_id(),
             Self::DistributionAlreadyExists(e) => e.request_id(),
             Self::DistributionNotDisabled(e) => e.request_id(),
+            Self::EntityAlreadyExists(e) => e.request_id(),
+            Self::EntityLimitExceeded(e) => e.request_id(),
+            Self::EntityNotFound(e) => e.request_id(),
+            Self::EntitySizeLimitExceeded(e) => e.request_id(),
             Self::FieldLevelEncryptionConfigAlreadyExists(e) => e.request_id(),
             Self::FieldLevelEncryptionConfigInUse(e) => e.request_id(),
             Self::FieldLevelEncryptionProfileAlreadyExists(e) => e.request_id(),

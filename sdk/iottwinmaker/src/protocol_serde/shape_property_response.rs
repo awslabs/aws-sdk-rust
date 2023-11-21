@@ -21,6 +21,10 @@ where
                         "value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_data_value::de_data_value(tokens)?);
                         }
+                        "areAllPropertyValuesReturned" => {
+                            builder = builder
+                                .set_are_all_property_values_returned(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

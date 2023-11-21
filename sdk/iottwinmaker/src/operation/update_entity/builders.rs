@@ -187,6 +187,33 @@ impl UpdateEntityFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.inner.get_component_updates()
     }
+    /// Adds a key-value pair to `compositeComponentUpdates`.
+    ///
+    /// To override the contents of this collection use [`set_composite_component_updates`](Self::set_composite_component_updates).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_component_updates(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::CompositeComponentUpdateRequest,
+    ) -> Self {
+        self.inner = self.inner.composite_component_updates(k.into(), v);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn set_composite_component_updates(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
+    ) -> Self {
+        self.inner = self.inner.set_composite_component_updates(input);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn get_composite_component_updates(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
+        self.inner.get_composite_component_updates()
+    }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn parent_entity_update(mut self, input: crate::types::ParentEntityUpdateRequest) -> Self {
         self.inner = self.inner.parent_entity_update(input);

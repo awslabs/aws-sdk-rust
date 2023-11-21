@@ -6,59 +6,72 @@ pub fn ser_update_component_type_input_input(
     if let Some(var_1) = &input.component_type_name {
         object.key("componentTypeName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.extends_from {
-        let mut array_4 = object.key("extendsFrom").start_array();
-        for item_5 in var_3 {
-            {
-                array_4.value().string(item_5.as_str());
-            }
-        }
-        array_4.finish();
-    }
-    if let Some(var_6) = &input.functions {
+    if let Some(var_2) = &input.composite_component_types {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("functions").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_3 = object.key("compositeComponentTypes").start_object();
+        for (key_4, value_5) in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_function_request::ser_function_request(&mut object_10, value_9)?;
-                object_10.finish();
+                let mut object_6 = object_3.key(key_4.as_str()).start_object();
+                crate::protocol_serde::shape_composite_component_type_request::ser_composite_component_type_request(&mut object_6, value_5)?;
+                object_6.finish();
             }
         }
-        object_7.finish();
+        object_3.finish();
     }
-    if let Some(var_11) = &input.is_singleton {
-        object.key("isSingleton").boolean(*var_11);
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
     }
-    if let Some(var_12) = &input.property_definitions {
+    if let Some(var_8) = &input.extends_from {
+        let mut array_9 = object.key("extendsFrom").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.functions {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("propertyDefinitions").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_12 = object.key("functions").start_object();
+        for (key_13, value_14) in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                crate::protocol_serde::shape_property_definition_request::ser_property_definition_request(&mut object_16, value_15)?;
-                object_16.finish();
+                let mut object_15 = object_12.key(key_13.as_str()).start_object();
+                crate::protocol_serde::shape_function_request::ser_function_request(&mut object_15, value_14)?;
+                object_15.finish();
             }
         }
-        object_13.finish();
+        object_12.finish();
     }
-    if let Some(var_17) = &input.property_groups {
+    if let Some(var_16) = &input.is_singleton {
+        object.key("isSingleton").boolean(*var_16);
+    }
+    if let Some(var_17) = &input.property_definitions {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("propertyGroups").start_object();
+        let mut object_18 = object.key("propertyDefinitions").start_object();
         for (key_19, value_20) in var_17 {
             {
                 #[allow(unused_mut)]
                 let mut object_21 = object_18.key(key_19.as_str()).start_object();
-                crate::protocol_serde::shape_property_group_request::ser_property_group_request(&mut object_21, value_20)?;
+                crate::protocol_serde::shape_property_definition_request::ser_property_definition_request(&mut object_21, value_20)?;
                 object_21.finish();
             }
         }
         object_18.finish();
+    }
+    if let Some(var_22) = &input.property_groups {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("propertyGroups").start_object();
+        for (key_24, value_25) in var_22 {
+            {
+                #[allow(unused_mut)]
+                let mut object_26 = object_23.key(key_24.as_str()).start_object();
+                crate::protocol_serde::shape_property_group_request::ser_property_group_request(&mut object_26, value_25)?;
+                object_26.finish();
+            }
+        }
+        object_23.finish();
     }
     Ok(())
 }

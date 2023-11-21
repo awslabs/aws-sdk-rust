@@ -585,6 +585,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_target_grants;
 
+pub(crate) mod shape_target_object_key_format;
+
 pub(crate) mod shape_tiering;
 
 pub(crate) mod shape_transition;
@@ -611,6 +613,8 @@ pub(crate) mod shape_lifecycle_rule_and_operator;
 
 pub(crate) mod shape_metrics_and_operator;
 
+pub(crate) mod shape_partitioned_prefix;
+
 pub(crate) mod shape_progress;
 
 pub(crate) mod shape_redirect;
@@ -622,6 +626,8 @@ pub(crate) mod shape_s3_key_filter;
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_server_side_encryption_by_default;
+
+pub(crate) mod shape_simple_prefix;
 
 pub(crate) mod shape_source_selection_criteria;
 

@@ -6,7 +6,7 @@
 pub struct Variant {
     /// <p>Asset property data of type string (sequence of characters).</p>
     pub string_value: ::std::option::Option<::std::string::String>,
-    /// <p>Asset property data of type integer (whole number).</p>
+    /// <p>Asset property data of type integer (number that's greater than or equal to zero).</p>
     pub integer_value: ::std::option::Option<i32>,
     /// <p>Asset property data of type double (floating point number).</p>
     pub double_value: ::std::option::Option<f64>,
@@ -18,7 +18,7 @@ impl Variant {
     pub fn string_value(&self) -> ::std::option::Option<&str> {
         self.string_value.as_deref()
     }
-    /// <p>Asset property data of type integer (whole number).</p>
+    /// <p>Asset property data of type integer (number that's greater than or equal to zero).</p>
     pub fn integer_value(&self) -> ::std::option::Option<i32> {
         self.integer_value
     }
@@ -62,17 +62,17 @@ impl VariantBuilder {
     pub fn get_string_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.string_value
     }
-    /// <p>Asset property data of type integer (whole number).</p>
+    /// <p>Asset property data of type integer (number that's greater than or equal to zero).</p>
     pub fn integer_value(mut self, input: i32) -> Self {
         self.integer_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Asset property data of type integer (whole number).</p>
+    /// <p>Asset property data of type integer (number that's greater than or equal to zero).</p>
     pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.integer_value = input;
         self
     }
-    /// <p>Asset property data of type integer (whole number).</p>
+    /// <p>Asset property data of type integer (number that's greater than or equal to zero).</p>
     pub fn get_integer_value(&self) -> &::std::option::Option<i32> {
         &self.integer_value
     }

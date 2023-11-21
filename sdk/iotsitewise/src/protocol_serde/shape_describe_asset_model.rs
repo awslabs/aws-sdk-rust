@@ -120,6 +120,11 @@ pub(crate) fn de_describe_asset_model(
                             .transpose()?,
                     );
                 }
+                "assetModelCompositeModelSummaries" => {
+                    builder = builder.set_asset_model_composite_model_summaries(
+                        crate::protocol_serde::shape_asset_model_composite_model_summaries::de_asset_model_composite_model_summaries(tokens)?,
+                    );
+                }
                 "assetModelCompositeModels" => {
                     builder = builder.set_asset_model_composite_models(
                         crate::protocol_serde::shape_asset_model_composite_models::de_asset_model_composite_models(tokens)?,
@@ -133,6 +138,13 @@ pub(crate) fn de_describe_asset_model(
                 }
                 "assetModelDescription" => {
                     builder = builder.set_asset_model_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "assetModelExternalId" => {
+                    builder = builder.set_asset_model_external_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
@@ -168,6 +180,13 @@ pub(crate) fn de_describe_asset_model(
                 }
                 "assetModelStatus" => {
                     builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(tokens)?);
+                }
+                "assetModelType" => {
+                    builder = builder.set_asset_model_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::AssetModelType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

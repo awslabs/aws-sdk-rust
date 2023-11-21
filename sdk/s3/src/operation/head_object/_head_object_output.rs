@@ -17,7 +17,7 @@ pub struct HeadObjectOutput {
     pub restore: ::std::option::Option<::std::string::String>,
     /// <p>The archive state of the head object.</p>
     pub archive_status: ::std::option::Option<crate::types::ArchiveStatus>,
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: ::std::option::Option<i64>,
@@ -111,7 +111,7 @@ impl HeadObjectOutput {
     pub fn archive_status(&self) -> ::std::option::Option<&crate::types::ArchiveStatus> {
         self.archive_status.as_ref()
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
@@ -419,17 +419,17 @@ impl HeadObjectOutputBuilder {
     pub fn get_archive_status(&self) -> &::std::option::Option<crate::types::ArchiveStatus> {
         &self.archive_status
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }

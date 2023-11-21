@@ -12,7 +12,7 @@ pub struct DescribePortalOutput {
     pub portal_name: ::std::string::String,
     /// <p>The portal's description.</p>
     pub portal_description: ::std::option::Option<::std::string::String>,
-    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub portal_client_id: ::std::string::String,
     /// <p>The URL for the IoT SiteWise Monitor portal. You can use this URL to access portals that use IAM Identity Center for authentication. For portals that use IAM for authentication, you must use the IoT SiteWise console to get a URL that you can use to access the portal.</p>
     pub portal_start_url: ::std::string::String,
@@ -57,7 +57,7 @@ impl DescribePortalOutput {
     pub fn portal_description(&self) -> ::std::option::Option<&str> {
         self.portal_description.as_deref()
     }
-    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub fn portal_client_id(&self) -> &str {
         use std::ops::Deref;
         self.portal_client_id.deref()
@@ -201,18 +201,18 @@ impl DescribePortalOutputBuilder {
     pub fn get_portal_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.portal_description
     }
-    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     /// This field is required.
     pub fn portal_client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.portal_client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub fn set_portal_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.portal_client_id = input;
         self
     }
-    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
+    /// <p>The IAM Identity Center application generated client ID (used with IAM Identity Center API operations). IoT SiteWise includes <code>portalClientId</code> for only portals that use IAM Identity Center to authenticate users.</p>
     pub fn get_portal_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.portal_client_id
     }

@@ -9,5 +9,8 @@ pub fn ser_update_workspace_input_input(
     if let Some(var_2) = &input.role {
         object.key("role").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.s3_location {
+        object.key("s3Location").string(var_3.as_str());
+    }
     Ok(())
 }

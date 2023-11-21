@@ -41,6 +41,20 @@ pub(crate) fn reflens_list_invalidations_output_output_invalidation_list_next_ma
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_key_value_stores_output_output_key_value_store_list_next_marker(
+    input: &crate::operation::list_key_value_stores::ListKeyValueStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.key_value_store_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_streaming_distributions_output_output_streaming_distribution_list_next_marker(
     input: &crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -87,6 +101,20 @@ pub(crate) fn lens_list_invalidations_output_output_invalidation_list_items(
     input: crate::operation::list_invalidations::ListInvalidationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InvalidationSummary>> {
     let input = match input.invalidation_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    let input = match input.items {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_key_value_stores_output_output_key_value_store_list_items(
+    input: crate::operation::list_key_value_stores::ListKeyValueStoresOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::KeyValueStore>> {
+    let input = match input.key_value_store_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -185,6 +185,29 @@ impl CreateEntityFluentBuilder {
     pub fn get_components(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentRequest>> {
         self.inner.get_components()
     }
+    /// Adds a key-value pair to `compositeComponents`.
+    ///
+    /// To override the contents of this collection use [`set_composite_components`](Self::set_composite_components).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::CompositeComponentRequest) -> Self {
+        self.inner = self.inner.composite_components(k.into(), v);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn set_composite_components(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>>,
+    ) -> Self {
+        self.inner = self.inner.set_composite_components(input);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn get_composite_components(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentRequest>> {
+        self.inner.get_composite_components()
+    }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_entity_id(input.into());

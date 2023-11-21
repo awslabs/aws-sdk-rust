@@ -24,5 +24,11 @@ pub fn ser_asset_model_composite_model_definition(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.id {
+        object.key("id").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.external_id {
+        object.key("externalId").string(var_7.as_str());
+    }
     Ok(())
 }

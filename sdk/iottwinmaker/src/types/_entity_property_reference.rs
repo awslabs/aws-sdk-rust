@@ -6,6 +6,8 @@
 pub struct EntityPropertyReference {
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub component_path: ::std::option::Option<::std::string::String>,
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
     pub external_id_property: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the entity.</p>
@@ -17,6 +19,10 @@ impl EntityPropertyReference {
     /// <p>The name of the component.</p>
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(&self) -> ::std::option::Option<&str> {
+        self.component_path.as_deref()
     }
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
     pub fn external_id_property(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -44,6 +50,7 @@ impl EntityPropertyReference {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EntityPropertyReferenceBuilder {
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_path: ::std::option::Option<::std::string::String>,
     pub(crate) external_id_property: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_name: ::std::option::Option<::std::string::String>,
@@ -62,6 +69,20 @@ impl EntityPropertyReferenceBuilder {
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_path = input;
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_path
     }
     /// Adds a key-value pair to `external_id_property`.
     ///
@@ -125,6 +146,7 @@ impl EntityPropertyReferenceBuilder {
     pub fn build(self) -> ::std::result::Result<crate::types::EntityPropertyReference, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EntityPropertyReference {
             component_name: self.component_name,
+            component_path: self.component_path,
             external_id_property: self.external_id_property,
             entity_id: self.entity_id,
             property_name: self.property_name.ok_or_else(|| {

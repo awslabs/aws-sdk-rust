@@ -150,4 +150,18 @@ impl UpdateWorkspaceFluentBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role()
     }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_location(input.into());
+        self
+    }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn set_s3_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_location(input);
+        self
+    }
+    /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    pub fn get_s3_location(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_location()
+    }
 }

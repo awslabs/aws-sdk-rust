@@ -9,10 +9,12 @@ pub struct GetWorkspaceOutput {
     pub arn: ::std::string::String,
     /// <p>The description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub linked_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub s3_location: ::std::string::String,
+    pub s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub role: ::std::string::String,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the workspace was created.</p>
     pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the workspace was last updated.</p>
@@ -34,15 +36,19 @@ impl GetWorkspaceOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>A list of services that are linked to the workspace.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_services.is_none()`.
+    pub fn linked_services(&self) -> &[::std::string::String] {
+        self.linked_services.as_deref().unwrap_or_default()
+    }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub fn s3_location(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_location.deref()
+    pub fn s3_location(&self) -> ::std::option::Option<&str> {
+        self.s3_location.as_deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> &str {
-        use std::ops::Deref;
-        self.role.deref()
+    pub fn role(&self) -> ::std::option::Option<&str> {
+        self.role.as_deref()
     }
     /// <p>The date and time when the workspace was created.</p>
     pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
@@ -72,6 +78,7 @@ pub struct GetWorkspaceOutputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) s3_location: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -123,8 +130,27 @@ impl GetWorkspaceOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// Appends an item to `linked_services`.
+    ///
+    /// To override the contents of this collection use [`set_linked_services`](Self::set_linked_services).
+    ///
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn linked_services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.linked_services.unwrap_or_default();
+        v.push(input.into());
+        self.linked_services = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn set_linked_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.linked_services = input;
+        self
+    }
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn get_linked_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.linked_services
+    }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    /// This field is required.
     pub fn s3_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_location = ::std::option::Option::Some(input.into());
         self
@@ -139,7 +165,6 @@ impl GetWorkspaceOutputBuilder {
         &self.s3_location
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
@@ -196,8 +221,6 @@ impl GetWorkspaceOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::workspace_id)
     /// - [`arn`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::arn)
-    /// - [`s3_location`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::s3_location)
-    /// - [`role`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::role)
     /// - [`creation_date_time`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::creation_date_time)
     /// - [`update_date_time`](crate::operation::get_workspace::builders::GetWorkspaceOutputBuilder::update_date_time)
     pub fn build(
@@ -217,18 +240,9 @@ impl GetWorkspaceOutputBuilder {
                 )
             })?,
             description: self.description,
-            s3_location: self.s3_location.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "s3_location",
-                    "s3_location was not specified but it is required when building GetWorkspaceOutput",
-                )
-            })?,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building GetWorkspaceOutput",
-                )
-            })?,
+            linked_services: self.linked_services,
+            s3_location: self.s3_location,
+            role: self.role,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",

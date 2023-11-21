@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssetModelInput {
-    /// <p>The ID of the asset model to delete.</p>
+    /// <p>The ID of the asset model to delete. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssetModelInput {
-    /// <p>The ID of the asset model to delete.</p>
+    /// <p>The ID of the asset model to delete. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteAssetModelInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssetModelInputBuilder {
-    /// <p>The ID of the asset model to delete.</p>
+    /// <p>The ID of the asset model to delete. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset model to delete.</p>
+    /// <p>The ID of the asset model to delete. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
-    /// <p>The ID of the asset model to delete.</p>
+    /// <p>The ID of the asset model to delete. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }

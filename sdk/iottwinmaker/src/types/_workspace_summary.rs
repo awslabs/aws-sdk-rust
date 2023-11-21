@@ -10,6 +10,8 @@ pub struct WorkspaceSummary {
     pub arn: ::std::string::String,
     /// <p>The description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub linked_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the workspace was created.</p>
     pub creation_date_time: ::aws_smithy_types::DateTime,
     /// <p>The date and time when the workspace was last updated.</p>
@@ -29,6 +31,12 @@ impl WorkspaceSummary {
     /// <p>The description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>A list of services that are linked to the workspace.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.linked_services.is_none()`.
+    pub fn linked_services(&self) -> &[::std::string::String] {
+        self.linked_services.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the workspace was created.</p>
     pub fn creation_date_time(&self) -> &::aws_smithy_types::DateTime {
@@ -53,6 +61,7 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -100,6 +109,26 @@ impl WorkspaceSummaryBuilder {
     /// <p>The description of the workspace.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Appends an item to `linked_services`.
+    ///
+    /// To override the contents of this collection use [`set_linked_services`](Self::set_linked_services).
+    ///
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn linked_services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.linked_services.unwrap_or_default();
+        v.push(input.into());
+        self.linked_services = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn set_linked_services(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.linked_services = input;
+        self
+    }
+    /// <p>A list of services that are linked to the workspace.</p>
+    pub fn get_linked_services(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.linked_services
     }
     /// <p>The date and time when the workspace was created.</p>
     /// This field is required.
@@ -152,6 +181,7 @@ impl WorkspaceSummaryBuilder {
                 )
             })?,
             description: self.description,
+            linked_services: self.linked_services,
             creation_date_time: self.creation_date_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date_time",

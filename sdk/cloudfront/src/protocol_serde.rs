@@ -69,6 +69,8 @@ pub(crate) mod shape_create_key_group;
 
 pub(crate) mod shape_create_key_group_input;
 
+pub(crate) mod shape_create_key_value_store;
+
 pub(crate) mod shape_create_monitoring_subscription;
 
 pub(crate) mod shape_create_monitoring_subscription_input;
@@ -115,6 +117,8 @@ pub(crate) mod shape_delete_function;
 
 pub(crate) mod shape_delete_key_group;
 
+pub(crate) mod shape_delete_key_value_store;
+
 pub(crate) mod shape_delete_monitoring_subscription;
 
 pub(crate) mod shape_delete_origin_access_control;
@@ -130,6 +134,8 @@ pub(crate) mod shape_delete_response_headers_policy;
 pub(crate) mod shape_delete_streaming_distribution;
 
 pub(crate) mod shape_describe_function;
+
+pub(crate) mod shape_describe_key_value_store;
 
 pub(crate) mod shape_get_cache_policy;
 
@@ -219,6 +225,8 @@ pub(crate) mod shape_list_invalidations;
 
 pub(crate) mod shape_list_key_groups;
 
+pub(crate) mod shape_list_key_value_stores;
+
 pub(crate) mod shape_list_origin_access_controls;
 
 pub(crate) mod shape_list_origin_request_policies;
@@ -277,6 +285,8 @@ pub(crate) mod shape_update_key_group;
 
 pub(crate) mod shape_update_key_group_input;
 
+pub(crate) mod shape_update_key_value_store;
+
 pub(crate) mod shape_update_origin_access_control;
 
 pub(crate) mod shape_update_origin_access_control_input;
@@ -308,6 +318,8 @@ pub(crate) mod shape_cache_policy_already_exists;
 pub(crate) mod shape_cache_policy_in_use;
 
 pub(crate) mod shape_cannot_change_immutable_public_key_fields;
+
+pub(crate) mod shape_cannot_delete_entity_while_in_use;
 
 pub(crate) mod shape_cloud_front_origin_access_identity_already_exists;
 
@@ -345,6 +357,10 @@ pub(crate) mod shape_create_invalidation_output;
 
 pub(crate) mod shape_create_key_group_output;
 
+pub(crate) mod shape_create_key_value_store_input;
+
+pub(crate) mod shape_create_key_value_store_output;
+
 pub(crate) mod shape_create_monitoring_subscription_output;
 
 pub(crate) mod shape_create_origin_access_control_output;
@@ -365,9 +381,19 @@ pub(crate) mod shape_delete_realtime_log_config_input;
 
 pub(crate) mod shape_describe_function_output;
 
+pub(crate) mod shape_describe_key_value_store_output;
+
 pub(crate) mod shape_distribution_already_exists;
 
 pub(crate) mod shape_distribution_not_disabled;
+
+pub(crate) mod shape_entity_already_exists;
+
+pub(crate) mod shape_entity_limit_exceeded;
+
+pub(crate) mod shape_entity_not_found;
+
+pub(crate) mod shape_entity_size_limit_exceeded;
 
 pub(crate) mod shape_field_level_encryption_config_already_exists;
 
@@ -538,6 +564,8 @@ pub(crate) mod shape_list_functions_output;
 pub(crate) mod shape_list_invalidations_output;
 
 pub(crate) mod shape_list_key_groups_output;
+
+pub(crate) mod shape_list_key_value_stores_output;
 
 pub(crate) mod shape_list_origin_access_controls_output;
 
@@ -763,6 +791,10 @@ pub(crate) mod shape_update_function_output;
 
 pub(crate) mod shape_update_key_group_output;
 
+pub(crate) mod shape_update_key_value_store_input;
+
+pub(crate) mod shape_update_key_value_store_output;
+
 pub(crate) mod shape_update_origin_access_control_output;
 
 pub(crate) mod shape_update_origin_request_policy_output;
@@ -792,6 +824,8 @@ pub(crate) mod shape_field_level_encryption_config;
 pub(crate) mod shape_field_level_encryption_profile_config;
 
 pub(crate) mod shape_function_config;
+
+pub(crate) mod shape_import_source;
 
 pub(crate) mod shape_invalidation_batch;
 
@@ -872,6 +906,12 @@ pub(crate) mod shape_invalidation_list;
 pub(crate) mod shape_key_group;
 
 pub(crate) mod shape_key_group_list;
+
+pub(crate) mod shape_key_value_store;
+
+pub(crate) mod shape_key_value_store_associations;
+
+pub(crate) mod shape_key_value_store_list;
 
 pub(crate) mod shape_kinesis_stream_config;
 
@@ -1006,6 +1046,10 @@ pub(crate) mod shape_headers;
 pub(crate) mod shape_invalidation_summary_list;
 
 pub(crate) mod shape_key_group_summary_list;
+
+pub(crate) mod shape_key_value_store_association;
+
+pub(crate) mod shape_key_value_store_summary_list;
 
 pub(crate) mod shape_lambda_function_associations;
 
@@ -1158,6 +1202,8 @@ pub(crate) mod shape_cookie_name_list;
 pub(crate) mod shape_function_association_list;
 
 pub(crate) mod shape_header_list;
+
+pub(crate) mod shape_key_value_store_association_list;
 
 pub(crate) mod shape_kg_key_pair_ids;
 

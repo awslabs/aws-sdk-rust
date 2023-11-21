@@ -113,6 +113,11 @@ pub(crate) fn de_describe_asset(
                             .transpose()?,
                     );
                 }
+                "assetCompositeModelSummaries" => {
+                    builder = builder.set_asset_composite_model_summaries(
+                        crate::protocol_serde::shape_asset_composite_model_summaries::de_asset_composite_model_summaries(tokens)?,
+                    );
+                }
                 "assetCompositeModels" => {
                     builder =
                         builder.set_asset_composite_models(crate::protocol_serde::shape_asset_composite_models::de_asset_composite_models(tokens)?);
@@ -125,6 +130,13 @@ pub(crate) fn de_describe_asset(
                 }
                 "assetDescription" => {
                     builder = builder.set_asset_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "assetExternalId" => {
+                    builder = builder.set_asset_external_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

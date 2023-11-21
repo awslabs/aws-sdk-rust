@@ -8,6 +8,8 @@ pub struct PropertyResponse {
     pub definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     /// <p>The value of the property.</p>
     pub value: ::std::option::Option<crate::types::DataValue>,
+    /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
+    pub are_all_property_values_returned: ::std::option::Option<bool>,
 }
 impl PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
@@ -17,6 +19,10 @@ impl PropertyResponse {
     /// <p>The value of the property.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::DataValue> {
         self.value.as_ref()
+    }
+    /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
+    pub fn are_all_property_values_returned(&self) -> ::std::option::Option<bool> {
+        self.are_all_property_values_returned
     }
 }
 impl PropertyResponse {
@@ -32,6 +38,7 @@ impl PropertyResponse {
 pub struct PropertyResponseBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PropertyDefinitionResponse>,
     pub(crate) value: ::std::option::Option<crate::types::DataValue>,
+    pub(crate) are_all_property_values_returned: ::std::option::Option<bool>,
 }
 impl PropertyResponseBuilder {
     /// <p>An object that specifies information about a property.</p>
@@ -62,11 +69,26 @@ impl PropertyResponseBuilder {
     pub fn get_value(&self) -> &::std::option::Option<crate::types::DataValue> {
         &self.value
     }
+    /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
+    pub fn are_all_property_values_returned(mut self, input: bool) -> Self {
+        self.are_all_property_values_returned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
+    pub fn set_are_all_property_values_returned(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.are_all_property_values_returned = input;
+        self
+    }
+    /// <p>This flag notes whether all values of a list or map type property are returned in the API response. The maximum number of values per property returned is 50.</p>
+    pub fn get_are_all_property_values_returned(&self) -> &::std::option::Option<bool> {
+        &self.are_all_property_values_returned
+    }
     /// Consumes the builder and constructs a [`PropertyResponse`](crate::types::PropertyResponse).
     pub fn build(self) -> crate::types::PropertyResponse {
         crate::types::PropertyResponse {
             definition: self.definition,
             value: self.value,
+            are_all_property_values_returned: self.are_all_property_values_returned,
         }
     }
 }

@@ -9,6 +9,8 @@ pub struct GetPropertyValueHistoryInput {
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     pub component_name: ::std::option::Option<::std::string::String>,
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub component_path: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties whose value histories the request retrieves.</p>
@@ -49,6 +51,10 @@ impl GetPropertyValueHistoryInput {
     /// <p>The name of the component.</p>
     pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(&self) -> ::std::option::Option<&str> {
+        self.component_path.as_deref()
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(&self) -> ::std::option::Option<&str> {
@@ -118,6 +124,7 @@ pub struct GetPropertyValueHistoryInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_path: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
@@ -173,6 +180,20 @@ impl GetPropertyValueHistoryInputBuilder {
     /// <p>The name of the component.</p>
     pub fn get_component_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_name
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn component_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn set_component_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_path = input;
+        self
+    }
+    /// <p>This string specifies the path to the composite component, starting from the top-level component.</p>
+    pub fn get_component_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_path
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -366,6 +387,7 @@ impl GetPropertyValueHistoryInputBuilder {
             workspace_id: self.workspace_id,
             entity_id: self.entity_id,
             component_name: self.component_name,
+            component_path: self.component_path,
             component_type_id: self.component_type_id,
             selected_properties: self.selected_properties,
             property_filters: self.property_filters,

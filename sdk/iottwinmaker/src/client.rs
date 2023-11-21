@@ -138,9 +138,13 @@ impl Client {
 
 mod batch_put_property_values;
 
+mod cancel_metadata_transfer_job;
+
 mod create_component_type;
 
 mod create_entity;
+
+mod create_metadata_transfer_job;
 
 mod create_scene;
 
@@ -191,6 +195,8 @@ mod get_component_type;
 
 mod get_entity;
 
+mod get_metadata_transfer_job;
+
 mod get_pricing_plan;
 
 mod get_property_value;
@@ -205,7 +211,13 @@ mod get_workspace;
 
 mod list_component_types;
 
+mod list_components;
+
 mod list_entities;
+
+mod list_metadata_transfer_jobs;
+
+mod list_properties;
 
 mod list_scenes;
 

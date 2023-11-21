@@ -22,7 +22,9 @@ impl ExecuteQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteQuery`.
 ///
-/// <p>Run queries to access information from your knowledge graph of entities within individual workspaces.</p>
+/// <p>Run queries to access information from your knowledge graph of entities within individual workspaces.</p> <note>
+/// <p>The ExecuteQuery action only works with <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon Web Services Java SDK2</a>. ExecuteQuery will not work with any Amazon Web Services Java SDK version &lt; 2.x.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExecuteQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,20 +144,17 @@ impl ExecuteQueryFluentBuilder {
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_statement()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

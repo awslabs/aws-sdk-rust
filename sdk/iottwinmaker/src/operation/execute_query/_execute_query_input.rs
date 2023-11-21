@@ -7,8 +7,7 @@ pub struct ExecuteQueryInput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The query statement.</p>
     pub query_statement: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The string that specifies the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -22,8 +21,7 @@ impl ExecuteQueryInput {
     pub fn query_statement(&self) -> ::std::option::Option<&str> {
         self.query_statement.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -79,20 +77,17 @@ impl ExecuteQueryInputBuilder {
     pub fn get_query_statement(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_statement
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p>
-    /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

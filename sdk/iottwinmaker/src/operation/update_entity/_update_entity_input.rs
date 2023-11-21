@@ -13,6 +13,9 @@ pub struct UpdateEntityInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub composite_component_updates:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
     /// <p>An object that describes the update request for a parent entity.</p>
     pub parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
@@ -39,6 +42,12 @@ impl UpdateEntityInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         self.component_updates.as_ref()
     }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_component_updates(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
+        self.composite_component_updates.as_ref()
+    }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn parent_entity_update(&self) -> ::std::option::Option<&crate::types::ParentEntityUpdateRequest> {
         self.parent_entity_update.as_ref()
@@ -60,6 +69,8 @@ pub struct UpdateEntityInputBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) component_updates: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>>,
+    pub(crate) composite_component_updates:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
     pub(crate) parent_entity_update: ::std::option::Option<crate::types::ParentEntityUpdateRequest>,
 }
 impl UpdateEntityInputBuilder {
@@ -146,6 +157,35 @@ impl UpdateEntityInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentUpdateRequest>> {
         &self.component_updates
     }
+    /// Adds a key-value pair to `composite_component_updates`.
+    ///
+    /// To override the contents of this collection use [`set_composite_component_updates`](Self::set_composite_component_updates).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn composite_component_updates(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::CompositeComponentUpdateRequest,
+    ) -> Self {
+        let mut hash_map = self.composite_component_updates.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.composite_component_updates = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn set_composite_component_updates(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>>,
+    ) -> Self {
+        self.composite_component_updates = input;
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+    pub fn get_composite_component_updates(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentUpdateRequest>> {
+        &self.composite_component_updates
+    }
     /// <p>An object that describes the update request for a parent entity.</p>
     pub fn parent_entity_update(mut self, input: crate::types::ParentEntityUpdateRequest) -> Self {
         self.parent_entity_update = ::std::option::Option::Some(input);
@@ -170,6 +210,7 @@ impl UpdateEntityInputBuilder {
             entity_name: self.entity_name,
             description: self.description,
             component_updates: self.component_updates,
+            composite_component_updates: self.composite_component_updates,
             parent_entity_update: self.parent_entity_update,
         })
     }

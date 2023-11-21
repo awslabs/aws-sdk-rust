@@ -6,66 +6,69 @@ pub fn ser_get_property_value_history_input_input(
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.component_type_id {
-        object.key("componentTypeId").string(var_2.as_str());
+    if let Some(var_2) = &input.component_path {
+        object.key("componentPath").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.end_date_time {
+    if let Some(var_3) = &input.component_type_id {
+        object.key("componentTypeId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.end_date_time {
         object
             .key("endDateTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.end_time {
-        object.key("endTime").string(var_4.as_str());
+    if let Some(var_5) = &input.end_time {
+        object.key("endTime").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.entity_id {
-        object.key("entityId").string(var_5.as_str());
+    if let Some(var_6) = &input.entity_id {
+        object.key("entityId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.interpolation {
+    if let Some(var_7) = &input.interpolation {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("interpolation").start_object();
-        crate::protocol_serde::shape_interpolation_parameters::ser_interpolation_parameters(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("interpolation").start_object();
+        crate::protocol_serde::shape_interpolation_parameters::ser_interpolation_parameters(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.max_results {
+    if let Some(var_9) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.next_token {
-        object.key("nextToken").string(var_9.as_str());
+    if let Some(var_10) = &input.next_token {
+        object.key("nextToken").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.order_by_time {
-        object.key("orderByTime").string(var_10.as_str());
+    if let Some(var_11) = &input.order_by_time {
+        object.key("orderByTime").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.property_filters {
-        let mut array_12 = object.key("propertyFilters").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.property_filters {
+        let mut array_13 = object.key("propertyFilters").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_property_filter::ser_property_filter(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_property_filter::ser_property_filter(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.selected_properties {
-        let mut array_16 = object.key("selectedProperties").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.selected_properties {
+        let mut array_17 = object.key("selectedProperties").start_array();
+        for item_18 in var_16 {
             {
-                array_16.value().string(item_17.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_18) = &input.start_date_time {
+    if let Some(var_19) = &input.start_date_time {
         object
             .key("startDateTime")
-            .date_time(var_18, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_19, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_19) = &input.start_time {
-        object.key("startTime").string(var_19.as_str());
+    if let Some(var_20) = &input.start_time {
+        object.key("startTime").string(var_20.as_str());
     }
     Ok(())
 }

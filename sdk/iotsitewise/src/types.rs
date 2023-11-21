@@ -31,9 +31,11 @@ pub use crate::types::_error_code::ErrorCode;
 
 pub use crate::types::_asset_model_state::AssetModelState;
 
-pub use crate::types::_asset_model_composite_model::AssetModelCompositeModel;
+pub use crate::types::_asset_model_composite_model_path_segment::AssetModelCompositeModelPathSegment;
 
 pub use crate::types::_asset_model_property::AssetModelProperty;
+
+pub use crate::types::_asset_model_property_path_segment::AssetModelPropertyPathSegment;
 
 pub use crate::types::_property_type::PropertyType;
 
@@ -67,6 +69,8 @@ pub use crate::types::_attribute::Attribute;
 
 pub use crate::types::_property_data_type::PropertyDataType;
 
+pub use crate::types::_asset_model_composite_model::AssetModelCompositeModel;
+
 pub use crate::types::_asset_model_hierarchy::AssetModelHierarchy;
 
 pub use crate::types::_asset_status::AssetStatus;
@@ -90,6 +94,10 @@ pub use crate::types::_iam_user_identity::IamUserIdentity;
 pub use crate::types::_group_identity::GroupIdentity;
 
 pub use crate::types::_user_identity::UserIdentity;
+
+pub use crate::types::_warm_tier_retention_period::WarmTierRetentionPeriod;
+
+pub use crate::types::_warm_tier_state::WarmTierState;
 
 pub use crate::types::_configuration_status::ConfigurationStatus;
 
@@ -133,6 +141,8 @@ pub use crate::types::_greengrass::Greengrass;
 
 pub use crate::types::_dashboard_summary::DashboardSummary;
 
+pub use crate::types::_composition_relationship_summary::CompositionRelationshipSummary;
+
 pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_job_status::JobStatus;
@@ -159,15 +169,27 @@ pub use crate::types::_traversal_type::TraversalType;
 
 pub use crate::types::_asset_property_summary::AssetPropertySummary;
 
+pub use crate::types::_asset_property_path_segment::AssetPropertyPathSegment;
+
 pub use crate::types::_property_notification::PropertyNotification;
 
 pub use crate::types::_list_asset_properties_filter::ListAssetPropertiesFilter;
 
 pub use crate::types::_asset_model_summary::AssetModelSummary;
 
+pub use crate::types::_asset_model_type::AssetModelType;
+
 pub use crate::types::_asset_model_property_summary::AssetModelPropertySummary;
 
 pub use crate::types::_list_asset_model_properties_filter::ListAssetModelPropertiesFilter;
+
+pub use crate::types::_asset_model_composite_model_summary::AssetModelCompositeModelSummary;
+
+pub use crate::types::_action_summary::ActionSummary;
+
+pub use crate::types::_target_resource::TargetResource;
+
+pub use crate::types::_target_resource_type::TargetResourceType;
 
 pub use crate::types::_access_policy_summary::AccessPolicySummary;
 
@@ -193,6 +215,18 @@ pub use crate::types::_aggregates::Aggregates;
 
 pub use crate::types::_aggregate_type::AggregateType;
 
+pub use crate::types::_row::Row;
+
+pub use crate::types::_datum::Datum;
+
+pub use crate::types::_column_info::ColumnInfo;
+
+pub use crate::types::_column_type::ColumnType;
+
+pub use crate::types::_scalar_type::ScalarType;
+
+pub use crate::types::_action_payload::ActionPayload;
+
 pub use crate::types::_auth_mode::AuthMode;
 
 pub use crate::types::_image_location::ImageLocation;
@@ -200,6 +234,8 @@ pub use crate::types::_image_location::ImageLocation;
 pub use crate::types::_job_configuration::JobConfiguration;
 
 pub use crate::types::_file_format::FileFormat;
+
+pub use crate::types::_parquet::Parquet;
 
 pub use crate::types::_csv::Csv;
 
@@ -213,13 +249,23 @@ pub use crate::types::_composite_model_property::CompositeModelProperty;
 
 pub use crate::types::_property::Property;
 
-pub use crate::types::_asset_composite_model::AssetCompositeModel;
+pub use crate::types::_action_definition::ActionDefinition;
+
+pub use crate::types::_composition_details::CompositionDetails;
+
+pub use crate::types::_composition_relationship_item::CompositionRelationshipItem;
+
+pub use crate::types::_asset_composite_model_summary::AssetCompositeModelSummary;
+
+pub use crate::types::_asset_composite_model_path_segment::AssetCompositeModelPathSegment;
 
 pub use crate::types::_asset_property::AssetProperty;
 
-pub use crate::types::_asset_model_composite_model_definition::AssetModelCompositeModelDefinition;
+pub use crate::types::_asset_composite_model::AssetCompositeModel;
 
 pub use crate::types::_asset_model_property_definition::AssetModelPropertyDefinition;
+
+pub use crate::types::_asset_model_composite_model_definition::AssetModelCompositeModelDefinition;
 
 pub use crate::types::_asset_model_hierarchy_definition::AssetModelHierarchyDefinition;
 
@@ -275,6 +321,12 @@ pub use crate::types::_asset_error_code::AssetErrorCode;
 
 mod _access_policy_summary;
 
+mod _action_definition;
+
+mod _action_payload;
+
+mod _action_summary;
+
 mod _aggregate_type;
 
 mod _aggregated_value;
@@ -284,6 +336,10 @@ mod _aggregates;
 mod _alarms;
 
 mod _asset_composite_model;
+
+mod _asset_composite_model_path_segment;
+
+mod _asset_composite_model_summary;
 
 mod _asset_error_code;
 
@@ -297,6 +353,10 @@ mod _asset_model_composite_model;
 
 mod _asset_model_composite_model_definition;
 
+mod _asset_model_composite_model_path_segment;
+
+mod _asset_model_composite_model_summary;
+
 mod _asset_model_hierarchy;
 
 mod _asset_model_hierarchy_definition;
@@ -304,6 +364,8 @@ mod _asset_model_hierarchy_definition;
 mod _asset_model_property;
 
 mod _asset_model_property_definition;
+
+mod _asset_model_property_path_segment;
 
 mod _asset_model_property_summary;
 
@@ -313,7 +375,11 @@ mod _asset_model_status;
 
 mod _asset_model_summary;
 
+mod _asset_model_type;
+
 mod _asset_property;
+
+mod _asset_property_path_segment;
 
 mod _asset_property_summary;
 
@@ -381,9 +447,19 @@ mod _batch_put_asset_property_value_error_code;
 
 mod _capability_sync_status;
 
+mod _column_info;
+
 mod _column_name;
 
+mod _column_type;
+
 mod _composite_model_property;
+
+mod _composition_details;
+
+mod _composition_relationship_item;
+
+mod _composition_relationship_summary;
 
 mod _compute_location;
 
@@ -398,6 +474,8 @@ mod _csv;
 mod _customer_managed_s3_storage;
 
 mod _dashboard_summary;
+
+mod _datum;
 
 mod _detailed_error;
 
@@ -489,6 +567,8 @@ mod _monitor_error_details;
 
 mod _multi_layer_storage;
 
+mod _parquet;
+
 mod _permission;
 
 mod _portal_resource;
@@ -523,7 +603,15 @@ mod _resource_type;
 
 mod _retention_period;
 
+mod _row;
+
+mod _scalar_type;
+
 mod _storage_type;
+
+mod _target_resource;
+
+mod _target_resource_type;
 
 mod _time_in_nanos;
 
@@ -546,6 +634,10 @@ mod _user_identity;
 mod _variable_value;
 
 mod _variant;
+
+mod _warm_tier_retention_period;
+
+mod _warm_tier_state;
 
 /// Builders
 pub mod builders;

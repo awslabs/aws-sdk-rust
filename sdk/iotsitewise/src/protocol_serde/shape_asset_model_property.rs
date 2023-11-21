@@ -24,6 +24,21 @@ pub fn ser_asset_model_property(
         crate::protocol_serde::shape_property_type::ser_property_type(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.path {
+        let mut array_7 = object.key("path").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_asset_model_property_path_segment::ser_asset_model_property_path_segment(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.external_id {
+        object.key("externalId").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -79,6 +94,18 @@ where
                         }
                         "type" => {
                             builder = builder.set_type(crate::protocol_serde::shape_property_type::de_property_type(tokens)?);
+                        }
+                        "path" => {
+                            builder = builder.set_path(crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(
+                                tokens,
+                            )?);
+                        }
+                        "externalId" => {
+                            builder = builder.set_external_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

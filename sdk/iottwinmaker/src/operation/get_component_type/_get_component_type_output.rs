@@ -36,6 +36,9 @@ pub struct GetComponentTypeOutput {
     pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>The component type name.</p>
     pub component_type_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub composite_component_types:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeResponse>>,
     _request_id: Option<String>,
 }
 impl GetComponentTypeOutput {
@@ -111,6 +114,12 @@ impl GetComponentTypeOutput {
     pub fn component_type_name(&self) -> ::std::option::Option<&str> {
         self.component_type_name.as_deref()
     }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn composite_component_types(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeResponse>> {
+        self.composite_component_types.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetComponentTypeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -145,6 +154,8 @@ pub struct GetComponentTypeOutputBuilder {
     pub(crate) property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PropertyGroupResponse>>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
     pub(crate) component_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) composite_component_types:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeResponse>>,
     _request_id: Option<String>,
 }
 impl GetComponentTypeOutputBuilder {
@@ -417,6 +428,35 @@ impl GetComponentTypeOutputBuilder {
     pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type_name
     }
+    /// Adds a key-value pair to `composite_component_types`.
+    ///
+    /// To override the contents of this collection use [`set_composite_component_types`](Self::set_composite_component_types).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn composite_component_types(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::CompositeComponentTypeResponse,
+    ) -> Self {
+        let mut hash_map = self.composite_component_types.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.composite_component_types = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn set_composite_component_types(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeResponse>>,
+    ) -> Self {
+        self.composite_component_types = input;
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn get_composite_component_types(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeResponse>> {
+        &self.composite_component_types
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -478,6 +518,7 @@ impl GetComponentTypeOutputBuilder {
             property_groups: self.property_groups,
             sync_source: self.sync_source,
             component_type_name: self.component_type_name,
+            composite_component_types: self.composite_component_types,
             _request_id: self._request_id,
         })
     }

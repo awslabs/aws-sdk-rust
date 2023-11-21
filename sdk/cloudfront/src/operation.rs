@@ -37,6 +37,9 @@ pub mod create_invalidation;
 /// Types for the `CreateKeyGroup` operation.
 pub mod create_key_group;
 
+/// Types for the `CreateKeyValueStore` operation.
+pub mod create_key_value_store;
+
 /// Types for the `CreateMonitoringSubscription` operation.
 pub mod create_monitoring_subscription;
 
@@ -85,6 +88,9 @@ pub mod delete_function;
 /// Types for the `DeleteKeyGroup` operation.
 pub mod delete_key_group;
 
+/// Types for the `DeleteKeyValueStore` operation.
+pub mod delete_key_value_store;
+
 /// Types for the `DeleteMonitoringSubscription` operation.
 pub mod delete_monitoring_subscription;
 
@@ -108,6 +114,9 @@ pub mod delete_streaming_distribution;
 
 /// Types for the `DescribeFunction` operation.
 pub mod describe_function;
+
+/// Types for the `DescribeKeyValueStore` operation.
+pub mod describe_key_value_store;
 
 /// Types for the `GetCachePolicy` operation.
 pub mod get_cache_policy;
@@ -241,6 +250,9 @@ pub mod list_invalidations;
 /// Types for the `ListKeyGroups` operation.
 pub mod list_key_groups;
 
+/// Types for the `ListKeyValueStores` operation.
+pub mod list_key_value_stores;
+
 /// Types for the `ListOriginAccessControls` operation.
 pub mod list_origin_access_controls;
 
@@ -300,6 +312,9 @@ pub mod update_function;
 
 /// Types for the `UpdateKeyGroup` operation.
 pub mod update_key_group;
+
+/// Types for the `UpdateKeyValueStore` operation.
+pub mod update_key_value_store;
 
 /// Types for the `UpdateOriginAccessControl` operation.
 pub mod update_origin_access_control;

@@ -204,6 +204,18 @@ pub(crate) fn de_put_storage_configuration(
                             .transpose()?,
                     );
                 }
+                "warmTier" => {
+                    builder = builder.set_warm_tier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::WarmTierState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "warmTierRetentionPeriod" => {
+                    builder = builder.set_warm_tier_retention_period(
+                        crate::protocol_serde::shape_warm_tier_retention_period::de_warm_tier_retention_period(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

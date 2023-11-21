@@ -13,6 +13,10 @@ pub struct CreateBulkImportJobInput {
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub adaptive_ingestion: ::std::option::Option<bool>,
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub delete_files_after_import: ::std::option::Option<bool>,
 }
 impl CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
@@ -37,6 +41,14 @@ impl CreateBulkImportJobInput {
     pub fn job_configuration(&self) -> ::std::option::Option<&crate::types::JobConfiguration> {
         self.job_configuration.as_ref()
     }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn adaptive_ingestion(&self) -> ::std::option::Option<bool> {
+        self.adaptive_ingestion
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn delete_files_after_import(&self) -> ::std::option::Option<bool> {
+        self.delete_files_after_import
+    }
 }
 impl CreateBulkImportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
@@ -54,6 +66,8 @@ pub struct CreateBulkImportJobInputBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
     pub(crate) error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
     pub(crate) job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
+    pub(crate) adaptive_ingestion: ::std::option::Option<bool>,
+    pub(crate) delete_files_after_import: ::std::option::Option<bool>,
 }
 impl CreateBulkImportJobInputBuilder {
     /// <p>The unique name that helps identify the job request.</p>
@@ -136,6 +150,34 @@ impl CreateBulkImportJobInputBuilder {
     pub fn get_job_configuration(&self) -> &::std::option::Option<crate::types::JobConfiguration> {
         &self.job_configuration
     }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn adaptive_ingestion(mut self, input: bool) -> Self {
+        self.adaptive_ingestion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn set_adaptive_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.adaptive_ingestion = input;
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn get_adaptive_ingestion(&self) -> &::std::option::Option<bool> {
+        &self.adaptive_ingestion
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn delete_files_after_import(mut self, input: bool) -> Self {
+        self.delete_files_after_import = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn set_delete_files_after_import(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_files_after_import = input;
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
+        &self.delete_files_after_import
+    }
     /// Consumes the builder and constructs a [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
     pub fn build(
         self,
@@ -147,6 +189,8 @@ impl CreateBulkImportJobInputBuilder {
             files: self.files,
             error_report_location: self.error_report_location,
             job_configuration: self.job_configuration,
+            adaptive_ingestion: self.adaptive_ingestion,
+            delete_files_after_import: self.delete_files_after_import,
         })
     }
 }

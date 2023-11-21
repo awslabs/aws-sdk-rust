@@ -96,7 +96,7 @@ pub struct CopyObjectInput {
     pub sse_customer_key_md5: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS ID (Key ID, Key ARN, or Key Alias) to use for object encryption. All GET and PUT requests for an object protected by KMS will fail if they're not made via SSL or using SigV4. For information about configuring any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub ssekms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value must be explicitly added to specify encryption context for CopyObject requests.</p>
     pub ssekms_encryption_context: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
     /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
@@ -274,7 +274,7 @@ impl CopyObjectInput {
     pub fn ssekms_key_id(&self) -> ::std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value must be explicitly added to specify encryption context for CopyObject requests.</p>
     pub fn ssekms_encryption_context(&self) -> ::std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -945,17 +945,17 @@ impl CopyObjectInputBuilder {
     pub fn get_ssekms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssekms_key_id
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value must be explicitly added to specify encryption context for CopyObject requests.</p>
     pub fn ssekms_encryption_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssekms_encryption_context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value must be explicitly added to specify encryption context for CopyObject requests.</p>
     pub fn set_ssekms_encryption_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssekms_encryption_context = input;
         self
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs. This value must be explicitly added to specify encryption context for CopyObject requests.</p>
     pub fn get_ssekms_encryption_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssekms_encryption_context
     }

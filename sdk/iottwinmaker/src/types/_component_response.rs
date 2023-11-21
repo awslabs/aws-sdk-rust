@@ -20,6 +20,12 @@ pub struct ComponentResponse {
     pub property_groups: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub sync_source: ::std::option::Option<::std::string::String>,
+    /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
+    pub are_all_properties_returned: ::std::option::Option<bool>,
+    /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
+    pub composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
+    /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
+    pub are_all_composite_components_returned: ::std::option::Option<bool>,
 }
 impl ComponentResponse {
     /// <p>The name of the component.</p>
@@ -56,6 +62,18 @@ impl ComponentResponse {
     pub fn sync_source(&self) -> ::std::option::Option<&str> {
         self.sync_source.as_deref()
     }
+    /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
+    pub fn are_all_properties_returned(&self) -> ::std::option::Option<bool> {
+        self.are_all_properties_returned
+    }
+    /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
+    pub fn composite_components(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>> {
+        self.composite_components.as_ref()
+    }
+    /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
+    pub fn are_all_composite_components_returned(&self) -> ::std::option::Option<bool> {
+        self.are_all_composite_components_returned
+    }
 }
 impl ComponentResponse {
     /// Creates a new builder-style object to manufacture [`ComponentResponse`](crate::types::ComponentResponse).
@@ -77,6 +95,9 @@ pub struct ComponentResponseBuilder {
     pub(crate) property_groups:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentPropertyGroupResponse>>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
+    pub(crate) are_all_properties_returned: ::std::option::Option<bool>,
+    pub(crate) composite_components: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
+    pub(crate) are_all_composite_components_returned: ::std::option::Option<bool>,
 }
 impl ComponentResponseBuilder {
     /// <p>The name of the component.</p>
@@ -211,6 +232,59 @@ impl ComponentResponseBuilder {
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_source
     }
+    /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
+    pub fn are_all_properties_returned(mut self, input: bool) -> Self {
+        self.are_all_properties_returned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
+    pub fn set_are_all_properties_returned(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.are_all_properties_returned = input;
+        self
+    }
+    /// <p>This flag notes whether all properties of the component are returned in the API response. The maximum number of properties returned is 800.</p>
+    pub fn get_are_all_properties_returned(&self) -> &::std::option::Option<bool> {
+        &self.are_all_properties_returned
+    }
+    /// Adds a key-value pair to `composite_components`.
+    ///
+    /// To override the contents of this collection use [`set_composite_components`](Self::set_composite_components).
+    ///
+    /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
+    pub fn composite_components(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ComponentSummary) -> Self {
+        let mut hash_map = self.composite_components.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.composite_components = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
+    pub fn set_composite_components(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>>,
+    ) -> Self {
+        self.composite_components = input;
+        self
+    }
+    /// <p>This lists objects that contain information about the <code>compositeComponents</code>.</p>
+    pub fn get_composite_components(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ComponentSummary>> {
+        &self.composite_components
+    }
+    /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
+    pub fn are_all_composite_components_returned(mut self, input: bool) -> Self {
+        self.are_all_composite_components_returned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
+    pub fn set_are_all_composite_components_returned(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.are_all_composite_components_returned = input;
+        self
+    }
+    /// <p>This flag notes whether all <code>compositeComponents</code> are returned in the API response.</p>
+    pub fn get_are_all_composite_components_returned(&self) -> &::std::option::Option<bool> {
+        &self.are_all_composite_components_returned
+    }
     /// Consumes the builder and constructs a [`ComponentResponse`](crate::types::ComponentResponse).
     pub fn build(self) -> crate::types::ComponentResponse {
         crate::types::ComponentResponse {
@@ -222,6 +296,9 @@ impl ComponentResponseBuilder {
             properties: self.properties,
             property_groups: self.property_groups,
             sync_source: self.sync_source,
+            are_all_properties_returned: self.are_all_properties_returned,
+            composite_components: self.composite_components,
+            are_all_composite_components_returned: self.are_all_composite_components_returned,
         }
     }
 }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobConfiguration {
-    /// <p>The file format of the data in Amazon S3.</p>
+    /// <p>The file format of the data in S3.</p>
     pub file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl JobConfiguration {
-    /// <p>The file format of the data in Amazon S3.</p>
+    /// <p>The file format of the data in S3.</p>
     pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
         self.file_format.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct JobConfigurationBuilder {
     pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl JobConfigurationBuilder {
-    /// <p>The file format of the data in Amazon S3.</p>
+    /// <p>The file format of the data in S3.</p>
     /// This field is required.
     pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
         self.file_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The file format of the data in Amazon S3.</p>
+    /// <p>The file format of the data in S3.</p>
     pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
         self.file_format = input;
         self
     }
-    /// <p>The file format of the data in Amazon S3.</p>
+    /// <p>The file format of the data in S3.</p>
     pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
         &self.file_format
     }

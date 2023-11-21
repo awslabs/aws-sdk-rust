@@ -10,10 +10,11 @@ pub struct ModifyVolumeInput {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub size: ::std::option::Option<i32>,
@@ -23,10 +24,11 @@ pub struct ModifyVolumeInput {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code> volumes. The maximum value is 1,000.</p>
@@ -48,10 +50,11 @@ impl ModifyVolumeInput {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn size(&self) -> ::std::option::Option<i32> {
@@ -65,10 +68,11 @@ impl ModifyVolumeInput {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
@@ -136,10 +140,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn size(mut self, input: i32) -> Self {
@@ -149,10 +154,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -162,10 +168,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target size of the volume, in GiB. The target volume size must be greater than or equal to the existing size of the volume.</p>
     /// <p>The following are the supported volumes sizes for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1-16,384</p> </li>
-    /// <li> <p> <code>io1</code> and <code>io2</code>: 4-16,384</p> </li>
-    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li>
-    /// <li> <p> <code>standard</code>: 1-1,024</p> </li>
+    /// <li> <p> <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io1</code>: 4 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>io2</code>: 4 - 65,536 GiB</p> </li>
+    /// <li> <p> <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB</p> </li>
+    /// <li> <p> <code>standard</code>: 1 - 1024 GiB</p> </li>
     /// </ul>
     /// <p>Default: The existing size is retained.</p>
     pub fn get_size(&self) -> &::std::option::Option<i32> {
@@ -191,10 +198,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -203,10 +211,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
@@ -215,10 +224,11 @@ impl ModifyVolumeInputBuilder {
     /// <p>The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes.</p>
     /// <p>The following are the supported values for each volume type:</p>
     /// <ul>
-    /// <li> <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li>
-    /// <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-    /// <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
+    /// <li> <p> <code>gp3</code>: 3,000 - 16,000 IOPS</p> </li>
+    /// <li> <p> <code>io1</code>: 100 - 64,000 IOPS</p> </li>
+    /// <li> <p> <code>io2</code>: 100 - 256,000 IOPS</p> </li>
     /// </ul>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>Default: The existing value is retained if you keep the same volume type. If you change the volume type to <code>io1</code>, <code>io2</code>, or <code>gp3</code>, the default is 3,000.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops

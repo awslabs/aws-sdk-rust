@@ -116,6 +116,48 @@ impl From<crate::operation::batch_put_property_values::BatchPutPropertyValuesErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError> for Error {
+    fn from(err: crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError) -> Self {
+        match err {
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_metadata_transfer_job::CancelMetadataTransferJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_component_type::CreateComponentTypeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -171,6 +213,51 @@ impl From<crate::operation::create_entity::CreateEntityError> for Error {
             crate::operation::create_entity::CreateEntityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_entity::CreateEntityError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_entity::CreateEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError> for Error {
+    fn from(err: crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError) -> Self {
+        match err {
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_metadata_transfer_job::CreateMetadataTransferJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -475,6 +562,41 @@ impl From<crate::operation::get_entity::GetEntityError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError> for Error {
+    fn from(err: crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError) -> Self {
+        match err {
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_pricing_plan::GetPricingPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -652,6 +774,32 @@ impl From<crate::operation::get_workspace::GetWorkspaceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_components::ListComponentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_components::ListComponentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_components::ListComponentsError> for Error {
+    fn from(err: crate::operation::list_components::ListComponentsError) -> Self {
+        match err {
+            crate::operation::list_components::ListComponentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_components::ListComponentsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_components::ListComponentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_components::ListComponentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_components::ListComponentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_components::ListComponentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_component_types::ListComponentTypesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -699,6 +847,68 @@ impl From<crate::operation::list_entities::ListEntitiesError> for Error {
             crate::operation::list_entities::ListEntitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_entities::ListEntitiesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_entities::ListEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError> for Error {
+    fn from(err: crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError) -> Self {
+        match err {
+            crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_properties::ListPropertiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_properties::ListPropertiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_properties::ListPropertiesError> for Error {
+    fn from(err: crate::operation::list_properties::ListPropertiesError) -> Self {
+        match err {
+            crate::operation::list_properties::ListPropertiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_properties::ListPropertiesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_properties::ListPropertiesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_properties::ListPropertiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_properties::ListPropertiesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_properties::ListPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

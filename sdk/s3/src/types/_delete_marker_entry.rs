@@ -12,7 +12,7 @@ pub struct DeleteMarkerEntry {
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the object is (true) or is not (false) the latest version of an object.</p>
     pub is_latest: ::std::option::Option<bool>,
-    /// <p>Date and time the object was last modified.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {
@@ -32,7 +32,7 @@ impl DeleteMarkerEntry {
     pub fn is_latest(&self) -> ::std::option::Option<bool> {
         self.is_latest
     }
-    /// <p>Date and time the object was last modified.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
@@ -111,17 +111,17 @@ impl DeleteMarkerEntryBuilder {
     pub fn get_is_latest(&self) -> &::std::option::Option<bool> {
         &self.is_latest
     }
-    /// <p>Date and time the object was last modified.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Date and time the object was last modified.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
-    /// <p>Date and time the object was last modified.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }

@@ -12,7 +12,7 @@ pub struct GetObjectOutput {
     pub expiration: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about object restoration action and expiration time of the restored object copy.</p>
     pub restore: ::std::option::Option<::std::string::String>,
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Size of the body in bytes.</p>
     pub content_length: ::std::option::Option<i64>,
@@ -98,7 +98,7 @@ impl GetObjectOutput {
     pub fn restore(&self) -> ::std::option::Option<&str> {
         self.restore.as_deref()
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
@@ -398,17 +398,17 @@ impl GetObjectOutputBuilder {
     pub fn get_restore(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified = input;
         self
     }
-    /// <p>Creation date of the object.</p>
+    /// <p>Date and time when the object was last modified.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }

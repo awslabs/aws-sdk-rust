@@ -16,17 +16,30 @@ pub fn ser_update_entity_input_input(
         }
         object_2.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.entity_name {
-        object.key("entityName").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.parent_entity_update {
+    if let Some(var_6) = &input.composite_component_updates {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("parentEntityUpdate").start_object();
-        crate::protocol_serde::shape_parent_entity_update_request::ser_parent_entity_update_request(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_7 = object.key("compositeComponentUpdates").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = object_7.key(key_8.as_str()).start_object();
+                crate::protocol_serde::shape_composite_component_update_request::ser_composite_component_update_request(&mut object_10, value_9)?;
+                object_10.finish();
+            }
+        }
+        object_7.finish();
+    }
+    if let Some(var_11) = &input.description {
+        object.key("description").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.entity_name {
+        object.key("entityName").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.parent_entity_update {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("parentEntityUpdate").start_object();
+        crate::protocol_serde::shape_parent_entity_update_request::ser_parent_entity_update_request(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

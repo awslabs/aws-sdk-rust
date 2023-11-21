@@ -13,12 +13,25 @@ pub struct CreateAssetModelInput {
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchyDefinition>>,
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub asset_model_id: ::std::option::Option<::std::string::String>,
+    /// <p>An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub asset_model_external_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
 }
 impl CreateAssetModelInput {
     /// <p>A unique, friendly name for the asset model.</p>
@@ -43,7 +56,10 @@ impl CreateAssetModelInput {
     pub fn asset_model_hierarchies(&self) -> &[crate::types::AssetModelHierarchyDefinition] {
         self.asset_model_hierarchies.as_deref().unwrap_or_default()
     }
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_models.is_none()`.
     pub fn asset_model_composite_models(&self) -> &[crate::types::AssetModelCompositeModelDefinition] {
@@ -56,6 +72,22 @@ impl CreateAssetModelInput {
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
+    /// <p>An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_external_id(&self) -> ::std::option::Option<&str> {
+        self.asset_model_external_id.as_deref()
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
+        self.asset_model_type.as_ref()
     }
 }
 impl CreateAssetModelInput {
@@ -76,6 +108,9 @@ pub struct CreateAssetModelInputBuilder {
     pub(crate) asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_model_external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
 }
 impl CreateAssetModelInputBuilder {
     /// <p>A unique, friendly name for the asset model.</p>
@@ -157,14 +192,20 @@ impl CreateAssetModelInputBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModelDefinition) -> Self {
         let mut v = self.asset_model_composite_models.unwrap_or_default();
         v.push(input);
         self.asset_model_composite_models = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn set_asset_model_composite_models(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>>,
@@ -172,7 +213,10 @@ impl CreateAssetModelInputBuilder {
         self.asset_model_composite_models = input;
         self
     }
-    /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
+    /// <p>The composite models that are part of this asset model. It groups properties (such as attributes, measurements, transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite model has a type that defines the properties that the composite model supports. Use composite models to define alarms on this asset model.</p> <note>
+    /// <p>When creating custom composite models, you need to use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>. For more information, see
+    /// <link>.</p>
+    /// </note>
     pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelDefinition>> {
         &self.asset_model_composite_models
     }
@@ -210,6 +254,60 @@ impl CreateAssetModelInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_id = input;
+        self
+    }
+    /// <p>The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
+    /// <p>An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn asset_model_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_asset_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_external_id = input;
+        self
+    }
+    /// <p>An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_asset_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_external_id
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
+        self.asset_model_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
+        self.asset_model_type = input;
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
+        &self.asset_model_type
+    }
     /// Consumes the builder and constructs a [`CreateAssetModelInput`](crate::operation::create_asset_model::CreateAssetModelInput).
     pub fn build(
         self,
@@ -222,6 +320,9 @@ impl CreateAssetModelInputBuilder {
             asset_model_composite_models: self.asset_model_composite_models,
             client_token: self.client_token,
             tags: self.tags,
+            asset_model_id: self.asset_model_id,
+            asset_model_external_id: self.asset_model_external_id,
+            asset_model_type: self.asset_model_type,
         })
     }
 }

@@ -51,8 +51,9 @@ impl GetObjectInputBuilder {
 /// <dd>
 /// <p>By default, the <code>GET</code> action returns the current version of an object. To return a different version, use the <code>versionId</code> subresource.</p> <note>
 /// <ul>
-/// <li> <p> If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object. If you request a specific version, you do not need to have the <code>s3:GetObject</code> permission. If you request the current version without a specific version ID, only <code>s3:GetObject</code> permission is required. <code>s3:GetObjectVersion</code> permission won't be required.</p> </li>
+/// <li> <p>If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object. If you request a specific version, you do not need to have the <code>s3:GetObject</code> permission. If you request the current version without a specific version ID, only <code>s3:GetObject</code> permission is required. <code>s3:GetObjectVersion</code> permission won't be required.</p> </li>
 /// <li> <p>If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
+/// <li> <p>If the specified version is a delete marker, the response returns a 405 (Method Not Allowed) error and the <code>Last-Modified: timestamp</code> response header.</p> </li>
 /// </ul>
 /// </note>
 /// <p>For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>. </p>

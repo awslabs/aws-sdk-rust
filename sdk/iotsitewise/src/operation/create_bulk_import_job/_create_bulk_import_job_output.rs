@@ -7,7 +7,7 @@ pub struct CreateBulkImportJobOutput {
     pub job_id: ::std::string::String,
     /// <p>The unique name that helps identify the job request.</p>
     pub job_name: ::std::string::String,
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -30,7 +30,7 @@ impl CreateBulkImportJobOutput {
         use std::ops::Deref;
         self.job_name.deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -95,7 +95,7 @@ impl CreateBulkImportJobOutputBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -109,7 +109,7 @@ impl CreateBulkImportJobOutputBuilder {
         self.job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
@@ -122,7 +122,7 @@ impl CreateBulkImportJobOutputBuilder {
         self.job_status = input;
         self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <p>The status of the bulk import job can be one of following values:</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
     /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>

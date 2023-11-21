@@ -19,6 +19,14 @@ pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_query_timeout_exception::QueryTimeoutException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+mod _access_denied_exception;
+
 mod _conflicting_operation_exception;
 
 mod _internal_failure_exception;
@@ -26,6 +34,8 @@ mod _internal_failure_exception;
 mod _invalid_request_exception;
 
 mod _limit_exceeded_exception;
+
+mod _query_timeout_exception;
 
 mod _resource_already_exists_exception;
 
@@ -38,6 +48,8 @@ mod _throttling_exception;
 mod _too_many_tags_exception;
 
 mod _unauthorized_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

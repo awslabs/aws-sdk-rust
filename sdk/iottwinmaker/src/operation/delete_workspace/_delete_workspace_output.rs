@@ -3,7 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceOutput {
+    /// <p>The string that specifies the delete result for the workspace.</p>
+    pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
+}
+impl DeleteWorkspaceOutput {
+    /// <p>The string that specifies the delete result for the workspace.</p>
+    pub fn message(&self) -> ::std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteWorkspaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +29,24 @@ impl DeleteWorkspaceOutput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DeleteWorkspaceOutputBuilder {
+    pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteWorkspaceOutputBuilder {
+    /// <p>The string that specifies the delete result for the workspace.</p>
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The string that specifies the delete result for the workspace.</p>
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message = input;
+        self
+    }
+    /// <p>The string that specifies the delete result for the workspace.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -36,6 +59,7 @@ impl DeleteWorkspaceOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput).
     pub fn build(self) -> crate::operation::delete_workspace::DeleteWorkspaceOutput {
         crate::operation::delete_workspace::DeleteWorkspaceOutput {
+            message: self.message,
             _request_id: self._request_id,
         }
     }

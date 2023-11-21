@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAssetModelOutput {
-    /// <p>The ID of the asset model.</p>
+    /// <p>The ID of the asset model, in UUID format.</p>
     pub asset_model_id: ::std::string::String,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset model, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code> </p>
@@ -17,7 +17,7 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_properties: ::std::vec::Vec<crate::types::AssetModelProperty>,
     /// <p>A list of asset model hierarchies that each contain a <code>childAssetModelId</code> and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed parent/child asset relationships for an asset model.</p>
     pub asset_model_hierarchies: ::std::vec::Vec<crate::types::AssetModelHierarchy>,
-    /// <p>The list of composite asset models for the asset model.</p>
+    /// <p>The list of built-in composite models for the asset model, such as those with those of type <code>AWS/ALARMS</code>.</p>
     pub asset_model_composite_models: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     /// <p>The date the asset model was created, in Unix epoch time.</p>
     pub asset_model_creation_date: ::aws_smithy_types::DateTime,
@@ -25,10 +25,20 @@ pub struct DescribeAssetModelOutput {
     pub asset_model_last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
+    /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
+    pub asset_model_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>>,
+    /// <p>The external ID of the asset model, if any.</p>
+    pub asset_model_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetModelOutput {
-    /// <p>The ID of the asset model.</p>
+    /// <p>The ID of the asset model, in UUID format.</p>
     pub fn asset_model_id(&self) -> &str {
         use std::ops::Deref;
         self.asset_model_id.deref()
@@ -60,7 +70,7 @@ impl DescribeAssetModelOutput {
         use std::ops::Deref;
         self.asset_model_hierarchies.deref()
     }
-    /// <p>The list of composite asset models for the asset model.</p>
+    /// <p>The list of built-in composite models for the asset model, such as those with those of type <code>AWS/ALARMS</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_models.is_none()`.
     pub fn asset_model_composite_models(&self) -> &[crate::types::AssetModelCompositeModel] {
@@ -77,6 +87,24 @@ impl DescribeAssetModelOutput {
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
         self.asset_model_status.as_ref()
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(&self) -> ::std::option::Option<&crate::types::AssetModelType> {
+        self.asset_model_type.as_ref()
+    }
+    /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_composite_model_summaries.is_none()`.
+    pub fn asset_model_composite_model_summaries(&self) -> &[crate::types::AssetModelCompositeModelSummary] {
+        self.asset_model_composite_model_summaries.as_deref().unwrap_or_default()
+    }
+    /// <p>The external ID of the asset model, if any.</p>
+    pub fn asset_model_external_id(&self) -> ::std::option::Option<&str> {
+        self.asset_model_external_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAssetModelOutput {
@@ -105,21 +133,24 @@ pub struct DescribeAssetModelOutputBuilder {
     pub(crate) asset_model_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_model_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
+    pub(crate) asset_model_type: ::std::option::Option<crate::types::AssetModelType>,
+    pub(crate) asset_model_composite_model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>>,
+    pub(crate) asset_model_external_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAssetModelOutputBuilder {
-    /// <p>The ID of the asset model.</p>
+    /// <p>The ID of the asset model, in UUID format.</p>
     /// This field is required.
     pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset model.</p>
+    /// <p>The ID of the asset model, in UUID format.</p>
     pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_model_id = input;
         self
     }
-    /// <p>The ID of the asset model.</p>
+    /// <p>The ID of the asset model, in UUID format.</p>
     pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_model_id
     }
@@ -218,19 +249,19 @@ impl DescribeAssetModelOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
     ///
-    /// <p>The list of composite asset models for the asset model.</p>
+    /// <p>The list of built-in composite models for the asset model, such as those with those of type <code>AWS/ALARMS</code>.</p>
     pub fn asset_model_composite_models(mut self, input: crate::types::AssetModelCompositeModel) -> Self {
         let mut v = self.asset_model_composite_models.unwrap_or_default();
         v.push(input);
         self.asset_model_composite_models = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of composite asset models for the asset model.</p>
+    /// <p>The list of built-in composite models for the asset model, such as those with those of type <code>AWS/ALARMS</code>.</p>
     pub fn set_asset_model_composite_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>) -> Self {
         self.asset_model_composite_models = input;
         self
     }
-    /// <p>The list of composite asset models for the asset model.</p>
+    /// <p>The list of built-in composite models for the asset model, such as those with those of type <code>AWS/ALARMS</code>.</p>
     pub fn get_asset_model_composite_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>> {
         &self.asset_model_composite_models
     }
@@ -278,6 +309,71 @@ impl DescribeAssetModelOutputBuilder {
     /// <p>The current status of the asset model, which contains a state and any error message.</p>
     pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.asset_model_status
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_type(mut self, input: crate::types::AssetModelType) -> Self {
+        self.asset_model_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn set_asset_model_type(mut self, input: ::std::option::Option<crate::types::AssetModelType>) -> Self {
+        self.asset_model_type = input;
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn get_asset_model_type(&self) -> &::std::option::Option<crate::types::AssetModelType> {
+        &self.asset_model_type
+    }
+    /// Appends an item to `asset_model_composite_model_summaries`.
+    ///
+    /// To override the contents of this collection use [`set_asset_model_composite_model_summaries`](Self::set_asset_model_composite_model_summaries).
+    ///
+    /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
+    pub fn asset_model_composite_model_summaries(mut self, input: crate::types::AssetModelCompositeModelSummary) -> Self {
+        let mut v = self.asset_model_composite_model_summaries.unwrap_or_default();
+        v.push(input);
+        self.asset_model_composite_model_summaries = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
+    pub fn set_asset_model_composite_model_summaries(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>>,
+    ) -> Self {
+        self.asset_model_composite_model_summaries = input;
+        self
+    }
+    /// <p>The list of the immediate child custom composite model summaries for the asset model.</p>
+    pub fn get_asset_model_composite_model_summaries(
+        &self,
+    ) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>> {
+        &self.asset_model_composite_model_summaries
+    }
+    /// <p>The external ID of the asset model, if any.</p>
+    pub fn asset_model_external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset model, if any.</p>
+    pub fn set_asset_model_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset model, if any.</p>
+    pub fn get_asset_model_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_external_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -353,6 +449,9 @@ impl DescribeAssetModelOutputBuilder {
                 )
             })?,
             asset_model_status: self.asset_model_status,
+            asset_model_type: self.asset_model_type,
+            asset_model_composite_model_summaries: self.asset_model_composite_model_summaries,
+            asset_model_external_id: self.asset_model_external_id,
             _request_id: self._request_id,
         })
     }

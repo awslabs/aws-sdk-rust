@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetPropertyInput {
-    /// <p>The ID of the asset to be updated.</p>
+    /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the asset property to be updated.</p>
+    /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
@@ -19,11 +19,11 @@ pub struct UpdateAssetPropertyInput {
     pub property_unit: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssetPropertyInput {
-    /// <p>The ID of the asset to be updated.</p>
+    /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
-    /// <p>The ID of the asset property to be updated.</p>
+    /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_id(&self) -> ::std::option::Option<&str> {
         self.property_id.as_deref()
     }
@@ -65,33 +65,33 @@ pub struct UpdateAssetPropertyInputBuilder {
     pub(crate) property_unit: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssetPropertyInputBuilder {
-    /// <p>The ID of the asset to be updated.</p>
+    /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// This field is required.
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset to be updated.</p>
+    /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The ID of the asset to be updated.</p>
+    /// <p>The ID of the asset to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }
-    /// <p>The ID of the asset property to be updated.</p>
+    /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// This field is required.
     pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.property_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset property to be updated.</p>
+    /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
     }
-    /// <p>The ID of the asset property to be updated.</p>
+    /// <p>The ID of the asset property to be updated. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.property_id
     }

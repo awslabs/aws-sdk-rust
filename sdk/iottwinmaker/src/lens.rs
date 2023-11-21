@@ -39,8 +39,38 @@ pub(crate) fn reflens_list_component_types_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_components_output_output_next_token(
+    input: &crate::operation::list_components::ListComponentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_entities_output_output_next_token(
     input: &crate::operation::list_entities::ListEntitiesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_metadata_transfer_jobs_output_output_next_token(
+    input: &crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_properties_output_output_next_token(
+    input: &crate::operation::list_properties::ListPropertiesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

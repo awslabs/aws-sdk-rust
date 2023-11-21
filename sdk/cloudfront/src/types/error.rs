@@ -57,6 +57,8 @@ pub use crate::types::error::_origin_access_control_already_exists::OriginAccess
 
 pub use crate::types::error::_no_such_origin_access_control::NoSuchOriginAccessControl;
 
+pub use crate::types::error::_entity_not_found::EntityNotFound;
+
 pub use crate::types::error::_too_many_public_keys_in_key_group::TooManyPublicKeysInKeyGroup;
 
 pub use crate::types::error::_no_such_resource::NoSuchResource;
@@ -219,6 +221,8 @@ pub use crate::types::error::_origin_request_policy_in_use::OriginRequestPolicyI
 
 pub use crate::types::error::_origin_access_control_in_use::OriginAccessControlInUse;
 
+pub use crate::types::error::_cannot_delete_entity_while_in_use::CannotDeleteEntityWhileInUse;
+
 pub use crate::types::error::_resource_in_use::ResourceInUse;
 
 pub use crate::types::error::_function_in_use::FunctionInUse;
@@ -254,6 +258,12 @@ pub use crate::types::error::_too_many_origin_request_policies::TooManyOriginReq
 pub use crate::types::error::_too_many_origin_access_controls::TooManyOriginAccessControls;
 
 pub use crate::types::error::_monitoring_subscription_already_exists::MonitoringSubscriptionAlreadyExists;
+
+pub use crate::types::error::_entity_size_limit_exceeded::EntitySizeLimitExceeded;
+
+pub use crate::types::error::_entity_limit_exceeded::EntityLimitExceeded;
+
+pub use crate::types::error::_entity_already_exists::EntityAlreadyExists;
 
 pub use crate::types::error::_too_many_key_groups::TooManyKeyGroups;
 
@@ -297,6 +307,8 @@ mod _cache_policy_in_use;
 
 mod _cannot_change_immutable_public_key_fields;
 
+mod _cannot_delete_entity_while_in_use;
+
 mod _cloud_front_origin_access_identity_already_exists;
 
 mod _cloud_front_origin_access_identity_in_use;
@@ -310,6 +322,14 @@ mod _continuous_deployment_policy_in_use;
 mod _distribution_already_exists;
 
 mod _distribution_not_disabled;
+
+mod _entity_already_exists;
+
+mod _entity_limit_exceeded;
+
+mod _entity_not_found;
+
+mod _entity_size_limit_exceeded;
 
 mod _field_level_encryption_config_already_exists;
 

@@ -57,6 +57,8 @@ pub use crate::types::error::_origin_access_control_already_exists::OriginAccess
 
 pub use crate::types::error::_no_such_origin_access_control::NoSuchOriginAccessControlBuilder;
 
+pub use crate::types::error::_entity_not_found::EntityNotFoundBuilder;
+
 pub use crate::types::error::_too_many_public_keys_in_key_group::TooManyPublicKeysInKeyGroupBuilder;
 
 pub use crate::types::error::_no_such_resource::NoSuchResourceBuilder;
@@ -219,6 +221,8 @@ pub use crate::types::error::_origin_request_policy_in_use::OriginRequestPolicyI
 
 pub use crate::types::error::_origin_access_control_in_use::OriginAccessControlInUseBuilder;
 
+pub use crate::types::error::_cannot_delete_entity_while_in_use::CannotDeleteEntityWhileInUseBuilder;
+
 pub use crate::types::error::_resource_in_use::ResourceInUseBuilder;
 
 pub use crate::types::error::_function_in_use::FunctionInUseBuilder;
@@ -254,6 +258,12 @@ pub use crate::types::error::_too_many_origin_request_policies::TooManyOriginReq
 pub use crate::types::error::_too_many_origin_access_controls::TooManyOriginAccessControlsBuilder;
 
 pub use crate::types::error::_monitoring_subscription_already_exists::MonitoringSubscriptionAlreadyExistsBuilder;
+
+pub use crate::types::error::_entity_size_limit_exceeded::EntitySizeLimitExceededBuilder;
+
+pub use crate::types::error::_entity_limit_exceeded::EntityLimitExceededBuilder;
+
+pub use crate::types::error::_entity_already_exists::EntityAlreadyExistsBuilder;
 
 pub use crate::types::error::_too_many_key_groups::TooManyKeyGroupsBuilder;
 

@@ -8,6 +8,12 @@ pub struct ListAssetModelsInput {
     /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub asset_model_types: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>,
 }
 impl ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -18,6 +24,16 @@ impl ListAssetModelsInput {
     /// <p>Default: 50</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_model_types.is_none()`.
+    pub fn asset_model_types(&self) -> &[crate::types::AssetModelType] {
+        self.asset_model_types.as_deref().unwrap_or_default()
     }
 }
 impl ListAssetModelsInput {
@@ -33,6 +49,7 @@ impl ListAssetModelsInput {
 pub struct ListAssetModelsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) asset_model_types: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>,
 }
 impl ListAssetModelsInputBuilder {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -66,6 +83,38 @@ impl ListAssetModelsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Appends an item to `asset_model_types`.
+    ///
+    /// To override the contents of this collection use [`set_asset_model_types`](Self::set_asset_model_types).
+    ///
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn asset_model_types(mut self, input: crate::types::AssetModelType) -> Self {
+        let mut v = self.asset_model_types.unwrap_or_default();
+        v.push(input);
+        self.asset_model_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn set_asset_model_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>>) -> Self {
+        self.asset_model_types = input;
+        self
+    }
+    /// <p>The type of asset model.</p>
+    /// <ul>
+    /// <li> <p> <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component in another asset model.</p> </li>
+    /// <li> <p> <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models. You can't create assets directly from this type of asset model. </p> </li>
+    /// </ul>
+    pub fn get_asset_model_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelType>> {
+        &self.asset_model_types
+    }
     /// Consumes the builder and constructs a [`ListAssetModelsInput`](crate::operation::list_asset_models::ListAssetModelsInput).
     pub fn build(
         self,
@@ -73,6 +122,7 @@ impl ListAssetModelsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_asset_models::ListAssetModelsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            asset_model_types: self.asset_model_types,
         })
     }
 }

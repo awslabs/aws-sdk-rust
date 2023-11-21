@@ -29,6 +29,16 @@ pub(crate) fn reflens_batch_get_asset_property_value_history_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_execute_query_output_output_next_token(
+    input: &crate::operation::execute_query::ExecuteQueryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_asset_property_aggregates_output_output_next_token(
     input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -61,6 +71,16 @@ pub(crate) fn reflens_get_interpolated_asset_property_values_output_output_next_
 
 pub(crate) fn reflens_list_access_policies_output_output_next_token(
     input: &crate::operation::list_access_policies::ListAccessPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_asset_model_composite_models_output_output_next_token(
+    input: &crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -139,6 +159,16 @@ pub(crate) fn reflens_list_bulk_import_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_composition_relationships_output_output_next_token(
+    input: &crate::operation::list_composition_relationships::ListCompositionRelationshipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dashboards_output_output_next_token(
     input: &crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -199,6 +229,16 @@ pub(crate) fn reflens_list_time_series_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_execute_query_output_output_rows(
+    input: crate::operation::execute_query::ExecuteQueryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Row>> {
+    let input = match input.rows {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_asset_property_aggregates_output_output_aggregated_values(
     input: crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AggregatedValue>> {
@@ -224,6 +264,13 @@ pub(crate) fn lens_list_access_policies_output_output_access_policy_summaries(
     input: crate::operation::list_access_policies::ListAccessPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
     let input = input.access_policy_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_asset_model_composite_models_output_output_asset_model_composite_model_summaries(
+    input: crate::operation::list_asset_model_composite_models::ListAssetModelCompositeModelsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelSummary>> {
+    let input = input.asset_model_composite_model_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -273,6 +320,13 @@ pub(crate) fn lens_list_bulk_import_jobs_output_output_job_summaries(
     input: crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
     let input = input.job_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_composition_relationships_output_output_composition_relationship_summaries(
+    input: crate::operation::list_composition_relationships::ListCompositionRelationshipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CompositionRelationshipSummary>> {
+    let input = input.composition_relationship_summaries;
     ::std::option::Option::Some(input)
 }
 

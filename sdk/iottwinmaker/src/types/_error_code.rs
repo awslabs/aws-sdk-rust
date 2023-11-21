@@ -12,8 +12,11 @@
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
+///     ErrorCode::CompositeComponentFailure => { /* ... */ },
 ///     ErrorCode::InternalFailure => { /* ... */ },
+///     ErrorCode::ProcessingError => { /* ... */ },
 ///     ErrorCode::SyncCreatingError => { /* ... */ },
+///     ErrorCode::SyncDeletingError => { /* ... */ },
 ///     ErrorCode::SyncInitializingError => { /* ... */ },
 ///     ErrorCode::SyncProcessingError => { /* ... */ },
 ///     ErrorCode::ValidationError => { /* ... */ },
@@ -45,9 +48,15 @@
 )]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    CompositeComponentFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
     #[allow(missing_docs)] // documentation missing in model
+    ProcessingError,
+    #[allow(missing_docs)] // documentation missing in model
     SyncCreatingError,
+    #[allow(missing_docs)] // documentation missing in model
+    SyncDeletingError,
     #[allow(missing_docs)] // documentation missing in model
     SyncInitializingError,
     #[allow(missing_docs)] // documentation missing in model
@@ -61,8 +70,11 @@ pub enum ErrorCode {
 impl ::std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "COMPOSITE_COMPONENT_FAILURE" => ErrorCode::CompositeComponentFailure,
             "INTERNAL_FAILURE" => ErrorCode::InternalFailure,
+            "PROCESSING_ERROR" => ErrorCode::ProcessingError,
             "SYNC_CREATING_ERROR" => ErrorCode::SyncCreatingError,
+            "SYNC_DELETING_ERROR" => ErrorCode::SyncDeletingError,
             "SYNC_INITIALIZING_ERROR" => ErrorCode::SyncInitializingError,
             "SYNC_PROCESSING_ERROR" => ErrorCode::SyncProcessingError,
             "VALIDATION_ERROR" => ErrorCode::ValidationError,
@@ -81,8 +93,11 @@ impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ErrorCode::CompositeComponentFailure => "COMPOSITE_COMPONENT_FAILURE",
             ErrorCode::InternalFailure => "INTERNAL_FAILURE",
+            ErrorCode::ProcessingError => "PROCESSING_ERROR",
             ErrorCode::SyncCreatingError => "SYNC_CREATING_ERROR",
+            ErrorCode::SyncDeletingError => "SYNC_DELETING_ERROR",
             ErrorCode::SyncInitializingError => "SYNC_INITIALIZING_ERROR",
             ErrorCode::SyncProcessingError => "SYNC_PROCESSING_ERROR",
             ErrorCode::ValidationError => "VALIDATION_ERROR",
@@ -92,8 +107,11 @@ impl ErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "COMPOSITE_COMPONENT_FAILURE",
             "INTERNAL_FAILURE",
+            "PROCESSING_ERROR",
             "SYNC_CREATING_ERROR",
+            "SYNC_DELETING_ERROR",
             "SYNC_INITIALIZING_ERROR",
             "SYNC_PROCESSING_ERROR",
             "VALIDATION_ERROR",

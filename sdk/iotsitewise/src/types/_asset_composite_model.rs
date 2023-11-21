@@ -14,6 +14,8 @@ pub struct AssetCompositeModel {
     pub properties: ::std::vec::Vec<crate::types::AssetProperty>,
     /// <p> The ID of the asset composite model. </p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetCompositeModel {
     /// <p>The name of the composite model.</p>
@@ -39,6 +41,10 @@ impl AssetCompositeModel {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
+    /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl AssetCompositeModel {
     /// Creates a new builder-style object to manufacture [`AssetCompositeModel`](crate::types::AssetCompositeModel).
@@ -56,6 +62,7 @@ pub struct AssetCompositeModelBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetProperty>>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetCompositeModelBuilder {
     /// <p>The name of the composite model.</p>
@@ -136,6 +143,20 @@ impl AssetCompositeModelBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the asset composite model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetCompositeModel`](crate::types::AssetCompositeModel).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetCompositeModelBuilder::name)
@@ -163,6 +184,7 @@ impl AssetCompositeModelBuilder {
                 )
             })?,
             id: self.id,
+            external_id: self.external_id,
         })
     }
 }

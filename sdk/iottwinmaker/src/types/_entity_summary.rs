@@ -16,7 +16,7 @@ pub struct EntitySummary {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The description of the entity.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    /// <p>An <b>eventual</b> Boolean value that specifies whether the entity has child entities or not.</p>
     pub has_child_entities: ::std::option::Option<bool>,
     /// <p>The date and time when the entity was created.</p>
     pub creation_date_time: ::aws_smithy_types::DateTime,
@@ -51,7 +51,7 @@ impl EntitySummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    /// <p>An <b>eventual</b> Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn has_child_entities(&self) -> ::std::option::Option<bool> {
         self.has_child_entities
     }
@@ -174,17 +174,17 @@ impl EntitySummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    /// <p>An <b>eventual</b> Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn has_child_entities(mut self, input: bool) -> Self {
         self.has_child_entities = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    /// <p>An <b>eventual</b> Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn set_has_child_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_child_entities = input;
         self
     }
-    /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
+    /// <p>An <b>eventual</b> Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn get_has_child_entities(&self) -> &::std::option::Option<bool> {
         &self.has_child_entities
     }

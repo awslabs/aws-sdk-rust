@@ -12,6 +12,10 @@ pub struct AssetModelCompositeModelDefinition {
     pub r#type: ::std::string::String,
     /// <p>The asset property definitions for this composite model.</p>
     pub properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    /// <p>The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub id: ::std::option::Option<::std::string::String>,
+    /// <p>An external ID to assign to the composite model. The external ID must be unique among composite models within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
@@ -34,6 +38,14 @@ impl AssetModelCompositeModelDefinition {
     pub fn properties(&self) -> &[crate::types::AssetModelPropertyDefinition] {
         self.properties.as_deref().unwrap_or_default()
     }
+    /// <p>The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
+    /// <p>An external ID to assign to the composite model. The external ID must be unique among composite models within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl AssetModelCompositeModelDefinition {
     /// Creates a new builder-style object to manufacture [`AssetModelCompositeModelDefinition`](crate::types::AssetModelCompositeModelDefinition).
@@ -50,6 +62,8 @@ pub struct AssetModelCompositeModelDefinitionBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl AssetModelCompositeModelDefinitionBuilder {
     /// <p>The name of the composite model.</p>
@@ -116,6 +130,34 @@ impl AssetModelCompositeModelDefinitionBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetModelPropertyDefinition>> {
         &self.properties
     }
+    /// <p>The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// <p>The ID to assign to the composite model, if desired. IoT SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be globally unique.</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
+    /// <p>An external ID to assign to the composite model. The external ID must be unique among composite models within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An external ID to assign to the composite model. The external ID must be unique among composite models within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>An external ID to assign to the composite model. The external ID must be unique among composite models within this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`AssetModelCompositeModelDefinition`](crate::types::AssetModelCompositeModelDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AssetModelCompositeModelDefinitionBuilder::name)
@@ -136,6 +178,8 @@ impl AssetModelCompositeModelDefinitionBuilder {
                 )
             })?,
             properties: self.properties,
+            id: self.id,
+            external_id: self.external_id,
         })
     }
 }

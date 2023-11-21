@@ -221,6 +221,14 @@ pub use crate::types::_bucket_logging_status::BucketLoggingStatus;
 
 pub use crate::types::_logging_enabled::LoggingEnabled;
 
+pub use crate::types::_target_object_key_format::TargetObjectKeyFormat;
+
+pub use crate::types::_partitioned_prefix::PartitionedPrefix;
+
+pub use crate::types::_partition_date_source::PartitionDateSource;
+
+pub use crate::types::_simple_prefix::SimplePrefix;
+
 pub use crate::types::_target_grant::TargetGrant;
 
 pub use crate::types::_bucket_logs_permission::BucketLogsPermission;
@@ -637,6 +645,10 @@ mod _parquet_input;
 
 mod _part;
 
+mod _partition_date_source;
+
+mod _partitioned_prefix;
+
 mod _payer;
 
 mod _permission;
@@ -717,6 +729,8 @@ mod _server_side_encryption_configuration;
 
 mod _server_side_encryption_rule;
 
+mod _simple_prefix;
+
 mod _source_selection_criteria;
 
 mod _sse_kms_encrypted_objects;
@@ -746,6 +760,8 @@ mod _tagging;
 mod _tagging_directive;
 
 mod _target_grant;
+
+mod _target_object_key_format;
 
 mod _tier;
 

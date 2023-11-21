@@ -23,7 +23,8 @@ impl CreateBulkImportJobInputBuilder {
 /// Fluent builder constructing a request to `CreateBulkImportJob`.
 ///
 /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important>
-/// <p>You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+/// <p>Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+/// <p>Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or notifications on IoT SiteWise warm or cold tier storage.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBulkImportJobFluentBuilder {
@@ -183,5 +184,33 @@ impl CreateBulkImportJobFluentBuilder {
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
     pub fn get_job_configuration(&self) -> &::std::option::Option<crate::types::JobConfiguration> {
         self.inner.get_job_configuration()
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn adaptive_ingestion(mut self, input: bool) -> Self {
+        self.inner = self.inner.adaptive_ingestion(input);
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn set_adaptive_ingestion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_adaptive_ingestion(input);
+        self
+    }
+    /// <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with notifications, metrics and transforms are computed. If set to false, historical data is ingested into IoT SiteWise as is.</p>
+    pub fn get_adaptive_ingestion(&self) -> &::std::option::Option<bool> {
+        self.inner.get_adaptive_ingestion()
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn delete_files_after_import(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_files_after_import(input);
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn set_delete_files_after_import(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_files_after_import(input);
+        self
+    }
+    /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
+    pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_files_after_import()
     }
 }

@@ -185,6 +185,24 @@ pub(crate) fn create_asset_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_asset_model_composite_model_output_output_correct_errors(
+    mut builder: crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder,
+) -> crate::operation::create_asset_model_composite_model::builders::CreateAssetModelCompositeModelOutputBuilder {
+    if builder.asset_model_composite_model_id.is_none() {
+        builder.asset_model_composite_model_id = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_path.is_none() {
+        builder.asset_model_composite_model_path = Some(Default::default())
+    }
+    if builder.asset_model_status.is_none() {
+        builder.asset_model_status = {
+            let builder = crate::types::builders::AssetModelStatusBuilder::default();
+            crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_bulk_import_job_output_output_correct_errors(
     mut builder: crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder,
 ) -> crate::operation::create_bulk_import_job::builders::CreateBulkImportJobOutputBuilder {
@@ -284,6 +302,18 @@ pub(crate) fn delete_asset_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_asset_model_composite_model_output_output_correct_errors(
+    mut builder: crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder,
+) -> crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder {
+    if builder.asset_model_status.is_none() {
+        builder.asset_model_status = {
+            let builder = crate::types::builders::AssetModelStatusBuilder::default();
+            crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn delete_portal_output_output_correct_errors(
     mut builder: crate::operation::delete_portal::builders::DeletePortalOutputBuilder,
 ) -> crate::operation::delete_portal::builders::DeletePortalOutputBuilder {
@@ -329,6 +359,33 @@ pub(crate) fn describe_access_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_action_output_output_correct_errors(
+    mut builder: crate::operation::describe_action::builders::DescribeActionOutputBuilder,
+) -> crate::operation::describe_action::builders::DescribeActionOutputBuilder {
+    if builder.action_id.is_none() {
+        builder.action_id = Some(Default::default())
+    }
+    if builder.target_resource.is_none() {
+        builder.target_resource = {
+            let builder = crate::types::builders::TargetResourceBuilder::default();
+            crate::serde_util::target_resource_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.action_definition_id.is_none() {
+        builder.action_definition_id = Some(Default::default())
+    }
+    if builder.action_payload.is_none() {
+        builder.action_payload = {
+            let builder = crate::types::builders::ActionPayloadBuilder::default();
+            crate::serde_util::action_payload_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.execution_time.is_none() {
+        builder.execution_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn describe_asset_output_output_correct_errors(
     mut builder: crate::operation::describe_asset::builders::DescribeAssetOutputBuilder,
 ) -> crate::operation::describe_asset::builders::DescribeAssetOutputBuilder {
@@ -365,6 +422,36 @@ pub(crate) fn describe_asset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_asset_composite_model_output_output_correct_errors(
+    mut builder: crate::operation::describe_asset_composite_model::builders::DescribeAssetCompositeModelOutputBuilder,
+) -> crate::operation::describe_asset_composite_model::builders::DescribeAssetCompositeModelOutputBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    if builder.asset_composite_model_id.is_none() {
+        builder.asset_composite_model_id = Some(Default::default())
+    }
+    if builder.asset_composite_model_path.is_none() {
+        builder.asset_composite_model_path = Some(Default::default())
+    }
+    if builder.asset_composite_model_name.is_none() {
+        builder.asset_composite_model_name = Some(Default::default())
+    }
+    if builder.asset_composite_model_description.is_none() {
+        builder.asset_composite_model_description = Some(Default::default())
+    }
+    if builder.asset_composite_model_type.is_none() {
+        builder.asset_composite_model_type = Some(Default::default())
+    }
+    if builder.asset_composite_model_properties.is_none() {
+        builder.asset_composite_model_properties = Some(Default::default())
+    }
+    if builder.asset_composite_model_summaries.is_none() {
+        builder.asset_composite_model_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_asset_model_output_output_correct_errors(
     mut builder: crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder,
 ) -> crate::operation::describe_asset_model::builders::DescribeAssetModelOutputBuilder {
@@ -397,6 +484,36 @@ pub(crate) fn describe_asset_model_output_output_correct_errors(
             let builder = crate::types::builders::AssetModelStatusBuilder::default();
             crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn describe_asset_model_composite_model_output_output_correct_errors(
+    mut builder: crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder,
+) -> crate::operation::describe_asset_model_composite_model::builders::DescribeAssetModelCompositeModelOutputBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_id.is_none() {
+        builder.asset_model_composite_model_id = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_path.is_none() {
+        builder.asset_model_composite_model_path = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_name.is_none() {
+        builder.asset_model_composite_model_name = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_description.is_none() {
+        builder.asset_model_composite_model_description = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_type.is_none() {
+        builder.asset_model_composite_model_type = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_properties.is_none() {
+        builder.asset_model_composite_model_properties = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_summaries.is_none() {
+        builder.asset_model_composite_model_summaries = Some(Default::default())
     }
     builder
 }
@@ -647,6 +764,15 @@ pub(crate) fn describe_time_series_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn execute_action_output_output_correct_errors(
+    mut builder: crate::operation::execute_action::builders::ExecuteActionOutputBuilder,
+) -> crate::operation::execute_action::builders::ExecuteActionOutputBuilder {
+    if builder.action_id.is_none() {
+        builder.action_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_asset_property_aggregates_output_output_correct_errors(
     mut builder: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder,
 ) -> crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder {
@@ -679,6 +805,27 @@ pub(crate) fn list_access_policies_output_output_correct_errors(
 ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
     if builder.access_policy_summaries.is_none() {
         builder.access_policy_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_actions_output_output_correct_errors(
+    mut builder: crate::operation::list_actions::builders::ListActionsOutputBuilder,
+) -> crate::operation::list_actions::builders::ListActionsOutputBuilder {
+    if builder.action_summaries.is_none() {
+        builder.action_summaries = Some(Default::default())
+    }
+    if builder.next_token.is_none() {
+        builder.next_token = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_asset_model_composite_models_output_output_correct_errors(
+    mut builder: crate::operation::list_asset_model_composite_models::builders::ListAssetModelCompositeModelsOutputBuilder,
+) -> crate::operation::list_asset_model_composite_models::builders::ListAssetModelCompositeModelsOutputBuilder {
+    if builder.asset_model_composite_model_summaries.is_none() {
+        builder.asset_model_composite_model_summaries = Some(Default::default())
     }
     builder
 }
@@ -742,6 +889,15 @@ pub(crate) fn list_bulk_import_jobs_output_output_correct_errors(
 ) -> crate::operation::list_bulk_import_jobs::builders::ListBulkImportJobsOutputBuilder {
     if builder.job_summaries.is_none() {
         builder.job_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_composition_relationships_output_output_correct_errors(
+    mut builder: crate::operation::list_composition_relationships::builders::ListCompositionRelationshipsOutputBuilder,
+) -> crate::operation::list_composition_relationships::builders::ListCompositionRelationshipsOutputBuilder {
+    if builder.composition_relationship_summaries.is_none() {
+        builder.composition_relationship_summaries = Some(Default::default())
     }
     builder
 }
@@ -854,6 +1010,21 @@ pub(crate) fn update_asset_model_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_asset_model_composite_model_output_output_correct_errors(
+    mut builder: crate::operation::update_asset_model_composite_model::builders::UpdateAssetModelCompositeModelOutputBuilder,
+) -> crate::operation::update_asset_model_composite_model::builders::UpdateAssetModelCompositeModelOutputBuilder {
+    if builder.asset_model_composite_model_path.is_none() {
+        builder.asset_model_composite_model_path = Some(Default::default())
+    }
+    if builder.asset_model_status.is_none() {
+        builder.asset_model_status = {
+            let builder = crate::types::builders::AssetModelStatusBuilder::default();
+            crate::serde_util::asset_model_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_gateway_capability_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder,
 ) -> crate::operation::update_gateway_capability_configuration::builders::UpdateGatewayCapabilityConfigurationOutputBuilder {
@@ -897,6 +1068,24 @@ pub(crate) fn asset_model_status_correct_errors(
 pub(crate) fn portal_status_correct_errors(mut builder: crate::types::builders::PortalStatusBuilder) -> crate::types::builders::PortalStatusBuilder {
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::PortalState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn target_resource_correct_errors(
+    mut builder: crate::types::builders::TargetResourceBuilder,
+) -> crate::types::builders::TargetResourceBuilder {
+    if builder.asset_id.is_none() {
+        builder.asset_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn action_payload_correct_errors(
+    mut builder: crate::types::builders::ActionPayloadBuilder,
+) -> crate::types::builders::ActionPayloadBuilder {
+    if builder.string_value.is_none() {
+        builder.string_value = Some(Default::default())
     }
     builder
 }
@@ -1047,6 +1236,21 @@ pub(crate) fn access_policy_summary_correct_errors(
     builder
 }
 
+pub(crate) fn action_definition_correct_errors(
+    mut builder: crate::types::builders::ActionDefinitionBuilder,
+) -> crate::types::builders::ActionDefinitionBuilder {
+    if builder.action_definition_id.is_none() {
+        builder.action_definition_id = Some(Default::default())
+    }
+    if builder.action_name.is_none() {
+        builder.action_name = Some(Default::default())
+    }
+    if builder.action_type.is_none() {
+        builder.action_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn aggregated_value_correct_errors(
     mut builder: crate::types::builders::AggregatedValueBuilder,
 ) -> crate::types::builders::AggregatedValueBuilder {
@@ -1073,6 +1277,27 @@ pub(crate) fn asset_composite_model_correct_errors(
     }
     if builder.properties.is_none() {
         builder.properties = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_composite_model_summary_correct_errors(
+    mut builder: crate::types::builders::AssetCompositeModelSummaryBuilder,
+) -> crate::types::builders::AssetCompositeModelSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
     }
     builder
 }
@@ -1104,6 +1329,21 @@ pub(crate) fn asset_hierarchy_correct_errors(
 pub(crate) fn asset_model_composite_model_correct_errors(
     mut builder: crate::types::builders::AssetModelCompositeModelBuilder,
 ) -> crate::types::builders::AssetModelCompositeModelBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_model_composite_model_summary_correct_errors(
+    mut builder: crate::types::builders::AssetModelCompositeModelSummaryBuilder,
+) -> crate::types::builders::AssetModelCompositeModelSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
@@ -1202,6 +1442,15 @@ pub(crate) fn asset_property_correct_errors(
     }
     if builder.data_type.is_none() {
         builder.data_type = "no value was set".parse::<crate::types::PropertyDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn asset_property_summary_correct_errors(
+    mut builder: crate::types::builders::AssetPropertySummaryBuilder,
+) -> crate::types::builders::AssetPropertySummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -1403,6 +1652,21 @@ pub(crate) fn batch_put_asset_property_error_entry_correct_errors(
     }
     if builder.errors.is_none() {
         builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn composition_relationship_summary_correct_errors(
+    mut builder: crate::types::builders::CompositionRelationshipSummaryBuilder,
+) -> crate::types::builders::CompositionRelationshipSummaryBuilder {
+    if builder.asset_model_id.is_none() {
+        builder.asset_model_id = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_id.is_none() {
+        builder.asset_model_composite_model_id = Some(Default::default())
+    }
+    if builder.asset_model_composite_model_type.is_none() {
+        builder.asset_model_composite_model_type = Some(Default::default())
     }
     builder
 }
@@ -1628,6 +1892,13 @@ pub(crate) fn property_notification_correct_errors(
     builder
 }
 
+pub(crate) fn row_correct_errors(mut builder: crate::types::builders::RowBuilder) -> crate::types::builders::RowBuilder {
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn time_in_nanos_correct_errors(mut builder: crate::types::builders::TimeInNanosBuilder) -> crate::types::builders::TimeInNanosBuilder {
     if builder.time_in_seconds.is_none() {
         builder.time_in_seconds = Some(Default::default())
@@ -1697,6 +1968,13 @@ pub(crate) fn batch_get_asset_property_value_history_error_info_correct_errors(
     }
     if builder.error_timestamp.is_none() {
         builder.error_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn csv_correct_errors(mut builder: crate::types::builders::CsvBuilder) -> crate::types::builders::CsvBuilder {
+    if builder.column_names.is_none() {
+        builder.column_names = Some(Default::default())
     }
     builder
 }
@@ -1793,7 +2071,7 @@ pub(crate) fn expression_variable_correct_errors(
     if builder.value.is_none() {
         builder.value = {
             let builder = crate::types::builders::VariableValueBuilder::default();
-            crate::serde_util::variable_value_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     builder
@@ -1813,15 +2091,6 @@ pub(crate) fn tumbling_window_correct_errors(
 ) -> crate::types::builders::TumblingWindowBuilder {
     if builder.interval.is_none() {
         builder.interval = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn variable_value_correct_errors(
-    mut builder: crate::types::builders::VariableValueBuilder,
-) -> crate::types::builders::VariableValueBuilder {
-    if builder.property_id.is_none() {
-        builder.property_id = Some(Default::default())
     }
     builder
 }

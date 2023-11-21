@@ -146,6 +146,11 @@ pub(crate) fn de_get_component_type(
                             .transpose()?,
                     );
                 }
+                "compositeComponentTypes" => {
+                    builder = builder.set_composite_component_types(
+                        crate::protocol_serde::shape_composite_component_types_response::de_composite_component_types_response(tokens)?,
+                    );
+                }
                 "creationDateTime" => {
                     builder = builder.set_creation_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

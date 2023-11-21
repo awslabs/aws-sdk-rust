@@ -8,8 +8,9 @@ impl super::Client {
     ///   - [`workspace_id(String)`](crate::operation::get_workspace::GetWorkspaceOutput::workspace_id): <p>The ID of the workspace.</p>
     ///   - [`arn(String)`](crate::operation::get_workspace::GetWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::description): <p>The description of the workspace.</p>
-    ///   - [`s3_location(String)`](crate::operation::get_workspace::GetWorkspaceOutput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    ///   - [`role(String)`](crate::operation::get_workspace::GetWorkspaceOutput::role): <p>The ARN of the execution role associated with the workspace.</p>
+    ///   - [`linked_services(Option<Vec::<String>>)`](crate::operation::get_workspace::GetWorkspaceOutput::linked_services): <p>A list of services that are linked to the workspace.</p>
+    ///   - [`s3_location(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    ///   - [`role(Option<String>)`](crate::operation::get_workspace::GetWorkspaceOutput::role): <p>The ARN of the execution role associated with the workspace.</p>
     ///   - [`creation_date_time(DateTime)`](crate::operation::get_workspace::GetWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
     ///   - [`update_date_time(DateTime)`](crate::operation::get_workspace::GetWorkspaceOutput::update_date_time): <p>The date and time when the workspace was last updated.</p>
     /// - On failure, responds with [`SdkError<GetWorkspaceError>`](crate::operation::get_workspace::GetWorkspaceError)

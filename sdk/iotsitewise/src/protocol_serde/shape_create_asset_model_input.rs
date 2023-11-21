@@ -21,45 +21,54 @@ pub fn ser_create_asset_model_input_input(
     if let Some(var_5) = &input.asset_model_description {
         object.key("assetModelDescription").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.asset_model_hierarchies {
-        let mut array_7 = object.key("assetModelHierarchies").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.asset_model_external_id {
+        object.key("assetModelExternalId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.asset_model_hierarchies {
+        let mut array_8 = object.key("assetModelHierarchies").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_asset_model_hierarchy_definition::ser_asset_model_hierarchy_definition(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_asset_model_hierarchy_definition::ser_asset_model_hierarchy_definition(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_10) = &input.asset_model_name {
-        object.key("assetModelName").string(var_10.as_str());
+    if let Some(var_11) = &input.asset_model_id {
+        object.key("assetModelId").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.asset_model_properties {
-        let mut array_12 = object.key("assetModelProperties").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.asset_model_name {
+        object.key("assetModelName").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.asset_model_properties {
+        let mut array_14 = object.key("assetModelProperties").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_asset_model_property_definition::ser_asset_model_property_definition(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_asset_model_property_definition::ser_asset_model_property_definition(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.client_token {
-        object.key("clientToken").string(var_15.as_str());
+    if let Some(var_17) = &input.asset_model_type {
+        object.key("assetModelType").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_18) = &input.client_token {
+        object.key("clientToken").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_17.finish();
+        object_20.finish();
     }
     Ok(())
 }

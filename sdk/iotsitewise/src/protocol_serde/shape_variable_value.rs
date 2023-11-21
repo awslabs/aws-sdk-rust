@@ -3,11 +3,23 @@ pub fn ser_variable_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VariableValue,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("propertyId").string(input.property_id.as_str());
+    if let Some(var_1) = &input.property_id {
+        object.key("propertyId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.hierarchy_id {
-        object.key("hierarchyId").string(var_1.as_str());
+    if let Some(var_2) = &input.hierarchy_id {
+        object.key("hierarchyId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.property_path {
+        let mut array_4 = object.key("propertyPath").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_asset_model_property_path_segment::ser_asset_model_property_path_segment(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
     Ok(())
 }
@@ -41,6 +53,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "propertyPath" => {
+                            builder = builder.set_property_path(
+                                crate::protocol_serde::shape_asset_model_property_path::de_asset_model_property_path(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -51,9 +68,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::variable_value_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

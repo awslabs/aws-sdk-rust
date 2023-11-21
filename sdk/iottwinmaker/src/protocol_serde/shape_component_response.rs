@@ -60,6 +60,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "areAllPropertiesReturned" => {
+                            builder =
+                                builder.set_are_all_properties_returned(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "compositeComponents" => {
+                            builder = builder.set_composite_components(
+                                crate::protocol_serde::shape_composite_component_response::de_composite_component_response(tokens)?,
+                            );
+                        }
+                        "areAllCompositeComponentsReturned" => {
+                            builder = builder.set_are_all_composite_components_returned(::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                tokens.next(),
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

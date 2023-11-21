@@ -145,6 +145,12 @@ pub use crate::types::_bucket_logging_status::BucketLoggingStatusBuilder;
 
 pub use crate::types::_logging_enabled::LoggingEnabledBuilder;
 
+pub use crate::types::_target_object_key_format::TargetObjectKeyFormatBuilder;
+
+pub use crate::types::_partitioned_prefix::PartitionedPrefixBuilder;
+
+pub use crate::types::_simple_prefix::SimplePrefixBuilder;
+
 pub use crate::types::_target_grant::TargetGrantBuilder;
 
 pub use crate::types::_bucket_lifecycle_configuration::BucketLifecycleConfigurationBuilder;

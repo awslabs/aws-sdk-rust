@@ -8,7 +8,7 @@ pub struct NoncurrentVersionTransition {
     pub noncurrent_days: ::std::option::Option<i32>,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: ::std::option::Option<crate::types::TransitionStorageClass>,
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can perform the associated action on a given version. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub newer_noncurrent_versions: ::std::option::Option<i32>,
 }
 impl NoncurrentVersionTransition {
@@ -20,7 +20,7 @@ impl NoncurrentVersionTransition {
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can perform the associated action on a given version. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(&self) -> ::std::option::Option<i32> {
         self.newer_noncurrent_versions
     }
@@ -69,17 +69,17 @@ impl NoncurrentVersionTransitionBuilder {
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::TransitionStorageClass> {
         &self.storage_class
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can perform the associated action on a given version. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn newer_noncurrent_versions(mut self, input: i32) -> Self {
         self.newer_noncurrent_versions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can perform the associated action on a given version. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_newer_noncurrent_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.newer_noncurrent_versions = input;
         self
     }
-    /// <p>Specifies how many noncurrent versions Amazon S3 will retain. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies how many newer noncurrent versions must exist before Amazon S3 can perform the associated action on a given version. If there are this many more recent noncurrent versions, Amazon S3 will take the associated action. For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle configuration elements</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_newer_noncurrent_versions(&self) -> &::std::option::Option<i32> {
         &self.newer_noncurrent_versions
     }

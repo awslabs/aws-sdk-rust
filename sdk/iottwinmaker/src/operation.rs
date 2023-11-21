@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchPutPropertyValues` operation.
 pub mod batch_put_property_values;
 
+/// Types for the `CancelMetadataTransferJob` operation.
+pub mod cancel_metadata_transfer_job;
+
 /// Types for the `CreateComponentType` operation.
 pub mod create_component_type;
 
 /// Types for the `CreateEntity` operation.
 pub mod create_entity;
+
+/// Types for the `CreateMetadataTransferJob` operation.
+pub mod create_metadata_transfer_job;
 
 /// Types for the `CreateScene` operation.
 pub mod create_scene;
@@ -43,6 +49,9 @@ pub mod get_component_type;
 /// Types for the `GetEntity` operation.
 pub mod get_entity;
 
+/// Types for the `GetMetadataTransferJob` operation.
+pub mod get_metadata_transfer_job;
+
 /// Types for the `GetPricingPlan` operation.
 pub mod get_pricing_plan;
 
@@ -64,8 +73,17 @@ pub mod get_workspace;
 /// Types for the `ListComponentTypes` operation.
 pub mod list_component_types;
 
+/// Types for the `ListComponents` operation.
+pub mod list_components;
+
 /// Types for the `ListEntities` operation.
 pub mod list_entities;
+
+/// Types for the `ListMetadataTransferJobs` operation.
+pub mod list_metadata_transfer_jobs;
+
+/// Types for the `ListProperties` operation.
+pub mod list_properties;
 
 /// Types for the `ListScenes` operation.
 pub mod list_scenes;

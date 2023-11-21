@@ -183,18 +183,46 @@ impl PutStorageConfigurationFluentBuilder {
     pub fn get_disassociated_data_storage(&self) -> &::std::option::Option<crate::types::DisassociatedDataStorageState> {
         self.inner.get_disassociated_data_storage()
     }
-    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
         self.inner = self.inner.retention_period(input);
         self
     }
-    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn set_retention_period(mut self, input: ::std::option::Option<crate::types::RetentionPeriod>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
-    /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
+    /// <p>The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn get_retention_period(&self) -> &::std::option::Option<crate::types::RetentionPeriod> {
         self.inner.get_retention_period()
+    }
+    /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
+    pub fn warm_tier(mut self, input: crate::types::WarmTierState) -> Self {
+        self.inner = self.inner.warm_tier(input);
+        self
+    }
+    /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
+    pub fn set_warm_tier(mut self, input: ::std::option::Option<crate::types::WarmTierState>) -> Self {
+        self.inner = self.inner.set_warm_tier(input);
+        self
+    }
+    /// <p>A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and historical data ingested with the CreaeBulkImportJob API.</p>
+    pub fn get_warm_tier(&self) -> &::std::option::Option<crate::types::WarmTierState> {
+        self.inner.get_warm_tier()
+    }
+    /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
+    pub fn warm_tier_retention_period(mut self, input: crate::types::WarmTierRetentionPeriod) -> Self {
+        self.inner = self.inner.warm_tier_retention_period(input);
+        self
+    }
+    /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
+    pub fn set_warm_tier_retention_period(mut self, input: ::std::option::Option<crate::types::WarmTierRetentionPeriod>) -> Self {
+        self.inner = self.inner.set_warm_tier_retention_period(input);
+        self
+    }
+    /// <p>Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this only if cold tier is enabled.</p>
+    pub fn get_warm_tier_retention_period(&self) -> &::std::option::Option<crate::types::WarmTierRetentionPeriod> {
+        self.inner.get_warm_tier_retention_period()
     }
 }

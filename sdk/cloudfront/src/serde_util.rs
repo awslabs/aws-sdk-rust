@@ -447,6 +447,39 @@ pub(crate) fn key_group_list_correct_errors(mut builder: crate::types::builders:
     builder
 }
 
+pub(crate) fn key_value_store_correct_errors(
+    mut builder: crate::types::builders::KeyValueStoreBuilder,
+) -> crate::types::builders::KeyValueStoreBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.comment.is_none() {
+        builder.comment = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn key_value_store_list_correct_errors(
+    mut builder: crate::types::builders::KeyValueStoreListBuilder,
+) -> crate::types::builders::KeyValueStoreListBuilder {
+    if builder.max_items.is_none() {
+        builder.max_items = Some(Default::default())
+    }
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn origin_access_control_correct_errors(
     mut builder: crate::types::builders::OriginAccessControlBuilder,
 ) -> crate::types::builders::OriginAccessControlBuilder {
@@ -1392,6 +1425,15 @@ pub(crate) fn key_group_summary_correct_errors(
     builder
 }
 
+pub(crate) fn key_value_store_associations_correct_errors(
+    mut builder: crate::types::builders::KeyValueStoreAssociationsBuilder,
+) -> crate::types::builders::KeyValueStoreAssociationsBuilder {
+    if builder.quantity.is_none() {
+        builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kinesis_stream_config_correct_errors(
     mut builder: crate::types::builders::KinesisStreamConfigBuilder,
 ) -> crate::types::builders::KinesisStreamConfigBuilder {
@@ -1888,6 +1930,15 @@ pub(crate) fn function_association_correct_errors(
 pub(crate) fn key_pair_ids_correct_errors(mut builder: crate::types::builders::KeyPairIdsBuilder) -> crate::types::builders::KeyPairIdsBuilder {
     if builder.quantity.is_none() {
         builder.quantity = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn key_value_store_association_correct_errors(
+    mut builder: crate::types::builders::KeyValueStoreAssociationBuilder,
+) -> crate::types::builders::KeyValueStoreAssociationBuilder {
+    if builder.key_value_store_arn.is_none() {
+        builder.key_value_store_arn = Some(Default::default())
     }
     builder
 }

@@ -105,7 +105,45 @@ pub fn de_delete_workspace_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder::default();
+        output = crate::protocol_serde::shape_delete_workspace::de_delete_workspace(_response_body, output)
+            .map_err(crate::operation::delete_workspace::DeleteWorkspaceError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
+}
+
+pub(crate) fn de_delete_workspace(
+    value: &[u8],
+    mut builder: crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder,
+) -> Result<crate::operation::delete_workspace::builders::DeleteWorkspaceOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
+    let tokens = &mut tokens_owned;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "message" => {
+                    builder = builder.set_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {:?}",
+                    other
+                )))
+            }
+        }
+    }
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
+    Ok(builder)
 }

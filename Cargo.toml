@@ -1,12 +1,12 @@
 [workspace]
 exclude = [
-    "examples/cross_service",
+    "examples/webassembly",
+    "examples/lambda",
     "examples/examples",
     "examples/test-utils",
-    "examples/lambda",
-    "examples/webassembly",
-    "tests/no-default-features",
-    "tests/webassembly"
+    "examples/cross_service",
+    "tests/webassembly",
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -85,6 +85,7 @@ members = [
     "sdk/clouddirectory",
     "sdk/cloudformation",
     "sdk/cloudfront",
+    "sdk/cloudfrontkeyvaluestore",
     "sdk/cloudhsm",
     "sdk/cloudhsmv2",
     "sdk/cloudsearch",
@@ -187,6 +188,7 @@ members = [
     "sdk/imagebuilder",
     "sdk/inspector",
     "sdk/inspector2",
+    "sdk/inspectorscan",
     "sdk/internetmonitor",
     "sdk/iot",
     "sdk/iot1clickdevices",

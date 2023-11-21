@@ -6,24 +6,30 @@ pub fn ser_create_asset_input_input(
     if let Some(var_1) = &input.asset_description {
         object.key("assetDescription").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.asset_model_id {
-        object.key("assetModelId").string(var_2.as_str());
+    if let Some(var_2) = &input.asset_external_id {
+        object.key("assetExternalId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.asset_name {
-        object.key("assetName").string(var_3.as_str());
+    if let Some(var_3) = &input.asset_id {
+        object.key("assetId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_4) = &input.asset_model_id {
+        object.key("assetModelId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_5) = &input.asset_name {
+        object.key("assetName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.client_token {
+        object.key("clientToken").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_6.finish();
+        object_8.finish();
     }
     Ok(())
 }

@@ -281,4 +281,31 @@ impl CreateComponentTypeFluentBuilder {
     pub fn get_component_type_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_type_name()
     }
+    /// Adds a key-value pair to `compositeComponentTypes`.
+    ///
+    /// To override the contents of this collection use [`set_composite_component_types`](Self::set_composite_component_types).
+    ///
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn composite_component_types(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::CompositeComponentTypeRequest,
+    ) -> Self {
+        self.inner = self.inner.composite_component_types(k.into(), v);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn set_composite_component_types(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>>,
+    ) -> Self {
+        self.inner = self.inner.set_composite_component_types(input);
+        self
+    }
+    /// <p>This is an object that maps strings to <code>compositeComponentTypes</code> of the <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.</p>
+    pub fn get_composite_component_types(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CompositeComponentTypeRequest>> {
+        self.inner.get_composite_component_types()
+    }
 }

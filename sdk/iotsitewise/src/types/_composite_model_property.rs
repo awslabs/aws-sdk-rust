@@ -12,6 +12,8 @@ pub struct CompositeModelProperty {
     pub asset_property: ::std::option::Option<crate::types::Property>,
     /// <p> The ID of the composite model that contains the property. </p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub external_id: ::std::option::Option<::std::string::String>,
 }
 impl CompositeModelProperty {
     /// <p>The name of the property.</p>
@@ -32,6 +34,10 @@ impl CompositeModelProperty {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
+    /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
+        self.external_id.as_deref()
+    }
 }
 impl CompositeModelProperty {
     /// Creates a new builder-style object to manufacture [`CompositeModelProperty`](crate::types::CompositeModelProperty).
@@ -48,6 +54,7 @@ pub struct CompositeModelPropertyBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) asset_property: ::std::option::Option<crate::types::Property>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
 }
 impl CompositeModelPropertyBuilder {
     /// <p>The name of the property.</p>
@@ -109,6 +116,20 @@ impl CompositeModelPropertyBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
+    /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_id = input;
+        self
+    }
+    /// <p>The external ID of the composite model that contains the property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_id
+    }
     /// Consumes the builder and constructs a [`CompositeModelProperty`](crate::types::CompositeModelProperty).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CompositeModelPropertyBuilder::name)
@@ -129,6 +150,7 @@ impl CompositeModelPropertyBuilder {
             })?,
             asset_property: self.asset_property,
             id: self.id,
+            external_id: self.external_id,
         })
     }
 }

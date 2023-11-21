@@ -27,6 +27,8 @@ pub struct GetEntityOutput {
     pub update_date_time: ::aws_smithy_types::DateTime,
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     pub sync_source: ::std::option::Option<::std::string::String>,
+    /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
+    pub are_all_components_returned: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetEntityOutput {
@@ -83,6 +85,10 @@ impl GetEntityOutput {
     pub fn sync_source(&self) -> ::std::option::Option<&str> {
         self.sync_source.as_deref()
     }
+    /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
+    pub fn are_all_components_returned(&self) -> ::std::option::Option<bool> {
+        self.are_all_components_returned
+    }
 }
 impl ::aws_types::request_id::RequestId for GetEntityOutput {
     fn request_id(&self) -> Option<&str> {
@@ -112,6 +118,7 @@ pub struct GetEntityOutputBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) sync_source: ::std::option::Option<::std::string::String>,
+    pub(crate) are_all_components_returned: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetEntityOutputBuilder {
@@ -301,6 +308,20 @@ impl GetEntityOutputBuilder {
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_source
     }
+    /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
+    pub fn are_all_components_returned(mut self, input: bool) -> Self {
+        self.are_all_components_returned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
+    pub fn set_are_all_components_returned(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.are_all_components_returned = input;
+        self
+    }
+    /// <p>This flag notes whether all components are returned in the API response. The maximum number of components returned is 30.</p>
+    pub fn get_are_all_components_returned(&self) -> &::std::option::Option<bool> {
+        &self.are_all_components_returned
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -374,6 +395,7 @@ impl GetEntityOutputBuilder {
                 )
             })?,
             sync_source: self.sync_source,
+            are_all_components_returned: self.are_all_components_returned,
             _request_id: self._request_id,
         })
     }

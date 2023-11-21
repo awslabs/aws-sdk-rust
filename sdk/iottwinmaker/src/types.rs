@@ -15,7 +15,7 @@ pub use crate::types::_parent_entity_update_request::ParentEntityUpdateRequest;
 
 pub use crate::types::_parent_entity_update_type::ParentEntityUpdateType;
 
-pub use crate::types::_component_update_request::ComponentUpdateRequest;
+pub use crate::types::_composite_component_update_request::CompositeComponentUpdateRequest;
 
 pub use crate::types::_component_property_group_request::ComponentPropertyGroupRequest;
 
@@ -40,6 +40,10 @@ pub use crate::types::_relationship::Relationship;
 pub use crate::types::_type_::Type;
 
 pub use crate::types::_component_update_type::ComponentUpdateType;
+
+pub use crate::types::_component_update_request::ComponentUpdateRequest;
+
+pub use crate::types::_composite_component_type_request::CompositeComponentTypeRequest;
 
 pub use crate::types::_property_group_request::PropertyGroupRequest;
 
@@ -75,6 +79,24 @@ pub use crate::types::_sync_job_state::SyncJobState;
 
 pub use crate::types::_scene_summary::SceneSummary;
 
+pub use crate::types::_property_summary::PropertySummary;
+
+pub use crate::types::_property_definition_response::PropertyDefinitionResponse;
+
+pub use crate::types::_metadata_transfer_job_summary::MetadataTransferJobSummary;
+
+pub use crate::types::_metadata_transfer_job_progress::MetadataTransferJobProgress;
+
+pub use crate::types::_metadata_transfer_job_status::MetadataTransferJobStatus;
+
+pub use crate::types::_metadata_transfer_job_state::MetadataTransferJobState;
+
+pub use crate::types::_list_metadata_transfer_jobs_filter::ListMetadataTransferJobsFilter;
+
+pub use crate::types::_destination_type::DestinationType;
+
+pub use crate::types::_source_type::SourceType;
+
 pub use crate::types::_entity_summary::EntitySummary;
 
 pub use crate::types::_status::Status;
@@ -84,6 +106,10 @@ pub use crate::types::_list_entities_filter::ListEntitiesFilter;
 pub use crate::types::_component_type_summary::ComponentTypeSummary;
 
 pub use crate::types::_list_component_types_filter::ListComponentTypesFilter;
+
+pub use crate::types::_component_summary::ComponentSummary;
+
+pub use crate::types::_component_property_group_response::ComponentPropertyGroupResponse;
 
 pub use crate::types::_scene_error::SceneError;
 
@@ -111,13 +137,37 @@ pub use crate::types::_order_by::OrderBy;
 
 pub use crate::types::_order::Order;
 
-pub use crate::types::_component_response::ComponentResponse;
+pub use crate::types::_destination_configuration::DestinationConfiguration;
 
-pub use crate::types::_component_property_group_response::ComponentPropertyGroupResponse;
+pub use crate::types::_iot_twin_maker_destination_configuration::IotTwinMakerDestinationConfiguration;
+
+pub use crate::types::_s3_destination_configuration::S3DestinationConfiguration;
+
+pub use crate::types::_source_configuration::SourceConfiguration;
+
+pub use crate::types::_iot_twin_maker_source_configuration::IotTwinMakerSourceConfiguration;
+
+pub use crate::types::_iot_twin_maker_source_configuration_filter::IotTwinMakerSourceConfigurationFilter;
+
+pub use crate::types::_filter_by_entity::FilterByEntity;
+
+pub use crate::types::_filter_by_component_type::FilterByComponentType;
+
+pub use crate::types::_iot_site_wise_source_configuration::IotSiteWiseSourceConfiguration;
+
+pub use crate::types::_iot_site_wise_source_configuration_filter::IotSiteWiseSourceConfigurationFilter;
+
+pub use crate::types::_filter_by_asset::FilterByAsset;
+
+pub use crate::types::_filter_by_asset_model::FilterByAssetModel;
+
+pub use crate::types::_s3_source_configuration::S3SourceConfiguration;
+
+pub use crate::types::_component_response::ComponentResponse;
 
 pub use crate::types::_property_response::PropertyResponse;
 
-pub use crate::types::_property_definition_response::PropertyDefinitionResponse;
+pub use crate::types::_composite_component_type_response::CompositeComponentTypeResponse;
 
 pub use crate::types::_property_group_response::PropertyGroupResponse;
 
@@ -128,6 +178,8 @@ pub use crate::types::_row::Row;
 pub use crate::types::_column_description::ColumnDescription;
 
 pub use crate::types::_column_type::ColumnType;
+
+pub use crate::types::_composite_component_request::CompositeComponentRequest;
 
 pub use crate::types::_component_request::ComponentRequest;
 
@@ -155,17 +207,31 @@ mod _component_request;
 
 mod _component_response;
 
+mod _component_summary;
+
 mod _component_type_summary;
 
 mod _component_update_request;
 
 mod _component_update_type;
 
+mod _composite_component_request;
+
+mod _composite_component_type_request;
+
+mod _composite_component_type_response;
+
+mod _composite_component_update_request;
+
 mod _data_connector;
 
 mod _data_type;
 
 mod _data_value;
+
+mod _destination_configuration;
+
+mod _destination_type;
 
 mod _entity_property_reference;
 
@@ -174,6 +240,14 @@ mod _entity_summary;
 mod _error_code;
 
 mod _error_details;
+
+mod _filter_by_asset;
+
+mod _filter_by_asset_model;
+
+mod _filter_by_component_type;
+
+mod _filter_by_entity;
 
 mod _function_request;
 
@@ -185,11 +259,31 @@ mod _interpolation_parameters;
 
 mod _interpolation_type;
 
+mod _iot_site_wise_source_configuration;
+
+mod _iot_site_wise_source_configuration_filter;
+
+mod _iot_twin_maker_destination_configuration;
+
+mod _iot_twin_maker_source_configuration;
+
+mod _iot_twin_maker_source_configuration_filter;
+
 mod _lambda_function;
 
 mod _list_component_types_filter;
 
 mod _list_entities_filter;
+
+mod _list_metadata_transfer_jobs_filter;
+
+mod _metadata_transfer_job_progress;
+
+mod _metadata_transfer_job_state;
+
+mod _metadata_transfer_job_status;
+
+mod _metadata_transfer_job_summary;
 
 mod _order;
 
@@ -225,6 +319,8 @@ mod _property_request;
 
 mod _property_response;
 
+mod _property_summary;
+
 mod _property_update_type;
 
 mod _property_value;
@@ -239,6 +335,10 @@ mod _relationship_value;
 
 mod _row;
 
+mod _s3_destination_configuration;
+
+mod _s3_source_configuration;
+
 mod _scene_error;
 
 mod _scene_error_code;
@@ -246,6 +346,10 @@ mod _scene_error_code;
 mod _scene_summary;
 
 mod _scope;
+
+mod _source_configuration;
+
+mod _source_type;
 
 mod _state;
 

@@ -18,3 +18,9 @@ pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuild
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_query_timeout_exception::QueryTimeoutExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
