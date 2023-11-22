@@ -23,7 +23,7 @@ impl DisableEnhancedMonitoringInputBuilder {
 /// Fluent builder constructing a request to `DisableEnhancedMonitoring`.
 ///
 /// <p>Disables enhanced monitoring.</p> <note>
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+/// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableEnhancedMonitoringFluentBuilder {

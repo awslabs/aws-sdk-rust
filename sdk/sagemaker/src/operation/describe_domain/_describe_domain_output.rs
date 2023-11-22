@@ -13,7 +13,7 @@ pub struct DescribeDomainOutput {
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     pub single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::DomainStatus>,
@@ -75,7 +75,7 @@ impl DescribeDomainOutput {
     pub fn single_sign_on_managed_application_instance_id(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_managed_application_instance_id.as_deref()
     }
-    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     pub fn single_sign_on_application_arn(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_application_arn.as_deref()
     }
@@ -262,17 +262,17 @@ impl DescribeDomainOutputBuilder {
     pub fn get_single_sign_on_managed_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_managed_application_instance_id
     }
-    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     pub fn single_sign_on_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     pub fn set_single_sign_on_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = input;
         self
     }
-    /// <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     pub fn get_single_sign_on_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_application_arn
     }

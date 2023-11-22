@@ -12,6 +12,12 @@ pub fn ser_s3_model_data_source(
     if let Some(var_3) = &input.compression_type {
         object.key("CompressionType").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.model_access_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ModelAccessConfig").start_object();
+        crate::protocol_serde::shape_model_access_config::ser_model_access_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -50,6 +56,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ModelCompressionType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "ModelAccessConfig" => {
+                            builder =
+                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

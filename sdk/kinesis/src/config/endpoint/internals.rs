@@ -26,6 +26,8 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     let consumer_arn = &_params.consumer_arn;
     #[allow(unused_variables)]
+    let resource_arn = &_params.resource_arn;
+    #[allow(unused_variables)]
     if let Some(stream_arn) = stream_arn {
         if !(endpoint.is_some()) {
             #[allow(unused_variables)]
@@ -214,6 +216,184 @@ pub(super) fn resolve_endpoint(
                         if !((partition_result.name()) == ("aws-iso-b")) {
                             #[allow(unused_variables)]
                             if let Some(arn) = crate::endpoint_lib::arn::parse_arn(consumer_arn, _diagnostic_collector) {
+                                if crate::endpoint_lib::host::is_valid_host_label(arn.account_id(), false, _diagnostic_collector) {
+                                    if crate::endpoint_lib::host::is_valid_host_label(arn.region(), false, _diagnostic_collector) {
+                                        if (arn.service()) == ("kinesis") {
+                                            #[allow(unused_variables)]
+                                            if let Some(arn_type) = arn.resource_id().first().cloned() {
+                                                if !((arn_type) == ("")) {
+                                                    if (arn_type) == ("stream") {
+                                                        if (partition_result.name()) == (arn.partition()) {
+                                                            #[allow(unused_variables)]
+                                                            if let Some(operation_type) = operation_type {
+                                                                if (*use_fips) == (true) {
+                                                                    if (*use_dual_stack) == (true) {
+                                                                        if (partition_result.supports_fips()) == (true) {
+                                                                            if (partition_result.supports_dual_stack()) == (true) {
+                                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                    .url({
+                                                                                        let mut out = String::new();
+                                                                                        out.push_str("https://");
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&arn.account_id());
+                                                                                        out.push('.');
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&operation_type);
+                                                                                        out.push_str("-kinesis-fips.");
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&region);
+                                                                                        out.push('.');
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                                        out
+                                                                                    })
+                                                                                    .build());
+                                                                            }
+                                                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("DualStack is enabled, but this partition does not support DualStack."
+.to_string()));
+                                                                        }
+                                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                            "FIPS is enabled, but this partition does not support FIPS.".to_string(),
+                                                                        ));
+                                                                    }
+                                                                }
+                                                                if (*use_fips) == (true) {
+                                                                    if (partition_result.supports_fips()) == (true) {
+                                                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                            .url({
+                                                                                let mut out = String::new();
+                                                                                out.push_str("https://");
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&arn.account_id());
+                                                                                out.push('.');
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&operation_type);
+                                                                                out.push_str("-kinesis-fips.");
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&region);
+                                                                                out.push('.');
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&partition_result.dns_suffix());
+                                                                                out
+                                                                            })
+                                                                            .build());
+                                                                    }
+                                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                        "FIPS is enabled but this partition does not support FIPS".to_string(),
+                                                                    ));
+                                                                }
+                                                                if (*use_dual_stack) == (true) {
+                                                                    if (partition_result.supports_dual_stack()) == (true) {
+                                                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                            .url({
+                                                                                let mut out = String::new();
+                                                                                out.push_str("https://");
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&arn.account_id());
+                                                                                out.push('.');
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&operation_type);
+                                                                                out.push_str("-kinesis.");
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&region);
+                                                                                out.push('.');
+                                                                                #[allow(clippy::needless_borrow)]
+                                                                                out.push_str(&partition_result.dual_stack_dns_suffix());
+                                                                                out
+                                                                            })
+                                                                            .build());
+                                                                    }
+                                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                        "DualStack is enabled but this partition does not support DualStack"
+                                                                            .to_string(),
+                                                                    ));
+                                                                }
+                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                    .url({
+                                                                        let mut out = String::new();
+                                                                        out.push_str("https://");
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&arn.account_id());
+                                                                        out.push('.');
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&operation_type);
+                                                                        out.push_str("-kinesis.");
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&region);
+                                                                        out.push('.');
+                                                                        #[allow(clippy::needless_borrow)]
+                                                                        out.push_str(&partition_result.dns_suffix());
+                                                                        out
+                                                                    })
+                                                                    .build());
+                                                            }
+                                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                                "Operation Type is not set. Please contact service team for resolution.".to_string(),
+                                                            ));
+                                                        }
+                                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                                            let mut out = String::new();
+                                                            out.push_str("Partition: ");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&arn.partition());
+                                                            out.push_str(" from ARN doesn't match with partition name: ");
+                                                            #[allow(clippy::needless_borrow)]
+                                                            out.push_str(&partition_result.name());
+                                                            out.push('.');
+                                                            out
+                                                        }));
+                                                    }
+                                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                                        let mut out = String::new();
+                                                        out.push_str("Invalid ARN: Kinesis ARNs don't support `");
+                                                        #[allow(clippy::needless_borrow)]
+                                                        out.push_str(&arn_type);
+                                                        out.push_str("` arn types.");
+                                                        out
+                                                    }));
+                                                }
+                                            }
+                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                "Invalid ARN: No ARN type specified".to_string(),
+                                            ));
+                                        }
+                                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                            let mut out = String::new();
+                                            out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&arn.service());
+                                            out.push('.');
+                                            out
+                                        }));
+                                    }
+                                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                        "Invalid ARN: Invalid region.".to_string(),
+                                    ));
+                                }
+                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                    "Invalid ARN: Invalid account id.".to_string(),
+                                ));
+                            }
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                "Invalid ARN: Failed to parse ARN.".to_string(),
+                            ));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #[allow(unused_variables)]
+    if let Some(resource_arn) = resource_arn {
+        if !(endpoint.is_some()) {
+            #[allow(unused_variables)]
+            if let Some(region) = region {
+                #[allow(unused_variables)]
+                if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                    if !((partition_result.name()) == ("aws-iso")) {
+                        if !((partition_result.name()) == ("aws-iso-b")) {
+                            #[allow(unused_variables)]
+                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(resource_arn, _diagnostic_collector) {
                                 if crate::endpoint_lib::host::is_valid_host_label(arn.account_id(), false, _diagnostic_collector) {
                                     if crate::endpoint_lib::host::is_valid_host_label(arn.region(), false, _diagnostic_collector) {
                                         if (arn.service()) == ("kinesis") {

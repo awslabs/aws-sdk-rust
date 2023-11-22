@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_name): <p>The domain name.</p>
     ///   - [`home_efs_file_system_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::home_efs_file_system_id): <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
     ///   - [`single_sign_on_managed_application_instance_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::single_sign_on_managed_application_instance_id): <p>The IAM Identity Center managed application instance ID.</p>
-    ///   - [`single_sign_on_application_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::single_sign_on_application_arn): <p>The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.</p>
+    ///   - [`single_sign_on_application_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::single_sign_on_application_arn): <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
     ///   - [`status(Option<DomainStatus>)`](crate::operation::describe_domain::DescribeDomainOutput::status): <p>The status.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_domain::DescribeDomainOutput::creation_time): <p>The creation time.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_domain::DescribeDomainOutput::last_modified_time): <p>The last modified time.</p>

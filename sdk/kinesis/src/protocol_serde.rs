@@ -29,6 +29,8 @@ pub(crate) mod shape_create_stream;
 
 pub(crate) mod shape_decrease_stream_retention_period;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_stream;
 
 pub(crate) mod shape_deregister_stream_consumer;
@@ -47,6 +49,8 @@ pub(crate) mod shape_enable_enhanced_monitoring;
 
 pub(crate) mod shape_get_records;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_get_shard_iterator;
 
 pub(crate) mod shape_increase_stream_retention_period;
@@ -64,6 +68,8 @@ pub(crate) mod shape_merge_shards;
 pub(crate) mod shape_put_record;
 
 pub(crate) mod shape_put_records;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_register_stream_consumer;
 
@@ -95,6 +101,8 @@ pub(crate) mod shape_create_stream_input;
 
 pub(crate) mod shape_decrease_stream_retention_period_input;
 
+pub(crate) mod shape_delete_resource_policy_input;
+
 pub(crate) mod shape_delete_stream_input;
 
 pub(crate) mod shape_deregister_stream_consumer_input;
@@ -114,6 +122,8 @@ pub(crate) mod shape_expired_iterator_exception;
 pub(crate) mod shape_expired_next_token_exception;
 
 pub(crate) mod shape_get_records_input;
+
+pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_get_shard_iterator_input;
 
@@ -150,6 +160,8 @@ pub(crate) mod shape_provisioned_throughput_exceeded_exception;
 pub(crate) mod shape_put_record_input;
 
 pub(crate) mod shape_put_records_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_register_stream_consumer_input;
 

@@ -23,7 +23,7 @@ impl UpdateShardCountInputBuilder {
 /// Fluent builder constructing a request to `UpdateShardCount`.
 ///
 /// <p>Updates the shard count of the specified stream to the specified number of shards. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+/// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Depending on the size of the stream, the scaling action could take a few minutes to complete. You can continue to read and write data to your stream while its status is <code>UPDATING</code>.</p>
 /// <p>To update the shard count, Kinesis Data Streams performs splits or merges on individual shards. This can cause short-lived shards to be created, in addition to the final shards. These short-lived shards count towards your total shard limit for your account in the Region.</p>
@@ -36,6 +36,7 @@ impl UpdateShardCountInputBuilder {
 /// <li> <p>Scale up to more than 10000 shards in a stream</p> </li>
 /// <li> <p>Scale a stream with more than 10000 shards down unless the result is less than 10000 shards</p> </li>
 /// <li> <p>Scale up to more than the shard limit for your account</p> </li>
+/// <li> <p>Make over 10 TPS. TPS over 10 will trigger the LimitExceededException</p> </li>
 /// </ul>
 /// <p>For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an increase in the call rate limit, the shard limit for this API, or your overall shard limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits form</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

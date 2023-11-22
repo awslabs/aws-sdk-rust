@@ -30,6 +30,8 @@ pub struct S3ModelDataSource {
     /// <li> <p>Do not organize the model artifacts in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3 console using folders</a>. When you create a folder in S3 console, S3 creates a 0-byte object with a key set to the folder name you provide. They key of the 0-byte object ends with a slash (/) which violates SageMaker restrictions on model artifact file names, leading to model deployment failure. </p> </li>
     /// </ul>
     pub compression_type: ::std::option::Option<crate::types::ModelCompressionType>,
+    /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
+    pub model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
 impl S3ModelDataSource {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
@@ -64,6 +66,10 @@ impl S3ModelDataSource {
     pub fn compression_type(&self) -> ::std::option::Option<&crate::types::ModelCompressionType> {
         self.compression_type.as_ref()
     }
+    /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
+    pub fn model_access_config(&self) -> ::std::option::Option<&crate::types::ModelAccessConfig> {
+        self.model_access_config.as_ref()
+    }
 }
 impl S3ModelDataSource {
     /// Creates a new builder-style object to manufacture [`S3ModelDataSource`](crate::types::S3ModelDataSource).
@@ -79,6 +85,7 @@ pub struct S3ModelDataSourceBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_data_type: ::std::option::Option<crate::types::S3ModelDataType>,
     pub(crate) compression_type: ::std::option::Option<crate::types::ModelCompressionType>,
+    pub(crate) model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
 impl S3ModelDataSourceBuilder {
     /// <p>Specifies the S3 path of ML model data to deploy.</p>
@@ -186,12 +193,27 @@ impl S3ModelDataSourceBuilder {
     pub fn get_compression_type(&self) -> &::std::option::Option<crate::types::ModelCompressionType> {
         &self.compression_type
     }
+    /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
+    pub fn model_access_config(mut self, input: crate::types::ModelAccessConfig) -> Self {
+        self.model_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
+    pub fn set_model_access_config(mut self, input: ::std::option::Option<crate::types::ModelAccessConfig>) -> Self {
+        self.model_access_config = input;
+        self
+    }
+    /// <p>Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. You are responsible for reviewing and complying with any applicable license terms and making sure they are acceptable for your use case before downloading or using a model.</p>
+    pub fn get_model_access_config(&self) -> &::std::option::Option<crate::types::ModelAccessConfig> {
+        &self.model_access_config
+    }
     /// Consumes the builder and constructs a [`S3ModelDataSource`](crate::types::S3ModelDataSource).
     pub fn build(self) -> crate::types::S3ModelDataSource {
         crate::types::S3ModelDataSource {
             s3_uri: self.s3_uri,
             s3_data_type: self.s3_data_type,
             compression_type: self.compression_type,
+            model_access_config: self.model_access_config,
         }
     }
 }

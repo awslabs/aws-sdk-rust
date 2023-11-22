@@ -1126,9 +1126,9 @@ model_hash = '88d95b541acf3c316f9a288941ba231041c2a348264dd853f7987bc47342f4f4'
 
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
-version = '0.39.0'
-source_hash = '1209e78bdc1f303686d026cd874c17b7e1d89cbb2a48a98a7b427ff956131cfe'
-model_hash = 'b9a2a9adbe811fae3c6a6740f78dbfb5a6b41993abdf265b532e820d59802711'
+version = '0.39.1'
+source_hash = 'a31c80f220d174952f05aec36f9c46a70c694272b4be00bca6835106ee445be8'
+model_hash = 'c92a8fa615f4230b22bbe0feebeef7415fc23824288eeff14440a31c42f53447'
 
 [crates.aws-sdk-kinesisanalytics]
 category = 'AwsSdk'
@@ -1792,8 +1792,8 @@ model_hash = '4a92c15650202751bece9e98788baed20970e0f8a8a05ab96d3ea3cf9b9ec69e'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
-version = '0.39.0'
-source_hash = '1236fb70981ea67181bb490e8d51c0126219f8c45fb28dfebd92179d506d5314'
+version = '0.39.1'
+source_hash = 'c53dc1ac73c1cd6279284e16de4ff33703afe9729720dd25ec13c8fbaee5b9d4'
 model_hash = 'bf66dcc72f786ebd8fb2bb7b931c2f05bc38b3c2aaffb1d7447ce49f555ac498'
 
 [crates.aws-sdk-s3outposts]
@@ -1804,9 +1804,9 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '0.39.0'
-source_hash = 'e8efe6f1167a677e6a3dc696257a1956da72dbbbfb38b4843028b53009890cb8'
-model_hash = '3aca2e0ed36dfb5041f5b548c9c9eb770c01ed6d2ee946c76af46aa497f3ce56'
+version = '0.39.1'
+source_hash = 'a2f641326bbda4150bdf2638adeba473bb81da01c41a09bc3215d48acd14edca'
+model_hash = '659a63fd7948dcd730d0ff79b6ffbc1fd428211b86a0462efe445c484e1e3836'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2312,15 +2312,7 @@ source_hash = 'b13896bf14df805137a83b5abd54153e58af7d0577dbb58ec95f8251852edc4d'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2e35925e463fa4fac99d5ca9ed1df9ab5603e398d864ba64e0b9d1d84425b92e'
-
-[release]
-tag = 'release-2023-11-21'
-
 [release.crates]
-aws-sdk-cloudfront = '0.39.1'
-aws-sdk-cloudfrontkeyvaluestore = '0.1.0'
-aws-sdk-ec2 = '0.39.1'
-aws-sdk-inspectorscan = '0.1.0'
-aws-sdk-iotsitewise = '0.39.1'
-aws-sdk-iottwinmaker = '0.39.1'
-aws-sdk-s3 = '0.39.1'
+aws-sdk-kinesis = '0.39.1'
+aws-sdk-s3control = '0.39.1'
+aws-sdk-sagemaker = '0.39.1'

@@ -169,6 +169,8 @@ pub mod customize;
 
 mod decrease_stream_retention_period;
 
+mod delete_resource_policy;
+
 mod delete_stream;
 
 mod deregister_stream_consumer;
@@ -187,6 +189,8 @@ mod enable_enhanced_monitoring;
 
 mod get_records;
 
+mod get_resource_policy;
+
 mod get_shard_iterator;
 
 mod increase_stream_retention_period;
@@ -204,6 +208,8 @@ mod merge_shards;
 mod put_record;
 
 mod put_records;
+
+mod put_resource_policy;
 
 mod register_stream_consumer;
 

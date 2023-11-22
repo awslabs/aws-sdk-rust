@@ -23,7 +23,7 @@ impl DeleteStreamInputBuilder {
 /// Fluent builder constructing a request to `DeleteStream`.
 ///
 /// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p> <note>
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+/// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p>
 /// <p> <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>

@@ -2167,6 +2167,1080 @@ mod test {
                 .build()
         );
     }
+
+    /// ResourceARN test: Invalid ARN: Failed to parse ARN.
+    #[test]
+    fn test_110() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Failed to parse ARN. [ResourceARN test: Invalid ARN: Failed to parse ARN.]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Failed to parse ARN.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: partition missing from ARN.
+    #[test]
+    fn test_111() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn::kinesis:us-west-2:123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Invalid ARN: Failed to parse ARN. [ResourceARN as StreamARN test: Invalid ARN: partition missing from ARN.]",
+        );
+        assert_eq!(format!("{}", error), "Invalid ARN: Failed to parse ARN.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: partitions mismatch.
+    #[test]
+    fn test_112() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [ResourceARN as StreamARN test: Invalid ARN: partitions mismatch.]");
+        assert_eq!(
+            format!("{}", error),
+            "Partition: aws from ARN doesn't match with partition name: aws-us-gov."
+        )
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Not Kinesis
+    #[test]
+    fn test_113() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [ResourceARN as StreamARN test: Invalid ARN: Not Kinesis]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: s3.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Region is missing in ARN
+    #[test]
+    fn test_114() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis::123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid region. [ResourceARN as StreamARN test: Invalid ARN: Region is missing in ARN]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Region is empty string in ARN
+    #[test]
+    fn test_115() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:  :123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid region. [ResourceARN as StreamARN test: Invalid ARN: Region is empty string in ARN]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Invalid account id
+    #[test]
+    fn test_116() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1::stream/testStream".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [ResourceARN as StreamARN test: Invalid ARN: Invalid account id]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Invalid account id
+    #[test]
+    fn test_117() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:   :stream/testStream".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [ResourceARN as StreamARN test: Invalid ARN: Invalid account id]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
+    }
+
+    /// ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types
+    #[test]
+    fn test_118() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types. [ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
+    }
+
+    /// ResourceARN as StreamARN test: Dual Stack not supported region.
+    #[test]
+    fn test_119() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [ResourceARN as StreamARN test: Dual Stack not supported region.]");
+        assert_eq!(
+            format!("{}", error),
+            "FIPS and DualStack are enabled, but this partition does not support one or both"
+        )
+    }
+
+    /// ResourceARN as StreamARN test: OperationType not set
+    #[test]
+    fn test_120() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [ResourceARN as StreamARN test: OperationType not set]");
+        assert_eq!(
+            format!("{}", error),
+            "Operation Type is not set. Please contact service team for resolution."
+        )
+    }
+
+    /// ResourceARN as StreamARN test: Custom Endpoint is specified
+    #[test]
+    fn test_121() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint targeting control operation type
+    #[test]
+    fn test_122() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint targeting data operation type
+    #[test]
+    fn test_123() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with fips targeting data operation type
+    #[test]
+    fn test_124() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with fips targeting control operation type
+    #[test]
+    fn test_125() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with Dual Stack and FIPS enabled
+    #[test]
+    fn test_126() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with Dual Stack enabled
+    #[test]
+    fn test_127() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with FIPS and DualStack disabled
+    #[test]
+    fn test_128() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: RegionMismatch: client region should be used for endpoint region
+    #[test]
+    fn test_129() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/testStream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with FIPS enabled
+    #[test]
+    fn test_130() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with FIPS and DualStack enabled for cn regions.
+    #[test]
+    fn test_131() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint targeting control operation type in ADC regions
+    #[test]
+    fn test_132() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint targeting control operation type in ADC regions
+    #[test]
+    fn test_133() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-west-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint targeting data operation type in ADC regions
+    #[test]
+    fn test_134() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with fips targeting control operation type in ADC regions
+    #[test]
+    fn test_135() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as StreamARN test: Account endpoint with fips targeting data operation type in ADC regions
+    #[test]
+    fn test_136() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: partition missing from ARN.
+    #[test]
+    fn test_137() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Invalid ARN: Failed to parse ARN. [ResourceARN as ConsumerARN test: Invalid ARN: partition missing from ARN.]",
+        );
+        assert_eq!(format!("{}", error), "Invalid ARN: Failed to parse ARN.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: partitions mismatch.
+    #[test]
+    fn test_138() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-us-gov. [ResourceARN as ConsumerARN test: Invalid ARN: partitions mismatch.]");
+        assert_eq!(
+            format!("{}", error),
+            "Partition: aws from ARN doesn't match with partition name: aws-us-gov."
+        )
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Not Kinesis
+    #[test]
+    fn test_139() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: s3. [ResourceARN as ConsumerARN test: Invalid ARN: Not Kinesis]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: s3.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Region is missing in ARN
+    #[test]
+    fn test_140() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid region. [ResourceARN as ConsumerARN test: Invalid ARN: Region is missing in ARN]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Region is empty string in ARN
+    #[test]
+    fn test_141() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid region. [ResourceARN as ConsumerARN test: Invalid ARN: Region is empty string in ARN]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid region.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id
+    #[test]
+    fn test_142() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid account id. [ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id
+    #[test]
+    fn test_143() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: Invalid account id. [ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types
+    #[test]
+    fn test_144() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types. [ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")
+    }
+
+    /// ResourceARN as ConsumerARN test: Dual Stack not supported region.
+    #[test]
+    fn test_145() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .operation_type("control".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: FIPS and DualStack are enabled, but this partition does not support one or both [ResourceARN as ConsumerARN test: Dual Stack not supported region.]");
+        assert_eq!(
+            format!("{}", error),
+            "FIPS and DualStack are enabled, but this partition does not support one or both"
+        )
+    }
+
+    /// ResourceARN as ConsumerARN test: OperationType not set
+    #[test]
+    fn test_146() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [ResourceARN as ConsumerARN test: OperationType not set]");
+        assert_eq!(
+            format!("{}", error),
+            "Operation Type is not set. Please contact service team for resolution."
+        )
+    }
+
+    /// ResourceARN as ConsumerARN test: Custom Endpoint is specified
+    #[test]
+    fn test_147() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .endpoint("https://example.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type
+    #[test]
+    fn test_148() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint targeting data operation type
+    #[test]
+    fn test_149() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting data operation type
+    #[test]
+    fn test_150() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting control operation type
+    #[test]
+    fn test_151() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with Dual Stack and FIPS enabled
+    #[test]
+    fn test_152() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with Dual Stack enabled
+    #[test]
+    fn test_153() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with FIPS and DualStack disabled
+    #[test]
+    fn test_154() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-west-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-west-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: RegionMismatch: client region should be used for endpoint region
+    #[test]
+    fn test_155() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-1:123:stream/testStream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with FIPS enabled
+    #[test]
+    fn test_156() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.cn-northwest-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with FIPS and DualStack enabled for cn regions.
+    #[test]
+    fn test_157() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-cn:kinesis:cn-northwest-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.data-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type in ADC regions
+    #[test]
+    fn test_158() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint targeting control operation type in ADC regions
+    #[test]
+    fn test_159() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-west-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-west-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-west-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint targeting data operation type in ADC regions
+    #[test]
+    fn test_160() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting control operation type in ADC regions
+    #[test]
+    fn test_161() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN as ConsumerARN test: Account endpoint with fips targeting data operation type in ADC regions
+    #[test]
+    fn test_162() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon Kinesis
@@ -2251,6 +3325,8 @@ pub struct Params {
     pub(crate) operation_type: ::std::option::Option<::std::string::String>,
     /// The ARN of the Kinesis consumer
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
+    /// The ARN of the Kinesis resource
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -2285,6 +3361,10 @@ impl Params {
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
+    /// The ARN of the Kinesis resource
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
+    }
 }
 
 /// Builder for [`Params`]
@@ -2297,6 +3377,7 @@ pub struct ParamsBuilder {
     stream_arn: ::std::option::Option<::std::string::String>,
     operation_type: ::std::option::Option<::std::string::String>,
     consumer_arn: ::std::option::Option<::std::string::String>,
+    resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -2317,6 +3398,7 @@ impl ParamsBuilder {
                 stream_arn: self.stream_arn,
                 operation_type: self.operation_type,
                 consumer_arn: self.consumer_arn,
+                resource_arn: self.resource_arn,
             },
         )
     }
@@ -2427,6 +3509,21 @@ impl ParamsBuilder {
     /// The ARN of the Kinesis consumer
     pub fn set_consumer_arn(mut self, param: Option<::std::string::String>) -> Self {
         self.consumer_arn = param;
+        self
+    }
+    /// Sets the value for resource_arn
+    ///
+    /// The ARN of the Kinesis resource
+    pub fn resource_arn(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.resource_arn = Some(value.into());
+        self
+    }
+
+    /// Sets the value for resource_arn
+    ///
+    /// The ARN of the Kinesis resource
+    pub fn set_resource_arn(mut self, param: Option<::std::string::String>) -> Self {
+        self.resource_arn = param;
         self
     }
 }

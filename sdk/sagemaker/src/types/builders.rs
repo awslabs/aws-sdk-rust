@@ -267,6 +267,8 @@ pub use crate::types::_model_data_source::ModelDataSourceBuilder;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
 
+pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
+
 pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
 
 pub use crate::types::_image_config::ImageConfigBuilder;

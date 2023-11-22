@@ -23,7 +23,9 @@ impl DescribeStreamConsumerInputBuilder {
 /// Fluent builder constructing a request to `DescribeStreamConsumer`.
 ///
 /// <p>To get the description of a registered consumer, provide the ARN of the consumer. Alternatively, you can provide the ARN of the data stream and the name you gave the consumer when you registered it. You may also provide all three parameters, as long as they don't conflict with each other. If you don't know the name or ARN of the consumer that you want to describe, you can use the <code>ListStreamConsumers</code> operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream.</p>
-/// <p>This operation has a limit of 20 transactions per second per stream.</p>
+/// <p>This operation has a limit of 20 transactions per second per stream.</p> <note>
+/// <p>When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure to provide the ARN of the consumer. </p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStreamConsumerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -16,7 +16,7 @@ pub struct StoppingCondition {
     /// <p>The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, SageMaker ends the job.</p>
     /// <p>When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time for all of the attempts in total, not each individual attempt.</p>
     pub max_wait_time_in_seconds: ::std::option::Option<i32>,
-    /// <p>The maximum pending time in seconds.</p>
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p>
     pub max_pending_time_in_seconds: ::std::option::Option<i32>,
 }
 impl StoppingCondition {
@@ -32,7 +32,7 @@ impl StoppingCondition {
     pub fn max_wait_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_wait_time_in_seconds
     }
-    /// <p>The maximum pending time in seconds.</p>
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p>
     pub fn max_pending_time_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_pending_time_in_seconds
     }
@@ -93,17 +93,17 @@ impl StoppingConditionBuilder {
     pub fn get_max_wait_time_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_wait_time_in_seconds
     }
-    /// <p>The maximum pending time in seconds.</p>
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p>
     pub fn max_pending_time_in_seconds(mut self, input: i32) -> Self {
         self.max_pending_time_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum pending time in seconds.</p>
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p>
     pub fn set_max_pending_time_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_pending_time_in_seconds = input;
         self
     }
-    /// <p>The maximum pending time in seconds.</p>
+    /// <p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p>
     pub fn get_max_pending_time_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_pending_time_in_seconds
     }

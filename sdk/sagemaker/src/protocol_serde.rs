@@ -2667,6 +2667,8 @@ pub(crate) mod shape_metric_datum;
 
 pub(crate) mod shape_model;
 
+pub(crate) mod shape_model_access_config;
+
 pub(crate) mod shape_model_dashboard_endpoints;
 
 pub(crate) mod shape_model_dashboard_indicator_action;

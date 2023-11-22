@@ -5232,6 +5232,15 @@ pub(crate) fn integer_parameter_range_correct_errors(
     builder
 }
 
+pub(crate) fn model_access_config_correct_errors(
+    mut builder: crate::types::builders::ModelAccessConfigBuilder,
+) -> crate::types::builders::ModelAccessConfigBuilder {
+    if builder.accept_eula.is_none() {
+        builder.accept_eula = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn model_input_correct_errors(mut builder: crate::types::builders::ModelInputBuilder) -> crate::types::builders::ModelInputBuilder {
     if builder.data_input_config.is_none() {
         builder.data_input_config = Some(Default::default())

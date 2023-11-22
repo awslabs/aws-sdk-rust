@@ -62,6 +62,15 @@ pub(crate) fn get_records_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_resource_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
+) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_streams_output_output_correct_errors(
     mut builder: crate::operation::list_streams::builders::ListStreamsOutputBuilder,
 ) -> crate::operation::list_streams::builders::ListStreamsOutputBuilder {

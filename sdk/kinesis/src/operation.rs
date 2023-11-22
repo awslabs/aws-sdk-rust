@@ -10,6 +10,9 @@ pub mod create_stream;
 /// Types for the `DecreaseStreamRetentionPeriod` operation.
 pub mod decrease_stream_retention_period;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteStream` operation.
 pub mod delete_stream;
 
@@ -37,6 +40,9 @@ pub mod enable_enhanced_monitoring;
 /// Types for the `GetRecords` operation.
 pub mod get_records;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `GetShardIterator` operation.
 pub mod get_shard_iterator;
 
@@ -63,6 +69,9 @@ pub mod put_record;
 
 /// Types for the `PutRecords` operation.
 pub mod put_records;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `RegisterStreamConsumer` operation.
 pub mod register_stream_consumer;

@@ -371,6 +371,8 @@ pub use crate::types::_model_data_source::ModelDataSource;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSource;
 
+pub use crate::types::_model_access_config::ModelAccessConfig;
+
 pub use crate::types::_model_compression_type::ModelCompressionType;
 
 pub use crate::types::_s3_model_data_type::S3ModelDataType;
@@ -2292,6 +2294,8 @@ mod _metric_specification;
 mod _metrics_source;
 
 mod _model;
+
+mod _model_access_config;
 
 mod _model_approval_status;
 
