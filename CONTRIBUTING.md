@@ -14,7 +14,7 @@ information to effectively respond to your request.
 
 2) Examples repository ([awsdocs/aws-doc-sdk-examples](https://github.com/awsdocs/aws-doc-sdk-examples))
 
-    All the SDK code examples are in the [`rust_dev_preview`](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview) directory of `aws-doc-sdk-examples`. They are automatically copied over to `aws-sdk-rust` when a new release is cut. Please make example contributions there, and be sure to take a look at its [CONTRIBUTING.md](https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/CONTRIBUTING.md).
+    All the SDK code examples are in the [`rustv1`](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rustv1) directory of `aws-doc-sdk-examples`. They are automatically copied over to `aws-sdk-rust` when a new release is cut. Please make example contributions there, and be sure to take a look at its [CONTRIBUTING.md](https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/CONTRIBUTING.md).
 
 3) Smithy-based SDK generation repo ([awslabs/smithy-rs](https://github.com/awslabs/smithy-rs))
 
