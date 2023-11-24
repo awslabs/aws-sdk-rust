@@ -12,9 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
-//!
 //! This is the _Shield Advanced API Reference_. This guide is for developers who need detailed information about the Shield Advanced API actions, data types, and errors. For detailed information about WAF and Shield Advanced features and an overview of how to use the WAF and Shield Advanced APIs, see the [WAF and Shield Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/).
 //!
 //! ## Getting Started
@@ -28,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-//! aws-sdk-shield = "0.39.0"
+//! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+//! aws-sdk-shield = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

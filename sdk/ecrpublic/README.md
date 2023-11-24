@@ -1,8 +1,5 @@
 # aws-sdk-ecrpublic
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Amazon Elastic Container Registry Public (Amazon ECR Public) is a managed container image registry service. Amazon ECR provides both public and private registries to host your container images. You can use the Docker CLI or your preferred client to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports public repositories with this API. For information about the Amazon ECR API for private repositories, see [Amazon Elastic Container Registry API Reference](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html).
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-ecrpublic = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-ecrpublic = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

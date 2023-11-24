@@ -1,8 +1,5 @@
 # aws-sdk-connectcases
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Amazon Connect Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the _Amazon Connect Administrator Guide_.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-connectcases = "0.20.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-connectcases = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

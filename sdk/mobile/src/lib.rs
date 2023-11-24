@@ -12,9 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
-//!
 //! AWS Mobile Service provides mobile app and website developers with capabilities required to configure AWS resources and bootstrap their developer desktop projects with the necessary SDKs, constants, tools and samples to make use of those resources.
 //!
 //! ## Getting Started
@@ -28,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-//! aws-sdk-mobile = "0.39.0"
+//! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+//! aws-sdk-mobile = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

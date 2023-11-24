@@ -12,9 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
-//!
 //! Amazon FSx is a fully managed service that makes it easy for storage and application administrators to launch and use shared file storage.
 //!
 //! ## Getting Started
@@ -28,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-//! aws-sdk-fsx = "0.39.0"
+//! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+//! aws-sdk-fsx = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

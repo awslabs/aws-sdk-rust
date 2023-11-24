@@ -1,8 +1,5 @@
 # aws-sdk-verifiedpermissions
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Amazon Verified Permissions is a permissions management service from Amazon Web Services. You can use Verified Permissions to manage permissions for your application, and authorize user access based on those permissions. Using Verified Permissions, application developers can grant access based on information about the users, resources, and requested actions. You can also evaluate additional information like group membership, attributes of the resources, and session context, such as time of request and IP addresses. Verified Permissions manages these permissions by letting you create and store authorization policies for your applications, such as consumer-facing web sites and enterprise business systems.
 
 Verified Permissions uses Cedar as the policy language to express your permission requirements. Cedar supports both role-based access control (RBAC) and attribute-based access control (ABAC) authorization models.
@@ -31,8 +28,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-verifiedpermissions = "0.11.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-verifiedpermissions = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

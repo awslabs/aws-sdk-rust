@@ -12,9 +12,6 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! **Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-//! on production workloads. Any use in production is at your own risk.**
-//!
 //! This is the _Amazon CloudFront API Reference_. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the _Amazon CloudFront Developer Guide_.
 //!
 //! ## Getting Started
@@ -28,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-//! aws-sdk-cloudfront = "0.39.1"
+//! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+//! aws-sdk-cloudfront = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

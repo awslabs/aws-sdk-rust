@@ -1,8 +1,5 @@
 # aws-sdk-directory
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Directory Service is a web service that makes it easy for you to setup and run directories in the Amazon Web Services cloud, or connect your Amazon Web Services resources with an existing self-managed Microsoft Active Directory. This guide provides detailed information about Directory Service operations, data types, parameters, and errors. For information about Directory Services features, see [Directory Service](https://aws.amazon.com/directoryservice/) and the [Directory Service Administration Guide](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html).
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-directory = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-directory = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -1,8 +1,5 @@
 # aws-sdk-cloudtrail
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common errors for CloudTrail.
 
 CloudTrail is a web service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. The recorded information includes the identity of the user, the start time of the Amazon Web Services API call, the source IP address, the request parameters, and the response elements returned by the service.
@@ -20,8 +17,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-cloudtrail = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-cloudtrail = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

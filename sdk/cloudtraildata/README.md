@@ -1,8 +1,5 @@
 # aws-sdk-cloudtraildata
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 The CloudTrail Data Service lets you ingest events into CloudTrail from any source in your hybrid environments, such as in-house or SaaS applications hosted on-premises or in the cloud, virtual machines, or containers. You can store, access, analyze, troubleshoot and take action on this data without maintaining multiple log aggregators and reporting tools. After you run PutAuditEvents to ingest your application activity into CloudTrail, you can use CloudTrail Lake to search, query, and analyze the data that is logged from your applications.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-cloudtraildata = "0.15.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-cloudtraildata = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

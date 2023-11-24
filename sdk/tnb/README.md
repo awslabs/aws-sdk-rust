@@ -1,8 +1,5 @@
 # aws-sdk-tnb
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Amazon Web Services Telco Network Builder (TNB) is a network automation service that helps you deploy and manage telecom networks. AWS TNB helps you with the lifecycle management of your telecommunication network functions throughout planning, deployment, and post-deployment activities.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-tnb = "0.15.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-tnb = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

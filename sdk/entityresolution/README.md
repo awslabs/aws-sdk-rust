@@ -1,8 +1,5 @@
 # aws-sdk-entityresolution
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Welcome to the _Entity Resolution API Reference_.
 
 Entity Resolution is an Amazon Web Services service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.
@@ -22,8 +19,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-entityresolution = "0.11.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-entityresolution = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -1,8 +1,5 @@
 # aws-sdk-ivsrealtime
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 __Introduction__
 
 The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
@@ -77,8 +74,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-ivsrealtime = "0.15.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-ivsrealtime = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

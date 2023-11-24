@@ -1,8 +1,5 @@
 # aws-sdk-controltower
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 These interfaces allow you to apply the AWS library of pre-defined _controls_ to your organizational units, programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
 
 To call these APIs, you'll need to know:
@@ -50,8 +47,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-controltower = "0.20.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-controltower = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

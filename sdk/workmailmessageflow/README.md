@@ -1,8 +1,5 @@
 # aws-sdk-workmailmessageflow
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-workmailmessageflow = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-workmailmessageflow = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

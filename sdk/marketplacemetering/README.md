@@ -1,8 +1,5 @@
 # aws-sdk-marketplacemetering
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This reference provides descriptions of the low-level AWS Marketplace Metering Service API.
 
 AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
@@ -32,8 +29,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-marketplacemetering = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-marketplacemetering = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

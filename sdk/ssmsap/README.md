@@ -1,8 +1,5 @@
 # aws-sdk-ssmsap
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Systems Manager for SAP. The topic for each action shows the API request parameters and responses.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-ssmsap = "0.17.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-ssmsap = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

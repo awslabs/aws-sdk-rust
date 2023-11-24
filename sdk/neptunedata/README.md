@@ -1,8 +1,5 @@
 # aws-sdk-neptunedata
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 The Amazon Neptune data API provides SDK support for more than 40 of Neptune's data operations, including data loading, query execution, data inquiry, and machine learning. It supports the Gremlin and openCypher query languages, and is available in all SDK languages. It automatically signs API requests and greatly simplifies integrating Neptune into your applications.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-neptunedata = "0.9.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-neptunedata = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

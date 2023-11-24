@@ -1,8 +1,5 @@
 # aws-sdk-codegurusecurity
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.
 
 By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the [Amazon CodeGuru Security User Guide](https://docs.aws.amazon.com/codeguru/latest/security-ug/what-is-codeguru-security.html).
@@ -18,8 +15,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-codegurusecurity = "0.11.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-codegurusecurity = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

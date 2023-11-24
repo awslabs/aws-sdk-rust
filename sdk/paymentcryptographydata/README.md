@@ -1,8 +1,5 @@
 # aws-sdk-paymentcryptographydata
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption keys are used for payment-related transaction processing and associated cryptographic operations. You can encrypt, decrypt, generate, verify, and translate payment-related cryptographic operations in Amazon Web Services Payment Cryptography. For more information, see [Data operations](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.html) in the _Amazon Web Services Payment Cryptography User Guide_.
 
 To manage your encryption keys, you use the [Amazon Web Services Payment Cryptography Control Plane](https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/Welcome.html). You can create, import, export, share, manage, and delete keys. You can also manage Identity and Access Management (IAM) policies for keys.
@@ -18,8 +15,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-paymentcryptographydata = "0.11.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-paymentcryptographydata = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

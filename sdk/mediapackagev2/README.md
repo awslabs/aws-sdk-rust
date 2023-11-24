@@ -1,8 +1,5 @@
 # aws-sdk-mediapackagev2
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This is the AWS Elemental MediaPackage v2 Live REST API Reference. It describes all the MediaPackage API operations for live content in detail, and provides sample requests, responses, and errors for the supported web services protocols.
 
 We assume that you have the IAM permissions that you need to use MediaPackage via the REST API. We also assume that you are familiar with the features and operations of MediaPackage, as described in the AWS Elemental MediaPackage User Guide.
@@ -18,8 +15,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-mediapackagev2 = "0.11.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-mediapackagev2 = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

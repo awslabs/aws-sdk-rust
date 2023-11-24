@@ -1,8 +1,5 @@
 # aws-sdk-medicalimaging
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 This is the _AWS HealthImaging API Reference_. AWS HealthImaging is a HIPAA-eligible service that helps health care providers and their medical imaging ISV partners store, transform, and apply machine learning to medical images. For an introduction to the service, see the [_AWS HealthImaging Developer Guide_](https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html).
 
 The following sections list AWS HealthImaging API actions categorized according to functionality. Links are provided to actions within this Reference, along with links back to corresponding sections in the _AWS HealthImaging Developer Guide_ where you can view console procedures and CLI/SDK code examples.
@@ -46,8 +43,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-medicalimaging = "0.9.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-medicalimaging = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

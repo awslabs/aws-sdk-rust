@@ -1,8 +1,5 @@
 # aws-sdk-sesv2
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 [Amazon SES](http://aws.amazon.com/ses) is an Amazon Web Services service that you can use to send email messages to your customers.
 
 If you're new to Amazon SES API v2, you might find it helpful to review the [Amazon Simple Email Service Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/). The _Amazon SES Developer Guide_ provides information and code samples that demonstrate how to use Amazon SES API v2 features programmatically.
@@ -18,8 +15,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-sesv2 = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-sesv2 = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

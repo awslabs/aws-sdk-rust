@@ -1,8 +1,5 @@
 # aws-sdk-sfn
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Step Functions is a service that lets you coordinate the components of distributed applications and microservices using visual workflows.
 
 You can use Step Functions to build applications from individual components, each of which performs a discrete function, or _task_, allowing you to scale and change applications quickly. Step Functions provides a console that helps visualize the components of your application as a series of steps. Step Functions automatically triggers and tracks each step, and retries steps when there are errors, so your application executes predictably and in the right order every time. Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.
@@ -22,8 +19,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-sfn = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-sfn = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

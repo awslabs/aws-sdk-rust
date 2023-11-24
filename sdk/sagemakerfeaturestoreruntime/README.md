@@ -1,8 +1,5 @@
 # aws-sdk-sagemakerfeaturestoreruntime
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 Contains all data plane API operations and data types for the Amazon SageMaker Feature Store. Use this API to put, delete, and retrieve (get) features from a feature store.
 
 Use the following operations to configure your OnlineStore and OfflineStore features, and to create and manage feature groups:
@@ -22,8 +19,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-sagemakerfeaturestoreruntime = "0.39.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-sagemakerfeaturestoreruntime = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

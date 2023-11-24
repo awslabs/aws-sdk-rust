@@ -1,8 +1,5 @@
 # aws-sdk-licensemanagerlinuxsubscriptions
 
-**Please Note: The SDK is currently released as a developer preview, without support or assistance for use
-on production workloads. Any use in production is at your own risk.**
-
 With License Manager, you can discover and track your commercial Linux subscriptions on running Amazon EC2 instances.
 
 ## Getting Started
@@ -16,8 +13,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
-aws-sdk-licensemanagerlinuxsubscriptions = "0.17.0"
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
+aws-sdk-licensemanagerlinuxsubscriptions = "1.1.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

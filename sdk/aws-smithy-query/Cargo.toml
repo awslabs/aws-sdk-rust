@@ -17,4 +17,4 @@ urlencoding = "2.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.0.0"
+version = "1.0.1"
