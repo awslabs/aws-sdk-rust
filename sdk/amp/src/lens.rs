@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_rule_groups_namespaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_scrapers_output_output_next_token(
+    input: &crate::operation::list_scrapers::ListScrapersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workspaces_output_output_next_token(
     input: &crate::operation::list_workspaces::ListWorkspacesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -23,6 +33,13 @@ pub(crate) fn lens_list_rule_groups_namespaces_output_output_rule_groups_namespa
     input: crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleGroupsNamespaceSummary>> {
     let input = input.rule_groups_namespaces;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_scrapers_output_output_scrapers(
+    input: crate::operation::list_scrapers::ListScrapersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScraperSummary>> {
+    let input = input.scrapers;
     ::std::option::Option::Some(input)
 }
 

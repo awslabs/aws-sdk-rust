@@ -7,6 +7,14 @@ pub use crate::types::_event::Event;
 
 pub use crate::types::_metric_attribution::MetricAttribution;
 
+pub use crate::types::_action::Action;
+
+pub use crate::types::_action_interaction::ActionInteraction;
+
+mod _action;
+
+mod _action_interaction;
+
 mod _event;
 
 mod _item;

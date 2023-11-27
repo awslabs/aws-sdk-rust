@@ -12,7 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! Amazon Personalize can consume real-time user event data, such as _stream_ or _click_ data, and use it for model training either alone or combined with historical data. For more information see [Recording Events](https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html).
+//! Amazon Personalize can consume real-time user event data, such as _stream_ or _click_ data, and use it for model training either alone or combined with historical data. For more information see [Recording item interaction events](https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html).
 //!
 //! ## Getting Started
 //!
@@ -143,13 +143,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`PutEvents`](crate::operation::put_events) operation has
-/// a [`Client::put_events`], function which returns a builder for that operation.
+/// For example, the [`PutActionInteractions`](crate::operation::put_action_interactions) operation has
+/// a [`Client::put_action_interactions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.put_events()
+/// let result = client.put_action_interactions()
 ///     .tracking_id("example")
 ///     .send()
 ///     .await;

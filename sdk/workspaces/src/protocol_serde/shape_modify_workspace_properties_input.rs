@@ -12,5 +12,8 @@ pub fn ser_modify_workspace_properties_input_input(
         crate::protocol_serde::shape_workspace_properties::ser_workspace_properties(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.data_replication {
+        object.key("DataReplication").string(var_4.as_str());
+    }
     Ok(())
 }

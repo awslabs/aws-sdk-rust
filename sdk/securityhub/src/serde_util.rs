@@ -125,6 +125,18 @@ pub(crate) fn get_insights_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_security_control_definition_output_output_correct_errors(
+    mut builder: crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder,
+) -> crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder {
+    if builder.security_control_definition.is_none() {
+        builder.security_control_definition = {
+            let builder = crate::types::builders::SecurityControlDefinitionBuilder::default();
+            Some(crate::serde_util::security_control_definition_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_security_control_definitions_output_output_correct_errors(
     mut builder: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder,
 ) -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder {
@@ -154,6 +166,30 @@ pub(crate) fn insight_results_correct_errors(
     }
     if builder.result_values.is_none() {
         builder.result_values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn security_control_definition_correct_errors(
+    mut builder: crate::types::builders::SecurityControlDefinitionBuilder,
+) -> crate::types::builders::SecurityControlDefinitionBuilder {
+    if builder.security_control_id.is_none() {
+        builder.security_control_id = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.remediation_url.is_none() {
+        builder.remediation_url = Some(Default::default())
+    }
+    if builder.severity_rating.is_none() {
+        builder.severity_rating = "no value was set".parse::<crate::types::SeverityRating>().ok()
+    }
+    if builder.current_region_availability.is_none() {
+        builder.current_region_availability = "no value was set".parse::<crate::types::RegionAvailabilityStatus>().ok()
     }
     builder
 }
@@ -305,30 +341,6 @@ pub(crate) fn security_control_correct_errors(
     builder
 }
 
-pub(crate) fn security_control_definition_correct_errors(
-    mut builder: crate::types::builders::SecurityControlDefinitionBuilder,
-) -> crate::types::builders::SecurityControlDefinitionBuilder {
-    if builder.security_control_id.is_none() {
-        builder.security_control_id = Some(Default::default())
-    }
-    if builder.title.is_none() {
-        builder.title = Some(Default::default())
-    }
-    if builder.description.is_none() {
-        builder.description = Some(Default::default())
-    }
-    if builder.remediation_url.is_none() {
-        builder.remediation_url = Some(Default::default())
-    }
-    if builder.severity_rating.is_none() {
-        builder.severity_rating = "no value was set".parse::<crate::types::SeverityRating>().ok()
-    }
-    if builder.current_region_availability.is_none() {
-        builder.current_region_availability = "no value was set".parse::<crate::types::RegionAvailabilityStatus>().ok()
-    }
-    builder
-}
-
 pub(crate) fn standards_control_association_detail_correct_errors(
     mut builder: crate::types::builders::StandardsControlAssociationDetailBuilder,
 ) -> crate::types::builders::StandardsControlAssociationDetailBuilder {
@@ -450,6 +462,18 @@ pub(crate) fn note_correct_errors(mut builder: crate::types::builders::NoteBuild
     builder
 }
 
+pub(crate) fn parameter_definition_correct_errors(
+    mut builder: crate::types::builders::ParameterDefinitionBuilder,
+) -> crate::types::builders::ParameterDefinitionBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.configuration_options.is_none() {
+        builder.configuration_options = Some(crate::types::ConfigurationOptions::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn patch_summary_correct_errors(mut builder: crate::types::builders::PatchSummaryBuilder) -> crate::types::builders::PatchSummaryBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
@@ -496,6 +520,15 @@ pub(crate) fn standards_status_reason_correct_errors(
 pub(crate) fn malware_correct_errors(mut builder: crate::types::builders::MalwareBuilder) -> crate::types::builders::MalwareBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn parameter_configuration_correct_errors(
+    mut builder: crate::types::builders::ParameterConfigurationBuilder,
+) -> crate::types::builders::ParameterConfigurationBuilder {
+    if builder.value_type.is_none() {
+        builder.value_type = "no value was set".parse::<crate::types::ParameterValueType>().ok()
     }
     builder
 }

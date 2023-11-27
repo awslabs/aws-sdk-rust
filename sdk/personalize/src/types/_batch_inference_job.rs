@@ -24,6 +24,10 @@ pub struct BatchInferenceJob {
     pub batch_inference_job_config: ::std::option::Option<crate::types::BatchInferenceJobConfig>,
     /// <p>The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The job's mode.</p>
+    pub batch_inference_job_mode: ::std::option::Option<crate::types::BatchInferenceJobMode>,
+    /// <p>The job's theme generation settings.</p>
+    pub theme_generation_config: ::std::option::Option<crate::types::ThemeGenerationConfig>,
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
     /// <li> <p>PENDING</p> </li>
@@ -78,6 +82,14 @@ impl BatchInferenceJob {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
+    /// <p>The job's mode.</p>
+    pub fn batch_inference_job_mode(&self) -> ::std::option::Option<&crate::types::BatchInferenceJobMode> {
+        self.batch_inference_job_mode.as_ref()
+    }
+    /// <p>The job's theme generation settings.</p>
+    pub fn theme_generation_config(&self) -> ::std::option::Option<&crate::types::ThemeGenerationConfig> {
+        self.theme_generation_config.as_ref()
+    }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
     /// <li> <p>PENDING</p> </li>
@@ -118,6 +130,8 @@ pub struct BatchInferenceJobBuilder {
     pub(crate) job_output: ::std::option::Option<crate::types::BatchInferenceJobOutput>,
     pub(crate) batch_inference_job_config: ::std::option::Option<crate::types::BatchInferenceJobConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_inference_job_mode: ::std::option::Option<crate::types::BatchInferenceJobMode>,
+    pub(crate) theme_generation_config: ::std::option::Option<crate::types::ThemeGenerationConfig>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -263,6 +277,34 @@ impl BatchInferenceJobBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The job's mode.</p>
+    pub fn batch_inference_job_mode(mut self, input: crate::types::BatchInferenceJobMode) -> Self {
+        self.batch_inference_job_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job's mode.</p>
+    pub fn set_batch_inference_job_mode(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobMode>) -> Self {
+        self.batch_inference_job_mode = input;
+        self
+    }
+    /// <p>The job's mode.</p>
+    pub fn get_batch_inference_job_mode(&self) -> &::std::option::Option<crate::types::BatchInferenceJobMode> {
+        &self.batch_inference_job_mode
+    }
+    /// <p>The job's theme generation settings.</p>
+    pub fn theme_generation_config(mut self, input: crate::types::ThemeGenerationConfig) -> Self {
+        self.theme_generation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job's theme generation settings.</p>
+    pub fn set_theme_generation_config(mut self, input: ::std::option::Option<crate::types::ThemeGenerationConfig>) -> Self {
+        self.theme_generation_config = input;
+        self
+    }
+    /// <p>The job's theme generation settings.</p>
+    pub fn get_theme_generation_config(&self) -> &::std::option::Option<crate::types::ThemeGenerationConfig> {
+        &self.theme_generation_config
+    }
     /// <p>The status of the batch inference job. The status is one of the following values:</p>
     /// <ul>
     /// <li> <p>PENDING</p> </li>
@@ -336,6 +378,8 @@ impl BatchInferenceJobBuilder {
             job_output: self.job_output,
             batch_inference_job_config: self.batch_inference_job_config,
             role_arn: self.role_arn,
+            batch_inference_job_mode: self.batch_inference_job_mode,
+            theme_generation_config: self.theme_generation_config,
             status: self.status,
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,

@@ -141,6 +141,12 @@ pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundExcep
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledException;
 
+pub use crate::types::error::_event_data_store_federation_enabled_exception::EventDataStoreFederationEnabledException;
+
+pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationException;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
 pub use crate::types::error::_account_not_registered_exception::AccountNotRegisteredException;
 
 pub use crate::types::error::_event_data_store_termination_protected_exception::EventDataStoreTerminationProtectedException;
@@ -158,6 +164,8 @@ pub use crate::types::error::_invalid_source_exception::InvalidSourceException;
 pub use crate::types::error::_channel_max_limit_exceeded_exception::ChannelMaxLimitExceededException;
 
 pub use crate::types::error::_inactive_query_exception::InactiveQueryException;
+
+mod _access_denied_exception;
 
 mod _account_has_ongoing_import_exception;
 
@@ -187,6 +195,8 @@ mod _cloud_trail_invalid_client_token_id_exception;
 
 mod _cloud_watch_logs_delivery_unavailable_exception;
 
+mod _concurrent_modification_exception;
+
 mod _conflict_exception;
 
 mod _delegated_admin_account_limit_exceeded_exception;
@@ -194,6 +204,8 @@ mod _delegated_admin_account_limit_exceeded_exception;
 mod _event_data_store_already_exists_exception;
 
 mod _event_data_store_arn_invalid_exception;
+
+mod _event_data_store_federation_enabled_exception;
 
 mod _event_data_store_has_ongoing_import_exception;
 

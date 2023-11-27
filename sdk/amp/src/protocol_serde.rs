@@ -29,6 +29,8 @@ pub(crate) mod shape_create_logging_configuration;
 
 pub(crate) mod shape_create_rule_groups_namespace;
 
+pub(crate) mod shape_create_scraper;
+
 pub(crate) mod shape_create_workspace;
 
 pub(crate) mod shape_delete_alert_manager_definition;
@@ -36,6 +38,8 @@ pub(crate) mod shape_delete_alert_manager_definition;
 pub(crate) mod shape_delete_logging_configuration;
 
 pub(crate) mod shape_delete_rule_groups_namespace;
+
+pub(crate) mod shape_delete_scraper;
 
 pub(crate) mod shape_delete_workspace;
 
@@ -45,9 +49,15 @@ pub(crate) mod shape_describe_logging_configuration;
 
 pub(crate) mod shape_describe_rule_groups_namespace;
 
+pub(crate) mod shape_describe_scraper;
+
 pub(crate) mod shape_describe_workspace;
 
+pub(crate) mod shape_get_default_scraper_configuration;
+
 pub(crate) mod shape_list_rule_groups_namespaces;
+
+pub(crate) mod shape_list_scrapers;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -83,6 +93,8 @@ pub(crate) mod shape_create_logging_configuration_input;
 
 pub(crate) mod shape_create_rule_groups_namespace_input;
 
+pub(crate) mod shape_create_scraper_input;
+
 pub(crate) mod shape_create_workspace_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -109,6 +121,8 @@ pub(crate) mod shape_alert_manager_definition_description;
 
 pub(crate) mod shape_alert_manager_definition_status;
 
+pub(crate) mod shape_destination;
+
 pub(crate) mod shape_logging_configuration_metadata;
 
 pub(crate) mod shape_logging_configuration_status;
@@ -118,6 +132,16 @@ pub(crate) mod shape_rule_groups_namespace_description;
 pub(crate) mod shape_rule_groups_namespace_status;
 
 pub(crate) mod shape_rule_groups_namespace_summary_list;
+
+pub(crate) mod shape_scrape_configuration;
+
+pub(crate) mod shape_scraper_description;
+
+pub(crate) mod shape_scraper_status;
+
+pub(crate) mod shape_scraper_summary_list;
+
+pub(crate) mod shape_source;
 
 pub(crate) mod shape_tag_map;
 
@@ -129,8 +153,18 @@ pub(crate) mod shape_workspace_status;
 
 pub(crate) mod shape_workspace_summary_list;
 
+pub(crate) mod shape_amp_configuration;
+
+pub(crate) mod shape_eks_configuration;
+
 pub(crate) mod shape_rule_groups_namespace_summary;
+
+pub(crate) mod shape_scraper_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_workspace_summary;
+
+pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_subnet_ids;

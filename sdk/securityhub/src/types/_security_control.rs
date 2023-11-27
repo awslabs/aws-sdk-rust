@@ -18,6 +18,12 @@ pub struct SecurityControl {
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p> The enablement status of a security control in a specific standard. </p>
     pub security_control_status: ::std::option::Option<crate::types::ControlStatus>,
+    /// <p> Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values. </p>
+    pub update_status: ::std::option::Option<crate::types::UpdateStatus>,
+    /// <p> An object that identifies the name of a control parameter, its current value, and whether it has been customized. </p>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
+    /// <p> The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
+    pub last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl SecurityControl {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
@@ -48,6 +54,18 @@ impl SecurityControl {
     pub fn security_control_status(&self) -> ::std::option::Option<&crate::types::ControlStatus> {
         self.security_control_status.as_ref()
     }
+    /// <p> Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values. </p>
+    pub fn update_status(&self) -> ::std::option::Option<&crate::types::UpdateStatus> {
+        self.update_status.as_ref()
+    }
+    /// <p> An object that identifies the name of a control parameter, its current value, and whether it has been customized. </p>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
+        self.parameters.as_ref()
+    }
+    /// <p> The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
+    pub fn last_update_reason(&self) -> ::std::option::Option<&str> {
+        self.last_update_reason.as_deref()
+    }
 }
 impl SecurityControl {
     /// Creates a new builder-style object to manufacture [`SecurityControl`](crate::types::SecurityControl).
@@ -67,6 +85,9 @@ pub struct SecurityControlBuilder {
     pub(crate) remediation_url: ::std::option::Option<::std::string::String>,
     pub(crate) severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     pub(crate) security_control_status: ::std::option::Option<crate::types::ControlStatus>,
+    pub(crate) update_status: ::std::option::Option<crate::types::UpdateStatus>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
+    pub(crate) last_update_reason: ::std::option::Option<::std::string::String>,
 }
 impl SecurityControlBuilder {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
@@ -174,6 +195,57 @@ impl SecurityControlBuilder {
     pub fn get_security_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
         &self.security_control_status
     }
+    /// <p> Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values. </p>
+    pub fn update_status(mut self, input: crate::types::UpdateStatus) -> Self {
+        self.update_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values. </p>
+    pub fn set_update_status(mut self, input: ::std::option::Option<crate::types::UpdateStatus>) -> Self {
+        self.update_status = input;
+        self
+    }
+    /// <p> Identifies whether customizable properties of a security control are reflected in Security Hub findings. A status of <code>READY</code> indicates findings include the current parameter values. A status of <code>UPDATING</code> indicates that all findings may not include the current parameter values. </p>
+    pub fn get_update_status(&self) -> &::std::option::Option<crate::types::UpdateStatus> {
+        &self.update_status
+    }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p> An object that identifies the name of a control parameter, its current value, and whether it has been customized. </p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterConfiguration) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p> An object that identifies the name of a control parameter, its current value, and whether it has been customized. </p>
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
+    ) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p> An object that identifies the name of a control parameter, its current value, and whether it has been customized. </p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>> {
+        &self.parameters
+    }
+    /// <p> The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
+    pub fn last_update_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_update_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
+    pub fn set_last_update_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_update_reason = input;
+        self
+    }
+    /// <p> The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores. </p>
+    pub fn get_last_update_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_update_reason
+    }
     /// Consumes the builder and constructs a [`SecurityControl`](crate::types::SecurityControl).
     pub fn build(self) -> crate::types::SecurityControl {
         crate::types::SecurityControl {
@@ -184,6 +256,9 @@ impl SecurityControlBuilder {
             remediation_url: self.remediation_url,
             severity_rating: self.severity_rating,
             security_control_status: self.security_control_status,
+            update_status: self.update_status,
+            parameters: self.parameters,
+            last_update_reason: self.last_update_reason,
         }
     }
 }

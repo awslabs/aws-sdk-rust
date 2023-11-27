@@ -30,6 +30,10 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     let use_object_lambda_endpoint = &_params.use_object_lambda_endpoint;
     #[allow(unused_variables)]
+    let key = &_params.key;
+    #[allow(unused_variables)]
+    let prefix = &_params.prefix;
+    #[allow(unused_variables)]
     let disable_access_points = &_params.disable_access_points;
     #[allow(unused_variables)]
     let disable_multi_region_access_points = &_params.disable_multi_region_access_points;

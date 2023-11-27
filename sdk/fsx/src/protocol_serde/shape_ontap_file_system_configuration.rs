@@ -81,6 +81,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "HAPairs" => {
+                            builder = builder.set_ha_pairs(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "ThroughputCapacityPerHAPair" => {
+                            builder = builder.set_throughput_capacity_per_ha_pair(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

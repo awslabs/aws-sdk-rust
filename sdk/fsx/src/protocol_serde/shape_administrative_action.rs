@@ -55,6 +55,20 @@ where
                         "TargetSnapshotValues" => {
                             builder = builder.set_target_snapshot_values(crate::protocol_serde::shape_snapshot::de_snapshot(tokens)?);
                         }
+                        "TotalTransferBytes" => {
+                            builder = builder.set_total_transfer_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "RemainingTransferBytes" => {
+                            builder = builder.set_remaining_transfer_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

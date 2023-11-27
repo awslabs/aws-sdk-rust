@@ -14,6 +14,8 @@
 /// match manifeststatus {
 ///     ManifestStatus::Active => { /* ... */ },
 ///     ManifestStatus::Draft => { /* ... */ },
+///     ManifestStatus::Invalid => { /* ... */ },
+///     ManifestStatus::Validating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +47,10 @@ pub enum ManifestStatus {
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
+    Invalid,
+    #[allow(missing_docs)] // documentation missing in model
+    Validating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +60,8 @@ impl ::std::convert::From<&str> for ManifestStatus {
         match s {
             "ACTIVE" => ManifestStatus::Active,
             "DRAFT" => ManifestStatus::Draft,
+            "INVALID" => ManifestStatus::Invalid,
+            "VALIDATING" => ManifestStatus::Validating,
             other => ManifestStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +79,14 @@ impl ManifestStatus {
         match self {
             ManifestStatus::Active => "ACTIVE",
             ManifestStatus::Draft => "DRAFT",
+            ManifestStatus::Invalid => "INVALID",
+            ManifestStatus::Validating => "VALIDATING",
             ManifestStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DRAFT"]
+        &["ACTIVE", "DRAFT", "INVALID", "VALIDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ManifestStatus {

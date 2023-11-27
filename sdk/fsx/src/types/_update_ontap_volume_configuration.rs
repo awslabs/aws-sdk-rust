@@ -27,6 +27,8 @@ pub struct UpdateOntapVolumeConfiguration {
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The configuration object for updating the SnapLock configuration of an FSx for ONTAP SnapLock volume. </p>
     pub snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub size_in_bytes: ::std::option::Option<i64>,
 }
 impl UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -68,6 +70,10 @@ impl UpdateOntapVolumeConfiguration {
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::UpdateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.size_in_bytes
+    }
 }
 impl UpdateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
@@ -88,6 +94,7 @@ pub struct UpdateOntapVolumeConfigurationBuilder {
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) snaplock_configuration: ::std::option::Option<crate::types::UpdateSnaplockConfiguration>,
+    pub(crate) size_in_bytes: ::std::option::Option<i64>,
 }
 impl UpdateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -223,6 +230,20 @@ impl UpdateOntapVolumeConfigurationBuilder {
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::UpdateSnaplockConfiguration> {
         &self.snaplock_configuration
     }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(mut self, input: i64) -> Self {
+        self.size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size_in_bytes = input;
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOntapVolumeConfiguration {
         crate::types::UpdateOntapVolumeConfiguration {
@@ -234,6 +255,7 @@ impl UpdateOntapVolumeConfigurationBuilder {
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
             snaplock_configuration: self.snaplock_configuration,
+            size_in_bytes: self.size_in_bytes,
         }
     }
 }

@@ -9,12 +9,16 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>Internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The specified parameter is invalid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Service quote met error.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Throttling limit exceeded error.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The specified entity could not be processed.</p>
+    UnprocessableEntityException(crate::types::error::UnprocessableEntityException),
     /// <p>Validation exception error.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -32,9 +36,11 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::UnprocessableEntityException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -60,9 +66,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidParameterException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::UnprocessableEntityException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -122,6 +130,72 @@ impl From<crate::operation::cancel_policy_generation::CancelPolicyGenerationErro
             crate::operation::cancel_policy_generation::CancelPolicyGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_policy_generation::CancelPolicyGenerationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_policy_generation::CancelPolicyGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_access_not_granted::CheckAccessNotGrantedError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_access_not_granted::CheckAccessNotGrantedError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_access_not_granted::CheckAccessNotGrantedError> for Error {
+    fn from(err: crate::operation::check_access_not_granted::CheckAccessNotGrantedError) -> Self {
+        match err {
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::check_access_not_granted::CheckAccessNotGrantedError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_no_new_access::CheckNoNewAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_no_new_access::CheckNoNewAccessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_no_new_access::CheckNoNewAccessError> for Error {
+    fn from(err: crate::operation::check_no_new_access::CheckNoNewAccessError) -> Self {
+        match err {
+            crate::operation::check_no_new_access::CheckNoNewAccessError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::check_no_new_access::CheckNoNewAccessError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::check_no_new_access::CheckNoNewAccessError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::check_no_new_access::CheckNoNewAccessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::check_no_new_access::CheckNoNewAccessError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::operation::check_no_new_access::CheckNoNewAccessError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::check_no_new_access::CheckNoNewAccessError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -408,6 +482,32 @@ impl From<crate::operation::get_finding::GetFindingError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_v2::GetFindingV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_v2::GetFindingV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_finding_v2::GetFindingV2Error> for Error {
+    fn from(err: crate::operation::get_finding_v2::GetFindingV2Error) -> Self {
+        match err {
+            crate::operation::get_finding_v2::GetFindingV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_finding_v2::GetFindingV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_finding_v2::GetFindingV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_finding_v2::GetFindingV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_finding_v2::GetFindingV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_finding_v2::GetFindingV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_generated_policy::GetGeneratedPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -610,6 +710,32 @@ impl From<crate::operation::list_findings::ListFindingsError> for Error {
             crate::operation::list_findings::ListFindingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_findings::ListFindingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_findings::ListFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_findings_v2::ListFindingsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_findings_v2::ListFindingsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_findings_v2::ListFindingsV2Error> for Error {
+    fn from(err: crate::operation::list_findings_v2::ListFindingsV2Error) -> Self {
+        match err {
+            crate::operation::list_findings_v2::ListFindingsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_findings_v2::ListFindingsV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_findings_v2::ListFindingsV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_findings_v2::ListFindingsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_findings_v2::ListFindingsV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_findings_v2::ListFindingsV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -874,9 +1000,11 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidParameterException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::UnprocessableEntityException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -888,9 +1016,11 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::UnprocessableEntityException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

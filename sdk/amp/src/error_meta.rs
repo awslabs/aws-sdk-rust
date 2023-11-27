@@ -198,6 +198,34 @@ impl From<crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamesp
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scraper::CreateScraperError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scraper::CreateScraperError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_scraper::CreateScraperError> for Error {
+    fn from(err: crate::operation::create_scraper::CreateScraperError) -> Self {
+        match err {
+            crate::operation::create_scraper::CreateScraperError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_scraper::CreateScraperError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_scraper::CreateScraperError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_scraper::CreateScraperError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_scraper::CreateScraperError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_scraper::CreateScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_scraper::CreateScraperError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_scraper::CreateScraperError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workspace::CreateWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -351,6 +379,33 @@ impl From<crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamesp
                 Error::ValidationException(inner)
             }
             crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scraper::DeleteScraperError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scraper::DeleteScraperError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_scraper::DeleteScraperError> for Error {
+    fn from(err: crate::operation::delete_scraper::DeleteScraperError) -> Self {
+        match err {
+            crate::operation::delete_scraper::DeleteScraperError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scraper::DeleteScraperError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -511,6 +566,32 @@ impl From<crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNa
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scraper::DescribeScraperError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scraper::DescribeScraperError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_scraper::DescribeScraperError> for Error {
+    fn from(err: crate::operation::describe_scraper::DescribeScraperError) -> Self {
+        match err {
+            crate::operation::describe_scraper::DescribeScraperError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_scraper::DescribeScraperError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_scraper::DescribeScraperError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_scraper::DescribeScraperError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_scraper::DescribeScraperError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_scraper::DescribeScraperError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_workspace::DescribeWorkspaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -534,6 +615,47 @@ impl From<crate::operation::describe_workspace::DescribeWorkspaceError> for Erro
             crate::operation::describe_workspace::DescribeWorkspaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_workspace::DescribeWorkspaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_workspace::DescribeWorkspaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError> for Error {
+    fn from(err: crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError) -> Self {
+        match err {
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -573,6 +695,31 @@ impl From<crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespace
                 Error::ValidationException(inner)
             }
             crate::operation::list_rule_groups_namespaces::ListRuleGroupsNamespacesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scrapers::ListScrapersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scrapers::ListScrapersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scrapers::ListScrapersError> for Error {
+    fn from(err: crate::operation::list_scrapers::ListScrapersError) -> Self {
+        match err {
+            crate::operation::list_scrapers::ListScrapersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_scrapers::ListScrapersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_scrapers::ListScrapersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_scrapers::ListScrapersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_scrapers::ListScrapersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

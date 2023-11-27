@@ -11,7 +11,7 @@ pub struct CreateHostInput {
     pub provider_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Tags for the host to be created.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateHostInput {
@@ -31,7 +31,7 @@ impl CreateHostInput {
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Tags for the host to be created.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -119,18 +119,19 @@ impl CreateHostInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
+    /// <p>Tags for the host to be created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Tags for the host to be created.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Tags for the host to be created.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

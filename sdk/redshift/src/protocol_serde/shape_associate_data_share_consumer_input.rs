@@ -25,6 +25,11 @@ pub fn ser_associate_data_share_consumer_input_input_input(
     if let Some(var_8) = &input.consumer_region {
         scope_7.string(var_8);
     }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("AllowWrites");
+    if let Some(var_10) = &input.allow_writes {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

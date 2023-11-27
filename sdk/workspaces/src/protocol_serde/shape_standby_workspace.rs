@@ -24,6 +24,9 @@ pub fn ser_standby_workspace(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.data_replication {
+        object.key("DataReplication").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -65,6 +68,13 @@ where
                         }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                        }
+                        "DataReplication" => {
+                            builder = builder.set_data_replication(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DataReplication::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

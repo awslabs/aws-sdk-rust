@@ -29,6 +29,8 @@ pub(crate) mod shape_cancel_data_repository_task;
 
 pub(crate) mod shape_copy_backup;
 
+pub(crate) mod shape_copy_snapshot_and_update_volume;
+
 pub(crate) mod shape_create_backup;
 
 pub(crate) mod shape_create_data_repository_association;
@@ -75,6 +77,8 @@ pub(crate) mod shape_describe_file_system_aliases;
 
 pub(crate) mod shape_describe_file_systems;
 
+pub(crate) mod shape_describe_shared_vpc_configuration;
+
 pub(crate) mod shape_describe_snapshots;
 
 pub(crate) mod shape_describe_storage_virtual_machines;
@@ -100,6 +104,8 @@ pub(crate) mod shape_update_data_repository_association;
 pub(crate) mod shape_update_file_cache;
 
 pub(crate) mod shape_update_file_system;
+
+pub(crate) mod shape_update_shared_vpc_configuration;
 
 pub(crate) mod shape_update_snapshot;
 
@@ -132,6 +138,8 @@ pub(crate) mod shape_bad_request;
 pub(crate) mod shape_cancel_data_repository_task_input;
 
 pub(crate) mod shape_copy_backup_input;
+
+pub(crate) mod shape_copy_snapshot_and_update_volume_input;
 
 pub(crate) mod shape_create_backup_input;
 
@@ -260,6 +268,8 @@ pub(crate) mod shape_update_data_repository_association_input;
 pub(crate) mod shape_update_file_cache_input;
 
 pub(crate) mod shape_update_file_system_input;
+
+pub(crate) mod shape_update_shared_vpc_configuration_input;
 
 pub(crate) mod shape_update_snapshot_input;
 
@@ -391,6 +401,8 @@ pub(crate) mod shape_auto_import_policy;
 
 pub(crate) mod shape_backup_failure_details;
 
+pub(crate) mod shape_create_aggregate_configuration;
+
 pub(crate) mod shape_create_open_zfs_origin_snapshot_configuration;
 
 pub(crate) mod shape_create_snaplock_configuration;
@@ -467,6 +479,8 @@ pub(crate) mod shape_windows_file_system_configuration;
 
 pub(crate) mod shape_administrative_action_failure_details;
 
+pub(crate) mod shape_aggregate_configuration;
+
 pub(crate) mod shape_autocommit_period;
 
 pub(crate) mod shape_data_repository_configuration;
@@ -498,6 +512,8 @@ pub(crate) mod shape_snaplock_retention_period;
 pub(crate) mod shape_svm_endpoint;
 
 pub(crate) mod shape_windows_audit_log_configuration;
+
+pub(crate) mod shape_aggregates;
 
 pub(crate) mod shape_dns_ips;
 

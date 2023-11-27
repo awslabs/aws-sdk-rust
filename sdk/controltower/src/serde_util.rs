@@ -26,24 +26,6 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -56,6 +38,45 @@ pub(crate) fn throttling_exception_correct_errors(
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_landing_zone_output_output_correct_errors(
+    mut builder: crate::operation::create_landing_zone::builders::CreateLandingZoneOutputBuilder,
+) -> crate::operation::create_landing_zone::builders::CreateLandingZoneOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_landing_zone_output_output_correct_errors(
+    mut builder: crate::operation::delete_landing_zone::builders::DeleteLandingZoneOutputBuilder,
+) -> crate::operation::delete_landing_zone::builders::DeleteLandingZoneOutputBuilder {
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -104,6 +125,30 @@ pub(crate) fn get_enabled_control_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_landing_zone_output_output_correct_errors(
+    mut builder: crate::operation::get_landing_zone::builders::GetLandingZoneOutputBuilder,
+) -> crate::operation::get_landing_zone::builders::GetLandingZoneOutputBuilder {
+    if builder.landing_zone.is_none() {
+        builder.landing_zone = {
+            let builder = crate::types::builders::LandingZoneDetailBuilder::default();
+            crate::serde_util::landing_zone_detail_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_landing_zone_operation_output_output_correct_errors(
+    mut builder: crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationOutputBuilder,
+) -> crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationOutputBuilder {
+    if builder.operation_details.is_none() {
+        builder.operation_details = {
+            let builder = crate::types::builders::LandingZoneOperationDetailBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_enabled_controls_output_output_correct_errors(
     mut builder: crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder,
 ) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsOutputBuilder {
@@ -113,11 +158,50 @@ pub(crate) fn list_enabled_controls_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_landing_zones_output_output_correct_errors(
+    mut builder: crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder,
+) -> crate::operation::list_landing_zones::builders::ListLandingZonesOutputBuilder {
+    if builder.landing_zones.is_none() {
+        builder.landing_zones = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn reset_landing_zone_output_output_correct_errors(
+    mut builder: crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder,
+) -> crate::operation::reset_landing_zone::builders::ResetLandingZoneOutputBuilder {
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_landing_zone_output_output_correct_errors(
+    mut builder: crate::operation::update_landing_zone::builders::UpdateLandingZoneOutputBuilder,
+) -> crate::operation::update_landing_zone::builders::UpdateLandingZoneOutputBuilder {
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn landing_zone_detail_correct_errors(
+    mut builder: crate::types::builders::LandingZoneDetailBuilder,
+) -> crate::types::builders::LandingZoneDetailBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.manifest.is_none() {
+        builder.manifest = Some(Default::default())
     }
     builder
 }

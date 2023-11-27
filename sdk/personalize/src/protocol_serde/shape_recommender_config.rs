@@ -25,6 +25,9 @@ pub fn ser_recommender_config(
         crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.enable_metadata_with_recommendations {
+        object.key("enableMetadataWithRecommendations").boolean(*var_8);
+    }
     Ok(())
 }
 
@@ -57,6 +60,10 @@ where
                         "trainingDataConfig" => {
                             builder =
                                 builder.set_training_data_config(crate::protocol_serde::shape_training_data_config::de_training_data_config(tokens)?);
+                        }
+                        "enableMetadataWithRecommendations" => {
+                            builder = builder
+                                .set_enable_metadata_with_recommendations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnabledControlsOutput {
-    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub enabled_controls: ::std::vec::Vec<crate::types::EnabledControlSummary>,
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnabledControlsOutput {
-    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub fn enabled_controls(&self) -> &[crate::types::EnabledControlSummary] {
         use std::ops::Deref;
         self.enabled_controls.deref()
@@ -45,19 +45,19 @@ impl ListEnabledControlsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_enabled_controls`](Self::set_enabled_controls).
     ///
-    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub fn enabled_controls(mut self, input: crate::types::EnabledControlSummary) -> Self {
         let mut v = self.enabled_controls.unwrap_or_default();
         v.push(input);
         self.enabled_controls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub fn set_enabled_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>>) -> Self {
         self.enabled_controls = input;
         self
     }
-    /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
+    /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub fn get_enabled_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
         &self.enabled_controls
     }

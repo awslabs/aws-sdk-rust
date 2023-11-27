@@ -11,6 +11,8 @@ pub struct PredictedItem {
     pub score: ::std::option::Option<f64>,
     /// <p>The name of the promotion that included the predicted item.</p>
     pub promotion_name: ::std::option::Option<::std::string::String>,
+    /// <p>Metadata about the item from your Items dataset.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PredictedItem {
     /// <p>The recommended item ID.</p>
@@ -24,6 +26,10 @@ impl PredictedItem {
     /// <p>The name of the promotion that included the predicted item.</p>
     pub fn promotion_name(&self) -> ::std::option::Option<&str> {
         self.promotion_name.as_deref()
+    }
+    /// <p>Metadata about the item from your Items dataset.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.metadata.as_ref()
     }
 }
 impl PredictedItem {
@@ -40,6 +46,7 @@ pub struct PredictedItemBuilder {
     pub(crate) item_id: ::std::option::Option<::std::string::String>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) promotion_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PredictedItemBuilder {
     /// <p>The recommended item ID.</p>
@@ -84,12 +91,33 @@ impl PredictedItemBuilder {
     pub fn get_promotion_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.promotion_name
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Metadata about the item from your Items dataset.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Metadata about the item from your Items dataset.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Metadata about the item from your Items dataset.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`PredictedItem`](crate::types::PredictedItem).
     pub fn build(self) -> crate::types::PredictedItem {
         crate::types::PredictedItem {
             item_id: self.item_id,
             score: self.score,
             promotion_name: self.promotion_name,
+            metadata: self.metadata,
         }
     }
 }

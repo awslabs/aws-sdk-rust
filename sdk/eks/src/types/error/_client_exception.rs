@@ -8,11 +8,11 @@ pub struct ClientException {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS add-on name associated with the exception.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS subscription ID with the exception.</p>
     pub subscription_id: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -25,7 +25,7 @@ impl ClientException {
     pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS add-on name associated with the exception.</p>
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -110,17 +110,17 @@ impl ClientExceptionBuilder {
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nodegroup_name
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS add-on name associated with the exception.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS add-on name associated with the exception.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS add-on name associated with the exception.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
@@ -138,17 +138,17 @@ impl ClientExceptionBuilder {
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_id
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

@@ -145,6 +145,9 @@ pub mod get_master_account;
 /// Types for the `GetMembers` operation.
 pub mod get_members;
 
+/// Types for the `GetSecurityControlDefinition` operation.
+pub mod get_security_control_definition;
+
 /// Types for the `InviteMembers` operation.
 pub mod invite_members;
 
@@ -195,6 +198,9 @@ pub mod update_insight;
 
 /// Types for the `UpdateOrganizationConfiguration` operation.
 pub mod update_organization_configuration;
+
+/// Types for the `UpdateSecurityControl` operation.
+pub mod update_security_control;
 
 /// Types for the `UpdateSecurityHubConfiguration` operation.
 pub mod update_security_hub_configuration;

@@ -14,6 +14,8 @@ pub struct SignalDecoder {
     pub can_signal: ::std::option::Option<crate::types::CanSignal>,
     /// <p>Information about signal decoder using the On-board diagnostic (OBD) II protocol.</p>
     pub obd_signal: ::std::option::Option<crate::types::ObdSignal>,
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
+    pub message_signal: ::std::option::Option<crate::types::MessageSignal>,
 }
 impl SignalDecoder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
@@ -38,6 +40,10 @@ impl SignalDecoder {
     pub fn obd_signal(&self) -> ::std::option::Option<&crate::types::ObdSignal> {
         self.obd_signal.as_ref()
     }
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
+    pub fn message_signal(&self) -> ::std::option::Option<&crate::types::MessageSignal> {
+        self.message_signal.as_ref()
+    }
 }
 impl SignalDecoder {
     /// Creates a new builder-style object to manufacture [`SignalDecoder`](crate::types::SignalDecoder).
@@ -55,6 +61,7 @@ pub struct SignalDecoderBuilder {
     pub(crate) interface_id: ::std::option::Option<::std::string::String>,
     pub(crate) can_signal: ::std::option::Option<crate::types::CanSignal>,
     pub(crate) obd_signal: ::std::option::Option<crate::types::ObdSignal>,
+    pub(crate) message_signal: ::std::option::Option<crate::types::MessageSignal>,
 }
 impl SignalDecoderBuilder {
     /// <p>The fully qualified name of a signal decoder as defined in a vehicle model.</p>
@@ -130,6 +137,20 @@ impl SignalDecoderBuilder {
     pub fn get_obd_signal(&self) -> &::std::option::Option<crate::types::ObdSignal> {
         &self.obd_signal
     }
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
+    pub fn message_signal(mut self, input: crate::types::MessageSignal) -> Self {
+        self.message_signal = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
+    pub fn set_message_signal(mut self, input: ::std::option::Option<crate::types::MessageSignal>) -> Self {
+        self.message_signal = input;
+        self
+    }
+    /// <p>The decoding information for a specific message which supports higher order data types. </p>
+    pub fn get_message_signal(&self) -> &::std::option::Option<crate::types::MessageSignal> {
+        &self.message_signal
+    }
     /// Consumes the builder and constructs a [`SignalDecoder`](crate::types::SignalDecoder).
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::SignalDecoderBuilder::fully_qualified_name)
@@ -157,6 +178,7 @@ impl SignalDecoderBuilder {
             })?,
             can_signal: self.can_signal,
             obd_signal: self.obd_signal,
+            message_signal: self.message_signal,
         })
     }
 }

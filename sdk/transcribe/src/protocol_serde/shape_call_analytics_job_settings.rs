@@ -43,6 +43,12 @@ pub fn ser_call_analytics_job_settings(
         }
         object_11.finish();
     }
+    if let Some(var_15) = &input.summarization {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("Summarization").start_object();
+        crate::protocol_serde::shape_summarization::ser_summarization(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -99,6 +105,9 @@ where
                             builder = builder.set_language_id_settings(
                                 crate::protocol_serde::shape_language_id_settings_map::de_language_id_settings_map(tokens)?,
                             );
+                        }
+                        "Summarization" => {
+                            builder = builder.set_summarization(crate::protocol_serde::shape_summarization::de_summarization(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

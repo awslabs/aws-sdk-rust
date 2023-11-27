@@ -7,6 +7,8 @@ pub struct ModifyWorkspacePropertiesInput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the WorkSpace.</p>
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
+    /// <p>Indicates the data replication status.</p>
+    pub data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
 impl ModifyWorkspacePropertiesInput {
     /// <p>The identifier of the WorkSpace.</p>
@@ -16,6 +18,10 @@ impl ModifyWorkspacePropertiesInput {
     /// <p>The properties of the WorkSpace.</p>
     pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
         self.workspace_properties.as_ref()
+    }
+    /// <p>Indicates the data replication status.</p>
+    pub fn data_replication(&self) -> ::std::option::Option<&crate::types::DataReplication> {
+        self.data_replication.as_ref()
     }
 }
 impl ModifyWorkspacePropertiesInput {
@@ -31,6 +37,7 @@ impl ModifyWorkspacePropertiesInput {
 pub struct ModifyWorkspacePropertiesInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
+    pub(crate) data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
 impl ModifyWorkspacePropertiesInputBuilder {
     /// <p>The identifier of the WorkSpace.</p>
@@ -49,7 +56,6 @@ impl ModifyWorkspacePropertiesInputBuilder {
         &self.workspace_id
     }
     /// <p>The properties of the WorkSpace.</p>
-    /// This field is required.
     pub fn workspace_properties(mut self, input: crate::types::WorkspaceProperties) -> Self {
         self.workspace_properties = ::std::option::Option::Some(input);
         self
@@ -63,6 +69,20 @@ impl ModifyWorkspacePropertiesInputBuilder {
     pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
         &self.workspace_properties
     }
+    /// <p>Indicates the data replication status.</p>
+    pub fn data_replication(mut self, input: crate::types::DataReplication) -> Self {
+        self.data_replication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the data replication status.</p>
+    pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
+        self.data_replication = input;
+        self
+    }
+    /// <p>Indicates the data replication status.</p>
+    pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
+        &self.data_replication
+    }
     /// Consumes the builder and constructs a [`ModifyWorkspacePropertiesInput`](crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput).
     pub fn build(
         self,
@@ -73,6 +93,7 @@ impl ModifyWorkspacePropertiesInputBuilder {
         ::std::result::Result::Ok(crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesInput {
             workspace_id: self.workspace_id,
             workspace_properties: self.workspace_properties,
+            data_replication: self.data_replication,
         })
     }
 }

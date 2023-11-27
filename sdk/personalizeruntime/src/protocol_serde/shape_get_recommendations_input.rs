@@ -32,29 +32,45 @@ pub fn ser_get_recommendations_input_input(
     if let Some(var_11) = &input.item_id {
         object.key("itemId").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.num_results {
-        object.key("numResults").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
-        );
-    }
-    if let Some(var_13) = &input.promotions {
-        let mut array_14 = object.key("promotions").start_array();
-        for item_15 in var_13 {
+    if let Some(var_12) = &input.metadata_columns {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("metadataColumns").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_promotion::ser_promotion(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut array_16 = object_13.key(key_14.as_str()).start_array();
+                for item_17 in value_15 {
+                    {
+                        array_16.value().string(item_17.as_str());
+                    }
+                }
+                array_16.finish();
             }
         }
-        array_14.finish();
+        object_13.finish();
     }
-    if let Some(var_17) = &input.recommender_arn {
-        object.key("recommenderArn").string(var_17.as_str());
+    if let Some(var_18) = &input.num_results {
+        object.key("numResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
     }
-    if let Some(var_18) = &input.user_id {
-        object.key("userId").string(var_18.as_str());
+    if let Some(var_19) = &input.promotions {
+        let mut array_20 = object.key("promotions").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_promotion::ser_promotion(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.recommender_arn {
+        object.key("recommenderArn").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.user_id {
+        object.key("userId").string(var_24.as_str());
     }
     Ok(())
 }

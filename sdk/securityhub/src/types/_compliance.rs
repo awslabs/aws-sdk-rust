@@ -24,6 +24,8 @@ pub struct Compliance {
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The enabled security standards in which a security control is currently enabled. </p>
     pub associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
+    /// <p> An object that includes security control parameter names and values. </p>
+    pub security_control_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>>,
 }
 impl Compliance {
     /// <p>The result of a standards check.</p>
@@ -62,6 +64,12 @@ impl Compliance {
     pub fn associated_standards(&self) -> &[crate::types::AssociatedStandard] {
         self.associated_standards.as_deref().unwrap_or_default()
     }
+    /// <p> An object that includes security control parameter names and values. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_control_parameters.is_none()`.
+    pub fn security_control_parameters(&self) -> &[crate::types::SecurityControlParameter] {
+        self.security_control_parameters.as_deref().unwrap_or_default()
+    }
 }
 impl Compliance {
     /// Creates a new builder-style object to manufacture [`Compliance`](crate::types::Compliance).
@@ -79,6 +87,7 @@ pub struct ComplianceBuilder {
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<crate::types::StatusReason>>,
     pub(crate) security_control_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_standards: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>>,
+    pub(crate) security_control_parameters: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>>,
 }
 impl ComplianceBuilder {
     /// <p>The result of a standards check.</p>
@@ -199,6 +208,26 @@ impl ComplianceBuilder {
     pub fn get_associated_standards(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedStandard>> {
         &self.associated_standards
     }
+    /// Appends an item to `security_control_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_security_control_parameters`](Self::set_security_control_parameters).
+    ///
+    /// <p> An object that includes security control parameter names and values. </p>
+    pub fn security_control_parameters(mut self, input: crate::types::SecurityControlParameter) -> Self {
+        let mut v = self.security_control_parameters.unwrap_or_default();
+        v.push(input);
+        self.security_control_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> An object that includes security control parameter names and values. </p>
+    pub fn set_security_control_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>>) -> Self {
+        self.security_control_parameters = input;
+        self
+    }
+    /// <p> An object that includes security control parameter names and values. </p>
+    pub fn get_security_control_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlParameter>> {
+        &self.security_control_parameters
+    }
     /// Consumes the builder and constructs a [`Compliance`](crate::types::Compliance).
     pub fn build(self) -> crate::types::Compliance {
         crate::types::Compliance {
@@ -207,6 +236,7 @@ impl ComplianceBuilder {
             status_reasons: self.status_reasons,
             security_control_id: self.security_control_id,
             associated_standards: self.associated_standards,
+            security_control_parameters: self.security_control_parameters,
         }
     }
 }

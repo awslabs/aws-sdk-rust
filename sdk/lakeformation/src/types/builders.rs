@@ -5,6 +5,8 @@ pub use crate::types::_delete_object_input::DeleteObjectInputBuilder;
 
 pub use crate::types::_add_object_input::AddObjectInputBuilder;
 
+pub use crate::types::_external_filtering_configuration::ExternalFilteringConfigurationBuilder;
+
 pub use crate::types::_data_cells_filter::DataCellsFilterBuilder;
 
 pub use crate::types::_column_wildcard::ColumnWildcardBuilder;

@@ -12,6 +12,7 @@
 /// ```text
 /// # let featureadditionalconfiguration = unimplemented!();
 /// match featureadditionalconfiguration {
+///     FeatureAdditionalConfiguration::EcsFargateAgentManagement => { /* ... */ },
 ///     FeatureAdditionalConfiguration::EksAddonManagement => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
 )]
 pub enum FeatureAdditionalConfiguration {
     #[allow(missing_docs)] // documentation missing in model
+    EcsFargateAgentManagement,
+    #[allow(missing_docs)] // documentation missing in model
     EksAddonManagement,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +52,7 @@ pub enum FeatureAdditionalConfiguration {
 impl ::std::convert::From<&str> for FeatureAdditionalConfiguration {
     fn from(s: &str) -> Self {
         match s {
+            "ECS_FARGATE_AGENT_MANAGEMENT" => FeatureAdditionalConfiguration::EcsFargateAgentManagement,
             "EKS_ADDON_MANAGEMENT" => FeatureAdditionalConfiguration::EksAddonManagement,
             other => FeatureAdditionalConfiguration::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +69,14 @@ impl FeatureAdditionalConfiguration {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FeatureAdditionalConfiguration::EcsFargateAgentManagement => "ECS_FARGATE_AGENT_MANAGEMENT",
             FeatureAdditionalConfiguration::EksAddonManagement => "EKS_ADDON_MANAGEMENT",
             FeatureAdditionalConfiguration::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EKS_ADDON_MANAGEMENT"]
+        &["ECS_FARGATE_AGENT_MANAGEMENT", "EKS_ADDON_MANAGEMENT"]
     }
 }
 impl ::std::convert::AsRef<str> for FeatureAdditionalConfiguration {

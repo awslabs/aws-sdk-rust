@@ -267,6 +267,8 @@ pub use crate::types::_platform_device_type::PlatformDeviceType;
 
 pub use crate::types::_setting::Setting;
 
+pub use crate::types::_setting_type::SettingType;
+
 pub use crate::types::_setting_name::SettingName;
 
 pub use crate::types::_desired_status::DesiredStatus;
@@ -534,6 +536,8 @@ mod _session;
 mod _setting;
 
 mod _setting_name;
+
+mod _setting_type;
 
 mod _sort_order;
 

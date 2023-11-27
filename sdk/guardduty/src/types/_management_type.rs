@@ -13,6 +13,7 @@
 /// # let managementtype = unimplemented!();
 /// match managementtype {
 ///     ManagementType::AutoManaged => { /* ... */ },
+///     ManagementType::Disabled => { /* ... */ },
 ///     ManagementType::Manual => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum ManagementType {
     #[allow(missing_docs)] // documentation missing in model
     AutoManaged,
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for ManagementType {
     fn from(s: &str) -> Self {
         match s {
             "AUTO_MANAGED" => ManagementType::AutoManaged,
+            "DISABLED" => ManagementType::Disabled,
             "MANUAL" => ManagementType::Manual,
             other => ManagementType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl ManagementType {
     pub fn as_str(&self) -> &str {
         match self {
             ManagementType::AutoManaged => "AUTO_MANAGED",
+            ManagementType::Disabled => "DISABLED",
             ManagementType::Manual => "MANUAL",
             ManagementType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO_MANAGED", "MANUAL"]
+        &["AUTO_MANAGED", "DISABLED", "MANUAL"]
     }
 }
 impl ::std::convert::AsRef<str> for ManagementType {

@@ -7,6 +7,12 @@ pub use crate::types::_delete_object_input::DeleteObjectInput;
 
 pub use crate::types::_add_object_input::AddObjectInput;
 
+pub use crate::types::_external_filtering_configuration::ExternalFilteringConfiguration;
+
+pub use crate::types::_enable_status::EnableStatus;
+
+pub use crate::types::_application_status::ApplicationStatus;
+
 pub use crate::types::_data_cells_filter::DataCellsFilter;
 
 pub use crate::types::_column_wildcard::ColumnWildcard;
@@ -117,6 +123,8 @@ mod _add_object_input;
 
 mod _all_rows_wildcard;
 
+mod _application_status;
+
 mod _audit_context;
 
 mod _batch_permissions_failure_entry;
@@ -149,9 +157,13 @@ mod _delete_object_input;
 
 mod _details_map;
 
+mod _enable_status;
+
 mod _error_detail;
 
 mod _execution_statistics;
+
+mod _external_filtering_configuration;
 
 mod _field_name_string;
 

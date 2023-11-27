@@ -14,7 +14,7 @@ pub struct EksAnywhereSubscription {
     pub effective_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp in seconds for when the subscription will expire or auto renew, depending on the auto renew configuration of the subscription object.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 1000.</p>
+    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub license_quantity: i32,
     /// <p>The type of licenses included in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub license_type: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>,
@@ -24,7 +24,7 @@ pub struct EksAnywhereSubscription {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>A boolean indicating whether or not a subscription will auto renew when it expires.</p>
     pub auto_renew: bool,
-    /// <p>License Manager License ARNs associated with the subscription.</p>
+    /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -50,7 +50,7 @@ impl EksAnywhereSubscription {
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 1000.</p>
+    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn license_quantity(&self) -> i32 {
         self.license_quantity
     }
@@ -70,7 +70,7 @@ impl EksAnywhereSubscription {
     pub fn auto_renew(&self) -> bool {
         self.auto_renew
     }
-    /// <p>License Manager License ARNs associated with the subscription.</p>
+    /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.license_arns.is_none()`.
     pub fn license_arns(&self) -> &[::std::string::String] {
@@ -176,17 +176,17 @@ impl EksAnywhereSubscriptionBuilder {
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
-    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 1000.</p>
+    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn license_quantity(mut self, input: i32) -> Self {
         self.license_quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 1000.</p>
+    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn set_license_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.license_quantity = input;
         self
     }
-    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 1000.</p>
+    /// <p>The number of licenses included in a subscription. Valid values are between 1 and 100.</p>
     pub fn get_license_quantity(&self) -> &::std::option::Option<i32> {
         &self.license_quantity
     }
@@ -250,19 +250,19 @@ impl EksAnywhereSubscriptionBuilder {
     ///
     /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
     ///
-    /// <p>License Manager License ARNs associated with the subscription.</p>
+    /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub fn license_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.license_arns.unwrap_or_default();
         v.push(input.into());
         self.license_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>License Manager License ARNs associated with the subscription.</p>
+    /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub fn set_license_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.license_arns = input;
         self
     }
-    /// <p>License Manager License ARNs associated with the subscription.</p>
+    /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.license_arns
     }

@@ -113,6 +113,10 @@ pub use crate::types::_batch_segment_job_input::BatchSegmentJobInputBuilder;
 
 pub use crate::types::_batch_inference_job::BatchInferenceJobBuilder;
 
+pub use crate::types::_theme_generation_config::ThemeGenerationConfigBuilder;
+
+pub use crate::types::_fields_for_theme_generation::FieldsForThemeGenerationBuilder;
+
 pub use crate::types::_batch_inference_job_config::BatchInferenceJobConfigBuilder;
 
 pub use crate::types::_batch_inference_job_output::BatchInferenceJobOutputBuilder;

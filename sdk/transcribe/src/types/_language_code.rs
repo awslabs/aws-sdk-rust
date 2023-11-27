@@ -12,12 +12,26 @@
 /// ```text
 /// # let languagecode = unimplemented!();
 /// match languagecode {
+///     LanguageCode::AbGe => { /* ... */ },
 ///     LanguageCode::AfZa => { /* ... */ },
 ///     LanguageCode::ArAe => { /* ... */ },
 ///     LanguageCode::ArSa => { /* ... */ },
+///     LanguageCode::AstEs => { /* ... */ },
+///     LanguageCode::AzAz => { /* ... */ },
+///     LanguageCode::BaRu => { /* ... */ },
+///     LanguageCode::BeBy => { /* ... */ },
+///     LanguageCode::BgBg => { /* ... */ },
+///     LanguageCode::BnIn => { /* ... */ },
+///     LanguageCode::BsBa => { /* ... */ },
+///     LanguageCode::CaEs => { /* ... */ },
+///     LanguageCode::CkbIq => { /* ... */ },
+///     LanguageCode::CkbIr => { /* ... */ },
+///     LanguageCode::CsCz => { /* ... */ },
+///     LanguageCode::CyWl => { /* ... */ },
 ///     LanguageCode::DaDk => { /* ... */ },
 ///     LanguageCode::DeCh => { /* ... */ },
 ///     LanguageCode::DeDe => { /* ... */ },
+///     LanguageCode::ElGr => { /* ... */ },
 ///     LanguageCode::EnAb => { /* ... */ },
 ///     LanguageCode::EnAu => { /* ... */ },
 ///     LanguageCode::EnGb => { /* ... */ },
@@ -29,28 +43,78 @@
 ///     LanguageCode::EnZa => { /* ... */ },
 ///     LanguageCode::EsEs => { /* ... */ },
 ///     LanguageCode::EsUs => { /* ... */ },
+///     LanguageCode::EtEt => { /* ... */ },
+///     LanguageCode::EuEs => { /* ... */ },
 ///     LanguageCode::FaIr => { /* ... */ },
+///     LanguageCode::FiFi => { /* ... */ },
 ///     LanguageCode::FrCa => { /* ... */ },
 ///     LanguageCode::FrFr => { /* ... */ },
+///     LanguageCode::GlEs => { /* ... */ },
+///     LanguageCode::GuIn => { /* ... */ },
+///     LanguageCode::HaNg => { /* ... */ },
 ///     LanguageCode::HeIl => { /* ... */ },
 ///     LanguageCode::HiIn => { /* ... */ },
+///     LanguageCode::HrHr => { /* ... */ },
+///     LanguageCode::HuHu => { /* ... */ },
+///     LanguageCode::HyAm => { /* ... */ },
 ///     LanguageCode::IdId => { /* ... */ },
+///     LanguageCode::IsIs => { /* ... */ },
 ///     LanguageCode::ItIt => { /* ... */ },
 ///     LanguageCode::JaJp => { /* ... */ },
+///     LanguageCode::KaGe => { /* ... */ },
+///     LanguageCode::KabDz => { /* ... */ },
+///     LanguageCode::KkKz => { /* ... */ },
+///     LanguageCode::KnIn => { /* ... */ },
 ///     LanguageCode::KoKr => { /* ... */ },
+///     LanguageCode::KyKg => { /* ... */ },
+///     LanguageCode::LgIn => { /* ... */ },
+///     LanguageCode::LtLt => { /* ... */ },
+///     LanguageCode::LvLv => { /* ... */ },
+///     LanguageCode::MhrRu => { /* ... */ },
+///     LanguageCode::MiNz => { /* ... */ },
+///     LanguageCode::MkMk => { /* ... */ },
+///     LanguageCode::MlIn => { /* ... */ },
+///     LanguageCode::MnMn => { /* ... */ },
+///     LanguageCode::MrIn => { /* ... */ },
 ///     LanguageCode::MsMy => { /* ... */ },
+///     LanguageCode::MtMt => { /* ... */ },
 ///     LanguageCode::NlNl => { /* ... */ },
+///     LanguageCode::NoNo => { /* ... */ },
+///     LanguageCode::OrIn => { /* ... */ },
+///     LanguageCode::PaIn => { /* ... */ },
+///     LanguageCode::PlPl => { /* ... */ },
+///     LanguageCode::PsAf => { /* ... */ },
 ///     LanguageCode::PtBr => { /* ... */ },
 ///     LanguageCode::PtPt => { /* ... */ },
+///     LanguageCode::RoRo => { /* ... */ },
 ///     LanguageCode::RuRu => { /* ... */ },
+///     LanguageCode::RwRw => { /* ... */ },
+///     LanguageCode::SiLk => { /* ... */ },
+///     LanguageCode::SkSk => { /* ... */ },
+///     LanguageCode::SlSi => { /* ... */ },
+///     LanguageCode::SoSo => { /* ... */ },
+///     LanguageCode::SrRs => { /* ... */ },
+///     LanguageCode::SuId => { /* ... */ },
 ///     LanguageCode::SvSe => { /* ... */ },
+///     LanguageCode::SwBi => { /* ... */ },
+///     LanguageCode::SwKe => { /* ... */ },
+///     LanguageCode::SwRw => { /* ... */ },
+///     LanguageCode::SwTz => { /* ... */ },
+///     LanguageCode::SwUg => { /* ... */ },
 ///     LanguageCode::TaIn => { /* ... */ },
 ///     LanguageCode::TeIn => { /* ... */ },
 ///     LanguageCode::ThTh => { /* ... */ },
+///     LanguageCode::TlPh => { /* ... */ },
 ///     LanguageCode::TrTr => { /* ... */ },
+///     LanguageCode::TtRu => { /* ... */ },
+///     LanguageCode::UgCn => { /* ... */ },
+///     LanguageCode::UkUa => { /* ... */ },
+///     LanguageCode::UzUz => { /* ... */ },
 ///     LanguageCode::ViVn => { /* ... */ },
+///     LanguageCode::WoSn => { /* ... */ },
 ///     LanguageCode::ZhCn => { /* ... */ },
 ///     LanguageCode::ZhTw => { /* ... */ },
+///     LanguageCode::ZuZa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -79,17 +143,45 @@
 )]
 pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
+    AbGe,
+    #[allow(missing_docs)] // documentation missing in model
     AfZa,
     #[allow(missing_docs)] // documentation missing in model
     ArAe,
     #[allow(missing_docs)] // documentation missing in model
     ArSa,
     #[allow(missing_docs)] // documentation missing in model
+    AstEs,
+    #[allow(missing_docs)] // documentation missing in model
+    AzAz,
+    #[allow(missing_docs)] // documentation missing in model
+    BaRu,
+    #[allow(missing_docs)] // documentation missing in model
+    BeBy,
+    #[allow(missing_docs)] // documentation missing in model
+    BgBg,
+    #[allow(missing_docs)] // documentation missing in model
+    BnIn,
+    #[allow(missing_docs)] // documentation missing in model
+    BsBa,
+    #[allow(missing_docs)] // documentation missing in model
+    CaEs,
+    #[allow(missing_docs)] // documentation missing in model
+    CkbIq,
+    #[allow(missing_docs)] // documentation missing in model
+    CkbIr,
+    #[allow(missing_docs)] // documentation missing in model
+    CsCz,
+    #[allow(missing_docs)] // documentation missing in model
+    CyWl,
+    #[allow(missing_docs)] // documentation missing in model
     DaDk,
     #[allow(missing_docs)] // documentation missing in model
     DeCh,
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    ElGr,
     #[allow(missing_docs)] // documentation missing in model
     EnAb,
     #[allow(missing_docs)] // documentation missing in model
@@ -113,35 +205,121 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EsUs,
     #[allow(missing_docs)] // documentation missing in model
+    EtEt,
+    #[allow(missing_docs)] // documentation missing in model
+    EuEs,
+    #[allow(missing_docs)] // documentation missing in model
     FaIr,
+    #[allow(missing_docs)] // documentation missing in model
+    FiFi,
     #[allow(missing_docs)] // documentation missing in model
     FrCa,
     #[allow(missing_docs)] // documentation missing in model
     FrFr,
     #[allow(missing_docs)] // documentation missing in model
+    GlEs,
+    #[allow(missing_docs)] // documentation missing in model
+    GuIn,
+    #[allow(missing_docs)] // documentation missing in model
+    HaNg,
+    #[allow(missing_docs)] // documentation missing in model
     HeIl,
     #[allow(missing_docs)] // documentation missing in model
     HiIn,
     #[allow(missing_docs)] // documentation missing in model
+    HrHr,
+    #[allow(missing_docs)] // documentation missing in model
+    HuHu,
+    #[allow(missing_docs)] // documentation missing in model
+    HyAm,
+    #[allow(missing_docs)] // documentation missing in model
     IdId,
+    #[allow(missing_docs)] // documentation missing in model
+    IsIs,
     #[allow(missing_docs)] // documentation missing in model
     ItIt,
     #[allow(missing_docs)] // documentation missing in model
     JaJp,
     #[allow(missing_docs)] // documentation missing in model
+    KaGe,
+    #[allow(missing_docs)] // documentation missing in model
+    KabDz,
+    #[allow(missing_docs)] // documentation missing in model
+    KkKz,
+    #[allow(missing_docs)] // documentation missing in model
+    KnIn,
+    #[allow(missing_docs)] // documentation missing in model
     KoKr,
+    #[allow(missing_docs)] // documentation missing in model
+    KyKg,
+    #[allow(missing_docs)] // documentation missing in model
+    LgIn,
+    #[allow(missing_docs)] // documentation missing in model
+    LtLt,
+    #[allow(missing_docs)] // documentation missing in model
+    LvLv,
+    #[allow(missing_docs)] // documentation missing in model
+    MhrRu,
+    #[allow(missing_docs)] // documentation missing in model
+    MiNz,
+    #[allow(missing_docs)] // documentation missing in model
+    MkMk,
+    #[allow(missing_docs)] // documentation missing in model
+    MlIn,
+    #[allow(missing_docs)] // documentation missing in model
+    MnMn,
+    #[allow(missing_docs)] // documentation missing in model
+    MrIn,
     #[allow(missing_docs)] // documentation missing in model
     MsMy,
     #[allow(missing_docs)] // documentation missing in model
+    MtMt,
+    #[allow(missing_docs)] // documentation missing in model
     NlNl,
+    #[allow(missing_docs)] // documentation missing in model
+    NoNo,
+    #[allow(missing_docs)] // documentation missing in model
+    OrIn,
+    #[allow(missing_docs)] // documentation missing in model
+    PaIn,
+    #[allow(missing_docs)] // documentation missing in model
+    PlPl,
+    #[allow(missing_docs)] // documentation missing in model
+    PsAf,
     #[allow(missing_docs)] // documentation missing in model
     PtBr,
     #[allow(missing_docs)] // documentation missing in model
     PtPt,
     #[allow(missing_docs)] // documentation missing in model
+    RoRo,
+    #[allow(missing_docs)] // documentation missing in model
     RuRu,
     #[allow(missing_docs)] // documentation missing in model
+    RwRw,
+    #[allow(missing_docs)] // documentation missing in model
+    SiLk,
+    #[allow(missing_docs)] // documentation missing in model
+    SkSk,
+    #[allow(missing_docs)] // documentation missing in model
+    SlSi,
+    #[allow(missing_docs)] // documentation missing in model
+    SoSo,
+    #[allow(missing_docs)] // documentation missing in model
+    SrRs,
+    #[allow(missing_docs)] // documentation missing in model
+    SuId,
+    #[allow(missing_docs)] // documentation missing in model
     SvSe,
+    #[allow(missing_docs)] // documentation missing in model
+    SwBi,
+    #[allow(missing_docs)] // documentation missing in model
+    SwKe,
+    #[allow(missing_docs)] // documentation missing in model
+    SwRw,
+    #[allow(missing_docs)] // documentation missing in model
+    SwTz,
+    #[allow(missing_docs)] // documentation missing in model
+    SwUg,
     #[allow(missing_docs)] // documentation missing in model
     TaIn,
     #[allow(missing_docs)] // documentation missing in model
@@ -149,13 +327,27 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ThTh,
     #[allow(missing_docs)] // documentation missing in model
+    TlPh,
+    #[allow(missing_docs)] // documentation missing in model
     TrTr,
     #[allow(missing_docs)] // documentation missing in model
+    TtRu,
+    #[allow(missing_docs)] // documentation missing in model
+    UgCn,
+    #[allow(missing_docs)] // documentation missing in model
+    UkUa,
+    #[allow(missing_docs)] // documentation missing in model
+    UzUz,
+    #[allow(missing_docs)] // documentation missing in model
     ViVn,
+    #[allow(missing_docs)] // documentation missing in model
+    WoSn,
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
+    #[allow(missing_docs)] // documentation missing in model
+    ZuZa,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -163,12 +355,26 @@ pub enum LanguageCode {
 impl ::std::convert::From<&str> for LanguageCode {
     fn from(s: &str) -> Self {
         match s {
+            "ab-GE" => LanguageCode::AbGe,
             "af-ZA" => LanguageCode::AfZa,
             "ar-AE" => LanguageCode::ArAe,
             "ar-SA" => LanguageCode::ArSa,
+            "ast-ES" => LanguageCode::AstEs,
+            "az-AZ" => LanguageCode::AzAz,
+            "ba-RU" => LanguageCode::BaRu,
+            "be-BY" => LanguageCode::BeBy,
+            "bg-BG" => LanguageCode::BgBg,
+            "bn-IN" => LanguageCode::BnIn,
+            "bs-BA" => LanguageCode::BsBa,
+            "ca-ES" => LanguageCode::CaEs,
+            "ckb-IQ" => LanguageCode::CkbIq,
+            "ckb-IR" => LanguageCode::CkbIr,
+            "cs-CZ" => LanguageCode::CsCz,
+            "cy-WL" => LanguageCode::CyWl,
             "da-DK" => LanguageCode::DaDk,
             "de-CH" => LanguageCode::DeCh,
             "de-DE" => LanguageCode::DeDe,
+            "el-GR" => LanguageCode::ElGr,
             "en-AB" => LanguageCode::EnAb,
             "en-AU" => LanguageCode::EnAu,
             "en-GB" => LanguageCode::EnGb,
@@ -180,28 +386,78 @@ impl ::std::convert::From<&str> for LanguageCode {
             "en-ZA" => LanguageCode::EnZa,
             "es-ES" => LanguageCode::EsEs,
             "es-US" => LanguageCode::EsUs,
+            "et-ET" => LanguageCode::EtEt,
+            "eu-ES" => LanguageCode::EuEs,
             "fa-IR" => LanguageCode::FaIr,
+            "fi-FI" => LanguageCode::FiFi,
             "fr-CA" => LanguageCode::FrCa,
             "fr-FR" => LanguageCode::FrFr,
+            "gl-ES" => LanguageCode::GlEs,
+            "gu-IN" => LanguageCode::GuIn,
+            "ha-NG" => LanguageCode::HaNg,
             "he-IL" => LanguageCode::HeIl,
             "hi-IN" => LanguageCode::HiIn,
+            "hr-HR" => LanguageCode::HrHr,
+            "hu-HU" => LanguageCode::HuHu,
+            "hy-AM" => LanguageCode::HyAm,
             "id-ID" => LanguageCode::IdId,
+            "is-IS" => LanguageCode::IsIs,
             "it-IT" => LanguageCode::ItIt,
             "ja-JP" => LanguageCode::JaJp,
+            "ka-GE" => LanguageCode::KaGe,
+            "kab-DZ" => LanguageCode::KabDz,
+            "kk-KZ" => LanguageCode::KkKz,
+            "kn-IN" => LanguageCode::KnIn,
             "ko-KR" => LanguageCode::KoKr,
+            "ky-KG" => LanguageCode::KyKg,
+            "lg-IN" => LanguageCode::LgIn,
+            "lt-LT" => LanguageCode::LtLt,
+            "lv-LV" => LanguageCode::LvLv,
+            "mhr-RU" => LanguageCode::MhrRu,
+            "mi-NZ" => LanguageCode::MiNz,
+            "mk-MK" => LanguageCode::MkMk,
+            "ml-IN" => LanguageCode::MlIn,
+            "mn-MN" => LanguageCode::MnMn,
+            "mr-IN" => LanguageCode::MrIn,
             "ms-MY" => LanguageCode::MsMy,
+            "mt-MT" => LanguageCode::MtMt,
             "nl-NL" => LanguageCode::NlNl,
+            "no-NO" => LanguageCode::NoNo,
+            "or-IN" => LanguageCode::OrIn,
+            "pa-IN" => LanguageCode::PaIn,
+            "pl-PL" => LanguageCode::PlPl,
+            "ps-AF" => LanguageCode::PsAf,
             "pt-BR" => LanguageCode::PtBr,
             "pt-PT" => LanguageCode::PtPt,
+            "ro-RO" => LanguageCode::RoRo,
             "ru-RU" => LanguageCode::RuRu,
+            "rw-RW" => LanguageCode::RwRw,
+            "si-LK" => LanguageCode::SiLk,
+            "sk-SK" => LanguageCode::SkSk,
+            "sl-SI" => LanguageCode::SlSi,
+            "so-SO" => LanguageCode::SoSo,
+            "sr-RS" => LanguageCode::SrRs,
+            "su-ID" => LanguageCode::SuId,
             "sv-SE" => LanguageCode::SvSe,
+            "sw-BI" => LanguageCode::SwBi,
+            "sw-KE" => LanguageCode::SwKe,
+            "sw-RW" => LanguageCode::SwRw,
+            "sw-TZ" => LanguageCode::SwTz,
+            "sw-UG" => LanguageCode::SwUg,
             "ta-IN" => LanguageCode::TaIn,
             "te-IN" => LanguageCode::TeIn,
             "th-TH" => LanguageCode::ThTh,
+            "tl-PH" => LanguageCode::TlPh,
             "tr-TR" => LanguageCode::TrTr,
+            "tt-RU" => LanguageCode::TtRu,
+            "ug-CN" => LanguageCode::UgCn,
+            "uk-UA" => LanguageCode::UkUa,
+            "uz-UZ" => LanguageCode::UzUz,
             "vi-VN" => LanguageCode::ViVn,
+            "wo-SN" => LanguageCode::WoSn,
             "zh-CN" => LanguageCode::ZhCn,
             "zh-TW" => LanguageCode::ZhTw,
+            "zu-ZA" => LanguageCode::ZuZa,
             other => LanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -217,12 +473,26 @@ impl LanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LanguageCode::AbGe => "ab-GE",
             LanguageCode::AfZa => "af-ZA",
             LanguageCode::ArAe => "ar-AE",
             LanguageCode::ArSa => "ar-SA",
+            LanguageCode::AstEs => "ast-ES",
+            LanguageCode::AzAz => "az-AZ",
+            LanguageCode::BaRu => "ba-RU",
+            LanguageCode::BeBy => "be-BY",
+            LanguageCode::BgBg => "bg-BG",
+            LanguageCode::BnIn => "bn-IN",
+            LanguageCode::BsBa => "bs-BA",
+            LanguageCode::CaEs => "ca-ES",
+            LanguageCode::CkbIq => "ckb-IQ",
+            LanguageCode::CkbIr => "ckb-IR",
+            LanguageCode::CsCz => "cs-CZ",
+            LanguageCode::CyWl => "cy-WL",
             LanguageCode::DaDk => "da-DK",
             LanguageCode::DeCh => "de-CH",
             LanguageCode::DeDe => "de-DE",
+            LanguageCode::ElGr => "el-GR",
             LanguageCode::EnAb => "en-AB",
             LanguageCode::EnAu => "en-AU",
             LanguageCode::EnGb => "en-GB",
@@ -234,37 +504,91 @@ impl LanguageCode {
             LanguageCode::EnZa => "en-ZA",
             LanguageCode::EsEs => "es-ES",
             LanguageCode::EsUs => "es-US",
+            LanguageCode::EtEt => "et-ET",
+            LanguageCode::EuEs => "eu-ES",
             LanguageCode::FaIr => "fa-IR",
+            LanguageCode::FiFi => "fi-FI",
             LanguageCode::FrCa => "fr-CA",
             LanguageCode::FrFr => "fr-FR",
+            LanguageCode::GlEs => "gl-ES",
+            LanguageCode::GuIn => "gu-IN",
+            LanguageCode::HaNg => "ha-NG",
             LanguageCode::HeIl => "he-IL",
             LanguageCode::HiIn => "hi-IN",
+            LanguageCode::HrHr => "hr-HR",
+            LanguageCode::HuHu => "hu-HU",
+            LanguageCode::HyAm => "hy-AM",
             LanguageCode::IdId => "id-ID",
+            LanguageCode::IsIs => "is-IS",
             LanguageCode::ItIt => "it-IT",
             LanguageCode::JaJp => "ja-JP",
+            LanguageCode::KaGe => "ka-GE",
+            LanguageCode::KabDz => "kab-DZ",
+            LanguageCode::KkKz => "kk-KZ",
+            LanguageCode::KnIn => "kn-IN",
             LanguageCode::KoKr => "ko-KR",
+            LanguageCode::KyKg => "ky-KG",
+            LanguageCode::LgIn => "lg-IN",
+            LanguageCode::LtLt => "lt-LT",
+            LanguageCode::LvLv => "lv-LV",
+            LanguageCode::MhrRu => "mhr-RU",
+            LanguageCode::MiNz => "mi-NZ",
+            LanguageCode::MkMk => "mk-MK",
+            LanguageCode::MlIn => "ml-IN",
+            LanguageCode::MnMn => "mn-MN",
+            LanguageCode::MrIn => "mr-IN",
             LanguageCode::MsMy => "ms-MY",
+            LanguageCode::MtMt => "mt-MT",
             LanguageCode::NlNl => "nl-NL",
+            LanguageCode::NoNo => "no-NO",
+            LanguageCode::OrIn => "or-IN",
+            LanguageCode::PaIn => "pa-IN",
+            LanguageCode::PlPl => "pl-PL",
+            LanguageCode::PsAf => "ps-AF",
             LanguageCode::PtBr => "pt-BR",
             LanguageCode::PtPt => "pt-PT",
+            LanguageCode::RoRo => "ro-RO",
             LanguageCode::RuRu => "ru-RU",
+            LanguageCode::RwRw => "rw-RW",
+            LanguageCode::SiLk => "si-LK",
+            LanguageCode::SkSk => "sk-SK",
+            LanguageCode::SlSi => "sl-SI",
+            LanguageCode::SoSo => "so-SO",
+            LanguageCode::SrRs => "sr-RS",
+            LanguageCode::SuId => "su-ID",
             LanguageCode::SvSe => "sv-SE",
+            LanguageCode::SwBi => "sw-BI",
+            LanguageCode::SwKe => "sw-KE",
+            LanguageCode::SwRw => "sw-RW",
+            LanguageCode::SwTz => "sw-TZ",
+            LanguageCode::SwUg => "sw-UG",
             LanguageCode::TaIn => "ta-IN",
             LanguageCode::TeIn => "te-IN",
             LanguageCode::ThTh => "th-TH",
+            LanguageCode::TlPh => "tl-PH",
             LanguageCode::TrTr => "tr-TR",
+            LanguageCode::TtRu => "tt-RU",
+            LanguageCode::UgCn => "ug-CN",
+            LanguageCode::UkUa => "uk-UA",
+            LanguageCode::UzUz => "uz-UZ",
             LanguageCode::ViVn => "vi-VN",
+            LanguageCode::WoSn => "wo-SN",
             LanguageCode::ZhCn => "zh-CN",
             LanguageCode::ZhTw => "zh-TW",
+            LanguageCode::ZuZa => "zu-ZA",
             LanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-ZA", "ar-AE", "ar-SA", "da-DK", "de-CH", "de-DE", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA",
-            "es-ES", "es-US", "fa-IR", "fr-CA", "fr-FR", "he-IL", "hi-IN", "id-ID", "it-IT", "ja-JP", "ko-KR", "ms-MY", "nl-NL", "pt-BR", "pt-PT",
-            "ru-RU", "sv-SE", "ta-IN", "te-IN", "th-TH", "tr-TR", "vi-VN", "zh-CN", "zh-TW",
+            "ab-GE", "af-ZA", "ar-AE", "ar-SA", "ast-ES", "az-AZ", "ba-RU", "be-BY", "bg-BG", "bn-IN", "bs-BA", "ca-ES", "ckb-IQ", "ckb-IR", "cs-CZ",
+            "cy-WL", "da-DK", "de-CH", "de-DE", "el-GR", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-US", "en-WL", "en-ZA", "es-ES",
+            "es-US", "et-ET", "eu-ES", "fa-IR", "fi-FI", "fr-CA", "fr-FR", "gl-ES", "gu-IN", "ha-NG", "he-IL", "hi-IN", "hr-HR", "hu-HU", "hy-AM",
+            "id-ID", "is-IS", "it-IT", "ja-JP", "ka-GE", "kab-DZ", "kk-KZ", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU", "mi-NZ",
+            "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY", "mt-MT", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT", "ro-RO",
+            "ru-RU", "rw-RW", "si-LK", "sk-SK", "sl-SI", "so-SO", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG", "ta-IN",
+            "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-TW", "zu-ZA",
         ]
     }
 }

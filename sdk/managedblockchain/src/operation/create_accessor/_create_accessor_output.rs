@@ -5,8 +5,10 @@
 pub struct CreateAccessorOutput {
     /// <p>The unique identifier of the accessor.</p>
     pub accessor_id: ::std::option::Option<::std::string::String>,
-    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub billing_token: ::std::option::Option<::std::string::String>,
+    /// <p>The blockchain network that the accessor token is created for.</p>
+    pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
     _request_id: Option<String>,
 }
 impl CreateAccessorOutput {
@@ -14,9 +16,13 @@ impl CreateAccessorOutput {
     pub fn accessor_id(&self) -> ::std::option::Option<&str> {
         self.accessor_id.as_deref()
     }
-    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn billing_token(&self) -> ::std::option::Option<&str> {
         self.billing_token.as_deref()
+    }
+    /// <p>The blockchain network that the accessor token is created for.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+        self.network_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAccessorOutput {
@@ -37,6 +43,7 @@ impl CreateAccessorOutput {
 pub struct CreateAccessorOutputBuilder {
     pub(crate) accessor_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_token: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
     _request_id: Option<String>,
 }
 impl CreateAccessorOutputBuilder {
@@ -54,19 +61,33 @@ impl CreateAccessorOutputBuilder {
     pub fn get_accessor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.accessor_id
     }
-    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn billing_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.billing_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn set_billing_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.billing_token = input;
         self
     }
-    /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
+    /// <p>The billing token is a property of the Accessor. Use this token to when making calls to the blockchain network. The billing token is used to track your accessor token for billing requests.</p>
     pub fn get_billing_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.billing_token
+    }
+    /// <p>The blockchain network that the accessor token is created for.</p>
+    pub fn network_type(mut self, input: crate::types::AccessorNetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The blockchain network that the accessor token is created for.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The blockchain network that the accessor token is created for.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {
+        &self.network_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -82,6 +103,7 @@ impl CreateAccessorOutputBuilder {
         crate::operation::create_accessor::CreateAccessorOutput {
             accessor_id: self.accessor_id,
             billing_token: self.billing_token,
+            network_type: self.network_type,
             _request_id: self._request_id,
         }
     }

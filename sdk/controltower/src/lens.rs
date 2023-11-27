@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_enabled_controls_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_landing_zones_output_output_next_token(
+    input: &crate::operation::list_landing_zones::ListLandingZonesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_enabled_controls_output_output_enabled_controls(
     input: crate::operation::list_enabled_controls::ListEnabledControlsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
     let input = input.enabled_controls;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_landing_zones_output_output_landing_zones(
+    input: crate::operation::list_landing_zones::ListLandingZonesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>> {
+    let input = input.landing_zones;
     ::std::option::Option::Some(input)
 }

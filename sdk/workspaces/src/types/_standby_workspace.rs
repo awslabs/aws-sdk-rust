@@ -12,6 +12,8 @@ pub struct StandbyWorkspace {
     pub directory_id: ::std::string::String,
     /// <p>The tags associated with the standby WorkSpace.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
+    pub data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
 impl StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
@@ -34,6 +36,10 @@ impl StandbyWorkspace {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
+    pub fn data_replication(&self) -> ::std::option::Option<&crate::types::DataReplication> {
+        self.data_replication.as_ref()
+    }
 }
 impl StandbyWorkspace {
     /// Creates a new builder-style object to manufacture [`StandbyWorkspace`](crate::types::StandbyWorkspace).
@@ -50,6 +56,7 @@ pub struct StandbyWorkspaceBuilder {
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_replication: ::std::option::Option<crate::types::DataReplication>,
 }
 impl StandbyWorkspaceBuilder {
     /// <p>The identifier of the standby WorkSpace.</p>
@@ -116,6 +123,20 @@ impl StandbyWorkspaceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
+    pub fn data_replication(mut self, input: crate::types::DataReplication) -> Self {
+        self.data_replication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
+    pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
+        self.data_replication = input;
+        self
+    }
+    /// <p>Indicates whether data replication is enabled, and if enabled, the type of data replication.</p>
+    pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
+        &self.data_replication
+    }
     /// Consumes the builder and constructs a [`StandbyWorkspace`](crate::types::StandbyWorkspace).
     /// This method will fail if any of the following fields are not set:
     /// - [`primary_workspace_id`](crate::types::builders::StandbyWorkspaceBuilder::primary_workspace_id)
@@ -136,6 +157,7 @@ impl StandbyWorkspaceBuilder {
                 )
             })?,
             tags: self.tags,
+            data_replication: self.data_replication,
         })
     }
 }

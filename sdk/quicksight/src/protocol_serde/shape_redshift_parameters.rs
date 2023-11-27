@@ -24,6 +24,12 @@ pub fn ser_redshift_parameters(
         crate::protocol_serde::shape_redshift_iam_parameters::ser_redshift_iam_parameters(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.identity_center_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -73,6 +79,11 @@ where
                         "IAMParameters" => {
                             builder =
                                 builder.set_iam_parameters(crate::protocol_serde::shape_redshift_iam_parameters::de_redshift_iam_parameters(tokens)?);
+                        }
+                        "IdentityCenterConfiguration" => {
+                            builder = builder.set_identity_center_configuration(
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

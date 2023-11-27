@@ -26,6 +26,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ecsClusterDetails" => {
+                            builder = builder.set_ecs_cluster_details(
+                                crate::protocol_serde::shape_coverage_ecs_cluster_details::de_coverage_ecs_cluster_details(tokens)?,
+                            );
+                        }
+                        "ec2InstanceDetails" => {
+                            builder = builder.set_ec2_instance_details(
+                                crate::protocol_serde::shape_coverage_ec2_instance_details::de_coverage_ec2_instance_details(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -18,6 +18,8 @@ pub struct DecoderManifestSummary {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DecoderManifestSummary {
     /// <p>The name of the decoder manifest.</p>
@@ -48,6 +50,10 @@ impl DecoderManifestSummary {
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn message(&self) -> ::std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl DecoderManifestSummary {
     /// Creates a new builder-style object to manufacture [`DecoderManifestSummary`](crate::types::DecoderManifestSummary).
@@ -67,6 +73,7 @@ pub struct DecoderManifestSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManifestStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DecoderManifestSummaryBuilder {
     /// <p>The name of the decoder manifest.</p>
@@ -169,6 +176,20 @@ impl DecoderManifestSummaryBuilder {
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message = input;
+        self
+    }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     /// Consumes the builder and constructs a [`DecoderManifestSummary`](crate::types::DecoderManifestSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`creation_time`](crate::types::builders::DecoderManifestSummaryBuilder::creation_time)
@@ -192,6 +213,7 @@ impl DecoderManifestSummaryBuilder {
                     "last_modification_time was not specified but it is required when building DecoderManifestSummary",
                 )
             })?,
+            message: self.message,
         })
     }
 }

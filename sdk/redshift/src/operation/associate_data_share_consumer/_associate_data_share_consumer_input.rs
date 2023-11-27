@@ -11,6 +11,8 @@ pub struct AssociateDataShareConsumerInput {
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub consumer_region: ::std::option::Option<::std::string::String>,
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub allow_writes: ::std::option::Option<bool>,
 }
 impl AssociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
@@ -29,6 +31,10 @@ impl AssociateDataShareConsumerInput {
     pub fn consumer_region(&self) -> ::std::option::Option<&str> {
         self.consumer_region.as_deref()
     }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn allow_writes(&self) -> ::std::option::Option<bool> {
+        self.allow_writes
+    }
 }
 impl AssociateDataShareConsumerInput {
     /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
@@ -45,6 +51,7 @@ pub struct AssociateDataShareConsumerInputBuilder {
     pub(crate) associate_entire_account: ::std::option::Option<bool>,
     pub(crate) consumer_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_region: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_writes: ::std::option::Option<bool>,
 }
 impl AssociateDataShareConsumerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
@@ -104,6 +111,20 @@ impl AssociateDataShareConsumerInputBuilder {
     pub fn get_consumer_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_region
     }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn allow_writes(mut self, input: bool) -> Self {
+        self.allow_writes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn set_allow_writes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_writes = input;
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn get_allow_writes(&self) -> &::std::option::Option<bool> {
+        &self.allow_writes
+    }
     /// Consumes the builder and constructs a [`AssociateDataShareConsumerInput`](crate::operation::associate_data_share_consumer::AssociateDataShareConsumerInput).
     pub fn build(
         self,
@@ -116,6 +137,7 @@ impl AssociateDataShareConsumerInputBuilder {
             associate_entire_account: self.associate_entire_account,
             consumer_arn: self.consumer_arn,
             consumer_region: self.consumer_region,
+            allow_writes: self.allow_writes,
         })
     }
 }

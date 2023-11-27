@@ -49,6 +49,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "totalStructs" => {
+                            builder = builder.set_total_structs(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "totalProperties" => {
+                            builder = builder.set_total_properties(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

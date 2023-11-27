@@ -22,7 +22,7 @@ impl PutItemsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutItems`.
 ///
-/// <p>Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
+/// <p>Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing items individually</a>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutItemsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

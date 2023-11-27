@@ -37,11 +37,15 @@ pub(crate) mod shape_commit_transaction;
 
 pub(crate) mod shape_create_data_cells_filter;
 
+pub(crate) mod shape_create_lake_formation_identity_center_configuration;
+
 pub(crate) mod shape_create_lake_formation_opt_in;
 
 pub(crate) mod shape_create_lf_tag;
 
 pub(crate) mod shape_delete_data_cells_filter;
+
+pub(crate) mod shape_delete_lake_formation_identity_center_configuration;
 
 pub(crate) mod shape_delete_lake_formation_opt_in;
 
@@ -50,6 +54,8 @@ pub(crate) mod shape_delete_lf_tag;
 pub(crate) mod shape_delete_objects_on_cancel;
 
 pub(crate) mod shape_deregister_resource;
+
+pub(crate) mod shape_describe_lake_formation_identity_center_configuration;
 
 pub(crate) mod shape_describe_resource;
 
@@ -115,6 +121,8 @@ pub(crate) mod shape_start_transaction;
 
 pub(crate) mod shape_update_data_cells_filter;
 
+pub(crate) mod shape_update_lake_formation_identity_center_configuration;
+
 pub(crate) mod shape_update_lf_tag;
 
 pub(crate) mod shape_update_resource;
@@ -151,11 +159,15 @@ pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_create_data_cells_filter_input;
 
+pub(crate) mod shape_create_lake_formation_identity_center_configuration_input;
+
 pub(crate) mod shape_create_lake_formation_opt_in_input;
 
 pub(crate) mod shape_create_lf_tag_input;
 
 pub(crate) mod shape_delete_data_cells_filter_input;
+
+pub(crate) mod shape_delete_lake_formation_identity_center_configuration_input;
 
 pub(crate) mod shape_delete_lake_formation_opt_in_input;
 
@@ -164,6 +176,8 @@ pub(crate) mod shape_delete_lf_tag_input;
 pub(crate) mod shape_delete_objects_on_cancel_input;
 
 pub(crate) mod shape_deregister_resource_input;
+
+pub(crate) mod shape_describe_lake_formation_identity_center_configuration_input;
 
 pub(crate) mod shape_describe_resource_input;
 
@@ -259,6 +273,8 @@ pub(crate) mod shape_transaction_committed_exception;
 
 pub(crate) mod shape_update_data_cells_filter_input;
 
+pub(crate) mod shape_update_lake_formation_identity_center_configuration_input;
+
 pub(crate) mod shape_update_lf_tag_input;
 
 pub(crate) mod shape_update_resource_input;
@@ -288,6 +304,8 @@ pub(crate) mod shape_data_lake_settings;
 pub(crate) mod shape_database_lf_tags_list;
 
 pub(crate) mod shape_execution_statistics;
+
+pub(crate) mod shape_external_filtering_configuration;
 
 pub(crate) mod shape_filter_condition;
 
@@ -378,6 +396,8 @@ pub(crate) mod shape_principal_permissions_list;
 pub(crate) mod shape_principal_resource_permissions;
 
 pub(crate) mod shape_row_filter;
+
+pub(crate) mod shape_scope_targets;
 
 pub(crate) mod shape_storage_optimizer;
 

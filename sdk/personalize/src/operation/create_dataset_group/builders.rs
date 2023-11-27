@@ -24,9 +24,11 @@ impl CreateDatasetGroupInputBuilder {
 ///
 /// <p>Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources. A dataset group can contain at most three datasets, one for each type of dataset:</p>
 /// <ul>
-/// <li> <p>Interactions</p> </li>
+/// <li> <p>Item interactions</p> </li>
 /// <li> <p>Items</p> </li>
 /// <li> <p>Users</p> </li>
+/// <li> <p>Actions</p> </li>
+/// <li> <p>Action interactions</p> </li>
 /// </ul>
 /// <p> A dataset group can be a Domain dataset group, where you specify a domain and use pre-configured resources like recommenders, or a Custom dataset group, where you use custom resources, such as a solution with a solution version, that you deploy with a campaign. If you start with a Domain dataset group, you can still add custom resources such as solutions and solution versions trained with recipes for custom use cases and deployed with campaigns. </p>
 /// <p>A dataset group can be in one of the following states:</p>

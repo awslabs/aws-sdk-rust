@@ -51,5 +51,14 @@ pub fn ser_create_batch_inference_job_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.batch_inference_job_mode {
+        object.key("batchInferenceJobMode").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.theme_generation_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("themeGenerationConfig").start_object();
+        crate::protocol_serde::shape_theme_generation_config::ser_theme_generation_config(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }

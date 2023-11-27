@@ -5,7 +5,7 @@
 pub struct ListDatasetsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasets</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of datasets to return.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,7 +15,7 @@ impl ListDatasetsInput {
     pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasets</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -54,17 +54,17 @@ impl ListDatasetsInputBuilder {
     pub fn get_dataset_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_group_arn
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasets</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasets</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasets</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

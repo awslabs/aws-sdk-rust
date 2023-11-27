@@ -280,6 +280,44 @@ impl From<crate::operation::copy_backup::CopyBackupError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError> for Error {
+    fn from(err: crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError) -> Self {
+        match err {
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::ServiceLimitExceeded(inner) => {
+                Error::ServiceLimitExceeded(inner)
+            }
+            crate::operation::copy_snapshot_and_update_volume::CopySnapshotAndUpdateVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backup::CreateBackupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1064,6 +1102,42 @@ impl From<crate::operation::describe_file_systems::DescribeFileSystemsError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError> for Error {
+    fn from(err: crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError) -> Self {
+        match err {
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1483,6 +1557,41 @@ impl From<crate::operation::update_file_system::UpdateFileSystemError> for Error
             crate::operation::update_file_system::UpdateFileSystemError::ServiceLimitExceeded(inner) => Error::ServiceLimitExceeded(inner),
             crate::operation::update_file_system::UpdateFileSystemError::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
             crate::operation::update_file_system::UpdateFileSystemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError> for Error {
+    fn from(err: crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError) -> Self {
+        match err {
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError::IncompatibleParameterError(inner) => {
+                Error::IncompatibleParameterError(inner)
+            }
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

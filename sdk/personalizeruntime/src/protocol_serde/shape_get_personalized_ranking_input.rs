@@ -38,8 +38,24 @@ pub fn ser_get_personalized_ranking_input_input(
         }
         array_12.finish();
     }
-    if let Some(var_14) = &input.user_id {
-        object.key("userId").string(var_14.as_str());
+    if let Some(var_14) = &input.metadata_columns {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("metadataColumns").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                let mut array_18 = object_15.key(key_16.as_str()).start_array();
+                for item_19 in value_17 {
+                    {
+                        array_18.value().string(item_19.as_str());
+                    }
+                }
+                array_18.finish();
+            }
+        }
+        object_15.finish();
+    }
+    if let Some(var_20) = &input.user_id {
+        object.key("userId").string(var_20.as_str());
     }
     Ok(())
 }

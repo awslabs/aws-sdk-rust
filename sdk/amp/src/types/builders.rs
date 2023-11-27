@@ -20,3 +20,13 @@ pub use crate::types::_logging_configuration_metadata::LoggingConfigurationMetad
 pub use crate::types::_alert_manager_definition_status::AlertManagerDefinitionStatusBuilder;
 
 pub use crate::types::_alert_manager_definition_description::AlertManagerDefinitionDescriptionBuilder;
+
+pub use crate::types::_scraper_summary::ScraperSummaryBuilder;
+
+pub use crate::types::_amp_configuration::AmpConfigurationBuilder;
+
+pub use crate::types::_eks_configuration::EksConfigurationBuilder;
+
+pub use crate::types::_scraper_status::ScraperStatusBuilder;
+
+pub use crate::types::_scraper_description::ScraperDescriptionBuilder;

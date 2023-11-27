@@ -218,12 +218,18 @@ impl ObdSignalBuilder {
     }
     /// Consumes the builder and constructs a [`ObdSignal`](crate::types::ObdSignal).
     /// This method will fail if any of the following fields are not set:
+    /// - [`pid_response_length`](crate::types::builders::ObdSignalBuilder::pid_response_length)
     /// - [`scaling`](crate::types::builders::ObdSignalBuilder::scaling)
     /// - [`offset`](crate::types::builders::ObdSignalBuilder::offset)
     /// - [`byte_length`](crate::types::builders::ObdSignalBuilder::byte_length)
     pub fn build(self) -> ::std::result::Result<crate::types::ObdSignal, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ObdSignal {
-            pid_response_length: self.pid_response_length.unwrap_or_default(),
+            pid_response_length: self.pid_response_length.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "pid_response_length",
+                    "pid_response_length was not specified but it is required when building ObdSignal",
+                )
+            })?,
             service_mode: self.service_mode.unwrap_or_default(),
             pid: self.pid.unwrap_or_default(),
             scaling: self.scaling.ok_or_else(|| {

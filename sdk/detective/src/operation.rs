@@ -34,6 +34,9 @@ pub mod disassociate_membership;
 /// Types for the `EnableOrganizationAdminAccount` operation.
 pub mod enable_organization_admin_account;
 
+/// Types for the `GetInvestigation` operation.
+pub mod get_investigation;
+
 /// Types for the `GetMembers` operation.
 pub mod get_members;
 
@@ -42,6 +45,12 @@ pub mod list_datasource_packages;
 
 /// Types for the `ListGraphs` operation.
 pub mod list_graphs;
+
+/// Types for the `ListIndicators` operation.
+pub mod list_indicators;
+
+/// Types for the `ListInvestigations` operation.
+pub mod list_investigations;
 
 /// Types for the `ListInvitations` operation.
 pub mod list_invitations;
@@ -58,6 +67,9 @@ pub mod list_tags_for_resource;
 /// Types for the `RejectInvitation` operation.
 pub mod reject_invitation;
 
+/// Types for the `StartInvestigation` operation.
+pub mod start_investigation;
+
 /// Types for the `StartMonitoringMember` operation.
 pub mod start_monitoring_member;
 
@@ -69,6 +81,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateDatasourcePackages` operation.
 pub mod update_datasource_packages;
+
+/// Types for the `UpdateInvestigationState` operation.
+pub mod update_investigation_state;
 
 /// Types for the `UpdateOrganizationConfiguration` operation.
 pub mod update_organization_configuration;

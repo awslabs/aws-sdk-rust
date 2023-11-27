@@ -142,6 +142,8 @@ mod create_logging_configuration;
 
 mod create_rule_groups_namespace;
 
+mod create_scraper;
+
 mod create_workspace;
 
 /// Operation customization and supporting types.
@@ -155,7 +157,7 @@ mod create_workspace;
 /// # let client: aws_sdk_amp::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_tags_for_resource()
+/// let result = client.get_default_scraper_configuration()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -177,6 +179,8 @@ mod delete_logging_configuration;
 
 mod delete_rule_groups_namespace;
 
+mod delete_scraper;
+
 mod delete_workspace;
 
 mod describe_alert_manager_definition;
@@ -185,9 +189,15 @@ mod describe_logging_configuration;
 
 mod describe_rule_groups_namespace;
 
+mod describe_scraper;
+
 mod describe_workspace;
 
+mod get_default_scraper_configuration;
+
 mod list_rule_groups_namespaces;
+
+mod list_scrapers;
 
 mod list_tags_for_resource;
 

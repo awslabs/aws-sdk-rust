@@ -91,6 +91,24 @@ where
                         "DeleteClonedVolumes" => {
                             builder = builder.set_delete_cloned_volumes(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "DeleteIntermediateData" => {
+                            builder =
+                                builder.set_delete_intermediate_data(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "SourceSnapshotARN" => {
+                            builder = builder.set_source_snapshot_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DestinationSnapshot" => {
+                            builder = builder.set_destination_snapshot(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

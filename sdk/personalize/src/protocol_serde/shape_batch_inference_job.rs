@@ -78,6 +78,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "batchInferenceJobMode" => {
+                            builder = builder.set_batch_inference_job_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::BatchInferenceJobMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "themeGenerationConfig" => {
+                            builder = builder.set_theme_generation_config(
+                                crate::protocol_serde::shape_theme_generation_config::de_theme_generation_config(tokens)?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

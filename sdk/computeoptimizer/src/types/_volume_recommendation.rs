@@ -29,6 +29,8 @@ pub struct VolumeRecommendation {
     pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    pub effective_recommendation_preferences: ::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences>,
 }
 impl VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -82,6 +84,10 @@ impl VolumeRecommendation {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    pub fn effective_recommendation_preferences(&self) -> ::std::option::Option<&crate::types::EbsEffectiveRecommendationPreferences> {
+        self.effective_recommendation_preferences.as_ref()
+    }
 }
 impl VolumeRecommendation {
     /// Creates a new builder-style object to manufacture [`VolumeRecommendation`](crate::types::VolumeRecommendation).
@@ -104,6 +110,7 @@ pub struct VolumeRecommendationBuilder {
     pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) effective_recommendation_preferences: ::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences>,
 }
 impl VolumeRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -282,6 +289,23 @@ impl VolumeRecommendationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    pub fn effective_recommendation_preferences(mut self, input: crate::types::EbsEffectiveRecommendationPreferences) -> Self {
+        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    pub fn set_effective_recommendation_preferences(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences>,
+    ) -> Self {
+        self.effective_recommendation_preferences = input;
+        self
+    }
+    /// <p> Describes the effective recommendation preferences for Amazon EBS volume. </p>
+    pub fn get_effective_recommendation_preferences(&self) -> &::std::option::Option<crate::types::EbsEffectiveRecommendationPreferences> {
+        &self.effective_recommendation_preferences
+    }
     /// Consumes the builder and constructs a [`VolumeRecommendation`](crate::types::VolumeRecommendation).
     pub fn build(self) -> crate::types::VolumeRecommendation {
         crate::types::VolumeRecommendation {
@@ -295,6 +319,7 @@ impl VolumeRecommendationBuilder {
             last_refresh_timestamp: self.last_refresh_timestamp,
             current_performance_risk: self.current_performance_risk,
             tags: self.tags,
+            effective_recommendation_preferences: self.effective_recommendation_preferences,
         }
     }
 }

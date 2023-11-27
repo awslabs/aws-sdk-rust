@@ -15,8 +15,10 @@
 ///     UsageFeature::CloudTrail => { /* ... */ },
 ///     UsageFeature::DnsLogs => { /* ... */ },
 ///     UsageFeature::EbsMalwareProtection => { /* ... */ },
+///     UsageFeature::Ec2RuntimeMonitoring => { /* ... */ },
 ///     UsageFeature::EksAuditLogs => { /* ... */ },
 ///     UsageFeature::EksRuntimeMonitoring => { /* ... */ },
+///     UsageFeature::FargateRuntimeMonitoring => { /* ... */ },
 ///     UsageFeature::FlowLogs => { /* ... */ },
 ///     UsageFeature::LambdaNetworkLogs => { /* ... */ },
 ///     UsageFeature::RdsLoginEvents => { /* ... */ },
@@ -55,9 +57,13 @@ pub enum UsageFeature {
     #[allow(missing_docs)] // documentation missing in model
     EbsMalwareProtection,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2RuntimeMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
     EksAuditLogs,
     #[allow(missing_docs)] // documentation missing in model
     EksRuntimeMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
+    FargateRuntimeMonitoring,
     #[allow(missing_docs)] // documentation missing in model
     FlowLogs,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,8 +82,10 @@ impl ::std::convert::From<&str> for UsageFeature {
             "CLOUD_TRAIL" => UsageFeature::CloudTrail,
             "DNS_LOGS" => UsageFeature::DnsLogs,
             "EBS_MALWARE_PROTECTION" => UsageFeature::EbsMalwareProtection,
+            "EC2_RUNTIME_MONITORING" => UsageFeature::Ec2RuntimeMonitoring,
             "EKS_AUDIT_LOGS" => UsageFeature::EksAuditLogs,
             "EKS_RUNTIME_MONITORING" => UsageFeature::EksRuntimeMonitoring,
+            "FARGATE_RUNTIME_MONITORING" => UsageFeature::FargateRuntimeMonitoring,
             "FLOW_LOGS" => UsageFeature::FlowLogs,
             "LAMBDA_NETWORK_LOGS" => UsageFeature::LambdaNetworkLogs,
             "RDS_LOGIN_EVENTS" => UsageFeature::RdsLoginEvents,
@@ -100,8 +108,10 @@ impl UsageFeature {
             UsageFeature::CloudTrail => "CLOUD_TRAIL",
             UsageFeature::DnsLogs => "DNS_LOGS",
             UsageFeature::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
+            UsageFeature::Ec2RuntimeMonitoring => "EC2_RUNTIME_MONITORING",
             UsageFeature::EksAuditLogs => "EKS_AUDIT_LOGS",
             UsageFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
+            UsageFeature::FargateRuntimeMonitoring => "FARGATE_RUNTIME_MONITORING",
             UsageFeature::FlowLogs => "FLOW_LOGS",
             UsageFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
             UsageFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
@@ -115,8 +125,10 @@ impl UsageFeature {
             "CLOUD_TRAIL",
             "DNS_LOGS",
             "EBS_MALWARE_PROTECTION",
+            "EC2_RUNTIME_MONITORING",
             "EKS_AUDIT_LOGS",
             "EKS_RUNTIME_MONITORING",
+            "FARGATE_RUNTIME_MONITORING",
             "FLOW_LOGS",
             "LAMBDA_NETWORK_LOGS",
             "RDS_LOGIN_EVENTS",

@@ -22,7 +22,7 @@ impl PutUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `PutUsers`.
 ///
-/// <p>Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>
+/// <p>Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing users individually</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutUsersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

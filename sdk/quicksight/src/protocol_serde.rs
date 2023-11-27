@@ -93,6 +93,8 @@ pub(crate) mod shape_delete_group_membership;
 
 pub(crate) mod shape_delete_iam_policy_assignment;
 
+pub(crate) mod shape_delete_identity_propagation_config;
+
 pub(crate) mod shape_delete_namespace;
 
 pub(crate) mod shape_delete_refresh_schedule;
@@ -237,6 +239,8 @@ pub(crate) mod shape_list_iam_policy_assignments;
 
 pub(crate) mod shape_list_iam_policy_assignments_for_user;
 
+pub(crate) mod shape_list_identity_propagation_configs;
+
 pub(crate) mod shape_list_ingestions;
 
 pub(crate) mod shape_list_namespaces;
@@ -326,6 +330,8 @@ pub(crate) mod shape_update_folder_permissions;
 pub(crate) mod shape_update_group;
 
 pub(crate) mod shape_update_iam_policy_assignment;
+
+pub(crate) mod shape_update_identity_propagation_config;
 
 pub(crate) mod shape_update_ip_restriction;
 
@@ -497,6 +503,8 @@ pub(crate) mod shape_update_group_input;
 
 pub(crate) mod shape_update_iam_policy_assignment_input;
 
+pub(crate) mod shape_update_identity_propagation_config_input;
+
 pub(crate) mod shape_update_ip_restriction_input;
 
 pub(crate) mod shape_update_public_sharing_settings_input;
@@ -576,6 +584,8 @@ pub(crate) mod shape_asset_bundle_import_source;
 pub(crate) mod shape_asset_bundle_import_source_description;
 
 pub(crate) mod shape_asset_bundle_resource_arns;
+
+pub(crate) mod shape_authorized_targets_by_services;
 
 pub(crate) mod shape_column_group;
 
@@ -899,6 +909,8 @@ pub(crate) mod shape_aurora_parameters;
 
 pub(crate) mod shape_aurora_postgre_sql_parameters;
 
+pub(crate) mod shape_authorized_targets_by_service;
+
 pub(crate) mod shape_aws_iot_analytics_parameters;
 
 pub(crate) mod shape_big_query_parameters;
@@ -1149,6 +1161,8 @@ pub(crate) mod shape_asset_bundle_resource_link_sharing_configuration;
 
 pub(crate) mod shape_asset_bundle_resource_permissions;
 
+pub(crate) mod shape_authorized_targets_list;
+
 pub(crate) mod shape_cast_column_type_operation;
 
 pub(crate) mod shape_colors_configuration;
@@ -1196,6 +1210,8 @@ pub(crate) mod shape_filter_scope_configuration;
 pub(crate) mod shape_font;
 
 pub(crate) mod shape_format_configuration;
+
+pub(crate) mod shape_identity_center_configuration;
 
 pub(crate) mod shape_incremental_refresh;
 

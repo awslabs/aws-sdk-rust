@@ -15,6 +15,11 @@ pub fn ser_authorize_data_share_input_input_input(
     if let Some(var_4) = &input.consumer_identifier {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AllowWrites");
+    if let Some(var_6) = &input.allow_writes {
+        scope_5.boolean(*var_6);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

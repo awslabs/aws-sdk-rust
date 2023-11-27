@@ -7,6 +7,8 @@ pub struct AuthorizeDataShareInput {
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub allow_writes: ::std::option::Option<bool>,
 }
 impl AuthorizeDataShareInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
@@ -16,6 +18,10 @@ impl AuthorizeDataShareInput {
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub fn consumer_identifier(&self) -> ::std::option::Option<&str> {
         self.consumer_identifier.as_deref()
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn allow_writes(&self) -> ::std::option::Option<bool> {
+        self.allow_writes
     }
 }
 impl AuthorizeDataShareInput {
@@ -31,6 +37,7 @@ impl AuthorizeDataShareInput {
 pub struct AuthorizeDataShareInputBuilder {
     pub(crate) data_share_arn: ::std::option::Option<::std::string::String>,
     pub(crate) consumer_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_writes: ::std::option::Option<bool>,
 }
 impl AuthorizeDataShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
@@ -63,6 +70,20 @@ impl AuthorizeDataShareInputBuilder {
     pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_identifier
     }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn allow_writes(mut self, input: bool) -> Self {
+        self.allow_writes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn set_allow_writes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_writes = input;
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn get_allow_writes(&self) -> &::std::option::Option<bool> {
+        &self.allow_writes
+    }
     /// Consumes the builder and constructs a [`AuthorizeDataShareInput`](crate::operation::authorize_data_share::AuthorizeDataShareInput).
     pub fn build(
         self,
@@ -71,6 +92,7 @@ impl AuthorizeDataShareInputBuilder {
         ::std::result::Result::Ok(crate::operation::authorize_data_share::AuthorizeDataShareInput {
             data_share_arn: self.data_share_arn,
             consumer_identifier: self.consumer_identifier,
+            allow_writes: self.allow_writes,
         })
     }
 }

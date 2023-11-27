@@ -87,6 +87,8 @@ pub use crate::types::_channel_definition::ChannelDefinition;
 
 pub use crate::types::_call_analytics_job_settings::CallAnalyticsJobSettings;
 
+pub use crate::types::_summarization::Summarization;
+
 pub use crate::types::_call_analytics_job_status::CallAnalyticsJobStatus;
 
 pub use crate::types::_vocabulary_filter_info::VocabularyFilterInfo;
@@ -194,6 +196,8 @@ mod _subtitle_format;
 mod _subtitles;
 
 mod _subtitles_output;
+
+mod _summarization;
 
 mod _tag;
 

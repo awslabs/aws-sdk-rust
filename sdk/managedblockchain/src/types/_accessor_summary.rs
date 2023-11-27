@@ -16,6 +16,8 @@ pub struct AccessorSummary {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The blockchain network that the Accessor token is created for.</p>
+    pub network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
 impl AccessorSummary {
     /// <p>The unique identifier of the accessor.</p>
@@ -40,6 +42,10 @@ impl AccessorSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The blockchain network that the Accessor token is created for.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::AccessorNetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl AccessorSummary {
     /// Creates a new builder-style object to manufacture [`AccessorSummary`](crate::types::AccessorSummary).
@@ -57,6 +63,7 @@ pub struct AccessorSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AccessorStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::AccessorNetworkType>,
 }
 impl AccessorSummaryBuilder {
     /// <p>The unique identifier of the accessor.</p>
@@ -135,6 +142,20 @@ impl AccessorSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The blockchain network that the Accessor token is created for.</p>
+    pub fn network_type(mut self, input: crate::types::AccessorNetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The blockchain network that the Accessor token is created for.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::AccessorNetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The blockchain network that the Accessor token is created for.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::AccessorNetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`AccessorSummary`](crate::types::AccessorSummary).
     pub fn build(self) -> crate::types::AccessorSummary {
         crate::types::AccessorSummary {
@@ -143,6 +164,7 @@ impl AccessorSummaryBuilder {
             status: self.status,
             creation_date: self.creation_date,
             arn: self.arn,
+            network_type: self.network_type,
         }
     }
 }

@@ -15,6 +15,9 @@
 ///     RecommendationPreferenceName::EnhancedInfrastructureMetrics => { /* ... */ },
 ///     RecommendationPreferenceName::ExternalMetricsPreference => { /* ... */ },
 ///     RecommendationPreferenceName::InferredWorkloadTypes => { /* ... */ },
+///     RecommendationPreferenceName::LookbackPeriodPreference => { /* ... */ },
+///     RecommendationPreferenceName::PreferredResources => { /* ... */ },
+///     RecommendationPreferenceName::UtilizationPreferences => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +51,12 @@ pub enum RecommendationPreferenceName {
     ExternalMetricsPreference,
     #[allow(missing_docs)] // documentation missing in model
     InferredWorkloadTypes,
+    #[allow(missing_docs)] // documentation missing in model
+    LookbackPeriodPreference,
+    #[allow(missing_docs)] // documentation missing in model
+    PreferredResources,
+    #[allow(missing_docs)] // documentation missing in model
+    UtilizationPreferences,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +67,9 @@ impl ::std::convert::From<&str> for RecommendationPreferenceName {
             "EnhancedInfrastructureMetrics" => RecommendationPreferenceName::EnhancedInfrastructureMetrics,
             "ExternalMetricsPreference" => RecommendationPreferenceName::ExternalMetricsPreference,
             "InferredWorkloadTypes" => RecommendationPreferenceName::InferredWorkloadTypes,
+            "LookBackPeriodPreference" => RecommendationPreferenceName::LookbackPeriodPreference,
+            "PreferredResources" => RecommendationPreferenceName::PreferredResources,
+            "UtilizationPreferences" => RecommendationPreferenceName::UtilizationPreferences,
             other => RecommendationPreferenceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +88,22 @@ impl RecommendationPreferenceName {
             RecommendationPreferenceName::EnhancedInfrastructureMetrics => "EnhancedInfrastructureMetrics",
             RecommendationPreferenceName::ExternalMetricsPreference => "ExternalMetricsPreference",
             RecommendationPreferenceName::InferredWorkloadTypes => "InferredWorkloadTypes",
+            RecommendationPreferenceName::LookbackPeriodPreference => "LookBackPeriodPreference",
+            RecommendationPreferenceName::PreferredResources => "PreferredResources",
+            RecommendationPreferenceName::UtilizationPreferences => "UtilizationPreferences",
             RecommendationPreferenceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EnhancedInfrastructureMetrics", "ExternalMetricsPreference", "InferredWorkloadTypes"]
+        &[
+            "EnhancedInfrastructureMetrics",
+            "ExternalMetricsPreference",
+            "InferredWorkloadTypes",
+            "LookBackPeriodPreference",
+            "PreferredResources",
+            "UtilizationPreferences",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationPreferenceName {

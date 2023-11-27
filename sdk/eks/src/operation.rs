@@ -22,6 +22,9 @@ pub mod create_fargate_profile;
 /// Types for the `CreateNodegroup` operation.
 pub mod create_nodegroup;
 
+/// Types for the `CreatePodIdentityAssociation` operation.
+pub mod create_pod_identity_association;
+
 /// Types for the `DeleteAddon` operation.
 pub mod delete_addon;
 
@@ -36,6 +39,9 @@ pub mod delete_fargate_profile;
 
 /// Types for the `DeleteNodegroup` operation.
 pub mod delete_nodegroup;
+
+/// Types for the `DeletePodIdentityAssociation` operation.
+pub mod delete_pod_identity_association;
 
 /// Types for the `DeregisterCluster` operation.
 pub mod deregister_cluster;
@@ -64,6 +70,9 @@ pub mod describe_identity_provider_config;
 /// Types for the `DescribeNodegroup` operation.
 pub mod describe_nodegroup;
 
+/// Types for the `DescribePodIdentityAssociation` operation.
+pub mod describe_pod_identity_association;
+
 /// Types for the `DescribeUpdate` operation.
 pub mod describe_update;
 
@@ -87,6 +96,9 @@ pub mod list_identity_provider_configs;
 
 /// Types for the `ListNodegroups` operation.
 pub mod list_nodegroups;
+
+/// Types for the `ListPodIdentityAssociations` operation.
+pub mod list_pod_identity_associations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -120,3 +132,6 @@ pub mod update_nodegroup_config;
 
 /// Types for the `UpdateNodegroupVersion` operation.
 pub mod update_nodegroup_version;
+
+/// Types for the `UpdatePodIdentityAssociation` operation.
+pub mod update_pod_identity_association;

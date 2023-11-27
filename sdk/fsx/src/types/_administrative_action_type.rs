@@ -22,8 +22,10 @@
 ///     AdministrativeActionType::StorageOptimization => { /* ... */ },
 ///     AdministrativeActionType::StorageTypeOptimization => { /* ... */ },
 ///     AdministrativeActionType::ThroughputOptimization => { /* ... */ },
+///     AdministrativeActionType::VolumeInitializeWithSnapshot => { /* ... */ },
 ///     AdministrativeActionType::VolumeRestore => { /* ... */ },
 ///     AdministrativeActionType::VolumeUpdate => { /* ... */ },
+///     AdministrativeActionType::VolumeUpdateWithSnapshot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -111,12 +113,12 @@
 /// task to increase a file system's throughput capacity has been completed
 /// successfully, a <code>IOPS_OPTIMIZATION</code> task starts.</p>
 /// <p>You can track the storage-optimization progress using the
-/// <code>ProgressPercent</code> property. When
-/// <code>IOPS_OPTIMIZATION</code> has been completed successfully, the
-/// parent <code>FILE_SYSTEM_UPDATE</code> action status changes to
-/// <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-provisioned-ssd-iops.html">Managing
-/// provisioned SSD IOPS</a> in the <i>Amazon FSx for Windows
-/// File Server User Guide</i>.</p>
+/// <code>ProgressPercent</code> property. When <code>IOPS_OPTIMIZATION</code>
+/// has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code>
+/// action status changes to <code>COMPLETED</code>. For more information, see
+/// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-provisioned-ssd-iops.html">Managing
+/// provisioned SSD IOPS</a> in the Amazon FSx for Windows File
+/// Server User Guide.</p>
 /// </li>
 /// <li>
 /// <p>
@@ -131,10 +133,9 @@
 /// </li>
 /// <li>
 /// <p>
-/// <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or
-/// Amazon FSx for OpenZFS volume initiated from the Amazon FSx
-/// console, API (<code>UpdateVolume</code>), or CLI
-/// (<code>update-volume</code>).</p>
+/// <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for OpenZFS volume
+/// initiated from the Amazon FSx console, API (<code>UpdateVolume</code>),
+/// or CLI (<code>update-volume</code>).</p>
 /// </li>
 /// <li>
 /// <p>
@@ -153,6 +154,22 @@
 /// <p>
 /// <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System
 /// (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from
+/// a snapshot on a different FSx for OpenZFS file system. You can
+/// initiate this from the Amazon FSx console, API
+/// (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using
+/// the using the <code>FULL_COPY</code> strategy.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>VOLUME_UPDATE_WITH_SNAPSHOT</code> - A volume is being updated from a
+/// snapshot on a different FSx for OpenZFS file system. You can initiate
+/// this from the Amazon FSx console, API
+/// (<code>CopySnapshotAndUpdateVolume</code>), or CLI
+/// (<code>copy-snapshot-and-update-volume</code>).</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -181,9 +198,13 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     ThroughputOptimization,
     #[allow(missing_docs)] // documentation missing in model
+    VolumeInitializeWithSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeRestore,
     #[allow(missing_docs)] // documentation missing in model
     VolumeUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    VolumeUpdateWithSnapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -201,8 +222,10 @@ impl ::std::convert::From<&str> for AdministrativeActionType {
             "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
             "STORAGE_TYPE_OPTIMIZATION" => AdministrativeActionType::StorageTypeOptimization,
             "THROUGHPUT_OPTIMIZATION" => AdministrativeActionType::ThroughputOptimization,
+            "VOLUME_INITIALIZE_WITH_SNAPSHOT" => AdministrativeActionType::VolumeInitializeWithSnapshot,
             "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
             "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
+            "VOLUME_UPDATE_WITH_SNAPSHOT" => AdministrativeActionType::VolumeUpdateWithSnapshot,
             other => AdministrativeActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -228,8 +251,10 @@ impl AdministrativeActionType {
             AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
             AdministrativeActionType::StorageTypeOptimization => "STORAGE_TYPE_OPTIMIZATION",
             AdministrativeActionType::ThroughputOptimization => "THROUGHPUT_OPTIMIZATION",
+            AdministrativeActionType::VolumeInitializeWithSnapshot => "VOLUME_INITIALIZE_WITH_SNAPSHOT",
             AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
             AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
+            AdministrativeActionType::VolumeUpdateWithSnapshot => "VOLUME_UPDATE_WITH_SNAPSHOT",
             AdministrativeActionType::Unknown(value) => value.as_str(),
         }
     }
@@ -246,8 +271,10 @@ impl AdministrativeActionType {
             "STORAGE_OPTIMIZATION",
             "STORAGE_TYPE_OPTIMIZATION",
             "THROUGHPUT_OPTIMIZATION",
+            "VOLUME_INITIALIZE_WITH_SNAPSHOT",
             "VOLUME_RESTORE",
             "VOLUME_UPDATE",
+            "VOLUME_UPDATE_WITH_SNAPSHOT",
         ]
     }
 }

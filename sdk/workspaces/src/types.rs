@@ -21,6 +21,8 @@ pub use crate::types::_reboot_request::RebootRequest;
 
 pub use crate::types::_target_workspace_state::TargetWorkspaceState;
 
+pub use crate::types::_data_replication::DataReplication;
+
 pub use crate::types::_workspace_properties::WorkspaceProperties;
 
 pub use crate::types::_operating_system_name::OperatingSystemName;
@@ -88,6 +90,10 @@ pub use crate::types::_workspace_connection_status::WorkspaceConnectionStatus;
 pub use crate::types::_connection_state::ConnectionState;
 
 pub use crate::types::_workspace::Workspace;
+
+pub use crate::types::_standby_workspaces_properties::StandbyWorkspacesProperties;
+
+pub use crate::types::_data_replication_settings::DataReplicationSettings;
 
 pub use crate::types::_related_workspace_properties::RelatedWorkspaceProperties;
 
@@ -243,6 +249,10 @@ mod _connection_alias_state;
 
 mod _connection_state;
 
+mod _data_replication;
+
+mod _data_replication_settings;
+
 mod _dedicated_tenancy_modification_state_enum;
 
 mod _dedicated_tenancy_support_enum;
@@ -322,6 +332,8 @@ mod _snapshot;
 mod _standby_workspace;
 
 mod _standby_workspace_relationship_type;
+
+mod _standby_workspaces_properties;
 
 mod _start_request;
 

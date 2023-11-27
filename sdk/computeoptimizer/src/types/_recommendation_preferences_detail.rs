@@ -20,6 +20,17 @@ pub struct RecommendationPreferencesDetail {
     /// <p> An object that describes the external metrics recommendation preference. </p>
     /// <p> If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code> value appears in the response. If the preference isn't applied to the recommendations already, then this object doesn't appear in the response. </p>
     pub external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. If the preference isn’t set, this object is null. </p>
+    pub look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. If the preference isn’t set, this object is null. </p> <note>
+    /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. This object resolves any wildcard expressions and returns the effective list of candidate resource type values. If the preference isn’t set, this object is null. </p>
+    pub preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>>,
+    /// <p> Describes the savings estimation mode used for calculating savings opportunity. </p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    pub savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
 }
 impl RecommendationPreferencesDetail {
     /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -48,6 +59,29 @@ impl RecommendationPreferencesDetail {
     pub fn external_metrics_preference(&self) -> ::std::option::Option<&crate::types::ExternalMetricsPreference> {
         self.external_metrics_preference.as_ref()
     }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. If the preference isn’t set, this object is null. </p>
+    pub fn look_back_period(&self) -> ::std::option::Option<&crate::types::LookBackPeriodPreference> {
+        self.look_back_period.as_ref()
+    }
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. If the preference isn’t set, this object is null. </p> <note>
+    /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.utilization_preferences.is_none()`.
+    pub fn utilization_preferences(&self) -> &[crate::types::UtilizationPreference] {
+        self.utilization_preferences.as_deref().unwrap_or_default()
+    }
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. This object resolves any wildcard expressions and returns the effective list of candidate resource type values. If the preference isn’t set, this object is null. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_resources.is_none()`.
+    pub fn preferred_resources(&self) -> &[crate::types::EffectivePreferredResource] {
+        self.preferred_resources.as_deref().unwrap_or_default()
+    }
+    /// <p> Describes the savings estimation mode used for calculating savings opportunity. </p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    pub fn savings_estimation_mode(&self) -> ::std::option::Option<&crate::types::SavingsEstimationMode> {
+        self.savings_estimation_mode.as_ref()
+    }
 }
 impl RecommendationPreferencesDetail {
     /// Creates a new builder-style object to manufacture [`RecommendationPreferencesDetail`](crate::types::RecommendationPreferencesDetail).
@@ -65,6 +99,10 @@ pub struct RecommendationPreferencesDetailBuilder {
     pub(crate) enhanced_infrastructure_metrics: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     pub(crate) inferred_workload_types: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
     pub(crate) external_metrics_preference: ::std::option::Option<crate::types::ExternalMetricsPreference>,
+    pub(crate) look_back_period: ::std::option::Option<crate::types::LookBackPeriodPreference>,
+    pub(crate) utilization_preferences: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>,
+    pub(crate) preferred_resources: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>>,
+    pub(crate) savings_estimation_mode: ::std::option::Option<crate::types::SavingsEstimationMode>,
 }
 impl RecommendationPreferencesDetailBuilder {
     /// <p>An object that describes the scope of the recommendation preference.</p>
@@ -155,6 +193,83 @@ impl RecommendationPreferencesDetailBuilder {
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         &self.external_metrics_preference
     }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. If the preference isn’t set, this object is null. </p>
+    pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
+        self.look_back_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. If the preference isn’t set, this object is null. </p>
+    pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
+        self.look_back_period = input;
+        self
+    }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. If the preference isn’t set, this object is null. </p>
+    pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
+        &self.look_back_period
+    }
+    /// Appends an item to `utilization_preferences`.
+    ///
+    /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
+    ///
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. If the preference isn’t set, this object is null. </p> <note>
+    /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
+        let mut v = self.utilization_preferences.unwrap_or_default();
+        v.push(input);
+        self.utilization_preferences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. If the preference isn’t set, this object is null. </p> <note>
+    /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
+        self.utilization_preferences = input;
+        self
+    }
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. If the preference isn’t set, this object is null. </p> <note>
+    /// <p>This preference is only available for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
+        &self.utilization_preferences
+    }
+    /// Appends an item to `preferred_resources`.
+    ///
+    /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
+    ///
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. This object resolves any wildcard expressions and returns the effective list of candidate resource type values. If the preference isn’t set, this object is null. </p>
+    pub fn preferred_resources(mut self, input: crate::types::EffectivePreferredResource) -> Self {
+        let mut v = self.preferred_resources.unwrap_or_default();
+        v.push(input);
+        self.preferred_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. This object resolves any wildcard expressions and returns the effective list of candidate resource type values. If the preference isn’t set, this object is null. </p>
+    pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>>) -> Self {
+        self.preferred_resources = input;
+        self
+    }
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. This object resolves any wildcard expressions and returns the effective list of candidate resource type values. If the preference isn’t set, this object is null. </p>
+    pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EffectivePreferredResource>> {
+        &self.preferred_resources
+    }
+    /// <p> Describes the savings estimation mode used for calculating savings opportunity. </p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    pub fn savings_estimation_mode(mut self, input: crate::types::SavingsEstimationMode) -> Self {
+        self.savings_estimation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Describes the savings estimation mode used for calculating savings opportunity. </p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::SavingsEstimationMode>) -> Self {
+        self.savings_estimation_mode = input;
+        self
+    }
+    /// <p> Describes the savings estimation mode used for calculating savings opportunity. </p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::SavingsEstimationMode> {
+        &self.savings_estimation_mode
+    }
     /// Consumes the builder and constructs a [`RecommendationPreferencesDetail`](crate::types::RecommendationPreferencesDetail).
     pub fn build(self) -> crate::types::RecommendationPreferencesDetail {
         crate::types::RecommendationPreferencesDetail {
@@ -163,6 +278,10 @@ impl RecommendationPreferencesDetailBuilder {
             enhanced_infrastructure_metrics: self.enhanced_infrastructure_metrics,
             inferred_workload_types: self.inferred_workload_types,
             external_metrics_preference: self.external_metrics_preference,
+            look_back_period: self.look_back_period,
+            utilization_preferences: self.utilization_preferences,
+            preferred_resources: self.preferred_resources,
+            savings_estimation_mode: self.savings_estimation_mode,
         }
     }
 }

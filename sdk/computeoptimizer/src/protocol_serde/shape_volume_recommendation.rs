@@ -69,6 +69,13 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }
+                        "effectiveRecommendationPreferences" => {
+                            builder = builder.set_effective_recommendation_preferences(
+                                crate::protocol_serde::shape_ebs_effective_recommendation_preferences::de_ebs_effective_recommendation_preferences(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

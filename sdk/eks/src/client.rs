@@ -150,6 +150,8 @@ mod create_fargate_profile;
 
 mod create_nodegroup;
 
+mod create_pod_identity_association;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -187,6 +189,8 @@ mod delete_fargate_profile;
 
 mod delete_nodegroup;
 
+mod delete_pod_identity_association;
+
 mod deregister_cluster;
 
 mod describe_addon;
@@ -205,6 +209,8 @@ mod describe_identity_provider_config;
 
 mod describe_nodegroup;
 
+mod describe_pod_identity_association;
+
 mod describe_update;
 
 mod disassociate_identity_provider_config;
@@ -220,6 +226,8 @@ mod list_fargate_profiles;
 mod list_identity_provider_configs;
 
 mod list_nodegroups;
+
+mod list_pod_identity_associations;
 
 mod list_tags_for_resource;
 
@@ -242,3 +250,5 @@ mod update_eks_anywhere_subscription;
 mod update_nodegroup_config;
 
 mod update_nodegroup_version;
+
+mod update_pod_identity_association;

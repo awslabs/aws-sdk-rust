@@ -21,18 +21,24 @@ pub fn ser_create_analyzer_input_input(
     if let Some(var_6) = &input.client_token {
         object.key("clientToken").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
-            {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
-            }
-        }
+        let mut object_8 = object.key("configuration").start_object();
+        crate::protocol_serde::shape_analyzer_configuration::ser_analyzer_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_11) = &input.r#type {
-        object.key("type").string(var_11.as_str());
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
+    if let Some(var_13) = &input.r#type {
+        object.key("type").string(var_13.as_str());
     }
     Ok(())
 }

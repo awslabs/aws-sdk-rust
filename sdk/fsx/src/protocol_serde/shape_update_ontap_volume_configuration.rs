@@ -36,5 +36,11 @@ pub fn ser_update_ontap_volume_configuration(
         crate::protocol_serde::shape_update_snaplock_configuration::ser_update_snaplock_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.size_in_bytes {
+        object.key("SizeInBytes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
+    }
     Ok(())
 }

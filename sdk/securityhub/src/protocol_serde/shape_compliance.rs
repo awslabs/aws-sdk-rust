@@ -42,6 +42,18 @@ pub fn ser_compliance(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.security_control_parameters {
+        let mut array_15 = object.key("SecurityControlParameters").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_security_control_parameter::ser_security_control_parameter(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }
 
@@ -85,6 +97,11 @@ where
                         "AssociatedStandards" => {
                             builder = builder.set_associated_standards(
                                 crate::protocol_serde::shape_associated_standards_list::de_associated_standards_list(tokens)?,
+                            );
+                        }
+                        "SecurityControlParameters" => {
+                            builder = builder.set_security_control_parameters(
+                                crate::protocol_serde::shape_security_control_parameters_list::de_security_control_parameters_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

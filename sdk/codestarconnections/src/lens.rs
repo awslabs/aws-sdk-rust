@@ -18,3 +18,23 @@ pub(crate) fn reflens_list_hosts_output_output_next_token(
     };
     ::std::option::Option::Some(input)
 }
+
+pub(crate) fn reflens_list_repository_links_output_output_next_token(
+    input: &crate::operation::list_repository_links::ListRepositoryLinksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_sync_configurations_output_output_next_token(
+    input: &crate::operation::list_sync_configurations::ListSyncConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}

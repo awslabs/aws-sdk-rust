@@ -13,6 +13,8 @@ pub struct NetworkInterface {
     pub can_interface: ::std::option::Option<crate::types::CanInterface>,
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub obd_interface: ::std::option::Option<crate::types::ObdInterface>,
+    /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+    pub vehicle_middleware: ::std::option::Option<crate::types::VehicleMiddleware>,
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
@@ -32,6 +34,10 @@ impl NetworkInterface {
     pub fn obd_interface(&self) -> ::std::option::Option<&crate::types::ObdInterface> {
         self.obd_interface.as_ref()
     }
+    /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+    pub fn vehicle_middleware(&self) -> ::std::option::Option<&crate::types::VehicleMiddleware> {
+        self.vehicle_middleware.as_ref()
+    }
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
@@ -48,6 +54,7 @@ pub struct NetworkInterfaceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     pub(crate) can_interface: ::std::option::Option<crate::types::CanInterface>,
     pub(crate) obd_interface: ::std::option::Option<crate::types::ObdInterface>,
+    pub(crate) vehicle_middleware: ::std::option::Option<crate::types::VehicleMiddleware>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The ID of the network interface.</p>
@@ -108,6 +115,20 @@ impl NetworkInterfaceBuilder {
     pub fn get_obd_interface(&self) -> &::std::option::Option<crate::types::ObdInterface> {
         &self.obd_interface
     }
+    /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+    pub fn vehicle_middleware(mut self, input: crate::types::VehicleMiddleware) -> Self {
+        self.vehicle_middleware = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+    pub fn set_vehicle_middleware(mut self, input: ::std::option::Option<crate::types::VehicleMiddleware>) -> Self {
+        self.vehicle_middleware = input;
+        self
+    }
+    /// <p>The vehicle middleware defined as a type of network interface. Examples of vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+    pub fn get_vehicle_middleware(&self) -> &::std::option::Option<crate::types::VehicleMiddleware> {
+        &self.vehicle_middleware
+    }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     /// This method will fail if any of the following fields are not set:
     /// - [`interface_id`](crate::types::builders::NetworkInterfaceBuilder::interface_id)
@@ -128,6 +149,7 @@ impl NetworkInterfaceBuilder {
             })?,
             can_interface: self.can_interface,
             obd_interface: self.obd_interface,
+            vehicle_middleware: self.vehicle_middleware,
         })
     }
 }

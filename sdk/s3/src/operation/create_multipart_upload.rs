@@ -265,6 +265,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultipa
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
+            .set_key(Some(
+                _input
+                    .key
+                    .clone()
+                    .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("key", "A required field was not set"))?,
+            ))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

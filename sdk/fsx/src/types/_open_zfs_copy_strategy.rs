@@ -14,6 +14,7 @@
 /// match openzfscopystrategy {
 ///     OpenZfsCopyStrategy::Clone => { /* ... */ },
 ///     OpenZfsCopyStrategy::FullCopy => { /* ... */ },
+///     OpenZfsCopyStrategy::IncrementalCopy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum OpenZfsCopyStrategy {
     Clone,
     #[allow(missing_docs)] // documentation missing in model
     FullCopy,
+    #[allow(missing_docs)] // documentation missing in model
+    IncrementalCopy,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for OpenZfsCopyStrategy {
         match s {
             "CLONE" => OpenZfsCopyStrategy::Clone,
             "FULL_COPY" => OpenZfsCopyStrategy::FullCopy,
+            "INCREMENTAL_COPY" => OpenZfsCopyStrategy::IncrementalCopy,
             other => OpenZfsCopyStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl OpenZfsCopyStrategy {
         match self {
             OpenZfsCopyStrategy::Clone => "CLONE",
             OpenZfsCopyStrategy::FullCopy => "FULL_COPY",
+            OpenZfsCopyStrategy::IncrementalCopy => "INCREMENTAL_COPY",
             OpenZfsCopyStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLONE", "FULL_COPY"]
+        &["CLONE", "FULL_COPY", "INCREMENTAL_COPY"]
     }
 }
 impl ::std::convert::AsRef<str> for OpenZfsCopyStrategy {

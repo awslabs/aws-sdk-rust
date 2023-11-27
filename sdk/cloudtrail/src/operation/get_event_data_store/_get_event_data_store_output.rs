@@ -28,6 +28,10 @@ pub struct GetEventDataStoreOutput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The billing mode for the event data store.</p>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
+    /// <p> Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+    pub federation_status: ::std::option::Option<crate::types::FederationStatus>,
+    /// <p> If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store. </p>
+    pub federation_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEventDataStoreOutput {
@@ -82,6 +86,14 @@ impl GetEventDataStoreOutput {
     pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
+    /// <p> Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+    pub fn federation_status(&self) -> ::std::option::Option<&crate::types::FederationStatus> {
+        self.federation_status.as_ref()
+    }
+    /// <p> If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store. </p>
+    pub fn federation_role_arn(&self) -> ::std::option::Option<&str> {
+        self.federation_role_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetEventDataStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +123,8 @@ pub struct GetEventDataStoreOutputBuilder {
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
+    pub(crate) federation_status: ::std::option::Option<crate::types::FederationStatus>,
+    pub(crate) federation_role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetEventDataStoreOutputBuilder {
@@ -291,6 +305,34 @@ impl GetEventDataStoreOutputBuilder {
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
         &self.billing_mode
     }
+    /// <p> Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+    pub fn federation_status(mut self, input: crate::types::FederationStatus) -> Self {
+        self.federation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+    pub fn set_federation_status(mut self, input: ::std::option::Option<crate::types::FederationStatus>) -> Self {
+        self.federation_status = input;
+        self
+    }
+    /// <p> Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>. </p>
+    pub fn get_federation_status(&self) -> &::std::option::Option<crate::types::FederationStatus> {
+        &self.federation_status
+    }
+    /// <p> If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store. </p>
+    pub fn federation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.federation_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store. </p>
+    pub fn set_federation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.federation_role_arn = input;
+        self
+    }
+    /// <p> If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the federated event data store. </p>
+    pub fn get_federation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.federation_role_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -315,6 +357,8 @@ impl GetEventDataStoreOutputBuilder {
             updated_timestamp: self.updated_timestamp,
             kms_key_id: self.kms_key_id,
             billing_mode: self.billing_mode,
+            federation_status: self.federation_status,
+            federation_role_arn: self.federation_role_arn,
             _request_id: self._request_id,
         }
     }

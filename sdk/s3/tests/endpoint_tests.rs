@@ -1363,7 +1363,38 @@ async fn operation_input_test_get_object_42() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_43() {
+async fn operation_input_test_list_objects_43() {
+    /* builtIns: {
+        "AWS::Region": "aws-global"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("aws-global"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_objects()
+            .set_bucket(::std::option::Option::Some("bucket-name".to_owned()))
+            .set_prefix(::std::option::Option::Some("prefix".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://bucket-name.s3.amazonaws.com"),
+        "expected URI to start with `https://bucket-name.s3.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_44() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::UseFIPS": true
@@ -1396,7 +1427,7 @@ async fn operation_input_test_get_object_43() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_44() {
+async fn operation_input_test_get_object_45() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::UseDualStack": true
@@ -1429,7 +1460,7 @@ async fn operation_input_test_get_object_44() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_45() {
+async fn operation_input_test_get_object_46() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::UseFIPS": true,
@@ -1464,7 +1495,7 @@ async fn operation_input_test_get_object_45() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_46() {
+async fn operation_input_test_get_object_47() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::Accelerate": true
@@ -1497,7 +1528,7 @@ async fn operation_input_test_get_object_46() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_47() {
+async fn operation_input_test_get_object_48() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "SDK::Endpoint": "https://example.com"
@@ -1530,7 +1561,7 @@ async fn operation_input_test_get_object_47() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_48() {
+async fn operation_input_test_get_object_49() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::ForcePathStyle": true
@@ -1563,7 +1594,7 @@ async fn operation_input_test_get_object_48() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_49() {
+async fn operation_input_test_get_object_50() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::UseDualStack": true,
@@ -1598,7 +1629,7 @@ async fn operation_input_test_get_object_49() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_50() {
+async fn operation_input_test_get_object_51() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "SDK::Endpoint": "https://example.com",
@@ -1633,7 +1664,7 @@ async fn operation_input_test_get_object_50() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_51() {
+async fn operation_input_test_get_object_52() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::UseArnRegion": true
@@ -1668,7 +1699,7 @@ async fn operation_input_test_get_object_51() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_52() {
+async fn operation_input_test_get_object_53() {
     /* builtIns: {
         "AWS::Region": "us-west-1"
     } */
@@ -1703,7 +1734,7 @@ async fn operation_input_test_get_object_52() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_53() {
+async fn operation_input_test_get_object_54() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "http://beta.example.com:1234"
@@ -1738,7 +1769,7 @@ async fn operation_input_test_get_object_53() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_54() {
+async fn operation_input_test_get_object_55() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1769,7 +1800,7 @@ async fn operation_input_test_get_object_54() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_55() {
+async fn operation_input_test_get_object_56() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true
@@ -1802,7 +1833,7 @@ async fn operation_input_test_get_object_55() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_56() {
+async fn operation_input_test_get_object_57() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -1837,7 +1868,7 @@ async fn operation_input_test_get_object_56() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_57() {
+async fn operation_input_test_get_object_58() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::Accelerate": true
@@ -1870,7 +1901,7 @@ async fn operation_input_test_get_object_57() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_58() {
+async fn operation_input_test_get_object_59() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true
@@ -1903,7 +1934,7 @@ async fn operation_input_test_get_object_58() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_59() {
+async fn operation_input_test_get_object_60() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true,
@@ -1938,7 +1969,7 @@ async fn operation_input_test_get_object_59() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_60() {
+async fn operation_input_test_get_object_61() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true,
@@ -1973,7 +2004,7 @@ async fn operation_input_test_get_object_60() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_61() {
+async fn operation_input_test_get_object_62() {
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -2004,7 +2035,7 @@ async fn operation_input_test_get_object_61() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_62() {
+async fn operation_input_test_get_object_63() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseDualStack": true
@@ -2037,7 +2068,7 @@ async fn operation_input_test_get_object_62() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_63() {
+async fn operation_input_test_get_object_64() {
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -2068,7 +2099,7 @@ async fn operation_input_test_get_object_63() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_64() {
+async fn operation_input_test_get_object_65() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true
@@ -2101,7 +2132,7 @@ async fn operation_input_test_get_object_64() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_65() {
+async fn operation_input_test_get_object_66() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true,
@@ -2136,7 +2167,7 @@ async fn operation_input_test_get_object_65() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_66() {
+async fn operation_input_test_get_object_67() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::Accelerate": true
@@ -2169,7 +2200,7 @@ async fn operation_input_test_get_object_66() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_67() {
+async fn operation_input_test_get_object_68() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true
@@ -2202,7 +2233,7 @@ async fn operation_input_test_get_object_67() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_68() {
+async fn operation_input_test_get_object_69() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -2237,7 +2268,7 @@ async fn operation_input_test_get_object_68() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_69() {
+async fn operation_input_test_get_object_70() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -2272,7 +2303,7 @@ async fn operation_input_test_get_object_69() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_70() {
+async fn operation_input_test_get_object_71() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::ForcePathStyle": true
@@ -2305,7 +2336,7 @@ async fn operation_input_test_get_object_70() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_71() {
+async fn operation_input_test_get_object_72() {
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true,
@@ -2340,7 +2371,7 @@ async fn operation_input_test_get_object_71() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_72() {
+async fn operation_input_test_get_object_73() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::ForcePathStyle": true,
@@ -2376,7 +2407,7 @@ async fn operation_input_test_get_object_72() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_73() {
+async fn operation_input_test_get_object_74() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -2411,7 +2442,7 @@ async fn operation_input_test_get_object_73() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_74() {
+async fn operation_input_test_get_object_75() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::ForcePathStyle": true
@@ -2446,7 +2477,7 @@ async fn operation_input_test_get_object_74() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_75() {
+async fn operation_input_test_get_object_76() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::ForcePathStyle": true
@@ -2479,7 +2510,7 @@ async fn operation_input_test_get_object_75() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_76() {
+async fn operation_input_test_get_object_77() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2510,7 +2541,7 @@ async fn operation_input_test_get_object_76() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_77() {
+async fn operation_input_test_get_object_78() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::S3::ForcePathStyle": true
@@ -2543,7 +2574,7 @@ async fn operation_input_test_get_object_77() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_78() {
+async fn operation_input_test_get_object_79() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseFIPS": true,
@@ -2578,7 +2609,7 @@ async fn operation_input_test_get_object_78() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_79() {
+async fn operation_input_test_get_object_80() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::S3::ForcePathStyle": true,
@@ -2614,7 +2645,7 @@ async fn operation_input_test_get_object_79() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_80() {
+async fn operation_input_test_get_object_81() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseDualStack": true,
@@ -2649,7 +2680,7 @@ async fn operation_input_test_get_object_80() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_81() {
+async fn operation_input_test_get_object_82() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::S3::ForcePathStyle": true
@@ -2684,7 +2715,7 @@ async fn operation_input_test_get_object_81() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_82() {
+async fn operation_input_test_get_object_83() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::S3::ForcePathStyle": true
@@ -2717,7 +2748,7 @@ async fn operation_input_test_get_object_82() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_83() {
+async fn operation_input_test_get_object_84() {
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -2748,7 +2779,7 @@ async fn operation_input_test_get_object_83() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_84() {
+async fn operation_input_test_get_object_85() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::ForcePathStyle": true
@@ -2781,7 +2812,7 @@ async fn operation_input_test_get_object_84() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_85() {
+async fn operation_input_test_get_object_86() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -2816,7 +2847,7 @@ async fn operation_input_test_get_object_85() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_86() {
+async fn operation_input_test_get_object_87() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::ForcePathStyle": true,
@@ -2852,7 +2883,7 @@ async fn operation_input_test_get_object_86() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_87() {
+async fn operation_input_test_get_object_88() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true,
@@ -2887,7 +2918,7 @@ async fn operation_input_test_get_object_87() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_88() {
+async fn operation_input_test_get_object_89() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::ForcePathStyle": true
@@ -2922,7 +2953,7 @@ async fn operation_input_test_get_object_88() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_89() {
+async fn operation_input_test_get_object_90() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::ForcePathStyle": true
@@ -2955,7 +2986,7 @@ async fn operation_input_test_get_object_89() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_90() {
+async fn operation_input_test_get_object_91() {
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -2986,7 +3017,7 @@ async fn operation_input_test_get_object_90() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_91() {
+async fn operation_input_test_get_object_92() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
@@ -3019,7 +3050,7 @@ async fn operation_input_test_get_object_91() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_92() {
+async fn operation_input_test_get_object_93() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
@@ -3054,7 +3085,7 @@ async fn operation_input_test_get_object_92() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_93() {
+async fn operation_input_test_get_object_94() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true,
@@ -3089,7 +3120,7 @@ async fn operation_input_test_get_object_93() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_94() {
+async fn operation_input_test_get_object_95() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -3124,7 +3155,7 @@ async fn operation_input_test_get_object_94() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_95() {
+async fn operation_input_test_get_object_96() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
@@ -3159,7 +3190,7 @@ async fn operation_input_test_get_object_95() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_96() {
+async fn operation_input_test_get_object_97() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -3194,7 +3225,7 @@ async fn operation_input_test_get_object_96() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_97() {
+async fn operation_input_test_get_object_98() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
@@ -3227,7 +3258,7 @@ async fn operation_input_test_get_object_97() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_98() {
+async fn operation_input_test_get_object_99() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
@@ -3262,7 +3293,7 @@ async fn operation_input_test_get_object_98() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_99() {
+async fn operation_input_test_get_object_100() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseDualStack": true,
@@ -3297,7 +3328,7 @@ async fn operation_input_test_get_object_99() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_100() {
+async fn operation_input_test_get_object_101() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "SDK::Endpoint": "https://beta.example.com"
@@ -3332,7 +3363,7 @@ async fn operation_input_test_get_object_100() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_101() {
+async fn operation_input_test_get_object_102() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
@@ -3365,7 +3396,7 @@ async fn operation_input_test_get_object_101() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_102() {
+async fn operation_input_test_get_object_103() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
@@ -3400,7 +3431,7 @@ async fn operation_input_test_get_object_102() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_103() {
+async fn operation_input_test_get_object_104() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -3435,7 +3466,7 @@ async fn operation_input_test_get_object_103() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_104() {
+async fn operation_input_test_get_object_105() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseDualStack": true,
@@ -3470,7 +3501,7 @@ async fn operation_input_test_get_object_104() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_105() {
+async fn operation_input_test_get_object_106() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com",
@@ -3505,7 +3536,7 @@ async fn operation_input_test_get_object_105() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_106() {
+async fn operation_input_test_get_object_107() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "SDK::Endpoint": "https://beta.example.com"
@@ -3540,7 +3571,7 @@ async fn operation_input_test_get_object_106() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_107() {
+async fn operation_input_test_get_object_108() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -3573,7 +3604,7 @@ async fn operation_input_test_get_object_107() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_108() {
+async fn operation_input_test_get_object_109() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true
@@ -3608,7 +3639,7 @@ async fn operation_input_test_get_object_108() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_109() {
+async fn operation_input_test_get_object_110() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::Accelerate": true
@@ -3643,7 +3674,7 @@ async fn operation_input_test_get_object_109() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_110() {
+async fn operation_input_test_get_object_111() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseFIPS": true,
@@ -3680,7 +3711,7 @@ async fn operation_input_test_get_object_110() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_111() {
+async fn operation_input_test_get_object_112() {
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -3713,7 +3744,7 @@ async fn operation_input_test_get_object_111() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_112() {
+async fn operation_input_test_get_object_113() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::S3::Accelerate": true
@@ -3748,7 +3779,7 @@ async fn operation_input_test_get_object_112() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_113() {
+async fn operation_input_test_get_object_114() {
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -3781,7 +3812,7 @@ async fn operation_input_test_get_object_113() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_114() {
+async fn operation_input_test_get_object_115() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true
@@ -3816,7 +3847,7 @@ async fn operation_input_test_get_object_114() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_115() {
+async fn operation_input_test_get_object_116() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::S3::Accelerate": true
@@ -3851,7 +3882,7 @@ async fn operation_input_test_get_object_115() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_116() {
+async fn operation_input_test_get_object_117() {
     /* builtIns: {
         "AWS::Region": "af-south-1",
         "AWS::UseFIPS": true,
@@ -3888,7 +3919,7 @@ async fn operation_input_test_get_object_116() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_117() {
+async fn operation_input_test_get_object_118() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -3921,7 +3952,7 @@ async fn operation_input_test_get_object_117() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_118() {
+async fn operation_input_test_get_object_119() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://example.amazonaws.com"
@@ -3956,7 +3987,7 @@ async fn operation_input_test_get_object_118() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_119() {
+async fn operation_input_test_get_object_120() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": false
@@ -3990,7 +4021,7 @@ async fn operation_input_test_get_object_119() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_120() {
+async fn operation_input_test_get_object_121() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://example.com",
@@ -4026,7 +4057,7 @@ async fn operation_input_test_get_object_120() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_121() {
+async fn operation_input_test_get_object_122() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": true
@@ -4061,7 +4092,7 @@ async fn operation_input_test_get_object_121() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_122() {
+async fn operation_input_test_get_object_123() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -4094,7 +4125,7 @@ async fn operation_input_test_get_object_122() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_123() {
+async fn operation_input_test_get_object_124() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": true
@@ -4128,7 +4159,7 @@ async fn operation_input_test_get_object_123() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_124() {
+async fn operation_input_test_get_object_125() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::S3::UseArnRegion": false
@@ -4163,7 +4194,7 @@ async fn operation_input_test_get_object_124() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_125() {
+async fn operation_input_test_get_object_126() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": false
@@ -4198,7 +4229,7 @@ async fn operation_input_test_get_object_125() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_126() {
+async fn operation_input_test_get_object_127() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": false
@@ -4233,7 +4264,7 @@ async fn operation_input_test_get_object_126() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_127() {
+async fn operation_input_test_get_object_128() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": true
@@ -4268,7 +4299,7 @@ async fn operation_input_test_get_object_127() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_128() {
+async fn operation_input_test_get_object_129() {
     /* builtIns: {
         "AWS::Region": "s3-external-1",
         "AWS::S3::UseArnRegion": true
@@ -4303,7 +4334,7 @@ async fn operation_input_test_get_object_128() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_129() {
+async fn operation_input_test_get_object_130() {
     /* builtIns: {
         "AWS::Region": "s3-external-1",
         "AWS::S3::UseArnRegion": false
@@ -4337,7 +4368,7 @@ async fn operation_input_test_get_object_129() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_130() {
+async fn operation_input_test_get_object_131() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::UseArnRegion": true
@@ -4372,7 +4403,7 @@ async fn operation_input_test_get_object_130() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_131() {
+async fn operation_input_test_get_object_132() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::UseArnRegion": false
@@ -4406,7 +4437,7 @@ async fn operation_input_test_get_object_131() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_132() {
+async fn operation_input_test_get_object_133() {
     /* builtIns: {
         "AWS::Region": "aws-global",
         "AWS::S3::UseArnRegion": true
@@ -4440,7 +4471,7 @@ async fn operation_input_test_get_object_132() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_133() {
+async fn operation_input_test_get_object_134() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -4477,7 +4508,7 @@ async fn operation_input_test_get_object_133() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_134() {
+async fn operation_input_test_get_object_135() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::Accelerate": true,
@@ -4514,7 +4545,7 @@ async fn operation_input_test_get_object_134() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_135() {
+async fn operation_input_test_get_object_136() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": false
@@ -4546,7 +4577,7 @@ async fn operation_input_test_get_object_135() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_136() {
+async fn operation_input_test_get_object_137() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": true
@@ -4581,7 +4612,7 @@ async fn operation_input_test_get_object_136() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_137() {
+async fn operation_input_test_get_object_138() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://my-endpoint.com",
@@ -4618,7 +4649,7 @@ async fn operation_input_test_get_object_137() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_138() {
+async fn operation_input_test_get_object_139() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3::UseArnRegion": false

@@ -1416,6 +1416,53 @@ impl From<crate::operation::delete_iam_policy_assignment::DeleteIAMPolicyAssignm
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError> for Error {
+    fn from(err: crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError) -> Self {
+        match err {
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_identity_propagation_config::DeleteIdentityPropagationConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_namespace::DeleteNamespaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4173,6 +4220,53 @@ impl From<crate::operation::list_iam_policy_assignments_for_user::ListIAMPolicyA
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError> for Error {
+    fn from(err: crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError) -> Self {
+        match err {
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_identity_propagation_configs::ListIdentityPropagationConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingestions::ListIngestionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5788,6 +5882,53 @@ impl From<crate::operation::update_iam_policy_assignment::UpdateIAMPolicyAssignm
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_iam_policy_assignment::UpdateIAMPolicyAssignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError> for Error {
+    fn from(err: crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError) -> Self {
+        match err {
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_identity_propagation_config::UpdateIdentityPropagationConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

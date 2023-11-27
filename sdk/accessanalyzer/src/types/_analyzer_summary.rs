@@ -22,6 +22,8 @@ pub struct AnalyzerSummary {
     pub status: crate::types::AnalyzerStatus,
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub status_reason: ::std::option::Option<crate::types::StatusReason>,
+    /// <p>Specifies whether the analyzer is an external access or unused access analyzer.</p>
+    pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
@@ -62,6 +64,10 @@ impl AnalyzerSummary {
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StatusReason> {
         self.status_reason.as_ref()
     }
+    /// <p>Specifies whether the analyzer is an external access or unused access analyzer.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
+        self.configuration.as_ref()
+    }
 }
 impl AnalyzerSummary {
     /// Creates a new builder-style object to manufacture [`AnalyzerSummary`](crate::types::AnalyzerSummary).
@@ -83,6 +89,7 @@ pub struct AnalyzerSummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::AnalyzerStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::StatusReason>,
+    pub(crate) configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl AnalyzerSummaryBuilder {
     /// <p>The ARN of the analyzer.</p>
@@ -222,6 +229,20 @@ impl AnalyzerSummaryBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StatusReason> {
         &self.status_reason
     }
+    /// <p>Specifies whether the analyzer is an external access or unused access analyzer.</p>
+    pub fn configuration(mut self, input: crate::types::AnalyzerConfiguration) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the analyzer is an external access or unused access analyzer.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>Specifies whether the analyzer is an external access or unused access analyzer.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`AnalyzerSummary`](crate::types::AnalyzerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::AnalyzerSummaryBuilder::arn)
@@ -265,6 +286,7 @@ impl AnalyzerSummaryBuilder {
                 )
             })?,
             status_reason: self.status_reason,
+            configuration: self.configuration,
         })
     }
 }

@@ -22,6 +22,9 @@ pub mod commit_transaction;
 /// Types for the `CreateDataCellsFilter` operation.
 pub mod create_data_cells_filter;
 
+/// Types for the `CreateLakeFormationIdentityCenterConfiguration` operation.
+pub mod create_lake_formation_identity_center_configuration;
+
 /// Types for the `CreateLakeFormationOptIn` operation.
 pub mod create_lake_formation_opt_in;
 
@@ -30,6 +33,9 @@ pub mod create_lf_tag;
 
 /// Types for the `DeleteDataCellsFilter` operation.
 pub mod delete_data_cells_filter;
+
+/// Types for the `DeleteLakeFormationIdentityCenterConfiguration` operation.
+pub mod delete_lake_formation_identity_center_configuration;
 
 /// Types for the `DeleteLakeFormationOptIn` operation.
 pub mod delete_lake_formation_opt_in;
@@ -42,6 +48,9 @@ pub mod delete_objects_on_cancel;
 
 /// Types for the `DeregisterResource` operation.
 pub mod deregister_resource;
+
+/// Types for the `DescribeLakeFormationIdentityCenterConfiguration` operation.
+pub mod describe_lake_formation_identity_center_configuration;
 
 /// Types for the `DescribeResource` operation.
 pub mod describe_resource;
@@ -138,6 +147,9 @@ pub mod start_transaction;
 
 /// Types for the `UpdateDataCellsFilter` operation.
 pub mod update_data_cells_filter;
+
+/// Types for the `UpdateLakeFormationIdentityCenterConfiguration` operation.
+pub mod update_lake_formation_identity_center_configuration;
 
 /// Types for the `UpdateLFTag` operation.
 pub mod update_lf_tag;

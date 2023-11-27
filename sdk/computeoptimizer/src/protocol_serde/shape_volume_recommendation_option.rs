@@ -33,6 +33,13 @@ where
                             builder =
                                 builder.set_savings_opportunity(crate::protocol_serde::shape_savings_opportunity::de_savings_opportunity(tokens)?);
                         }
+                        "savingsOpportunityAfterDiscounts" => {
+                            builder = builder.set_savings_opportunity_after_discounts(
+                                crate::protocol_serde::shape_ebs_savings_opportunity_after_discounts::de_ebs_savings_opportunity_after_discounts(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

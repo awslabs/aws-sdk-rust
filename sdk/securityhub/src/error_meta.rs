@@ -15,6 +15,8 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
+    /// <p> The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state. </p>
+    ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>The request was rejected because we can't find the specified resource.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -35,6 +37,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
+            Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -63,6 +66,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidInputException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::ResourceConflictException(inner) => inner.meta(),
+            Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -1636,6 +1640,49 @@ impl From<crate::operation::get_members::GetMembersError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_security_control_definition::GetSecurityControlDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_security_control_definition::GetSecurityControlDefinitionError> for Error {
+    fn from(err: crate::operation::get_security_control_definition::GetSecurityControlDefinitionError) -> Self {
+        match err {
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_security_control_definition::GetSecurityControlDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invite_members::InviteMembersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2177,6 +2224,45 @@ impl From<crate::operation::update_organization_configuration::UpdateOrganizatio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_security_control::UpdateSecurityControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_security_control::UpdateSecurityControlError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_security_control::UpdateSecurityControlError> for Error {
+    fn from(err: crate::operation::update_security_control::UpdateSecurityControlError) -> Self {
+        match err {
+            crate::operation::update_security_control::UpdateSecurityControlError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::update_security_control::UpdateSecurityControlError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::update_security_control::UpdateSecurityControlError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_security_control::UpdateSecurityControlError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_security_control::UpdateSecurityControlError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::update_security_control::UpdateSecurityControlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_security_control::UpdateSecurityControlError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -2266,6 +2352,7 @@ impl ::std::error::Error for Error {
             Error::InvalidInputException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
+            Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -2280,6 +2367,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidInputException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

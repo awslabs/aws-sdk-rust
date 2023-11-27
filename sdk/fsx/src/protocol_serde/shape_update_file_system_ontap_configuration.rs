@@ -48,5 +48,11 @@ pub fn ser_update_file_system_ontap_configuration(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.throughput_capacity_per_ha_pair {
+        object.key("ThroughputCapacityPerHAPair").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
+    }
     Ok(())
 }

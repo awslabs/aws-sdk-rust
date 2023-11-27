@@ -88,6 +88,25 @@ where
                             builder = builder
                                 .set_snaplock_configuration(crate::protocol_serde::shape_snaplock_configuration::de_snaplock_configuration(tokens)?);
                         }
+                        "VolumeStyle" => {
+                            builder = builder.set_volume_style(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VolumeStyle::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AggregateConfiguration" => {
+                            builder = builder.set_aggregate_configuration(
+                                crate::protocol_serde::shape_aggregate_configuration::de_aggregate_configuration(tokens)?,
+                            );
+                        }
+                        "SizeInBytes" => {
+                            builder = builder.set_size_in_bytes(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

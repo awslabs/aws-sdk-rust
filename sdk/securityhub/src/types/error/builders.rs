@@ -9,6 +9,8 @@ pub use crate::types::error::_internal_exception::InternalExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_resource_conflict_exception::ResourceConflictExceptionBuilder;

@@ -5,7 +5,7 @@
 pub struct GetPersonalizedRankingInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
     pub campaign_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub input_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
@@ -17,13 +17,16 @@ pub struct GetPersonalizedRankingInput {
     /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     pub filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. </p>
+    pub metadata_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl GetPersonalizedRankingInput {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
     pub fn campaign_arn(&self) -> ::std::option::Option<&str> {
         self.campaign_arn.as_deref()
     }
-    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_list.is_none()`.
     pub fn input_list(&self) -> &[::std::string::String] {
@@ -47,6 +50,13 @@ impl GetPersonalizedRankingInput {
     pub fn filter_values(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.filter_values.as_ref()
     }
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. </p>
+    pub fn metadata_columns(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.metadata_columns.as_ref()
+    }
 }
 impl GetPersonalizedRankingInput {
     /// Creates a new builder-style object to manufacture [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
@@ -65,6 +75,7 @@ pub struct GetPersonalizedRankingInputBuilder {
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) filter_arn: ::std::option::Option<::std::string::String>,
     pub(crate) filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) metadata_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl GetPersonalizedRankingInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized ranking.</p>
@@ -86,19 +97,19 @@ impl GetPersonalizedRankingInputBuilder {
     ///
     /// To override the contents of this collection use [`set_input_list`](Self::set_input_list).
     ///
-    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn input_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.input_list.unwrap_or_default();
         v.push(input.into());
         self.input_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn set_input_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.input_list = input;
         self
     }
-    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>
+    /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn get_input_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.input_list
     }
@@ -180,6 +191,34 @@ impl GetPersonalizedRankingInputBuilder {
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.filter_values
     }
+    /// Adds a key-value pair to `metadata_columns`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).
+    ///
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. </p>
+    pub fn metadata_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata_columns.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.metadata_columns = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. </p>
+    pub fn set_metadata_columns(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.metadata_columns = input;
+        self
+    }
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. </p>
+    pub fn get_metadata_columns(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.metadata_columns
+    }
     /// Consumes the builder and constructs a [`GetPersonalizedRankingInput`](crate::operation::get_personalized_ranking::GetPersonalizedRankingInput).
     pub fn build(
         self,
@@ -194,6 +233,7 @@ impl GetPersonalizedRankingInputBuilder {
             context: self.context,
             filter_arn: self.filter_arn,
             filter_values: self.filter_values,
+            metadata_columns: self.metadata_columns,
         })
     }
 }

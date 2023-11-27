@@ -1067,6 +1067,8 @@ pub use crate::types::_manifest_file_location::ManifestFileLocationBuilder;
 
 pub use crate::types::_redshift_parameters::RedshiftParametersBuilder;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
+
 pub use crate::types::_redshift_iam_parameters::RedshiftIamParametersBuilder;
 
 pub use crate::types::_rds_parameters::RdsParametersBuilder;
@@ -1378,6 +1380,8 @@ pub use crate::types::_queue_info::QueueInfoBuilder;
 pub use crate::types::_row_info::RowInfoBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_authorized_targets_by_service::AuthorizedTargetsByServiceBuilder;
 
 pub use crate::types::_active_iam_policy_assignment::ActiveIamPolicyAssignmentBuilder;
 

@@ -10,7 +10,7 @@ pub struct EnabledControlDetails {
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Target AWS Regions for the enabled control.</p>
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
     pub target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     /// <p>The deployment summary of the enabled control.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
@@ -30,7 +30,7 @@ impl EnabledControlDetails {
     pub fn target_identifier(&self) -> ::std::option::Option<&str> {
         self.target_identifier.as_deref()
     }
-    /// <p>Target AWS Regions for the enabled control.</p>
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_regions.is_none()`.
     pub fn target_regions(&self) -> &[crate::types::Region] {
@@ -110,19 +110,19 @@ impl EnabledControlDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_target_regions`](Self::set_target_regions).
     ///
-    /// <p>Target AWS Regions for the enabled control.</p>
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
     pub fn target_regions(mut self, input: crate::types::Region) -> Self {
         let mut v = self.target_regions.unwrap_or_default();
         v.push(input);
         self.target_regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Target AWS Regions for the enabled control.</p>
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
     pub fn set_target_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Region>>) -> Self {
         self.target_regions = input;
         self
     }
-    /// <p>Target AWS Regions for the enabled control.</p>
+    /// <p>Target Amazon Web Services Regions for the enabled control.</p>
     pub fn get_target_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Region>> {
         &self.target_regions
     }

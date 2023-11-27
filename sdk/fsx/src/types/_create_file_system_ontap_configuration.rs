@@ -12,6 +12,7 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub deployment_type: ::std::option::Option<crate::types::OntapDeploymentType>,
@@ -25,13 +26,38 @@ pub struct CreateFileSystemOntapConfiguration {
     pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) Specifies the route tables in which Amazon FSx creates the rules for routing traffic to the correct file server. You should specify all virtual private cloud (VPC) route tables associated with the subnets in which your clients are located. By default, Amazon FSx selects your VPC's default route table.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies how many high-availability (HA) pairs the file system will have. The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p> </li>
+    /// <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p> </li>
+    /// </ul>
+    pub ha_pairs: ::std::option::Option<i32>,
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li>
+    /// </ul>
+    pub throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
 }
 impl CreateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -46,6 +72,7 @@ impl CreateFileSystemOntapConfiguration {
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OntapDeploymentType> {
@@ -73,7 +100,12 @@ impl CreateFileSystemOntapConfiguration {
     pub fn route_table_ids(&self) -> &[::std::string::String] {
         self.route_table_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -83,6 +115,30 @@ impl CreateFileSystemOntapConfiguration {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
+    }
+    /// <p>Specifies how many high-availability (HA) pairs the file system will have. The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p> </li>
+    /// <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p> </li>
+    /// </ul>
+    pub fn ha_pairs(&self) -> ::std::option::Option<i32> {
+        self.ha_pairs
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li>
+    /// </ul>
+    pub fn throughput_capacity_per_ha_pair(&self) -> ::std::option::Option<i32> {
+        self.throughput_capacity_per_ha_pair
     }
 }
 impl ::std::fmt::Debug for CreateFileSystemOntapConfiguration {
@@ -98,6 +154,8 @@ impl ::std::fmt::Debug for CreateFileSystemOntapConfiguration {
         formatter.field("route_table_ids", &self.route_table_ids);
         formatter.field("throughput_capacity", &self.throughput_capacity);
         formatter.field("weekly_maintenance_start_time", &self.weekly_maintenance_start_time);
+        formatter.field("ha_pairs", &self.ha_pairs);
+        formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.finish()
     }
 }
@@ -122,6 +180,8 @@ pub struct CreateFileSystemOntapConfigurationBuilder {
     pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) throughput_capacity: ::std::option::Option<i32>,
     pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) ha_pairs: ::std::option::Option<i32>,
+    pub(crate) throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
 }
 impl CreateFileSystemOntapConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -156,6 +216,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     /// This field is required.
@@ -167,6 +228,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::OntapDeploymentType>) -> Self {
@@ -177,6 +239,7 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
+    /// <li> <p> <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-AZ.html">Choosing a file system deployment type</a>. </p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::OntapDeploymentType> {
@@ -258,18 +321,32 @@ impl CreateFileSystemOntapConfigurationBuilder {
     pub fn get_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.route_table_ids
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
-    /// This field is required.
+    /// <p>Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
-    /// <p>Sets the throughput capacity for the file system that you're creating. Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps.</p>
+    /// <p>Sets the throughput capacity for the file system that you're creating in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
     }
@@ -296,6 +373,82 @@ impl CreateFileSystemOntapConfigurationBuilder {
     pub fn get_weekly_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_start_time
     }
+    /// <p>Specifies how many high-availability (HA) pairs the file system will have. The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p> </li>
+    /// <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p> </li>
+    /// </ul>
+    pub fn ha_pairs(mut self, input: i32) -> Self {
+        self.ha_pairs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how many high-availability (HA) pairs the file system will have. The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p> </li>
+    /// <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p> </li>
+    /// </ul>
+    pub fn set_ha_pairs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ha_pairs = input;
+        self
+    }
+    /// <p>Specifies how many high-availability (HA) pairs the file system will have. The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>, <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability (HA) pairs</a> in the FSx for ONTAP user guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p> </li>
+    /// <li> <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p> </li>
+    /// </ul>
+    pub fn get_ha_pairs(&self) -> &::std::option::Option<i32> {
+        &self.ha_pairs
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li>
+    /// </ul>
+    pub fn throughput_capacity_per_ha_pair(mut self, input: i32) -> Self {
+        self.throughput_capacity_per_ha_pair = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li>
+    /// </ul>
+    pub fn set_throughput_capacity_per_ha_pair(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.throughput_capacity_per_ha_pair = input;
+        self
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p> </li>
+    /// </ul>
+    pub fn get_throughput_capacity_per_ha_pair(&self) -> &::std::option::Option<i32> {
+        &self.throughput_capacity_per_ha_pair
+    }
     /// Consumes the builder and constructs a [`CreateFileSystemOntapConfiguration`](crate::types::CreateFileSystemOntapConfiguration).
     pub fn build(self) -> crate::types::CreateFileSystemOntapConfiguration {
         crate::types::CreateFileSystemOntapConfiguration {
@@ -309,6 +462,8 @@ impl CreateFileSystemOntapConfigurationBuilder {
             route_table_ids: self.route_table_ids,
             throughput_capacity: self.throughput_capacity,
             weekly_maintenance_start_time: self.weekly_maintenance_start_time,
+            ha_pairs: self.ha_pairs,
+            throughput_capacity_per_ha_pair: self.throughput_capacity_per_ha_pair,
         }
     }
 }
@@ -325,6 +480,8 @@ impl ::std::fmt::Debug for CreateFileSystemOntapConfigurationBuilder {
         formatter.field("route_table_ids", &self.route_table_ids);
         formatter.field("throughput_capacity", &self.throughput_capacity);
         formatter.field("weekly_maintenance_start_time", &self.weekly_maintenance_start_time);
+        formatter.field("ha_pairs", &self.ha_pairs);
+        formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.finish()
     }
 }

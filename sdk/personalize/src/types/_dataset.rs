@@ -15,6 +15,8 @@ pub struct Dataset {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the associated schema.</p>
@@ -32,6 +34,8 @@ pub struct Dataset {
     pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Describes the latest update to the dataset.</p>
     pub latest_dataset_update: ::std::option::Option<crate::types::DatasetUpdateSummary>,
+    /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
+    pub tracking_id: ::std::option::Option<::std::string::String>,
 }
 impl Dataset {
     /// <p>The name of the dataset.</p>
@@ -51,6 +55,8 @@ impl Dataset {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
@@ -80,6 +86,10 @@ impl Dataset {
     pub fn latest_dataset_update(&self) -> ::std::option::Option<&crate::types::DatasetUpdateSummary> {
         self.latest_dataset_update.as_ref()
     }
+    /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
+    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
+        self.tracking_id.as_deref()
+    }
 }
 impl Dataset {
     /// Creates a new builder-style object to manufacture [`Dataset`](crate::types::Dataset).
@@ -101,6 +111,7 @@ pub struct DatasetBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_dataset_update: ::std::option::Option<crate::types::DatasetUpdateSummary>,
+    pub(crate) tracking_id: ::std::option::Option<::std::string::String>,
 }
 impl DatasetBuilder {
     /// <p>The name of the dataset.</p>
@@ -150,6 +161,8 @@ impl DatasetBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_type = ::std::option::Option::Some(input.into());
@@ -160,6 +173,8 @@ impl DatasetBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
@@ -170,6 +185,8 @@ impl DatasetBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_type
@@ -259,6 +276,20 @@ impl DatasetBuilder {
     pub fn get_latest_dataset_update(&self) -> &::std::option::Option<crate::types::DatasetUpdateSummary> {
         &self.latest_dataset_update
     }
+    /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
+    pub fn tracking_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tracking_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
+    pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.tracking_id = input;
+        self
+    }
+    /// <p>The ID of the event tracker for an Action interactions dataset. You specify the tracker's ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses it to direct new data to the Action interactions dataset in your dataset group.</p>
+    pub fn get_tracking_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.tracking_id
+    }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
@@ -271,6 +302,7 @@ impl DatasetBuilder {
             creation_date_time: self.creation_date_time,
             last_updated_date_time: self.last_updated_date_time,
             latest_dataset_update: self.latest_dataset_update,
+            tracking_id: self.tracking_id,
         }
     }
 }

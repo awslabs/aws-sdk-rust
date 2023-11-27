@@ -17,6 +17,8 @@ pub struct GetDecoderManifestOutput {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDecoderManifestOutput {
@@ -50,6 +52,10 @@ impl GetDecoderManifestOutput {
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn message(&self) -> ::std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDecoderManifestOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +80,7 @@ pub struct GetDecoderManifestOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManifestStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDecoderManifestOutputBuilder {
@@ -179,6 +186,20 @@ impl GetDecoderManifestOutputBuilder {
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.message = input;
+        self
+    }
+    /// <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
+    pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.message
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -226,6 +247,7 @@ impl GetDecoderManifestOutputBuilder {
                     "last_modification_time was not specified but it is required when building GetDecoderManifestOutput",
                 )
             })?,
+            message: self.message,
             _request_id: self._request_id,
         })
     }

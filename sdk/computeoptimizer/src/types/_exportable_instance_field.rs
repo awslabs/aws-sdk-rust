@@ -27,6 +27,10 @@
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => { /* ... */ },
+///     ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => { /* ... */ },
+///     ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => { /* ... */ },
+///     ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
+///     ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => { /* ... */ },
 ///     ExportableInstanceField::ExternalMetricStatusCode => { /* ... */ },
 ///     ExportableInstanceField::ExternalMetricStatusReason => { /* ... */ },
 ///     ExportableInstanceField::Finding => { /* ... */ },
@@ -39,7 +43,9 @@
 ///     ExportableInstanceField::LastRefreshTimestamp => { /* ... */ },
 ///     ExportableInstanceField::LookbackPeriodInDays => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsInstanceType => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsMemory => { /* ... */ },
@@ -52,6 +58,7 @@
 ///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
+///     ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => { /* ... */ },
 ///     ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => { /* ... */ },
@@ -134,6 +141,14 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesInferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesLookbackPeriod,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesPreferredResources,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesUtilizationPreferences,
+    #[allow(missing_docs)] // documentation missing in model
     ExternalMetricStatusCode,
     #[allow(missing_docs)] // documentation missing in model
     ExternalMetricStatusReason,
@@ -158,7 +173,11 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsInstanceGpuInfo,
     #[allow(missing_docs)] // documentation missing in model
@@ -183,6 +202,8 @@ pub enum ExportableInstanceField {
     RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -261,6 +282,14 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "EffectiveRecommendationPreferencesInferredWorkloadTypes" => {
                 ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes
             }
+            "EffectiveRecommendationPreferencesLookBackPeriod" => ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod,
+            "EffectiveRecommendationPreferencesPreferredResources" => ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources,
+            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
+                ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode
+            }
+            "EffectiveRecommendationPreferencesUtilizationPreferences" => {
+                ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences
+            }
             "ExternalMetricStatusCode" => ExportableInstanceField::ExternalMetricStatusCode,
             "ExternalMetricStatusReason" => ExportableInstanceField::ExternalMetricStatusReason,
             "Finding" => ExportableInstanceField::Finding,
@@ -273,7 +302,13 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             "LastRefreshTimestamp" => ExportableInstanceField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableInstanceField::LookbackPeriodInDays,
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
+                ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
+            }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
+                ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
             "RecommendationOptionsInstanceGpuInfo" => ExportableInstanceField::RecommendationOptionsInstanceGpuInfo,
             "RecommendationOptionsInstanceType" => ExportableInstanceField::RecommendationOptionsInstanceType,
             "RecommendationOptionsMemory" => ExportableInstanceField::RecommendationOptionsMemory,
@@ -293,6 +328,9 @@ impl ::std::convert::From<&str> for ExportableInstanceField {
             }
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
                 ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
+            }
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
+                ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
             }
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage,
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => {
@@ -360,6 +398,14 @@ impl ExportableInstanceField {
             ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
                 "EffectiveRecommendationPreferencesInferredWorkloadTypes"
             }
+            ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
+            ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => "EffectiveRecommendationPreferencesPreferredResources",
+            ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                "EffectiveRecommendationPreferencesSavingsEstimationMode"
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => {
+                "EffectiveRecommendationPreferencesUtilizationPreferences"
+            }
             ExportableInstanceField::ExternalMetricStatusCode => "ExternalMetricStatusCode",
             ExportableInstanceField::ExternalMetricStatusReason => "ExternalMetricStatusReason",
             ExportableInstanceField::Finding => "Finding",
@@ -372,7 +418,13 @@ impl ExportableInstanceField {
             ExportableInstanceField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableInstanceField::LookbackPeriodInDays => "LookbackPeriodInDays",
             ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
+            }
             ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
             ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
             ExportableInstanceField::RecommendationOptionsInstanceType => "RecommendationOptionsInstanceType",
             ExportableInstanceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
@@ -392,6 +444,9 @@ impl ExportableInstanceField {
             }
             ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+            }
+            ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
             }
             ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
@@ -442,6 +497,10 @@ impl ExportableInstanceField {
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "EffectiveRecommendationPreferencesExternalMetricsSource",
             "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+            "EffectiveRecommendationPreferencesLookBackPeriod",
+            "EffectiveRecommendationPreferencesPreferredResources",
+            "EffectiveRecommendationPreferencesSavingsEstimationMode",
+            "EffectiveRecommendationPreferencesUtilizationPreferences",
             "ExternalMetricStatusCode",
             "ExternalMetricStatusReason",
             "Finding",
@@ -454,7 +513,9 @@ impl ExportableInstanceField {
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
             "RecommendationOptionsInstanceGpuInfo",
             "RecommendationOptionsInstanceType",
             "RecommendationOptionsMemory",
@@ -467,6 +528,7 @@ impl ExportableInstanceField {
             "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",

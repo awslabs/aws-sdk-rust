@@ -8,6 +8,10 @@ pub struct NumberFilter {
     pub gte: ::std::option::Option<f64>,
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
     pub lte: ::std::option::Option<f64>,
+    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    pub gt: ::std::option::Option<f64>,
+    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    pub lt: ::std::option::Option<f64>,
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub eq: ::std::option::Option<f64>,
 }
@@ -19,6 +23,14 @@ impl NumberFilter {
     /// <p>The less-than-equal condition to be applied to a single field when querying for findings. </p>
     pub fn lte(&self) -> ::std::option::Option<f64> {
         self.lte
+    }
+    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    pub fn gt(&self) -> ::std::option::Option<f64> {
+        self.gt
+    }
+    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    pub fn lt(&self) -> ::std::option::Option<f64> {
+        self.lt
     }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub fn eq(&self) -> ::std::option::Option<f64> {
@@ -38,6 +50,8 @@ impl NumberFilter {
 pub struct NumberFilterBuilder {
     pub(crate) gte: ::std::option::Option<f64>,
     pub(crate) lte: ::std::option::Option<f64>,
+    pub(crate) gt: ::std::option::Option<f64>,
+    pub(crate) lt: ::std::option::Option<f64>,
     pub(crate) eq: ::std::option::Option<f64>,
 }
 impl NumberFilterBuilder {
@@ -69,6 +83,34 @@ impl NumberFilterBuilder {
     pub fn get_lte(&self) -> &::std::option::Option<f64> {
         &self.lte
     }
+    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    pub fn gt(mut self, input: f64) -> Self {
+        self.gt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    pub fn set_gt(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.gt = input;
+        self
+    }
+    /// <p> The greater-than condition to be applied to a single field when querying for findings. </p>
+    pub fn get_gt(&self) -> &::std::option::Option<f64> {
+        &self.gt
+    }
+    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    pub fn lt(mut self, input: f64) -> Self {
+        self.lt = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    pub fn set_lt(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.lt = input;
+        self
+    }
+    /// <p> The less-than condition to be applied to a single field when querying for findings. </p>
+    pub fn get_lt(&self) -> &::std::option::Option<f64> {
+        &self.lt
+    }
     /// <p>The equal-to condition to be applied to a single field when querying for findings.</p>
     pub fn eq(mut self, input: f64) -> Self {
         self.eq = ::std::option::Option::Some(input);
@@ -88,6 +130,8 @@ impl NumberFilterBuilder {
         crate::types::NumberFilter {
             gte: self.gte,
             lte: self.lte,
+            gt: self.gt,
+            lt: self.lt,
             eq: self.eq,
         }
     }

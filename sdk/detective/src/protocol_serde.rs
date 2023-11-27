@@ -45,11 +45,17 @@ pub(crate) mod shape_disassociate_membership;
 
 pub(crate) mod shape_enable_organization_admin_account;
 
+pub(crate) mod shape_get_investigation;
+
 pub(crate) mod shape_get_members;
 
 pub(crate) mod shape_list_datasource_packages;
 
 pub(crate) mod shape_list_graphs;
+
+pub(crate) mod shape_list_indicators;
+
+pub(crate) mod shape_list_investigations;
 
 pub(crate) mod shape_list_invitations;
 
@@ -61,6 +67,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_reject_invitation;
 
+pub(crate) mod shape_start_investigation;
+
 pub(crate) mod shape_start_monitoring_member;
 
 pub(crate) mod shape_tag_resource;
@@ -68,6 +76,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_datasource_packages;
+
+pub(crate) mod shape_update_investigation_state;
 
 pub(crate) mod shape_update_organization_configuration;
 
@@ -103,6 +113,8 @@ pub(crate) mod shape_disassociate_membership_input;
 
 pub(crate) mod shape_enable_organization_admin_account_input;
 
+pub(crate) mod shape_get_investigation_input;
+
 pub(crate) mod shape_get_members_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -110,6 +122,10 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_datasource_packages_input;
 
 pub(crate) mod shape_list_graphs_input;
+
+pub(crate) mod shape_list_indicators_input;
+
+pub(crate) mod shape_list_investigations_input;
 
 pub(crate) mod shape_list_invitations_input;
 
@@ -123,6 +139,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_investigation_input;
+
 pub(crate) mod shape_start_monitoring_member_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -130,6 +148,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_datasource_packages_input;
+
+pub(crate) mod shape_update_investigation_state_input;
 
 pub(crate) mod shape_update_organization_configuration_input;
 
@@ -143,13 +163,21 @@ pub(crate) mod shape_administrator_list;
 
 pub(crate) mod shape_datasource_package_ingest_details;
 
+pub(crate) mod shape_filter_criteria;
+
 pub(crate) mod shape_graph_list;
+
+pub(crate) mod shape_indicators;
+
+pub(crate) mod shape_investigation_details;
 
 pub(crate) mod shape_member_detail_list;
 
 pub(crate) mod shape_membership_datasources_list;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_sort_criteria;
 
 pub(crate) mod shape_tag_map;
 
@@ -161,11 +189,19 @@ pub(crate) mod shape_administrator;
 
 pub(crate) mod shape_datasource_package_ingest_detail;
 
+pub(crate) mod shape_date_filter;
+
 pub(crate) mod shape_graph;
+
+pub(crate) mod shape_indicator;
+
+pub(crate) mod shape_investigation_detail;
 
 pub(crate) mod shape_member_detail;
 
 pub(crate) mod shape_membership_datasources;
+
+pub(crate) mod shape_string_filter;
 
 pub(crate) mod shape_unprocessed_account;
 
@@ -175,10 +211,28 @@ pub(crate) mod shape_datasource_package_ingest_history;
 
 pub(crate) mod shape_datasource_package_ingest_states;
 
+pub(crate) mod shape_indicator_detail;
+
 pub(crate) mod shape_last_ingest_state_change_dates;
 
 pub(crate) mod shape_volume_usage_by_datasource_package;
 
 pub(crate) mod shape_datasource_package_usage_info;
 
+pub(crate) mod shape_flagged_ip_address_detail;
+
+pub(crate) mod shape_impossible_travel_detail;
+
+pub(crate) mod shape_new_aso_detail;
+
+pub(crate) mod shape_new_geolocation_detail;
+
+pub(crate) mod shape_new_user_agent_detail;
+
+pub(crate) mod shape_related_finding_detail;
+
+pub(crate) mod shape_related_finding_group_detail;
+
 pub(crate) mod shape_timestamp_for_collection;
+
+pub(crate) mod shape_ttps_observed_detail;

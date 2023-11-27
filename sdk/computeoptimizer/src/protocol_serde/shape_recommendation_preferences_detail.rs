@@ -43,6 +43,30 @@ where
                                 crate::protocol_serde::shape_external_metrics_preference::de_external_metrics_preference(tokens)?,
                             );
                         }
+                        "lookBackPeriod" => {
+                            builder = builder.set_look_back_period(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LookBackPeriodPreference::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "utilizationPreferences" => {
+                            builder = builder.set_utilization_preferences(
+                                crate::protocol_serde::shape_utilization_preferences::de_utilization_preferences(tokens)?,
+                            );
+                        }
+                        "preferredResources" => {
+                            builder = builder.set_preferred_resources(
+                                crate::protocol_serde::shape_effective_preferred_resources::de_effective_preferred_resources(tokens)?,
+                            );
+                        }
+                        "savingsEstimationMode" => {
+                            builder = builder.set_savings_estimation_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SavingsEstimationMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

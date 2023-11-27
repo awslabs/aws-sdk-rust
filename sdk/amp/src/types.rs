@@ -31,11 +31,35 @@ pub use crate::types::_alert_manager_definition_status_code::AlertManagerDefinit
 
 pub use crate::types::_alert_manager_definition_description::AlertManagerDefinitionDescription;
 
+pub use crate::types::_scraper_summary::ScraperSummary;
+
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_amp_configuration::AmpConfiguration;
+
+pub use crate::types::_source::Source;
+
+pub use crate::types::_eks_configuration::EksConfiguration;
+
+pub use crate::types::_scraper_status::ScraperStatus;
+
+pub use crate::types::_scraper_status_code::ScraperStatusCode;
+
+pub use crate::types::_scrape_configuration::ScrapeConfiguration;
+
+pub use crate::types::_scraper_description::ScraperDescription;
+
 mod _alert_manager_definition_description;
 
 mod _alert_manager_definition_status;
 
 mod _alert_manager_definition_status_code;
+
+mod _amp_configuration;
+
+mod _destination;
+
+mod _eks_configuration;
 
 mod _logging_configuration_metadata;
 
@@ -50,6 +74,18 @@ mod _rule_groups_namespace_status;
 mod _rule_groups_namespace_status_code;
 
 mod _rule_groups_namespace_summary;
+
+mod _scrape_configuration;
+
+mod _scraper_description;
+
+mod _scraper_status;
+
+mod _scraper_status_code;
+
+mod _scraper_summary;
+
+mod _source;
 
 mod _validation_exception_field;
 

@@ -56,6 +56,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CustomizableProperties" => {
+                            builder = builder.set_customizable_properties(
+                                crate::protocol_serde::shape_customizable_properties::de_customizable_properties(tokens)?,
+                            );
+                        }
+                        "ParameterDefinitions" => {
+                            builder = builder
+                                .set_parameter_definitions(crate::protocol_serde::shape_parameter_definitions::de_parameter_definitions(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -58,6 +58,13 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_output_tag_map::de_output_tag_map(tokens)?);
                         }
+                        "NetworkType" => {
+                            builder = builder.set_network_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccessorNetworkType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

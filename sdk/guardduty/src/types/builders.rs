@@ -65,6 +65,16 @@ pub use crate::types::_coverage_resource::CoverageResourceBuilder;
 
 pub use crate::types::_coverage_resource_details::CoverageResourceDetailsBuilder;
 
+pub use crate::types::_coverage_ec2_instance_details::CoverageEc2InstanceDetailsBuilder;
+
+pub use crate::types::_agent_details::AgentDetailsBuilder;
+
+pub use crate::types::_coverage_ecs_cluster_details::CoverageEcsClusterDetailsBuilder;
+
+pub use crate::types::_container_instance_details::ContainerInstanceDetailsBuilder;
+
+pub use crate::types::_fargate_details::FargateDetailsBuilder;
+
 pub use crate::types::_coverage_eks_cluster_details::CoverageEksClusterDetailsBuilder;
 
 pub use crate::types::_addon_details::AddonDetailsBuilder;

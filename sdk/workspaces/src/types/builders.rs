@@ -49,6 +49,10 @@ pub use crate::types::_workspace_connection_status::WorkspaceConnectionStatusBui
 
 pub use crate::types::_workspace::WorkspaceBuilder;
 
+pub use crate::types::_standby_workspaces_properties::StandbyWorkspacesPropertiesBuilder;
+
+pub use crate::types::_data_replication_settings::DataReplicationSettingsBuilder;
+
 pub use crate::types::_related_workspace_properties::RelatedWorkspacePropertiesBuilder;
 
 pub use crate::types::_modification_state::ModificationStateBuilder;

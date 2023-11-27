@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p> You do not have sufficient access to perform this action. </p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p> This exception is thrown when you start a new import and a previous import is still in progress. </p>
     AccountHasOngoingImportException(crate::types::error::AccountHasOngoingImportException),
     /// <p>This exception is thrown when the specified account is not found or not part of an organization.</p>
@@ -34,6 +36,8 @@ pub enum Error {
     CloudTrailInvalidClientTokenIdException(crate::types::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this Region.</p>
     CloudWatchLogsDeliveryUnavailableException(crate::types::error::CloudWatchLogsDeliveryUnavailableException),
+    /// <p> You are trying to update a resource when another request is in progress. Allow sufficient wait time for the previous request to complete, then retry your request. </p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.</p>
@@ -42,6 +46,8 @@ pub enum Error {
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>An event data store with that name already exists.</p>
     EventDataStoreAlreadyExistsException(crate::types::error::EventDataStoreAlreadyExistsException),
+    /// <p> You cannot delete the event data store because Lake query federation is enabled. To delete the event data store, run the <code>DisableFederation</code> operation to disable Lake query federation on the event data store. </p>
+    EventDataStoreFederationEnabledException(crate::types::error::EventDataStoreFederationEnabledException),
     /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
     EventDataStoreHasOngoingImportException(crate::types::error::EventDataStoreHasOngoingImportException),
     /// <p>Your account has used the maximum number of event data stores.</p>
@@ -200,6 +206,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AccountHasOngoingImportException(inner) => inner.fmt(f),
             Error::AccountNotFoundException(inner) => inner.fmt(f),
             Error::AccountNotRegisteredException(inner) => inner.fmt(f),
@@ -214,10 +221,12 @@ impl ::std::fmt::Display for Error {
             Error::CloudTrailAccessNotEnabledException(inner) => inner.fmt(f),
             Error::CloudTrailInvalidClientTokenIdException(inner) => inner.fmt(f),
             Error::CloudWatchLogsDeliveryUnavailableException(inner) => inner.fmt(f),
+            Error::ConcurrentModificationException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DelegatedAdminAccountLimitExceededException(inner) => inner.fmt(f),
             Error::EventDataStoreArnInvalidException(inner) => inner.fmt(f),
             Error::EventDataStoreAlreadyExistsException(inner) => inner.fmt(f),
+            Error::EventDataStoreFederationEnabledException(inner) => inner.fmt(f),
             Error::EventDataStoreHasOngoingImportException(inner) => inner.fmt(f),
             Error::EventDataStoreMaxLimitExceededException(inner) => inner.fmt(f),
             Error::EventDataStoreNotFoundException(inner) => inner.fmt(f),
@@ -301,6 +310,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::AccountHasOngoingImportException(inner) => inner.meta(),
             Self::AccountNotFoundException(inner) => inner.meta(),
             Self::AccountNotRegisteredException(inner) => inner.meta(),
@@ -315,10 +325,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CloudTrailAccessNotEnabledException(inner) => inner.meta(),
             Self::CloudTrailInvalidClientTokenIdException(inner) => inner.meta(),
             Self::CloudWatchLogsDeliveryUnavailableException(inner) => inner.meta(),
+            Self::ConcurrentModificationException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::DelegatedAdminAccountLimitExceededException(inner) => inner.meta(),
             Self::EventDataStoreArnInvalidException(inner) => inner.meta(),
             Self::EventDataStoreAlreadyExistsException(inner) => inner.meta(),
+            Self::EventDataStoreFederationEnabledException(inner) => inner.meta(),
             Self::EventDataStoreHasOngoingImportException(inner) => inner.meta(),
             Self::EventDataStoreMaxLimitExceededException(inner) => inner.meta(),
             Self::EventDataStoreNotFoundException(inner) => inner.meta(),
@@ -709,8 +721,12 @@ impl From<crate::operation::delete_event_data_store::DeleteEventDataStoreError> 
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::ChannelExistsForEdsException(inner) => {
                 Error::ChannelExistsForEdsException(inner)
             }
+            crate::operation::delete_event_data_store::DeleteEventDataStoreError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreArnInvalidException(inner) => {
                 Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreFederationEnabledException(inner) => {
+                Error::EventDataStoreFederationEnabledException(inner)
             }
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreHasOngoingImportException(inner) => {
                 Error::EventDataStoreHasOngoingImportException(inner)
@@ -933,6 +949,127 @@ impl From<crate::operation::describe_trails::DescribeTrailsError> for Error {
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::describe_trails::DescribeTrailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_federation::DisableFederationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_federation::DisableFederationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_federation::DisableFederationError> for Error {
+    fn from(err: crate::operation::disable_federation::DisableFederationError) -> Self {
+        match err {
+            crate::operation::disable_federation::DisableFederationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disable_federation::DisableFederationError::CloudTrailAccessNotEnabledException(inner) => {
+                Error::CloudTrailAccessNotEnabledException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::InsufficientDependencyServiceAccessPermissionException(inner) => {
+                Error::InsufficientDependencyServiceAccessPermissionException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::disable_federation::DisableFederationError::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::NotOrganizationMasterAccountException(inner) => {
+                Error::NotOrganizationMasterAccountException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::OrganizationNotInAllFeaturesModeException(inner) => {
+                Error::OrganizationNotInAllFeaturesModeException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::OrganizationsNotInUseException(inner) => {
+                Error::OrganizationsNotInUseException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::disable_federation::DisableFederationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_federation::EnableFederationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_federation::EnableFederationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_federation::EnableFederationError> for Error {
+    fn from(err: crate::operation::enable_federation::EnableFederationError) -> Self {
+        match err {
+            crate::operation::enable_federation::EnableFederationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::enable_federation::EnableFederationError::CloudTrailAccessNotEnabledException(inner) => {
+                Error::CloudTrailAccessNotEnabledException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::EventDataStoreFederationEnabledException(inner) => {
+                Error::EventDataStoreFederationEnabledException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::EventDataStoreNotFoundException(inner) => {
+                Error::EventDataStoreNotFoundException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::InactiveEventDataStoreException(inner) => {
+                Error::InactiveEventDataStoreException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::InsufficientDependencyServiceAccessPermissionException(inner) => {
+                Error::InsufficientDependencyServiceAccessPermissionException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::enable_federation::EnableFederationError::NoManagementAccountSlrExistsException(inner) => {
+                Error::NoManagementAccountSlrExistsException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::NotOrganizationMasterAccountException(inner) => {
+                Error::NotOrganizationMasterAccountException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::OrganizationNotInAllFeaturesModeException(inner) => {
+                Error::OrganizationNotInAllFeaturesModeException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::OrganizationsNotInUseException(inner) => {
+                Error::OrganizationsNotInUseException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::enable_federation::EnableFederationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2294,6 +2431,7 @@ impl From<crate::operation::update_trail::UpdateTrailError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::AccountHasOngoingImportException(inner) => inner.source(),
             Error::AccountNotFoundException(inner) => inner.source(),
             Error::AccountNotRegisteredException(inner) => inner.source(),
@@ -2308,10 +2446,12 @@ impl ::std::error::Error for Error {
             Error::CloudTrailAccessNotEnabledException(inner) => inner.source(),
             Error::CloudTrailInvalidClientTokenIdException(inner) => inner.source(),
             Error::CloudWatchLogsDeliveryUnavailableException(inner) => inner.source(),
+            Error::ConcurrentModificationException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::DelegatedAdminAccountLimitExceededException(inner) => inner.source(),
             Error::EventDataStoreArnInvalidException(inner) => inner.source(),
             Error::EventDataStoreAlreadyExistsException(inner) => inner.source(),
+            Error::EventDataStoreFederationEnabledException(inner) => inner.source(),
             Error::EventDataStoreHasOngoingImportException(inner) => inner.source(),
             Error::EventDataStoreMaxLimitExceededException(inner) => inner.source(),
             Error::EventDataStoreNotFoundException(inner) => inner.source(),
@@ -2381,6 +2521,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::AccountHasOngoingImportException(e) => e.request_id(),
             Self::AccountNotFoundException(e) => e.request_id(),
             Self::AccountNotRegisteredException(e) => e.request_id(),
@@ -2395,10 +2536,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CloudTrailAccessNotEnabledException(e) => e.request_id(),
             Self::CloudTrailInvalidClientTokenIdException(e) => e.request_id(),
             Self::CloudWatchLogsDeliveryUnavailableException(e) => e.request_id(),
+            Self::ConcurrentModificationException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::DelegatedAdminAccountLimitExceededException(e) => e.request_id(),
             Self::EventDataStoreArnInvalidException(e) => e.request_id(),
             Self::EventDataStoreAlreadyExistsException(e) => e.request_id(),
+            Self::EventDataStoreFederationEnabledException(e) => e.request_id(),
             Self::EventDataStoreHasOngoingImportException(e) => e.request_id(),
             Self::EventDataStoreMaxLimitExceededException(e) => e.request_id(),
             Self::EventDataStoreNotFoundException(e) => e.request_id(),

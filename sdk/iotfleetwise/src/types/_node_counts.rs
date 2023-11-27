@@ -14,6 +14,10 @@ pub struct NodeCounts {
     pub total_attributes: i32,
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub total_actuators: i32,
+    /// <p>The total structure for the node.</p>
+    pub total_structs: i32,
+    /// <p>The total properties for the node.</p>
+    pub total_properties: i32,
 }
 impl NodeCounts {
     /// <p>The total number of nodes in a vehicle network.</p>
@@ -36,6 +40,14 @@ impl NodeCounts {
     pub fn total_actuators(&self) -> i32 {
         self.total_actuators
     }
+    /// <p>The total structure for the node.</p>
+    pub fn total_structs(&self) -> i32 {
+        self.total_structs
+    }
+    /// <p>The total properties for the node.</p>
+    pub fn total_properties(&self) -> i32 {
+        self.total_properties
+    }
 }
 impl NodeCounts {
     /// Creates a new builder-style object to manufacture [`NodeCounts`](crate::types::NodeCounts).
@@ -53,6 +65,8 @@ pub struct NodeCountsBuilder {
     pub(crate) total_sensors: ::std::option::Option<i32>,
     pub(crate) total_attributes: ::std::option::Option<i32>,
     pub(crate) total_actuators: ::std::option::Option<i32>,
+    pub(crate) total_structs: ::std::option::Option<i32>,
+    pub(crate) total_properties: ::std::option::Option<i32>,
 }
 impl NodeCountsBuilder {
     /// <p>The total number of nodes in a vehicle network.</p>
@@ -125,6 +139,34 @@ impl NodeCountsBuilder {
     pub fn get_total_actuators(&self) -> &::std::option::Option<i32> {
         &self.total_actuators
     }
+    /// <p>The total structure for the node.</p>
+    pub fn total_structs(mut self, input: i32) -> Self {
+        self.total_structs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total structure for the node.</p>
+    pub fn set_total_structs(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_structs = input;
+        self
+    }
+    /// <p>The total structure for the node.</p>
+    pub fn get_total_structs(&self) -> &::std::option::Option<i32> {
+        &self.total_structs
+    }
+    /// <p>The total properties for the node.</p>
+    pub fn total_properties(mut self, input: i32) -> Self {
+        self.total_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total properties for the node.</p>
+    pub fn set_total_properties(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_properties = input;
+        self
+    }
+    /// <p>The total properties for the node.</p>
+    pub fn get_total_properties(&self) -> &::std::option::Option<i32> {
+        &self.total_properties
+    }
     /// Consumes the builder and constructs a [`NodeCounts`](crate::types::NodeCounts).
     pub fn build(self) -> crate::types::NodeCounts {
         crate::types::NodeCounts {
@@ -133,6 +175,8 @@ impl NodeCountsBuilder {
             total_sensors: self.total_sensors.unwrap_or_default(),
             total_attributes: self.total_attributes.unwrap_or_default(),
             total_actuators: self.total_actuators.unwrap_or_default(),
+            total_structs: self.total_structs.unwrap_or_default(),
+            total_properties: self.total_properties.unwrap_or_default(),
         }
     }
 }

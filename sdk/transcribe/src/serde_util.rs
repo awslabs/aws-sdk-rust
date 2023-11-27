@@ -33,6 +33,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn summarization_correct_errors(
+    mut builder: crate::types::builders::SummarizationBuilder,
+) -> crate::types::builders::SummarizationBuilder {
+    if builder.generate_abstractive_summary.is_none() {
+        builder.generate_abstractive_summary = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn toxicity_detection_settings_correct_errors(
     mut builder: crate::types::builders::ToxicityDetectionSettingsBuilder,
 ) -> crate::types::builders::ToxicityDetectionSettingsBuilder {

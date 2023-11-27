@@ -14,6 +14,10 @@ pub struct DataShareAssociation {
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status change data of the datashare that is associated.</p>
     pub status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether write operations were allowed during data share authorization.</p>
+    pub producer_allowed_writes: ::std::option::Option<bool>,
+    /// <p>Specifies whether write operations were allowed during data share association.</p>
+    pub consumer_accepted_writes: ::std::option::Option<bool>,
 }
 impl DataShareAssociation {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
@@ -36,6 +40,14 @@ impl DataShareAssociation {
     pub fn status_change_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_change_date.as_ref()
     }
+    /// <p>Specifies whether write operations were allowed during data share authorization.</p>
+    pub fn producer_allowed_writes(&self) -> ::std::option::Option<bool> {
+        self.producer_allowed_writes
+    }
+    /// <p>Specifies whether write operations were allowed during data share association.</p>
+    pub fn consumer_accepted_writes(&self) -> ::std::option::Option<bool> {
+        self.consumer_accepted_writes
+    }
 }
 impl DataShareAssociation {
     /// Creates a new builder-style object to manufacture [`DataShareAssociation`](crate::types::DataShareAssociation).
@@ -53,6 +65,8 @@ pub struct DataShareAssociationBuilder {
     pub(crate) consumer_region: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) producer_allowed_writes: ::std::option::Option<bool>,
+    pub(crate) consumer_accepted_writes: ::std::option::Option<bool>,
 }
 impl DataShareAssociationBuilder {
     /// <p>The name of the consumer accounts that have an association with a producer datashare.</p>
@@ -125,6 +139,34 @@ impl DataShareAssociationBuilder {
     pub fn get_status_change_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_change_date
     }
+    /// <p>Specifies whether write operations were allowed during data share authorization.</p>
+    pub fn producer_allowed_writes(mut self, input: bool) -> Self {
+        self.producer_allowed_writes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether write operations were allowed during data share authorization.</p>
+    pub fn set_producer_allowed_writes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.producer_allowed_writes = input;
+        self
+    }
+    /// <p>Specifies whether write operations were allowed during data share authorization.</p>
+    pub fn get_producer_allowed_writes(&self) -> &::std::option::Option<bool> {
+        &self.producer_allowed_writes
+    }
+    /// <p>Specifies whether write operations were allowed during data share association.</p>
+    pub fn consumer_accepted_writes(mut self, input: bool) -> Self {
+        self.consumer_accepted_writes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether write operations were allowed during data share association.</p>
+    pub fn set_consumer_accepted_writes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.consumer_accepted_writes = input;
+        self
+    }
+    /// <p>Specifies whether write operations were allowed during data share association.</p>
+    pub fn get_consumer_accepted_writes(&self) -> &::std::option::Option<bool> {
+        &self.consumer_accepted_writes
+    }
     /// Consumes the builder and constructs a [`DataShareAssociation`](crate::types::DataShareAssociation).
     pub fn build(self) -> crate::types::DataShareAssociation {
         crate::types::DataShareAssociation {
@@ -133,6 +175,8 @@ impl DataShareAssociationBuilder {
             consumer_region: self.consumer_region,
             created_date: self.created_date,
             status_change_date: self.status_change_date,
+            producer_allowed_writes: self.producer_allowed_writes,
+            consumer_accepted_writes: self.consumer_accepted_writes,
         }
     }
 }

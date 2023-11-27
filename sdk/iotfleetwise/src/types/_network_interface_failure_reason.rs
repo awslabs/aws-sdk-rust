@@ -14,10 +14,12 @@
 /// match networkinterfacefailurereason {
 ///     NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::ConflictingNetworkInterface => { /* ... */ },
+///     NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::DuplicateInterface => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => { /* ... */ },
 ///     NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => { /* ... */ },
+///     NetworkInterfaceFailureReason::VehicleMiddlewareNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,6 +52,8 @@ pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingNetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
+    CustomerDecodedSignalNetworkInterfaceInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateInterface,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceToAddAlreadyExists,
@@ -57,6 +61,8 @@ pub enum NetworkInterfaceFailureReason {
     NetworkInterfaceToRemoveAssociatedWithSignals,
     #[allow(missing_docs)] // documentation missing in model
     ObdNetworkInterfaceInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
+    VehicleMiddlewareNetworkInterfaceInfoIsNull,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,10 +72,14 @@ impl ::std::convert::From<&str> for NetworkInterfaceFailureReason {
         match s {
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull,
             "CONFLICTING_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::ConflictingNetworkInterface,
+            "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL" => {
+                NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull
+            }
             "DUPLICATE_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::DuplicateInterface,
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists,
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals,
             "OBD_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull,
+            "VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::VehicleMiddlewareNetworkInterfaceInfoIsNull,
             other => NetworkInterfaceFailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,10 +97,14 @@ impl NetworkInterfaceFailureReason {
         match self {
             NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::ConflictingNetworkInterface => "CONFLICTING_NETWORK_INTERFACE",
+            NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull => {
+                "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL"
+            }
             NetworkInterfaceFailureReason::DuplicateInterface => "DUPLICATE_NETWORK_INTERFACE",
             NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
             NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => "OBD_NETWORK_INTERFACE_INFO_IS_NULL",
+            NetworkInterfaceFailureReason::VehicleMiddlewareNetworkInterfaceInfoIsNull => "VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::Unknown(value) => value.as_str(),
         }
     }
@@ -99,10 +113,12 @@ impl NetworkInterfaceFailureReason {
         &[
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             "CONFLICTING_NETWORK_INTERFACE",
+            "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL",
             "DUPLICATE_NETWORK_INTERFACE",
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
             "OBD_NETWORK_INTERFACE_INFO_IS_NULL",
+            "VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL",
         ]
     }
 }

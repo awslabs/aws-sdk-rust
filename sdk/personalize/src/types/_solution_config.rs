@@ -8,7 +8,7 @@ pub struct SolutionConfig {
     pub event_value_threshold: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
     pub hpo_config: ::std::option::Option<crate::types::HpoConfig>,
-    /// <p>Lists the hyperparameter names and ranges.</p>
+    /// <p>Lists the algorithm hyperparameters and their values.</p>
     pub algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Lists the feature transformation parameters.</p>
     pub feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -28,7 +28,7 @@ impl SolutionConfig {
     pub fn hpo_config(&self) -> ::std::option::Option<&crate::types::HpoConfig> {
         self.hpo_config.as_ref()
     }
-    /// <p>Lists the hyperparameter names and ranges.</p>
+    /// <p>Lists the algorithm hyperparameters and their values.</p>
     pub fn algorithm_hyper_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.algorithm_hyper_parameters.as_ref()
     }
@@ -103,7 +103,7 @@ impl SolutionConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_algorithm_hyper_parameters`](Self::set_algorithm_hyper_parameters).
     ///
-    /// <p>Lists the hyperparameter names and ranges.</p>
+    /// <p>Lists the algorithm hyperparameters and their values.</p>
     pub fn algorithm_hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -114,7 +114,7 @@ impl SolutionConfigBuilder {
         self.algorithm_hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Lists the hyperparameter names and ranges.</p>
+    /// <p>Lists the algorithm hyperparameters and their values.</p>
     pub fn set_algorithm_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -122,7 +122,7 @@ impl SolutionConfigBuilder {
         self.algorithm_hyper_parameters = input;
         self
     }
-    /// <p>Lists the hyperparameter names and ranges.</p>
+    /// <p>Lists the algorithm hyperparameters and their values.</p>
     pub fn get_algorithm_hyper_parameters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

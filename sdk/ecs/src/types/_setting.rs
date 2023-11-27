@@ -10,6 +10,9 @@ pub struct Setting {
     pub value: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub principal_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    pub r#type: ::std::option::Option<crate::types::SettingType>,
 }
 impl Setting {
     /// <p>The Amazon ECS resource name.</p>
@@ -23,6 +26,11 @@ impl Setting {
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     pub fn principal_arn(&self) -> ::std::option::Option<&str> {
         self.principal_arn.as_deref()
+    }
+    /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SettingType> {
+        self.r#type.as_ref()
     }
 }
 impl Setting {
@@ -39,6 +47,7 @@ pub struct SettingBuilder {
     pub(crate) name: ::std::option::Option<crate::types::SettingName>,
     pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SettingType>,
 }
 impl SettingBuilder {
     /// <p>The Amazon ECS resource name.</p>
@@ -83,12 +92,30 @@ impl SettingBuilder {
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_arn
     }
+    /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    pub fn r#type(mut self, input: crate::types::SettingType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SettingType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+    /// <p> <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services manages.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SettingType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`Setting`](crate::types::Setting).
     pub fn build(self) -> crate::types::Setting {
         crate::types::Setting {
             name: self.name,
             value: self.value,
             principal_arn: self.principal_arn,
+            r#type: self.r#type,
         }
     }
 }

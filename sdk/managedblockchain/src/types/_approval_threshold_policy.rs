@@ -9,7 +9,7 @@ pub struct ApprovalThresholdPolicy {
     pub threshold_percentage: ::std::option::Option<i32>,
     /// <p>The duration from the time that a proposal is created until it expires. If members cast neither the required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> aren't carried out.</p>
     pub proposal_duration_in_hours: ::std::option::Option<i32>,
-    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.</p>
     pub threshold_comparator: ::std::option::Option<crate::types::ThresholdComparator>,
 }
 impl ApprovalThresholdPolicy {
@@ -21,7 +21,7 @@ impl ApprovalThresholdPolicy {
     pub fn proposal_duration_in_hours(&self) -> ::std::option::Option<i32> {
         self.proposal_duration_in_hours
     }
-    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.</p>
     pub fn threshold_comparator(&self) -> ::std::option::Option<&crate::types::ThresholdComparator> {
         self.threshold_comparator.as_ref()
     }
@@ -70,17 +70,17 @@ impl ApprovalThresholdPolicyBuilder {
     pub fn get_proposal_duration_in_hours(&self) -> &::std::option::Option<i32> {
         &self.proposal_duration_in_hours
     }
-    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.</p>
     pub fn threshold_comparator(mut self, input: crate::types::ThresholdComparator) -> Self {
         self.threshold_comparator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.</p>
     pub fn set_threshold_comparator(mut self, input: ::std::option::Option<crate::types::ThresholdComparator>) -> Self {
         self.threshold_comparator = input;
         self
     }
-    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThreholdPercentage</code> to be approved.</p>
+    /// <p>Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code> or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.</p>
     pub fn get_threshold_comparator(&self) -> &::std::option::Option<crate::types::ThresholdComparator> {
         &self.threshold_comparator
     }

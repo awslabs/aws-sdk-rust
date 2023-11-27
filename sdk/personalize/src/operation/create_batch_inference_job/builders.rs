@@ -22,7 +22,12 @@ impl CreateBatchInferenceJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBatchInferenceJob`.
 ///
-/// <p>Creates a batch inference job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating a batch inference job</a>. </p>
+/// <p>Generates batch recommendations based on a list of items or users stored in Amazon S3 and exports the recommendations to an Amazon S3 bucket.</p>
+/// <p>To generate batch recommendations, specify the ARN of a solution version and an Amazon S3 URI for the input and output data. For user personalization, popular items, and personalized ranking solutions, the batch inference job generates a list of recommended items for each user ID in the input file. For related items solutions, the job generates a list of recommended items for each item ID in the input file.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/getting-batch-recommendations.html">Creating a batch inference job </a>.</p>
+/// <p> If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes to batch recommendations. To generate themes, set the job's mode to <code>THEME_GENERATION</code> and specify the name of the field that contains item names in the input data.</p>
+/// <p> For more information about generating themes, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/themed-batch-recommendations.html">Batch recommendations with themes from Content Generator </a>. </p>
+/// <p>You can't get batch recommendations with the Trending-Now or Next-Best-Action recipes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBatchInferenceJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -237,5 +242,36 @@ impl CreateBatchInferenceJobFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to the batch inference job.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
+    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    pub fn batch_inference_job_mode(mut self, input: crate::types::BatchInferenceJobMode) -> Self {
+        self.inner = self.inner.batch_inference_job_mode(input);
+        self
+    }
+    /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
+    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    pub fn set_batch_inference_job_mode(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobMode>) -> Self {
+        self.inner = self.inner.set_batch_inference_job_mode(input);
+        self
+    }
+    /// <p>The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default <code>BATCH_INFERENCE</code>.</p>
+    /// <p> When you get batch recommendations with themes, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>. </p>
+    pub fn get_batch_inference_job_mode(&self) -> &::std::option::Option<crate::types::BatchInferenceJobMode> {
+        self.inner.get_batch_inference_job_mode()
+    }
+    /// <p>For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.</p>
+    pub fn theme_generation_config(mut self, input: crate::types::ThemeGenerationConfig) -> Self {
+        self.inner = self.inner.theme_generation_config(input);
+        self
+    }
+    /// <p>For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.</p>
+    pub fn set_theme_generation_config(mut self, input: ::std::option::Option<crate::types::ThemeGenerationConfig>) -> Self {
+        self.inner = self.inner.set_theme_generation_config(input);
+        self
+    }
+    /// <p>For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.</p>
+    pub fn get_theme_generation_config(&self) -> &::std::option::Option<crate::types::ThemeGenerationConfig> {
+        self.inner.get_theme_generation_config()
     }
 }

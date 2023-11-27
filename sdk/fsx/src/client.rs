@@ -142,6 +142,8 @@ mod cancel_data_repository_task;
 
 mod copy_backup;
 
+mod copy_snapshot_and_update_volume;
+
 mod create_backup;
 
 mod create_data_repository_association;
@@ -215,6 +217,8 @@ mod describe_file_system_aliases;
 
 mod describe_file_systems;
 
+mod describe_shared_vpc_configuration;
+
 mod describe_snapshots;
 
 mod describe_storage_virtual_machines;
@@ -240,6 +244,8 @@ mod update_data_repository_association;
 mod update_file_cache;
 
 mod update_file_system;
+
+mod update_shared_vpc_configuration;
 
 mod update_snapshot;
 

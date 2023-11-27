@@ -1557,9 +1557,44 @@ mod test {
         );
     }
 
-    /// virtual addressing, aws-global region with fips uses the regional fips endpoint
+    /// virtual addressing, aws-global region with Prefix, and Key uses the global endpoint. Prefix and Key parameters should not be used in endpoint evaluation.
     #[test]
     fn test_57() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("aws-global".to_string())
+            .bucket("bucket-name".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .prefix("prefix".to_string())
+            .key("key".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://bucket-name.s3.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://bucket-name.s3.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// virtual addressing, aws-global region with fips uses the regional fips endpoint
+    #[test]
+    fn test_58() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1592,7 +1627,7 @@ mod test {
 
     /// virtual addressing, aws-global region with dualstack uses the regional dualstack endpoint
     #[test]
-    fn test_58() {
+    fn test_59() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1625,7 +1660,7 @@ mod test {
 
     /// virtual addressing, aws-global region with fips/dualstack uses the regional fips/dualstack endpoint
     #[test]
-    fn test_59() {
+    fn test_60() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1658,7 +1693,7 @@ mod test {
 
     /// virtual addressing, aws-global region with accelerate uses the global accelerate endpoint
     #[test]
-    fn test_60() {
+    fn test_61() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1691,7 +1726,7 @@ mod test {
 
     /// virtual addressing, aws-global region with custom endpoint
     #[test]
-    fn test_61() {
+    fn test_62() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .endpoint("https://example.com".to_string())
@@ -1725,7 +1760,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-east-1 region uses the global endpoint
     #[test]
-    fn test_62() {
+    fn test_63() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_global_endpoint(true)
@@ -1759,7 +1794,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-west-2 region uses the regional endpoint
     #[test]
-    fn test_63() {
+    fn test_64() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_global_endpoint(true)
@@ -1793,7 +1828,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-east-1 region and fips uses the regional fips endpoint
     #[test]
-    fn test_64() {
+    fn test_65() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_global_endpoint(true)
@@ -1827,7 +1862,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-east-1 region and dualstack uses the regional dualstack endpoint
     #[test]
-    fn test_65() {
+    fn test_66() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_global_endpoint(true)
@@ -1861,7 +1896,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-east-1 region and accelerate uses the global accelerate endpoint
     #[test]
-    fn test_66() {
+    fn test_67() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_global_endpoint(true)
@@ -1895,7 +1930,7 @@ mod test {
 
     /// virtual addressing, UseGlobalEndpoint and us-east-1 region with custom endpoint
     #[test]
-    fn test_67() {
+    fn test_68() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
@@ -1930,7 +1965,7 @@ mod test {
 
     /// ForcePathStyle, aws-global region uses the global endpoint
     #[test]
-    fn test_68() {
+    fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1964,7 +1999,7 @@ mod test {
 
     /// ForcePathStyle, aws-global region with fips is invalid
     #[test]
-    fn test_69() {
+    fn test_70() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -1998,7 +2033,7 @@ mod test {
 
     /// ForcePathStyle, aws-global region with dualstack uses regional dualstack endpoint
     #[test]
-    fn test_70() {
+    fn test_71() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket-name".to_string())
@@ -2032,7 +2067,7 @@ mod test {
 
     /// ForcePathStyle, aws-global region custom endpoint uses the custom endpoint
     #[test]
-    fn test_71() {
+    fn test_72() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .endpoint("https://example.com".to_string())
@@ -2067,7 +2102,7 @@ mod test {
 
     /// ForcePathStyle, UseGlobalEndpoint us-east-1 region uses the global endpoint
     #[test]
-    fn test_72() {
+    fn test_73() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket-name".to_string())
@@ -2102,7 +2137,7 @@ mod test {
 
     /// ForcePathStyle, UseGlobalEndpoint us-west-2 region uses the regional endpoint
     #[test]
-    fn test_73() {
+    fn test_74() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("bucket-name".to_string())
@@ -2137,7 +2172,7 @@ mod test {
 
     /// ForcePathStyle, UseGlobalEndpoint us-east-1 region, dualstack uses the regional dualstack endpoint
     #[test]
-    fn test_74() {
+    fn test_75() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket-name".to_string())
@@ -2172,7 +2207,7 @@ mod test {
 
     /// ForcePathStyle, UseGlobalEndpoint us-east-1 region custom endpoint uses the custom endpoint
     #[test]
-    fn test_75() {
+    fn test_76() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket-name".to_string())
@@ -2208,7 +2243,7 @@ mod test {
 
     /// ARN with aws-global region and  UseArnRegion uses the regional endpoint
     #[test]
-    fn test_76() {
+    fn test_77() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_arn_region(true)
@@ -2243,7 +2278,7 @@ mod test {
 
     /// cross partition MRAP ARN is an error
     #[test]
-    fn test_77() {
+    fn test_78() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws-cn:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap".to_string())
             .region("us-west-1".to_string())
@@ -2260,7 +2295,7 @@ mod test {
 
     /// Endpoint override, accesspoint with HTTP, port
     #[test]
-    fn test_78() {
+    fn test_79() {
         let params = crate::config::endpoint::Params::builder()
             .endpoint("http://beta.example.com:1234".to_string())
             .region("us-west-2".to_string())
@@ -2291,7 +2326,7 @@ mod test {
 
     /// Endpoint override, accesspoint with http, path, query, and port
     #[test]
-    fn test_79() {
+    fn test_80() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -2325,7 +2360,7 @@ mod test {
 
     /// non-bucket endpoint override with FIPS = error
     #[test]
-    fn test_80() {
+    fn test_81() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .endpoint("http://beta.example.com:1234/path".to_string())
@@ -2342,7 +2377,7 @@ mod test {
 
     /// FIPS + dualstack + custom endpoint
     #[test]
-    fn test_81() {
+    fn test_82() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .endpoint("http://beta.example.com:1234/path".to_string())
@@ -2359,7 +2394,7 @@ mod test {
 
     /// dualstack + custom endpoint
     #[test]
-    fn test_82() {
+    fn test_83() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .endpoint("http://beta.example.com:1234/path".to_string())
@@ -2375,7 +2410,7 @@ mod test {
 
     /// custom endpoint without FIPS/dualstack
     #[test]
-    fn test_83() {
+    fn test_84() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .endpoint("http://beta.example.com:1234/path".to_string())
@@ -2407,7 +2442,7 @@ mod test {
 
     /// s3 object lambda with access points disabled
     #[test]
-    fn test_84() {
+    fn test_85() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .bucket("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -2423,7 +2458,7 @@ mod test {
 
     /// non bucket + FIPS
     #[test]
-    fn test_85() {
+    fn test_86() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
@@ -2454,7 +2489,7 @@ mod test {
 
     /// standard non bucket endpoint
     #[test]
-    fn test_86() {
+    fn test_87() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -2485,7 +2520,7 @@ mod test {
 
     /// non bucket endpoint with FIPS + Dualstack
     #[test]
-    fn test_87() {
+    fn test_88() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
@@ -2516,7 +2551,7 @@ mod test {
 
     /// non bucket endpoint with dualstack
     #[test]
-    fn test_88() {
+    fn test_89() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -2547,7 +2582,7 @@ mod test {
 
     /// use global endpoint + IP address endpoint override
     #[test]
-    fn test_89() {
+    fn test_90() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket".to_string())
@@ -2581,7 +2616,7 @@ mod test {
 
     /// non-dns endpoint + global endpoint
     #[test]
-    fn test_90() {
+    fn test_91() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2614,7 +2649,7 @@ mod test {
 
     /// endpoint override + use global endpoint
     #[test]
-    fn test_91() {
+    fn test_92() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2648,7 +2683,7 @@ mod test {
 
     /// FIPS + dualstack + non-bucket endpoint
     #[test]
-    fn test_92() {
+    fn test_93() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2680,7 +2715,7 @@ mod test {
 
     /// FIPS + dualstack + non-DNS endpoint
     #[test]
-    fn test_93() {
+    fn test_94() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2713,7 +2748,7 @@ mod test {
 
     /// endpoint override + FIPS + dualstack (BUG)
     #[test]
-    fn test_94() {
+    fn test_95() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2732,7 +2767,7 @@ mod test {
 
     /// endpoint override + non-dns bucket + FIPS (BUG)
     #[test]
-    fn test_95() {
+    fn test_96() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2750,7 +2785,7 @@ mod test {
 
     /// FIPS + bucket endpoint + force path style
     #[test]
-    fn test_96() {
+    fn test_97() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2784,7 +2819,7 @@ mod test {
 
     /// bucket + FIPS + force path style
     #[test]
-    fn test_97() {
+    fn test_98() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket".to_string())
@@ -2818,7 +2853,7 @@ mod test {
 
     /// FIPS + dualstack + use global endpoint
     #[test]
-    fn test_98() {
+    fn test_99() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket".to_string())
@@ -2851,7 +2886,7 @@ mod test {
 
     /// URI encoded bucket + use global endpoint
     #[test]
-    fn test_99() {
+    fn test_100() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2869,7 +2904,7 @@ mod test {
 
     /// FIPS + path based endpoint
     #[test]
-    fn test_100() {
+    fn test_101() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2903,7 +2938,7 @@ mod test {
 
     /// accelerate + dualstack + global endpoint
     #[test]
-    fn test_101() {
+    fn test_102() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket".to_string())
@@ -2937,7 +2972,7 @@ mod test {
 
     /// dualstack + global endpoint + non URI safe bucket
     #[test]
-    fn test_102() {
+    fn test_103() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -2971,7 +3006,7 @@ mod test {
 
     /// FIPS + uri encoded bucket
     #[test]
-    fn test_103() {
+    fn test_104() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -3006,7 +3041,7 @@ mod test {
 
     /// endpoint override + non-uri safe endpoint + force path style
     #[test]
-    fn test_104() {
+    fn test_105() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -3028,7 +3063,7 @@ mod test {
 
     /// FIPS + Dualstack + global endpoint + non-dns bucket
     #[test]
-    fn test_105() {
+    fn test_106() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("bucket!".to_string())
@@ -3062,7 +3097,7 @@ mod test {
 
     /// endpoint override + FIPS + dualstack
     #[test]
-    fn test_106() {
+    fn test_107() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_dual_stack(true)
@@ -3080,7 +3115,7 @@ mod test {
 
     /// non-bucket endpoint override + dualstack + global endpoint
     #[test]
-    fn test_107() {
+    fn test_108() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -3097,7 +3132,7 @@ mod test {
 
     /// Endpoint override + UseGlobalEndpoint + us-east-1
     #[test]
-    fn test_108() {
+    fn test_109() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -3115,7 +3150,7 @@ mod test {
 
     /// non-FIPS partition with FIPS set + custom endpoint
     #[test]
-    fn test_109() {
+    fn test_110() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -3131,7 +3166,7 @@ mod test {
 
     /// aws-global signs as us-east-1
     #[test]
-    fn test_110() {
+    fn test_111() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3164,7 +3199,7 @@ mod test {
 
     /// aws-global signs as us-east-1
     #[test]
-    fn test_111() {
+    fn test_112() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket".to_string())
@@ -3198,7 +3233,7 @@ mod test {
 
     /// aws-global + dualstack + path-only bucket
     #[test]
-    fn test_112() {
+    fn test_113() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3231,7 +3266,7 @@ mod test {
 
     /// aws-global + path-only bucket
     #[test]
-    fn test_113() {
+    fn test_114() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3261,7 +3296,7 @@ mod test {
 
     /// aws-global + fips + custom endpoint
     #[test]
-    fn test_114() {
+    fn test_115() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3279,7 +3314,7 @@ mod test {
 
     /// aws-global, endpoint override & path only-bucket
     #[test]
-    fn test_115() {
+    fn test_116() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3313,7 +3348,7 @@ mod test {
 
     /// aws-global + dualstack + custom endpoint
     #[test]
-    fn test_116() {
+    fn test_117() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_dual_stack(true)
@@ -3331,7 +3366,7 @@ mod test {
 
     /// accelerate, dualstack + aws-global
     #[test]
-    fn test_117() {
+    fn test_118() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket".to_string())
@@ -3364,7 +3399,7 @@ mod test {
 
     /// FIPS + aws-global + path only bucket. This is not supported by S3 but we allow garbage in garbage out
     #[test]
-    fn test_118() {
+    fn test_119() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3398,7 +3433,7 @@ mod test {
 
     /// aws-global + FIPS + endpoint override.
     #[test]
-    fn test_119() {
+    fn test_120() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(true)
@@ -3413,7 +3448,7 @@ mod test {
 
     /// force path style, FIPS, aws-global & endpoint override
     #[test]
-    fn test_120() {
+    fn test_121() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3431,7 +3466,7 @@ mod test {
 
     /// ip address causes path style to be forced
     #[test]
-    fn test_121() {
+    fn test_122() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket".to_string())
@@ -3462,7 +3497,7 @@ mod test {
 
     /// endpoint override with aws-global region
     #[test]
-    fn test_122() {
+    fn test_123() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(true)
@@ -3479,7 +3514,7 @@ mod test {
 
     /// FIPS + path-only (TODO: consider making this an error)
     #[test]
-    fn test_123() {
+    fn test_124() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .bucket("bucket!".to_string())
@@ -3510,7 +3545,7 @@ mod test {
 
     /// empty arn type
     #[test]
-    fn test_124() {
+    fn test_125() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:not-s3:us-west-2:123456789012::myendpoint".to_string())
@@ -3524,7 +3559,7 @@ mod test {
 
     /// path style can't be used with accelerate
     #[test]
-    fn test_125() {
+    fn test_126() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket!".to_string())
@@ -3540,7 +3575,7 @@ mod test {
 
     /// invalid region
     #[test]
-    fn test_126() {
+    fn test_127() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2!".to_string())
             .bucket("bucket.subdomain".to_string())
@@ -3555,7 +3590,7 @@ mod test {
 
     /// invalid region
     #[test]
-    fn test_127() {
+    fn test_128() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2!".to_string())
             .bucket("bucket".to_string())
@@ -3570,7 +3605,7 @@ mod test {
 
     /// empty arn type
     #[test]
-    fn test_128() {
+    fn test_129() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3::123456789012:accesspoint:my_endpoint".to_string())
@@ -3584,7 +3619,7 @@ mod test {
 
     /// empty arn type
     #[test]
-    fn test_129() {
+    fn test_130() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint".to_string())
@@ -3602,7 +3637,7 @@ mod test {
 
     /// invalid arn region
     #[test]
-    fn test_130() {
+    fn test_131() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-object-lambda:us-east_2:123456789012:accesspoint:my-endpoint".to_string())
@@ -3617,7 +3652,7 @@ mod test {
 
     /// invalid ARN outpost
     #[test]
-    fn test_131() {
+    fn test_132() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost/op_01234567890123456/accesspoint/reports".to_string())
@@ -3637,7 +3672,7 @@ mod test {
 
     /// invalid ARN
     #[test]
-    fn test_132() {
+    fn test_133() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/reports".to_string())
@@ -3651,7 +3686,7 @@ mod test {
 
     /// invalid ARN
     #[test]
-    fn test_133() {
+    fn test_134() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456".to_string())
@@ -3665,7 +3700,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_134() {
+    fn test_135() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports".to_string())
@@ -3679,7 +3714,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_135() {
+    fn test_136() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east_1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports".to_string())
@@ -3693,7 +3728,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_136() {
+    fn test_137() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:12345_789012:outpost/op-01234567890123456/not-accesspoint/reports".to_string())
@@ -3712,7 +3747,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_137() {
+    fn test_138() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("arn:aws:s3-outposts:us-east-1:12345789012:outpost".to_string())
@@ -3726,7 +3761,7 @@ mod test {
 
     /// use global endpoint virtual addressing
     #[test]
-    fn test_138() {
+    fn test_139() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket".to_string())
@@ -3758,7 +3793,7 @@ mod test {
 
     /// global endpoint + ip address
     #[test]
-    fn test_139() {
+    fn test_140() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket".to_string())
@@ -3790,7 +3825,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_140() {
+    fn test_141() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket!".to_string())
@@ -3821,7 +3856,7 @@ mod test {
 
     /// invalid outpost type
     #[test]
-    fn test_141() {
+    fn test_142() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket".to_string())
@@ -3853,7 +3888,7 @@ mod test {
 
     /// use global endpoint + custom endpoint
     #[test]
-    fn test_142() {
+    fn test_143() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket!".to_string())
@@ -3885,7 +3920,7 @@ mod test {
 
     /// use global endpoint, not us-east-1, force path style
     #[test]
-    fn test_143() {
+    fn test_144() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-2".to_string())
             .bucket("bucket!".to_string())
@@ -3918,7 +3953,7 @@ mod test {
 
     /// vanilla virtual addressing@us-west-2
     #[test]
-    fn test_144() {
+    fn test_145() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -3952,7 +3987,7 @@ mod test {
 
     /// virtual addressing + dualstack@us-west-2
     #[test]
-    fn test_145() {
+    fn test_146() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -3986,7 +4021,7 @@ mod test {
 
     /// accelerate + dualstack@us-west-2
     #[test]
-    fn test_146() {
+    fn test_147() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4020,7 +4055,7 @@ mod test {
 
     /// accelerate (dualstack=false)@us-west-2
     #[test]
-    fn test_147() {
+    fn test_148() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4054,7 +4089,7 @@ mod test {
 
     /// virtual addressing + fips@us-west-2
     #[test]
-    fn test_148() {
+    fn test_149() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4088,7 +4123,7 @@ mod test {
 
     /// virtual addressing + dualstack + fips@us-west-2
     #[test]
-    fn test_149() {
+    fn test_150() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4122,7 +4157,7 @@ mod test {
 
     /// accelerate + fips = error@us-west-2
     #[test]
-    fn test_150() {
+    fn test_151() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4140,7 +4175,7 @@ mod test {
 
     /// vanilla virtual addressing@cn-north-1
     #[test]
-    fn test_151() {
+    fn test_152() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4174,7 +4209,7 @@ mod test {
 
     /// virtual addressing + dualstack@cn-north-1
     #[test]
-    fn test_152() {
+    fn test_153() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4208,7 +4243,7 @@ mod test {
 
     /// accelerate (dualstack=false)@cn-north-1
     #[test]
-    fn test_153() {
+    fn test_154() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4226,7 +4261,7 @@ mod test {
 
     /// virtual addressing + fips@cn-north-1
     #[test]
-    fn test_154() {
+    fn test_155() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4244,7 +4279,7 @@ mod test {
 
     /// vanilla virtual addressing@af-south-1
     #[test]
-    fn test_155() {
+    fn test_156() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4278,7 +4313,7 @@ mod test {
 
     /// virtual addressing + dualstack@af-south-1
     #[test]
-    fn test_156() {
+    fn test_157() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4312,7 +4347,7 @@ mod test {
 
     /// accelerate + dualstack@af-south-1
     #[test]
-    fn test_157() {
+    fn test_158() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4346,7 +4381,7 @@ mod test {
 
     /// accelerate (dualstack=false)@af-south-1
     #[test]
-    fn test_158() {
+    fn test_159() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4380,7 +4415,7 @@ mod test {
 
     /// virtual addressing + fips@af-south-1
     #[test]
-    fn test_159() {
+    fn test_160() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4414,7 +4449,7 @@ mod test {
 
     /// virtual addressing + dualstack + fips@af-south-1
     #[test]
-    fn test_160() {
+    fn test_161() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4448,7 +4483,7 @@ mod test {
 
     /// accelerate + fips = error@af-south-1
     #[test]
-    fn test_161() {
+    fn test_162() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4466,7 +4501,7 @@ mod test {
 
     /// vanilla path style@us-west-2
     #[test]
-    fn test_162() {
+    fn test_163() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4500,7 +4535,7 @@ mod test {
 
     /// fips@us-gov-west-2, bucket is not S3-dns-compatible (subdomains)
     #[test]
-    fn test_163() {
+    fn test_164() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket.with.dots".to_string())
@@ -4533,7 +4568,7 @@ mod test {
 
     /// path style + accelerate = error@us-west-2
     #[test]
-    fn test_164() {
+    fn test_165() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4552,7 +4587,7 @@ mod test {
 
     /// path style + dualstack@us-west-2
     #[test]
-    fn test_165() {
+    fn test_166() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4586,7 +4621,7 @@ mod test {
 
     /// path style + arn is error@us-west-2
     #[test]
-    fn test_166() {
+    fn test_167() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
@@ -4605,7 +4640,7 @@ mod test {
 
     /// path style + invalid DNS name@us-west-2
     #[test]
-    fn test_167() {
+    fn test_168() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -4639,7 +4674,7 @@ mod test {
 
     /// no path style + invalid DNS name@us-west-2
     #[test]
-    fn test_168() {
+    fn test_169() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -4672,7 +4707,7 @@ mod test {
 
     /// vanilla path style@cn-north-1
     #[test]
-    fn test_169() {
+    fn test_170() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4706,7 +4741,7 @@ mod test {
 
     /// path style + fips@cn-north-1
     #[test]
-    fn test_170() {
+    fn test_171() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4724,7 +4759,7 @@ mod test {
 
     /// path style + accelerate = error@cn-north-1
     #[test]
-    fn test_171() {
+    fn test_172() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4743,7 +4778,7 @@ mod test {
 
     /// path style + dualstack@cn-north-1
     #[test]
-    fn test_172() {
+    fn test_173() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4777,7 +4812,7 @@ mod test {
 
     /// path style + arn is error@cn-north-1
     #[test]
-    fn test_173() {
+    fn test_174() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
@@ -4796,7 +4831,7 @@ mod test {
 
     /// path style + invalid DNS name@cn-north-1
     #[test]
-    fn test_174() {
+    fn test_175() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -4830,7 +4865,7 @@ mod test {
 
     /// no path style + invalid DNS name@cn-north-1
     #[test]
-    fn test_175() {
+    fn test_176() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -4863,7 +4898,7 @@ mod test {
 
     /// vanilla path style@af-south-1
     #[test]
-    fn test_176() {
+    fn test_177() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4897,7 +4932,7 @@ mod test {
 
     /// path style + fips@af-south-1
     #[test]
-    fn test_177() {
+    fn test_178() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4931,7 +4966,7 @@ mod test {
 
     /// path style + accelerate = error@af-south-1
     #[test]
-    fn test_178() {
+    fn test_179() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -4950,7 +4985,7 @@ mod test {
 
     /// path style + dualstack@af-south-1
     #[test]
-    fn test_179() {
+    fn test_180() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -4984,7 +5019,7 @@ mod test {
 
     /// path style + arn is error@af-south-1
     #[test]
-    fn test_180() {
+    fn test_181() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:PARTITION:s3-outposts:REGION:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
@@ -5003,7 +5038,7 @@ mod test {
 
     /// path style + invalid DNS name@af-south-1
     #[test]
-    fn test_181() {
+    fn test_182() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -5037,7 +5072,7 @@ mod test {
 
     /// no path style + invalid DNS name@af-south-1
     #[test]
-    fn test_182() {
+    fn test_183() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("99a_b".to_string())
@@ -5070,7 +5105,7 @@ mod test {
 
     /// virtual addressing + private link@us-west-2
     #[test]
-    fn test_183() {
+    fn test_184() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5105,7 +5140,7 @@ mod test {
 
     /// path style + private link@us-west-2
     #[test]
-    fn test_184() {
+    fn test_185() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5140,7 +5175,7 @@ mod test {
 
     /// SDK::Host + FIPS@us-west-2
     #[test]
-    fn test_185() {
+    fn test_186() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5159,7 +5194,7 @@ mod test {
 
     /// SDK::Host + DualStack@us-west-2
     #[test]
-    fn test_186() {
+    fn test_187() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5179,7 +5214,7 @@ mod test {
 
     /// SDK::HOST + accelerate@us-west-2
     #[test]
-    fn test_187() {
+    fn test_188() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -5198,7 +5233,7 @@ mod test {
 
     /// SDK::Host + access point ARN@us-west-2
     #[test]
-    fn test_188() {
+    fn test_189() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -5233,7 +5268,7 @@ mod test {
 
     /// virtual addressing + private link@cn-north-1
     #[test]
-    fn test_189() {
+    fn test_190() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5268,7 +5303,7 @@ mod test {
 
     /// path style + private link@cn-north-1
     #[test]
-    fn test_190() {
+    fn test_191() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5303,7 +5338,7 @@ mod test {
 
     /// FIPS@cn-north-1
     #[test]
-    fn test_191() {
+    fn test_192() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5321,7 +5356,7 @@ mod test {
 
     /// SDK::Host + DualStack@cn-north-1
     #[test]
-    fn test_192() {
+    fn test_193() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5341,7 +5376,7 @@ mod test {
 
     /// SDK::HOST + accelerate@cn-north-1
     #[test]
-    fn test_193() {
+    fn test_194() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -5361,7 +5396,7 @@ mod test {
 
     /// SDK::Host + access point ARN@cn-north-1
     #[test]
-    fn test_194() {
+    fn test_195() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5396,7 +5431,7 @@ mod test {
 
     /// virtual addressing + private link@af-south-1
     #[test]
-    fn test_195() {
+    fn test_196() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5431,7 +5466,7 @@ mod test {
 
     /// path style + private link@af-south-1
     #[test]
-    fn test_196() {
+    fn test_197() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5466,7 +5501,7 @@ mod test {
 
     /// SDK::Host + FIPS@af-south-1
     #[test]
-    fn test_197() {
+    fn test_198() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5485,7 +5520,7 @@ mod test {
 
     /// SDK::Host + DualStack@af-south-1
     #[test]
-    fn test_198() {
+    fn test_199() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("bucket-name".to_string())
@@ -5505,7 +5540,7 @@ mod test {
 
     /// SDK::HOST + accelerate@af-south-1
     #[test]
-    fn test_199() {
+    fn test_200() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("bucket-name".to_string())
@@ -5525,7 +5560,7 @@ mod test {
 
     /// SDK::Host + access point ARN@af-south-1
     #[test]
-    fn test_200() {
+    fn test_201() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5560,7 +5595,7 @@ mod test {
 
     /// vanilla access point arn@us-west-2
     #[test]
-    fn test_201() {
+    fn test_202() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -5594,7 +5629,7 @@ mod test {
 
     /// access point arn + FIPS@us-west-2
     #[test]
-    fn test_202() {
+    fn test_203() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -5628,7 +5663,7 @@ mod test {
 
     /// access point arn + accelerate = error@us-west-2
     #[test]
-    fn test_203() {
+    fn test_204() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -5647,7 +5682,7 @@ mod test {
 
     /// access point arn + FIPS + DualStack@us-west-2
     #[test]
-    fn test_204() {
+    fn test_205() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint".to_string())
@@ -5682,7 +5717,7 @@ mod test {
 
     /// vanilla access point arn@cn-north-1
     #[test]
-    fn test_205() {
+    fn test_206() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5716,7 +5751,7 @@ mod test {
 
     /// access point arn + FIPS@cn-north-1
     #[test]
-    fn test_206() {
+    fn test_207() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5734,7 +5769,7 @@ mod test {
 
     /// access point arn + accelerate = error@cn-north-1
     #[test]
-    fn test_207() {
+    fn test_208() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5753,7 +5788,7 @@ mod test {
 
     /// access point arn + FIPS + DualStack@cn-north-1
     #[test]
-    fn test_208() {
+    fn test_209() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5771,7 +5806,7 @@ mod test {
 
     /// vanilla access point arn@af-south-1
     #[test]
-    fn test_209() {
+    fn test_210() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5805,7 +5840,7 @@ mod test {
 
     /// access point arn + FIPS@af-south-1
     #[test]
-    fn test_210() {
+    fn test_211() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5839,7 +5874,7 @@ mod test {
 
     /// access point arn + accelerate = error@af-south-1
     #[test]
-    fn test_211() {
+    fn test_212() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .bucket("arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5858,7 +5893,7 @@ mod test {
 
     /// access point arn + FIPS + DualStack@af-south-1
     #[test]
-    fn test_212() {
+    fn test_213() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3:af-south-1:123456789012:accesspoint:myendpoint".to_string())
@@ -5893,7 +5928,7 @@ mod test {
 
     /// S3 outposts vanilla test
     #[test]
-    fn test_213() {
+    fn test_214() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5927,7 +5962,7 @@ mod test {
 
     /// S3 outposts custom endpoint
     #[test]
-    fn test_214() {
+    fn test_215() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5961,7 +5996,7 @@ mod test {
 
     /// outposts arn with region mismatch and UseArnRegion=false
     #[test]
-    fn test_215() {
+    fn test_216() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
@@ -5983,7 +6018,7 @@ mod test {
 
     /// outposts arn with region mismatch, custom region and UseArnRegion=false
     #[test]
-    fn test_216() {
+    fn test_217() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
@@ -6006,7 +6041,7 @@ mod test {
 
     /// outposts arn with region mismatch and UseArnRegion=true
     #[test]
-    fn test_217() {
+    fn test_218() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
@@ -6042,7 +6077,7 @@ mod test {
 
     /// outposts arn with region mismatch and UseArnRegion unset
     #[test]
-    fn test_218() {
+    fn test_219() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
@@ -6077,7 +6112,7 @@ mod test {
 
     /// outposts arn with partition mismatch and UseArnRegion=true
     #[test]
-    fn test_219() {
+    fn test_220() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
@@ -6096,7 +6131,7 @@ mod test {
 
     /// ARN with UseGlobalEndpoint and use-east-1 region uses the regional endpoint
     #[test]
-    fn test_220() {
+    fn test_221() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_global_endpoint(true)
@@ -6131,7 +6166,7 @@ mod test {
 
     /// S3 outposts does not support dualstack
     #[test]
-    fn test_221() {
+    fn test_222() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -6148,7 +6183,7 @@ mod test {
 
     /// S3 outposts does not support fips
     #[test]
-    fn test_222() {
+    fn test_223() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -6165,7 +6200,7 @@ mod test {
 
     /// S3 outposts does not support accelerate
     #[test]
-    fn test_223() {
+    fn test_224() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -6182,7 +6217,7 @@ mod test {
 
     /// validates against subresource
     #[test]
-    fn test_224() {
+    fn test_225() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6200,7 +6235,7 @@ mod test {
 
     /// object lambda @us-east-1
     #[test]
-    fn test_225() {
+    fn test_226() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -6234,7 +6269,7 @@ mod test {
 
     /// object lambda @us-west-2
     #[test]
-    fn test_226() {
+    fn test_227() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6268,7 +6303,7 @@ mod test {
 
     /// object lambda, colon resource deliminator @us-west-2
     #[test]
-    fn test_227() {
+    fn test_228() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6302,7 +6337,7 @@ mod test {
 
     /// object lambda @us-east-1, client region us-west-2, useArnRegion=true
     #[test]
-    fn test_228() {
+    fn test_229() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6336,7 +6371,7 @@ mod test {
 
     /// object lambda @us-east-1, client region s3-external-1, useArnRegion=true
     #[test]
-    fn test_229() {
+    fn test_230() {
         let params = crate::config::endpoint::Params::builder()
             .region("s3-external-1".to_string())
             .use_fips(false)
@@ -6370,7 +6405,7 @@ mod test {
 
     /// object lambda @us-east-1, client region s3-external-1, useArnRegion=false
     #[test]
-    fn test_230() {
+    fn test_231() {
         let params = crate::config::endpoint::Params::builder()
             .region("s3-external-1".to_string())
             .use_fips(false)
@@ -6391,7 +6426,7 @@ mod test {
 
     /// object lambda @us-east-1, client region aws-global, useArnRegion=true
     #[test]
-    fn test_231() {
+    fn test_232() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(false)
@@ -6425,7 +6460,7 @@ mod test {
 
     /// object lambda @us-east-1, client region aws-global, useArnRegion=false
     #[test]
-    fn test_232() {
+    fn test_233() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(false)
@@ -6446,7 +6481,7 @@ mod test {
 
     /// object lambda @cn-north-1, client region us-west-2 (cross partition), useArnRegion=true
     #[test]
-    fn test_233() {
+    fn test_234() {
         let params = crate::config::endpoint::Params::builder()
             .region("aws-global".to_string())
             .use_fips(false)
@@ -6464,7 +6499,7 @@ mod test {
 
     /// object lambda with dualstack
     #[test]
-    fn test_234() {
+    fn test_235() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6482,7 +6517,7 @@ mod test {
 
     /// object lambda @us-gov-east-1
     #[test]
-    fn test_235() {
+    fn test_236() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(false)
@@ -6516,7 +6551,7 @@ mod test {
 
     /// object lambda @us-gov-east-1, with fips
     #[test]
-    fn test_236() {
+    fn test_237() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-gov-east-1".to_string())
             .use_fips(true)
@@ -6550,7 +6585,7 @@ mod test {
 
     /// object lambda @cn-north-1, with fips
     #[test]
-    fn test_237() {
+    fn test_238() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_fips(true)
@@ -6568,7 +6603,7 @@ mod test {
 
     /// object lambda with accelerate
     #[test]
-    fn test_238() {
+    fn test_239() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6586,7 +6621,7 @@ mod test {
 
     /// object lambda with invalid arn - bad service and someresource
     #[test]
-    fn test_239() {
+    fn test_240() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6607,7 +6642,7 @@ mod test {
 
     /// object lambda with invalid arn - invalid resource
     #[test]
-    fn test_240() {
+    fn test_241() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6628,7 +6663,7 @@ mod test {
 
     /// object lambda with invalid arn - missing region
     #[test]
-    fn test_241() {
+    fn test_242() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6647,7 +6682,7 @@ mod test {
 
     /// object lambda with invalid arn - missing account-id
     #[test]
-    fn test_242() {
+    fn test_243() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6665,7 +6700,7 @@ mod test {
 
     /// object lambda with invalid arn - account id contains invalid characters
     #[test]
-    fn test_243() {
+    fn test_244() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6686,7 +6721,7 @@ mod test {
 
     /// object lambda with invalid arn - missing access point name
     #[test]
-    fn test_244() {
+    fn test_245() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6707,7 +6742,7 @@ mod test {
 
     /// object lambda with invalid arn - access point name contains invalid character: *
     #[test]
-    fn test_245() {
+    fn test_246() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6728,7 +6763,7 @@ mod test {
 
     /// object lambda with invalid arn - access point name contains invalid character: .
     #[test]
-    fn test_246() {
+    fn test_247() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6749,7 +6784,7 @@ mod test {
 
     /// object lambda with invalid arn - access point name contains sub resources
     #[test]
-    fn test_247() {
+    fn test_248() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6770,7 +6805,7 @@ mod test {
 
     /// object lambda with custom endpoint
     #[test]
-    fn test_248() {
+    fn test_249() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -6805,7 +6840,7 @@ mod test {
 
     /// object lambda arn with region mismatch and UseArnRegion=false
     #[test]
-    fn test_249() {
+    fn test_250() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .bucket("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner".to_string())
@@ -6827,7 +6862,7 @@ mod test {
 
     /// WriteGetObjectResponse @ us-west-2
     #[test]
-    fn test_250() {
+    fn test_251() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -6860,7 +6895,7 @@ mod test {
 
     /// WriteGetObjectResponse with custom endpoint
     #[test]
-    fn test_251() {
+    fn test_252() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -6894,7 +6929,7 @@ mod test {
 
     /// WriteGetObjectResponse @ us-east-1
     #[test]
-    fn test_252() {
+    fn test_253() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -6927,7 +6962,7 @@ mod test {
 
     /// WriteGetObjectResponse with fips
     #[test]
-    fn test_253() {
+    fn test_254() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -6960,7 +6995,7 @@ mod test {
 
     /// WriteGetObjectResponse with dualstack
     #[test]
-    fn test_254() {
+    fn test_255() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -6977,7 +7012,7 @@ mod test {
 
     /// WriteGetObjectResponse with accelerate
     #[test]
-    fn test_255() {
+    fn test_256() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(true)
             .use_object_lambda_endpoint(true)
@@ -6994,7 +7029,7 @@ mod test {
 
     /// WriteGetObjectResponse with fips in CN
     #[test]
-    fn test_256() {
+    fn test_257() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .region("cn-north-1".to_string())
@@ -7011,7 +7046,7 @@ mod test {
 
     /// WriteGetObjectResponse with invalid partition
     #[test]
-    fn test_257() {
+    fn test_258() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -7029,7 +7064,7 @@ mod test {
 
     /// WriteGetObjectResponse with an unknown partition
     #[test]
-    fn test_258() {
+    fn test_259() {
         let params = crate::config::endpoint::Params::builder()
             .accelerate(false)
             .use_object_lambda_endpoint(true)
@@ -7062,7 +7097,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Real Outpost Prod us-west-1
     #[test]
-    fn test_259() {
+    fn test_260() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-1".to_string())
             .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7088,7 +7123,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Real Outpost Prod ap-east-1
     #[test]
-    fn test_260() {
+    fn test_261() {
         let params = crate::config::endpoint::Params::builder()
             .region("ap-east-1".to_string())
             .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7114,7 +7149,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Ec2 Outpost Prod us-east-1
     #[test]
-    fn test_261() {
+    fn test_262() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7147,7 +7182,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Ec2 Outpost Prod me-south-1
     #[test]
-    fn test_262() {
+    fn test_263() {
         let params = crate::config::endpoint::Params::builder()
             .region("me-south-1".to_string())
             .bucket("test-accessp-e0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7180,7 +7215,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Real Outpost Beta
     #[test]
-    fn test_263() {
+    fn test_264() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3".to_string())
@@ -7214,7 +7249,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Ec2 Outpost Beta
     #[test]
-    fn test_264() {
+    fn test_265() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("161743052723-e00000136899934034jeahy1t8gpzpbwjj8kb7beta0--op-s3".to_string())
@@ -7249,7 +7284,7 @@ mod test {
 
     /// S3 Outposts bucketAlias - No endpoint set for beta
     #[test]
-    fn test_265() {
+    fn test_266() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-o0b1d075431d83bebde8xz5w8ijx1qzlbp3i3kbeta0--op-s3".to_string())
@@ -7268,7 +7303,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Invalid hardware type
     #[test]
-    fn test_266() {
+    fn test_267() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-h0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7290,7 +7325,7 @@ mod test {
 
     /// S3 Outposts bucketAlias Special character in Outpost Arn
     #[test]
-    fn test_267() {
+    fn test_268() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-o00000754%1d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3".to_string())
@@ -7310,7 +7345,7 @@ mod test {
 
     /// S3 Outposts bucketAlias - No endpoint set for beta
     #[test]
-    fn test_268() {
+    fn test_269() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .bucket("test-accessp-e0b1d075431d83bebde8xz5w8ijx1qzlbp3i3ebeta0--op-s3".to_string())
@@ -7329,7 +7364,7 @@ mod test {
 
     /// S3 Snow with bucket
     #[test]
-    fn test_269() {
+    fn test_270() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -7363,7 +7398,7 @@ mod test {
 
     /// S3 Snow without bucket
     #[test]
-    fn test_270() {
+    fn test_271() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .endpoint("https://10.0.1.12:433".to_string())
@@ -7396,7 +7431,7 @@ mod test {
 
     /// S3 Snow no port
     #[test]
-    fn test_271() {
+    fn test_272() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -7430,7 +7465,7 @@ mod test {
 
     /// S3 Snow dns endpoint
     #[test]
-    fn test_272() {
+    fn test_273() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -7549,6 +7584,10 @@ pub struct Params {
     pub(crate) use_global_endpoint: bool,
     /// Internal parameter to use object lambda endpoint for an operation (eg: WriteGetObjectResponse)
     pub(crate) use_object_lambda_endpoint: ::std::option::Option<bool>,
+    /// The S3 Key used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Key.
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    /// The S3 Prefix used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Prefix.
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
     /// Internal parameter to disable Access Point Buckets
     pub(crate) disable_access_points: ::std::option::Option<bool>,
     /// Whether multi-region access points (MRAP) should be disabled.
@@ -7597,6 +7636,14 @@ impl Params {
     pub fn use_object_lambda_endpoint(&self) -> ::std::option::Option<bool> {
         self.use_object_lambda_endpoint
     }
+    /// The S3 Key used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Key.
+    pub fn key(&self) -> ::std::option::Option<&str> {
+        self.key.as_deref()
+    }
+    /// The S3 Prefix used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Prefix.
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
+        self.prefix.as_deref()
+    }
     /// Internal parameter to disable Access Point Buckets
     pub fn disable_access_points(&self) -> ::std::option::Option<bool> {
         self.disable_access_points
@@ -7623,6 +7670,8 @@ pub struct ParamsBuilder {
     accelerate: ::std::option::Option<bool>,
     use_global_endpoint: ::std::option::Option<bool>,
     use_object_lambda_endpoint: ::std::option::Option<bool>,
+    key: ::std::option::Option<::std::string::String>,
+    prefix: ::std::option::Option<::std::string::String>,
     disable_access_points: ::std::option::Option<bool>,
     disable_multi_region_access_points: ::std::option::Option<bool>,
     use_arn_region: ::std::option::Option<bool>,
@@ -7657,6 +7706,8 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_global_endpoint"))?,
                 use_object_lambda_endpoint: self.use_object_lambda_endpoint,
+                key: self.key,
+                prefix: self.prefix,
                 disable_access_points: self.disable_access_points,
                 disable_multi_region_access_points: self
                     .disable_multi_region_access_points
@@ -7809,6 +7860,36 @@ impl ParamsBuilder {
     /// Internal parameter to use object lambda endpoint for an operation (eg: WriteGetObjectResponse)
     pub fn set_use_object_lambda_endpoint(mut self, param: Option<bool>) -> Self {
         self.use_object_lambda_endpoint = param;
+        self
+    }
+    /// Sets the value for key
+    ///
+    /// The S3 Key used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Key.
+    pub fn key(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.key = Some(value.into());
+        self
+    }
+
+    /// Sets the value for key
+    ///
+    /// The S3 Key used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Key.
+    pub fn set_key(mut self, param: Option<::std::string::String>) -> Self {
+        self.key = param;
+        self
+    }
+    /// Sets the value for prefix
+    ///
+    /// The S3 Prefix used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Prefix.
+    pub fn prefix(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.prefix = Some(value.into());
+        self
+    }
+
+    /// Sets the value for prefix
+    ///
+    /// The S3 Prefix used to send the request. This is an optional parameter that will be set automatically for operations that are scoped to an S3 Prefix.
+    pub fn set_prefix(mut self, param: Option<::std::string::String>) -> Self {
+        self.prefix = param;
         self
     }
     /// Sets the value for disable_access_points

@@ -24,6 +24,8 @@ pub struct Sensor {
     pub deprecation_message: ::std::option::Option<::std::string::String>,
     /// <p>A comment in addition to the description.</p>
     pub comment: ::std::option::Option<::std::string::String>,
+    /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
+    pub struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
 impl Sensor {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
@@ -65,6 +67,10 @@ impl Sensor {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
+    /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
+    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<&str> {
+        self.struct_fully_qualified_name.as_deref()
+    }
 }
 impl Sensor {
     /// Creates a new builder-style object to manufacture [`Sensor`](crate::types::Sensor).
@@ -86,6 +92,7 @@ pub struct SensorBuilder {
     pub(crate) max: ::std::option::Option<f64>,
     pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
 impl SensorBuilder {
     /// <p>The fully qualified name of the sensor. For example, the fully qualified name of a sensor might be <code>Vehicle.Body.Engine.Battery</code>.</p>
@@ -222,6 +229,20 @@ impl SensorBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
+    /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
+    pub fn struct_fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.struct_fully_qualified_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
+    pub fn set_struct_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.struct_fully_qualified_name = input;
+        self
+    }
+    /// <p>The fully qualified name of the struct node for a sensor if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.</p>
+    pub fn get_struct_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.struct_fully_qualified_name
+    }
     /// Consumes the builder and constructs a [`Sensor`](crate::types::Sensor).
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::SensorBuilder::fully_qualified_name)
@@ -247,6 +268,7 @@ impl SensorBuilder {
             max: self.max,
             deprecation_message: self.deprecation_message,
             comment: self.comment,
+            struct_fully_qualified_name: self.struct_fully_qualified_name,
         })
     }
 }

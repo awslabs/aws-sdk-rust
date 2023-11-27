@@ -136,4 +136,18 @@ impl AuthorizeDataShareFluentBuilder {
     pub fn get_consumer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_consumer_identifier()
     }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn allow_writes(mut self, input: bool) -> Self {
+        self.inner = self.inner.allow_writes(input);
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn set_allow_writes(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_allow_writes(input);
+        self
+    }
+    /// <p>If set to true, allows write operations for a datashare.</p>
+    pub fn get_allow_writes(&self) -> &::std::option::Option<bool> {
+        self.inner.get_allow_writes()
+    }
 }

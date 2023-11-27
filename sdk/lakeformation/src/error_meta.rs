@@ -357,6 +357,44 @@ impl From<crate::operation::create_data_cells_filter::CreateDataCellsFilterError
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::create_lake_formation_identity_center_configuration::CreateLakeFormationIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError, R>>
     for Error
 where
@@ -463,6 +501,44 @@ impl From<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::delete_lake_formation_identity_center_configuration::DeleteLakeFormationIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -605,6 +681,45 @@ impl From<crate::operation::deregister_resource::DeregisterResourceError> for Er
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::deregister_resource::DeregisterResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError> for Error {
+    fn from(
+        err: crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::describe_lake_formation_identity_center_configuration::DescribeLakeFormationIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1606,6 +1721,44 @@ impl From<crate::operation::update_data_cells_filter::UpdateDataCellsFilterError
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::update_data_cells_filter::UpdateDataCellsFilterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError> for Error {
+    fn from(err: crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError) -> Self {
+        match err {
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::update_lake_formation_identity_center_configuration::UpdateLakeFormationIdentityCenterConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

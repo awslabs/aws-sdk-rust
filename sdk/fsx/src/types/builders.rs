@@ -55,6 +55,8 @@ pub use crate::types::_file_system_failure_details::FileSystemFailureDetailsBuil
 
 pub use crate::types::_ontap_volume_configuration::OntapVolumeConfigurationBuilder;
 
+pub use crate::types::_aggregate_configuration::AggregateConfigurationBuilder;
+
 pub use crate::types::_snaplock_configuration::SnaplockConfigurationBuilder;
 
 pub use crate::types::_snaplock_retention_period::SnaplockRetentionPeriodBuilder;
@@ -162,6 +164,8 @@ pub use crate::types::_delete_file_system_lustre_configuration::DeleteFileSystem
 pub use crate::types::_delete_file_system_windows_configuration::DeleteFileSystemWindowsConfigurationBuilder;
 
 pub use crate::types::_create_ontap_volume_configuration::CreateOntapVolumeConfigurationBuilder;
+
+pub use crate::types::_create_aggregate_configuration::CreateAggregateConfigurationBuilder;
 
 pub use crate::types::_create_snaplock_configuration::CreateSnaplockConfigurationBuilder;
 

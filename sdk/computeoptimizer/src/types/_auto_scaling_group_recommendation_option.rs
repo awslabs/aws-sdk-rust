@@ -24,6 +24,8 @@ pub struct AutoScalingGroupRecommendationOption {
     pub migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
     /// <p> Describes the GPU accelerator settings for the recommended instance type of the Auto Scaling group. </p>
     pub instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
+    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
 }
 impl AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -62,6 +64,10 @@ impl AutoScalingGroupRecommendationOption {
     pub fn instance_gpu_info(&self) -> ::std::option::Option<&crate::types::GpuInfo> {
         self.instance_gpu_info.as_ref()
     }
+    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
+        self.savings_opportunity_after_discounts.as_ref()
+    }
 }
 impl AutoScalingGroupRecommendationOption {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
@@ -81,6 +87,7 @@ pub struct AutoScalingGroupRecommendationOptionBuilder {
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) migration_effort: ::std::option::Option<crate::types::MigrationEffort>,
     pub(crate) instance_gpu_info: ::std::option::Option<crate::types::GpuInfo>,
+    pub(crate) savings_opportunity_after_discounts: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
 }
 impl AutoScalingGroupRecommendationOptionBuilder {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
@@ -205,6 +212,23 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     pub fn get_instance_gpu_info(&self) -> &::std::option::Option<crate::types::GpuInfo> {
         &self.instance_gpu_info
     }
+    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn savings_opportunity_after_discounts(mut self, input: crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts) -> Self {
+        self.savings_opportunity_after_discounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn set_savings_opportunity_after_discounts(
+        mut self,
+        input: ::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts>,
+    ) -> Self {
+        self.savings_opportunity_after_discounts = input;
+        self
+    }
+    /// <p> An object that describes the savings opportunity for the Auto Scaling group recommendation option that includes Savings Plans and Reserved Instances discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::AutoScalingGroupSavingsOpportunityAfterDiscounts> {
+        &self.savings_opportunity_after_discounts
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroupRecommendationOption`](crate::types::AutoScalingGroupRecommendationOption).
     pub fn build(self) -> crate::types::AutoScalingGroupRecommendationOption {
         crate::types::AutoScalingGroupRecommendationOption {
@@ -215,6 +239,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
             savings_opportunity: self.savings_opportunity,
             migration_effort: self.migration_effort,
             instance_gpu_info: self.instance_gpu_info,
+            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts,
         }
     }
 }

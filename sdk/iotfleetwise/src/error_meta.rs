@@ -105,6 +105,9 @@ impl From<crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError>
             crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

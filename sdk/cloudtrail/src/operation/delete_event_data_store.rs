@@ -250,8 +250,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteEventDa
 pub enum DeleteEventDataStoreError {
     /// <p>This exception is thrown when the specified event data store cannot yet be deleted because it is in use by a channel.</p>
     ChannelExistsForEdsException(crate::types::error::ChannelExistsForEdsException),
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
     EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
+    /// <p> You cannot delete the event data store because Lake query federation is enabled. To delete the event data store, run the <code>DisableFederation</code> operation to disable Lake query federation on the event data store. </p>
+    EventDataStoreFederationEnabledException(crate::types::error::EventDataStoreFederationEnabledException),
     /// <p> This exception is thrown when you try to update or delete an event data store that currently has an import in progress. </p>
     EventDataStoreHasOngoingImportException(crate::types::error::EventDataStoreHasOngoingImportException),
     /// <p>The specified event data store was not found.</p>
@@ -306,7 +310,9 @@ impl DeleteEventDataStoreError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ChannelExistsForEdsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EventDataStoreFederationEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreHasOngoingImportException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EventDataStoreTerminationProtectedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -324,9 +330,17 @@ impl DeleteEventDataStoreError {
     pub fn is_channel_exists_for_eds_exception(&self) -> bool {
         matches!(self, Self::ChannelExistsForEdsException(_))
     }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
+    }
     /// Returns `true` if the error kind is `DeleteEventDataStoreError::EventDataStoreArnInvalidException`.
     pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
         matches!(self, Self::EventDataStoreArnInvalidException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteEventDataStoreError::EventDataStoreFederationEnabledException`.
+    pub fn is_event_data_store_federation_enabled_exception(&self) -> bool {
+        matches!(self, Self::EventDataStoreFederationEnabledException(_))
     }
     /// Returns `true` if the error kind is `DeleteEventDataStoreError::EventDataStoreHasOngoingImportException`.
     pub fn is_event_data_store_has_ongoing_import_exception(&self) -> bool {
@@ -373,7 +387,9 @@ impl ::std::error::Error for DeleteEventDataStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ChannelExistsForEdsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EventDataStoreFederationEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreHasOngoingImportException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EventDataStoreTerminationProtectedException(_inner) => ::std::option::Option::Some(_inner),
@@ -392,7 +408,9 @@ impl ::std::fmt::Display for DeleteEventDataStoreError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ChannelExistsForEdsException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
+            Self::EventDataStoreFederationEnabledException(_inner) => _inner.fmt(f),
             Self::EventDataStoreHasOngoingImportException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::EventDataStoreTerminationProtectedException(_inner) => _inner.fmt(f),
@@ -425,7 +443,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteEventDa
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ChannelExistsForEdsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EventDataStoreFederationEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreHasOngoingImportException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EventDataStoreTerminationProtectedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

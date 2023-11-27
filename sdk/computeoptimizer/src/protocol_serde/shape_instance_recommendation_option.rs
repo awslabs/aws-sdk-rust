@@ -56,6 +56,11 @@ where
                         "instanceGpuInfo" => {
                             builder = builder.set_instance_gpu_info(crate::protocol_serde::shape_gpu_info::de_gpu_info(tokens)?);
                         }
+                        "savingsOpportunityAfterDiscounts" => {
+                            builder = builder.set_savings_opportunity_after_discounts(
+                                    crate::protocol_serde::shape_instance_savings_opportunity_after_discounts::de_instance_savings_opportunity_after_discounts(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

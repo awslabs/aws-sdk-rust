@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`status(Option<ManifestStatus>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::status): <p> The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit the decoder manifest.</p>
     ///   - [`creation_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::creation_time): <p> The time the decoder manifest was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     ///   - [`last_modification_time(DateTime)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::last_modification_time): <p> The time the decoder manifest was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
+    ///   - [`message(Option<String>)`](crate::operation::get_decoder_manifest::GetDecoderManifestOutput::message): <p>The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code> status, the message contains detailed reason and help information.</p>
     /// - On failure, responds with [`SdkError<GetDecoderManifestError>`](crate::operation::get_decoder_manifest::GetDecoderManifestError)
     pub fn get_decoder_manifest(&self) -> crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder {
         crate::operation::get_decoder_manifest::builders::GetDecoderManifestFluentBuilder::new(self.handle.clone())

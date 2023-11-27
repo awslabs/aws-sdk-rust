@@ -136,17 +136,17 @@ impl CreateEksAnywhereSubscriptionFluentBuilder {
     pub fn get_term(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTerm> {
         self.inner.get_term()
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn license_quantity(mut self, input: i32) -> Self {
         self.inner = self.inner.license_quantity(input);
         self
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn set_license_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_license_quantity(input);
         self
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn get_license_quantity(&self) -> &::std::option::Option<i32> {
         self.inner.get_license_quantity()
     }
@@ -196,17 +196,17 @@ impl CreateEksAnywhereSubscriptionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

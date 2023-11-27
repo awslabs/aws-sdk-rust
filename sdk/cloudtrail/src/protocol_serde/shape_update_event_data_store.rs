@@ -479,6 +479,20 @@ pub(crate) fn de_update_event_data_store(
                             .transpose()?,
                     );
                 }
+                "FederationStatus" => {
+                    builder = builder.set_federation_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::FederationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "FederationRoleArn" => {
+                    builder = builder.set_federation_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

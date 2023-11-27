@@ -37,6 +37,8 @@ pub(crate) mod shape_create_fargate_profile;
 
 pub(crate) mod shape_create_nodegroup;
 
+pub(crate) mod shape_create_pod_identity_association;
+
 pub(crate) mod shape_delete_addon;
 
 pub(crate) mod shape_delete_cluster;
@@ -46,6 +48,8 @@ pub(crate) mod shape_delete_eks_anywhere_subscription;
 pub(crate) mod shape_delete_fargate_profile;
 
 pub(crate) mod shape_delete_nodegroup;
+
+pub(crate) mod shape_delete_pod_identity_association;
 
 pub(crate) mod shape_deregister_cluster;
 
@@ -65,6 +69,8 @@ pub(crate) mod shape_describe_identity_provider_config;
 
 pub(crate) mod shape_describe_nodegroup;
 
+pub(crate) mod shape_describe_pod_identity_association;
+
 pub(crate) mod shape_describe_update;
 
 pub(crate) mod shape_disassociate_identity_provider_config;
@@ -80,6 +86,8 @@ pub(crate) mod shape_list_fargate_profiles;
 pub(crate) mod shape_list_identity_provider_configs;
 
 pub(crate) mod shape_list_nodegroups;
+
+pub(crate) mod shape_list_pod_identity_associations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -102,6 +110,8 @@ pub(crate) mod shape_update_eks_anywhere_subscription;
 pub(crate) mod shape_update_nodegroup_config;
 
 pub(crate) mod shape_update_nodegroup_version;
+
+pub(crate) mod shape_update_pod_identity_association;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -130,6 +140,8 @@ pub(crate) mod shape_create_eks_anywhere_subscription_input;
 pub(crate) mod shape_create_fargate_profile_input;
 
 pub(crate) mod shape_create_nodegroup_input;
+
+pub(crate) mod shape_create_pod_identity_association_input;
 
 pub(crate) mod shape_describe_identity_provider_config_input;
 
@@ -170,6 +182,8 @@ pub(crate) mod shape_update_eks_anywhere_subscription_input;
 pub(crate) mod shape_update_nodegroup_config_input;
 
 pub(crate) mod shape_update_nodegroup_version_input;
+
+pub(crate) mod shape_update_pod_identity_association_input;
 
 pub(crate) mod shape_addon;
 
@@ -212,6 +226,10 @@ pub(crate) mod shape_nodegroup_update_config;
 pub(crate) mod shape_oidc_identity_provider_config_request;
 
 pub(crate) mod shape_outpost_config_request;
+
+pub(crate) mod shape_pod_identity_association;
+
+pub(crate) mod shape_pod_identity_association_summaries;
 
 pub(crate) mod shape_remote_access_config;
 
@@ -264,6 +282,8 @@ pub(crate) mod shape_nodegroup_resources;
 pub(crate) mod shape_oidc_identity_provider_config;
 
 pub(crate) mod shape_outpost_config_response;
+
+pub(crate) mod shape_pod_identity_association_summary;
 
 pub(crate) mod shape_provider;
 

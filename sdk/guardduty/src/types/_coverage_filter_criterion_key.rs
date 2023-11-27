@@ -14,9 +14,13 @@
 /// match coveragefiltercriterionkey {
 ///     CoverageFilterCriterionKey::AccountId => { /* ... */ },
 ///     CoverageFilterCriterionKey::AddonVersion => { /* ... */ },
+///     CoverageFilterCriterionKey::AgentVersion => { /* ... */ },
+///     CoverageFilterCriterionKey::ClusterArn => { /* ... */ },
 ///     CoverageFilterCriterionKey::ClusterName => { /* ... */ },
 ///     CoverageFilterCriterionKey::CoverageStatus => { /* ... */ },
+///     CoverageFilterCriterionKey::EcsClusterName => { /* ... */ },
 ///     CoverageFilterCriterionKey::EksClusterName => { /* ... */ },
+///     CoverageFilterCriterionKey::InstanceId => { /* ... */ },
 ///     CoverageFilterCriterionKey::ManagementType => { /* ... */ },
 ///     CoverageFilterCriterionKey::ResourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,11 +55,19 @@ pub enum CoverageFilterCriterionKey {
     #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
     #[allow(missing_docs)] // documentation missing in model
+    AgentVersion,
+    #[allow(missing_docs)] // documentation missing in model
+    ClusterArn,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterName,
     #[allow(missing_docs)] // documentation missing in model
     CoverageStatus,
     #[allow(missing_docs)] // documentation missing in model
+    EcsClusterName,
+    #[allow(missing_docs)] // documentation missing in model
     EksClusterName,
+    #[allow(missing_docs)] // documentation missing in model
+    InstanceId,
     #[allow(missing_docs)] // documentation missing in model
     ManagementType,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,9 +81,13 @@ impl ::std::convert::From<&str> for CoverageFilterCriterionKey {
         match s {
             "ACCOUNT_ID" => CoverageFilterCriterionKey::AccountId,
             "ADDON_VERSION" => CoverageFilterCriterionKey::AddonVersion,
+            "AGENT_VERSION" => CoverageFilterCriterionKey::AgentVersion,
+            "CLUSTER_ARN" => CoverageFilterCriterionKey::ClusterArn,
             "CLUSTER_NAME" => CoverageFilterCriterionKey::ClusterName,
             "COVERAGE_STATUS" => CoverageFilterCriterionKey::CoverageStatus,
+            "ECS_CLUSTER_NAME" => CoverageFilterCriterionKey::EcsClusterName,
             "EKS_CLUSTER_NAME" => CoverageFilterCriterionKey::EksClusterName,
+            "INSTANCE_ID" => CoverageFilterCriterionKey::InstanceId,
             "MANAGEMENT_TYPE" => CoverageFilterCriterionKey::ManagementType,
             "RESOURCE_TYPE" => CoverageFilterCriterionKey::ResourceType,
             other => CoverageFilterCriterionKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -91,9 +107,13 @@ impl CoverageFilterCriterionKey {
         match self {
             CoverageFilterCriterionKey::AccountId => "ACCOUNT_ID",
             CoverageFilterCriterionKey::AddonVersion => "ADDON_VERSION",
+            CoverageFilterCriterionKey::AgentVersion => "AGENT_VERSION",
+            CoverageFilterCriterionKey::ClusterArn => "CLUSTER_ARN",
             CoverageFilterCriterionKey::ClusterName => "CLUSTER_NAME",
             CoverageFilterCriterionKey::CoverageStatus => "COVERAGE_STATUS",
+            CoverageFilterCriterionKey::EcsClusterName => "ECS_CLUSTER_NAME",
             CoverageFilterCriterionKey::EksClusterName => "EKS_CLUSTER_NAME",
+            CoverageFilterCriterionKey::InstanceId => "INSTANCE_ID",
             CoverageFilterCriterionKey::ManagementType => "MANAGEMENT_TYPE",
             CoverageFilterCriterionKey::ResourceType => "RESOURCE_TYPE",
             CoverageFilterCriterionKey::Unknown(value) => value.as_str(),
@@ -104,9 +124,13 @@ impl CoverageFilterCriterionKey {
         &[
             "ACCOUNT_ID",
             "ADDON_VERSION",
+            "AGENT_VERSION",
+            "CLUSTER_ARN",
             "CLUSTER_NAME",
             "COVERAGE_STATUS",
+            "ECS_CLUSTER_NAME",
             "EKS_CLUSTER_NAME",
+            "INSTANCE_ID",
             "MANAGEMENT_TYPE",
             "RESOURCE_TYPE",
         ]

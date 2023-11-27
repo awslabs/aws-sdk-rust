@@ -7,6 +7,8 @@ pub struct DiskIopsConfiguration {
     /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub mode: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub iops: ::std::option::Option<i64>,
 }
 impl DiskIopsConfiguration {
@@ -15,6 +17,8 @@ impl DiskIopsConfiguration {
         self.mode.as_ref()
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub fn iops(&self) -> ::std::option::Option<i64> {
         self.iops
     }
@@ -49,16 +53,22 @@ impl DiskIopsConfigurationBuilder {
         &self.mode
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub fn iops(mut self, input: i64) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i64>) -> Self {
         self.iops = input;
         self
     }
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
+    /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of the minimum or maximum values.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i64> {
         &self.iops
     }

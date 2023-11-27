@@ -6,7 +6,7 @@
 pub struct CanDbcDefinition {
     /// <p>Contains information about a network interface.</p>
     pub network_interface: ::std::string::String,
-    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.</p>
     pub can_dbc_files: ::std::vec::Vec<::aws_smithy_types::Blob>,
     /// <p>Pairs every signal specified in your vehicle model with a signal decoder.</p>
     pub signals_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -17,7 +17,7 @@ impl CanDbcDefinition {
         use std::ops::Deref;
         self.network_interface.deref()
     }
-    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.</p>
     pub fn can_dbc_files(&self) -> &[::aws_smithy_types::Blob] {
         use std::ops::Deref;
         self.can_dbc_files.deref()
@@ -62,19 +62,19 @@ impl CanDbcDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_can_dbc_files`](Self::set_can_dbc_files).
     ///
-    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.</p>
     pub fn can_dbc_files(mut self, input: ::aws_smithy_types::Blob) -> Self {
         let mut v = self.can_dbc_files.unwrap_or_default();
         v.push(input);
         self.can_dbc_files = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.</p>
     pub fn set_can_dbc_files(mut self, input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>>) -> Self {
         self.can_dbc_files = input;
         self
     }
-    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list.</p>
+    /// <p>A list of DBC files. You can upload only one DBC file for each network interface and specify up to five (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.</p>
     pub fn get_can_dbc_files(&self) -> &::std::option::Option<::std::vec::Vec<::aws_smithy_types::Blob>> {
         &self.can_dbc_files
     }

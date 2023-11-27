@@ -17,6 +17,7 @@
 ///     SettingName::ContainerInstanceLongArnFormat => { /* ... */ },
 ///     SettingName::FargateFipsMode => { /* ... */ },
 ///     SettingName::FargateTaskRetirementWaitPeriod => { /* ... */ },
+///     SettingName::GuardDutyActivate => { /* ... */ },
 ///     SettingName::ServiceLongArnFormat => { /* ... */ },
 ///     SettingName::TagResourceAuthorization => { /* ... */ },
 ///     SettingName::TaskLongArnFormat => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum SettingName {
     #[allow(missing_docs)] // documentation missing in model
     FargateTaskRetirementWaitPeriod,
     #[allow(missing_docs)] // documentation missing in model
+    GuardDutyActivate,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLongArnFormat,
     #[allow(missing_docs)] // documentation missing in model
     TagResourceAuthorization,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for SettingName {
             "containerInstanceLongArnFormat" => SettingName::ContainerInstanceLongArnFormat,
             "fargateFIPSMode" => SettingName::FargateFipsMode,
             "fargateTaskRetirementWaitPeriod" => SettingName::FargateTaskRetirementWaitPeriod,
+            "guardDutyActivate" => SettingName::GuardDutyActivate,
             "serviceLongArnFormat" => SettingName::ServiceLongArnFormat,
             "tagResourceAuthorization" => SettingName::TagResourceAuthorization,
             "taskLongArnFormat" => SettingName::TaskLongArnFormat,
@@ -98,6 +102,7 @@ impl SettingName {
             SettingName::ContainerInstanceLongArnFormat => "containerInstanceLongArnFormat",
             SettingName::FargateFipsMode => "fargateFIPSMode",
             SettingName::FargateTaskRetirementWaitPeriod => "fargateTaskRetirementWaitPeriod",
+            SettingName::GuardDutyActivate => "guardDutyActivate",
             SettingName::ServiceLongArnFormat => "serviceLongArnFormat",
             SettingName::TagResourceAuthorization => "tagResourceAuthorization",
             SettingName::TaskLongArnFormat => "taskLongArnFormat",
@@ -112,6 +117,7 @@ impl SettingName {
             "containerInstanceLongArnFormat",
             "fargateFIPSMode",
             "fargateTaskRetirementWaitPeriod",
+            "guardDutyActivate",
             "serviceLongArnFormat",
             "tagResourceAuthorization",
             "taskLongArnFormat",

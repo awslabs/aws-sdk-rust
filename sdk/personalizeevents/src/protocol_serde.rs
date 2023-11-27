@@ -23,6 +23,10 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_put_action_interactions;
+
+pub(crate) mod shape_put_actions;
+
 pub(crate) mod shape_put_events;
 
 pub(crate) mod shape_put_items;
@@ -39,6 +43,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_invalid_input_exception;
 
+pub(crate) mod shape_put_action_interactions_input;
+
+pub(crate) mod shape_put_actions_input;
+
 pub(crate) mod shape_put_events_input;
 
 pub(crate) mod shape_put_items_input;
@@ -48,6 +56,10 @@ pub(crate) mod shape_put_users_input;
 pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_action;
+
+pub(crate) mod shape_action_interaction;
 
 pub(crate) mod shape_event;
 

@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_analyzer_summary::AnalyzerSummaryBuilder;
 
+pub use crate::types::_unused_access_configuration::UnusedAccessConfigurationBuilder;
+
 pub use crate::types::_status_reason::StatusReasonBuilder;
 
 pub use crate::types::_inline_archive_rule::InlineArchiveRuleBuilder;
@@ -29,13 +31,15 @@ pub use crate::types::_policy_generation_details::PolicyGenerationDetailsBuilder
 
 pub use crate::types::_policy_generation::PolicyGenerationBuilder;
 
+pub use crate::types::_finding_summary_v2::FindingSummaryV2Builder;
+
+pub use crate::types::_sort_criteria::SortCriteriaBuilder;
+
 pub use crate::types::_finding_summary::FindingSummaryBuilder;
 
 pub use crate::types::_finding_source::FindingSourceBuilder;
 
 pub use crate::types::_finding_source_detail::FindingSourceDetailBuilder;
-
-pub use crate::types::_sort_criteria::SortCriteriaBuilder;
 
 pub use crate::types::_analyzed_resource_summary::AnalyzedResourceSummaryBuilder;
 
@@ -58,6 +62,18 @@ pub use crate::types::_trail_properties::TrailPropertiesBuilder;
 pub use crate::types::_job_details::JobDetailsBuilder;
 
 pub use crate::types::_job_error::JobErrorBuilder;
+
+pub use crate::types::_unused_iam_user_password_details::UnusedIamUserPasswordDetailsBuilder;
+
+pub use crate::types::_unused_iam_role_details::UnusedIamRoleDetailsBuilder;
+
+pub use crate::types::_unused_iam_user_access_key_details::UnusedIamUserAccessKeyDetailsBuilder;
+
+pub use crate::types::_unused_permission_details::UnusedPermissionDetailsBuilder;
+
+pub use crate::types::_unused_action::UnusedActionBuilder;
+
+pub use crate::types::_external_access_details::ExternalAccessDetailsBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
 
@@ -100,3 +116,7 @@ pub use crate::types::_iam_role_configuration::IamRoleConfigurationBuilder;
 pub use crate::types::_ecr_repository_configuration::EcrRepositoryConfigurationBuilder;
 
 pub use crate::types::_ebs_snapshot_configuration::EbsSnapshotConfigurationBuilder;
+
+pub use crate::types::_reason_summary::ReasonSummaryBuilder;
+
+pub use crate::types::_access::AccessBuilder;

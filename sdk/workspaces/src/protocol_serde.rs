@@ -517,6 +517,8 @@ pub(crate) mod shape_compute_list;
 
 pub(crate) mod shape_connection_alias_association_list;
 
+pub(crate) mod shape_data_replication_settings;
+
 pub(crate) mod shape_default_workspace_creation_properties;
 
 pub(crate) mod shape_dns_ip_addresses;
@@ -533,6 +535,8 @@ pub(crate) mod shape_operating_system_name_list;
 
 pub(crate) mod shape_related_workspaces;
 
+pub(crate) mod shape_standby_workspaces_properties_list;
+
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_update_result;
@@ -546,3 +550,5 @@ pub(crate) mod shape_modification_state;
 pub(crate) mod shape_protocol_list;
 
 pub(crate) mod shape_related_workspace_properties;
+
+pub(crate) mod shape_standby_workspaces_properties;

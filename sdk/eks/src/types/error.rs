@@ -3,11 +3,11 @@ pub use crate::types::error::_server_exception::ServerException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
-pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
-
 pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
 pub use crate::types::error::_invalid_parameter_exception::InvalidParameterException;
+
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_client_exception::ClientException;
 

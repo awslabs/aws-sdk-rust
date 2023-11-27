@@ -14,13 +14,20 @@
 /// match signaldecoderfailurereason {
 ///     SignalDecoderFailureReason::CanSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::ConflictingSignal => { /* ... */ },
+///     SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::DuplicateSignal => { /* ... */ },
+///     SignalDecoderFailureReason::EmptyMessageSignal => { /* ... */ },
+///     SignalDecoderFailureReason::MessageSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => { /* ... */ },
 ///     SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => { /* ... */ },
+///     SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => { /* ... */ },
 ///     SignalDecoderFailureReason::ObdSignalInfoIsNull => { /* ... */ },
+///     SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => { /* ... */ },
+///     SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => { /* ... */ },
 ///     SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => { /* ... */ },
 ///     SignalDecoderFailureReason::SignalNotInModel => { /* ... */ },
 ///     SignalDecoderFailureReason::SignalToAddAlreadyExists => { /* ... */ },
+///     SignalDecoderFailureReason::StructSizeMismatch => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,19 +60,33 @@ pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingSignal,
     #[allow(missing_docs)] // documentation missing in model
+    CustomerDecodedSignalInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateSignal,
+    #[allow(missing_docs)] // documentation missing in model
+    EmptyMessageSignal,
+    #[allow(missing_docs)] // documentation missing in model
+    MessageSignalInfoIsNull,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceTypeIncompatibleWithSignalDecoderType,
     #[allow(missing_docs)] // documentation missing in model
     NoDecoderInfoForSignalInModel,
     #[allow(missing_docs)] // documentation missing in model
+    NoSignalInCatalogForDecoderSignal,
+    #[allow(missing_docs)] // documentation missing in model
     ObdSignalInfoIsNull,
+    #[allow(missing_docs)] // documentation missing in model
+    SignalDecoderIncompatibleWithSignalCatalog,
+    #[allow(missing_docs)] // documentation missing in model
+    SignalDecoderTypeIncompatibleWithMessageSignalType,
     #[allow(missing_docs)] // documentation missing in model
     SignalNotAssociatedWithNetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
     SignalNotInModel,
     #[allow(missing_docs)] // documentation missing in model
     SignalToAddAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    StructSizeMismatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,15 +96,24 @@ impl ::std::convert::From<&str> for SignalDecoderFailureReason {
         match s {
             "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
             "CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
+            "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull,
             "DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
+            "EMPTY_MESSAGE_SIGNAL" => SignalDecoderFailureReason::EmptyMessageSignal,
+            "MESSAGE_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::MessageSignalInfoIsNull,
             "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE" => {
                 SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType
             }
             "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL" => SignalDecoderFailureReason::NoDecoderInfoForSignalInModel,
+            "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL" => SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal,
             "OBD_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::ObdSignalInfoIsNull,
+            "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG" => SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog,
+            "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE" => {
+                SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType
+            }
             "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE" => SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface,
             "SIGNAL_NOT_IN_MODEL" => SignalDecoderFailureReason::SignalNotInModel,
             "SIGNAL_TO_ADD_ALREADY_EXISTS" => SignalDecoderFailureReason::SignalToAddAlreadyExists,
+            "STRUCT_SIZE_MISMATCH" => SignalDecoderFailureReason::StructSizeMismatch,
             other => SignalDecoderFailureReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -101,15 +131,24 @@ impl SignalDecoderFailureReason {
         match self {
             SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
+            SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull => "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
+            SignalDecoderFailureReason::EmptyMessageSignal => "EMPTY_MESSAGE_SIGNAL",
+            SignalDecoderFailureReason::MessageSignalInfoIsNull => "MESSAGE_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
                 "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE"
             }
             SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
+            SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL",
             SignalDecoderFailureReason::ObdSignalInfoIsNull => "OBD_SIGNAL_INFO_IS_NULL",
+            SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG",
+            SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => {
+                "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE"
+            }
             SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
             SignalDecoderFailureReason::SignalNotInModel => "SIGNAL_NOT_IN_MODEL",
             SignalDecoderFailureReason::SignalToAddAlreadyExists => "SIGNAL_TO_ADD_ALREADY_EXISTS",
+            SignalDecoderFailureReason::StructSizeMismatch => "STRUCT_SIZE_MISMATCH",
             SignalDecoderFailureReason::Unknown(value) => value.as_str(),
         }
     }
@@ -118,13 +157,20 @@ impl SignalDecoderFailureReason {
         &[
             "CAN_SIGNAL_INFO_IS_NULL",
             "CONFLICTING_SIGNAL",
+            "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL",
             "DUPLICATE_SIGNAL",
+            "EMPTY_MESSAGE_SIGNAL",
+            "MESSAGE_SIGNAL_INFO_IS_NULL",
             "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE",
             "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL",
+            "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL",
             "OBD_SIGNAL_INFO_IS_NULL",
+            "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG",
+            "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE",
             "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE",
             "SIGNAL_NOT_IN_MODEL",
             "SIGNAL_TO_ADD_ALREADY_EXISTS",
+            "STRUCT_SIZE_MISMATCH",
         ]
     }
 }

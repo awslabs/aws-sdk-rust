@@ -348,6 +348,52 @@ impl From<crate::operation::create_nodegroup::CreateNodegroupError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError> for Error {
+    fn from(err: crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError) -> Self {
+        match err {
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::create_pod_identity_association::CreatePodIdentityAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_addon::DeleteAddonError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -494,6 +540,46 @@ impl From<crate::operation::delete_nodegroup::DeleteNodegroupError> for Error {
             crate::operation::delete_nodegroup::DeleteNodegroupError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_nodegroup::DeleteNodegroupError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_nodegroup::DeleteNodegroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError> for Error {
+    fn from(err: crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError) -> Self {
+        match err {
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::delete_pod_identity_association::DeletePodIdentityAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -788,6 +874,50 @@ impl From<crate::operation::describe_nodegroup::DescribeNodegroupError> for Erro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError> for Error {
+    fn from(err: crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError) -> Self {
+        match err {
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_pod_identity_association::DescribePodIdentityAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_update::DescribeUpdateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1051,6 +1181,46 @@ impl From<crate::operation::list_nodegroups::ListNodegroupsError> for Error {
             crate::operation::list_nodegroups::ListNodegroupsError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_nodegroups::ListNodegroupsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::list_nodegroups::ListNodegroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError> for Error {
+    fn from(err: crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError) -> Self {
+        match err {
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::list_pod_identity_associations::ListPodIdentityAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1391,6 +1561,46 @@ impl From<crate::operation::update_nodegroup_version::UpdateNodegroupVersionErro
             }
             crate::operation::update_nodegroup_version::UpdateNodegroupVersionError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_nodegroup_version::UpdateNodegroupVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError> for Error {
+    fn from(err: crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError) -> Self {
+        match err {
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::update_pod_identity_association::UpdatePodIdentityAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

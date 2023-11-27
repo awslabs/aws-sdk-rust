@@ -18,6 +18,7 @@
 ///     ExportableLambdaFunctionField::CurrentCostAverage => { /* ... */ },
 ///     ExportableLambdaFunctionField::CurrentCostTotal => { /* ... */ },
 ///     ExportableLambdaFunctionField::CurrentPerformanceRisk => { /* ... */ },
+///     ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableLambdaFunctionField::Finding => { /* ... */ },
 ///     ExportableLambdaFunctionField::FindingReasonCodes => { /* ... */ },
 ///     ExportableLambdaFunctionField::FunctionArn => { /* ... */ },
@@ -29,10 +30,13 @@
 ///     ExportableLambdaFunctionField::RecommendationOptionsCostHigh => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsCostLow => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => { /* ... */ },
+///     ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableLambdaFunctionField::Tags => { /* ... */ },
 ///     ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => { /* ... */ },
@@ -79,6 +83,8 @@ pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentPerformanceRisk,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
@@ -101,13 +107,19 @@ pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationExpected,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -133,6 +145,9 @@ impl ::std::convert::From<&str> for ExportableLambdaFunctionField {
             "CurrentCostAverage" => ExportableLambdaFunctionField::CurrentCostAverage,
             "CurrentCostTotal" => ExportableLambdaFunctionField::CurrentCostTotal,
             "CurrentPerformanceRisk" => ExportableLambdaFunctionField::CurrentPerformanceRisk,
+            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
+                ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode
+            }
             "Finding" => ExportableLambdaFunctionField::Finding,
             "FindingReasonCodes" => ExportableLambdaFunctionField::FindingReasonCodes,
             "FunctionArn" => ExportableLambdaFunctionField::FunctionArn,
@@ -146,7 +161,13 @@ impl ::std::convert::From<&str> for ExportableLambdaFunctionField {
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
                 ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency
             }
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
+                ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
+            }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
+                ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
             "RecommendationOptionsProjectedUtilizationMetricsDurationExpected" => {
                 ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected
             }
@@ -155,6 +176,9 @@ impl ::std::convert::From<&str> for ExportableLambdaFunctionField {
             }
             "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => {
                 ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound
+            }
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
+                ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
             }
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
             "Tags" => ExportableLambdaFunctionField::Tags,
@@ -183,6 +207,9 @@ impl ExportableLambdaFunctionField {
             ExportableLambdaFunctionField::CurrentCostAverage => "CurrentCostAverage",
             ExportableLambdaFunctionField::CurrentCostTotal => "CurrentCostTotal",
             ExportableLambdaFunctionField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                "EffectiveRecommendationPreferencesSavingsEstimationMode"
+            }
             ExportableLambdaFunctionField::Finding => "Finding",
             ExportableLambdaFunctionField::FindingReasonCodes => "FindingReasonCodes",
             ExportableLambdaFunctionField::FunctionArn => "FunctionArn",
@@ -196,7 +223,13 @@ impl ExportableLambdaFunctionField {
             ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 "RecommendationOptionsEstimatedMonthlySavingsCurrency"
             }
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
+            }
             ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
             ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => {
                 "RecommendationOptionsProjectedUtilizationMetricsDurationExpected"
             }
@@ -205,6 +238,9 @@ impl ExportableLambdaFunctionField {
             }
             ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => {
                 "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound"
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
             }
             ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableLambdaFunctionField::Tags => "Tags",
@@ -224,6 +260,7 @@ impl ExportableLambdaFunctionField {
             "CurrentCostAverage",
             "CurrentCostTotal",
             "CurrentPerformanceRisk",
+            "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "FindingReasonCodes",
             "FunctionArn",
@@ -235,10 +272,13 @@ impl ExportableLambdaFunctionField {
             "RecommendationOptionsCostHigh",
             "RecommendationOptionsCostLow",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
             "RecommendationOptionsProjectedUtilizationMetricsDurationExpected",
             "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
             "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "Tags",
             "UtilizationMetricsDurationAverage",

@@ -27,6 +27,8 @@ pub struct Actuator {
     pub deprecation_message: ::std::option::Option<::std::string::String>,
     /// <p>A comment in addition to the description.</p>
     pub comment: ::std::option::Option<::std::string::String>,
+    /// <p>The fully qualified name of the struct node for the actuator if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.</p>
+    pub struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
 impl Actuator {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
@@ -73,6 +75,10 @@ impl Actuator {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
+    /// <p>The fully qualified name of the struct node for the actuator if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.</p>
+    pub fn struct_fully_qualified_name(&self) -> ::std::option::Option<&str> {
+        self.struct_fully_qualified_name.as_deref()
+    }
 }
 impl Actuator {
     /// Creates a new builder-style object to manufacture [`Actuator`](crate::types::Actuator).
@@ -95,6 +101,7 @@ pub struct ActuatorBuilder {
     pub(crate) assigned_value: ::std::option::Option<::std::string::String>,
     pub(crate) deprecation_message: ::std::option::Option<::std::string::String>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) struct_fully_qualified_name: ::std::option::Option<::std::string::String>,
 }
 impl ActuatorBuilder {
     /// <p>The fully qualified name of the actuator. For example, the fully qualified name of an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.</p>
@@ -248,6 +255,20 @@ impl ActuatorBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
+    /// <p>The fully qualified name of the struct node for the actuator if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.</p>
+    pub fn struct_fully_qualified_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.struct_fully_qualified_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The fully qualified name of the struct node for the actuator if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.</p>
+    pub fn set_struct_fully_qualified_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.struct_fully_qualified_name = input;
+        self
+    }
+    /// <p>The fully qualified name of the struct node for the actuator if the data type of the actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.</p>
+    pub fn get_struct_fully_qualified_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.struct_fully_qualified_name
+    }
     /// Consumes the builder and constructs a [`Actuator`](crate::types::Actuator).
     /// This method will fail if any of the following fields are not set:
     /// - [`fully_qualified_name`](crate::types::builders::ActuatorBuilder::fully_qualified_name)
@@ -274,6 +295,7 @@ impl ActuatorBuilder {
             assigned_value: self.assigned_value,
             deprecation_message: self.deprecation_message,
             comment: self.comment,
+            struct_fully_qualified_name: self.struct_fully_qualified_name,
         })
     }
 }

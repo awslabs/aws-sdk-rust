@@ -48,5 +48,17 @@ pub fn ser_create_file_system_ontap_configuration(
     if let Some(var_13) = &input.weekly_maintenance_start_time {
         object.key("WeeklyMaintenanceStartTime").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.ha_pairs {
+        object.key("HAPairs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
+    }
+    if let Some(var_15) = &input.throughput_capacity_per_ha_pair {
+        object.key("ThroughputCapacityPerHAPair").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
     Ok(())
 }

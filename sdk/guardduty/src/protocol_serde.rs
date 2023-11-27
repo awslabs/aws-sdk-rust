@@ -483,6 +483,10 @@ pub(crate) mod shape_action;
 
 pub(crate) mod shape_container;
 
+pub(crate) mod shape_coverage_ec2_instance_details;
+
+pub(crate) mod shape_coverage_ecs_cluster_details;
+
 pub(crate) mod shape_coverage_eks_cluster_details;
 
 pub(crate) mod shape_data_source_free_trial;
@@ -549,13 +553,19 @@ pub(crate) mod shape_volume_detail;
 
 pub(crate) mod shape_addon_details;
 
+pub(crate) mod shape_agent_details;
+
 pub(crate) mod shape_anomaly;
 
 pub(crate) mod shape_aws_api_call_action;
 
+pub(crate) mod shape_container_instance_details;
+
 pub(crate) mod shape_dns_request_action;
 
 pub(crate) mod shape_ecs_task_details;
+
+pub(crate) mod shape_fargate_details;
 
 pub(crate) mod shape_iam_instance_profile;
 
@@ -622,6 +632,8 @@ pub(crate) mod shape_groups;
 pub(crate) mod shape_highest_severity_threat_details;
 
 pub(crate) mod shape_impersonated_user;
+
+pub(crate) mod shape_issues;
 
 pub(crate) mod shape_lineage;
 

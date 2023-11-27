@@ -19,6 +19,7 @@
 ///     ExportableEcsServiceField::CurrentServiceConfigurationMemory => { /* ... */ },
 ///     ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => { /* ... */ },
 ///     ExportableEcsServiceField::CurrentServiceContainerConfigurations => { /* ... */ },
+///     ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableEcsServiceField::Finding => { /* ... */ },
 ///     ExportableEcsServiceField::FindingReasonCodes => { /* ... */ },
 ///     ExportableEcsServiceField::LastRefreshTimestamp => { /* ... */ },
@@ -27,10 +28,13 @@
 ///     ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsCpu => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsMemory => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
+///     ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableEcsServiceField::ServiceArn => { /* ... */ },
 ///     ExportableEcsServiceField::Tags => { /* ... */ },
@@ -78,6 +82,8 @@ pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentServiceContainerConfigurations,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
@@ -94,13 +100,19 @@ pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMemory,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -125,6 +137,9 @@ impl ::std::convert::From<&str> for ExportableEcsServiceField {
             "CurrentServiceConfigurationMemory" => ExportableEcsServiceField::CurrentServiceConfigurationMemory,
             "CurrentServiceConfigurationTaskDefinitionArn" => ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn,
             "CurrentServiceContainerConfigurations" => ExportableEcsServiceField::CurrentServiceContainerConfigurations,
+            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
+                ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode
+            }
             "Finding" => ExportableEcsServiceField::Finding,
             "FindingReasonCodes" => ExportableEcsServiceField::FindingReasonCodes,
             "LastRefreshTimestamp" => ExportableEcsServiceField::LastRefreshTimestamp,
@@ -133,13 +148,22 @@ impl ::std::convert::From<&str> for ExportableEcsServiceField {
             "RecommendationOptionsContainerRecommendations" => ExportableEcsServiceField::RecommendationOptionsContainerRecommendations,
             "RecommendationOptionsCpu" => ExportableEcsServiceField::RecommendationOptionsCpu,
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
+                ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
+            }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
+                ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
             "RecommendationOptionsMemory" => ExportableEcsServiceField::RecommendationOptionsMemory,
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum" => {
                 ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum
             }
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
                 ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
+            }
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
+                ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
             }
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
             "ServiceArn" => ExportableEcsServiceField::ServiceArn,
@@ -168,6 +192,9 @@ impl ExportableEcsServiceField {
             ExportableEcsServiceField::CurrentServiceConfigurationMemory => "CurrentServiceConfigurationMemory",
             ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => "CurrentServiceConfigurationTaskDefinitionArn",
             ExportableEcsServiceField::CurrentServiceContainerConfigurations => "CurrentServiceContainerConfigurations",
+            ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                "EffectiveRecommendationPreferencesSavingsEstimationMode"
+            }
             ExportableEcsServiceField::Finding => "Finding",
             ExportableEcsServiceField::FindingReasonCodes => "FindingReasonCodes",
             ExportableEcsServiceField::LastRefreshTimestamp => "LastRefreshTimestamp",
@@ -176,13 +203,22 @@ impl ExportableEcsServiceField {
             ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => "RecommendationOptionsContainerRecommendations",
             ExportableEcsServiceField::RecommendationOptionsCpu => "RecommendationOptionsCpu",
             ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
+            }
             ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
             ExportableEcsServiceField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum"
             }
             ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+            }
+            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
             }
             ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableEcsServiceField::ServiceArn => "ServiceArn",
@@ -202,6 +238,7 @@ impl ExportableEcsServiceField {
             "CurrentServiceConfigurationMemory",
             "CurrentServiceConfigurationTaskDefinitionArn",
             "CurrentServiceContainerConfigurations",
+            "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "FindingReasonCodes",
             "LastRefreshTimestamp",
@@ -210,10 +247,13 @@ impl ExportableEcsServiceField {
             "RecommendationOptionsContainerRecommendations",
             "RecommendationOptionsCpu",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
             "RecommendationOptionsMemory",
             "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "ServiceArn",
             "Tags",

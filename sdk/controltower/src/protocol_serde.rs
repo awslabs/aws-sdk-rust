@@ -23,6 +23,10 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_landing_zone;
+
+pub(crate) mod shape_delete_landing_zone;
+
 pub(crate) mod shape_disable_control;
 
 pub(crate) mod shape_enable_control;
@@ -31,13 +35,23 @@ pub(crate) mod shape_get_control_operation;
 
 pub(crate) mod shape_get_enabled_control;
 
+pub(crate) mod shape_get_landing_zone;
+
+pub(crate) mod shape_get_landing_zone_operation;
+
 pub(crate) mod shape_list_enabled_controls;
 
+pub(crate) mod shape_list_landing_zones;
+
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_reset_landing_zone;
 
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_landing_zone;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -51,6 +65,10 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_landing_zone_input;
+
+pub(crate) mod shape_delete_landing_zone_input;
+
 pub(crate) mod shape_disable_control_input;
 
 pub(crate) mod shape_enable_control_input;
@@ -59,9 +77,17 @@ pub(crate) mod shape_get_control_operation_input;
 
 pub(crate) mod shape_get_enabled_control_input;
 
+pub(crate) mod shape_get_landing_zone_input;
+
+pub(crate) mod shape_get_landing_zone_operation_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_enabled_controls_input;
+
+pub(crate) mod shape_list_landing_zones_input;
+
+pub(crate) mod shape_reset_landing_zone_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -71,6 +97,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_landing_zone_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_control_operation;
@@ -79,6 +107,12 @@ pub(crate) mod shape_enabled_control_details;
 
 pub(crate) mod shape_enabled_controls;
 
+pub(crate) mod shape_landing_zone_detail;
+
+pub(crate) mod shape_landing_zone_operation_detail;
+
+pub(crate) mod shape_landing_zone_summaries;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_drift_status_summary;
@@ -86,6 +120,10 @@ pub(crate) mod shape_drift_status_summary;
 pub(crate) mod shape_enabled_control_summary;
 
 pub(crate) mod shape_enablement_status_summary;
+
+pub(crate) mod shape_landing_zone_drift_status_summary;
+
+pub(crate) mod shape_landing_zone_summary;
 
 pub(crate) mod shape_target_regions;
 

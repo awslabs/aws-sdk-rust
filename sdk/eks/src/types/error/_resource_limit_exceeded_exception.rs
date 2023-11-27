@@ -10,7 +10,7 @@ pub struct ResourceLimitExceededException {
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS subscription ID with the exception.</p>
     pub subscription_id: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -117,17 +117,17 @@ impl ResourceLimitExceededExceptionBuilder {
     pub fn get_subscription_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_id
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

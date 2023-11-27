@@ -43,7 +43,7 @@ pub struct Backup {
     pub source_backup_region: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the resource type that's backed up.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    /// <p>Describes an Amazon FSx volume.</p>
     pub volume: ::std::option::Option<crate::types::Volume>,
 }
 impl Backup {
@@ -118,7 +118,7 @@ impl Backup {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    /// <p>Describes an Amazon FSx volume.</p>
     pub fn volume(&self) -> ::std::option::Option<&crate::types::Volume> {
         self.volume.as_ref()
     }
@@ -400,17 +400,17 @@ impl BackupBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    /// <p>Describes an Amazon FSx volume.</p>
     pub fn volume(mut self, input: crate::types::Volume) -> Self {
         self.volume = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    /// <p>Describes an Amazon FSx volume.</p>
     pub fn set_volume(mut self, input: ::std::option::Option<crate::types::Volume>) -> Self {
         self.volume = input;
         self
     }
-    /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
+    /// <p>Describes an Amazon FSx volume.</p>
     pub fn get_volume(&self) -> &::std::option::Option<crate::types::Volume> {
         &self.volume
     }

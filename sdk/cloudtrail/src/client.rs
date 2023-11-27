@@ -187,6 +187,10 @@ mod describe_query;
 
 mod describe_trails;
 
+mod disable_federation;
+
+mod enable_federation;
+
 mod get_channel;
 
 mod get_event_data_store;

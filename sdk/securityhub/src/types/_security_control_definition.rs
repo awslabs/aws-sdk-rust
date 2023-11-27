@@ -16,6 +16,10 @@ pub struct SecurityControlDefinition {
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p> Specifies whether a security control is available in the current Amazon Web Services Region. </p>
     pub current_region_availability: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
+    /// <p> Security control properties that you can customize. Currently, only parameter customization is supported for select controls. An empty array is returned for controls that don’t support custom properties. </p>
+    pub customizable_properties: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlProperty>>,
+    /// <p> An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters. </p>
+    pub parameter_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
 }
 impl SecurityControlDefinition {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3). </p>
@@ -42,6 +46,18 @@ impl SecurityControlDefinition {
     pub fn current_region_availability(&self) -> ::std::option::Option<&crate::types::RegionAvailabilityStatus> {
         self.current_region_availability.as_ref()
     }
+    /// <p> Security control properties that you can customize. Currently, only parameter customization is supported for select controls. An empty array is returned for controls that don’t support custom properties. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customizable_properties.is_none()`.
+    pub fn customizable_properties(&self) -> &[crate::types::SecurityControlProperty] {
+        self.customizable_properties.as_deref().unwrap_or_default()
+    }
+    /// <p> An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters. </p>
+    pub fn parameter_definitions(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>> {
+        self.parameter_definitions.as_ref()
+    }
 }
 impl SecurityControlDefinition {
     /// Creates a new builder-style object to manufacture [`SecurityControlDefinition`](crate::types::SecurityControlDefinition).
@@ -60,6 +76,8 @@ pub struct SecurityControlDefinitionBuilder {
     pub(crate) remediation_url: ::std::option::Option<::std::string::String>,
     pub(crate) severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     pub(crate) current_region_availability: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
+    pub(crate) customizable_properties: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlProperty>>,
+    pub(crate) parameter_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
 }
 impl SecurityControlDefinitionBuilder {
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number (for example, APIGateway.3). This parameter differs from <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN) assigned to a control. The ARN references the security control ID (for example, arn:aws:securityhub:eu-central-1:123456789012:security-control/APIGateway.3). </p>
@@ -152,6 +170,51 @@ impl SecurityControlDefinitionBuilder {
     pub fn get_current_region_availability(&self) -> &::std::option::Option<crate::types::RegionAvailabilityStatus> {
         &self.current_region_availability
     }
+    /// Appends an item to `customizable_properties`.
+    ///
+    /// To override the contents of this collection use [`set_customizable_properties`](Self::set_customizable_properties).
+    ///
+    /// <p> Security control properties that you can customize. Currently, only parameter customization is supported for select controls. An empty array is returned for controls that don’t support custom properties. </p>
+    pub fn customizable_properties(mut self, input: crate::types::SecurityControlProperty) -> Self {
+        let mut v = self.customizable_properties.unwrap_or_default();
+        v.push(input);
+        self.customizable_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> Security control properties that you can customize. Currently, only parameter customization is supported for select controls. An empty array is returned for controls that don’t support custom properties. </p>
+    pub fn set_customizable_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlProperty>>) -> Self {
+        self.customizable_properties = input;
+        self
+    }
+    /// <p> Security control properties that you can customize. Currently, only parameter customization is supported for select controls. An empty array is returned for controls that don’t support custom properties. </p>
+    pub fn get_customizable_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlProperty>> {
+        &self.customizable_properties
+    }
+    /// Adds a key-value pair to `parameter_definitions`.
+    ///
+    /// To override the contents of this collection use [`set_parameter_definitions`](Self::set_parameter_definitions).
+    ///
+    /// <p> An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters. </p>
+    pub fn parameter_definitions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ParameterDefinition) -> Self {
+        let mut hash_map = self.parameter_definitions.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.parameter_definitions = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p> An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters. </p>
+    pub fn set_parameter_definitions(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
+    ) -> Self {
+        self.parameter_definitions = input;
+        self
+    }
+    /// <p> An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters. </p>
+    pub fn get_parameter_definitions(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>> {
+        &self.parameter_definitions
+    }
     /// Consumes the builder and constructs a [`SecurityControlDefinition`](crate::types::SecurityControlDefinition).
     pub fn build(self) -> crate::types::SecurityControlDefinition {
         crate::types::SecurityControlDefinition {
@@ -161,6 +224,8 @@ impl SecurityControlDefinitionBuilder {
             remediation_url: self.remediation_url,
             severity_rating: self.severity_rating,
             current_region_availability: self.current_region_availability,
+            customizable_properties: self.customizable_properties,
+            parameter_definitions: self.parameter_definitions,
         }
     }
 }

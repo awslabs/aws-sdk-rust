@@ -37,6 +37,12 @@ pub struct OpenZfsVolumeConfiguration {
     pub delete_intermediate_snaphots: ::std::option::Option<bool>,
     /// <p>A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted when a volume is restored from snapshot.</p>
     pub delete_cloned_volumes: ::std::option::Option<bool>,
+    /// <p>A Boolean value indicating whether snapshot data that differs between the current state and the specified snapshot should be overwritten when a volume is restored from a snapshot.</p>
+    pub delete_intermediate_data: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub source_snapshot_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the snapshot that's being copied or was most recently copied to the destination volume.</p>
+    pub destination_snapshot: ::std::option::Option<::std::string::String>,
 }
 impl OpenZfsVolumeConfiguration {
     /// <p>The ID of the parent volume.</p>
@@ -104,6 +110,18 @@ impl OpenZfsVolumeConfiguration {
     pub fn delete_cloned_volumes(&self) -> ::std::option::Option<bool> {
         self.delete_cloned_volumes
     }
+    /// <p>A Boolean value indicating whether snapshot data that differs between the current state and the specified snapshot should be overwritten when a volume is restored from a snapshot.</p>
+    pub fn delete_intermediate_data(&self) -> ::std::option::Option<bool> {
+        self.delete_intermediate_data
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn source_snapshot_arn(&self) -> ::std::option::Option<&str> {
+        self.source_snapshot_arn.as_deref()
+    }
+    /// <p>The ID of the snapshot that's being copied or was most recently copied to the destination volume.</p>
+    pub fn destination_snapshot(&self) -> ::std::option::Option<&str> {
+        self.destination_snapshot.as_deref()
+    }
 }
 impl OpenZfsVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`OpenZfsVolumeConfiguration`](crate::types::OpenZfsVolumeConfiguration).
@@ -130,6 +148,9 @@ pub struct OpenZfsVolumeConfigurationBuilder {
     pub(crate) restore_to_snapshot: ::std::option::Option<::std::string::String>,
     pub(crate) delete_intermediate_snaphots: ::std::option::Option<bool>,
     pub(crate) delete_cloned_volumes: ::std::option::Option<bool>,
+    pub(crate) delete_intermediate_data: ::std::option::Option<bool>,
+    pub(crate) source_snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_snapshot: ::std::option::Option<::std::string::String>,
 }
 impl OpenZfsVolumeConfigurationBuilder {
     /// <p>The ID of the parent volume.</p>
@@ -355,6 +376,48 @@ impl OpenZfsVolumeConfigurationBuilder {
     pub fn get_delete_cloned_volumes(&self) -> &::std::option::Option<bool> {
         &self.delete_cloned_volumes
     }
+    /// <p>A Boolean value indicating whether snapshot data that differs between the current state and the specified snapshot should be overwritten when a volume is restored from a snapshot.</p>
+    pub fn delete_intermediate_data(mut self, input: bool) -> Self {
+        self.delete_intermediate_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value indicating whether snapshot data that differs between the current state and the specified snapshot should be overwritten when a volume is restored from a snapshot.</p>
+    pub fn set_delete_intermediate_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_intermediate_data = input;
+        self
+    }
+    /// <p>A Boolean value indicating whether snapshot data that differs between the current state and the specified snapshot should be overwritten when a volume is restored from a snapshot.</p>
+    pub fn get_delete_intermediate_data(&self) -> &::std::option::Option<bool> {
+        &self.delete_intermediate_data
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn source_snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_snapshot_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn set_source_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_snapshot_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) for a given resource. ARNs uniquely identify Amazon Web Services resources. We require an ARN when you need to specify a resource unambiguously across all of Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    pub fn get_source_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_snapshot_arn
+    }
+    /// <p>The ID of the snapshot that's being copied or was most recently copied to the destination volume.</p>
+    pub fn destination_snapshot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination_snapshot = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the snapshot that's being copied or was most recently copied to the destination volume.</p>
+    pub fn set_destination_snapshot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination_snapshot = input;
+        self
+    }
+    /// <p>The ID of the snapshot that's being copied or was most recently copied to the destination volume.</p>
+    pub fn get_destination_snapshot(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination_snapshot
+    }
     /// Consumes the builder and constructs a [`OpenZfsVolumeConfiguration`](crate::types::OpenZfsVolumeConfiguration).
     pub fn build(self) -> crate::types::OpenZfsVolumeConfiguration {
         crate::types::OpenZfsVolumeConfiguration {
@@ -372,6 +435,9 @@ impl OpenZfsVolumeConfigurationBuilder {
             restore_to_snapshot: self.restore_to_snapshot,
             delete_intermediate_snaphots: self.delete_intermediate_snaphots,
             delete_cloned_volumes: self.delete_cloned_volumes,
+            delete_intermediate_data: self.delete_intermediate_data,
+            source_snapshot_arn: self.source_snapshot_arn,
+            destination_snapshot: self.destination_snapshot,
         }
     }
 }

@@ -22,6 +22,7 @@
 ///     ExportableVolumeField::CurrentConfigurationVolumeType => { /* ... */ },
 ///     ExportableVolumeField::CurrentMonthlyPrice => { /* ... */ },
 ///     ExportableVolumeField::CurrentPerformanceRisk => { /* ... */ },
+///     ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableVolumeField::Finding => { /* ... */ },
 ///     ExportableVolumeField::LastRefreshTimestamp => { /* ... */ },
 ///     ExportableVolumeField::LookbackPeriodInDays => { /* ... */ },
@@ -32,9 +33,12 @@
 ///     ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsMonthlyPrice => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsPerformanceRisk => { /* ... */ },
+///     ExportableVolumeField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableVolumeField::RootVolume => { /* ... */ },
 ///     ExportableVolumeField::Tags => { /* ... */ },
@@ -91,6 +95,8 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     CurrentPerformanceRisk,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     LastRefreshTimestamp,
@@ -111,11 +117,17 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsMonthlyPrice,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsPerformanceRisk,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -149,6 +161,9 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
             "CurrentConfigurationVolumeType" => ExportableVolumeField::CurrentConfigurationVolumeType,
             "CurrentMonthlyPrice" => ExportableVolumeField::CurrentMonthlyPrice,
             "CurrentPerformanceRisk" => ExportableVolumeField::CurrentPerformanceRisk,
+            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
+                ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode
+            }
             "Finding" => ExportableVolumeField::Finding,
             "LastRefreshTimestamp" => ExportableVolumeField::LastRefreshTimestamp,
             "LookbackPeriodInDays" => ExportableVolumeField::LookbackPeriodInDays,
@@ -163,9 +178,18 @@ impl ::std::convert::From<&str> for ExportableVolumeField {
             "RecommendationOptionsConfigurationVolumeSize" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize,
             "RecommendationOptionsConfigurationVolumeType" => ExportableVolumeField::RecommendationOptionsConfigurationVolumeType,
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency,
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
+                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
+            }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
+                ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
             "RecommendationOptionsMonthlyPrice" => ExportableVolumeField::RecommendationOptionsMonthlyPrice,
             "RecommendationOptionsPerformanceRisk" => ExportableVolumeField::RecommendationOptionsPerformanceRisk,
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
+                ExportableVolumeField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
+            }
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage,
             "RootVolume" => ExportableVolumeField::RootVolume,
             "Tags" => ExportableVolumeField::Tags,
@@ -199,6 +223,9 @@ impl ExportableVolumeField {
             ExportableVolumeField::CurrentConfigurationVolumeType => "CurrentConfigurationVolumeType",
             ExportableVolumeField::CurrentMonthlyPrice => "CurrentMonthlyPrice",
             ExportableVolumeField::CurrentPerformanceRisk => "CurrentPerformanceRisk",
+            ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                "EffectiveRecommendationPreferencesSavingsEstimationMode"
+            }
             ExportableVolumeField::Finding => "Finding",
             ExportableVolumeField::LastRefreshTimestamp => "LastRefreshTimestamp",
             ExportableVolumeField::LookbackPeriodInDays => "LookbackPeriodInDays",
@@ -213,9 +240,18 @@ impl ExportableVolumeField {
             ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => "RecommendationOptionsConfigurationVolumeSize",
             ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => "RecommendationOptionsConfigurationVolumeType",
             ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
+            }
             ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
             ExportableVolumeField::RecommendationOptionsMonthlyPrice => "RecommendationOptionsMonthlyPrice",
             ExportableVolumeField::RecommendationOptionsPerformanceRisk => "RecommendationOptionsPerformanceRisk",
+            ExportableVolumeField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
+            }
             ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableVolumeField::RootVolume => "RootVolume",
             ExportableVolumeField::Tags => "Tags",
@@ -240,6 +276,7 @@ impl ExportableVolumeField {
             "CurrentConfigurationVolumeType",
             "CurrentMonthlyPrice",
             "CurrentPerformanceRisk",
+            "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "LastRefreshTimestamp",
             "LookbackPeriodInDays",
@@ -250,9 +287,12 @@ impl ExportableVolumeField {
             "RecommendationOptionsConfigurationVolumeSize",
             "RecommendationOptionsConfigurationVolumeType",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
             "RecommendationOptionsMonthlyPrice",
             "RecommendationOptionsPerformanceRisk",
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RootVolume",
             "Tags",

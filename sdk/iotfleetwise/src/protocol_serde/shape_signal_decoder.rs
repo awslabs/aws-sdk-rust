@@ -24,6 +24,12 @@ pub fn ser_signal_decoder(
         crate::protocol_serde::shape_obd_signal::ser_obd_signal(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.message_signal {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("messageSignal").start_object();
+        crate::protocol_serde::shape_message_signal::ser_message_signal(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -68,6 +74,9 @@ where
                         }
                         "obdSignal" => {
                             builder = builder.set_obd_signal(crate::protocol_serde::shape_obd_signal::de_obd_signal(tokens)?);
+                        }
+                        "messageSignal" => {
+                            builder = builder.set_message_signal(crate::protocol_serde::shape_message_signal::de_message_signal(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

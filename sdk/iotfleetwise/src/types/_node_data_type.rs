@@ -28,6 +28,8 @@
 ///     NodeDataType::Int8Array => { /* ... */ },
 ///     NodeDataType::String => { /* ... */ },
 ///     NodeDataType::StringArray => { /* ... */ },
+///     NodeDataType::Struct => { /* ... */ },
+///     NodeDataType::StructArray => { /* ... */ },
 ///     NodeDataType::Uint16 => { /* ... */ },
 ///     NodeDataType::Uint16Array => { /* ... */ },
 ///     NodeDataType::Uint32 => { /* ... */ },
@@ -99,6 +101,10 @@ pub enum NodeDataType {
     #[allow(missing_docs)] // documentation missing in model
     StringArray,
     #[allow(missing_docs)] // documentation missing in model
+    Struct,
+    #[allow(missing_docs)] // documentation missing in model
+    StructArray,
+    #[allow(missing_docs)] // documentation missing in model
     Uint16,
     #[allow(missing_docs)] // documentation missing in model
     Uint16Array,
@@ -143,6 +149,8 @@ impl ::std::convert::From<&str> for NodeDataType {
             "INT8_ARRAY" => NodeDataType::Int8Array,
             "STRING" => NodeDataType::String,
             "STRING_ARRAY" => NodeDataType::StringArray,
+            "STRUCT" => NodeDataType::Struct,
+            "STRUCT_ARRAY" => NodeDataType::StructArray,
             "UINT16" => NodeDataType::Uint16,
             "UINT16_ARRAY" => NodeDataType::Uint16Array,
             "UINT32" => NodeDataType::Uint32,
@@ -185,6 +193,8 @@ impl NodeDataType {
             NodeDataType::Int8Array => "INT8_ARRAY",
             NodeDataType::String => "STRING",
             NodeDataType::StringArray => "STRING_ARRAY",
+            NodeDataType::Struct => "STRUCT",
+            NodeDataType::StructArray => "STRUCT_ARRAY",
             NodeDataType::Uint16 => "UINT16",
             NodeDataType::Uint16Array => "UINT16_ARRAY",
             NodeDataType::Uint32 => "UINT32",
@@ -218,6 +228,8 @@ impl NodeDataType {
             "INT8_ARRAY",
             "STRING",
             "STRING_ARRAY",
+            "STRUCT",
+            "STRUCT_ARRAY",
             "UINT16",
             "UINT16_ARRAY",
             "UINT32",

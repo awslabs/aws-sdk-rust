@@ -1311,6 +1311,8 @@ pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_refresh_interval::RefreshInterval;
 
+pub use crate::types::_service_type::ServiceType;
+
 pub use crate::types::_assignment_status::AssignmentStatus;
 
 pub use crate::types::_group::Group;
@@ -1356,6 +1358,8 @@ pub use crate::types::_s3_parameters::S3Parameters;
 pub use crate::types::_manifest_file_location::ManifestFileLocation;
 
 pub use crate::types::_redshift_parameters::RedshiftParameters;
+
+pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
 
 pub use crate::types::_redshift_iam_parameters::RedshiftIamParameters;
 
@@ -1769,6 +1773,8 @@ pub use crate::types::_ingestion_error_type::IngestionErrorType;
 
 pub use crate::types::_ingestion_status::IngestionStatus;
 
+pub use crate::types::_authorized_targets_by_service::AuthorizedTargetsByService;
+
 pub use crate::types::_active_iam_policy_assignment::ActiveIamPolicyAssignment;
 
 pub use crate::types::_iam_policy_assignment_summary::IamPolicyAssignmentSummary;
@@ -2102,6 +2108,8 @@ mod _aurora_postgre_sql_parameters;
 mod _authentication_method_option;
 
 mod _author_specified_aggregation;
+
+mod _authorized_targets_by_service;
 
 mod _aws_iot_analytics_parameters;
 
@@ -2801,6 +2809,8 @@ mod _iam_policy_assignment_summary;
 
 mod _icon;
 
+mod _identity_center_configuration;
+
 mod _identity_store;
 
 mod _identity_type;
@@ -3354,6 +3364,8 @@ mod _semantic_type;
 mod _series_item;
 
 mod _service_now_parameters;
+
+mod _service_type;
 
 mod _session_tag;
 

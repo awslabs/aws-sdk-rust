@@ -42,5 +42,20 @@ pub fn ser_create_ontap_volume_configuration(
         crate::protocol_serde::shape_create_snaplock_configuration::ser_create_snaplock_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.volume_style {
+        object.key("VolumeStyle").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.aggregate_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("AggregateConfiguration").start_object();
+        crate::protocol_serde::shape_create_aggregate_configuration::ser_create_aggregate_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.size_in_bytes {
+        object.key("SizeInBytes").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
     Ok(())
 }

@@ -141,6 +141,12 @@ pub use crate::types::error::_query_id_not_found_exception::QueryIdNotFoundExcep
 
 pub use crate::types::error::_insight_not_enabled_exception::InsightNotEnabledExceptionBuilder;
 
+pub use crate::types::error::_event_data_store_federation_enabled_exception::EventDataStoreFederationEnabledExceptionBuilder;
+
+pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_account_not_registered_exception::AccountNotRegisteredExceptionBuilder;
 
 pub use crate::types::error::_event_data_store_termination_protected_exception::EventDataStoreTerminationProtectedExceptionBuilder;

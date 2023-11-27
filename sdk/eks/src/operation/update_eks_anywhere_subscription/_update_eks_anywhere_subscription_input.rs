@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEksAnywhereSubscriptionInput {
-    /// <p></p>
+    /// <p>The ID of the subscription.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A boolean indicating whether or not to automatically renew the subscription.</p>
     pub auto_renew: ::std::option::Option<bool>,
@@ -11,7 +11,7 @@ pub struct UpdateEksAnywhereSubscriptionInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEksAnywhereSubscriptionInput {
-    /// <p></p>
+    /// <p>The ID of the subscription.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdateEksAnywhereSubscriptionInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateEksAnywhereSubscriptionInputBuilder {
-    /// <p></p>
+    /// <p>The ID of the subscription.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>The ID of the subscription.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p></p>
+    /// <p>The ID of the subscription.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

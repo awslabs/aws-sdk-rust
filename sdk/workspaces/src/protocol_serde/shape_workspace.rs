@@ -110,6 +110,16 @@ where
                         "RelatedWorkspaces" => {
                             builder = builder.set_related_workspaces(crate::protocol_serde::shape_related_workspaces::de_related_workspaces(tokens)?);
                         }
+                        "DataReplicationSettings" => {
+                            builder = builder.set_data_replication_settings(
+                                crate::protocol_serde::shape_data_replication_settings::de_data_replication_settings(tokens)?,
+                            );
+                        }
+                        "StandbyWorkspacesProperties" => {
+                            builder = builder.set_standby_workspaces_properties(
+                                crate::protocol_serde::shape_standby_workspaces_properties_list::de_standby_workspaces_properties_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

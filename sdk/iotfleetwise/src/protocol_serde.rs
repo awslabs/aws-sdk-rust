@@ -357,6 +357,10 @@ pub(crate) mod shape_create_vehicle_error;
 
 pub(crate) mod shape_create_vehicle_response_item;
 
+pub(crate) mod shape_custom_property;
+
+pub(crate) mod shape_custom_struct;
+
 pub(crate) mod shape_decoder_manifest_summary;
 
 pub(crate) mod shape_fleet_summary;
@@ -366,6 +370,8 @@ pub(crate) mod shape_invalid_network_interface;
 pub(crate) mod shape_invalid_signal;
 
 pub(crate) mod shape_invalid_signal_decoder;
+
+pub(crate) mod shape_message_signal;
 
 pub(crate) mod shape_model_manifest_summary;
 
@@ -389,8 +395,22 @@ pub(crate) mod shape_update_vehicle_response_item;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_vehicle_middleware;
+
 pub(crate) mod shape_vehicle_status;
 
 pub(crate) mod shape_vehicle_summary;
 
+pub(crate) mod shape_structured_message;
+
 pub(crate) mod shape_list_of_strings;
+
+pub(crate) mod shape_primitive_message_definition;
+
+pub(crate) mod shape_structured_message_field_name_and_data_type_pair;
+
+pub(crate) mod shape_structured_message_list_definition;
+
+pub(crate) mod shape_ros2_primitive_message_definition;
+
+pub(crate) mod shape_structured_message_definition;

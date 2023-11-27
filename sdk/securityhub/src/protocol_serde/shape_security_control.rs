@@ -63,6 +63,23 @@ where
                                     .transpose()?,
                             );
                         }
+                        "UpdateStatus" => {
+                            builder = builder.set_update_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UpdateStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_parameters::de_parameters(tokens)?);
+                        }
+                        "LastUpdateReason" => {
+                            builder = builder.set_last_update_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

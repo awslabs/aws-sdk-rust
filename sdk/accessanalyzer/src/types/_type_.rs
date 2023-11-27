@@ -13,7 +13,9 @@
 /// # let type = unimplemented!();
 /// match type {
 ///     Type::Account => { /* ... */ },
+///     Type::AccountUnusedAccess => { /* ... */ },
 ///     Type::Organization => { /* ... */ },
+///     Type::OrganizationUnusedAccess => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +46,11 @@ pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     Account,
     #[allow(missing_docs)] // documentation missing in model
+    AccountUnusedAccess,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    OrganizationUnusedAccess,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,7 +59,9 @@ impl ::std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => Type::Account,
+            "ACCOUNT_UNUSED_ACCESS" => Type::AccountUnusedAccess,
             "ORGANIZATION" => Type::Organization,
+            "ORGANIZATION_UNUSED_ACCESS" => Type::OrganizationUnusedAccess,
             other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,13 +78,15 @@ impl Type {
     pub fn as_str(&self) -> &str {
         match self {
             Type::Account => "ACCOUNT",
+            Type::AccountUnusedAccess => "ACCOUNT_UNUSED_ACCESS",
             Type::Organization => "ORGANIZATION",
+            Type::OrganizationUnusedAccess => "ORGANIZATION_UNUSED_ACCESS",
             Type::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ORGANIZATION"]
+        &["ACCOUNT", "ACCOUNT_UNUSED_ACCESS", "ORGANIZATION", "ORGANIZATION_UNUSED_ACCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for Type {

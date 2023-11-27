@@ -21,6 +21,12 @@ pub fn ser_network_interface(
         crate::protocol_serde::shape_obd_interface::ser_obd_interface(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.vehicle_middleware {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("vehicleMiddleware").start_object();
+        crate::protocol_serde::shape_vehicle_middleware::ser_vehicle_middleware(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +64,9 @@ where
                         }
                         "obdInterface" => {
                             builder = builder.set_obd_interface(crate::protocol_serde::shape_obd_interface::de_obd_interface(tokens)?);
+                        }
+                        "vehicleMiddleware" => {
+                            builder = builder.set_vehicle_middleware(crate::protocol_serde::shape_vehicle_middleware::de_vehicle_middleware(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

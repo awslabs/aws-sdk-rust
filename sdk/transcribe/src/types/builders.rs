@@ -51,6 +51,8 @@ pub use crate::types::_channel_definition::ChannelDefinitionBuilder;
 
 pub use crate::types::_call_analytics_job_settings::CallAnalyticsJobSettingsBuilder;
 
+pub use crate::types::_summarization::SummarizationBuilder;
+
 pub use crate::types::_vocabulary_filter_info::VocabularyFilterInfoBuilder;
 
 pub use crate::types::_vocabulary_info::VocabularyInfoBuilder;

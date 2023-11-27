@@ -151,6 +151,8 @@ pub(crate) mod shape_ecs_service_recommendations;
 
 pub(crate) mod shape_ecs_service_recommended_option_projected_metrics;
 
+pub(crate) mod shape_effective_preferred_resources;
+
 pub(crate) mod shape_enrollment_filter;
 
 pub(crate) mod shape_external_metrics_preference;
@@ -171,6 +173,8 @@ pub(crate) mod shape_license_recommendation_filter;
 
 pub(crate) mod shape_license_recommendations;
 
+pub(crate) mod shape_preferred_resource;
+
 pub(crate) mod shape_recommendation_export_jobs;
 
 pub(crate) mod shape_recommendation_preferences;
@@ -187,15 +191,23 @@ pub(crate) mod shape_s3_destination_config;
 
 pub(crate) mod shape_scope;
 
+pub(crate) mod shape_utilization_preference;
+
+pub(crate) mod shape_utilization_preferences;
+
 pub(crate) mod shape_volume_recommendations;
 
 pub(crate) mod shape_account_enrollment_status;
 
 pub(crate) mod shape_auto_scaling_group_recommendation;
 
+pub(crate) mod shape_customizable_metric_parameters;
+
 pub(crate) mod shape_ecs_service_recommendation;
 
 pub(crate) mod shape_ecs_service_recommended_option_projected_metric;
+
+pub(crate) mod shape_effective_preferred_resource;
 
 pub(crate) mod shape_get_recommendation_error;
 
@@ -221,7 +233,11 @@ pub(crate) mod shape_auto_scaling_group_recommendation_options;
 
 pub(crate) mod shape_current_performance_risk_ratings;
 
+pub(crate) mod shape_ebs_effective_recommendation_preferences;
+
 pub(crate) mod shape_ebs_utilization_metrics;
+
+pub(crate) mod shape_ecs_effective_recommendation_preferences;
 
 pub(crate) mod shape_ecs_service_projected_metrics;
 
@@ -245,6 +261,8 @@ pub(crate) mod shape_inferred_workload_types;
 
 pub(crate) mod shape_instance_recommendation_finding_reason_codes;
 
+pub(crate) mod shape_lambda_effective_recommendation_preferences;
+
 pub(crate) mod shape_lambda_function_memory_recommendation_options;
 
 pub(crate) mod shape_lambda_function_recommendation_finding_reason_codes;
@@ -256,6 +274,8 @@ pub(crate) mod shape_license_configuration;
 pub(crate) mod shape_license_finding_reason_codes;
 
 pub(crate) mod shape_license_recommendation_options;
+
+pub(crate) mod shape_preferred_resource_values;
 
 pub(crate) mod shape_projected_metrics;
 
@@ -283,7 +303,11 @@ pub(crate) mod shape_container_configurations;
 
 pub(crate) mod shape_cpu_vendor_architectures;
 
+pub(crate) mod shape_ebs_savings_estimation_mode;
+
 pub(crate) mod shape_ebs_utilization_metric;
+
+pub(crate) mod shape_ecs_savings_estimation_mode;
 
 pub(crate) mod shape_ecs_service_projected_metric;
 
@@ -299,9 +323,13 @@ pub(crate) mod shape_inferred_workload_saving;
 
 pub(crate) mod shape_instance_recommendation_option;
 
+pub(crate) mod shape_instance_savings_estimation_mode;
+
 pub(crate) mod shape_lambda_function_memory_recommendation_option;
 
 pub(crate) mod shape_lambda_function_utilization_metric;
+
+pub(crate) mod shape_lambda_savings_estimation_mode;
 
 pub(crate) mod shape_license_recommendation_option;
 
@@ -319,15 +347,25 @@ pub(crate) mod shape_utilization_metric;
 
 pub(crate) mod shape_volume_recommendation_option;
 
+pub(crate) mod shape_auto_scaling_group_savings_opportunity_after_discounts;
+
 pub(crate) mod shape_container_configuration;
 
 pub(crate) mod shape_container_recommendations;
+
+pub(crate) mod shape_ebs_savings_opportunity_after_discounts;
+
+pub(crate) mod shape_ecs_savings_opportunity_after_discounts;
 
 pub(crate) mod shape_ecs_service_projected_utilization_metrics;
 
 pub(crate) mod shape_gpu;
 
+pub(crate) mod shape_instance_savings_opportunity_after_discounts;
+
 pub(crate) mod shape_lambda_function_memory_projected_metrics;
+
+pub(crate) mod shape_lambda_savings_opportunity_after_discounts;
 
 pub(crate) mod shape_metric_source;
 
@@ -341,9 +379,19 @@ pub(crate) mod shape_reason_code_summaries;
 
 pub(crate) mod shape_timestamps;
 
+pub(crate) mod shape_auto_scaling_group_estimated_monthly_savings;
+
 pub(crate) mod shape_container_recommendation;
 
+pub(crate) mod shape_ebs_estimated_monthly_savings;
+
+pub(crate) mod shape_ecs_estimated_monthly_savings;
+
 pub(crate) mod shape_ecs_service_projected_utilization_metric;
+
+pub(crate) mod shape_instance_estimated_monthly_savings;
+
+pub(crate) mod shape_lambda_estimated_monthly_savings;
 
 pub(crate) mod shape_lambda_function_memory_projected_metric;
 

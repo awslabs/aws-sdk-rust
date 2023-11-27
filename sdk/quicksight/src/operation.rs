@@ -106,6 +106,9 @@ pub mod delete_group_membership;
 /// Types for the `DeleteIAMPolicyAssignment` operation.
 pub mod delete_iam_policy_assignment;
 
+/// Types for the `DeleteIdentityPropagationConfig` operation.
+pub mod delete_identity_propagation_config;
+
 /// Types for the `DeleteNamespace` operation.
 pub mod delete_namespace;
 
@@ -322,6 +325,9 @@ pub mod list_iam_policy_assignments;
 /// Types for the `ListIAMPolicyAssignmentsForUser` operation.
 pub mod list_iam_policy_assignments_for_user;
 
+/// Types for the `ListIdentityPropagationConfigs` operation.
+pub mod list_identity_propagation_configs;
+
 /// Types for the `ListIngestions` operation.
 pub mod list_ingestions;
 
@@ -456,6 +462,9 @@ pub mod update_group;
 
 /// Types for the `UpdateIAMPolicyAssignment` operation.
 pub mod update_iam_policy_assignment;
+
+/// Types for the `UpdateIdentityPropagationConfig` operation.
+pub mod update_identity_propagation_config;
 
 /// Types for the `UpdateIpRestriction` operation.
 pub mod update_ip_restriction;

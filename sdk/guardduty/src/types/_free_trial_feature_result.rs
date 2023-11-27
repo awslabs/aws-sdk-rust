@@ -15,8 +15,10 @@
 ///     FreeTrialFeatureResult::CloudTrail => { /* ... */ },
 ///     FreeTrialFeatureResult::DnsLogs => { /* ... */ },
 ///     FreeTrialFeatureResult::EbsMalwareProtection => { /* ... */ },
+///     FreeTrialFeatureResult::Ec2RuntimeMonitoring => { /* ... */ },
 ///     FreeTrialFeatureResult::EksAuditLogs => { /* ... */ },
 ///     FreeTrialFeatureResult::EksRuntimeMonitoring => { /* ... */ },
+///     FreeTrialFeatureResult::FargateRuntimeMonitoring => { /* ... */ },
 ///     FreeTrialFeatureResult::FlowLogs => { /* ... */ },
 ///     FreeTrialFeatureResult::LambdaNetworkLogs => { /* ... */ },
 ///     FreeTrialFeatureResult::RdsLoginEvents => { /* ... */ },
@@ -55,9 +57,13 @@ pub enum FreeTrialFeatureResult {
     #[allow(missing_docs)] // documentation missing in model
     EbsMalwareProtection,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2RuntimeMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
     EksAuditLogs,
     #[allow(missing_docs)] // documentation missing in model
     EksRuntimeMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
+    FargateRuntimeMonitoring,
     #[allow(missing_docs)] // documentation missing in model
     FlowLogs,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,8 +82,10 @@ impl ::std::convert::From<&str> for FreeTrialFeatureResult {
             "CLOUD_TRAIL" => FreeTrialFeatureResult::CloudTrail,
             "DNS_LOGS" => FreeTrialFeatureResult::DnsLogs,
             "EBS_MALWARE_PROTECTION" => FreeTrialFeatureResult::EbsMalwareProtection,
+            "EC2_RUNTIME_MONITORING" => FreeTrialFeatureResult::Ec2RuntimeMonitoring,
             "EKS_AUDIT_LOGS" => FreeTrialFeatureResult::EksAuditLogs,
             "EKS_RUNTIME_MONITORING" => FreeTrialFeatureResult::EksRuntimeMonitoring,
+            "FARGATE_RUNTIME_MONITORING" => FreeTrialFeatureResult::FargateRuntimeMonitoring,
             "FLOW_LOGS" => FreeTrialFeatureResult::FlowLogs,
             "LAMBDA_NETWORK_LOGS" => FreeTrialFeatureResult::LambdaNetworkLogs,
             "RDS_LOGIN_EVENTS" => FreeTrialFeatureResult::RdsLoginEvents,
@@ -100,8 +108,10 @@ impl FreeTrialFeatureResult {
             FreeTrialFeatureResult::CloudTrail => "CLOUD_TRAIL",
             FreeTrialFeatureResult::DnsLogs => "DNS_LOGS",
             FreeTrialFeatureResult::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
+            FreeTrialFeatureResult::Ec2RuntimeMonitoring => "EC2_RUNTIME_MONITORING",
             FreeTrialFeatureResult::EksAuditLogs => "EKS_AUDIT_LOGS",
             FreeTrialFeatureResult::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
+            FreeTrialFeatureResult::FargateRuntimeMonitoring => "FARGATE_RUNTIME_MONITORING",
             FreeTrialFeatureResult::FlowLogs => "FLOW_LOGS",
             FreeTrialFeatureResult::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
             FreeTrialFeatureResult::RdsLoginEvents => "RDS_LOGIN_EVENTS",
@@ -115,8 +125,10 @@ impl FreeTrialFeatureResult {
             "CLOUD_TRAIL",
             "DNS_LOGS",
             "EBS_MALWARE_PROTECTION",
+            "EC2_RUNTIME_MONITORING",
             "EKS_AUDIT_LOGS",
             "EKS_RUNTIME_MONITORING",
+            "FARGATE_RUNTIME_MONITORING",
             "FLOW_LOGS",
             "LAMBDA_NETWORK_LOGS",
             "RDS_LOGIN_EVENTS",

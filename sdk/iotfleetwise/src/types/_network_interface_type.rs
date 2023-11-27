@@ -13,7 +13,9 @@
 /// # let networkinterfacetype = unimplemented!();
 /// match networkinterfacetype {
 ///     NetworkInterfaceType::CanInterface => { /* ... */ },
+///     NetworkInterfaceType::CustomerDecodedInterface => { /* ... */ },
 ///     NetworkInterfaceType::ObdInterface => { /* ... */ },
+///     NetworkInterfaceType::VehicleMiddleware => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,7 +46,11 @@ pub enum NetworkInterfaceType {
     #[allow(missing_docs)] // documentation missing in model
     CanInterface,
     #[allow(missing_docs)] // documentation missing in model
+    CustomerDecodedInterface,
+    #[allow(missing_docs)] // documentation missing in model
     ObdInterface,
+    #[allow(missing_docs)] // documentation missing in model
+    VehicleMiddleware,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,7 +59,9 @@ impl ::std::convert::From<&str> for NetworkInterfaceType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_INTERFACE" => NetworkInterfaceType::CanInterface,
+            "CUSTOMER_DECODED_INTERFACE" => NetworkInterfaceType::CustomerDecodedInterface,
             "OBD_INTERFACE" => NetworkInterfaceType::ObdInterface,
+            "VEHICLE_MIDDLEWARE" => NetworkInterfaceType::VehicleMiddleware,
             other => NetworkInterfaceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,13 +78,15 @@ impl NetworkInterfaceType {
     pub fn as_str(&self) -> &str {
         match self {
             NetworkInterfaceType::CanInterface => "CAN_INTERFACE",
+            NetworkInterfaceType::CustomerDecodedInterface => "CUSTOMER_DECODED_INTERFACE",
             NetworkInterfaceType::ObdInterface => "OBD_INTERFACE",
+            NetworkInterfaceType::VehicleMiddleware => "VEHICLE_MIDDLEWARE",
             NetworkInterfaceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_INTERFACE", "OBD_INTERFACE"]
+        &["CAN_INTERFACE", "CUSTOMER_DECODED_INTERFACE", "OBD_INTERFACE", "VEHICLE_MIDDLEWARE"]
     }
 }
 impl ::std::convert::AsRef<str> for NetworkInterfaceType {

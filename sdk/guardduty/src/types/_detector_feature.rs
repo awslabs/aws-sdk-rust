@@ -17,6 +17,7 @@
 ///     DetectorFeature::EksRuntimeMonitoring => { /* ... */ },
 ///     DetectorFeature::LambdaNetworkLogs => { /* ... */ },
 ///     DetectorFeature::RdsLoginEvents => { /* ... */ },
+///     DetectorFeature::RuntimeMonitoring => { /* ... */ },
 ///     DetectorFeature::S3DataEvents => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum DetectorFeature {
     #[allow(missing_docs)] // documentation missing in model
     RdsLoginEvents,
     #[allow(missing_docs)] // documentation missing in model
+    RuntimeMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
     S3DataEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for DetectorFeature {
             "EKS_RUNTIME_MONITORING" => DetectorFeature::EksRuntimeMonitoring,
             "LAMBDA_NETWORK_LOGS" => DetectorFeature::LambdaNetworkLogs,
             "RDS_LOGIN_EVENTS" => DetectorFeature::RdsLoginEvents,
+            "RUNTIME_MONITORING" => DetectorFeature::RuntimeMonitoring,
             "S3_DATA_EVENTS" => DetectorFeature::S3DataEvents,
             other => DetectorFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -90,6 +94,7 @@ impl DetectorFeature {
             DetectorFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
             DetectorFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
             DetectorFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
+            DetectorFeature::RuntimeMonitoring => "RUNTIME_MONITORING",
             DetectorFeature::S3DataEvents => "S3_DATA_EVENTS",
             DetectorFeature::Unknown(value) => value.as_str(),
         }
@@ -102,6 +107,7 @@ impl DetectorFeature {
             "EKS_RUNTIME_MONITORING",
             "LAMBDA_NETWORK_LOGS",
             "RDS_LOGIN_EVENTS",
+            "RUNTIME_MONITORING",
             "S3_DATA_EVENTS",
         ]
     }

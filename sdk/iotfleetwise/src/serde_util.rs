@@ -17,6 +17,21 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn limit_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::LimitExceededExceptionBuilder,
+) -> crate::types::error::builders::LimitExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_not_found_exception_correct_errors(
     mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
@@ -46,21 +61,6 @@ pub(crate) fn validation_exception_correct_errors(
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn limit_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::LimitExceededExceptionBuilder,
-) -> crate::types::error::builders::LimitExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
     }
     builder
 }
@@ -658,6 +658,37 @@ pub(crate) fn can_signal_correct_errors(mut builder: crate::types::builders::Can
     builder
 }
 
+pub(crate) fn custom_property_correct_errors(
+    mut builder: crate::types::builders::CustomPropertyBuilder,
+) -> crate::types::builders::CustomPropertyBuilder {
+    if builder.fully_qualified_name.is_none() {
+        builder.fully_qualified_name = Some(Default::default())
+    }
+    if builder.data_type.is_none() {
+        builder.data_type = "no value was set".parse::<crate::types::NodeDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_struct_correct_errors(mut builder: crate::types::builders::CustomStructBuilder) -> crate::types::builders::CustomStructBuilder {
+    if builder.fully_qualified_name.is_none() {
+        builder.fully_qualified_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn message_signal_correct_errors(
+    mut builder: crate::types::builders::MessageSignalBuilder,
+) -> crate::types::builders::MessageSignalBuilder {
+    if builder.topic_name.is_none() {
+        builder.topic_name = Some(Default::default())
+    }
+    if builder.structured_message.is_none() {
+        builder.structured_message = Some(crate::types::StructuredMessage::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn obd_interface_correct_errors(mut builder: crate::types::builders::ObdInterfaceBuilder) -> crate::types::builders::ObdInterfaceBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -718,6 +749,54 @@ pub(crate) fn timestream_config_correct_errors(
     }
     if builder.execution_role_arn.is_none() {
         builder.execution_role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vehicle_middleware_correct_errors(
+    mut builder: crate::types::builders::VehicleMiddlewareBuilder,
+) -> crate::types::builders::VehicleMiddlewareBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.protocol_name.is_none() {
+        builder.protocol_name = "no value was set".parse::<crate::types::VehicleMiddlewareProtocol>().ok()
+    }
+    builder
+}
+
+pub(crate) fn structured_message_list_definition_correct_errors(
+    mut builder: crate::types::builders::StructuredMessageListDefinitionBuilder,
+) -> crate::types::builders::StructuredMessageListDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.member_type.is_none() {
+        builder.member_type = Some(crate::types::StructuredMessage::Unknown)
+    }
+    if builder.list_type.is_none() {
+        builder.list_type = "no value was set".parse::<crate::types::StructuredMessageListType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ros2_primitive_message_definition_correct_errors(
+    mut builder: crate::types::builders::Ros2PrimitiveMessageDefinitionBuilder,
+) -> crate::types::builders::Ros2PrimitiveMessageDefinitionBuilder {
+    if builder.primitive_type.is_none() {
+        builder.primitive_type = "no value was set".parse::<crate::types::Ros2PrimitiveType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn structured_message_field_name_and_data_type_pair_correct_errors(
+    mut builder: crate::types::builders::StructuredMessageFieldNameAndDataTypePairBuilder,
+) -> crate::types::builders::StructuredMessageFieldNameAndDataTypePairBuilder {
+    if builder.field_name.is_none() {
+        builder.field_name = Some(Default::default())
+    }
+    if builder.data_type.is_none() {
+        builder.data_type = Some(crate::types::StructuredMessage::Unknown)
     }
     builder
 }

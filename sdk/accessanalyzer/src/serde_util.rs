@@ -53,6 +53,24 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_parameter_exception_correct_errors(
+    mut builder: crate::types::error::builders::InvalidParameterExceptionBuilder,
+) -> crate::types::error::builders::InvalidParameterExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unprocessable_entity_exception_correct_errors(
+    mut builder: crate::types::error::builders::UnprocessableEntityExceptionBuilder,
+) -> crate::types::error::builders::UnprocessableEntityExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -128,6 +146,36 @@ pub(crate) fn get_archive_rule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_finding_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder,
+) -> crate::operation::get_finding_v2::builders::GetFindingV2OutputBuilder {
+    if builder.analyzed_at.is_none() {
+        builder.analyzed_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ResourceType>().ok()
+    }
+    if builder.resource_owner_account.is_none() {
+        builder.resource_owner_account = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FindingStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.finding_details.is_none() {
+        builder.finding_details = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_generated_policy_output_output_correct_errors(
     mut builder: crate::operation::get_generated_policy::builders::GetGeneratedPolicyOutputBuilder,
 ) -> crate::operation::get_generated_policy::builders::GetGeneratedPolicyOutputBuilder {
@@ -194,6 +242,15 @@ pub(crate) fn list_archive_rules_output_output_correct_errors(
 pub(crate) fn list_findings_output_output_correct_errors(
     mut builder: crate::operation::list_findings::builders::ListFindingsOutputBuilder,
 ) -> crate::operation::list_findings::builders::ListFindingsOutputBuilder {
+    if builder.findings.is_none() {
+        builder.findings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_findings_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_findings_v2::builders::ListFindingsV2OutputBuilder,
+) -> crate::operation::list_findings_v2::builders::ListFindingsV2OutputBuilder {
     if builder.findings.is_none() {
         builder.findings = Some(Default::default())
     }
@@ -472,6 +529,33 @@ pub(crate) fn finding_summary_correct_errors(
     builder
 }
 
+pub(crate) fn finding_summary_v2_correct_errors(
+    mut builder: crate::types::builders::FindingSummaryV2Builder,
+) -> crate::types::builders::FindingSummaryV2Builder {
+    if builder.analyzed_at.is_none() {
+        builder.analyzed_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ResourceType>().ok()
+    }
+    if builder.resource_owner_account.is_none() {
+        builder.resource_owner_account = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FindingStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn job_error_correct_errors(mut builder: crate::types::builders::JobErrorBuilder) -> crate::types::builders::JobErrorBuilder {
     if builder.code.is_none() {
         builder.code = "no value was set".parse::<crate::types::JobErrorCode>().ok()
@@ -555,6 +639,15 @@ pub(crate) fn cloud_trail_properties_correct_errors(
     builder
 }
 
+pub(crate) fn external_access_details_correct_errors(
+    mut builder: crate::types::builders::ExternalAccessDetailsBuilder,
+) -> crate::types::builders::ExternalAccessDetailsBuilder {
+    if builder.condition.is_none() {
+        builder.condition = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn finding_source_correct_errors(
     mut builder: crate::types::builders::FindingSourceBuilder,
 ) -> crate::types::builders::FindingSourceBuilder {
@@ -569,6 +662,24 @@ pub(crate) fn generated_policy_correct_errors(
 ) -> crate::types::builders::GeneratedPolicyBuilder {
     if builder.policy.is_none() {
         builder.policy = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unused_iam_user_access_key_details_correct_errors(
+    mut builder: crate::types::builders::UnusedIamUserAccessKeyDetailsBuilder,
+) -> crate::types::builders::UnusedIamUserAccessKeyDetailsBuilder {
+    if builder.access_key_id.is_none() {
+        builder.access_key_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unused_permission_details_correct_errors(
+    mut builder: crate::types::builders::UnusedPermissionDetailsBuilder,
+) -> crate::types::builders::UnusedPermissionDetailsBuilder {
+    if builder.service_namespace.is_none() {
+        builder.service_namespace = Some(Default::default())
     }
     builder
 }
@@ -619,6 +730,13 @@ pub(crate) fn trail_properties_correct_errors(
 ) -> crate::types::builders::TrailPropertiesBuilder {
     if builder.cloud_trail_arn.is_none() {
         builder.cloud_trail_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn unused_action_correct_errors(mut builder: crate::types::builders::UnusedActionBuilder) -> crate::types::builders::UnusedActionBuilder {
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
     }
     builder
 }

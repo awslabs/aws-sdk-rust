@@ -3,6 +3,10 @@ pub use crate::types::_predicted_item::PredictedItem;
 
 pub use crate::types::_promotion::Promotion;
 
+pub use crate::types::_predicted_action::PredictedAction;
+
+mod _predicted_action;
+
 mod _predicted_item;
 
 mod _promotion;

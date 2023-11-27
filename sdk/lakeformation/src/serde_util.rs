@@ -47,6 +47,18 @@ pub(crate) fn data_cells_filter_correct_errors(
     builder
 }
 
+pub(crate) fn external_filtering_configuration_correct_errors(
+    mut builder: crate::types::builders::ExternalFilteringConfigurationBuilder,
+) -> crate::types::builders::ExternalFilteringConfigurationBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EnableStatus>().ok()
+    }
+    if builder.authorized_targets.is_none() {
+        builder.authorized_targets = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lf_tag_pair_correct_errors(mut builder: crate::types::builders::LfTagPairBuilder) -> crate::types::builders::LfTagPairBuilder {
     if builder.tag_key.is_none() {
         builder.tag_key = Some(Default::default())

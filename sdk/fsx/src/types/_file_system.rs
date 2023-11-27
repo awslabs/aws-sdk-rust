@@ -26,6 +26,7 @@ pub struct FileSystem {
     /// <p>A structure providing details of any failures that occurred.</p>
     pub failure_details: ::std::option::Option<crate::types::FileSystemFailureDetails>,
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub storage_capacity: ::std::option::Option<i32>,
     /// <p>The type of storage the file system is using. If set to <code>SSD</code>, the file system uses solid state drive storage. If set to <code>HDD</code>, the file system uses hard disk drive storage. </p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
@@ -99,6 +100,7 @@ impl FileSystem {
         self.failure_details.as_ref()
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub fn storage_capacity(&self) -> ::std::option::Option<i32> {
         self.storage_capacity
     }
@@ -321,16 +323,19 @@ impl FileSystemBuilder {
         &self.failure_details
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub fn storage_capacity(mut self, input: i32) -> Self {
         self.storage_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity = input;
         self
     }
     /// <p>The storage capacity of the file system in gibibytes (GiB).</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is outside of the minimum or maximum values.</p>
     pub fn get_storage_capacity(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity
     }

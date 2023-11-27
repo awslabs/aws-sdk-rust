@@ -16,7 +16,9 @@
 ///     CoverageSortKey::AddonVersion => { /* ... */ },
 ///     CoverageSortKey::ClusterName => { /* ... */ },
 ///     CoverageSortKey::CoverageStatus => { /* ... */ },
+///     CoverageSortKey::EcsClusterName => { /* ... */ },
 ///     CoverageSortKey::EksClusterName => { /* ... */ },
+///     CoverageSortKey::InstanceId => { /* ... */ },
 ///     CoverageSortKey::Issue => { /* ... */ },
 ///     CoverageSortKey::UpdatedAt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,7 +57,11 @@ pub enum CoverageSortKey {
     #[allow(missing_docs)] // documentation missing in model
     CoverageStatus,
     #[allow(missing_docs)] // documentation missing in model
+    EcsClusterName,
+    #[allow(missing_docs)] // documentation missing in model
     EksClusterName,
+    #[allow(missing_docs)] // documentation missing in model
+    InstanceId,
     #[allow(missing_docs)] // documentation missing in model
     Issue,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,7 +77,9 @@ impl ::std::convert::From<&str> for CoverageSortKey {
             "ADDON_VERSION" => CoverageSortKey::AddonVersion,
             "CLUSTER_NAME" => CoverageSortKey::ClusterName,
             "COVERAGE_STATUS" => CoverageSortKey::CoverageStatus,
+            "ECS_CLUSTER_NAME" => CoverageSortKey::EcsClusterName,
             "EKS_CLUSTER_NAME" => CoverageSortKey::EksClusterName,
+            "INSTANCE_ID" => CoverageSortKey::InstanceId,
             "ISSUE" => CoverageSortKey::Issue,
             "UPDATED_AT" => CoverageSortKey::UpdatedAt,
             other => CoverageSortKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -93,7 +101,9 @@ impl CoverageSortKey {
             CoverageSortKey::AddonVersion => "ADDON_VERSION",
             CoverageSortKey::ClusterName => "CLUSTER_NAME",
             CoverageSortKey::CoverageStatus => "COVERAGE_STATUS",
+            CoverageSortKey::EcsClusterName => "ECS_CLUSTER_NAME",
             CoverageSortKey::EksClusterName => "EKS_CLUSTER_NAME",
+            CoverageSortKey::InstanceId => "INSTANCE_ID",
             CoverageSortKey::Issue => "ISSUE",
             CoverageSortKey::UpdatedAt => "UPDATED_AT",
             CoverageSortKey::Unknown(value) => value.as_str(),
@@ -106,7 +116,9 @@ impl CoverageSortKey {
             "ADDON_VERSION",
             "CLUSTER_NAME",
             "COVERAGE_STATUS",
+            "ECS_CLUSTER_NAME",
             "EKS_CLUSTER_NAME",
+            "INSTANCE_ID",
             "ISSUE",
             "UPDATED_AT",
         ]

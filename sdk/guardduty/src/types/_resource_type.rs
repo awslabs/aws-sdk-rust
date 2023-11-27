@@ -12,6 +12,8 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::Ec2 => { /* ... */ },
+///     ResourceType::Ecs => { /* ... */ },
 ///     ResourceType::Eks => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +43,10 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Ec2,
+    #[allow(missing_docs)] // documentation missing in model
+    Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     Eks,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -49,6 +55,8 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "EC2" => ResourceType::Ec2,
+            "ECS" => ResourceType::Ecs,
             "EKS" => ResourceType::Eks,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -65,13 +73,15 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::Ec2 => "EC2",
+            ResourceType::Ecs => "ECS",
             ResourceType::Eks => "EKS",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EKS"]
+        &["EC2", "ECS", "EKS"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {

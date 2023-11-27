@@ -101,6 +101,10 @@ pub use crate::types::_volume_type::VolumeType;
 
 pub use crate::types::_ontap_volume_configuration::OntapVolumeConfiguration;
 
+pub use crate::types::_aggregate_configuration::AggregateConfiguration;
+
+pub use crate::types::_volume_style::VolumeStyle;
+
 pub use crate::types::_snaplock_configuration::SnaplockConfiguration;
 
 pub use crate::types::_snaplock_type::SnaplockType;
@@ -277,6 +281,8 @@ pub use crate::types::_delete_file_system_windows_configuration::DeleteFileSyste
 
 pub use crate::types::_create_ontap_volume_configuration::CreateOntapVolumeConfiguration;
 
+pub use crate::types::_create_aggregate_configuration::CreateAggregateConfiguration;
+
 pub use crate::types::_create_snaplock_configuration::CreateSnaplockConfiguration;
 
 pub use crate::types::_input_ontap_volume_type::InputOntapVolumeType;
@@ -309,6 +315,8 @@ pub use crate::types::_file_cache_nfs_configuration::FileCacheNfsConfiguration;
 
 pub use crate::types::_create_file_cache_lustre_configuration::CreateFileCacheLustreConfiguration;
 
+pub use crate::types::_update_open_zfs_volume_option::UpdateOpenZfsVolumeOption;
+
 mod _active_directory_backup_attributes;
 
 mod _active_directory_error_type;
@@ -318,6 +326,8 @@ mod _administrative_action;
 mod _administrative_action_failure_details;
 
 mod _administrative_action_type;
+
+mod _aggregate_configuration;
 
 mod _alias;
 
@@ -342,6 +352,8 @@ mod _backup_lifecycle;
 mod _backup_type;
 
 mod _completion_report;
+
+mod _create_aggregate_configuration;
 
 mod _create_file_cache_lustre_configuration;
 
@@ -595,6 +607,8 @@ mod _update_ontap_volume_configuration;
 
 mod _update_open_zfs_volume_configuration;
 
+mod _update_open_zfs_volume_option;
+
 mod _update_snaplock_configuration;
 
 mod _update_svm_active_directory_configuration;
@@ -606,6 +620,8 @@ mod _volume_filter;
 mod _volume_filter_name;
 
 mod _volume_lifecycle;
+
+mod _volume_style;
 
 mod _volume_type;
 

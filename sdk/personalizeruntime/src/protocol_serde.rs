@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_get_action_recommendations;
+
 pub(crate) mod shape_get_personalized_ranking;
 
 pub(crate) mod shape_get_recommendations;
@@ -35,6 +37,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_get_action_recommendations_input;
+
 pub(crate) mod shape_get_personalized_ranking_input;
 
 pub(crate) mod shape_get_recommendations_input;
@@ -43,8 +47,14 @@ pub(crate) mod shape_invalid_input_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_action_list;
+
 pub(crate) mod shape_item_list;
 
 pub(crate) mod shape_promotion;
 
+pub(crate) mod shape_predicted_action;
+
 pub(crate) mod shape_predicted_item;
+
+pub(crate) mod shape_metadata;

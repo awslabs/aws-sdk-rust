@@ -14,6 +14,7 @@ pub struct CreateOntapVolumeConfiguration {
     /// </ul>
     pub security_style: ::std::option::Option<crate::types::SecurityStyle>,
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
     pub size_in_megabytes: ::std::option::Option<i32>,
     /// <p>Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or set to false to disable them. This parameter is required.</p>
     pub storage_efficiency_enabled: ::std::option::Option<bool>,
@@ -54,6 +55,12 @@ pub struct CreateOntapVolumeConfiguration {
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
     pub snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub volume_style: ::std::option::Option<crate::types::VolumeStyle>,
+    /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub aggregate_configuration: ::std::option::Option<crate::types::CreateAggregateConfiguration>,
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub size_in_bytes: ::std::option::Option<i64>,
 }
 impl CreateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -70,6 +77,7 @@ impl CreateOntapVolumeConfiguration {
         self.security_style.as_ref()
     }
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
     pub fn size_in_megabytes(&self) -> ::std::option::Option<i32> {
         self.size_in_megabytes
     }
@@ -126,6 +134,18 @@ impl CreateOntapVolumeConfiguration {
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::CreateSnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
     }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn volume_style(&self) -> ::std::option::Option<&crate::types::VolumeStyle> {
+        self.volume_style.as_ref()
+    }
+    /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn aggregate_configuration(&self) -> ::std::option::Option<&crate::types::CreateAggregateConfiguration> {
+        self.aggregate_configuration.as_ref()
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.size_in_bytes
+    }
 }
 impl CreateOntapVolumeConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
@@ -148,6 +168,9 @@ pub struct CreateOntapVolumeConfigurationBuilder {
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) snaplock_configuration: ::std::option::Option<crate::types::CreateSnaplockConfiguration>,
+    pub(crate) volume_style: ::std::option::Option<crate::types::VolumeStyle>,
+    pub(crate) aggregate_configuration: ::std::option::Option<crate::types::CreateAggregateConfiguration>,
+    pub(crate) size_in_bytes: ::std::option::Option<i64>,
 }
 impl CreateOntapVolumeConfigurationBuilder {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
@@ -194,17 +217,19 @@ impl CreateOntapVolumeConfigurationBuilder {
         &self.security_style
     }
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
-    /// This field is required.
+    #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
     pub fn size_in_megabytes(mut self, input: i32) -> Self {
         self.size_in_megabytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
     pub fn set_size_in_megabytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_megabytes = input;
         self
     }
     /// <p>Specifies the size of the volume, in megabytes (MB), that you are creating.</p>
+    #[deprecated(note = "This property is deprecated, use SizeInBytes instead")]
     pub fn get_size_in_megabytes(&self) -> &::std::option::Option<i32> {
         &self.size_in_megabytes
     }
@@ -382,6 +407,48 @@ impl CreateOntapVolumeConfigurationBuilder {
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::CreateSnaplockConfiguration> {
         &self.snaplock_configuration
     }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn volume_style(mut self, input: crate::types::VolumeStyle) -> Self {
+        self.volume_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn set_volume_style(mut self, input: ::std::option::Option<crate::types::VolumeStyle>) -> Self {
+        self.volume_style = input;
+        self
+    }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn get_volume_style(&self) -> &::std::option::Option<crate::types::VolumeStyle> {
+        &self.volume_style
+    }
+    /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn aggregate_configuration(mut self, input: crate::types::CreateAggregateConfiguration) -> Self {
+        self.aggregate_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn set_aggregate_configuration(mut self, input: ::std::option::Option<crate::types::CreateAggregateConfiguration>) -> Self {
+        self.aggregate_configuration = input;
+        self
+    }
+    /// <p>Use to specify configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn get_aggregate_configuration(&self) -> &::std::option::Option<crate::types::CreateAggregateConfiguration> {
+        &self.aggregate_configuration
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(mut self, input: i64) -> Self {
+        self.size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size_in_bytes = input;
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// Consumes the builder and constructs a [`CreateOntapVolumeConfiguration`](crate::types::CreateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::CreateOntapVolumeConfiguration {
         crate::types::CreateOntapVolumeConfiguration {
@@ -395,6 +462,9 @@ impl CreateOntapVolumeConfigurationBuilder {
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
             snaplock_configuration: self.snaplock_configuration,
+            volume_style: self.volume_style,
+            aggregate_configuration: self.aggregate_configuration,
+            size_in_bytes: self.size_in_bytes,
         }
     }
 }

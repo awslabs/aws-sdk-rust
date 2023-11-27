@@ -38,6 +38,10 @@ pub struct Workspace {
     pub modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
     /// <p>The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
     pub related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
+    /// <p>Indicates the settings of the data replication.</p>
+    pub data_replication_settings: ::std::option::Option<crate::types::DataReplicationSettings>,
+    /// <p>The properties of the standby WorkSpace</p>
+    pub standby_workspaces_properties: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspacesProperties>>,
 }
 impl Workspace {
     /// <p>The identifier of the WorkSpace.</p>
@@ -110,6 +114,16 @@ impl Workspace {
     pub fn related_workspaces(&self) -> &[crate::types::RelatedWorkspaceProperties] {
         self.related_workspaces.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates the settings of the data replication.</p>
+    pub fn data_replication_settings(&self) -> ::std::option::Option<&crate::types::DataReplicationSettings> {
+        self.data_replication_settings.as_ref()
+    }
+    /// <p>The properties of the standby WorkSpace</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standby_workspaces_properties.is_none()`.
+    pub fn standby_workspaces_properties(&self) -> &[crate::types::StandbyWorkspacesProperties] {
+        self.standby_workspaces_properties.as_deref().unwrap_or_default()
+    }
 }
 impl Workspace {
     /// Creates a new builder-style object to manufacture [`Workspace`](crate::types::Workspace).
@@ -138,6 +152,8 @@ pub struct WorkspaceBuilder {
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     pub(crate) modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
     pub(crate) related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
+    pub(crate) data_replication_settings: ::std::option::Option<crate::types::DataReplicationSettings>,
+    pub(crate) standby_workspaces_properties: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspacesProperties>>,
 }
 impl WorkspaceBuilder {
     /// <p>The identifier of the WorkSpace.</p>
@@ -382,6 +398,43 @@ impl WorkspaceBuilder {
     pub fn get_related_workspaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>> {
         &self.related_workspaces
     }
+    /// <p>Indicates the settings of the data replication.</p>
+    pub fn data_replication_settings(mut self, input: crate::types::DataReplicationSettings) -> Self {
+        self.data_replication_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the settings of the data replication.</p>
+    pub fn set_data_replication_settings(mut self, input: ::std::option::Option<crate::types::DataReplicationSettings>) -> Self {
+        self.data_replication_settings = input;
+        self
+    }
+    /// <p>Indicates the settings of the data replication.</p>
+    pub fn get_data_replication_settings(&self) -> &::std::option::Option<crate::types::DataReplicationSettings> {
+        &self.data_replication_settings
+    }
+    /// Appends an item to `standby_workspaces_properties`.
+    ///
+    /// To override the contents of this collection use [`set_standby_workspaces_properties`](Self::set_standby_workspaces_properties).
+    ///
+    /// <p>The properties of the standby WorkSpace</p>
+    pub fn standby_workspaces_properties(mut self, input: crate::types::StandbyWorkspacesProperties) -> Self {
+        let mut v = self.standby_workspaces_properties.unwrap_or_default();
+        v.push(input);
+        self.standby_workspaces_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The properties of the standby WorkSpace</p>
+    pub fn set_standby_workspaces_properties(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspacesProperties>>,
+    ) -> Self {
+        self.standby_workspaces_properties = input;
+        self
+    }
+    /// <p>The properties of the standby WorkSpace</p>
+    pub fn get_standby_workspaces_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandbyWorkspacesProperties>> {
+        &self.standby_workspaces_properties
+    }
     /// Consumes the builder and constructs a [`Workspace`](crate::types::Workspace).
     pub fn build(self) -> crate::types::Workspace {
         crate::types::Workspace {
@@ -401,6 +454,8 @@ impl WorkspaceBuilder {
             workspace_properties: self.workspace_properties,
             modification_states: self.modification_states,
             related_workspaces: self.related_workspaces,
+            data_replication_settings: self.data_replication_settings,
+            standby_workspaces_properties: self.standby_workspaces_properties,
         }
     }
 }

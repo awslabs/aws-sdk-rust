@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Severity {
-    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub product: ::std::option::Option<f64>,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
@@ -26,7 +26,7 @@ pub struct Severity {
     /// <li> <p>90–100 - <code>CRITICAL</code> </p> </li>
     /// </ul>
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
-    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>
@@ -40,7 +40,7 @@ pub struct Severity {
     pub original: ::std::option::Option<::std::string::String>,
 }
 impl Severity {
-    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn product(&self) -> ::std::option::Option<f64> {
         self.product
@@ -64,7 +64,7 @@ impl Severity {
     pub fn label(&self) -> ::std::option::Option<&crate::types::SeverityLabel> {
         self.label.as_ref()
     }
-    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>
@@ -98,19 +98,19 @@ pub struct SeverityBuilder {
     pub(crate) original: ::std::option::Option<::std::string::String>,
 }
 impl SeverityBuilder {
-    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn product(mut self, input: f64) -> Self {
         self.product = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn set_product(mut self, input: ::std::option::Option<f64>) -> Self {
         self.product = input;
         self
     }
-    /// <p>Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
+    /// <p>Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide <code>Original</code>.</p>
     /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that generated the finding.</p>
     pub fn get_product(&self) -> &::std::option::Option<f64> {
         &self.product
@@ -174,7 +174,7 @@ impl SeverityBuilder {
     pub fn get_label(&self) -> &::std::option::Option<crate::types::SeverityLabel> {
         &self.label
     }
-    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>
@@ -187,7 +187,7 @@ impl SeverityBuilder {
         self.normalized = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>
@@ -200,7 +200,7 @@ impl SeverityBuilder {
         self.normalized = input;
         self
     }
-    /// <p>Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
+    /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
     /// <li> <p> <code>INFORMATIONAL</code> - 0</p> </li>

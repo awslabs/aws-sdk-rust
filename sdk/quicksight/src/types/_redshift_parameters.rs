@@ -14,6 +14,9 @@ pub struct RedshiftParameters {
     pub cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that uses IAM authentication to grant Amazon QuickSight access to your cluster. This parameter can be used instead of <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DataSourceCredentials.html">DataSourceCredentials</a>.</p>
     pub iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
@@ -37,6 +40,11 @@ impl RedshiftParameters {
     pub fn iam_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftIamParameters> {
         self.iam_parameters.as_ref()
     }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
+        self.identity_center_configuration.as_ref()
+    }
 }
 impl RedshiftParameters {
     /// Creates a new builder-style object to manufacture [`RedshiftParameters`](crate::types::RedshiftParameters).
@@ -54,6 +62,7 @@ pub struct RedshiftParametersBuilder {
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) iam_parameters: ::std::option::Option<crate::types::RedshiftIamParameters>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl RedshiftParametersBuilder {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
@@ -127,6 +136,23 @@ impl RedshiftParametersBuilder {
     pub fn get_iam_parameters(&self) -> &::std::option::Option<crate::types::RedshiftIamParameters> {
         &self.iam_parameters
     }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>An optional parameter that configures IAM Identity Center authentication to grant Amazon QuickSight access to your cluster.</p>
+    /// <p>This parameter can only be specified if your Amazon QuickSight account is configured with IAM Identity Center.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        &self.identity_center_configuration
+    }
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`database`](crate::types::builders::RedshiftParametersBuilder::database)
@@ -142,6 +168,7 @@ impl RedshiftParametersBuilder {
             })?,
             cluster_id: self.cluster_id,
             iam_parameters: self.iam_parameters,
+            identity_center_configuration: self.identity_center_configuration,
         })
     }
 }

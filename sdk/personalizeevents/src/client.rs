@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`PutEvents`](crate::operation::put_events) operation has
-/// a [`Client::put_events`], function which returns a builder for that operation.
+/// For example, the [`PutActionInteractions`](crate::operation::put_action_interactions) operation has
+/// a [`Client::put_action_interactions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.put_events()
+/// let result = client.put_action_interactions()
 ///     .tracking_id("example")
 ///     .send()
 ///     .await;
@@ -147,7 +147,7 @@ impl Client {
 /// # let client: aws_sdk_personalizeevents::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.put_events()
+/// let result = client.put_action_interactions()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -162,6 +162,10 @@ impl Client {
 /// # }
 /// ```
 pub mod customize;
+
+mod put_action_interactions;
+
+mod put_actions;
 
 mod put_events;
 

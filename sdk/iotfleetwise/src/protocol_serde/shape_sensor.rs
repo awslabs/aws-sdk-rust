@@ -42,6 +42,9 @@ pub fn ser_sensor(
     if let Some(var_9) = &input.comment {
         object.key("comment").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.struct_fully_qualified_name {
+        object.key("structFullyQualifiedName").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -108,6 +111,13 @@ where
                         }
                         "comment" => {
                             builder = builder.set_comment(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "structFullyQualifiedName" => {
+                            builder = builder.set_struct_fully_qualified_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

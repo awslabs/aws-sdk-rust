@@ -131,6 +131,24 @@ pub(crate) fn create_rule_groups_namespace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_scraper_output_output_correct_errors(
+    mut builder: crate::operation::create_scraper::builders::CreateScraperOutputBuilder,
+) -> crate::operation::create_scraper::builders::CreateScraperOutputBuilder {
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperStatusBuilder::default();
+            crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_workspace_output_output_correct_errors(
     mut builder: crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder,
 ) -> crate::operation::create_workspace::builders::CreateWorkspaceOutputBuilder {
@@ -144,6 +162,21 @@ pub(crate) fn create_workspace_output_output_correct_errors(
         builder.status = {
             let builder = crate::types::builders::WorkspaceStatusBuilder::default();
             crate::serde_util::workspace_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn delete_scraper_output_output_correct_errors(
+    mut builder: crate::operation::delete_scraper::builders::DeleteScraperOutputBuilder,
+) -> crate::operation::delete_scraper::builders::DeleteScraperOutputBuilder {
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperStatusBuilder::default();
+            crate::serde_util::scraper_status_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -187,6 +220,18 @@ pub(crate) fn describe_rule_groups_namespace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_scraper_output_output_correct_errors(
+    mut builder: crate::operation::describe_scraper::builders::DescribeScraperOutputBuilder,
+) -> crate::operation::describe_scraper::builders::DescribeScraperOutputBuilder {
+    if builder.scraper.is_none() {
+        builder.scraper = {
+            let builder = crate::types::builders::ScraperDescriptionBuilder::default();
+            crate::serde_util::scraper_description_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_workspace_output_output_correct_errors(
     mut builder: crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder,
 ) -> crate::operation::describe_workspace::builders::DescribeWorkspaceOutputBuilder {
@@ -199,11 +244,29 @@ pub(crate) fn describe_workspace_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_default_scraper_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder,
+) -> crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = Some(::aws_smithy_types::Blob::new(""))
+    }
+    builder
+}
+
 pub(crate) fn list_rule_groups_namespaces_output_output_correct_errors(
     mut builder: crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder,
 ) -> crate::operation::list_rule_groups_namespaces::builders::ListRuleGroupsNamespacesOutputBuilder {
     if builder.rule_groups_namespaces.is_none() {
         builder.rule_groups_namespaces = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_scrapers_output_output_correct_errors(
+    mut builder: crate::operation::list_scrapers::builders::ListScrapersOutputBuilder,
+) -> crate::operation::list_scrapers::builders::ListScrapersOutputBuilder {
+    if builder.scrapers.is_none() {
+        builder.scrapers = Some(Default::default())
     }
     builder
 }
@@ -282,6 +345,15 @@ pub(crate) fn rule_groups_namespace_status_correct_errors(
 ) -> crate::types::builders::RuleGroupsNamespaceStatusBuilder {
     if builder.status_code.is_none() {
         builder.status_code = "no value was set".parse::<crate::types::RuleGroupsNamespaceStatusCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn scraper_status_correct_errors(
+    mut builder: crate::types::builders::ScraperStatusBuilder,
+) -> crate::types::builders::ScraperStatusBuilder {
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::ScraperStatusCode>().ok()
     }
     builder
 }
@@ -367,6 +439,42 @@ pub(crate) fn rule_groups_namespace_description_correct_errors(
     builder
 }
 
+pub(crate) fn scraper_description_correct_errors(
+    mut builder: crate::types::builders::ScraperDescriptionBuilder,
+) -> crate::types::builders::ScraperDescriptionBuilder {
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperStatusBuilder::default();
+            crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_at.is_none() {
+        builder.last_modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.scrape_configuration.is_none() {
+        builder.scrape_configuration = Some(crate::types::ScrapeConfiguration::Unknown)
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::Source::Unknown)
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(crate::types::Destination::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn workspace_description_correct_errors(
     mut builder: crate::types::builders::WorkspaceDescriptionBuilder,
 ) -> crate::types::builders::WorkspaceDescriptionBuilder {
@@ -412,6 +520,39 @@ pub(crate) fn rule_groups_namespace_summary_correct_errors(
     builder
 }
 
+pub(crate) fn scraper_summary_correct_errors(
+    mut builder: crate::types::builders::ScraperSummaryBuilder,
+) -> crate::types::builders::ScraperSummaryBuilder {
+    if builder.scraper_id.is_none() {
+        builder.scraper_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::ScraperStatusBuilder::default();
+            crate::serde_util::scraper_status_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_at.is_none() {
+        builder.last_modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::Source::Unknown)
+    }
+    if builder.destination.is_none() {
+        builder.destination = Some(crate::types::Destination::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -441,6 +582,27 @@ pub(crate) fn workspace_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn amp_configuration_correct_errors(
+    mut builder: crate::types::builders::AmpConfigurationBuilder,
+) -> crate::types::builders::AmpConfigurationBuilder {
+    if builder.workspace_arn.is_none() {
+        builder.workspace_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn eks_configuration_correct_errors(
+    mut builder: crate::types::builders::EksConfigurationBuilder,
+) -> crate::types::builders::EksConfigurationBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
     }
     builder
 }

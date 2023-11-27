@@ -31,6 +31,9 @@
 ///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => { /* ... */ },
 ///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => { /* ... */ },
 ///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => { /* ... */ },
+///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookbackPeriod => { /* ... */ },
+///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources => { /* ... */ },
+///     ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode => { /* ... */ },
 ///     ExportableAutoScalingGroupField::Finding => { /* ... */ },
 ///     ExportableAutoScalingGroupField::InferredWorkloadTypes => { /* ... */ },
 ///     ExportableAutoScalingGroupField::LastRefreshTimestamp => { /* ... */ },
@@ -40,7 +43,9 @@
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsMemory => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => { /* ... */ },
@@ -51,6 +56,7 @@
 ///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMaximum => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
+///     ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => { /* ... */ },
 ///     ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => { /* ... */ },
@@ -138,6 +144,12 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesInferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesLookbackPeriod,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesPreferredResources,
+    #[allow(missing_docs)] // documentation missing in model
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     InferredWorkloadTypes,
@@ -156,7 +168,11 @@ pub enum ExportableAutoScalingGroupField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
     #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsEstimatedMonthlySavingsValue,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsInstanceGpuInfo,
     #[allow(missing_docs)] // documentation missing in model
@@ -177,6 +193,8 @@ pub enum ExportableAutoScalingGroupField {
     RecommendationOptionsProjectedUtilizationMetricsGpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    #[allow(missing_docs)] // documentation missing in model
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
@@ -251,6 +269,13 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "EffectiveRecommendationPreferencesInferredWorkloadTypes" => {
                 ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes
             }
+            "EffectiveRecommendationPreferencesLookBackPeriod" => ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookbackPeriod,
+            "EffectiveRecommendationPreferencesPreferredResources" => {
+                ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources
+            }
+            "EffectiveRecommendationPreferencesSavingsEstimationMode" => {
+                ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode
+            }
             "Finding" => ExportableAutoScalingGroupField::Finding,
             "InferredWorkloadTypes" => ExportableAutoScalingGroupField::InferredWorkloadTypes,
             "LastRefreshTimestamp" => ExportableAutoScalingGroupField::LastRefreshTimestamp,
@@ -262,7 +287,13 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             "RecommendationOptionsEstimatedMonthlySavingsCurrency" => {
                 ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency
             }
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts
+            }
             "RecommendationOptionsEstimatedMonthlySavingsValue" => ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue,
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
+            }
             "RecommendationOptionsInstanceGpuInfo" => ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo,
             "RecommendationOptionsMemory" => ExportableAutoScalingGroupField::RecommendationOptionsMemory,
             "RecommendationOptionsMigrationEffort" => ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort,
@@ -280,6 +311,9 @@ impl ::std::convert::From<&str> for ExportableAutoScalingGroupField {
             }
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => {
                 ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum
+            }
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage" => {
+                ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage
             }
             "RecommendationOptionsSavingsOpportunityPercentage" => ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage,
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice" => {
@@ -350,6 +384,13 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
                 "EffectiveRecommendationPreferencesInferredWorkloadTypes"
             }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookbackPeriod => "EffectiveRecommendationPreferencesLookBackPeriod",
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources => {
+                "EffectiveRecommendationPreferencesPreferredResources"
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                "EffectiveRecommendationPreferencesSavingsEstimationMode"
+            }
             ExportableAutoScalingGroupField::Finding => "Finding",
             ExportableAutoScalingGroupField::InferredWorkloadTypes => "InferredWorkloadTypes",
             ExportableAutoScalingGroupField::LastRefreshTimestamp => "LastRefreshTimestamp",
@@ -361,7 +402,13 @@ impl ExportableAutoScalingGroupField {
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
                 "RecommendationOptionsEstimatedMonthlySavingsCurrency"
             }
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"
+            }
             ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => "RecommendationOptionsEstimatedMonthlySavingsValue",
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts"
+            }
             ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo => "RecommendationOptionsInstanceGpuInfo",
             ExportableAutoScalingGroupField::RecommendationOptionsMemory => "RecommendationOptionsMemory",
             ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => "RecommendationOptionsMigrationEffort",
@@ -379,6 +426,9 @@ impl ExportableAutoScalingGroupField {
             }
             ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
                 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"
             }
             ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
             ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
@@ -434,6 +484,9 @@ impl ExportableAutoScalingGroupField {
             "EffectiveRecommendationPreferencesCpuVendorArchitectures",
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+            "EffectiveRecommendationPreferencesLookBackPeriod",
+            "EffectiveRecommendationPreferencesPreferredResources",
+            "EffectiveRecommendationPreferencesSavingsEstimationMode",
             "Finding",
             "InferredWorkloadTypes",
             "LastRefreshTimestamp",
@@ -443,7 +496,9 @@ impl ExportableAutoScalingGroupField {
             "RecommendationOptionsConfigurationMaxSize",
             "RecommendationOptionsConfigurationMinSize",
             "RecommendationOptionsEstimatedMonthlySavingsCurrency",
+            "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts",
             "RecommendationOptionsEstimatedMonthlySavingsValue",
+            "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts",
             "RecommendationOptionsInstanceGpuInfo",
             "RecommendationOptionsMemory",
             "RecommendationOptionsMigrationEffort",
@@ -454,6 +509,7 @@ impl ExportableAutoScalingGroupField {
             "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum",
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+            "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice",
             "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice",

@@ -17,12 +17,28 @@ pub struct UpdateFileSystemOntapConfiguration {
     pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The SSD IOPS (input output operations per second) configuration for an Amazon FSx for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB of storage. The configuration consists of an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating SSD storage capacity and IOPS</a>.</p>
     pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
-    /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables to associate (add) with your Amazon FSx for NetApp ONTAP file system.</p>
     pub add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Multi-AZ only) A list of IDs of existing virtual private cloud (VPC) route tables to disassociate (remove) from your Amazon FSx for NetApp ONTAP file system. You can use the API operation to retrieve the list of VPC route table IDs for a file system.</p>
     pub remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
+    /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p>
+    pub throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemOntapConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -48,7 +64,12 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn disk_iops_configuration(&self) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
-    /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -64,6 +85,19 @@ impl UpdateFileSystemOntapConfiguration {
     pub fn remove_route_table_ids(&self) -> &[::std::string::String] {
         self.remove_route_table_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
+    /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p>
+    pub fn throughput_capacity_per_ha_pair(&self) -> ::std::option::Option<i32> {
+        self.throughput_capacity_per_ha_pair
+    }
 }
 impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -76,6 +110,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfiguration {
         formatter.field("throughput_capacity", &self.throughput_capacity);
         formatter.field("add_route_table_ids", &self.add_route_table_ids);
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
+        formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.finish()
     }
 }
@@ -98,6 +133,7 @@ pub struct UpdateFileSystemOntapConfigurationBuilder {
     pub(crate) throughput_capacity: ::std::option::Option<i32>,
     pub(crate) add_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) remove_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) throughput_capacity_per_ha_pair: ::std::option::Option<i32>,
 }
 impl UpdateFileSystemOntapConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
@@ -179,17 +215,32 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_disk_iops_configuration(&self) -> &::std::option::Option<crate::types::DiskIopsConfiguration> {
         &self.disk_iops_configuration
     }
-    /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
-    /// <p>Enter a new value to change the amount of throughput capacity for the file system. Throughput capacity is measured in megabytes per second (MBps). Valid values are 128, 256, 512, 1024, 2048, and 4096 MBps. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Enter a new value to change the amount of throughput capacity for the file system in megabytes per second (MBps). For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-throughput-capacity.html">Managing throughput capacity</a> in the FSx for ONTAP User Guide.</p>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <ul>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p> </li>
+    /// <li> <p>The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code> is outside of the valid range for <code>ThroughputCapacity</code>.</p> </li>
+    /// </ul>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
     }
@@ -233,6 +284,47 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     pub fn get_remove_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.remove_route_table_ids
     }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
+    /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p>
+    pub fn throughput_capacity_per_ha_pair(mut self, input: i32) -> Self {
+        self.throughput_capacity_per_ha_pair = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
+    /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p>
+    pub fn set_throughput_capacity_per_ha_pair(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.throughput_capacity_per_ha_pair = input;
+        self
+    }
+    /// <p>Use to choose the throughput capacity per HA pair, rather than the total throughput for the file system. </p>
+    /// <p>This field and <code>ThroughputCapacity</code> cannot be defined in the same API call, but one is required.</p>
+    /// <p>This field and <code>ThroughputCapacity</code> are the same for file systems with one HA pair.</p>
+    /// <ul>
+    /// <li> <p>For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256, 512, 1024, 2048, or 4096 MBps.</p> </li>
+    /// <li> <p>For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.</p> </li>
+    /// </ul>
+    /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p>
+    /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p>
+    pub fn get_throughput_capacity_per_ha_pair(&self) -> &::std::option::Option<i32> {
+        &self.throughput_capacity_per_ha_pair
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemOntapConfiguration`](crate::types::UpdateFileSystemOntapConfiguration).
     pub fn build(self) -> crate::types::UpdateFileSystemOntapConfiguration {
         crate::types::UpdateFileSystemOntapConfiguration {
@@ -244,6 +336,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
             throughput_capacity: self.throughput_capacity,
             add_route_table_ids: self.add_route_table_ids,
             remove_route_table_ids: self.remove_route_table_ids,
+            throughput_capacity_per_ha_pair: self.throughput_capacity_per_ha_pair,
         }
     }
 }
@@ -258,6 +351,7 @@ impl ::std::fmt::Debug for UpdateFileSystemOntapConfigurationBuilder {
         formatter.field("throughput_capacity", &self.throughput_capacity);
         formatter.field("add_route_table_ids", &self.add_route_table_ids);
         formatter.field("remove_route_table_ids", &self.remove_route_table_ids);
+        formatter.field("throughput_capacity_per_ha_pair", &self.throughput_capacity_per_ha_pair);
         formatter.finish()
     }
 }

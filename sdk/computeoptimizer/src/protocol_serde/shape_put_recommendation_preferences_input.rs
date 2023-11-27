@@ -24,5 +24,35 @@ pub fn ser_put_recommendation_preferences_input_input(
         crate::protocol_serde::shape_external_metrics_preference::ser_external_metrics_preference(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.look_back_period {
+        object.key("lookBackPeriod").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.utilization_preferences {
+        let mut array_10 = object.key("utilizationPreferences").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_utilization_preference::ser_utilization_preference(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_13) = &input.preferred_resources {
+        let mut array_14 = object.key("preferredResources").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_preferred_resource::ser_preferred_resource(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.savings_estimation_mode {
+        object.key("savingsEstimationMode").string(var_17.as_str());
+    }
     Ok(())
 }

@@ -102,6 +102,27 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn theme_generation_config_correct_errors(
+    mut builder: crate::types::builders::ThemeGenerationConfigBuilder,
+) -> crate::types::builders::ThemeGenerationConfigBuilder {
+    if builder.fields_for_theme_generation.is_none() {
+        builder.fields_for_theme_generation = {
+            let builder = crate::types::builders::FieldsForThemeGenerationBuilder::default();
+            crate::serde_util::fields_for_theme_generation_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn fields_for_theme_generation_correct_errors(
+    mut builder: crate::types::builders::FieldsForThemeGenerationBuilder,
+) -> crate::types::builders::FieldsForThemeGenerationBuilder {
+    if builder.item_name.is_none() {
+        builder.item_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_data_config_correct_errors(mut builder: crate::types::builders::S3DataConfigBuilder) -> crate::types::builders::S3DataConfigBuilder {
     if builder.path.is_none() {
         builder.path = Some(Default::default())

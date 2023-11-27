@@ -10,6 +10,9 @@ pub mod create_logging_configuration;
 /// Types for the `CreateRuleGroupsNamespace` operation.
 pub mod create_rule_groups_namespace;
 
+/// Types for the `CreateScraper` operation.
+pub mod create_scraper;
+
 /// Types for the `CreateWorkspace` operation.
 pub mod create_workspace;
 
@@ -21,6 +24,9 @@ pub mod delete_logging_configuration;
 
 /// Types for the `DeleteRuleGroupsNamespace` operation.
 pub mod delete_rule_groups_namespace;
+
+/// Types for the `DeleteScraper` operation.
+pub mod delete_scraper;
 
 /// Types for the `DeleteWorkspace` operation.
 pub mod delete_workspace;
@@ -34,11 +40,20 @@ pub mod describe_logging_configuration;
 /// Types for the `DescribeRuleGroupsNamespace` operation.
 pub mod describe_rule_groups_namespace;
 
+/// Types for the `DescribeScraper` operation.
+pub mod describe_scraper;
+
 /// Types for the `DescribeWorkspace` operation.
 pub mod describe_workspace;
 
+/// Types for the `GetDefaultScraperConfiguration` operation.
+pub mod get_default_scraper_configuration;
+
 /// Types for the `ListRuleGroupsNamespaces` operation.
 pub mod list_rule_groups_namespaces;
+
+/// Types for the `ListScrapers` operation.
+pub mod list_scrapers;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

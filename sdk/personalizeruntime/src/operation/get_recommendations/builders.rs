@@ -163,17 +163,17 @@ impl GetRecommendationsFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
+    /// <p>The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn num_results(mut self, input: i32) -> Self {
         self.inner = self.inner.num_results(input);
         self
     }
-    /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
+    /// <p>The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_results(input);
         self
     }
-    /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
+    /// <p>The number of results to return. The default is 25. If you are including metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.</p>
     pub fn get_num_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_num_results()
     }
@@ -270,5 +270,31 @@ impl GetRecommendationsFluentBuilder {
     /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
     pub fn get_promotions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Promotion>> {
         self.inner.get_promotions()
+    }
+    /// Adds a key-value pair to `metadataColumns`.
+    ///
+    /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).
+    ///
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
+    pub fn metadata_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        self.inner = self.inner.metadata_columns(k.into(), v);
+        self
+    }
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
+    pub fn set_metadata_columns(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.inner = self.inner.set_metadata_columns(input);
+        self
+    }
+    /// <p>If you enabled metadata in recommendations when you created or updated the campaign or recommender, specify the metadata columns from your Items dataset to include in item recommendations. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
+    /// <p> For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-recommender-return-metadata.html">Enabling metadata in recommendations for a recommender</a>. </p>
+    pub fn get_metadata_columns(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.inner.get_metadata_columns()
     }
 }

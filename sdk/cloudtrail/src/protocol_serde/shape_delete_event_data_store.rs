@@ -38,6 +38,21 @@ pub fn de_delete_event_data_store_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::delete_event_data_store::DeleteEventDataStoreError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_event_data_store::DeleteEventDataStoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EventDataStoreARNInvalidException" => {
             crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreArnInvalidException({
                 #[allow(unused_mut)]
@@ -49,6 +64,22 @@ pub fn de_delete_event_data_store_http_error(
                         output,
                     )
                     .map_err(crate::operation::delete_event_data_store::DeleteEventDataStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EventDataStoreFederationEnabledException" => {
+            crate::operation::delete_event_data_store::DeleteEventDataStoreError::EventDataStoreFederationEnabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EventDataStoreFederationEnabledExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_event_data_store_federation_enabled_exception::de_event_data_store_federation_enabled_exception_json_err(_response_body, output).map_err(crate::operation::delete_event_data_store::DeleteEventDataStoreError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

@@ -13,6 +13,9 @@ pub fn ser_campaign_config(
         }
         object_2.finish();
     }
+    if let Some(var_5) = &input.enable_metadata_with_recommendations {
+        object.key("enableMetadataWithRecommendations").boolean(*var_5);
+    }
     Ok(())
 }
 
@@ -34,6 +37,10 @@ where
                         "itemExplorationConfig" => {
                             builder =
                                 builder.set_item_exploration_config(crate::protocol_serde::shape_hyper_parameters::de_hyper_parameters(tokens)?);
+                        }
+                        "enableMetadataWithRecommendations" => {
+                            builder = builder
+                                .set_enable_metadata_with_recommendations(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

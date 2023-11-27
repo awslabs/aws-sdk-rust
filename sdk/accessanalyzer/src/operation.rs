@@ -7,6 +7,12 @@ pub mod apply_archive_rule;
 /// Types for the `CancelPolicyGeneration` operation.
 pub mod cancel_policy_generation;
 
+/// Types for the `CheckAccessNotGranted` operation.
+pub mod check_access_not_granted;
+
+/// Types for the `CheckNoNewAccess` operation.
+pub mod check_no_new_access;
+
 /// Types for the `CreateAccessPreview` operation.
 pub mod create_access_preview;
 
@@ -37,6 +43,9 @@ pub mod get_archive_rule;
 /// Types for the `GetFinding` operation.
 pub mod get_finding;
 
+/// Types for the `GetFindingV2` operation.
+pub mod get_finding_v2;
+
 /// Types for the `GetGeneratedPolicy` operation.
 pub mod get_generated_policy;
 
@@ -57,6 +66,9 @@ pub mod list_archive_rules;
 
 /// Types for the `ListFindings` operation.
 pub mod list_findings;
+
+/// Types for the `ListFindingsV2` operation.
+pub mod list_findings_v2;
 
 /// Types for the `ListPolicyGenerations` operation.
 pub mod list_policy_generations;

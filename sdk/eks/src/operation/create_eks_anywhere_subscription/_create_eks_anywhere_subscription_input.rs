@@ -7,7 +7,7 @@ pub struct CreateEksAnywhereSubscriptionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing the term duration and term unit type of your subscription. This determines the term length of your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36 month subscription. This value cannot be changed after creating the subscription.</p>
     pub term: ::std::option::Option<crate::types::EksAnywhereSubscriptionTerm>,
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub license_quantity: ::std::option::Option<i32>,
     /// <p>The license type for all licenses in the subscription. Valid value is CLUSTER. With the CLUSTER license type, each license covers support for a single EKS Anywhere cluster.</p>
     pub license_type: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>,
@@ -15,7 +15,7 @@ pub struct CreateEksAnywhereSubscriptionInput {
     pub auto_renew: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateEksAnywhereSubscriptionInput {
@@ -27,7 +27,7 @@ impl CreateEksAnywhereSubscriptionInput {
     pub fn term(&self) -> ::std::option::Option<&crate::types::EksAnywhereSubscriptionTerm> {
         self.term.as_ref()
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn license_quantity(&self) -> ::std::option::Option<i32> {
         self.license_quantity
     }
@@ -43,7 +43,7 @@ impl CreateEksAnywhereSubscriptionInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -98,17 +98,17 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     pub fn get_term(&self) -> &::std::option::Option<crate::types::EksAnywhereSubscriptionTerm> {
         &self.term
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn license_quantity(mut self, input: i32) -> Self {
         self.license_quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn set_license_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.license_quantity = input;
         self
     }
-    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 1000. This value cannot be changed after creating the subscription.</p>
+    /// <p>The number of licenses to purchase with the subscription. Valid values are between 1 and 100. This value can't be changed after creating the subscription.</p>
     pub fn get_license_quantity(&self) -> &::std::option::Option<i32> {
         &self.license_quantity
     }
@@ -158,19 +158,19 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
+    /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

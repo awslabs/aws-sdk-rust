@@ -42,12 +42,18 @@ pub struct OntapVolumeConfiguration {
     /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub snapshot_policy: ::std::option::Option<::std::string::String>,
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub copy_tags_to_backups: ::std::option::Option<bool>,
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
     pub snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub volume_style: ::std::option::Option<crate::types::VolumeStyle>,
+    /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub aggregate_configuration: ::std::option::Option<crate::types::AggregateConfiguration>,
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub size_in_bytes: ::std::option::Option<i64>,
 }
 impl OntapVolumeConfiguration {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -108,7 +114,7 @@ impl OntapVolumeConfiguration {
     /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn snapshot_policy(&self) -> ::std::option::Option<&str> {
         self.snapshot_policy.as_deref()
     }
@@ -119,6 +125,18 @@ impl OntapVolumeConfiguration {
     /// <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
     pub fn snaplock_configuration(&self) -> ::std::option::Option<&crate::types::SnaplockConfiguration> {
         self.snaplock_configuration.as_ref()
+    }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn volume_style(&self) -> ::std::option::Option<&crate::types::VolumeStyle> {
+        self.volume_style.as_ref()
+    }
+    /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn aggregate_configuration(&self) -> ::std::option::Option<&crate::types::AggregateConfiguration> {
+        self.aggregate_configuration.as_ref()
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.size_in_bytes
     }
 }
 impl OntapVolumeConfiguration {
@@ -145,6 +163,9 @@ pub struct OntapVolumeConfigurationBuilder {
     pub(crate) snapshot_policy: ::std::option::Option<::std::string::String>,
     pub(crate) copy_tags_to_backups: ::std::option::Option<bool>,
     pub(crate) snaplock_configuration: ::std::option::Option<crate::types::SnaplockConfiguration>,
+    pub(crate) volume_style: ::std::option::Option<crate::types::VolumeStyle>,
+    pub(crate) aggregate_configuration: ::std::option::Option<crate::types::AggregateConfiguration>,
+    pub(crate) size_in_bytes: ::std::option::Option<i64>,
 }
 impl OntapVolumeConfigurationBuilder {
     /// <p>Specifies the FlexCache endpoint type of the volume. Valid values are the following:</p>
@@ -327,7 +348,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn snapshot_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_policy = ::std::option::Option::Some(input.into());
         self
@@ -339,7 +360,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn set_snapshot_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_policy = input;
         self
@@ -351,7 +372,7 @@ impl OntapVolumeConfigurationBuilder {
     /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
     /// </ul>
     /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the Amazon FSx for NetApp ONTAP User Guide.</p>
     pub fn get_snapshot_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_policy
     }
@@ -383,6 +404,48 @@ impl OntapVolumeConfigurationBuilder {
     pub fn get_snaplock_configuration(&self) -> &::std::option::Option<crate::types::SnaplockConfiguration> {
         &self.snaplock_configuration
     }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn volume_style(mut self, input: crate::types::VolumeStyle) -> Self {
+        self.volume_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn set_volume_style(mut self, input: ::std::option::Option<crate::types::VolumeStyle>) -> Self {
+        self.volume_style = input;
+        self
+    }
+    /// <p>Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for NetApp ONTAP User Guide.</p>
+    pub fn get_volume_style(&self) -> &::std::option::Option<crate::types::VolumeStyle> {
+        &self.volume_style
+    }
+    /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn aggregate_configuration(mut self, input: crate::types::AggregateConfiguration) -> Self {
+        self.aggregate_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn set_aggregate_configuration(mut self, input: ::std::option::Option<crate::types::AggregateConfiguration>) -> Self {
+        self.aggregate_configuration = input;
+        self
+    }
+    /// <p>This structure specifies configuration options for a volume’s storage aggregate or aggregates.</p>
+    pub fn get_aggregate_configuration(&self) -> &::std::option::Option<crate::types::AggregateConfiguration> {
+        &self.aggregate_configuration
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn size_in_bytes(mut self, input: i64) -> Self {
+        self.size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.size_in_bytes = input;
+        self
+    }
+    /// <p>The configured size of the volume, in bytes.</p>
+    pub fn get_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.size_in_bytes
+    }
     /// Consumes the builder and constructs a [`OntapVolumeConfiguration`](crate::types::OntapVolumeConfiguration).
     pub fn build(self) -> crate::types::OntapVolumeConfiguration {
         crate::types::OntapVolumeConfiguration {
@@ -399,6 +462,9 @@ impl OntapVolumeConfigurationBuilder {
             snapshot_policy: self.snapshot_policy,
             copy_tags_to_backups: self.copy_tags_to_backups,
             snaplock_configuration: self.snaplock_configuration,
+            volume_style: self.volume_style,
+            aggregate_configuration: self.aggregate_configuration,
+            size_in_bytes: self.size_in_bytes,
         }
     }
 }

@@ -13,9 +13,15 @@ pub use crate::types::_update_mode::UpdateMode;
 
 pub use crate::types::_node::Node;
 
-pub use crate::types::_attribute::Attribute;
+pub use crate::types::_custom_property::CustomProperty;
+
+pub use crate::types::_node_data_encoding::NodeDataEncoding;
 
 pub use crate::types::_node_data_type::NodeDataType;
+
+pub use crate::types::_custom_struct::CustomStruct;
+
+pub use crate::types::_attribute::Attribute;
 
 pub use crate::types::_actuator::Actuator;
 
@@ -39,6 +45,22 @@ pub use crate::types::_fleet_summary::FleetSummary;
 
 pub use crate::types::_signal_decoder::SignalDecoder;
 
+pub use crate::types::_message_signal::MessageSignal;
+
+pub use crate::types::_structured_message::StructuredMessage;
+
+pub use crate::types::_structured_message_field_name_and_data_type_pair::StructuredMessageFieldNameAndDataTypePair;
+
+pub use crate::types::_structured_message_list_definition::StructuredMessageListDefinition;
+
+pub use crate::types::_structured_message_list_type::StructuredMessageListType;
+
+pub use crate::types::_primitive_message_definition::PrimitiveMessageDefinition;
+
+pub use crate::types::_ros2_primitive_message_definition::Ros2PrimitiveMessageDefinition;
+
+pub use crate::types::_ros2_primitive_type::Ros2PrimitiveType;
+
 pub use crate::types::_obd_signal::ObdSignal;
 
 pub use crate::types::_can_signal::CanSignal;
@@ -46,6 +68,10 @@ pub use crate::types::_can_signal::CanSignal;
 pub use crate::types::_signal_decoder_type::SignalDecoderType;
 
 pub use crate::types::_network_interface::NetworkInterface;
+
+pub use crate::types::_vehicle_middleware::VehicleMiddleware;
+
+pub use crate::types::_vehicle_middleware_protocol::VehicleMiddlewareProtocol;
 
 pub use crate::types::_obd_interface::ObdInterface;
 
@@ -163,6 +189,10 @@ mod _create_vehicle_request_item;
 
 mod _create_vehicle_response_item;
 
+mod _custom_property;
+
+mod _custom_struct;
+
 mod _data_destination_config;
 
 mod _data_format;
@@ -193,6 +223,8 @@ mod _log_type;
 
 mod _manifest_status;
 
+mod _message_signal;
+
 mod _model_manifest_summary;
 
 mod _network_file_definition;
@@ -207,13 +239,21 @@ mod _node;
 
 mod _node_counts;
 
+mod _node_data_encoding;
+
 mod _node_data_type;
 
 mod _obd_interface;
 
 mod _obd_signal;
 
+mod _primitive_message_definition;
+
 mod _registration_status;
+
+mod _ros2_primitive_message_definition;
+
+mod _ros2_primitive_type;
 
 mod _s3_config;
 
@@ -232,6 +272,14 @@ mod _signal_information;
 mod _spooling_mode;
 
 mod _storage_compression_format;
+
+mod _structured_message;
+
+mod _structured_message_field_name_and_data_type_pair;
+
+mod _structured_message_list_definition;
+
+mod _structured_message_list_type;
 
 mod _tag;
 
@@ -260,6 +308,10 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _vehicle_association_behavior;
+
+mod _vehicle_middleware;
+
+mod _vehicle_middleware_protocol;
 
 mod _vehicle_state;
 

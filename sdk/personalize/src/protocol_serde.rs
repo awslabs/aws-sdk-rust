@@ -411,6 +411,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_theme_generation_config;
+
 pub(crate) mod shape_algorithm_image;
 
 pub(crate) mod shape_auto_ml_config;
@@ -442,6 +444,8 @@ pub(crate) mod shape_default_hyper_parameter_ranges;
 pub(crate) mod shape_event_tracker_summary;
 
 pub(crate) mod shape_featurization_parameters;
+
+pub(crate) mod shape_fields_for_theme_generation;
 
 pub(crate) mod shape_filter_summary;
 

@@ -233,6 +233,8 @@ mod delete_group_membership;
 
 mod delete_iam_policy_assignment;
 
+mod delete_identity_propagation_config;
+
 mod delete_namespace;
 
 mod delete_refresh_schedule;
@@ -377,6 +379,8 @@ mod list_iam_policy_assignments;
 
 mod list_iam_policy_assignments_for_user;
 
+mod list_identity_propagation_configs;
+
 mod list_ingestions;
 
 mod list_namespaces;
@@ -466,6 +470,8 @@ mod update_folder_permissions;
 mod update_group;
 
 mod update_iam_policy_assignment;
+
+mod update_identity_propagation_config;
 
 mod update_ip_restriction;
 

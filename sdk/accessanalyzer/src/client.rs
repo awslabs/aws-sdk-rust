@@ -140,6 +140,10 @@ mod apply_archive_rule;
 
 mod cancel_policy_generation;
 
+mod check_access_not_granted;
+
+mod check_no_new_access;
+
 mod create_access_preview;
 
 mod create_analyzer;
@@ -187,6 +191,8 @@ mod get_archive_rule;
 
 mod get_finding;
 
+mod get_finding_v2;
+
 mod get_generated_policy;
 
 mod list_access_preview_findings;
@@ -200,6 +206,8 @@ mod list_analyzers;
 mod list_archive_rules;
 
 mod list_findings;
+
+mod list_findings_v2;
 
 mod list_policy_generations;
 

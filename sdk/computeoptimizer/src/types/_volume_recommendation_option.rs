@@ -15,6 +15,8 @@ pub struct VolumeRecommendationOption {
     pub rank: i32,
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    /// <p> An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub savings_opportunity_after_discounts: ::std::option::Option<crate::types::EbsSavingsOpportunityAfterDiscounts>,
 }
 impl VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
@@ -36,6 +38,10 @@ impl VolumeRecommendationOption {
     pub fn savings_opportunity(&self) -> ::std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
+    /// <p> An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn savings_opportunity_after_discounts(&self) -> ::std::option::Option<&crate::types::EbsSavingsOpportunityAfterDiscounts> {
+        self.savings_opportunity_after_discounts.as_ref()
+    }
 }
 impl VolumeRecommendationOption {
     /// Creates a new builder-style object to manufacture [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
@@ -52,6 +58,7 @@ pub struct VolumeRecommendationOptionBuilder {
     pub(crate) performance_risk: ::std::option::Option<f64>,
     pub(crate) rank: ::std::option::Option<i32>,
     pub(crate) savings_opportunity: ::std::option::Option<crate::types::SavingsOpportunity>,
+    pub(crate) savings_opportunity_after_discounts: ::std::option::Option<crate::types::EbsSavingsOpportunityAfterDiscounts>,
 }
 impl VolumeRecommendationOptionBuilder {
     /// <p>An array of objects that describe a volume configuration.</p>
@@ -119,6 +126,23 @@ impl VolumeRecommendationOptionBuilder {
     pub fn get_savings_opportunity(&self) -> &::std::option::Option<crate::types::SavingsOpportunity> {
         &self.savings_opportunity
     }
+    /// <p> An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn savings_opportunity_after_discounts(mut self, input: crate::types::EbsSavingsOpportunityAfterDiscounts) -> Self {
+        self.savings_opportunity_after_discounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn set_savings_opportunity_after_discounts(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsSavingsOpportunityAfterDiscounts>,
+    ) -> Self {
+        self.savings_opportunity_after_discounts = input;
+        self
+    }
+    /// <p> An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific discounts. Savings opportunity includes the estimated monthly savings and percentage. </p>
+    pub fn get_savings_opportunity_after_discounts(&self) -> &::std::option::Option<crate::types::EbsSavingsOpportunityAfterDiscounts> {
+        &self.savings_opportunity_after_discounts
+    }
     /// Consumes the builder and constructs a [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
     pub fn build(self) -> crate::types::VolumeRecommendationOption {
         crate::types::VolumeRecommendationOption {
@@ -126,6 +150,7 @@ impl VolumeRecommendationOptionBuilder {
             performance_risk: self.performance_risk.unwrap_or_default(),
             rank: self.rank.unwrap_or_default(),
             savings_opportunity: self.savings_opportunity,
+            savings_opportunity_after_discounts: self.savings_opportunity_after_discounts,
         }
     }
 }

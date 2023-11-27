@@ -24,6 +24,8 @@ pub struct BatchInferenceJobSummary {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the solution version used by the batch inference job.</p>
     pub solution_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The job's mode.</p>
+    pub batch_inference_job_mode: ::std::option::Option<crate::types::BatchInferenceJobMode>,
 }
 impl BatchInferenceJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
@@ -60,6 +62,10 @@ impl BatchInferenceJobSummary {
     pub fn solution_version_arn(&self) -> ::std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
+    /// <p>The job's mode.</p>
+    pub fn batch_inference_job_mode(&self) -> ::std::option::Option<&crate::types::BatchInferenceJobMode> {
+        self.batch_inference_job_mode.as_ref()
+    }
 }
 impl BatchInferenceJobSummary {
     /// Creates a new builder-style object to manufacture [`BatchInferenceJobSummary`](crate::types::BatchInferenceJobSummary).
@@ -79,6 +85,7 @@ pub struct BatchInferenceJobSummaryBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) solution_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_inference_job_mode: ::std::option::Option<crate::types::BatchInferenceJobMode>,
 }
 impl BatchInferenceJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
@@ -197,6 +204,20 @@ impl BatchInferenceJobSummaryBuilder {
     pub fn get_solution_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.solution_version_arn
     }
+    /// <p>The job's mode.</p>
+    pub fn batch_inference_job_mode(mut self, input: crate::types::BatchInferenceJobMode) -> Self {
+        self.batch_inference_job_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The job's mode.</p>
+    pub fn set_batch_inference_job_mode(mut self, input: ::std::option::Option<crate::types::BatchInferenceJobMode>) -> Self {
+        self.batch_inference_job_mode = input;
+        self
+    }
+    /// <p>The job's mode.</p>
+    pub fn get_batch_inference_job_mode(&self) -> &::std::option::Option<crate::types::BatchInferenceJobMode> {
+        &self.batch_inference_job_mode
+    }
     /// Consumes the builder and constructs a [`BatchInferenceJobSummary`](crate::types::BatchInferenceJobSummary).
     pub fn build(self) -> crate::types::BatchInferenceJobSummary {
         crate::types::BatchInferenceJobSummary {
@@ -207,6 +228,7 @@ impl BatchInferenceJobSummaryBuilder {
             last_updated_date_time: self.last_updated_date_time,
             failure_reason: self.failure_reason,
             solution_version_arn: self.solution_version_arn,
+            batch_inference_job_mode: self.batch_inference_job_mode,
         }
     }
 }

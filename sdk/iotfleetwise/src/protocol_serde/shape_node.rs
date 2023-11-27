@@ -28,6 +28,18 @@ pub fn ser_node(
             crate::protocol_serde::shape_attribute::ser_attribute(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::Node::Struct(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_6.key("struct").start_object();
+            crate::protocol_serde::shape_custom_struct::ser_custom_struct(&mut object_5, inner)?;
+            object_5.finish();
+        }
+        crate::types::Node::Property(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_6.key("property").start_object();
+            crate::protocol_serde::shape_custom_property::ser_custom_property(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::Node::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Node")),
     }
     Ok(())
@@ -75,6 +87,16 @@ where
                         "attribute" => Some(crate::types::Node::Attribute(
                             crate::protocol_serde::shape_attribute::de_attribute(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'attribute' cannot be null")
+                            })?,
+                        )),
+                        "struct" => Some(crate::types::Node::Struct(
+                            crate::protocol_serde::shape_custom_struct::de_custom_struct(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'struct' cannot be null")
+                            })?,
+                        )),
+                        "property" => Some(crate::types::Node::Property(
+                            crate::protocol_serde::shape_custom_property::de_custom_property(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'property' cannot be null")
                             })?,
                         )),
                         _ => {

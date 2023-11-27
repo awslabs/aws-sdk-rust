@@ -8,6 +8,8 @@ pub struct InvalidSignalDecoder {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
+    /// <p>The possible cause for the invalid signal decoder.</p>
+    pub hint: ::std::option::Option<::std::string::String>,
 }
 impl InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
@@ -17,6 +19,10 @@ impl InvalidSignalDecoder {
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub fn reason(&self) -> ::std::option::Option<&crate::types::SignalDecoderFailureReason> {
         self.reason.as_ref()
+    }
+    /// <p>The possible cause for the invalid signal decoder.</p>
+    pub fn hint(&self) -> ::std::option::Option<&str> {
+        self.hint.as_deref()
     }
 }
 impl InvalidSignalDecoder {
@@ -32,6 +38,7 @@ impl InvalidSignalDecoder {
 pub struct InvalidSignalDecoderBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
+    pub(crate) hint: ::std::option::Option<::std::string::String>,
 }
 impl InvalidSignalDecoderBuilder {
     /// <p>The name of a signal decoder that isn't valid.</p>
@@ -62,11 +69,26 @@ impl InvalidSignalDecoderBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::SignalDecoderFailureReason> {
         &self.reason
     }
+    /// <p>The possible cause for the invalid signal decoder.</p>
+    pub fn hint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The possible cause for the invalid signal decoder.</p>
+    pub fn set_hint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.hint = input;
+        self
+    }
+    /// <p>The possible cause for the invalid signal decoder.</p>
+    pub fn get_hint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.hint
+    }
     /// Consumes the builder and constructs a [`InvalidSignalDecoder`](crate::types::InvalidSignalDecoder).
     pub fn build(self) -> crate::types::InvalidSignalDecoder {
         crate::types::InvalidSignalDecoder {
             name: self.name,
             reason: self.reason,
+            hint: self.hint,
         }
     }
 }

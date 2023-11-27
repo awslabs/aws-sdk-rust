@@ -99,11 +99,21 @@ pub use crate::types::_coverage_status::CoverageStatus;
 
 pub use crate::types::_coverage_resource_details::CoverageResourceDetails;
 
+pub use crate::types::_coverage_ec2_instance_details::CoverageEc2InstanceDetails;
+
+pub use crate::types::_management_type::ManagementType;
+
+pub use crate::types::_agent_details::AgentDetails;
+
+pub use crate::types::_coverage_ecs_cluster_details::CoverageEcsClusterDetails;
+
+pub use crate::types::_container_instance_details::ContainerInstanceDetails;
+
+pub use crate::types::_fargate_details::FargateDetails;
+
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_coverage_eks_cluster_details::CoverageEksClusterDetails;
-
-pub use crate::types::_management_type::ManagementType;
 
 pub use crate::types::_addon_details::AddonDetails;
 
@@ -439,6 +449,8 @@ mod _admin_status;
 
 mod _administrator;
 
+mod _agent_details;
+
 mod _anomaly;
 
 mod _anomaly_object;
@@ -463,7 +475,13 @@ mod _condition;
 
 mod _container;
 
+mod _container_instance_details;
+
 mod _country;
+
+mod _coverage_ec2_instance_details;
+
+mod _coverage_ecs_cluster_details;
 
 mod _coverage_eks_cluster_details;
 
@@ -548,6 +566,8 @@ mod _ecs_task_details;
 mod _eks_cluster_details;
 
 mod _evidence;
+
+mod _fargate_details;
 
 mod _feature_additional_configuration;
 

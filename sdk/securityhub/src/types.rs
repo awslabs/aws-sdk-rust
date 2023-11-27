@@ -3,6 +3,12 @@ pub use crate::types::_control_status::ControlStatus;
 
 pub use crate::types::_control_finding_generator::ControlFindingGenerator;
 
+pub use crate::types::_parameter_configuration::ParameterConfiguration;
+
+pub use crate::types::_parameter_value::ParameterValue;
+
+pub use crate::types::_parameter_value_type::ParameterValueType;
+
 pub use crate::types::_auto_enable_standards::AutoEnableStandards;
 
 pub use crate::types::_aws_security_finding_filters::AwsSecurityFindingFilters;
@@ -38,6 +44,28 @@ pub use crate::types::_standards_control_association_summary::StandardsControlAs
 pub use crate::types::_association_status::AssociationStatus;
 
 pub use crate::types::_security_control_definition::SecurityControlDefinition;
+
+pub use crate::types::_parameter_definition::ParameterDefinition;
+
+pub use crate::types::_configuration_options::ConfigurationOptions;
+
+pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOptions;
+
+pub use crate::types::_enum_configuration_options::EnumConfigurationOptions;
+
+pub use crate::types::_boolean_configuration_options::BooleanConfigurationOptions;
+
+pub use crate::types::_string_list_configuration_options::StringListConfigurationOptions;
+
+pub use crate::types::_string_configuration_options::StringConfigurationOptions;
+
+pub use crate::types::_double_configuration_options::DoubleConfigurationOptions;
+
+pub use crate::types::_integer_list_configuration_options::IntegerListConfigurationOptions;
+
+pub use crate::types::_integer_configuration_options::IntegerConfigurationOptions;
+
+pub use crate::types::_security_control_property::SecurityControlProperty;
 
 pub use crate::types::_region_availability_status::RegionAvailabilityStatus;
 
@@ -138,6 +166,8 @@ pub use crate::types::_workflow_state::WorkflowState;
 pub use crate::types::_verification_state::VerificationState;
 
 pub use crate::types::_compliance::Compliance;
+
+pub use crate::types::_security_control_parameter::SecurityControlParameter;
 
 pub use crate::types::_associated_standard::AssociatedStandard;
 
@@ -1337,6 +1367,8 @@ pub use crate::types::_unprocessed_security_control::UnprocessedSecurityControl;
 
 pub use crate::types::_security_control::SecurityControl;
 
+pub use crate::types::_update_status::UpdateStatus;
+
 pub use crate::types::_automation_rules_config::AutomationRulesConfig;
 
 pub use crate::types::_standards_subscription_request::StandardsSubscriptionRequest;
@@ -2361,6 +2393,8 @@ mod _aws_xray_encryption_config_details;
 
 mod _batch_update_findings_unprocessed_finding;
 
+mod _boolean_configuration_options;
+
 mod _boolean_filter;
 
 mod _cell;
@@ -2380,6 +2414,8 @@ mod _code_vulnerabilities_file_path;
 mod _compliance;
 
 mod _compliance_status;
+
+mod _configuration_options;
 
 mod _container_details;
 
@@ -2404,6 +2440,12 @@ mod _date_range;
 mod _date_range_unit;
 
 mod _dns_request_action;
+
+mod _double_configuration_options;
+
+mod _enum_configuration_options;
+
+mod _enum_list_configuration_options;
 
 mod _file_paths;
 
@@ -2442,6 +2484,10 @@ mod _insight;
 mod _insight_result_value;
 
 mod _insight_results;
+
+mod _integer_configuration_options;
+
+mod _integer_list_configuration_options;
 
 mod _integration_type;
 
@@ -2490,6 +2536,14 @@ mod _number_filter;
 mod _occurrences;
 
 mod _page;
+
+mod _parameter_configuration;
+
+mod _parameter_definition;
+
+mod _parameter_value;
+
+mod _parameter_value_type;
 
 mod _partition;
 
@@ -2575,6 +2629,10 @@ mod _security_control;
 
 mod _security_control_definition;
 
+mod _security_control_parameter;
+
+mod _security_control_property;
+
 mod _sensitive_data_detections;
 
 mod _sensitive_data_result;
@@ -2625,9 +2683,13 @@ mod _status_reason;
 
 mod _status_reason_code;
 
+mod _string_configuration_options;
+
 mod _string_filter;
 
 mod _string_filter_comparison;
+
+mod _string_list_configuration_options;
 
 mod _threat;
 
@@ -2648,6 +2710,8 @@ mod _unprocessed_standards_control_association;
 mod _unprocessed_standards_control_association_update;
 
 mod _update_automation_rules_request_item;
+
+mod _update_status;
 
 mod _verification_state;
 

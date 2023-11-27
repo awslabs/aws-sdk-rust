@@ -37,6 +37,12 @@ pub mod describe_query;
 /// Types for the `DescribeTrails` operation.
 pub mod describe_trails;
 
+/// Types for the `DisableFederation` operation.
+pub mod disable_federation;
+
+/// Types for the `EnableFederation` operation.
+pub mod enable_federation;
+
 /// Types for the `GetChannel` operation.
 pub mod get_channel;
 

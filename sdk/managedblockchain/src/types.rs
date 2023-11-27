@@ -39,6 +39,8 @@ pub use crate::types::_invitation_status::InvitationStatus;
 
 pub use crate::types::_accessor_summary::AccessorSummary;
 
+pub use crate::types::_accessor_network_type::AccessorNetworkType;
+
 pub use crate::types::_accessor_status::AccessorStatus;
 
 pub use crate::types::_accessor_type::AccessorType;
@@ -98,6 +100,8 @@ pub use crate::types::_network_framework_configuration::NetworkFrameworkConfigur
 pub use crate::types::_network_fabric_configuration::NetworkFabricConfiguration;
 
 mod _accessor;
+
+mod _accessor_network_type;
 
 mod _accessor_status;
 

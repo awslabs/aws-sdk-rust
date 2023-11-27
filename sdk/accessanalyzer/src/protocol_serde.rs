@@ -27,6 +27,10 @@ pub(crate) mod shape_apply_archive_rule;
 
 pub(crate) mod shape_cancel_policy_generation;
 
+pub(crate) mod shape_check_access_not_granted;
+
+pub(crate) mod shape_check_no_new_access;
+
 pub(crate) mod shape_create_access_preview;
 
 pub(crate) mod shape_create_analyzer;
@@ -47,6 +51,8 @@ pub(crate) mod shape_get_archive_rule;
 
 pub(crate) mod shape_get_finding;
 
+pub(crate) mod shape_get_finding_v2;
+
 pub(crate) mod shape_get_generated_policy;
 
 pub(crate) mod shape_list_access_preview_findings;
@@ -60,6 +66,8 @@ pub(crate) mod shape_list_analyzers;
 pub(crate) mod shape_list_archive_rules;
 
 pub(crate) mod shape_list_findings;
+
+pub(crate) mod shape_list_findings_v2;
 
 pub(crate) mod shape_list_policy_generations;
 
@@ -91,6 +99,10 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_apply_archive_rule_input;
 
+pub(crate) mod shape_check_access_not_granted_input;
+
+pub(crate) mod shape_check_no_new_access_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_access_preview_input;
@@ -101,11 +113,15 @@ pub(crate) mod shape_create_archive_rule_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_invalid_parameter_exception;
+
 pub(crate) mod shape_list_access_preview_findings_input;
 
 pub(crate) mod shape_list_analyzed_resources_input;
 
 pub(crate) mod shape_list_findings_input;
+
+pub(crate) mod shape_list_findings_v2_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -119,6 +135,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_unprocessable_entity_exception;
+
 pub(crate) mod shape_update_archive_rule_input;
 
 pub(crate) mod shape_update_findings_input;
@@ -126,6 +144,8 @@ pub(crate) mod shape_update_findings_input;
 pub(crate) mod shape_validate_policy_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_access;
 
 pub(crate) mod shape_access_preview;
 
@@ -136,6 +156,8 @@ pub(crate) mod shape_access_previews_list;
 pub(crate) mod shape_analyzed_resource;
 
 pub(crate) mod shape_analyzed_resources_list;
+
+pub(crate) mod shape_analyzer_configuration;
 
 pub(crate) mod shape_analyzer_summary;
 
@@ -153,7 +175,11 @@ pub(crate) mod shape_criterion;
 
 pub(crate) mod shape_finding;
 
+pub(crate) mod shape_finding_details_list;
+
 pub(crate) mod shape_findings_list;
+
+pub(crate) mod shape_findings_list_v2;
 
 pub(crate) mod shape_generated_policy_result;
 
@@ -164,6 +190,8 @@ pub(crate) mod shape_job_details;
 pub(crate) mod shape_policy_generation_details;
 
 pub(crate) mod shape_policy_generation_list;
+
+pub(crate) mod shape_reason_summary_list;
 
 pub(crate) mod shape_sort_criteria;
 
@@ -195,9 +223,13 @@ pub(crate) mod shape_efs_file_system_configuration;
 
 pub(crate) mod shape_filter_criteria_map;
 
+pub(crate) mod shape_finding_details;
+
 pub(crate) mod shape_finding_source_list;
 
 pub(crate) mod shape_finding_summary;
+
+pub(crate) mod shape_finding_summary_v2;
 
 pub(crate) mod shape_generated_policy_list;
 
@@ -217,6 +249,8 @@ pub(crate) mod shape_rds_db_cluster_snapshot_configuration;
 
 pub(crate) mod shape_rds_db_snapshot_configuration;
 
+pub(crate) mod shape_reason_summary;
+
 pub(crate) mod shape_s3_bucket_configuration;
 
 pub(crate) mod shape_secrets_manager_secret_configuration;
@@ -231,11 +265,15 @@ pub(crate) mod shape_status_reason;
 
 pub(crate) mod shape_trail;
 
+pub(crate) mod shape_unused_access_configuration;
+
 pub(crate) mod shape_validate_policy_finding;
 
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_cloud_trail_properties;
+
+pub(crate) mod shape_external_access_details;
 
 pub(crate) mod shape_finding_source;
 
@@ -255,6 +293,14 @@ pub(crate) mod shape_s3_bucket_acl_grant_configuration;
 
 pub(crate) mod shape_s3_public_access_block_configuration;
 
+pub(crate) mod shape_unused_iam_role_details;
+
+pub(crate) mod shape_unused_iam_user_access_key_details;
+
+pub(crate) mod shape_unused_iam_user_password_details;
+
+pub(crate) mod shape_unused_permission_details;
+
 pub(crate) mod shape_acl_grantee;
 
 pub(crate) mod shape_finding_source_detail;
@@ -266,6 +312,8 @@ pub(crate) mod shape_location;
 pub(crate) mod shape_network_origin_configuration;
 
 pub(crate) mod shape_trail_properties_list;
+
+pub(crate) mod shape_unused_action_list;
 
 pub(crate) mod shape_value_list;
 
@@ -292,6 +340,8 @@ pub(crate) mod shape_s3_bucket_acl_grant_configurations_list;
 pub(crate) mod shape_span;
 
 pub(crate) mod shape_trail_properties;
+
+pub(crate) mod shape_unused_action;
 
 pub(crate) mod shape_vpc_configuration;
 

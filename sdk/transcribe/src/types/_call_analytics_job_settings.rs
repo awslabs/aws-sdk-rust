@@ -30,6 +30,8 @@ pub struct CallAnalyticsJobSettings {
     /// <p>If you want to include a custom language model, custom vocabulary, or custom vocabulary filter with your request but <b>do not</b> want to use automatic language identification, use instead the <code></code> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code>, or <code>VocabularyFilterName</code> sub-parameters.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages and language-specific features</a>.</p>
     pub language_id_settings: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
+    /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
+    pub summarization: ::std::option::Option<crate::types::Summarization>,
 }
 impl CallAnalyticsJobSettings {
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
@@ -76,6 +78,10 @@ impl CallAnalyticsJobSettings {
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         self.language_id_settings.as_ref()
     }
+    /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
+    pub fn summarization(&self) -> ::std::option::Option<&crate::types::Summarization> {
+        self.summarization.as_ref()
+    }
 }
 impl CallAnalyticsJobSettings {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSettings`](crate::types::CallAnalyticsJobSettings).
@@ -95,6 +101,7 @@ pub struct CallAnalyticsJobSettingsBuilder {
     pub(crate) content_redaction: ::std::option::Option<crate::types::ContentRedaction>,
     pub(crate) language_options: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     pub(crate) language_id_settings: ::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>>,
+    pub(crate) summarization: ::std::option::Option<crate::types::Summarization>,
 }
 impl CallAnalyticsJobSettingsBuilder {
     /// <p>The name of the custom vocabulary you want to include in your Call Analytics transcription request. Custom vocabulary names are case sensitive.</p>
@@ -248,6 +255,20 @@ impl CallAnalyticsJobSettingsBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::LanguageCode, crate::types::LanguageIdSettings>> {
         &self.language_id_settings
     }
+    /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
+    pub fn summarization(mut self, input: crate::types::Summarization) -> Self {
+        self.summarization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
+    pub fn set_summarization(mut self, input: ::std::option::Option<crate::types::Summarization>) -> Self {
+        self.summarization = input;
+        self
+    }
+    /// <p>Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if you want to enable Generative call summarization in your Call Analytics request.</p>
+    pub fn get_summarization(&self) -> &::std::option::Option<crate::types::Summarization> {
+        &self.summarization
+    }
     /// Consumes the builder and constructs a [`CallAnalyticsJobSettings`](crate::types::CallAnalyticsJobSettings).
     pub fn build(self) -> crate::types::CallAnalyticsJobSettings {
         crate::types::CallAnalyticsJobSettings {
@@ -258,6 +279,7 @@ impl CallAnalyticsJobSettingsBuilder {
             content_redaction: self.content_redaction,
             language_options: self.language_options,
             language_id_settings: self.language_id_settings,
+            summarization: self.summarization,
         }
     }
 }

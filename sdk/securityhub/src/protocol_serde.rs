@@ -119,6 +119,8 @@ pub(crate) mod shape_get_master_account;
 
 pub(crate) mod shape_get_members;
 
+pub(crate) mod shape_get_security_control_definition;
+
 pub(crate) mod shape_invite_members;
 
 pub(crate) mod shape_list_automation_rules;
@@ -152,6 +154,8 @@ pub(crate) mod shape_update_findings;
 pub(crate) mod shape_update_insight;
 
 pub(crate) mod shape_update_organization_configuration;
+
+pub(crate) mod shape_update_security_control;
 
 pub(crate) mod shape_update_security_hub_configuration;
 
@@ -241,6 +245,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_resource_conflict_exception;
 
+pub(crate) mod shape_resource_in_use_exception;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -254,6 +260,8 @@ pub(crate) mod shape_update_findings_input;
 pub(crate) mod shape_update_insight_input;
 
 pub(crate) mod shape_update_organization_configuration_input;
+
+pub(crate) mod shape_update_security_control_input;
 
 pub(crate) mod shape_update_security_hub_configuration_input;
 
@@ -305,6 +313,8 @@ pub(crate) mod shape_member_list;
 
 pub(crate) mod shape_note_update;
 
+pub(crate) mod shape_parameter_configuration;
+
 pub(crate) mod shape_product_subscription_arn_list;
 
 pub(crate) mod shape_products_list;
@@ -312,6 +322,8 @@ pub(crate) mod shape_products_list;
 pub(crate) mod shape_related_finding;
 
 pub(crate) mod shape_result_list;
+
+pub(crate) mod shape_security_control_definition;
 
 pub(crate) mod shape_security_control_definitions;
 
@@ -371,6 +383,8 @@ pub(crate) mod shape_boolean_filter;
 
 pub(crate) mod shape_compliance;
 
+pub(crate) mod shape_customizable_properties;
+
 pub(crate) mod shape_date_filter;
 
 pub(crate) mod shape_finding_aggregator;
@@ -405,6 +419,10 @@ pub(crate) mod shape_note;
 
 pub(crate) mod shape_number_filter;
 
+pub(crate) mod shape_parameter_definitions;
+
+pub(crate) mod shape_parameter_value;
+
 pub(crate) mod shape_patch_summary;
 
 pub(crate) mod shape_process_details;
@@ -418,8 +436,6 @@ pub(crate) mod shape_resource;
 pub(crate) mod shape_result;
 
 pub(crate) mod shape_security_control;
-
-pub(crate) mod shape_security_control_definition;
 
 pub(crate) mod shape_severity;
 
@@ -489,6 +505,10 @@ pub(crate) mod shape_network_header;
 
 pub(crate) mod shape_network_path_list;
 
+pub(crate) mod shape_parameter_definition;
+
+pub(crate) mod shape_parameters;
+
 pub(crate) mod shape_port_probe_action;
 
 pub(crate) mod shape_port_range;
@@ -502,6 +522,8 @@ pub(crate) mod shape_related_requirements_list;
 pub(crate) mod shape_resource_details;
 
 pub(crate) mod shape_resource_list;
+
+pub(crate) mod shape_security_control_parameter;
 
 pub(crate) mod shape_software_package;
 
@@ -735,6 +757,8 @@ pub(crate) mod shape_classification_result;
 
 pub(crate) mod shape_code_vulnerabilities_file_path;
 
+pub(crate) mod shape_configuration_options;
+
 pub(crate) mod shape_container_details;
 
 pub(crate) mod shape_date_filter_list;
@@ -752,6 +776,8 @@ pub(crate) mod shape_network_path_component_details;
 pub(crate) mod shape_number_filter_list;
 
 pub(crate) mod shape_port_probe_detail;
+
+pub(crate) mod shape_security_control_parameters_list;
 
 pub(crate) mod shape_status_reasons_list;
 
@@ -1177,6 +1203,8 @@ pub(crate) mod shape_aws_wafv2_web_acl_action_details;
 
 pub(crate) mod shape_aws_wafv2_web_acl_captcha_config_details;
 
+pub(crate) mod shape_boolean_configuration_options;
+
 pub(crate) mod shape_cidr_block_association;
 
 pub(crate) mod shape_city;
@@ -1189,11 +1217,21 @@ pub(crate) mod shape_custom_data_identifiers_result;
 
 pub(crate) mod shape_cvss_list;
 
+pub(crate) mod shape_double_configuration_options;
+
+pub(crate) mod shape_enum_configuration_options;
+
+pub(crate) mod shape_enum_list_configuration_options;
+
 pub(crate) mod shape_file_path_list;
 
 pub(crate) mod shape_firewall_policy_details;
 
 pub(crate) mod shape_geo_location;
+
+pub(crate) mod shape_integer_configuration_options;
+
+pub(crate) mod shape_integer_list_configuration_options;
 
 pub(crate) mod shape_ip_organization_details;
 
@@ -1212,6 +1250,10 @@ pub(crate) mod shape_rule_group_details;
 pub(crate) mod shape_sensitive_data_result;
 
 pub(crate) mod shape_software_package_list;
+
+pub(crate) mod shape_string_configuration_options;
+
+pub(crate) mod shape_string_list_configuration_options;
 
 pub(crate) mod shape_volume_mount;
 
@@ -1456,6 +1498,8 @@ pub(crate) mod shape_firewall_policy_stateless_custom_actions_details;
 pub(crate) mod shape_firewall_policy_stateless_rule_group_references_details;
 
 pub(crate) mod shape_icmp_type_code;
+
+pub(crate) mod shape_integer_list;
 
 pub(crate) mod shape_port_range_from_to;
 
@@ -1970,8 +2014,6 @@ pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_rules_transiti
 pub(crate) mod shape_aws_s3_bucket_notification_configuration_events;
 
 pub(crate) mod shape_aws_wafv2_insert_headers_list;
-
-pub(crate) mod shape_integer_list;
 
 pub(crate) mod shape_rule_group_source_custom_actions_list;
 

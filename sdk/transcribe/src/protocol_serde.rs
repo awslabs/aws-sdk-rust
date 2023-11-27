@@ -275,6 +275,8 @@ pub(crate) mod shape_sentiment_filter;
 
 pub(crate) mod shape_subtitles_output;
 
+pub(crate) mod shape_summarization;
+
 pub(crate) mod shape_toxicity_detection;
 
 pub(crate) mod shape_transcript;

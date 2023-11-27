@@ -54,9 +54,11 @@ impl UpdateFileSystemInputBuilder {
 /// <li> <p> <code>DailyAutomaticBackupStartTime</code> </p> </li>
 /// <li> <p> <code>DiskIopsConfiguration</code> </p> </li>
 /// <li> <p> <code>FsxAdminPassword</code> </p> </li>
+/// <li> <p> <code>HAPairs</code> </p> </li>
 /// <li> <p> <code>RemoveRouteTableIds</code> </p> </li>
 /// <li> <p> <code>StorageCapacity</code> </p> </li>
 /// <li> <p> <code>ThroughputCapacity</code> </p> </li>
+/// <li> <p> <code>ThroughputCapacityPerHAPair</code> </p> </li>
 /// <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>
 /// </ul>
 /// <p>For FSx for OpenZFS file systems, you can update the following properties:</p>

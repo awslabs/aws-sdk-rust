@@ -47,6 +47,10 @@ pub(crate) mod shape_describe_query;
 
 pub(crate) mod shape_describe_trails;
 
+pub(crate) mod shape_disable_federation;
+
+pub(crate) mod shape_enable_federation;
+
 pub(crate) mod shape_get_channel;
 
 pub(crate) mod shape_get_event_data_store;
@@ -123,6 +127,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
 pub(crate) mod shape_account_has_ongoing_import_exception;
 
 pub(crate) mod shape_account_not_found_exception;
@@ -155,6 +161,8 @@ pub(crate) mod shape_cloud_trail_invalid_client_token_id_exception;
 
 pub(crate) mod shape_cloud_watch_logs_delivery_unavailable_exception;
 
+pub(crate) mod shape_concurrent_modification_exception;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_channel_input;
@@ -179,9 +187,15 @@ pub(crate) mod shape_describe_query_input;
 
 pub(crate) mod shape_describe_trails_input;
 
+pub(crate) mod shape_disable_federation_input;
+
+pub(crate) mod shape_enable_federation_input;
+
 pub(crate) mod shape_event_data_store_already_exists_exception;
 
 pub(crate) mod shape_event_data_store_arn_invalid_exception;
+
+pub(crate) mod shape_event_data_store_federation_enabled_exception;
 
 pub(crate) mod shape_event_data_store_has_ongoing_import_exception;
 

@@ -75,6 +75,36 @@ pub fn de_data_share_association(
                 builder = builder.set_status_change_date(var_5);
             }
             ,
+            s if s.matches("ProducerAllowedWrites") /* ProducerAllowedWrites com.amazonaws.redshift#DataShareAssociation$ProducerAllowedWrites */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.redshift#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_producer_allowed_writes(var_6);
+            }
+            ,
+            s if s.matches("ConsumerAcceptedWrites") /* ConsumerAcceptedWrites com.amazonaws.redshift#DataShareAssociation$ConsumerAcceptedWrites */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.redshift#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_consumer_accepted_writes(var_7);
+            }
+            ,
             _ => {}
         }
     }

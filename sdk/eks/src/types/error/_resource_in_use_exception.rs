@@ -8,9 +8,9 @@ pub struct ResourceInUseException {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EKS managed node group associated with the exception.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified add-on name is in use.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -23,7 +23,7 @@ impl ResourceInUseException {
     pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified add-on name is in use.</p>
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -103,31 +103,31 @@ impl ResourceInUseExceptionBuilder {
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nodegroup_name
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified add-on name is in use.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified add-on name is in use.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The specified add-on name is in use.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The Amazon EKS message associated with the exception.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

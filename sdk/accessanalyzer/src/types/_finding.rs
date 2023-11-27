@@ -6,7 +6,7 @@
 pub struct Finding {
     /// <p>The ID of the finding.</p>
     pub id: ::std::string::String,
-    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub principal: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub action: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -39,7 +39,7 @@ impl Finding {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub fn principal(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.principal.as_ref()
     }
@@ -143,19 +143,19 @@ impl FindingBuilder {
     ///
     /// To override the contents of this collection use [`set_principal`](Self::set_principal).
     ///
-    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub fn principal(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.principal.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.principal = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.principal = input;
         self
     }
-    /// <p>The external principal that access to a resource within the zone of trust.</p>
+    /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.principal
     }

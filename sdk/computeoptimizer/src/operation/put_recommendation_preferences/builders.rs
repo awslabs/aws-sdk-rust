@@ -224,4 +224,107 @@ impl PutRecommendationPreferencesFluentBuilder {
     pub fn get_external_metrics_preference(&self) -> &::std::option::Option<crate::types::ExternalMetricsPreference> {
         self.inner.get_external_metrics_preference()
     }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn look_back_period(mut self, input: crate::types::LookBackPeriodPreference) -> Self {
+        self.inner = self.inner.look_back_period(input);
+        self
+    }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn set_look_back_period(mut self, input: ::std::option::Option<crate::types::LookBackPeriodPreference>) -> Self {
+        self.inner = self.inner.set_look_back_period(input);
+        self
+    }
+    /// <p> The preference to control the number of days the utilization metrics of the Amazon Web Services resource are analyzed. When this preference isn't specified, we use the default value <code>DAYS_14</code>. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn get_look_back_period(&self) -> &::std::option::Option<crate::types::LookBackPeriodPreference> {
+        self.inner.get_look_back_period()
+    }
+    /// Appends an item to `utilizationPreferences`.
+    ///
+    /// To override the contents of this collection use [`set_utilization_preferences`](Self::set_utilization_preferences).
+    ///
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <ul>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn utilization_preferences(mut self, input: crate::types::UtilizationPreference) -> Self {
+        self.inner = self.inner.utilization_preferences(input);
+        self
+    }
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <ul>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn set_utilization_preferences(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>>) -> Self {
+        self.inner = self.inner.set_utilization_preferences(input);
+        self
+    }
+    /// <p> The preference to control the resource’s CPU utilization thresholds - threshold and headroom. When this preference isn't specified, we use the following default values: </p>
+    /// <ul>
+    /// <li> <p> <code>P99_5</code> for threshold</p> </li>
+    /// <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+    /// </ul> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance resource type.</p>
+    /// </note>
+    pub fn get_utilization_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationPreference>> {
+        self.inner.get_utilization_preferences()
+    }
+    /// Appends an item to `preferredResources`.
+    ///
+    /// To override the contents of this collection use [`set_preferred_resources`](Self::set_preferred_resources).
+    ///
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn preferred_resources(mut self, input: crate::types::PreferredResource) -> Self {
+        self.inner = self.inner.preferred_resources(input);
+        self
+    }
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn set_preferred_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>>) -> Self {
+        self.inner = self.inner.set_preferred_resources(input);
+        self
+    }
+    /// <p> The preference to control which resource type values are considered when generating rightsizing recommendations. You can specify this preference as a combination of include and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>. If the preference is an empty set of resource type values, an error occurs. </p> <note>
+    /// <p>You can only set this preference for the Amazon EC2 instance and Auto Scaling group resource types.</p>
+    /// </note>
+    pub fn get_preferred_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreferredResource>> {
+        self.inner.get_preferred_resources()
+    }
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn savings_estimation_mode(mut self, input: crate::types::SavingsEstimationMode) -> Self {
+        self.inner = self.inner.savings_estimation_mode(input);
+        self
+    }
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn set_savings_estimation_mode(mut self, input: ::std::option::Option<crate::types::SavingsEstimationMode>) -> Self {
+        self.inner = self.inner.set_savings_estimation_mode(input);
+        self
+    }
+    /// <p> The status of the savings estimation mode preference to create or update. </p>
+    /// <p>Specify the <code>AfterDiscounts</code> status to activate the preference, or specify <code>BeforeDiscounts</code> to deactivate the preference.</p>
+    /// <p>Only the account manager or delegated administrator of your organization can activate this preference.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html"> Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+    pub fn get_savings_estimation_mode(&self) -> &::std::option::Option<crate::types::SavingsEstimationMode> {
+        self.inner.get_savings_estimation_mode()
+    }
 }

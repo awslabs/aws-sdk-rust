@@ -10,6 +10,9 @@ pub mod cancel_data_repository_task;
 /// Types for the `CopyBackup` operation.
 pub mod copy_backup;
 
+/// Types for the `CopySnapshotAndUpdateVolume` operation.
+pub mod copy_snapshot_and_update_volume;
+
 /// Types for the `CreateBackup` operation.
 pub mod create_backup;
 
@@ -79,6 +82,9 @@ pub mod describe_file_system_aliases;
 /// Types for the `DescribeFileSystems` operation.
 pub mod describe_file_systems;
 
+/// Types for the `DescribeSharedVpcConfiguration` operation.
+pub mod describe_shared_vpc_configuration;
+
 /// Types for the `DescribeSnapshots` operation.
 pub mod describe_snapshots;
 
@@ -117,6 +123,9 @@ pub mod update_file_cache;
 
 /// Types for the `UpdateFileSystem` operation.
 pub mod update_file_system;
+
+/// Types for the `UpdateSharedVpcConfiguration` operation.
+pub mod update_shared_vpc_configuration;
 
 /// Types for the `UpdateSnapshot` operation.
 pub mod update_snapshot;

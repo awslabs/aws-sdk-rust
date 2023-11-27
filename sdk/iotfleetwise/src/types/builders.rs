@@ -5,6 +5,10 @@ pub use crate::types::_vehicle_summary::VehicleSummaryBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_custom_property::CustomPropertyBuilder;
+
+pub use crate::types::_custom_struct::CustomStructBuilder;
+
 pub use crate::types::_attribute::AttributeBuilder;
 
 pub use crate::types::_actuator::ActuatorBuilder;
@@ -25,11 +29,21 @@ pub use crate::types::_fleet_summary::FleetSummaryBuilder;
 
 pub use crate::types::_signal_decoder::SignalDecoderBuilder;
 
+pub use crate::types::_message_signal::MessageSignalBuilder;
+
+pub use crate::types::_structured_message_field_name_and_data_type_pair::StructuredMessageFieldNameAndDataTypePairBuilder;
+
+pub use crate::types::_structured_message_list_definition::StructuredMessageListDefinitionBuilder;
+
+pub use crate::types::_ros2_primitive_message_definition::Ros2PrimitiveMessageDefinitionBuilder;
+
 pub use crate::types::_obd_signal::ObdSignalBuilder;
 
 pub use crate::types::_can_signal::CanSignalBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
+
+pub use crate::types::_vehicle_middleware::VehicleMiddlewareBuilder;
 
 pub use crate::types::_obd_interface::ObdInterfaceBuilder;
 

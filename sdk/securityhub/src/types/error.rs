@@ -9,6 +9,8 @@ pub use crate::types::error::_internal_exception::InternalException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_resource_conflict_exception::ResourceConflictException;
@@ -24,6 +26,8 @@ mod _invalid_input_exception;
 mod _limit_exceeded_exception;
 
 mod _resource_conflict_exception;
+
+mod _resource_in_use_exception;
 
 mod _resource_not_found_exception;
 

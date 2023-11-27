@@ -67,6 +67,10 @@ where
                         "statusReason" => {
                             builder = builder.set_status_reason(crate::protocol_serde::shape_status_reason::de_status_reason(tokens)?);
                         }
+                        "configuration" => {
+                            builder =
+                                builder.set_configuration(crate::protocol_serde::shape_analyzer_configuration::de_analyzer_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

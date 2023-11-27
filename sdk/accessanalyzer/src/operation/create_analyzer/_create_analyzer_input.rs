@@ -6,21 +6,23 @@
 pub struct CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
     pub analyzer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
-    /// <p>The tags to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    pub configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
     pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
         self.analyzer_name.as_deref()
     }
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
@@ -30,13 +32,17 @@ impl CreateAnalyzerInput {
     pub fn archive_rules(&self) -> &[crate::types::InlineArchiveRule] {
         self.archive_rules.as_deref().unwrap_or_default()
     }
-    /// <p>The tags to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::AnalyzerConfiguration> {
+        self.configuration.as_ref()
     }
 }
 impl CreateAnalyzerInput {
@@ -55,6 +61,7 @@ pub struct CreateAnalyzerInputBuilder {
     pub(crate) archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::AnalyzerConfiguration>,
 }
 impl CreateAnalyzerInputBuilder {
     /// <p>The name of the analyzer to create.</p>
@@ -72,18 +79,18 @@ impl CreateAnalyzerInputBuilder {
     pub fn get_analyzer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.analyzer_name
     }
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    /// <p>The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>, <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZTAION_UNUSED_ACCESS</code> analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::Type> {
         &self.r#type
     }
@@ -111,19 +118,19 @@ impl CreateAnalyzerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to apply to the analyzer.</p>
+    /// <p>An array of key-value pairs to apply to the analyzer.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -141,6 +148,20 @@ impl CreateAnalyzerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    pub fn configuration(mut self, input: crate::types::AnalyzerConfiguration) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::AnalyzerConfiguration>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not used.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::AnalyzerConfiguration> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
     pub fn build(
         self,
@@ -151,6 +172,7 @@ impl CreateAnalyzerInputBuilder {
             archive_rules: self.archive_rules,
             tags: self.tags,
             client_token: self.client_token,
+            configuration: self.configuration,
         })
     }
 }

@@ -49,6 +49,8 @@ pub use crate::types::_batch_segment_job_summary::BatchSegmentJobSummary;
 
 pub use crate::types::_batch_inference_job_summary::BatchInferenceJobSummary;
 
+pub use crate::types::_batch_inference_job_mode::BatchInferenceJobMode;
+
 pub use crate::types::_solution_version::SolutionVersion;
 
 pub use crate::types::_tuned_hpo_params::TunedHpoParams;
@@ -125,6 +127,10 @@ pub use crate::types::_batch_segment_job_input::BatchSegmentJobInput;
 
 pub use crate::types::_batch_inference_job::BatchInferenceJob;
 
+pub use crate::types::_theme_generation_config::ThemeGenerationConfig;
+
+pub use crate::types::_fields_for_theme_generation::FieldsForThemeGeneration;
+
 pub use crate::types::_batch_inference_job_config::BatchInferenceJobConfig;
 
 pub use crate::types::_batch_inference_job_output::BatchInferenceJobOutput;
@@ -156,6 +162,8 @@ mod _batch_inference_job;
 mod _batch_inference_job_config;
 
 mod _batch_inference_job_input;
+
+mod _batch_inference_job_mode;
 
 mod _batch_inference_job_output;
 
@@ -223,6 +231,8 @@ mod _event_tracker_summary;
 
 mod _feature_transformation;
 
+mod _fields_for_theme_generation;
+
 mod _filter;
 
 mod _filter_summary;
@@ -280,6 +290,8 @@ mod _solution_version;
 mod _solution_version_summary;
 
 mod _tag;
+
+mod _theme_generation_config;
 
 mod _training_data_config;
 

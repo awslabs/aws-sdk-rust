@@ -22,7 +22,7 @@ impl DeleteEventTrackerInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteEventTracker`.
 ///
-/// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
+/// <p>Deletes the event tracker. Does not delete the dataset from the dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEventTrackerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

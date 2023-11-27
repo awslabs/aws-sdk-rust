@@ -15,10 +15,22 @@ pub fn ser_number_filter(
             ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.eq {
-        object.key("Eq").number(
+    if let Some(var_3) = &input.gt {
+        object.key("Gt").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::Float((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.lt {
+        object.key("Lt").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.eq {
+        object.key("Eq").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
     Ok(())
@@ -46,6 +58,14 @@ where
                         "Lte" => {
                             builder = builder
                                 .set_lte(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
+                        }
+                        "Gt" => {
+                            builder = builder
+                                .set_gt(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
+                        }
+                        "Lt" => {
+                            builder = builder
+                                .set_lt(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
                         "Eq" => {
                             builder = builder

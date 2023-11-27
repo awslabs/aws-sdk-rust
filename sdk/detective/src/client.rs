@@ -185,11 +185,17 @@ mod disassociate_membership;
 
 mod enable_organization_admin_account;
 
+mod get_investigation;
+
 mod get_members;
 
 mod list_datasource_packages;
 
 mod list_graphs;
+
+mod list_indicators;
+
+mod list_investigations;
 
 mod list_invitations;
 
@@ -201,6 +207,8 @@ mod list_tags_for_resource;
 
 mod reject_invitation;
 
+mod start_investigation;
+
 mod start_monitoring_member;
 
 mod tag_resource;
@@ -208,5 +216,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_datasource_packages;
+
+mod update_investigation_state;
 
 mod update_organization_configuration;

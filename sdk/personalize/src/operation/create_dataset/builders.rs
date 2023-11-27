@@ -23,13 +23,15 @@ impl CreateDatasetInputBuilder {
 /// Fluent builder constructing a request to `CreateDataset`.
 ///
 /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> to import your training data to a dataset.</p>
-/// <p>There are three types of datasets:</p>
+/// <p>There are 5 types of datasets:</p>
 /// <ul>
-/// <li> <p>Interactions</p> </li>
+/// <li> <p>Item interactions</p> </li>
 /// <li> <p>Items</p> </li>
 /// <li> <p>Users</p> </li>
+/// <li> <p>Action interactions</p> </li>
+/// <li> <p>Actions</p> </li>
 /// </ul>
-/// <p>Each dataset type has an associated schema with required field types. Only the <code>Interactions</code> dataset is required in order to train a model (also referred to as creating a solution).</p>
+/// <p>Each dataset type has an associated schema with required field types. Only the <code>Item interactions</code> dataset is required in order to train a model (also referred to as creating a solution).</p>
 /// <p>A dataset can be in one of the following states:</p>
 /// <ul>
 /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
@@ -176,6 +178,8 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_type(input.into());
@@ -187,6 +191,8 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_type(input);
@@ -198,6 +204,8 @@ impl CreateDatasetFluentBuilder {
     /// <li> <p>Interactions</p> </li>
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Action_Interactions</p> </li>
     /// </ul>
     pub fn get_dataset_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_type()

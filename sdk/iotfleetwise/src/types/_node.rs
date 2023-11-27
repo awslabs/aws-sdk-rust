@@ -16,10 +16,14 @@ pub enum Node {
     /// <p>A group of signals that are defined in a hierarchical structure.</p>
     /// </note>
     Branch(crate::types::Branch),
+    /// <p>Represents a member of the complex data structure. The <code>datatype</code> of the property can be either primitive or another <code>struct</code>.</p>
+    Property(crate::types::CustomProperty),
     /// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
     /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
     /// </note>
     Sensor(crate::types::Sensor),
+    /// <p>Represents a complex or higher-order data structure.</p>
+    Struct(crate::types::CustomStruct),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -70,6 +74,19 @@ impl Node {
     pub fn is_branch(&self) -> bool {
         self.as_branch().is_ok()
     }
+    /// Tries to convert the enum instance into [`Property`](crate::types::Node::Property), extracting the inner [`CustomProperty`](crate::types::CustomProperty).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_property(&self) -> ::std::result::Result<&crate::types::CustomProperty, &Self> {
+        if let Node::Property(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Property`](crate::types::Node::Property).
+    pub fn is_property(&self) -> bool {
+        self.as_property().is_ok()
+    }
     /// Tries to convert the enum instance into [`Sensor`](crate::types::Node::Sensor), extracting the inner [`Sensor`](crate::types::Sensor).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sensor(&self) -> ::std::result::Result<&crate::types::Sensor, &Self> {
@@ -82,6 +99,19 @@ impl Node {
     /// Returns true if this is a [`Sensor`](crate::types::Node::Sensor).
     pub fn is_sensor(&self) -> bool {
         self.as_sensor().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Struct`](crate::types::Node::Struct), extracting the inner [`CustomStruct`](crate::types::CustomStruct).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_struct(&self) -> ::std::result::Result<&crate::types::CustomStruct, &Self> {
+        if let Node::Struct(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Struct`](crate::types::Node::Struct).
+    pub fn is_struct(&self) -> bool {
+        self.as_struct().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

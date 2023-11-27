@@ -259,6 +259,8 @@ mod get_master_account;
 
 mod get_members;
 
+mod get_security_control_definition;
+
 mod invite_members;
 
 mod list_automation_rules;
@@ -292,6 +294,8 @@ mod update_findings;
 mod update_insight;
 
 mod update_organization_configuration;
+
+mod update_security_control;
 
 mod update_security_hub_configuration;
 

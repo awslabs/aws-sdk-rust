@@ -1167,6 +1167,54 @@ pub fn ser_aws_security_finding_filters(
         }
         array_386.finish();
     }
+    if let Some(var_389) = &input.vulnerabilities_exploit_available {
+        let mut array_390 = object.key("VulnerabilitiesExploitAvailable").start_array();
+        for item_391 in var_389 {
+            {
+                #[allow(unused_mut)]
+                let mut object_392 = array_390.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_392, item_391)?;
+                object_392.finish();
+            }
+        }
+        array_390.finish();
+    }
+    if let Some(var_393) = &input.vulnerabilities_fix_available {
+        let mut array_394 = object.key("VulnerabilitiesFixAvailable").start_array();
+        for item_395 in var_393 {
+            {
+                #[allow(unused_mut)]
+                let mut object_396 = array_394.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_396, item_395)?;
+                object_396.finish();
+            }
+        }
+        array_394.finish();
+    }
+    if let Some(var_397) = &input.compliance_security_control_parameters_name {
+        let mut array_398 = object.key("ComplianceSecurityControlParametersName").start_array();
+        for item_399 in var_397 {
+            {
+                #[allow(unused_mut)]
+                let mut object_400 = array_398.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_400, item_399)?;
+                object_400.finish();
+            }
+        }
+        array_398.finish();
+    }
+    if let Some(var_401) = &input.compliance_security_control_parameters_value {
+        let mut array_402 = object.key("ComplianceSecurityControlParametersValue").start_array();
+        for item_403 in var_401 {
+            {
+                #[allow(unused_mut)]
+                let mut object_404 = array_402.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_404, item_403)?;
+                object_404.finish();
+            }
+        }
+        array_402.finish();
+    }
     Ok(())
 }
 
@@ -1538,6 +1586,25 @@ where
                         }
                         "ComplianceAssociatedStandardsId" => {
                             builder = builder.set_compliance_associated_standards_id(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "VulnerabilitiesExploitAvailable" => {
+                            builder = builder.set_vulnerabilities_exploit_available(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "VulnerabilitiesFixAvailable" => {
+                            builder = builder
+                                .set_vulnerabilities_fix_available(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ComplianceSecurityControlParametersName" => {
+                            builder = builder.set_compliance_security_control_parameters_name(
+                                crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
+                            );
+                        }
+                        "ComplianceSecurityControlParametersValue" => {
+                            builder = builder.set_compliance_security_control_parameters_value(
                                 crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?,
                             );
                         }

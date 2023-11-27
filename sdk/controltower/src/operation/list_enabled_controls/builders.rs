@@ -22,7 +22,7 @@ impl ListEnabledControlsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEnabledControls`.
 ///
-/// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS Control Tower User Guide</i> </a>.</p>
+/// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the Amazon Web Services Control Tower User Guide</i> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnabledControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

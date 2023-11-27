@@ -5,6 +5,10 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_analyzer_summary::AnalyzerSummary;
 
+pub use crate::types::_analyzer_configuration::AnalyzerConfiguration;
+
+pub use crate::types::_unused_access_configuration::UnusedAccessConfiguration;
+
 pub use crate::types::_status_reason::StatusReason;
 
 pub use crate::types::_reason_code::ReasonCode;
@@ -51,13 +55,9 @@ pub use crate::types::_policy_generation::PolicyGeneration;
 
 pub use crate::types::_job_status::JobStatus;
 
-pub use crate::types::_finding_summary::FindingSummary;
+pub use crate::types::_finding_summary_v2::FindingSummaryV2;
 
-pub use crate::types::_finding_source::FindingSource;
-
-pub use crate::types::_finding_source_detail::FindingSourceDetail;
-
-pub use crate::types::_finding_source_type::FindingSourceType;
+pub use crate::types::_finding_type::FindingType;
 
 pub use crate::types::_finding_status::FindingStatus;
 
@@ -66,6 +66,14 @@ pub use crate::types::_resource_type::ResourceType;
 pub use crate::types::_sort_criteria::SortCriteria;
 
 pub use crate::types::_order_by::OrderBy;
+
+pub use crate::types::_finding_summary::FindingSummary;
+
+pub use crate::types::_finding_source::FindingSource;
+
+pub use crate::types::_finding_source_detail::FindingSourceDetail;
+
+pub use crate::types::_finding_source_type::FindingSourceType;
 
 pub use crate::types::_analyzed_resource_summary::AnalyzedResourceSummary;
 
@@ -96,6 +104,20 @@ pub use crate::types::_job_details::JobDetails;
 pub use crate::types::_job_error::JobError;
 
 pub use crate::types::_job_error_code::JobErrorCode;
+
+pub use crate::types::_finding_details::FindingDetails;
+
+pub use crate::types::_unused_iam_user_password_details::UnusedIamUserPasswordDetails;
+
+pub use crate::types::_unused_iam_role_details::UnusedIamRoleDetails;
+
+pub use crate::types::_unused_iam_user_access_key_details::UnusedIamUserAccessKeyDetails;
+
+pub use crate::types::_unused_permission_details::UnusedPermissionDetails;
+
+pub use crate::types::_unused_action::UnusedAction;
+
+pub use crate::types::_external_access_details::ExternalAccessDetails;
 
 pub use crate::types::_finding::Finding;
 
@@ -153,6 +175,20 @@ pub use crate::types::_ecr_repository_configuration::EcrRepositoryConfiguration;
 
 pub use crate::types::_ebs_snapshot_configuration::EbsSnapshotConfiguration;
 
+pub use crate::types::_reason_summary::ReasonSummary;
+
+pub use crate::types::_check_no_new_access_result::CheckNoNewAccessResult;
+
+pub use crate::types::_access_check_policy_type::AccessCheckPolicyType;
+
+pub use crate::types::_check_access_not_granted_result::CheckAccessNotGrantedResult;
+
+pub use crate::types::_access::Access;
+
+mod _access;
+
+mod _access_check_policy_type;
+
 mod _access_preview;
 
 mod _access_preview_finding;
@@ -173,11 +209,17 @@ mod _analyzed_resource;
 
 mod _analyzed_resource_summary;
 
+mod _analyzer_configuration;
+
 mod _analyzer_status;
 
 mod _analyzer_summary;
 
 mod _archive_rule_summary;
+
+mod _check_access_not_granted_result;
+
+mod _check_no_new_access_result;
 
 mod _cloud_trail_details;
 
@@ -193,9 +235,13 @@ mod _ecr_repository_configuration;
 
 mod _efs_file_system_configuration;
 
+mod _external_access_details;
+
 mod _finding;
 
 mod _finding_change_type;
+
+mod _finding_details;
 
 mod _finding_source;
 
@@ -208,6 +254,10 @@ mod _finding_status;
 mod _finding_status_update;
 
 mod _finding_summary;
+
+mod _finding_summary_v2;
+
+mod _finding_type;
 
 mod _generated_policy;
 
@@ -265,6 +315,8 @@ mod _rds_db_snapshot_configuration;
 
 mod _reason_code;
 
+mod _reason_summary;
+
 mod _resource_type;
 
 mod _s3_access_point_configuration;
@@ -294,6 +346,18 @@ mod _trail;
 mod _trail_properties;
 
 mod _type_;
+
+mod _unused_access_configuration;
+
+mod _unused_action;
+
+mod _unused_iam_role_details;
+
+mod _unused_iam_user_access_key_details;
+
+mod _unused_iam_user_password_details;
+
+mod _unused_permission_details;
 
 mod _validate_policy_finding;
 

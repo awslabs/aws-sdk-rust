@@ -138,4 +138,18 @@ impl ModifyWorkspacePropertiesFluentBuilder {
     pub fn get_workspace_properties(&self) -> &::std::option::Option<crate::types::WorkspaceProperties> {
         self.inner.get_workspace_properties()
     }
+    /// <p>Indicates the data replication status.</p>
+    pub fn data_replication(mut self, input: crate::types::DataReplication) -> Self {
+        self.inner = self.inner.data_replication(input);
+        self
+    }
+    /// <p>Indicates the data replication status.</p>
+    pub fn set_data_replication(mut self, input: ::std::option::Option<crate::types::DataReplication>) -> Self {
+        self.inner = self.inner.set_data_replication(input);
+        self
+    }
+    /// <p>Indicates the data replication status.</p>
+    pub fn get_data_replication(&self) -> &::std::option::Option<crate::types::DataReplication> {
+        self.inner.get_data_replication()
+    }
 }

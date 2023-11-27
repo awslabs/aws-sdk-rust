@@ -150,6 +150,8 @@ mod commit_transaction;
 
 mod create_data_cells_filter;
 
+mod create_lake_formation_identity_center_configuration;
+
 mod create_lake_formation_opt_in;
 
 mod create_lf_tag;
@@ -183,6 +185,8 @@ pub mod customize;
 
 mod delete_data_cells_filter;
 
+mod delete_lake_formation_identity_center_configuration;
+
 mod delete_lake_formation_opt_in;
 
 mod delete_lf_tag;
@@ -190,6 +194,8 @@ mod delete_lf_tag;
 mod delete_objects_on_cancel;
 
 mod deregister_resource;
+
+mod describe_lake_formation_identity_center_configuration;
 
 mod describe_resource;
 
@@ -254,6 +260,8 @@ mod start_query_planning;
 mod start_transaction;
 
 mod update_data_cells_filter;
+
+mod update_lake_formation_identity_center_configuration;
 
 mod update_lf_tag;
 
