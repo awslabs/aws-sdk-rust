@@ -60,7 +60,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
-//! aws-sdk-controltower = "1.2.0"
+//! aws-sdk-controltower = "1.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
