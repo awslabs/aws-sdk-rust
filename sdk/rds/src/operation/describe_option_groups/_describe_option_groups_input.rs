@@ -14,9 +14,11 @@ pub struct DescribeOptionGroupsInput {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub max_records: ::std::option::Option<i32>,
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -54,9 +56,11 @@ impl DescribeOptionGroupsInput {
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -164,9 +168,11 @@ impl DescribeOptionGroupsInputBuilder {
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -183,9 +189,11 @@ impl DescribeOptionGroupsInputBuilder {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -202,9 +210,11 @@ impl DescribeOptionGroupsInputBuilder {
         self.engine_name = input;
         self
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

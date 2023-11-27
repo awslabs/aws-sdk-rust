@@ -64,6 +64,7 @@ members = [
     "sdk/aws-smithy-types-convert",
     "sdk/aws-smithy-xml",
     "sdk/aws-types",
+    "sdk/b2bi",
     "sdk/backup",
     "sdk/backupgateway",
     "sdk/backupstorage",

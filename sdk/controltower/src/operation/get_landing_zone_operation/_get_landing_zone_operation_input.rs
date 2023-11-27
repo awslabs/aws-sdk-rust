@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLandingZoneOperationInput {
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub operation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetLandingZoneOperationInput {
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
         self.operation_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetLandingZoneOperationInputBuilder {
     pub(crate) operation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetLandingZoneOperationInputBuilder {
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     /// This field is required.
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_identifier = input;
         self
     }
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }

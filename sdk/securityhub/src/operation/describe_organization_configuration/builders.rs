@@ -22,7 +22,7 @@ impl DescribeOrganizationConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
 ///
-/// <p>Returns information about the Organizations configuration for Security Hub. Can only be called from a Security Hub administrator account.</p>
+/// <p>Returns information about the way your organization is configured in Security Hub. Only the Security Hub administrator account can invoke this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

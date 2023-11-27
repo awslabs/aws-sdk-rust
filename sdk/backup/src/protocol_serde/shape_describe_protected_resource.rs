@@ -140,6 +140,40 @@ pub(crate) fn de_describe_protected_resource(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "LastBackupVaultArn" => {
+                    builder = builder.set_last_backup_vault_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "LastRecoveryPointArn" => {
+                    builder = builder.set_last_recovery_point_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "LatestRestoreExecutionTimeMinutes" => {
+                    builder = builder.set_latest_restore_execution_time_minutes(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "LatestRestoreJobCreationDate" => {
+                    builder = builder.set_latest_restore_job_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "LatestRestoreRecoveryPointCreationDate" => {
+                    builder =
+                        builder.set_latest_restore_recovery_point_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            tokens.next(),
+                            ::aws_smithy_types::date_time::Format::EpochSeconds,
+                        )?);
+                }
                 "ResourceArn" => {
                     builder = builder.set_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -112,193 +112,343 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL</b> </p>
+    /// <dl>
+    /// <dt>
+    /// Amazon Aurora MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon Aurora PostgreSQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
+    /// <li> <p>Must contain a letter.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for SQL Server
+    /// </dt>
+    /// <dd>
+    /// <p>Not applicable. Must be null.</p>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>MariaDB</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MariaDB
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>PostgreSQL</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for PostgreSQL
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be longer than 8 characters</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>It must contain a letter.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for SQL Server
+    /// </dt>
+    /// <dd>
     /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>SQL Server</b> </p>
-    /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>Amazon Aurora MySQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon Aurora PostgreSQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
+    /// </dd>
+    /// </dl>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL</b> </p>
+    /// <dl>
+    /// <dt>
+    /// Amazon Aurora MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon Aurora PostgreSQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
+    /// <li> <p>Must contain a letter.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for SQL Server
+    /// </dt>
+    /// <dd>
+    /// <p>Not applicable. Must be null.</p>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>MariaDB</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MariaDB
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>PostgreSQL</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for PostgreSQL
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be longer than 8 characters</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>It must contain a letter.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for SQL Server
+    /// </dt>
+    /// <dd>
     /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>SQL Server</b> </p>
-    /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>Amazon Aurora MySQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon Aurora PostgreSQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
+    /// </dd>
+    /// </dl>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_name(input);
         self
     }
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
-    /// <p> <b>MySQL</b> </p>
+    /// <dl>
+    /// <dt>
+    /// Amazon Aurora MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon Aurora PostgreSQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li>
+    /// <li> <p>Must contain a letter.</p> </li>
+    /// <li> <p>Can't be a word reserved by the database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// Amazon RDS Custom for SQL Server
+    /// </dt>
+    /// <dd>
+    /// <p>Not applicable. Must be null.</p>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>MariaDB</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MariaDB
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>PostgreSQL</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for MySQL
+    /// </dt>
+    /// <dd>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain 1 to 64 letters or numbers.</p> </li>
+    /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for Oracle
+    /// </dt>
+    /// <dd>
+    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+    /// <p>Default: <code>ORCL</code> </p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be longer than 8 characters.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for PostgreSQL
+    /// </dt>
+    /// <dd>
     /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, a database named <code>postgres</code> is created in the DB instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li>
     /// <li> <p>Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-    /// <li> <p>Can't be a word reserved by the specified database engine</p> </li>
+    /// <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
     /// </ul>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a value, the default value is <code>ORCL</code>. You can't specify the string <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Can't be longer than 8 characters</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for Oracle</b> </p>
-    /// <p>The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code> for CDBs.</p>
-    /// <p>Default: <code>ORCL</code> </p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 8 alphanumeric characters.</p> </li>
-    /// <li> <p>It must contain a letter.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon RDS Custom for SQL Server</b> </p>
+    /// </dd>
+    /// <dt>
+    /// RDS for SQL Server
+    /// </dt>
+    /// <dd>
     /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>SQL Server</b> </p>
-    /// <p>Not applicable. Must be null.</p>
-    /// <p> <b>Amazon Aurora MySQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 64 alphanumeric characters.</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
-    /// <p> <b>Amazon Aurora PostgreSQL</b> </p>
-    /// <p>The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created in the DB cluster.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>It must contain 1 to 63 alphanumeric characters.</p> </li>
-    /// <li> <p>It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).</p> </li>
-    /// <li> <p>It can't be a word reserved by the database engine.</p> </li>
-    /// </ul>
+    /// </dd>
+    /// </dl>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_name()
     }
@@ -348,6 +498,16 @@ impl CreateDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Constraints to the amount of storage for each storage type are the following:</p>
+    /// <ul>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
+    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -436,6 +596,16 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// </dd>
     /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Constraints to the amount of storage for each storage type are the following:</p>
+    /// <ul>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
+    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// RDS for MariaDB
     /// </dt>
     /// <dd>
@@ -518,6 +688,16 @@ impl CreateDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
     /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>Constraints to the amount of storage for each storage type are the following:</p>
+    /// <ul>
+    /// <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.</p> </li>
+    /// <li> <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p> </li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -616,6 +796,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -643,6 +825,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -670,6 +854,8 @@ impl CreateDBInstanceFluentBuilder {
     /// <li> <p> <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)</p> </li>
     /// <li> <p> <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)</p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -732,6 +918,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -751,6 +938,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -770,6 +958,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -1051,6 +1240,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Valid Values: <code>1150-65535</code> </p>
     /// <p>Default:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
@@ -1070,6 +1260,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Valid Values: <code>1150-65535</code> </p>
     /// <p>Default:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
@@ -1089,6 +1280,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Valid Values: <code>1150-65535</code> </p>
     /// <p>Default:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
@@ -1149,6 +1341,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </dd>
     /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html#Db2.Concepts.VersionMgmt">Db2 on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// </dd>
+    /// <dt>
     /// RDS for MariaDB
     /// </dt>
     /// <dd>
@@ -1201,6 +1399,12 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </dd>
     /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html#Db2.Concepts.VersionMgmt">Db2 on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// </dd>
+    /// <dt>
     /// RDS for MariaDB
     /// </dt>
     /// <dd>
@@ -1251,6 +1455,12 @@ impl CreateDBInstanceFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS Custom for SQL Server general requirements</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// </dd>
+    /// <dt>
+    /// RDS for Db2
+    /// </dt>
+    /// <dd>
+    /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html#Db2.Concepts.VersionMgmt">Db2 on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// RDS for MariaDB
@@ -1307,6 +1517,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -1321,6 +1532,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -1335,6 +1547,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -1348,7 +1561,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
     /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
     /// </ul>
     pub fn iops(mut self, input: i32) -> Self {
@@ -1359,7 +1572,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
     /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
     /// </ul>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1370,7 +1583,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>For RDS for MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
+    /// <li> <p>For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p> </li>
     /// <li> <p>For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.</p> </li>
     /// </ul>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -1636,7 +1849,7 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server, MySQL, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to create the DB instance in. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -1647,7 +1860,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server, MySQL, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to create the DB instance in. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -1658,7 +1871,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server, MySQL, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to create the DB instance in. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -2025,7 +2238,7 @@ impl CreateDBInstanceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
@@ -2033,6 +2246,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
@@ -2043,7 +2257,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
@@ -2051,6 +2265,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
@@ -2061,7 +2276,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of log types to enable for exporting to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora (CloudWatch Logs exports are managed by the DB cluster.)</p> </li>
@@ -2069,6 +2284,7 @@ impl CreateDBInstanceFluentBuilder {
     /// </ul>
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>diag.log | notify.log</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>audit | error | general | slowquery</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>agent | error</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>audit | error | general | slowquery</code> </p> </li>
@@ -2210,7 +2426,7 @@ impl CreateDBInstanceFluentBuilder {
         self.inner.get_custom_iam_instance_profile()
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
-    /// <p>Valie Values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
     /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
@@ -2222,7 +2438,7 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
-    /// <p>Valie Values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
     /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
@@ -2234,7 +2450,7 @@ impl CreateDBInstanceFluentBuilder {
         self
     }
     /// <p>The location for storing automated backups and manual snapshots.</p>
-    /// <p>Valie Values:</p>
+    /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
     /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>

@@ -185,6 +185,15 @@ pub(crate) fn reset_landing_zone_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_enabled_control_output_output_correct_errors(
+    mut builder: crate::operation::update_enabled_control::builders::UpdateEnabledControlOutputBuilder,
+) -> crate::operation::update_enabled_control::builders::UpdateEnabledControlOutputBuilder {
+    if builder.operation_identifier.is_none() {
+        builder.operation_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_landing_zone_output_output_correct_errors(
     mut builder: crate::operation::update_landing_zone::builders::UpdateLandingZoneOutputBuilder,
 ) -> crate::operation::update_landing_zone::builders::UpdateLandingZoneOutputBuilder {
@@ -202,6 +211,18 @@ pub(crate) fn landing_zone_detail_correct_errors(
     }
     if builder.manifest.is_none() {
         builder.manifest = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn enabled_control_parameter_summary_correct_errors(
+    mut builder: crate::types::builders::EnabledControlParameterSummaryBuilder,
+) -> crate::types::builders::EnabledControlParameterSummaryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

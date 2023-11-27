@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRestoreJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -19,9 +19,11 @@ pub struct ListRestoreJobsInput {
     pub by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
     pub by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    pub by_restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRestoreJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -53,6 +55,10 @@ impl ListRestoreJobsInput {
     pub fn by_complete_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.by_complete_after.as_ref()
     }
+    /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    pub fn by_restore_testing_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.by_restore_testing_plan_arn.as_deref()
+    }
 }
 impl ListRestoreJobsInput {
     /// Creates a new builder-style object to manufacture [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
@@ -73,19 +79,20 @@ pub struct ListRestoreJobsInputBuilder {
     pub(crate) by_status: ::std::option::Option<crate::types::RestoreJobStatus>,
     pub(crate) by_complete_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_complete_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) by_restore_testing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListRestoreJobsInputBuilder {
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -187,6 +194,20 @@ impl ListRestoreJobsInputBuilder {
     pub fn get_by_complete_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.by_complete_after
     }
+    /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    pub fn by_restore_testing_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.by_restore_testing_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    pub fn set_by_restore_testing_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.by_restore_testing_plan_arn = input;
+        self
+    }
+    /// <p>This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).</p>
+    pub fn get_by_restore_testing_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_restore_testing_plan_arn
+    }
     /// Consumes the builder and constructs a [`ListRestoreJobsInput`](crate::operation::list_restore_jobs::ListRestoreJobsInput).
     pub fn build(
         self,
@@ -200,6 +221,7 @@ impl ListRestoreJobsInputBuilder {
             by_status: self.by_status,
             by_complete_before: self.by_complete_before,
             by_complete_after: self.by_complete_after,
+            by_restore_testing_plan_arn: self.by_restore_testing_plan_arn,
         })
     }
 }

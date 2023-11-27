@@ -22,7 +22,7 @@ impl CreateLandingZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLandingZone`.
 ///
-/// <p>Creates a new landing zone. This starts an asynchronous operation that creates and configures a landing zone based on the parameters specified in the manifest JSON file. </p>
+/// <p>Creates a new landing zone. This API call starts an asynchronous operation that creates and configures a landing zone, based on the parameters specified in the manifest JSON file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLandingZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateLandingZoneFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }

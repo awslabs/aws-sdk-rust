@@ -28,7 +28,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
 /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p> <important>
 /// <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped. For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// </important> <note>
-/// <p>This action only applies to Aurora Serverless v1 DB clusters.</p>
+/// <p>This operation only applies to Aurora Serverless v1 DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCurrentDBClusterCapacityFluentBuilder {

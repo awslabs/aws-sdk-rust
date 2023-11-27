@@ -8,6 +8,7 @@ pub struct CreateLogicallyAirGappedBackupVaultInput {
     /// <p>These are the tags that will be included in the newly-created vault.</p>
     pub backup_vault_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>This setting specifies the minimum retention period that the vault retains its recovery points. If this parameter is not specified, no minimum retention period is enforced.</p>
     /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If a job retention period is shorter than that minimum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault.</p>
@@ -26,6 +27,7 @@ impl CreateLogicallyAirGappedBackupVaultInput {
         self.backup_vault_tags.as_ref()
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -112,16 +114,19 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
         &self.backup_vault_tags
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }

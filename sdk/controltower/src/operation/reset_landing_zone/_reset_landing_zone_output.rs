@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetLandingZoneOutput {
-    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
 impl ResetLandingZoneOutput {
-    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn operation_identifier(&self) -> &str {
         use std::ops::Deref;
         self.operation_identifier.deref()
@@ -34,18 +34,18 @@ pub struct ResetLandingZoneOutputBuilder {
     _request_id: Option<String>,
 }
 impl ResetLandingZoneOutputBuilder {
-    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     /// This field is required.
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_identifier = input;
         self
     }
-    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+    /// <p>A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can use this identifier as an input parameter of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }

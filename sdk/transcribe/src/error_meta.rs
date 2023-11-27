@@ -314,6 +314,37 @@ impl From<crate::operation::delete_language_model::DeleteLanguageModelError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError> for Error {
+    fn from(err: crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError) -> Self {
+        match err {
+            crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_medical_scribe_job::DeleteMedicalScribeJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_medical_transcription_job::DeleteMedicalTranscriptionJobError, R>,
@@ -564,6 +595,33 @@ impl From<crate::operation::get_call_analytics_job::GetCallAnalyticsJobError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_medical_scribe_job::GetMedicalScribeJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_medical_scribe_job::GetMedicalScribeJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_medical_scribe_job::GetMedicalScribeJobError> for Error {
+    fn from(err: crate::operation::get_medical_scribe_job::GetMedicalScribeJobError) -> Self {
+        match err {
+            crate::operation::get_medical_scribe_job::GetMedicalScribeJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_medical_scribe_job::GetMedicalScribeJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_medical_scribe_job::GetMedicalScribeJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_medical_scribe_job::GetMedicalScribeJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_medical_scribe_job::GetMedicalScribeJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError, R>>
     for Error
 where
@@ -801,6 +859,36 @@ impl From<crate::operation::list_language_models::ListLanguageModelsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError> for Error {
+    fn from(err: crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError) -> Self {
+        match err {
+            crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError, R>>
     for Error
@@ -1010,6 +1098,37 @@ impl From<crate::operation::start_call_analytics_job::StartCallAnalyticsJobError
                 Error::LimitExceededException(inner)
             }
             crate::operation::start_call_analytics_job::StartCallAnalyticsJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_medical_scribe_job::StartMedicalScribeJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_medical_scribe_job::StartMedicalScribeJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_medical_scribe_job::StartMedicalScribeJobError> for Error {
+    fn from(err: crate::operation::start_medical_scribe_job::StartMedicalScribeJobError) -> Self {
+        match err {
+            crate::operation::start_medical_scribe_job::StartMedicalScribeJobError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_medical_scribe_job::StartMedicalScribeJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_medical_scribe_job::StartMedicalScribeJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::start_medical_scribe_job::StartMedicalScribeJobError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_medical_scribe_job::StartMedicalScribeJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

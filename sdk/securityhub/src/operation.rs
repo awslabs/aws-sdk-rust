@@ -19,6 +19,9 @@ pub mod batch_enable_standards;
 /// Types for the `BatchGetAutomationRules` operation.
 pub mod batch_get_automation_rules;
 
+/// Types for the `BatchGetConfigurationPolicyAssociations` operation.
+pub mod batch_get_configuration_policy_associations;
+
 /// Types for the `BatchGetSecurityControls` operation.
 pub mod batch_get_security_controls;
 
@@ -43,6 +46,9 @@ pub mod create_action_target;
 /// Types for the `CreateAutomationRule` operation.
 pub mod create_automation_rule;
 
+/// Types for the `CreateConfigurationPolicy` operation.
+pub mod create_configuration_policy;
+
 /// Types for the `CreateFindingAggregator` operation.
 pub mod create_finding_aggregator;
 
@@ -57,6 +63,9 @@ pub mod decline_invitations;
 
 /// Types for the `DeleteActionTarget` operation.
 pub mod delete_action_target;
+
+/// Types for the `DeleteConfigurationPolicy` operation.
+pub mod delete_configuration_policy;
 
 /// Types for the `DeleteFindingAggregator` operation.
 pub mod delete_finding_aggregator;
@@ -118,6 +127,12 @@ pub mod enable_security_hub;
 /// Types for the `GetAdministratorAccount` operation.
 pub mod get_administrator_account;
 
+/// Types for the `GetConfigurationPolicy` operation.
+pub mod get_configuration_policy;
+
+/// Types for the `GetConfigurationPolicyAssociation` operation.
+pub mod get_configuration_policy_association;
+
 /// Types for the `GetEnabledStandards` operation.
 pub mod get_enabled_standards;
 
@@ -154,6 +169,12 @@ pub mod invite_members;
 /// Types for the `ListAutomationRules` operation.
 pub mod list_automation_rules;
 
+/// Types for the `ListConfigurationPolicies` operation.
+pub mod list_configuration_policies;
+
+/// Types for the `ListConfigurationPolicyAssociations` operation.
+pub mod list_configuration_policy_associations;
+
 /// Types for the `ListEnabledProductsForImport` operation.
 pub mod list_enabled_products_for_import;
 
@@ -178,6 +199,12 @@ pub mod list_standards_control_associations;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `StartConfigurationPolicyAssociation` operation.
+pub mod start_configuration_policy_association;
+
+/// Types for the `StartConfigurationPolicyDisassociation` operation.
+pub mod start_configuration_policy_disassociation;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -186,6 +213,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateActionTarget` operation.
 pub mod update_action_target;
+
+/// Types for the `UpdateConfigurationPolicy` operation.
+pub mod update_configuration_policy;
 
 /// Types for the `UpdateFindingAggregator` operation.
 pub mod update_finding_aggregator;

@@ -159,6 +159,12 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InitiationDate" => {
+                            builder = builder.set_initiation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "MessageCategory" => {
                             builder = builder.set_message_category(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

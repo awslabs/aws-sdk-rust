@@ -152,16 +152,19 @@ impl CreateLogicallyAirGappedBackupVaultFluentBuilder {
         self.inner.get_backup_vault_tags()
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
     }
     /// <p>This is the ID of the creation request.</p>
+    /// <p>This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_request_id()
     }

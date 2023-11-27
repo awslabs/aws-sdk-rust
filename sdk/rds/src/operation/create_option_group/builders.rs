@@ -144,9 +144,11 @@ impl CreateOptionGroupFluentBuilder {
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_option_group_name()
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -163,9 +165,11 @@ impl CreateOptionGroupFluentBuilder {
         self.inner = self.inner.engine_name(input.into());
         self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -182,9 +186,11 @@ impl CreateOptionGroupFluentBuilder {
         self.inner = self.inner.set_engine_name(input);
         self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

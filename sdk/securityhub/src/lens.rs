@@ -79,6 +79,26 @@ pub(crate) fn reflens_get_insights_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_configuration_policies_output_output_next_token(
+    input: &crate::operation::list_configuration_policies::ListConfigurationPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configuration_policy_associations_output_output_next_token(
+    input: &crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_enabled_products_for_import_output_output_next_token(
     input: &crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -223,6 +243,26 @@ pub(crate) fn lens_get_insights_output_output_insights(
     input: crate::operation::get_insights::GetInsightsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Insight>> {
     let input = match input.insights {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_policies_output_output_configuration_policy_summaries(
+    input: crate::operation::list_configuration_policies::ListConfigurationPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicySummary>> {
+    let input = match input.configuration_policy_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configuration_policy_associations_output_output_configuration_policy_association_summaries(
+    input: crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationPolicyAssociationSummary>> {
+    let input = match input.configuration_policy_association_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLandingZoneInput {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLandingZoneInput {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn manifest(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.manifest.as_ref()
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
         self.landing_zone_identifier.as_deref()
     }
@@ -40,48 +40,48 @@ pub struct UpdateLandingZoneInputBuilder {
     pub(crate) landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLandingZoneInputBuilder {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     /// This field is required.
     pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.manifest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.manifest = input;
         self
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     /// This field is required.
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.landing_zone_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.landing_zone_identifier = input;
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_zone_identifier
     }

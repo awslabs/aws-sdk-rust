@@ -47,6 +47,11 @@ where
                             builder =
                                 builder.set_drift_status_summary(crate::protocol_serde::shape_drift_status_summary::de_drift_status_summary(tokens)?);
                         }
+                        "parameters" => {
+                            builder = builder.set_parameters(
+                                crate::protocol_serde::shape_enabled_control_parameter_summaries::de_enabled_control_parameter_summaries(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

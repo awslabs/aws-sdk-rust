@@ -179,6 +179,8 @@ mod delete_call_analytics_job;
 
 mod delete_language_model;
 
+mod delete_medical_scribe_job;
+
 mod delete_medical_transcription_job;
 
 mod delete_medical_vocabulary;
@@ -194,6 +196,8 @@ mod describe_language_model;
 mod get_call_analytics_category;
 
 mod get_call_analytics_job;
+
+mod get_medical_scribe_job;
 
 mod get_medical_transcription_job;
 
@@ -211,6 +215,8 @@ mod list_call_analytics_jobs;
 
 mod list_language_models;
 
+mod list_medical_scribe_jobs;
+
 mod list_medical_transcription_jobs;
 
 mod list_medical_vocabularies;
@@ -224,6 +230,8 @@ mod list_vocabularies;
 mod list_vocabulary_filters;
 
 mod start_call_analytics_job;
+
+mod start_medical_scribe_job;
 
 mod start_medical_transcription_job;
 

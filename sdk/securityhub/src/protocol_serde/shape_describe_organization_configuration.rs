@@ -136,6 +136,11 @@ pub(crate) fn de_describe_organization_configuration(
                 "MemberAccountLimitReached" => {
                     builder = builder.set_member_account_limit_reached(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "OrganizationConfiguration" => {
+                    builder = builder.set_organization_configuration(
+                        crate::protocol_serde::shape_organization_configuration::de_organization_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLandingZoneInput {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>. </p>
     pub manifest: ::std::option::Option<::aws_smithy_types::Document>,
@@ -11,7 +11,7 @@ pub struct CreateLandingZoneInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLandingZoneInput {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct CreateLandingZoneInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateLandingZoneInputBuilder {
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     /// This field is required.
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.0.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

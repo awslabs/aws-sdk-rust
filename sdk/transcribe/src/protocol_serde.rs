@@ -39,6 +39,8 @@ pub(crate) mod shape_delete_call_analytics_job;
 
 pub(crate) mod shape_delete_language_model;
 
+pub(crate) mod shape_delete_medical_scribe_job;
+
 pub(crate) mod shape_delete_medical_transcription_job;
 
 pub(crate) mod shape_delete_medical_vocabulary;
@@ -54,6 +56,8 @@ pub(crate) mod shape_describe_language_model;
 pub(crate) mod shape_get_call_analytics_category;
 
 pub(crate) mod shape_get_call_analytics_job;
+
+pub(crate) mod shape_get_medical_scribe_job;
 
 pub(crate) mod shape_get_medical_transcription_job;
 
@@ -71,6 +75,8 @@ pub(crate) mod shape_list_call_analytics_jobs;
 
 pub(crate) mod shape_list_language_models;
 
+pub(crate) mod shape_list_medical_scribe_jobs;
+
 pub(crate) mod shape_list_medical_transcription_jobs;
 
 pub(crate) mod shape_list_medical_vocabularies;
@@ -84,6 +90,8 @@ pub(crate) mod shape_list_vocabularies;
 pub(crate) mod shape_list_vocabulary_filters;
 
 pub(crate) mod shape_start_call_analytics_job;
+
+pub(crate) mod shape_start_medical_scribe_job;
 
 pub(crate) mod shape_start_medical_transcription_job;
 
@@ -129,6 +137,8 @@ pub(crate) mod shape_delete_call_analytics_job_input;
 
 pub(crate) mod shape_delete_language_model_input;
 
+pub(crate) mod shape_delete_medical_scribe_job_input;
+
 pub(crate) mod shape_delete_medical_transcription_job_input;
 
 pub(crate) mod shape_delete_medical_vocabulary_input;
@@ -144,6 +154,8 @@ pub(crate) mod shape_describe_language_model_input;
 pub(crate) mod shape_get_call_analytics_category_input;
 
 pub(crate) mod shape_get_call_analytics_job_input;
+
+pub(crate) mod shape_get_medical_scribe_job_input;
 
 pub(crate) mod shape_get_medical_transcription_job_input;
 
@@ -165,6 +177,8 @@ pub(crate) mod shape_list_call_analytics_jobs_input;
 
 pub(crate) mod shape_list_language_models_input;
 
+pub(crate) mod shape_list_medical_scribe_jobs_input;
+
 pub(crate) mod shape_list_medical_transcription_jobs_input;
 
 pub(crate) mod shape_list_medical_vocabularies_input;
@@ -180,6 +194,8 @@ pub(crate) mod shape_list_vocabulary_filters_input;
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_start_call_analytics_job_input;
+
+pub(crate) mod shape_start_medical_scribe_job_input;
 
 pub(crate) mod shape_start_medical_transcription_job_input;
 
@@ -220,6 +236,14 @@ pub(crate) mod shape_language_id_settings;
 pub(crate) mod shape_language_model;
 
 pub(crate) mod shape_media;
+
+pub(crate) mod shape_medical_scribe_channel_definition;
+
+pub(crate) mod shape_medical_scribe_job;
+
+pub(crate) mod shape_medical_scribe_job_summaries;
+
+pub(crate) mod shape_medical_scribe_settings;
 
 pub(crate) mod shape_medical_transcription_job;
 
@@ -262,6 +286,12 @@ pub(crate) mod shape_language_code_list;
 pub(crate) mod shape_language_id_settings_map;
 
 pub(crate) mod shape_language_options;
+
+pub(crate) mod shape_medical_scribe_channel_definitions;
+
+pub(crate) mod shape_medical_scribe_job_summary;
+
+pub(crate) mod shape_medical_scribe_output;
 
 pub(crate) mod shape_medical_transcript;
 

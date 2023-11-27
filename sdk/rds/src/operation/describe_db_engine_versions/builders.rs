@@ -120,6 +120,8 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -142,6 +144,8 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -164,6 +168,8 @@ impl DescribeDBEngineVersionsFluentBuilder {
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

@@ -199,6 +199,9 @@ where
 impl From<crate::operation::batch_disable_standards::BatchDisableStandardsError> for Error {
     fn from(err: crate::operation::batch_disable_standards::BatchDisableStandardsError) -> Self {
         match err {
+            crate::operation::batch_disable_standards::BatchDisableStandardsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::batch_disable_standards::BatchDisableStandardsError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::batch_disable_standards::BatchDisableStandardsError::InvalidAccessException(inner) => {
                 Error::InvalidAccessException(inner)
@@ -230,6 +233,7 @@ where
 impl From<crate::operation::batch_enable_standards::BatchEnableStandardsError> for Error {
     fn from(err: crate::operation::batch_enable_standards::BatchEnableStandardsError) -> Self {
         match err {
+            crate::operation::batch_enable_standards::BatchEnableStandardsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::batch_enable_standards::BatchEnableStandardsError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::batch_enable_standards::BatchEnableStandardsError::InvalidAccessException(inner) => {
                 Error::InvalidAccessException(inner)
@@ -279,6 +283,44 @@ impl From<crate::operation::batch_get_automation_rules::BatchGetAutomationRulesE
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError> for Error {
+    fn from(err: crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError) -> Self {
+        match err {
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_configuration_policy_associations::BatchGetConfigurationPolicyAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -479,6 +521,9 @@ where
 impl From<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError> for Error {
     fn from(err: crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError) -> Self {
         match err {
+            crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
             crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
@@ -552,6 +597,48 @@ impl From<crate::operation::create_automation_rule::CreateAutomationRuleError> f
                 Error::LimitExceededException(inner)
             }
             crate::operation::create_automation_rule::CreateAutomationRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration_policy::CreateConfigurationPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration_policy::CreateConfigurationPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configuration_policy::CreateConfigurationPolicyError> for Error {
+    fn from(err: crate::operation::create_configuration_policy::CreateConfigurationPolicyError) -> Self {
+        match err {
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_configuration_policy::CreateConfigurationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -635,6 +722,7 @@ where
 impl From<crate::operation::create_members::CreateMembersError> for Error {
     fn from(err: crate::operation::create_members::CreateMembersError) -> Self {
         match err {
+            crate::operation::create_members::CreateMembersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_members::CreateMembersError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::create_members::CreateMembersError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
             crate::operation::create_members::CreateMembersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -695,6 +783,51 @@ impl From<crate::operation::delete_action_target::DeleteActionTargetError> for E
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_action_target::DeleteActionTargetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError> for Error {
+    fn from(err: crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError) -> Self {
+        match err {
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configuration_policy::DeleteConfigurationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1081,6 +1214,9 @@ where
 impl From<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError> for Error {
     fn from(err: crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError) -> Self {
         match err {
+            crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccountError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
@@ -1114,6 +1250,7 @@ where
 impl From<crate::operation::disable_security_hub::DisableSecurityHubError> for Error {
     fn from(err: crate::operation::disable_security_hub::DisableSecurityHubError) -> Self {
         match err {
+            crate::operation::disable_security_hub::DisableSecurityHubError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disable_security_hub::DisableSecurityHubError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::disable_security_hub::DisableSecurityHubError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
             crate::operation::disable_security_hub::DisableSecurityHubError::LimitExceededException(inner) => Error::LimitExceededException(inner),
@@ -1234,6 +1371,7 @@ where
 impl From<crate::operation::disassociate_members::DisassociateMembersError> for Error {
     fn from(err: crate::operation::disassociate_members::DisassociateMembersError) -> Self {
         match err {
+            crate::operation::disassociate_members::DisassociateMembersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disassociate_members::DisassociateMembersError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::disassociate_members::DisassociateMembersError::InvalidAccessException(inner) => Error::InvalidAccessException(inner),
             crate::operation::disassociate_members::DisassociateMembersError::InvalidInputException(inner) => Error::InvalidInputException(inner),
@@ -1320,6 +1458,9 @@ where
 impl From<crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError> for Error {
     fn from(err: crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError) -> Self {
         match err {
+            crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccountError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
@@ -1398,6 +1539,97 @@ impl From<crate::operation::get_administrator_account::GetAdministratorAccountEr
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_administrator_account::GetAdministratorAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration_policy::GetConfigurationPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration_policy::GetConfigurationPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configuration_policy::GetConfigurationPolicyError> for Error {
+    fn from(err: crate::operation::get_configuration_policy::GetConfigurationPolicyError) -> Self {
+        match err {
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_configuration_policy::GetConfigurationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError> for Error {
+    fn from(err: crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError) -> Self {
+        match err {
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_configuration_policy_association::GetConfigurationPolicyAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1735,6 +1967,94 @@ impl From<crate::operation::list_automation_rules::ListAutomationRulesError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configuration_policies::ListConfigurationPoliciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configuration_policies::ListConfigurationPoliciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configuration_policies::ListConfigurationPoliciesError> for Error {
+    fn from(err: crate::operation::list_configuration_policies::ListConfigurationPoliciesError) -> Self {
+        match err {
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_configuration_policies::ListConfigurationPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError> for Error {
+    fn from(err: crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError) -> Self {
+        match err {
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_configuration_policy_associations::ListConfigurationPolicyAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError, R>>
     for Error
@@ -2013,6 +2333,110 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError> for Error {
+    fn from(err: crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError) -> Self {
+        match err {
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_configuration_policy_association::StartConfigurationPolicyAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError> for Error {
+    fn from(err: crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError) -> Self {
+        match err {
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::InvalidAccessException(
+                inner,
+            ) => Error::InvalidAccessException(inner),
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::InvalidInputException(
+                inner,
+            ) => Error::InvalidInputException(inner),
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2085,6 +2509,51 @@ impl From<crate::operation::update_action_target::UpdateActionTargetError> for E
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_action_target::UpdateActionTargetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configuration_policy::UpdateConfigurationPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configuration_policy::UpdateConfigurationPolicyError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_configuration_policy::UpdateConfigurationPolicyError> for Error {
+    fn from(err: crate::operation::update_configuration_policy::UpdateConfigurationPolicyError) -> Self {
+        match err {
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::InternalException(inner) => {
+                Error::InternalException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::InvalidAccessException(inner) => {
+                Error::InvalidAccessException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_configuration_policy::UpdateConfigurationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2208,6 +2677,9 @@ where
 impl From<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError> for Error {
     fn from(err: crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError) -> Self {
         match err {
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
@@ -2219,6 +2691,12 @@ impl From<crate::operation::update_organization_configuration::UpdateOrganizatio
             }
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
+            }
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2243,6 +2721,9 @@ where
 impl From<crate::operation::update_security_control::UpdateSecurityControlError> for Error {
     fn from(err: crate::operation::update_security_control::UpdateSecurityControlError) -> Self {
         match err {
+            crate::operation::update_security_control::UpdateSecurityControlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_security_control::UpdateSecurityControlError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::update_security_control::UpdateSecurityControlError::InvalidAccessException(inner) => {
                 Error::InvalidAccessException(inner)
@@ -2291,6 +2772,9 @@ where
 impl From<crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationError> for Error {
     fn from(err: crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationError) -> Self {
         match err {
+            crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_security_hub_configuration::UpdateSecurityHubConfigurationError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
@@ -2329,6 +2813,9 @@ where
 impl From<crate::operation::update_standards_control::UpdateStandardsControlError> for Error {
     fn from(err: crate::operation::update_standards_control::UpdateStandardsControlError) -> Self {
         match err {
+            crate::operation::update_standards_control::UpdateStandardsControlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_standards_control::UpdateStandardsControlError::InternalException(inner) => Error::InternalException(inner),
             crate::operation::update_standards_control::UpdateStandardsControlError::InvalidAccessException(inner) => {
                 Error::InvalidAccessException(inner)

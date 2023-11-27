@@ -11,6 +11,16 @@ pub struct DescribeProtectedResourceOutput {
     pub last_backup_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    pub last_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    pub last_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>This is the time in minutes the most recent restore job took to complete.</p>
+    pub latest_restore_execution_time_minutes: ::std::option::Option<i64>,
+    /// <p>This is the creation date of the most recent restore job.</p>
+    pub latest_restore_job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>This is the date the most recent recovery point was created.</p>
+    pub latest_restore_recovery_point_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeProtectedResourceOutput {
@@ -29,6 +39,26 @@ impl DescribeProtectedResourceOutput {
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    pub fn last_backup_vault_arn(&self) -> ::std::option::Option<&str> {
+        self.last_backup_vault_arn.as_deref()
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    pub fn last_recovery_point_arn(&self) -> ::std::option::Option<&str> {
+        self.last_recovery_point_arn.as_deref()
+    }
+    /// <p>This is the time in minutes the most recent restore job took to complete.</p>
+    pub fn latest_restore_execution_time_minutes(&self) -> ::std::option::Option<i64> {
+        self.latest_restore_execution_time_minutes
+    }
+    /// <p>This is the creation date of the most recent restore job.</p>
+    pub fn latest_restore_job_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.latest_restore_job_creation_date.as_ref()
+    }
+    /// <p>This is the date the most recent recovery point was created.</p>
+    pub fn latest_restore_recovery_point_creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.latest_restore_recovery_point_creation_date.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeProtectedResourceOutput {
@@ -51,6 +81,11 @@ pub struct DescribeProtectedResourceOutputBuilder {
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) last_backup_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_backup_vault_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_restore_execution_time_minutes: ::std::option::Option<i64>,
+    pub(crate) latest_restore_job_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_restore_recovery_point_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeProtectedResourceOutputBuilder {
@@ -110,6 +145,76 @@ impl DescribeProtectedResourceOutputBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    pub fn last_backup_vault_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_backup_vault_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    pub fn set_last_backup_vault_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_backup_vault_arn = input;
+        self
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the backup vault that contains the most recent backup recovery point.</p>
+    pub fn get_last_backup_vault_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_backup_vault_arn
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    pub fn last_recovery_point_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_recovery_point_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    pub fn set_last_recovery_point_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_recovery_point_arn = input;
+        self
+    }
+    /// <p>This is the ARN (Amazon Resource Name) of the most recent recovery point.</p>
+    pub fn get_last_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_recovery_point_arn
+    }
+    /// <p>This is the time in minutes the most recent restore job took to complete.</p>
+    pub fn latest_restore_execution_time_minutes(mut self, input: i64) -> Self {
+        self.latest_restore_execution_time_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the time in minutes the most recent restore job took to complete.</p>
+    pub fn set_latest_restore_execution_time_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.latest_restore_execution_time_minutes = input;
+        self
+    }
+    /// <p>This is the time in minutes the most recent restore job took to complete.</p>
+    pub fn get_latest_restore_execution_time_minutes(&self) -> &::std::option::Option<i64> {
+        &self.latest_restore_execution_time_minutes
+    }
+    /// <p>This is the creation date of the most recent restore job.</p>
+    pub fn latest_restore_job_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_restore_job_creation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the creation date of the most recent restore job.</p>
+    pub fn set_latest_restore_job_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.latest_restore_job_creation_date = input;
+        self
+    }
+    /// <p>This is the creation date of the most recent restore job.</p>
+    pub fn get_latest_restore_job_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_restore_job_creation_date
+    }
+    /// <p>This is the date the most recent recovery point was created.</p>
+    pub fn latest_restore_recovery_point_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_restore_recovery_point_creation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the date the most recent recovery point was created.</p>
+    pub fn set_latest_restore_recovery_point_creation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.latest_restore_recovery_point_creation_date = input;
+        self
+    }
+    /// <p>This is the date the most recent recovery point was created.</p>
+    pub fn get_latest_restore_recovery_point_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.latest_restore_recovery_point_creation_date
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +231,11 @@ impl DescribeProtectedResourceOutputBuilder {
             resource_type: self.resource_type,
             last_backup_time: self.last_backup_time,
             resource_name: self.resource_name,
+            last_backup_vault_arn: self.last_backup_vault_arn,
+            last_recovery_point_arn: self.last_recovery_point_arn,
+            latest_restore_execution_time_minutes: self.latest_restore_execution_time_minutes,
+            latest_restore_job_creation_date: self.latest_restore_job_creation_date,
+            latest_restore_recovery_point_creation_date: self.latest_restore_recovery_point_creation_date,
             _request_id: self._request_id,
         }
     }

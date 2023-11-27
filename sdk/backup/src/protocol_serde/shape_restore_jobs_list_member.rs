@@ -103,6 +103,43 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RecoveryPointCreationDate" => {
+                            builder = builder.set_recovery_point_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "CreatedBy" => {
+                            builder = builder.set_created_by(crate::protocol_serde::shape_restore_job_creator::de_restore_job_creator(tokens)?);
+                        }
+                        "ValidationStatus" => {
+                            builder = builder.set_validation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RestoreValidationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ValidationStatusMessage" => {
+                            builder = builder.set_validation_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DeletionStatus" => {
+                            builder = builder.set_deletion_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RestoreDeletionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DeletionStatusMessage" => {
+                            builder = builder.set_deletion_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

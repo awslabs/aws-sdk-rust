@@ -21,6 +21,10 @@ pub struct Resource {
     pub data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
     /// <p>Additional details about the resource related to a finding.</p>
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
+    /// <p> The name of the application that is related to a finding. </p>
+    pub application_name: ::std::option::Option<::std::string::String>,
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    pub application_arn: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
@@ -56,6 +60,14 @@ impl Resource {
     pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.details.as_ref()
     }
+    /// <p> The name of the application that is related to a finding. </p>
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
+        self.application_name.as_deref()
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    pub fn application_arn(&self) -> ::std::option::Option<&str> {
+        self.application_arn.as_deref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -76,6 +88,8 @@ pub struct ResourceBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) data_classification: ::std::option::Option<crate::types::DataClassificationDetails>,
     pub(crate) details: ::std::option::Option<crate::types::ResourceDetails>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) application_arn: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
     /// <p>The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to <code>AwsEc2Instance</code>.</p>
@@ -201,6 +215,34 @@ impl ResourceBuilder {
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.details
     }
+    /// <p> The name of the application that is related to a finding. </p>
+    pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name of the application that is related to a finding. </p>
+    pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_name = input;
+        self
+    }
+    /// <p> The name of the application that is related to a finding. </p>
+    pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_name
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.application_arn = input;
+        self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.application_arn
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
@@ -212,6 +254,8 @@ impl ResourceBuilder {
             tags: self.tags,
             data_classification: self.data_classification,
             details: self.details,
+            application_name: self.application_name,
+            application_arn: self.application_arn,
         }
     }
 }

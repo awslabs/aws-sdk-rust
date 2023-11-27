@@ -125,6 +125,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb10.2</code> </p> </li>
     /// <li> <p> <code>mariadb10.3</code> </p> </li>
     /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -179,6 +181,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb10.2</code> </p> </li>
     /// <li> <p> <code>mariadb10.3</code> </p> </li>
     /// <li> <p> <code>mariadb10.4</code> </p> </li>
@@ -233,6 +237,8 @@ impl DescribeEngineDefaultParametersFluentBuilder {
     /// <li> <p> <code>aurora-postgresql13</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql14</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee-19</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb10.2</code> </p> </li>
     /// <li> <p> <code>mariadb10.3</code> </p> </li>
     /// <li> <p> <code>mariadb10.4</code> </p> </li>

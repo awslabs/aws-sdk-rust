@@ -20,6 +20,23 @@ pub fn de_update_organization_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => {
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InternalException" => crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::InternalException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -77,6 +94,42 @@ pub fn de_update_organization_configuration_http_error(
                     let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
                     output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                         .map_err(crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

@@ -912,6 +912,39 @@ impl From<crate::operation::get_data_source::GetDataSourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError> for Error {
+    fn from(err: crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError) -> Self {
+        match err {
+            crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_data_source_introspection::GetDataSourceIntrospectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_name::GetDomainNameError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1443,6 +1476,46 @@ impl From<crate::operation::list_types_by_association::ListTypesByAssociationErr
                 Error::UnauthorizedException(inner)
             }
             crate::operation::list_types_by_association::ListTypesByAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError> for Error {
+    fn from(err: crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError) -> Self {
+        match err {
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::start_data_source_introspection::StartDataSourceIntrospectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

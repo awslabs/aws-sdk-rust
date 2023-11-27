@@ -53,8 +53,10 @@ pub struct DescribeBackupJobOutput {
     pub child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::BackupJobState, i64>>,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is the date a backup job was initiated.</p>
+    pub initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This is the job count for the specified message category.</p>
-    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -159,8 +161,12 @@ impl DescribeBackupJobOutput {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
+    /// <p>This is the date a backup job was initiated.</p>
+    pub fn initiation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.initiation_date.as_ref()
+    }
     /// <p>This is the job count for the specified message category.</p>
-    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
         self.message_category.as_deref()
     }
@@ -206,6 +212,7 @@ pub struct DescribeBackupJobOutputBuilder {
     pub(crate) number_of_child_jobs: ::std::option::Option<i64>,
     pub(crate) child_jobs_in_state: ::std::option::Option<::std::collections::HashMap<crate::types::BackupJobState, i64>>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message_category: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -579,20 +586,34 @@ impl DescribeBackupJobOutputBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This is the date a backup job was initiated.</p>
+    pub fn initiation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.initiation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the date a backup job was initiated.</p>
+    pub fn set_initiation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.initiation_date = input;
+        self
+    }
+    /// <p>This is the date a backup job was initiated.</p>
+    pub fn get_initiation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiation_date
+    }
     /// <p>This is the job count for the specified message category.</p>
-    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is the job count for the specified message category.</p>
-    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_category = input;
         self
     }
     /// <p>This is the job count for the specified message category.</p>
-    /// <p>Example strings may include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_category
     }
@@ -633,6 +654,7 @@ impl DescribeBackupJobOutputBuilder {
             number_of_child_jobs: self.number_of_child_jobs,
             child_jobs_in_state: self.child_jobs_in_state,
             resource_name: self.resource_name,
+            initiation_date: self.initiation_date,
             message_category: self.message_category,
             _request_id: self._request_id,
         }

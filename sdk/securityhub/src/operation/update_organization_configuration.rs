@@ -252,6 +252,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateOrganiz
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateOrganizationConfigurationError {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::types::error::InternalException),
     /// <p>The account doesn't have permission to perform this action.</p>
@@ -260,6 +262,10 @@ pub enum UpdateOrganizationConfigurationError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The resource specified in the request conflicts with an existing resource.</p>
+    ResourceConflictException(crate::types::error::ResourceConflictException),
+    /// <p>The request was rejected because we can't find the specified resource.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -293,12 +299,19 @@ impl UpdateOrganizationConfigurationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAccessException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateOrganizationConfigurationError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -316,14 +329,25 @@ impl UpdateOrganizationConfigurationError {
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationError::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(self, Self::ResourceConflictException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateOrganizationConfigurationError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
 }
 impl ::std::error::Error for UpdateOrganizationConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAccessException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -331,10 +355,13 @@ impl ::std::error::Error for UpdateOrganizationConfigurationError {
 impl ::std::fmt::Display for UpdateOrganizationConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::InvalidAccessException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::ResourceConflictException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -356,10 +383,13 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateOrganizationConfigura
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateOrganizationConfigurationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAccessException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

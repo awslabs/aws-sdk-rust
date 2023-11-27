@@ -23,7 +23,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
 /// Fluent builder constructing a request to `RestoreDBInstanceFromS3`.
 ///
 /// <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>
-/// <p>This command doesn't apply to RDS Custom.</p>
+/// <p>This operation doesn't apply to RDS Custom.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBInstanceFromS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -244,50 +244,59 @@ impl RestoreDBInstanceFromS3FluentBuilder {
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_username()
     }
-    /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
-    /// <p> <b>MariaDB</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Microsoft SQL Server</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    /// <p> <b>MySQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Constraints: Must contain from 8 to 30 characters.</p>
-    /// <p> <b>PostgreSQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    /// <p>The password for the master user.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// </ul>
+    /// <p>Length Constraints:</p>
+    /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
+    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
-    /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
-    /// <p> <b>MariaDB</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Microsoft SQL Server</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    /// <p> <b>MySQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Constraints: Must contain from 8 to 30 characters.</p>
-    /// <p> <b>PostgreSQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    /// <p>The password for the master user.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// </ul>
+    /// <p>Length Constraints:</p>
+    /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
+    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
-    /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
-    /// <p>Constraints: Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p>
-    /// <p> <b>MariaDB</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Microsoft SQL Server</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-    /// <p> <b>MySQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-    /// <p> <b>Oracle</b> </p>
-    /// <p>Constraints: Must contain from 8 to 30 characters.</p>
-    /// <p> <b>PostgreSQL</b> </p>
-    /// <p>Constraints: Must contain from 8 to 128 characters.</p>
+    /// <p>The password for the master user.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
+    /// </ul>
+    /// <p>Length Constraints:</p>
+    /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
+    /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
+    /// <li> <p>RDS for Oracle - Must contain from 8 to 30 characters.</p> </li>
+    /// <li> <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p> </li>
+    /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
     }

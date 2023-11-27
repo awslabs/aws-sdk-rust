@@ -23,12 +23,36 @@ pub(crate) fn content_redaction_correct_errors(
     builder
 }
 
+pub(crate) fn medical_scribe_output_correct_errors(
+    mut builder: crate::types::builders::MedicalScribeOutputBuilder,
+) -> crate::types::builders::MedicalScribeOutputBuilder {
+    if builder.transcript_file_uri.is_none() {
+        builder.transcript_file_uri = Some(Default::default())
+    }
+    if builder.clinical_document_uri.is_none() {
+        builder.clinical_document_uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn medical_scribe_channel_definition_correct_errors(
+    mut builder: crate::types::builders::MedicalScribeChannelDefinitionBuilder,
+) -> crate::types::builders::MedicalScribeChannelDefinitionBuilder {
+    if builder.channel_id.is_none() {
+        builder.channel_id = Some(Default::default())
+    }
+    if builder.participant_role.is_none() {
+        builder.participant_role = "no value was set".parse::<crate::types::MedicalScribeParticipantRole>().ok()
     }
     builder
 }

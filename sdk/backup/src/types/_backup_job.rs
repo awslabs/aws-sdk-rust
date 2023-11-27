@@ -51,8 +51,10 @@ pub struct BackupJob {
     pub is_parent: bool,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is the date on which the backup job was initiated.</p>
+    pub initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This parameter is the job count for the specified message category.</p>
-    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub message_category: ::std::option::Option<::std::string::String>,
@@ -151,8 +153,12 @@ impl BackupJob {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
+    /// <p>This is the date on which the backup job was initiated.</p>
+    pub fn initiation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.initiation_date.as_ref()
+    }
     /// <p>This parameter is the job count for the specified message category.</p>
-    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(&self) -> ::std::option::Option<&str> {
@@ -193,6 +199,7 @@ pub struct BackupJobBuilder {
     pub(crate) parent_job_id: ::std::option::Option<::std::string::String>,
     pub(crate) is_parent: ::std::option::Option<bool>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) initiation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) message_category: ::std::option::Option<::std::string::String>,
 }
 impl BackupJobBuilder {
@@ -534,8 +541,22 @@ impl BackupJobBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This is the date on which the backup job was initiated.</p>
+    pub fn initiation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.initiation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the date on which the backup job was initiated.</p>
+    pub fn set_initiation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.initiation_date = input;
+        self
+    }
+    /// <p>This is the date on which the backup job was initiated.</p>
+    pub fn get_initiation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.initiation_date
+    }
     /// <p>This parameter is the job count for the specified message category.</p>
-    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -543,7 +564,7 @@ impl BackupJobBuilder {
         self
     }
     /// <p>This parameter is the job count for the specified message category.</p>
-    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -551,7 +572,7 @@ impl BackupJobBuilder {
         self
     }
     /// <p>This parameter is the job count for the specified message category.</p>
-    /// <p>Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of MessageCategory strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn get_message_category(&self) -> &::std::option::Option<::std::string::String> {
@@ -583,6 +604,7 @@ impl BackupJobBuilder {
             parent_job_id: self.parent_job_id,
             is_parent: self.is_parent.unwrap_or_default(),
             resource_name: self.resource_name,
+            initiation_date: self.initiation_date,
             message_category: self.message_category,
         }
     }

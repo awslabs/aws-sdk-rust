@@ -4,11 +4,11 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to continue the list from a previous API call with the same parameters. </p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned landing zone ARNs. </p><br>
+    ///   - [`next_token(impl Into<String>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::set_next_token):<br>required: **false**<br><p>The token to continue the list from a previous API call with the same parameters.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of returned landing zone ARNs, which is one.</p><br>
     /// - On success, responds with [`ListLandingZonesOutput`](crate::operation::list_landing_zones::ListLandingZonesOutput) with field(s):
-    ///   - [`landing_zones(Vec::<LandingZoneSummary>)`](crate::operation::list_landing_zones::ListLandingZonesOutput::landing_zones): <p>The ARN of the landing zone. </p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_landing_zones::ListLandingZonesOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    ///   - [`landing_zones(Vec::<LandingZoneSummary>)`](crate::operation::list_landing_zones::ListLandingZonesOutput::landing_zones): <p>The ARN of the landing zone.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_landing_zones::ListLandingZonesOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     /// - On failure, responds with [`SdkError<ListLandingZonesError>`](crate::operation::list_landing_zones::ListLandingZonesError)
     pub fn list_landing_zones(&self) -> crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder {
         crate::operation::list_landing_zones::builders::ListLandingZonesFluentBuilder::new(self.handle.clone())

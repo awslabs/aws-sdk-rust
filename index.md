@@ -17,6 +17,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Application Discovery Service | [aws-sdk-applicationdiscovery](https://crates.io/crates/aws-sdk-applicationdiscovery) ([docs](https://docs.rs/aws-sdk-applicationdiscovery)) |
 | AWS Audit Manager | [aws-sdk-auditmanager](https://crates.io/crates/aws-sdk-auditmanager) ([docs](https://docs.rs/aws-sdk-auditmanager)) |
 | AWS Auto Scaling Plans | [aws-sdk-autoscalingplans](https://crates.io/crates/aws-sdk-autoscalingplans) ([docs](https://docs.rs/aws-sdk-autoscalingplans)) |
+| AWS B2B Data Interchange | [aws-sdk-b2bi](https://crates.io/crates/aws-sdk-b2bi) ([docs](https://docs.rs/aws-sdk-b2bi)) |
 | AWS Backup | [aws-sdk-backup](https://crates.io/crates/aws-sdk-backup) ([docs](https://docs.rs/aws-sdk-backup)) |
 | AWS Backup Gateway | [aws-sdk-backupgateway](https://crates.io/crates/aws-sdk-backupgateway) ([docs](https://docs.rs/aws-sdk-backupgateway)) |
 | AWS Backup Storage | [aws-sdk-backupstorage](https://crates.io/crates/aws-sdk-backupstorage) ([docs](https://docs.rs/aws-sdk-backupstorage)) |

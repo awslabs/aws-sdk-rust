@@ -75,6 +75,16 @@ where
                                 crate::protocol_serde::shape_experiment_log_configuration::de_experiment_log_configuration(tokens)?,
                             );
                         }
+                        "experimentOptions" => {
+                            builder = builder.set_experiment_options(crate::protocol_serde::shape_experiment_options::de_experiment_options(tokens)?);
+                        }
+                        "targetAccountConfigurationsCount" => {
+                            builder = builder.set_target_account_configurations_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

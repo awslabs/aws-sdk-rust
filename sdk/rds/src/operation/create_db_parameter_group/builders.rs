@@ -162,7 +162,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
     /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
@@ -190,7 +191,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
     /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>
@@ -218,7 +220,8 @@ impl CreateDBParameterGroupFluentBuilder {
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
-    /// <li> <p> <code>mariadb</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
     /// <li> <p> <code>oracle-ee-cdb</code> </p> </li>

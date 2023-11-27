@@ -152,6 +152,10 @@ mod create_logically_air_gapped_backup_vault;
 
 mod create_report_plan;
 
+mod create_restore_testing_plan;
+
+mod create_restore_testing_selection;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -197,6 +201,10 @@ mod delete_recovery_point;
 
 mod delete_report_plan;
 
+mod delete_restore_testing_plan;
+
+mod delete_restore_testing_selection;
+
 mod describe_backup_job;
 
 mod describe_backup_vault;
@@ -241,6 +249,14 @@ mod get_legal_hold;
 
 mod get_recovery_point_restore_metadata;
 
+mod get_restore_job_metadata;
+
+mod get_restore_testing_inferred_metadata;
+
+mod get_restore_testing_plan;
+
+mod get_restore_testing_selection;
+
 mod get_supported_resource_types;
 
 mod list_backup_job_summaries;
@@ -283,6 +299,12 @@ mod list_restore_job_summaries;
 
 mod list_restore_jobs;
 
+mod list_restore_jobs_by_protected_resource;
+
+mod list_restore_testing_plans;
+
+mod list_restore_testing_selections;
+
 mod list_tags;
 
 mod put_backup_vault_access_policy;
@@ -290,6 +312,8 @@ mod put_backup_vault_access_policy;
 mod put_backup_vault_lock_configuration;
 
 mod put_backup_vault_notifications;
+
+mod put_restore_validation_result;
 
 mod start_backup_job;
 
@@ -316,3 +340,7 @@ mod update_recovery_point_lifecycle;
 mod update_region_settings;
 
 mod update_report_plan;
+
+mod update_restore_testing_plan;
+
+mod update_restore_testing_selection;

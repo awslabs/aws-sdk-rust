@@ -9,6 +9,8 @@ pub struct GetRecoveryPointRestoreMetadataOutput {
     pub recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
     pub restore_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>This is the resource type associated with the recovery point.</p>
+    pub resource_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRecoveryPointRestoreMetadataOutput {
@@ -24,6 +26,10 @@ impl GetRecoveryPointRestoreMetadataOutput {
     pub fn restore_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.restore_metadata.as_ref()
     }
+    /// <p>This is the resource type associated with the recovery point.</p>
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+        self.resource_type.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetRecoveryPointRestoreMetadataOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for GetRecoveryPointRestoreMetadataOutput {
         formatter.field("backup_vault_arn", &self.backup_vault_arn);
         formatter.field("recovery_point_arn", &self.recovery_point_arn);
         formatter.field("restore_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_type", &self.resource_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -54,6 +61,7 @@ pub struct GetRecoveryPointRestoreMetadataOutputBuilder {
     pub(crate) backup_vault_arn: ::std::option::Option<::std::string::String>,
     pub(crate) recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) restore_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRecoveryPointRestoreMetadataOutputBuilder {
@@ -112,6 +120,20 @@ impl GetRecoveryPointRestoreMetadataOutputBuilder {
     pub fn get_restore_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.restore_metadata
     }
+    /// <p>This is the resource type associated with the recovery point.</p>
+    pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This is the resource type associated with the recovery point.</p>
+    pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_type = input;
+        self
+    }
+    /// <p>This is the resource type associated with the recovery point.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -127,6 +149,7 @@ impl GetRecoveryPointRestoreMetadataOutputBuilder {
             backup_vault_arn: self.backup_vault_arn,
             recovery_point_arn: self.recovery_point_arn,
             restore_metadata: self.restore_metadata,
+            resource_type: self.resource_type,
             _request_id: self._request_id,
         }
     }
@@ -137,6 +160,7 @@ impl ::std::fmt::Debug for GetRecoveryPointRestoreMetadataOutputBuilder {
         formatter.field("backup_vault_arn", &self.backup_vault_arn);
         formatter.field("recovery_point_arn", &self.recovery_point_arn);
         formatter.field("restore_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("resource_type", &self.resource_type);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

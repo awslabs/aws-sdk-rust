@@ -25,6 +25,12 @@ pub mod create_logically_air_gapped_backup_vault;
 /// Types for the `CreateReportPlan` operation.
 pub mod create_report_plan;
 
+/// Types for the `CreateRestoreTestingPlan` operation.
+pub mod create_restore_testing_plan;
+
+/// Types for the `CreateRestoreTestingSelection` operation.
+pub mod create_restore_testing_selection;
+
 /// Types for the `DeleteBackupPlan` operation.
 pub mod delete_backup_plan;
 
@@ -51,6 +57,12 @@ pub mod delete_recovery_point;
 
 /// Types for the `DeleteReportPlan` operation.
 pub mod delete_report_plan;
+
+/// Types for the `DeleteRestoreTestingPlan` operation.
+pub mod delete_restore_testing_plan;
+
+/// Types for the `DeleteRestoreTestingSelection` operation.
+pub mod delete_restore_testing_selection;
 
 /// Types for the `DescribeBackupJob` operation.
 pub mod describe_backup_job;
@@ -118,6 +130,18 @@ pub mod get_legal_hold;
 /// Types for the `GetRecoveryPointRestoreMetadata` operation.
 pub mod get_recovery_point_restore_metadata;
 
+/// Types for the `GetRestoreJobMetadata` operation.
+pub mod get_restore_job_metadata;
+
+/// Types for the `GetRestoreTestingInferredMetadata` operation.
+pub mod get_restore_testing_inferred_metadata;
+
+/// Types for the `GetRestoreTestingPlan` operation.
+pub mod get_restore_testing_plan;
+
+/// Types for the `GetRestoreTestingSelection` operation.
+pub mod get_restore_testing_selection;
+
 /// Types for the `GetSupportedResourceTypes` operation.
 pub mod get_supported_resource_types;
 
@@ -181,6 +205,15 @@ pub mod list_restore_job_summaries;
 /// Types for the `ListRestoreJobs` operation.
 pub mod list_restore_jobs;
 
+/// Types for the `ListRestoreJobsByProtectedResource` operation.
+pub mod list_restore_jobs_by_protected_resource;
+
+/// Types for the `ListRestoreTestingPlans` operation.
+pub mod list_restore_testing_plans;
+
+/// Types for the `ListRestoreTestingSelections` operation.
+pub mod list_restore_testing_selections;
+
 /// Types for the `ListTags` operation.
 pub mod list_tags;
 
@@ -192,6 +225,9 @@ pub mod put_backup_vault_lock_configuration;
 
 /// Types for the `PutBackupVaultNotifications` operation.
 pub mod put_backup_vault_notifications;
+
+/// Types for the `PutRestoreValidationResult` operation.
+pub mod put_restore_validation_result;
 
 /// Types for the `StartBackupJob` operation.
 pub mod start_backup_job;
@@ -231,3 +267,9 @@ pub mod update_region_settings;
 
 /// Types for the `UpdateReportPlan` operation.
 pub mod update_report_plan;
+
+/// Types for the `UpdateRestoreTestingPlan` operation.
+pub mod update_restore_testing_plan;
+
+/// Types for the `UpdateRestoreTestingSelection` operation.
+pub mod update_restore_testing_selection;

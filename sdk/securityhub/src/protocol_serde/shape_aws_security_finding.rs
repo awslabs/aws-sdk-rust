@@ -251,6 +251,12 @@ pub fn ser_aws_security_finding(
         crate::protocol_serde::shape_generator_details::ser_generator_details(&mut object_82, var_81)?;
         object_82.finish();
     }
+    if let Some(var_83) = &input.processed_at {
+        object.key("ProcessedAt").string(var_83.as_str());
+    }
+    if let Some(var_84) = &input.aws_account_name {
+        object.key("AwsAccountName").string(var_84.as_str());
+    }
     Ok(())
 }
 
@@ -479,6 +485,20 @@ where
                         }
                         "GeneratorDetails" => {
                             builder = builder.set_generator_details(crate::protocol_serde::shape_generator_details::de_generator_details(tokens)?);
+                        }
+                        "ProcessedAt" => {
+                            builder = builder.set_processed_at(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AwsAccountName" => {
+                            builder = builder.set_aws_account_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

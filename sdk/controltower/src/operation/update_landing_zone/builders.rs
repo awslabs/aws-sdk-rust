@@ -22,7 +22,7 @@ impl UpdateLandingZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLandingZone`.
 ///
-/// <p>This API call updates the landing zone. It starts an asynchronous operation that updates the landing zone based on the new landing zone version or the updated parameters specified in the updated manifest file. </p>
+/// <p>This API call updates the landing zone. It starts an asynchronous operation that updates the landing zone based on the new landing zone version, or on the changed parameters specified in the updated manifest file. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLandingZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateLandingZoneFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>The landing zone version. </p>
+    /// <p>The landing zone version, for example, 3.2.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.manifest(input);
         self
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_manifest(input);
         self
     }
-    /// <p>The manifest.yaml file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a> </p>
+    /// <p>The <code>manifest.yaml</code> file is a text file that describes your Amazon Web Services resources. For examples, review <a href="https://docs.aws.amazon.com/controltower/latest/userguide/the-manifest-file">The manifest file</a>.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_manifest()
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.landing_zone_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_landing_zone_identifier(input);
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_landing_zone_identifier()
     }

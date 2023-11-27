@@ -5,17 +5,17 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    /// <p>Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Unexpected error during processing of request.</p>
+    /// <p>An unexpected error occurred during processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Request references a resource which does not exist.</p>
+    /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Request would cause a service quota to be exceeded. The limit is 10 concurrent operations.</p>
+    /// <p>The request would cause a service quota to be exceeded. The limit is 10 concurrent operations.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>Request was denied due to request throttling.</p>
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -459,6 +459,40 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_enabled_control::UpdateEnabledControlError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_enabled_control::UpdateEnabledControlError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_enabled_control::UpdateEnabledControlError> for Error {
+    fn from(err: crate::operation::update_enabled_control::UpdateEnabledControlError) -> Self {
+        match err {
+            crate::operation::update_enabled_control::UpdateEnabledControlError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_enabled_control::UpdateEnabledControlError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_enabled_control::UpdateEnabledControlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_enabled_control::UpdateEnabledControlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_enabled_control::UpdateEnabledControlError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_enabled_control::UpdateEnabledControlError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_enabled_control::UpdateEnabledControlError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_enabled_control::UpdateEnabledControlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

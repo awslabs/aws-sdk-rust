@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`max_results(i32)`](crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder::set_max_results):<br>required: **false**<br><p>How many results to return per API call.</p><br>
     /// - On success, responds with [`ListEnabledControlsOutput`](crate::operation::list_enabled_controls::ListEnabledControlsOutput) with field(s):
     ///   - [`enabled_controls(Vec::<EnabledControlSummary>)`](crate::operation::list_enabled_controls::ListEnabledControlsOutput::enabled_controls): <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::list_enabled_controls::ListEnabledControlsOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::list_enabled_controls::ListEnabledControlsOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     /// - On failure, responds with [`SdkError<ListEnabledControlsError>`](crate::operation::list_enabled_controls::ListEnabledControlsError)
     pub fn list_enabled_controls(&self) -> crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder {
         crate::operation::list_enabled_controls::builders::ListEnabledControlsFluentBuilder::new(self.handle.clone())

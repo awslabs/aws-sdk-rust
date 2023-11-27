@@ -148,6 +148,8 @@ mod batch_enable_standards;
 
 mod batch_get_automation_rules;
 
+mod batch_get_configuration_policy_associations;
+
 mod batch_get_security_controls;
 
 mod batch_get_standards_control_associations;
@@ -163,6 +165,8 @@ mod batch_update_standards_control_associations;
 mod create_action_target;
 
 mod create_automation_rule;
+
+mod create_configuration_policy;
 
 mod create_finding_aggregator;
 
@@ -200,6 +204,8 @@ pub mod customize;
 mod decline_invitations;
 
 mod delete_action_target;
+
+mod delete_configuration_policy;
 
 mod delete_finding_aggregator;
 
@@ -241,6 +247,10 @@ mod enable_security_hub;
 
 mod get_administrator_account;
 
+mod get_configuration_policy;
+
+mod get_configuration_policy_association;
+
 mod get_enabled_standards;
 
 mod get_finding_aggregator;
@@ -265,6 +275,10 @@ mod invite_members;
 
 mod list_automation_rules;
 
+mod list_configuration_policies;
+
+mod list_configuration_policy_associations;
+
 mod list_enabled_products_for_import;
 
 mod list_finding_aggregators;
@@ -281,11 +295,17 @@ mod list_standards_control_associations;
 
 mod list_tags_for_resource;
 
+mod start_configuration_policy_association;
+
+mod start_configuration_policy_disassociation;
+
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_action_target;
+
+mod update_configuration_policy;
 
 mod update_finding_aggregator;
 

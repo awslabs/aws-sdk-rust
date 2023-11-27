@@ -8,7 +8,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
     /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
     /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
@@ -246,7 +246,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
     /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
     /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
@@ -647,7 +647,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
     /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
     /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
@@ -662,7 +662,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
     /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
     /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
@@ -677,7 +677,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to 15 read replicas, with the exception of Oracle and SQL Server, which can have up to five.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must be the identifier of an existing MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
+    /// <li> <p>Must be the identifier of an existing Db2, MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server DB instance.</p> </li>
     /// <li> <p>Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also specified.</p> </li>
     /// <li> <p>For the limitations of Oracle read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.limitations.html#oracle-read-replicas.limitations.versions-and-licenses">Version and licensing considerations for RDS for Oracle replicas</a> in the <i>Amazon RDS User Guide</i>.</p> </li>
     /// <li> <p>For the limitations of SQL Server read replicas, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.ReadReplicas.html#SQLServer.ReadReplicas.Limitations">Read replica limitations with SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> </li>

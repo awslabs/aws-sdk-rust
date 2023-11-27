@@ -4,9 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsInput {
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -32,9 +34,11 @@ pub struct DescribeOptionGroupOptionsInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupOptionsInput {
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -89,9 +93,11 @@ pub struct DescribeOptionGroupOptionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupOptionsInputBuilder {
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -109,9 +115,11 @@ impl DescribeOptionGroupOptionsInputBuilder {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -128,9 +136,11 @@ impl DescribeOptionGroupOptionsInputBuilder {
         self.engine_name = input;
         self
     }
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

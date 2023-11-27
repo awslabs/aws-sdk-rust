@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResetLandingZoneInput {
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResetLandingZoneInput {
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(&self) -> ::std::option::Option<&str> {
         self.landing_zone_identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct ResetLandingZoneInputBuilder {
     pub(crate) landing_zone_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ResetLandingZoneInputBuilder {
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     /// This field is required.
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.landing_zone_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.landing_zone_identifier = input;
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.landing_zone_identifier
     }

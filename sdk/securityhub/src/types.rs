@@ -9,6 +9,12 @@ pub use crate::types::_parameter_value::ParameterValue;
 
 pub use crate::types::_parameter_value_type::ParameterValueType;
 
+pub use crate::types::_organization_configuration::OrganizationConfiguration;
+
+pub use crate::types::_organization_configuration_status::OrganizationConfigurationStatus;
+
+pub use crate::types::_organization_configuration_configuration_type::OrganizationConfigurationConfigurationType;
+
 pub use crate::types::_auto_enable_standards::AutoEnableStandards;
 
 pub use crate::types::_aws_security_finding_filters::AwsSecurityFindingFilters;
@@ -38,6 +44,22 @@ pub use crate::types::_ip_filter::IpFilter;
 pub use crate::types::_record_state::RecordState;
 
 pub use crate::types::_note_update::NoteUpdate;
+
+pub use crate::types::_policy::Policy;
+
+pub use crate::types::_security_hub_policy::SecurityHubPolicy;
+
+pub use crate::types::_security_controls_configuration::SecurityControlsConfiguration;
+
+pub use crate::types::_security_control_custom_parameter::SecurityControlCustomParameter;
+
+pub use crate::types::_target::Target;
+
+pub use crate::types::_configuration_policy_association_status::ConfigurationPolicyAssociationStatus;
+
+pub use crate::types::_association_type::AssociationType;
+
+pub use crate::types::_target_type::TargetType;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummary;
 
@@ -80,6 +102,12 @@ pub use crate::types::_member::Member;
 pub use crate::types::_invitation::Invitation;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
+
+pub use crate::types::_configuration_policy_association_summary::ConfigurationPolicyAssociationSummary;
+
+pub use crate::types::_association_filters::AssociationFilters;
+
+pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummary;
 
 pub use crate::types::_automation_rules_metadata::AutomationRulesMetadata;
 
@@ -1369,6 +1397,10 @@ pub use crate::types::_security_control::SecurityControl;
 
 pub use crate::types::_update_status::UpdateStatus;
 
+pub use crate::types::_unprocessed_configuration_policy_association::UnprocessedConfigurationPolicyAssociation;
+
+pub use crate::types::_configuration_policy_association::ConfigurationPolicyAssociation;
+
 pub use crate::types::_automation_rules_config::AutomationRulesConfig;
 
 pub use crate::types::_standards_subscription_request::StandardsSubscriptionRequest;
@@ -1395,11 +1427,15 @@ mod _admin_status;
 
 mod _associated_standard;
 
+mod _association_filters;
+
 mod _association_set_details;
 
 mod _association_state_details;
 
 mod _association_status;
+
+mod _association_type;
 
 mod _auto_enable_standards;
 
@@ -2417,6 +2453,14 @@ mod _compliance_status;
 
 mod _configuration_options;
 
+mod _configuration_policy_association;
+
+mod _configuration_policy_association_status;
+
+mod _configuration_policy_association_summary;
+
+mod _configuration_policy_summary;
+
 mod _container_details;
 
 mod _control_finding_generator;
@@ -2535,6 +2579,12 @@ mod _number_filter;
 
 mod _occurrences;
 
+mod _organization_configuration;
+
+mod _organization_configuration_configuration_type;
+
+mod _organization_configuration_status;
+
 mod _page;
 
 mod _parameter_configuration;
@@ -2548,6 +2598,8 @@ mod _parameter_value_type;
 mod _partition;
 
 mod _patch_summary;
+
+mod _policy;
 
 mod _port_probe_action;
 
@@ -2627,11 +2679,17 @@ mod _rule_status;
 
 mod _security_control;
 
+mod _security_control_custom_parameter;
+
 mod _security_control_definition;
 
 mod _security_control_parameter;
 
 mod _security_control_property;
+
+mod _security_controls_configuration;
+
+mod _security_hub_policy;
 
 mod _sensitive_data_detections;
 
@@ -2691,6 +2749,10 @@ mod _string_filter_comparison;
 
 mod _string_list_configuration_options;
 
+mod _target;
+
+mod _target_type;
+
 mod _threat;
 
 mod _threat_intel_indicator;
@@ -2700,6 +2762,8 @@ mod _threat_intel_indicator_category;
 mod _threat_intel_indicator_type;
 
 mod _unprocessed_automation_rule;
+
+mod _unprocessed_configuration_policy_association;
 
 mod _unprocessed_error_code;
 

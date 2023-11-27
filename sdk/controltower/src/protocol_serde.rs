@@ -51,6 +51,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_enabled_control;
+
 pub(crate) mod shape_update_landing_zone;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -97,6 +99,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_enabled_control_input;
+
 pub(crate) mod shape_update_landing_zone_input;
 
 pub(crate) mod shape_validation_exception;
@@ -104,6 +108,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_control_operation;
 
 pub(crate) mod shape_enabled_control_details;
+
+pub(crate) mod shape_enabled_control_parameter;
 
 pub(crate) mod shape_enabled_controls;
 
@@ -117,6 +123,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_drift_status_summary;
 
+pub(crate) mod shape_enabled_control_parameter_summaries;
+
 pub(crate) mod shape_enabled_control_summary;
 
 pub(crate) mod shape_enablement_status_summary;
@@ -126,5 +134,7 @@ pub(crate) mod shape_landing_zone_drift_status_summary;
 pub(crate) mod shape_landing_zone_summary;
 
 pub(crate) mod shape_target_regions;
+
+pub(crate) mod shape_enabled_control_parameter_summary;
 
 pub(crate) mod shape_region;

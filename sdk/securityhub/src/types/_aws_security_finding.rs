@@ -107,6 +107,11 @@ pub struct AwsSecurityFinding {
     pub sample: ::std::option::Option<bool>,
     /// <p>Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives those findings. </p>
     pub generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
+    /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub processed_at: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    pub aws_account_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsSecurityFinding {
     /// <p>The schema version that a finding is formatted for.</p>
@@ -310,6 +315,15 @@ impl AwsSecurityFinding {
     pub fn generator_details(&self) -> ::std::option::Option<&crate::types::GeneratorDetails> {
         self.generator_details.as_ref()
     }
+    /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn processed_at(&self) -> ::std::option::Option<&str> {
+        self.processed_at.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    pub fn aws_account_name(&self) -> ::std::option::Option<&str> {
+        self.aws_account_name.as_deref()
+    }
 }
 impl AwsSecurityFinding {
     /// Creates a new builder-style object to manufacture [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
@@ -364,6 +378,8 @@ pub struct AwsSecurityFindingBuilder {
     pub(crate) finding_provider_fields: ::std::option::Option<crate::types::FindingProviderFields>,
     pub(crate) sample: ::std::option::Option<bool>,
     pub(crate) generator_details: ::std::option::Option<crate::types::GeneratorDetails>,
+    pub(crate) processed_at: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsSecurityFindingBuilder {
     /// <p>The schema version that a finding is formatted for.</p>
@@ -1088,6 +1104,37 @@ impl AwsSecurityFindingBuilder {
     pub fn get_generator_details(&self) -> &::std::option::Option<crate::types::GeneratorDetails> {
         &self.generator_details
     }
+    /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn processed_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.processed_at = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn set_processed_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.processed_at = input;
+        self
+    }
+    /// <p>An ISO8601-formatted timestamp that indicates when Security Hub received a finding and begins to process it.</p>
+    /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
+    pub fn get_processed_at(&self) -> &::std::option::Option<::std::string::String> {
+        &self.processed_at
+    }
+    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    pub fn aws_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_account_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    pub fn set_aws_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services account from which a finding was generated. </p>
+    pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_name
+    }
     /// Consumes the builder and constructs a [`AwsSecurityFinding`](crate::types::AwsSecurityFinding).
     pub fn build(self) -> crate::types::AwsSecurityFinding {
         crate::types::AwsSecurityFinding {
@@ -1133,6 +1180,8 @@ impl AwsSecurityFindingBuilder {
             finding_provider_fields: self.finding_provider_fields,
             sample: self.sample,
             generator_details: self.generator_details,
+            processed_at: self.processed_at,
+            aws_account_name: self.aws_account_name,
         }
     }
 }

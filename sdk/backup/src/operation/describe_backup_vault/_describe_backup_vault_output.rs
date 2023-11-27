@@ -13,7 +13,7 @@ pub struct DescribeBackupVaultOutput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a backup vault is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of recovery points that are stored in a backup vault.</p>
     pub number_of_recovery_points: i64,
@@ -52,7 +52,7 @@ impl DescribeBackupVaultOutput {
     pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
@@ -181,17 +181,17 @@ impl DescribeBackupVaultOutputBuilder {
     pub fn get_creation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn set_creator_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_request_id = input;
         self
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }

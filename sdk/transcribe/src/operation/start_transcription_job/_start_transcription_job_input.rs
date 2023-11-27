@@ -14,7 +14,7 @@ pub struct StartTranscriptionJobInput {
     /// </note>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Specify the format of your input media file.</p>
     pub media_format: ::std::option::Option<crate::types::MediaFormat>,
@@ -24,7 +24,7 @@ pub struct StartTranscriptionJobInput {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>If you do not specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub output_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Use in combination with <code>OutputBucketName</code> to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your transcription job (<code>TranscriptionJobName</code>).</p>
     /// <p>Here are some examples of how you can use <code>OutputKey</code>:</p>
@@ -49,7 +49,7 @@ pub struct StartTranscriptionJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ pub struct StartTranscriptionJobInput {
     /// <p>Makes it possible to control how your transcription job is processed. Currently, the only <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the <code>AllowDeferredExecution</code> sub-parameter.</p>
     /// <p>If you include <code>JobExecutionSettings</code> in your request, you must also include the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.</p>
     pub job_execution_settings: ::std::option::Option<crate::types::JobExecutionSettings>,
-    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub content_redaction: ::std::option::Option<crate::types::ContentRedaction>,
     /// <p>Enables automatic language identification in your transcription job request. Use this parameter if your media file contains only one language. If your media contains multiple languages, use <code>IdentifyMultipleLanguages</code> instead.</p>
     /// <p>If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you specify, which can improve transcription accuracy.</p>
@@ -112,7 +112,7 @@ impl StartTranscriptionJobInput {
         self.language_code.as_ref()
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub fn media_sample_rate_hertz(&self) -> ::std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -128,7 +128,7 @@ impl StartTranscriptionJobInput {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>If you do not specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn output_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_bucket_name.as_deref()
     }
@@ -157,7 +157,7 @@ impl StartTranscriptionJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -183,7 +183,7 @@ impl StartTranscriptionJobInput {
     pub fn job_execution_settings(&self) -> ::std::option::Option<&crate::types::JobExecutionSettings> {
         self.job_execution_settings.as_ref()
     }
-    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn content_redaction(&self) -> ::std::option::Option<&crate::types::ContentRedaction> {
         self.content_redaction.as_ref()
     }
@@ -319,19 +319,19 @@ impl StartTranscriptionJobInputBuilder {
         &self.language_code
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.</p>
     pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
         &self.media_sample_rate_hertz
     }
@@ -368,7 +368,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>If you do not specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn output_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_bucket_name = ::std::option::Option::Some(input.into());
         self
@@ -377,7 +377,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>If you do not specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn set_output_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_bucket_name = input;
         self
@@ -386,7 +386,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
     /// <p>For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code> to <code>test-files/</code>.</p>
     /// <p>Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-    /// <p>If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>If you do not specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn get_output_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_bucket_name
     }
@@ -441,7 +441,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -461,7 +461,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -481,7 +481,7 @@ impl StartTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -568,17 +568,17 @@ impl StartTranscriptionJobInputBuilder {
     pub fn get_job_execution_settings(&self) -> &::std::option::Option<crate::types::JobExecutionSettings> {
         &self.job_execution_settings
     }
-    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn content_redaction(mut self, input: crate::types::ContentRedaction) -> Self {
         self.content_redaction = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn set_content_redaction(mut self, input: ::std::option::Option<crate::types::ContentRedaction>) -> Self {
         self.content_redaction = input;
         self
     }
-    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
+    /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.</p>
     pub fn get_content_redaction(&self) -> &::std::option::Option<crate::types::ContentRedaction> {
         &self.content_redaction
     }

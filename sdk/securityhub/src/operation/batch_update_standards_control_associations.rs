@@ -256,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchUpdateSt
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchUpdateStandardsControlAssociationsError {
+    /// <p>You don't have permission to perform the action specified in the request.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::types::error::InternalException),
     /// <p>The account doesn't have permission to perform this action.</p>
@@ -297,12 +299,17 @@ impl BatchUpdateStandardsControlAssociationsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAccessException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `BatchUpdateStandardsControlAssociationsError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdateStandardsControlAssociationsError::InternalException`.
     pub fn is_internal_exception(&self) -> bool {
@@ -324,6 +331,7 @@ impl BatchUpdateStandardsControlAssociationsError {
 impl ::std::error::Error for BatchUpdateStandardsControlAssociationsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAccessException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
@@ -335,6 +343,7 @@ impl ::std::error::Error for BatchUpdateStandardsControlAssociationsError {
 impl ::std::fmt::Display for BatchUpdateStandardsControlAssociationsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
             Self::InvalidAccessException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
@@ -360,6 +369,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for BatchUpdateStandardsControl
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchUpdateStandardsControlAssociationsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAccessException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

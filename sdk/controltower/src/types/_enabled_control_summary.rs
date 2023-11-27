@@ -8,7 +8,7 @@ pub struct EnabledControlSummary {
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the enabled control.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p> The ARN of the organizational unit. </p>
+    /// <p>The ARN of the organizational unit.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the status of the enabled control.</p>
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
@@ -24,7 +24,7 @@ impl EnabledControlSummary {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p> The ARN of the organizational unit. </p>
+    /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(&self) -> ::std::option::Option<&str> {
         self.target_identifier.as_deref()
     }
@@ -83,17 +83,17 @@ impl EnabledControlSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p> The ARN of the organizational unit. </p>
+    /// <p>The ARN of the organizational unit.</p>
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The ARN of the organizational unit. </p>
+    /// <p>The ARN of the organizational unit.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_identifier = input;
         self
     }
-    /// <p> The ARN of the organizational unit. </p>
+    /// <p>The ARN of the organizational unit.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_identifier
     }

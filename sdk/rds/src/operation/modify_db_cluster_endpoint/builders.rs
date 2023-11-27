@@ -23,7 +23,7 @@ impl ModifyDbClusterEndpointInputBuilder {
 /// Fluent builder constructing a request to `ModifyDBClusterEndpoint`.
 ///
 /// <p>Modifies the properties of an endpoint in an Amazon Aurora DB cluster.</p> <note>
-/// <p>This action only applies to Aurora DB clusters.</p>
+/// <p>This operation only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBClusterEndpointFluentBuilder {

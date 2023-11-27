@@ -22,7 +22,7 @@ impl ResetLandingZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `ResetLandingZone`.
 ///
-/// <p>This API call resets a landing zone. It starts an asynchronous operation that resets the landing zone to the parameters specified in its original configuration. </p>
+/// <p>This API call resets a landing zone. It starts an asynchronous operation that resets the landing zone to the parameters specified in its original configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetLandingZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ResetLandingZoneFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.landing_zone_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_landing_zone_identifier(input);
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_landing_zone_identifier()
     }

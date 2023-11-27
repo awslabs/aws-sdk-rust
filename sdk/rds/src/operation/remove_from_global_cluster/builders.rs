@@ -23,7 +23,7 @@ impl RemoveFromGlobalClusterInputBuilder {
 /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
 ///
 /// <p>Detaches an Aurora secondary cluster from an Aurora global database cluster. The cluster becomes a standalone cluster with read-write capability instead of being read-only and receiving data from a primary cluster in a different Region.</p> <note>
-/// <p>This action only applies to Aurora DB clusters.</p>
+/// <p>This operation only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterFluentBuilder {

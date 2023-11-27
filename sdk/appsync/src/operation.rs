@@ -85,6 +85,9 @@ pub mod get_api_cache;
 /// Types for the `GetDataSource` operation.
 pub mod get_data_source;
 
+/// Types for the `GetDataSourceIntrospection` operation.
+pub mod get_data_source_introspection;
+
 /// Types for the `GetDomainName` operation.
 pub mod get_domain_name;
 
@@ -141,6 +144,9 @@ pub mod list_types;
 
 /// Types for the `ListTypesByAssociation` operation.
 pub mod list_types_by_association;
+
+/// Types for the `StartDataSourceIntrospection` operation.
+pub mod start_data_source_introspection;
 
 /// Types for the `StartSchemaCreation` operation.
 pub mod start_schema_creation;

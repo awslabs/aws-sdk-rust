@@ -4,12 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -23,16 +25,16 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
-    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    /// <p>A filter to include only the available options for the specified engine version.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
-    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    /// <p>A filter to include only the available options for the specified DB instance class.</p>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>A filter to include only the available options for the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available options in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub availability_zone_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.</p>
     /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.</p>
@@ -47,12 +49,14 @@ pub struct DescribeOrderableDbInstanceOptionsInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInput {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -68,22 +72,22 @@ impl DescribeOrderableDbInstanceOptionsInput {
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
-    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    /// <p>A filter to include only the available options for the specified engine version.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    /// <p>A filter to include only the available options for the specified DB instance class.</p>
     pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>A filter to include only the available options for the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available options in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn availability_zone_group(&self) -> ::std::option::Option<&str> {
         self.availability_zone_group.as_deref()
     }
@@ -131,12 +135,14 @@ pub struct DescribeOrderableDbInstanceOptionsInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsInputBuilder {
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -154,12 +160,14 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -176,12 +184,14 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
         self.engine = input;
         self
     }
-    /// <p>The name of the engine to retrieve DB instance options for.</p>
+    /// <p>The name of the engine to describe DB instance options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
     /// <li> <p> <code>aurora-mysql</code> </p> </li>
     /// <li> <p> <code>aurora-postgresql</code> </p> </li>
     /// <li> <p> <code>custom-oracle-ee</code> </p> </li>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -197,68 +207,68 @@ impl DescribeOrderableDbInstanceOptionsInputBuilder {
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }
-    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    /// <p>A filter to include only the available options for the specified engine version.</p>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    /// <p>A filter to include only the available options for the specified engine version.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    /// <p>A filter to include only the available options for the specified engine version.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
-    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    /// <p>A filter to include only the available options for the specified DB instance class.</p>
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    /// <p>A filter to include only the available options for the specified DB instance class.</p>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
         self
     }
-    /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    /// <p>A filter to include only the available options for the specified DB instance class.</p>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_class
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>A filter to include only the available options for the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>A filter to include only the available options for the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
         self
     }
-    /// <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    /// <p>A filter to include only the available options for the specified license model.</p>
     /// <p>RDS Custom supports only the BYOL licensing model.</p>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available options in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn availability_zone_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available options in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn set_availability_zone_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_group = input;
         self
     }
-    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
-    /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
-    /// <p>This setting doesn't apply to RDS Custom.</p>
+    /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.</p>
+    /// <p>Omit this parameter to show the available options in the specified Amazon Web Services Region.</p>
+    /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn get_availability_zone_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_group
     }

@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLandingZonesOutput {
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone.</p>
     pub landing_zones: ::std::vec::Vec<crate::types::LandingZoneSummary>,
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListLandingZonesOutput {
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone.</p>
     pub fn landing_zones(&self) -> &[crate::types::LandingZoneSummary] {
         use std::ops::Deref;
         self.landing_zones.deref()
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListLandingZonesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_landing_zones`](Self::set_landing_zones).
     ///
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone.</p>
     pub fn landing_zones(mut self, input: crate::types::LandingZoneSummary) -> Self {
         let mut v = self.landing_zones.unwrap_or_default();
         v.push(input);
         self.landing_zones = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone.</p>
     pub fn set_landing_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>>) -> Self {
         self.landing_zones = input;
         self
     }
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone.</p>
     pub fn get_landing_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LandingZoneSummary>> {
         &self.landing_zones
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results. </p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

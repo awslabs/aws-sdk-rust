@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLandingZoneOutput {
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone resource.</p>
     pub arn: ::std::string::String,
-    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status. </p>
+    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub operation_identifier: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateLandingZoneOutput {
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone resource.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status. </p>
+    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn operation_identifier(&self) -> &str {
         use std::ops::Deref;
         self.operation_identifier.deref()
@@ -42,33 +42,33 @@ pub struct CreateLandingZoneOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateLandingZoneOutputBuilder {
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone resource.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone resource.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the landing zone. </p>
+    /// <p>The ARN of the landing zone resource.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status. </p>
+    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     /// This field is required.
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status. </p>
+    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_identifier = input;
         self
     }
-    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status. </p>
+    /// <p>A unique identifier assigned to a <code>CreateLandingZone</code> operation. You can use this identifier as an input of <code>GetLandingZoneOperation</code> to check the operation's status.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_identifier
     }

@@ -14,7 +14,7 @@ pub struct GetMedicalVocabularyOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom medical vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    /// <p>The Amazon S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub download_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -40,7 +40,7 @@ impl GetMedicalVocabularyOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    /// <p>The Amazon S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub fn download_uri(&self) -> ::std::option::Option<&str> {
         self.download_uri.as_deref()
     }
@@ -143,17 +143,17 @@ impl GetMedicalVocabularyOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    /// <p>The Amazon S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub fn download_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.download_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    /// <p>The Amazon S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub fn set_download_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_uri = input;
         self
     }
-    /// <p>The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
+    /// <p>The Amazon S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub fn get_download_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.download_uri
     }

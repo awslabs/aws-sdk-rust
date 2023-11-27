@@ -45,6 +45,14 @@ pub use crate::types::_medical_transcription_setting::MedicalTranscriptionSettin
 
 pub use crate::types::_medical_transcript::MedicalTranscriptBuilder;
 
+pub use crate::types::_medical_scribe_job::MedicalScribeJobBuilder;
+
+pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinitionBuilder;
+
+pub use crate::types::_medical_scribe_settings::MedicalScribeSettingsBuilder;
+
+pub use crate::types::_medical_scribe_output::MedicalScribeOutputBuilder;
+
 pub use crate::types::_call_analytics_job::CallAnalyticsJobBuilder;
 
 pub use crate::types::_channel_definition::ChannelDefinitionBuilder;
@@ -60,6 +68,8 @@ pub use crate::types::_vocabulary_info::VocabularyInfoBuilder;
 pub use crate::types::_transcription_job_summary::TranscriptionJobSummaryBuilder;
 
 pub use crate::types::_medical_transcription_job_summary::MedicalTranscriptionJobSummaryBuilder;
+
+pub use crate::types::_medical_scribe_job_summary::MedicalScribeJobSummaryBuilder;
 
 pub use crate::types::_language_model::LanguageModelBuilder;
 

@@ -15,6 +15,8 @@ pub use crate::types::_landing_zone_drift_status::LandingZoneDriftStatus;
 
 pub use crate::types::_landing_zone_status::LandingZoneStatus;
 
+pub use crate::types::_enabled_control_parameter::EnabledControlParameter;
+
 pub use crate::types::_enabled_control_summary::EnabledControlSummary;
 
 pub use crate::types::_drift_status_summary::DriftStatusSummary;
@@ -26,6 +28,8 @@ pub use crate::types::_enablement_status_summary::EnablementStatusSummary;
 pub use crate::types::_enablement_status::EnablementStatus;
 
 pub use crate::types::_enabled_control_details::EnabledControlDetails;
+
+pub use crate::types::_enabled_control_parameter_summary::EnabledControlParameterSummary;
 
 pub use crate::types::_region::Region;
 
@@ -46,6 +50,10 @@ mod _drift_status;
 mod _drift_status_summary;
 
 mod _enabled_control_details;
+
+mod _enabled_control_parameter;
+
+mod _enabled_control_parameter_summary;
 
 mod _enabled_control_summary;
 

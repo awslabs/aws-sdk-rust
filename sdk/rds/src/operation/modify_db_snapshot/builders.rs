@@ -23,7 +23,7 @@ impl ModifyDbSnapshotInputBuilder {
 /// Fluent builder constructing a request to `ModifyDBSnapshot`.
 ///
 /// <p>Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted or unencrypted, but not shared or public. </p>
-/// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't apply to RDS Custom.</p>
+/// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This operation doesn't apply to RDS Custom or RDS for Db2.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

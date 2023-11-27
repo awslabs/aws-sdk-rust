@@ -39,6 +39,10 @@ pub(crate) mod shape_create_logically_air_gapped_backup_vault;
 
 pub(crate) mod shape_create_report_plan;
 
+pub(crate) mod shape_create_restore_testing_plan;
+
+pub(crate) mod shape_create_restore_testing_selection;
+
 pub(crate) mod shape_delete_backup_plan;
 
 pub(crate) mod shape_delete_backup_selection;
@@ -56,6 +60,10 @@ pub(crate) mod shape_delete_framework;
 pub(crate) mod shape_delete_recovery_point;
 
 pub(crate) mod shape_delete_report_plan;
+
+pub(crate) mod shape_delete_restore_testing_plan;
+
+pub(crate) mod shape_delete_restore_testing_selection;
 
 pub(crate) mod shape_describe_backup_job;
 
@@ -101,6 +109,14 @@ pub(crate) mod shape_get_legal_hold;
 
 pub(crate) mod shape_get_recovery_point_restore_metadata;
 
+pub(crate) mod shape_get_restore_job_metadata;
+
+pub(crate) mod shape_get_restore_testing_inferred_metadata;
+
+pub(crate) mod shape_get_restore_testing_plan;
+
+pub(crate) mod shape_get_restore_testing_selection;
+
 pub(crate) mod shape_get_supported_resource_types;
 
 pub(crate) mod shape_list_backup_job_summaries;
@@ -143,6 +159,12 @@ pub(crate) mod shape_list_restore_job_summaries;
 
 pub(crate) mod shape_list_restore_jobs;
 
+pub(crate) mod shape_list_restore_jobs_by_protected_resource;
+
+pub(crate) mod shape_list_restore_testing_plans;
+
+pub(crate) mod shape_list_restore_testing_selections;
+
 pub(crate) mod shape_list_tags;
 
 pub(crate) mod shape_put_backup_vault_access_policy;
@@ -150,6 +172,8 @@ pub(crate) mod shape_put_backup_vault_access_policy;
 pub(crate) mod shape_put_backup_vault_lock_configuration;
 
 pub(crate) mod shape_put_backup_vault_notifications;
+
+pub(crate) mod shape_put_restore_validation_result;
 
 pub(crate) mod shape_start_backup_job;
 
@@ -177,6 +201,10 @@ pub(crate) mod shape_update_region_settings;
 
 pub(crate) mod shape_update_report_plan;
 
+pub(crate) mod shape_update_restore_testing_plan;
+
+pub(crate) mod shape_update_restore_testing_selection;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -203,6 +231,10 @@ pub(crate) mod shape_create_logically_air_gapped_backup_vault_input;
 
 pub(crate) mod shape_create_report_plan_input;
 
+pub(crate) mod shape_create_restore_testing_plan_input;
+
+pub(crate) mod shape_create_restore_testing_selection_input;
+
 pub(crate) mod shape_dependency_failure_exception;
 
 pub(crate) mod shape_get_backup_plan_from_json_input;
@@ -222,6 +254,8 @@ pub(crate) mod shape_put_backup_vault_access_policy_input;
 pub(crate) mod shape_put_backup_vault_lock_configuration_input;
 
 pub(crate) mod shape_put_backup_vault_notifications_input;
+
+pub(crate) mod shape_put_restore_validation_result_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -250,6 +284,10 @@ pub(crate) mod shape_update_recovery_point_lifecycle_input;
 pub(crate) mod shape_update_region_settings_input;
 
 pub(crate) mod shape_update_report_plan_input;
+
+pub(crate) mod shape_update_restore_testing_plan_input;
+
+pub(crate) mod shape_update_restore_testing_selection_input;
 
 pub(crate) mod shape_advanced_backup_settings;
 
@@ -331,9 +369,29 @@ pub(crate) mod shape_resource_type_opt_in_preference;
 
 pub(crate) mod shape_resource_types;
 
+pub(crate) mod shape_restore_job_creator;
+
 pub(crate) mod shape_restore_job_summary_list;
 
 pub(crate) mod shape_restore_jobs_list;
+
+pub(crate) mod shape_restore_testing_plan_for_create;
+
+pub(crate) mod shape_restore_testing_plan_for_get;
+
+pub(crate) mod shape_restore_testing_plan_for_update;
+
+pub(crate) mod shape_restore_testing_plans;
+
+pub(crate) mod shape_restore_testing_selection_for_create;
+
+pub(crate) mod shape_restore_testing_selection_for_get;
+
+pub(crate) mod shape_restore_testing_selection_for_update;
+
+pub(crate) mod shape_restore_testing_selections;
+
+pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tags;
 
@@ -377,6 +435,8 @@ pub(crate) mod shape_list_of_tags;
 
 pub(crate) mod shape_protected_resource;
 
+pub(crate) mod shape_protected_resource_conditions;
+
 pub(crate) mod shape_recovery_point_by_backup_vault;
 
 pub(crate) mod shape_recovery_point_by_resource;
@@ -393,6 +453,16 @@ pub(crate) mod shape_restore_job_summary;
 
 pub(crate) mod shape_restore_jobs_list_member;
 
+pub(crate) mod shape_restore_testing_plan_for_list;
+
+pub(crate) mod shape_restore_testing_recovery_point_selection;
+
+pub(crate) mod shape_restore_testing_selection_for_list;
+
+pub(crate) mod shape_sensitive_string_map;
+
+pub(crate) mod shape_string_list;
+
 pub(crate) mod shape_vault_names;
 
 pub(crate) mod shape_backup_rule;
@@ -407,12 +477,14 @@ pub(crate) mod shape_copy_action;
 
 pub(crate) mod shape_format_list;
 
-pub(crate) mod shape_string_list;
+pub(crate) mod shape_key_value;
+
+pub(crate) mod shape_key_value_list;
+
+pub(crate) mod shape_restore_testing_recovery_point_type_list;
 
 pub(crate) mod shape_compliance_resource_id_list;
 
 pub(crate) mod shape_copy_actions;
 
 pub(crate) mod shape_resource_type_list;
-
-pub(crate) mod shape_string_map;

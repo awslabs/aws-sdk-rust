@@ -81,6 +81,20 @@ pub use crate::types::_medical_transcription_setting::MedicalTranscriptionSettin
 
 pub use crate::types::_medical_transcript::MedicalTranscript;
 
+pub use crate::types::_medical_scribe_job::MedicalScribeJob;
+
+pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinition;
+
+pub use crate::types::_medical_scribe_participant_role::MedicalScribeParticipantRole;
+
+pub use crate::types::_medical_scribe_settings::MedicalScribeSettings;
+
+pub use crate::types::_medical_scribe_output::MedicalScribeOutput;
+
+pub use crate::types::_medical_scribe_language_code::MedicalScribeLanguageCode;
+
+pub use crate::types::_medical_scribe_job_status::MedicalScribeJobStatus;
+
 pub use crate::types::_call_analytics_job::CallAnalyticsJob;
 
 pub use crate::types::_channel_definition::ChannelDefinition;
@@ -100,6 +114,8 @@ pub use crate::types::_transcription_job_summary::TranscriptionJobSummary;
 pub use crate::types::_output_location_type::OutputLocationType;
 
 pub use crate::types::_medical_transcription_job_summary::MedicalTranscriptionJobSummary;
+
+pub use crate::types::_medical_scribe_job_summary::MedicalScribeJobSummary;
 
 pub use crate::types::_language_model::LanguageModel;
 
@@ -154,6 +170,22 @@ mod _media;
 mod _media_format;
 
 mod _medical_content_identification_type;
+
+mod _medical_scribe_channel_definition;
+
+mod _medical_scribe_job;
+
+mod _medical_scribe_job_status;
+
+mod _medical_scribe_job_summary;
+
+mod _medical_scribe_language_code;
+
+mod _medical_scribe_output;
+
+mod _medical_scribe_participant_role;
+
+mod _medical_scribe_settings;
 
 mod _medical_transcript;
 

@@ -24,7 +24,7 @@ pub struct LanguageModel {
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub language_code: ::std::option::Option<crate::types::ClmLanguageCode>,
     /// <p>The Amazon Transcribe standard language model, or base model, used to create your custom language model.</p>
     pub base_model_name: ::std::option::Option<crate::types::BaseModelName>,
@@ -57,7 +57,7 @@ impl LanguageModel {
         self.last_modified_time.as_ref()
     }
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::ClmLanguageCode> {
         self.language_code.as_ref()
     }
@@ -159,19 +159,19 @@ impl LanguageModelBuilder {
         &self.last_modified_time
     }
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn language_code(mut self, input: crate::types::ClmLanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::ClmLanguageCode>) -> Self {
         self.language_code = input;
         self
     }
     /// <p>The language code used to create your custom language model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.</p>
-    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
+    /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::ClmLanguageCode> {
         &self.language_code
     }

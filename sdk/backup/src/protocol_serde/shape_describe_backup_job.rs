@@ -218,6 +218,12 @@ pub(crate) fn de_describe_backup_job(
                             .transpose()?,
                     );
                 }
+                "InitiationDate" => {
+                    builder = builder.set_initiation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "IsParent" => {
                     builder = builder.set_is_parent(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

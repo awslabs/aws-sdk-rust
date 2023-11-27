@@ -14,9 +14,9 @@ pub struct StandardsControlAssociationSummary {
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p> The requirement that underlies this control in the compliance framework related to the standard. </p>
     pub related_requirements: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
+    /// <p>The last time that a control's enablement status in a specified standard was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p> The reason for updating the control's enablement status in a specified standard. </p>
+    /// <p>The reason for updating a control's enablement status in a specified standard.</p>
     pub updated_reason: ::std::option::Option<::std::string::String>,
     /// <p> The title of a control. </p>
     pub standards_control_title: ::std::option::Option<::std::string::String>,
@@ -46,11 +46,11 @@ impl StandardsControlAssociationSummary {
     pub fn related_requirements(&self) -> &[::std::string::String] {
         self.related_requirements.as_deref().unwrap_or_default()
     }
-    /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
+    /// <p>The last time that a control's enablement status in a specified standard was updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p> The reason for updating the control's enablement status in a specified standard. </p>
+    /// <p>The reason for updating a control's enablement status in a specified standard.</p>
     pub fn updated_reason(&self) -> ::std::option::Option<&str> {
         self.updated_reason.as_deref()
     }
@@ -165,31 +165,31 @@ impl StandardsControlAssociationSummaryBuilder {
     pub fn get_related_requirements(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.related_requirements
     }
-    /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
+    /// <p>The last time that a control's enablement status in a specified standard was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
+    /// <p>The last time that a control's enablement status in a specified standard was updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p> The last time that a control's enablement status in a specified standard was updated. </p>
+    /// <p>The last time that a control's enablement status in a specified standard was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p> The reason for updating the control's enablement status in a specified standard. </p>
+    /// <p>The reason for updating a control's enablement status in a specified standard.</p>
     pub fn updated_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.updated_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The reason for updating the control's enablement status in a specified standard. </p>
+    /// <p>The reason for updating a control's enablement status in a specified standard.</p>
     pub fn set_updated_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_reason = input;
         self
     }
-    /// <p> The reason for updating the control's enablement status in a specified standard. </p>
+    /// <p>The reason for updating a control's enablement status in a specified standard.</p>
     pub fn get_updated_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_reason
     }

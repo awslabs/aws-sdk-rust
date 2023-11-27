@@ -28,6 +28,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "OptInToArchiveForSupportedResources" => {
+                            builder = builder.set_opt_in_to_archive_for_supported_resources(
+                                ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -61,6 +66,9 @@ pub fn ser_lifecycle(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
+    }
+    if let Some(var_3) = &input.opt_in_to_archive_for_supported_resources {
+        object.key("OptInToArchiveForSupportedResources").boolean(*var_3);
     }
     Ok(())
 }

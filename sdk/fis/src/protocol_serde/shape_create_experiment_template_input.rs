@@ -25,58 +25,67 @@ pub fn ser_create_experiment_template_input_input(
     if let Some(var_7) = &input.description {
         object.key("description").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.log_configuration {
+    if let Some(var_8) = &input.experiment_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_create_experiment_template_log_configuration_input::ser_create_experiment_template_log_configuration_input(
+        let mut object_9 = object.key("experimentOptions").start_object();
+        crate::protocol_serde::shape_create_experiment_template_experiment_options_input::ser_create_experiment_template_experiment_options_input(
             &mut object_9,
             var_8,
         )?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.role_arn {
-        object.key("roleArn").string(var_10.as_str());
+    if let Some(var_10) = &input.log_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("logConfiguration").start_object();
+        crate::protocol_serde::shape_create_experiment_template_log_configuration_input::ser_create_experiment_template_log_configuration_input(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.stop_conditions {
-        let mut array_12 = object.key("stopConditions").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.role_arn {
+        object.key("roleArn").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.stop_conditions {
+        let mut array_14 = object.key("stopConditions").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
+                let mut object_16 = array_14.value().start_object();
                 crate::protocol_serde::shape_create_experiment_template_stop_condition_input::ser_create_experiment_template_stop_condition_input(
-                    &mut object_14,
-                    item_13,
+                    &mut object_16,
+                    item_15,
                 )?;
-                object_14.finish();
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_16.finish();
+        object_18.finish();
     }
-    if let Some(var_19) = &input.targets {
+    if let Some(var_21) = &input.targets {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("targets").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_22 = object.key("targets").start_object();
+        for (key_23, value_24) in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = object_20.key(key_21.as_str()).start_object();
+                let mut object_25 = object_22.key(key_23.as_str()).start_object();
                 crate::protocol_serde::shape_create_experiment_template_target_input::ser_create_experiment_template_target_input(
-                    &mut object_23,
-                    value_22,
+                    &mut object_25,
+                    value_24,
                 )?;
-                object_23.finish();
+                object_25.finish();
             }
         }
-        object_20.finish();
+        object_22.finish();
     }
     Ok(())
 }

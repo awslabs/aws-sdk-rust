@@ -79,6 +79,8 @@ pub(crate) mod shape_get_api_cache;
 
 pub(crate) mod shape_get_data_source;
 
+pub(crate) mod shape_get_data_source_introspection;
+
 pub(crate) mod shape_get_domain_name;
 
 pub(crate) mod shape_get_function;
@@ -116,6 +118,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_types;
 
 pub(crate) mod shape_list_types_by_association;
+
+pub(crate) mod shape_start_data_source_introspection;
 
 pub(crate) mod shape_start_schema_creation;
 
@@ -199,6 +203,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_start_data_source_introspection_input;
+
 pub(crate) mod shape_start_schema_creation_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -241,6 +247,8 @@ pub(crate) mod shape_caching_config;
 
 pub(crate) mod shape_data_source;
 
+pub(crate) mod shape_data_source_introspection_result;
+
 pub(crate) mod shape_data_sources;
 
 pub(crate) mod shape_domain_name_config;
@@ -281,6 +289,8 @@ pub(crate) mod shape_open_search_service_data_source_config;
 
 pub(crate) mod shape_pipeline_config;
 
+pub(crate) mod shape_rds_data_api_config;
+
 pub(crate) mod shape_relational_database_data_source_config;
 
 pub(crate) mod shape_resolver;
@@ -311,6 +321,8 @@ pub(crate) mod shape_code_errors;
 
 pub(crate) mod shape_cognito_user_pool_config;
 
+pub(crate) mod shape_data_source_introspection_models;
+
 pub(crate) mod shape_delta_sync_config;
 
 pub(crate) mod shape_lambda_conflict_handler_config;
@@ -327,6 +339,22 @@ pub(crate) mod shape_caching_keys;
 
 pub(crate) mod shape_code_error;
 
+pub(crate) mod shape_data_source_introspection_model;
+
 pub(crate) mod shape_functions_ids;
 
 pub(crate) mod shape_code_error_location;
+
+pub(crate) mod shape_data_source_introspection_model_fields;
+
+pub(crate) mod shape_data_source_introspection_model_index;
+
+pub(crate) mod shape_data_source_introspection_model_indexes;
+
+pub(crate) mod shape_data_source_introspection_model_field;
+
+pub(crate) mod shape_data_source_introspection_model_index_fields;
+
+pub(crate) mod shape_data_source_introspection_model_field_type;
+
+pub(crate) mod shape_data_source_introspection_model_field_type_values;

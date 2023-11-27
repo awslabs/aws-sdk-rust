@@ -15,8 +15,8 @@ pub struct StartCallAnalyticsJobInput {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
-    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub output_location: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key you want to use to encrypt your Call Analytics output.</p>
     /// <p>If using a key located in the <b>current</b> Amazon Web Services account, you can specify your KMS key in one of four ways:</p>
@@ -31,7 +31,7 @@ pub struct StartCallAnalyticsJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -61,8 +61,8 @@ impl StartCallAnalyticsJobInput {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
-    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn output_location(&self) -> ::std::option::Option<&str> {
         self.output_location.as_deref()
     }
@@ -79,7 +79,7 @@ impl StartCallAnalyticsJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -162,8 +162,8 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
-    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn output_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_location = ::std::option::Option::Some(input.into());
         self
@@ -175,8 +175,8 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
-    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn set_output_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_location = input;
         self
@@ -188,8 +188,8 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>s3://DOC-EXAMPLE-BUCKET/my-output-folder/my-call-analytics-job.json</p> </li>
     /// </ol>
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
-    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
-    /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
+    /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
+    /// <p>If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
     pub fn get_output_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_location
     }
@@ -206,7 +206,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -226,7 +226,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -246,7 +246,7 @@ impl StartCallAnalyticsJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

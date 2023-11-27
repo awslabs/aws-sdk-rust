@@ -191,4 +191,6 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_enabled_control;
+
 mod update_landing_zone;

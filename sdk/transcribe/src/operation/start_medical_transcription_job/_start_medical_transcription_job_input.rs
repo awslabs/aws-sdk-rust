@@ -9,12 +9,12 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <p>The language code that represents the language spoken in the input media file. US English (<code>en-US</code>) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a <code>BadRequestException</code> error.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>Specify the format of your input media file.</p>
     pub media_format: ::std::option::Option<crate::types::MediaFormat>,
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
-    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub media: ::std::option::Option<crate::types::Media>,
     /// <p>The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the <code>S3://</code> prefix of the specified bucket.</p>
     /// <p>If you want your output to go to a sub-folder of this bucket, specify it using the <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name of a bucket.</p>
@@ -44,7 +44,7 @@ pub struct StartMedicalTranscriptionJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub output_encryption_kms_key_id: ::std::option::Option<::std::string::String>,
@@ -74,7 +74,7 @@ impl StartMedicalTranscriptionJobInput {
         self.language_code.as_ref()
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub fn media_sample_rate_hertz(&self) -> ::std::option::Option<i32> {
         self.media_sample_rate_hertz
     }
@@ -83,7 +83,7 @@ impl StartMedicalTranscriptionJobInput {
         self.media_format.as_ref()
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
-    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn media(&self) -> ::std::option::Option<&crate::types::Media> {
         self.media.as_ref()
     }
@@ -119,7 +119,7 @@ impl StartMedicalTranscriptionJobInput {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -215,19 +215,19 @@ impl StartMedicalTranscriptionJobInputBuilder {
         &self.language_code
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
         self.media_sample_rate_hertz = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.media_sample_rate_hertz = input;
         self
     }
     /// <p>The sample rate, in hertz, of the audio track in your input media file.</p>
-    /// <p>If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
+    /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.</p>
     pub fn get_media_sample_rate_hertz(&self) -> &::std::option::Option<i32> {
         &self.media_sample_rate_hertz
     }
@@ -246,20 +246,20 @@ impl StartMedicalTranscriptionJobInputBuilder {
         &self.media_format
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
-    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     /// This field is required.
     pub fn media(mut self, input: crate::types::Media) -> Self {
         self.media = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
-    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.media = input;
         self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your request.</p>
-    /// <p>For information on supported media formats, refer to the <a href="https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat">MediaFormat</a> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
+    /// <p>For information on supported media formats, refer to the <code>MediaFormat</code> parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in the Amazon S3 Developer Guide.</p>
     pub fn get_media(&self) -> &::std::option::Option<crate::types::Media> {
         &self.media
     }
@@ -338,7 +338,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn output_encryption_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -358,7 +358,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -378,7 +378,7 @@ impl StartMedicalTranscriptionJobInputBuilder {
     /// <li> <p>Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li>
     /// <li> <p>Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li>
     /// </ol>
-    /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
+    /// <p>If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn get_output_encryption_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

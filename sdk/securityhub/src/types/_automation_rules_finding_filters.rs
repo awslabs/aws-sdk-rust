@@ -7,7 +7,7 @@ pub struct AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub aws_account_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p> The product-specific identifier for a finding. </p>
@@ -113,6 +113,15 @@ pub struct AutomationRulesFindingFilters {
     /// <p> A list of user-defined name and value string pairs added to a finding. </p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
     pub user_defined_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub resource_application_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p> The name of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub resource_application_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    /// <p>The name of the Amazon Web Services account in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AutomationRulesFindingFilters {
     /// <p> The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub. </p>
@@ -122,7 +131,7 @@ impl AutomationRulesFindingFilters {
     pub fn product_arn(&self) -> &[crate::types::StringFilter] {
         self.product_arn.as_deref().unwrap_or_default()
     }
-    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_id.is_none()`.
@@ -364,6 +373,27 @@ impl AutomationRulesFindingFilters {
     pub fn user_defined_fields(&self) -> &[crate::types::MapFilter] {
         self.user_defined_fields.as_deref().unwrap_or_default()
     }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_application_arn.is_none()`.
+    pub fn resource_application_arn(&self) -> &[crate::types::StringFilter] {
+        self.resource_application_arn.as_deref().unwrap_or_default()
+    }
+    /// <p> The name of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_application_name.is_none()`.
+    pub fn resource_application_name(&self) -> &[crate::types::StringFilter] {
+        self.resource_application_name.as_deref().unwrap_or_default()
+    }
+    /// <p>The name of the Amazon Web Services account in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_name.is_none()`.
+    pub fn aws_account_name(&self) -> &[crate::types::StringFilter] {
+        self.aws_account_name.as_deref().unwrap_or_default()
+    }
 }
 impl AutomationRulesFindingFilters {
     /// Creates a new builder-style object to manufacture [`AutomationRulesFindingFilters`](crate::types::AutomationRulesFindingFilters).
@@ -411,6 +441,9 @@ pub struct AutomationRulesFindingFiltersBuilder {
     pub(crate) note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     pub(crate) note_updated_by: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) user_defined_fields: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
+    pub(crate) resource_application_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) resource_application_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AutomationRulesFindingFiltersBuilder {
     /// Appends an item to `product_arn`.
@@ -440,7 +473,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
     ///
-    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn aws_account_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.aws_account_id.unwrap_or_default();
@@ -448,13 +481,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.aws_account_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p> The Amazon Web Services account ID in which a finding was generated. </p>
+    /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
     /// <p> Array Members: Minimum number of 1 item. Maximum number of 100 items. </p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.aws_account_id
@@ -1230,6 +1263,75 @@ impl AutomationRulesFindingFiltersBuilder {
     pub fn get_user_defined_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MapFilter>> {
         &self.user_defined_fields
     }
+    /// Appends an item to `resource_application_arn`.
+    ///
+    /// To override the contents of this collection use [`set_resource_application_arn`](Self::set_resource_application_arn).
+    ///
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn resource_application_arn(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_application_arn.unwrap_or_default();
+        v.push(input);
+        self.resource_application_arn = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn set_resource_application_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_application_arn = input;
+        self
+    }
+    /// <p> The Amazon Resource Name (ARN) of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn get_resource_application_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_application_arn
+    }
+    /// Appends an item to `resource_application_name`.
+    ///
+    /// To override the contents of this collection use [`set_resource_application_name`](Self::set_resource_application_name).
+    ///
+    /// <p> The name of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn resource_application_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.resource_application_name.unwrap_or_default();
+        v.push(input);
+        self.resource_application_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> The name of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn set_resource_application_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_application_name = input;
+        self
+    }
+    /// <p> The name of the application that is related to a finding. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn get_resource_application_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.resource_application_name
+    }
+    /// Appends an item to `aws_account_name`.
+    ///
+    /// To override the contents of this collection use [`set_aws_account_name`](Self::set_aws_account_name).
+    ///
+    /// <p>The name of the Amazon Web Services account in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn aws_account_name(mut self, input: crate::types::StringFilter) -> Self {
+        let mut v = self.aws_account_name.unwrap_or_default();
+        v.push(input);
+        self.aws_account_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The name of the Amazon Web Services account in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn set_aws_account_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.aws_account_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services account in which a finding was generated. </p>
+    /// <p> Array Members: Minimum number of 1 item. Maximum number of 20 items. </p>
+    pub fn get_aws_account_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
+        &self.aws_account_name
+    }
     /// Consumes the builder and constructs a [`AutomationRulesFindingFilters`](crate::types::AutomationRulesFindingFilters).
     pub fn build(self) -> crate::types::AutomationRulesFindingFilters {
         crate::types::AutomationRulesFindingFilters {
@@ -1268,6 +1370,9 @@ impl AutomationRulesFindingFiltersBuilder {
             note_updated_at: self.note_updated_at,
             note_updated_by: self.note_updated_by,
             user_defined_fields: self.user_defined_fields,
+            resource_application_arn: self.resource_application_arn,
+            resource_application_name: self.resource_application_name,
+            aws_account_name: self.aws_account_name,
         }
     }
 }

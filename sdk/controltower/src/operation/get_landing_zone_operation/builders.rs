@@ -22,7 +22,7 @@ impl GetLandingZoneOperationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetLandingZoneOperation`.
 ///
-/// <p>Returns the status of the specified landing zone operation. Details for an operation are available for X days. </p>
+/// <p>Returns the status of the specified landing zone operation. Details for an operation are available for 60 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLandingZoneOperationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetLandingZoneOperationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn operation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operation_identifier(input.into());
         self
     }
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn set_operation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operation_identifier(input);
         self
     }
-    /// <p>A unique identifier assigned to a landing zone operation. </p>
+    /// <p>A unique identifier assigned to a landing zone operation.</p>
     pub fn get_operation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_identifier()
     }

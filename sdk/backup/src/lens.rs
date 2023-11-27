@@ -199,6 +199,36 @@ pub(crate) fn reflens_list_restore_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_restore_jobs_by_protected_resource_output_output_next_token(
+    input: &crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_restore_testing_plans_output_output_next_token(
+    input: &crate::operation::list_restore_testing_plans::ListRestoreTestingPlansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_restore_testing_selections_output_output_next_token(
+    input: &crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tags_output_output_next_token(
     input: &crate::operation::list_tags::ListTagsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -346,5 +376,29 @@ pub(crate) fn lens_list_restore_jobs_output_output_restore_jobs(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_restore_jobs_by_protected_resource_output_output_restore_jobs(
+    input: crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreJobsListMember>> {
+    let input = match input.restore_jobs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_restore_testing_plans_output_output_restore_testing_plans(
+    input: crate::operation::list_restore_testing_plans::ListRestoreTestingPlansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingPlanForList>> {
+    let input = input.restore_testing_plans;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_restore_testing_selections_output_output_restore_testing_selections(
+    input: crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingSelectionForList>> {
+    let input = input.restore_testing_selections;
     ::std::option::Option::Some(input)
 }

@@ -138,6 +138,8 @@ impl Client {
 
 mod create_experiment_template;
 
+mod create_target_account_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -167,21 +169,33 @@ pub mod customize;
 
 mod delete_experiment_template;
 
+mod delete_target_account_configuration;
+
 mod get_action;
 
 mod get_experiment;
 
+mod get_experiment_target_account_configuration;
+
 mod get_experiment_template;
+
+mod get_target_account_configuration;
 
 mod get_target_resource_type;
 
 mod list_actions;
+
+mod list_experiment_resolved_targets;
+
+mod list_experiment_target_account_configurations;
 
 mod list_experiment_templates;
 
 mod list_experiments;
 
 mod list_tags_for_resource;
+
+mod list_target_account_configurations;
 
 mod list_target_resource_types;
 
@@ -194,3 +208,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_experiment_template;
+
+mod update_target_account_configuration;

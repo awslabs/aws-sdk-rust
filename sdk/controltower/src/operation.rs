@@ -43,5 +43,8 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateEnabledControl` operation.
+pub mod update_enabled_control;
+
 /// Types for the `UpdateLandingZone` operation.
 pub mod update_landing_zone;

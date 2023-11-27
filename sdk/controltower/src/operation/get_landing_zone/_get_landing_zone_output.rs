@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLandingZoneOutput {
-    /// <p>Information about the landing zone. </p>
+    /// <p>Information about the landing zone.</p>
     pub landing_zone: ::std::option::Option<crate::types::LandingZoneDetail>,
     _request_id: Option<String>,
 }
 impl GetLandingZoneOutput {
-    /// <p>Information about the landing zone. </p>
+    /// <p>Information about the landing zone.</p>
     pub fn landing_zone(&self) -> ::std::option::Option<&crate::types::LandingZoneDetail> {
         self.landing_zone.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetLandingZoneOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLandingZoneOutputBuilder {
-    /// <p>Information about the landing zone. </p>
+    /// <p>Information about the landing zone.</p>
     /// This field is required.
     pub fn landing_zone(mut self, input: crate::types::LandingZoneDetail) -> Self {
         self.landing_zone = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the landing zone. </p>
+    /// <p>Information about the landing zone.</p>
     pub fn set_landing_zone(mut self, input: ::std::option::Option<crate::types::LandingZoneDetail>) -> Self {
         self.landing_zone = input;
         self
     }
-    /// <p>Information about the landing zone. </p>
+    /// <p>Information about the landing zone.</p>
     pub fn get_landing_zone(&self) -> &::std::option::Option<crate::types::LandingZoneDetail> {
         &self.landing_zone
     }

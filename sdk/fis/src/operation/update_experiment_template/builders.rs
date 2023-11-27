@@ -231,4 +231,18 @@ impl UpdateExperimentTemplateFluentBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput> {
         self.inner.get_log_configuration()
     }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn experiment_options(mut self, input: crate::types::UpdateExperimentTemplateExperimentOptionsInput) -> Self {
+        self.inner = self.inner.experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput>) -> Self {
+        self.inner = self.inner.set_experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput> {
+        self.inner.get_experiment_options()
+    }
 }

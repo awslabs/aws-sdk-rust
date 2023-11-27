@@ -18,6 +18,7 @@
 ///     ExperimentActionStatus::Initiating => { /* ... */ },
 ///     ExperimentActionStatus::Pending => { /* ... */ },
 ///     ExperimentActionStatus::Running => { /* ... */ },
+///     ExperimentActionStatus::Skipped => { /* ... */ },
 ///     ExperimentActionStatus::Stopped => { /* ... */ },
 ///     ExperimentActionStatus::Stopping => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -60,6 +61,8 @@ pub enum ExperimentActionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
+    Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for ExperimentActionStatus {
             "initiating" => ExperimentActionStatus::Initiating,
             "pending" => ExperimentActionStatus::Pending,
             "running" => ExperimentActionStatus::Running,
+            "skipped" => ExperimentActionStatus::Skipped,
             "stopped" => ExperimentActionStatus::Stopped,
             "stopping" => ExperimentActionStatus::Stopping,
             other => ExperimentActionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -99,6 +103,7 @@ impl ExperimentActionStatus {
             ExperimentActionStatus::Initiating => "initiating",
             ExperimentActionStatus::Pending => "pending",
             ExperimentActionStatus::Running => "running",
+            ExperimentActionStatus::Skipped => "skipped",
             ExperimentActionStatus::Stopped => "stopped",
             ExperimentActionStatus::Stopping => "stopping",
             ExperimentActionStatus::Unknown(value) => value.as_str(),
@@ -113,6 +118,7 @@ impl ExperimentActionStatus {
             "initiating",
             "pending",
             "running",
+            "skipped",
             "stopped",
             "stopping",
         ]

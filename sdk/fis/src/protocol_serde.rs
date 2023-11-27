@@ -25,23 +25,37 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_experiment_template;
 
+pub(crate) mod shape_create_target_account_configuration;
+
 pub(crate) mod shape_delete_experiment_template;
+
+pub(crate) mod shape_delete_target_account_configuration;
 
 pub(crate) mod shape_get_action;
 
 pub(crate) mod shape_get_experiment;
 
+pub(crate) mod shape_get_experiment_target_account_configuration;
+
 pub(crate) mod shape_get_experiment_template;
+
+pub(crate) mod shape_get_target_account_configuration;
 
 pub(crate) mod shape_get_target_resource_type;
 
 pub(crate) mod shape_list_actions;
+
+pub(crate) mod shape_list_experiment_resolved_targets;
+
+pub(crate) mod shape_list_experiment_target_account_configurations;
 
 pub(crate) mod shape_list_experiment_templates;
 
 pub(crate) mod shape_list_experiments;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_target_account_configurations;
 
 pub(crate) mod shape_list_target_resource_types;
 
@@ -55,6 +69,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_experiment_template;
 
+pub(crate) mod shape_update_target_account_configuration;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -67,6 +83,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_experiment_template_input;
 
+pub(crate) mod shape_create_target_account_configuration_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -77,6 +95,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_experiment_template_input;
 
+pub(crate) mod shape_update_target_account_configuration_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_action;
@@ -84,6 +104,8 @@ pub(crate) mod shape_action;
 pub(crate) mod shape_action_summary_list;
 
 pub(crate) mod shape_create_experiment_template_action_input;
+
+pub(crate) mod shape_create_experiment_template_experiment_options_input;
 
 pub(crate) mod shape_create_experiment_template_log_configuration_input;
 
@@ -95,17 +117,29 @@ pub(crate) mod shape_experiment;
 
 pub(crate) mod shape_experiment_summary_list;
 
+pub(crate) mod shape_experiment_target_account_configuration;
+
+pub(crate) mod shape_experiment_target_account_configuration_list;
+
 pub(crate) mod shape_experiment_template;
 
 pub(crate) mod shape_experiment_template_summary_list;
 
+pub(crate) mod shape_resolved_target_list;
+
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_target_account_configuration;
+
+pub(crate) mod shape_target_account_configuration_list;
 
 pub(crate) mod shape_target_resource_type;
 
 pub(crate) mod shape_target_resource_type_summary_list;
 
 pub(crate) mod shape_update_experiment_template_action_input_item;
+
+pub(crate) mod shape_update_experiment_template_experiment_options_input;
 
 pub(crate) mod shape_update_experiment_template_log_configuration_input;
 
@@ -123,17 +157,23 @@ pub(crate) mod shape_experiment_action_map;
 
 pub(crate) mod shape_experiment_log_configuration;
 
+pub(crate) mod shape_experiment_options;
+
 pub(crate) mod shape_experiment_state;
 
 pub(crate) mod shape_experiment_stop_condition_list;
 
 pub(crate) mod shape_experiment_summary;
 
+pub(crate) mod shape_experiment_target_account_configuration_summary;
+
 pub(crate) mod shape_experiment_target_map;
 
 pub(crate) mod shape_experiment_template_action_map;
 
 pub(crate) mod shape_experiment_template_cloud_watch_logs_log_configuration_input;
+
+pub(crate) mod shape_experiment_template_experiment_options;
 
 pub(crate) mod shape_experiment_template_log_configuration;
 
@@ -146,6 +186,10 @@ pub(crate) mod shape_experiment_template_summary;
 pub(crate) mod shape_experiment_template_target_input_filter;
 
 pub(crate) mod shape_experiment_template_target_map;
+
+pub(crate) mod shape_resolved_target;
+
+pub(crate) mod shape_target_account_configuration_summary;
 
 pub(crate) mod shape_target_resource_type_parameter_map;
 
@@ -174,6 +218,8 @@ pub(crate) mod shape_experiment_template_s3_log_configuration;
 pub(crate) mod shape_experiment_template_stop_condition;
 
 pub(crate) mod shape_experiment_template_target;
+
+pub(crate) mod shape_target_information_map;
 
 pub(crate) mod shape_target_resource_type_parameter;
 

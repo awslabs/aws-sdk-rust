@@ -29,7 +29,7 @@ impl CreateExperimentTemplateInputBuilder {
 /// <li> <p> <b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p> </li>
 /// <li> <p> <b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p> </li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -255,5 +255,19 @@ impl CreateExperimentTemplateFluentBuilder {
     /// <p>The configuration for experiment logging.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput> {
         self.inner.get_log_configuration()
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn experiment_options(mut self, input: crate::types::CreateExperimentTemplateExperimentOptionsInput) -> Self {
+        self.inner = self.inner.experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput>) -> Self {
+        self.inner = self.inner.set_experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::CreateExperimentTemplateExperimentOptionsInput> {
+        self.inner.get_experiment_options()
     }
 }

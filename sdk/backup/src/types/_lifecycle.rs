@@ -10,6 +10,8 @@ pub struct Lifecycle {
     pub move_to_cold_storage_after_days: ::std::option::Option<i64>,
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub delete_after_days: ::std::option::Option<i64>,
+    /// <p>Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
+    pub opt_in_to_archive_for_supported_resources: ::std::option::Option<bool>,
 }
 impl Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
@@ -19,6 +21,10 @@ impl Lifecycle {
     /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
     pub fn delete_after_days(&self) -> ::std::option::Option<i64> {
         self.delete_after_days
+    }
+    /// <p>Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
+    pub fn opt_in_to_archive_for_supported_resources(&self) -> ::std::option::Option<bool> {
+        self.opt_in_to_archive_for_supported_resources
     }
 }
 impl Lifecycle {
@@ -34,6 +40,7 @@ impl Lifecycle {
 pub struct LifecycleBuilder {
     pub(crate) move_to_cold_storage_after_days: ::std::option::Option<i64>,
     pub(crate) delete_after_days: ::std::option::Option<i64>,
+    pub(crate) opt_in_to_archive_for_supported_resources: ::std::option::Option<bool>,
 }
 impl LifecycleBuilder {
     /// <p>Specifies the number of days after creation that a recovery point is moved to cold storage.</p>
@@ -64,11 +71,26 @@ impl LifecycleBuilder {
     pub fn get_delete_after_days(&self) -> &::std::option::Option<i64> {
         &self.delete_after_days
     }
+    /// <p>Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
+    pub fn opt_in_to_archive_for_supported_resources(mut self, input: bool) -> Self {
+        self.opt_in_to_archive_for_supported_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
+    pub fn set_opt_in_to_archive_for_supported_resources(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.opt_in_to_archive_for_supported_resources = input;
+        self
+    }
+    /// <p>Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources to archive (cold) storage tier in accordance with your lifecycle settings.</p>
+    pub fn get_opt_in_to_archive_for_supported_resources(&self) -> &::std::option::Option<bool> {
+        &self.opt_in_to_archive_for_supported_resources
+    }
     /// Consumes the builder and constructs a [`Lifecycle`](crate::types::Lifecycle).
     pub fn build(self) -> crate::types::Lifecycle {
         crate::types::Lifecycle {
             move_to_cold_storage_after_days: self.move_to_cold_storage_after_days,
             delete_after_days: self.delete_after_days,
+            opt_in_to_archive_for_supported_resources: self.opt_in_to_archive_for_supported_resources,
         }
     }
 }

@@ -24,7 +24,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
 ///
 /// <p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the <code>LatestRestorableTime</code> property. You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code> property.</p>
 /// <p>The target database is created with most of the original configuration, but in a system-selected Availability Zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p> <note>
-/// <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
+/// <p>This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <code>RestoreDBClusterToPointInTime</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBInstanceToPointInTimeFluentBuilder {
@@ -429,23 +429,38 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_model()
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_name(input.into());
         self
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_name(input);
         self
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_name()
     }
@@ -453,6 +468,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -478,6 +495,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -503,6 +522,8 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -1097,22 +1118,37 @@ impl RestoreDBInstanceToPointInTimeFluentBuilder {
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_iam_instance_profile()
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_target(input.into());
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_target(input);
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_backup_target()

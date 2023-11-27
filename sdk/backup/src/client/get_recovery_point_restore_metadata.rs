@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`backup_vault_arn(Option<String>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::backup_vault_arn): <p>An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     ///   - [`recovery_point_arn(Option<String>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::recovery_point_arn): <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     ///   - [`restore_metadata(Option<HashMap::<String, String>>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::restore_metadata): <p>The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These values vary depending on the service that is being restored.</p>
+    ///   - [`resource_type(Option<String>)`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataOutput::resource_type): <p>This is the resource type associated with the recovery point.</p>
     /// - On failure, responds with [`SdkError<GetRecoveryPointRestoreMetadataError>`](crate::operation::get_recovery_point_restore_metadata::GetRecoveryPointRestoreMetadataError)
     pub fn get_recovery_point_restore_metadata(
         &self,

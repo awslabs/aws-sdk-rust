@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLandingZoneOperation`](crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_identifier(impl Into<String>)`](crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder::operation_identifier) / [`set_operation_identifier(Option<String>)`](crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder::set_operation_identifier):<br>required: **true**<br><p>A unique identifier assigned to a landing zone operation. </p><br>
+    ///   - [`operation_identifier(impl Into<String>)`](crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder::operation_identifier) / [`set_operation_identifier(Option<String>)`](crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder::set_operation_identifier):<br>required: **true**<br><p>A unique identifier assigned to a landing zone operation.</p><br>
     /// - On success, responds with [`GetLandingZoneOperationOutput`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput) with field(s):
-    ///   - [`operation_details(Option<LandingZoneOperationDetail>)`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput::operation_details): <p>The landing zone operation details. </p>
+    ///   - [`operation_details(Option<LandingZoneOperationDetail>)`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationOutput::operation_details): <p>Details about a landing zone operation.</p>
     /// - On failure, responds with [`SdkError<GetLandingZoneOperationError>`](crate::operation::get_landing_zone_operation::GetLandingZoneOperationError)
     pub fn get_landing_zone_operation(&self) -> crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder {
         crate::operation::get_landing_zone_operation::builders::GetLandingZoneOperationFluentBuilder::new(self.handle.clone())

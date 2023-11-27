@@ -12,7 +12,7 @@ pub struct BackupSelection {
     /// <p>A list of Amazon Resource Names (ARNs) to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -22,7 +22,7 @@ pub struct BackupSelection {
     /// <p>A list of Amazon Resource Names (ARNs) to exclude from a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to exclude many resources from a backup plan, consider a different resource selection strategy, such as assigning only one or a few resource types or refining your resource selection using tags.</p>
     pub not_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -48,7 +48,7 @@ impl BackupSelection {
     pub fn resources(&self) -> &[::std::string::String] {
         self.resources.as_deref().unwrap_or_default()
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -66,7 +66,7 @@ impl BackupSelection {
     pub fn not_resources(&self) -> &[::std::string::String] {
         self.not_resources.as_deref().unwrap_or_default()
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -152,7 +152,7 @@ impl BackupSelectionBuilder {
     ///
     /// To override the contents of this collection use [`set_list_of_tags`](Self::set_list_of_tags).
     ///
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -164,7 +164,7 @@ impl BackupSelectionBuilder {
         self.list_of_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -174,7 +174,7 @@ impl BackupSelectionBuilder {
         self.list_of_tags = input;
         self
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you assign all resources that match AT LEAST ONE condition (using OR logic).</p> </li>
@@ -206,7 +206,7 @@ impl BackupSelectionBuilder {
     pub fn get_not_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.not_resources
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -216,7 +216,7 @@ impl BackupSelectionBuilder {
         self.conditions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>
@@ -226,7 +226,7 @@ impl BackupSelectionBuilder {
         self.conditions = input;
         self
     }
-    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition operators are case sensitive.</p>
+    /// <p>A list of conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value": "true" },</code>. Condition operators are case sensitive.</p>
     /// <p> <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
     /// <ul>
     /// <li> <p>When you specify more than one condition, you only assign the resources that match ALL conditions (using AND logic).</p> </li>

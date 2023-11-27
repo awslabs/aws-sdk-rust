@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreDbInstanceFromDbSnapshotInput {
-    /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
     /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
@@ -34,8 +34,11 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
     /// <p>Example: <code>us-east-1a</code> </p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The DB subnet group name to use for the new instance.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>The name of the DB subnet group to use for the new instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment.</p>
@@ -55,8 +58,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Default: Same as source.</p>
     /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     pub license_model: ::std::option::Option<::std::string::String>,
-    /// <p>The database name for the restored DB instance.</p>
-    /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The name of the database for the restored DB instance.</p>
+    /// <p>This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't apply to the other engines or to RDS Custom DB instances.</p>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for the new instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
@@ -64,6 +67,8 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -101,7 +106,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
     /// <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub domain: ::std::option::Option<::std::string::String>,
@@ -145,7 +150,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>For more information about IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of logs for the restored DB instance to export to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -159,7 +164,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
@@ -218,12 +223,12 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     pub dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromDbSnapshotInput {
-    /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
@@ -232,7 +237,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
     /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
@@ -258,8 +263,11 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The DB subnet group name to use for the new instance.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>The name of the DB subnet group to use for the new instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
@@ -289,8 +297,8 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The database name for the restored DB instance.</p>
-    /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The name of the database for the restored DB instance.</p>
+    /// <p>This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't apply to the other engines or to RDS Custom DB instances.</p>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -300,6 +308,8 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -357,7 +367,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
@@ -419,7 +429,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of logs for the restored DB instance to export to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
@@ -443,7 +453,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
@@ -574,12 +584,12 @@ pub struct RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
 }
 impl RestoreDbInstanceFromDbSnapshotInputBuilder {
-    /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     /// This field is required.
@@ -587,24 +597,24 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
         self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
         self
     }
-    /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>The name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// <li> <p>Must contain from 1 to 63 numbers, letters, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -613,7 +623,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
     /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
@@ -625,7 +635,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
     /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
@@ -637,7 +647,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>The identifier for the DB snapshot to restore from.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must match the identifier of an existing DBSnapshot.</p> </li>
+    /// <li> <p>Must match the identifier of an existing DB snapshot.</p> </li>
     /// <li> <p>Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.</p> </li>
     /// <li> <p>Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.</p> </li>
     /// <li> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p> </li>
@@ -705,22 +715,31 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The DB subnet group name to use for the new instance.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>The name of the DB subnet group to use for the new instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DB subnet group name to use for the new instance.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>The name of the DB subnet group to use for the new instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_subnet_group_name = input;
         self
     }
-    /// <p>The DB subnet group name to use for the new instance.</p>
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
+    /// <p>The name of the DB subnet group to use for the new instance.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DB subnet group.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_subnet_group_name
@@ -808,20 +827,20 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
-    /// <p>The database name for the restored DB instance.</p>
-    /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The name of the database for the restored DB instance.</p>
+    /// <p>This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't apply to the other engines or to RDS Custom DB instances.</p>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The database name for the restored DB instance.</p>
-    /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The name of the database for the restored DB instance.</p>
+    /// <p>This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't apply to the other engines or to RDS Custom DB instances.</p>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
-    /// <p>The database name for the restored DB instance.</p>
-    /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS Custom DB instances.</p>
+    /// <p>The name of the database for the restored DB instance.</p>
+    /// <p>This parameter only applies to RDS for Oracle and RDS for SQL Server DB instances. It doesn't apply to the other engines or to RDS Custom DB instances.</p>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
@@ -831,6 +850,8 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -853,6 +874,8 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -875,6 +898,8 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>Constraint: Must be compatible with the engine of the source. For example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6 snapshot.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -1030,21 +1055,21 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>Specify the Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to restore the DB instance in. The domain/ must be created prior to this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -1236,7 +1261,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
-    /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of logs for the restored DB instance to export to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
@@ -1244,13 +1269,13 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
         self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of logs for the restored DB instance to export to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
-    /// <p>The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
+    /// <p>The list of logs for the restored DB instance to export to CloudWatch Logs. The values in the list depend on the DB engine. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
@@ -1300,7 +1325,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
@@ -1314,7 +1339,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
@@ -1328,7 +1353,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>
+    /// <li> <p>If supplied, must match the name of an existing DB parameter group.</p> </li>
     /// <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>

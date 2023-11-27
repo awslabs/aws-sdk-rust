@@ -22,7 +22,7 @@ impl DeleteLandingZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteLandingZone`.
 ///
-/// <p>This decommissions a landing zone. This starts an asynchronous operation that deletes Amazon Web Services Control Tower resources deployed in Amazon Web Services Control Tower managed accounts. </p>
+/// <p>Decommissions a landing zone. This API call starts an asynchronous operation that deletes Amazon Web Services Control Tower resources deployed in accounts managed by Amazon Web Services Control Tower.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLandingZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteLandingZoneFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.landing_zone_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_landing_zone_identifier(input);
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_landing_zone_identifier()
     }

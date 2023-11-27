@@ -24,6 +24,10 @@ pub struct ExperimentTemplate {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
     pub log_configuration: ::std::option::Option<crate::types::ExperimentTemplateLogConfiguration>,
+    /// <p>The experiment options for an experiment template.</p>
+    pub experiment_options: ::std::option::Option<crate::types::ExperimentTemplateExperimentOptions>,
+    /// <p>The count of target account configurations for the experiment template.</p>
+    pub target_account_configurations_count: ::std::option::Option<i64>,
 }
 impl ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
@@ -68,6 +72,14 @@ impl ExperimentTemplate {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateLogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The experiment options for an experiment template.</p>
+    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::ExperimentTemplateExperimentOptions> {
+        self.experiment_options.as_ref()
+    }
+    /// <p>The count of target account configurations for the experiment template.</p>
+    pub fn target_account_configurations_count(&self) -> ::std::option::Option<i64> {
+        self.target_account_configurations_count
+    }
 }
 impl ExperimentTemplate {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplate`](crate::types::ExperimentTemplate).
@@ -90,6 +102,8 @@ pub struct ExperimentTemplateBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::ExperimentTemplateLogConfiguration>,
+    pub(crate) experiment_options: ::std::option::Option<crate::types::ExperimentTemplateExperimentOptions>,
+    pub(crate) target_account_configurations_count: ::std::option::Option<i64>,
 }
 impl ExperimentTemplateBuilder {
     /// <p>The ID of the experiment template.</p>
@@ -262,6 +276,34 @@ impl ExperimentTemplateBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::ExperimentTemplateLogConfiguration> {
         &self.log_configuration
     }
+    /// <p>The experiment options for an experiment template.</p>
+    pub fn experiment_options(mut self, input: crate::types::ExperimentTemplateExperimentOptions) -> Self {
+        self.experiment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment options for an experiment template.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::ExperimentTemplateExperimentOptions>) -> Self {
+        self.experiment_options = input;
+        self
+    }
+    /// <p>The experiment options for an experiment template.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::ExperimentTemplateExperimentOptions> {
+        &self.experiment_options
+    }
+    /// <p>The count of target account configurations for the experiment template.</p>
+    pub fn target_account_configurations_count(mut self, input: i64) -> Self {
+        self.target_account_configurations_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The count of target account configurations for the experiment template.</p>
+    pub fn set_target_account_configurations_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.target_account_configurations_count = input;
+        self
+    }
+    /// <p>The count of target account configurations for the experiment template.</p>
+    pub fn get_target_account_configurations_count(&self) -> &::std::option::Option<i64> {
+        &self.target_account_configurations_count
+    }
     /// Consumes the builder and constructs a [`ExperimentTemplate`](crate::types::ExperimentTemplate).
     pub fn build(self) -> crate::types::ExperimentTemplate {
         crate::types::ExperimentTemplate {
@@ -275,6 +317,8 @@ impl ExperimentTemplateBuilder {
             role_arn: self.role_arn,
             tags: self.tags,
             log_configuration: self.log_configuration,
+            experiment_options: self.experiment_options,
+            target_account_configurations_count: self.target_account_configurations_count,
         }
     }
 }

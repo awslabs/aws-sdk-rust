@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_language_models_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_medical_scribe_jobs_output_output_next_token(
+    input: &crate::operation::list_medical_scribe_jobs::ListMedicalScribeJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_medical_transcription_jobs_output_output_next_token(
     input: &crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

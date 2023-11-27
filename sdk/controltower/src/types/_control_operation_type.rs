@@ -14,6 +14,7 @@
 /// match controloperationtype {
 ///     ControlOperationType::DisableControl => { /* ... */ },
 ///     ControlOperationType::EnableControl => { /* ... */ },
+///     ControlOperationType::UpdateEnabledControl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum ControlOperationType {
     DisableControl,
     #[allow(missing_docs)] // documentation missing in model
     EnableControl,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateEnabledControl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ControlOperationType {
         match s {
             "DISABLE_CONTROL" => ControlOperationType::DisableControl,
             "ENABLE_CONTROL" => ControlOperationType::EnableControl,
+            "UPDATE_ENABLED_CONTROL" => ControlOperationType::UpdateEnabledControl,
             other => ControlOperationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl ControlOperationType {
         match self {
             ControlOperationType::DisableControl => "DISABLE_CONTROL",
             ControlOperationType::EnableControl => "ENABLE_CONTROL",
+            ControlOperationType::UpdateEnabledControl => "UPDATE_ENABLED_CONTROL",
             ControlOperationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE_CONTROL", "ENABLE_CONTROL"]
+        &["DISABLE_CONTROL", "ENABLE_CONTROL", "UPDATE_ENABLED_CONTROL"]
     }
 }
 impl ::std::convert::AsRef<str> for ControlOperationType {

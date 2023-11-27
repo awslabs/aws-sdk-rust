@@ -219,6 +219,8 @@ mod get_api_cache;
 
 mod get_data_source;
 
+mod get_data_source_introspection;
+
 mod get_domain_name;
 
 mod get_function;
@@ -256,6 +258,8 @@ mod list_tags_for_resource;
 mod list_types;
 
 mod list_types_by_association;
+
+mod start_data_source_introspection;
 
 mod start_schema_creation;
 

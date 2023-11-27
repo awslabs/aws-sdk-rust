@@ -17,6 +17,8 @@ pub struct UpdateExperimentTemplateInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for experiment logging.</p>
     pub log_configuration: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
+    /// <p>The experiment options for the experiment template.</p>
+    pub experiment_options: ::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput>,
 }
 impl UpdateExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
@@ -53,6 +55,10 @@ impl UpdateExperimentTemplateInput {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::UpdateExperimentTemplateLogConfigurationInput> {
         self.log_configuration.as_ref()
     }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::UpdateExperimentTemplateExperimentOptionsInput> {
+        self.experiment_options.as_ref()
+    }
 }
 impl UpdateExperimentTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateExperimentTemplateInput`](crate::operation::update_experiment_template::UpdateExperimentTemplateInput).
@@ -73,6 +79,7 @@ pub struct UpdateExperimentTemplateInputBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::UpdateExperimentTemplateActionInputItem>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
+    pub(crate) experiment_options: ::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput>,
 }
 impl UpdateExperimentTemplateInputBuilder {
     /// <p>The ID of the experiment template.</p>
@@ -205,6 +212,20 @@ impl UpdateExperimentTemplateInputBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput> {
         &self.log_configuration
     }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn experiment_options(mut self, input: crate::types::UpdateExperimentTemplateExperimentOptionsInput) -> Self {
+        self.experiment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput>) -> Self {
+        self.experiment_options = input;
+        self
+    }
+    /// <p>The experiment options for the experiment template.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::UpdateExperimentTemplateExperimentOptionsInput> {
+        &self.experiment_options
+    }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateInput`](crate::operation::update_experiment_template::UpdateExperimentTemplateInput).
     pub fn build(
         self,
@@ -220,6 +241,7 @@ impl UpdateExperimentTemplateInputBuilder {
             actions: self.actions,
             role_arn: self.role_arn,
             log_configuration: self.log_configuration,
+            experiment_options: self.experiment_options,
         })
     }
 }

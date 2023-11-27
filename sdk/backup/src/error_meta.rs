@@ -361,6 +361,93 @@ impl From<crate::operation::create_report_plan::CreateReportPlanError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError> for Error {
+    fn from(err: crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError) -> Self {
+        match err {
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_restore_testing_plan::CreateRestoreTestingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError> for Error {
+    fn from(err: crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError) -> Self {
+        match err {
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_restore_testing_selection::CreateRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_backup_plan::DeleteBackupPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -697,6 +784,71 @@ impl From<crate::operation::delete_report_plan::DeleteReportPlanError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_report_plan::DeleteReportPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError> for Error {
+    fn from(err: crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError) -> Self {
+        match err {
+            crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_restore_testing_plan::DeleteRestoreTestingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError> for Error {
+    fn from(err: crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError) -> Self {
+        match err {
+            crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_restore_testing_selection::DeleteRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1468,6 +1620,146 @@ impl From<crate::operation::get_recovery_point_restore_metadata::GetRecoveryPoin
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError> for Error {
+    fn from(err: crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError) -> Self {
+        match err {
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_restore_job_metadata::GetRestoreJobMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError> for Error {
+    fn from(err: crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError) -> Self {
+        match err {
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError::MissingParameterValueException(
+                inner,
+            ) => Error::MissingParameterValueException(inner),
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_restore_testing_inferred_metadata::GetRestoreTestingInferredMetadataError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError> for Error {
+    fn from(err: crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError) -> Self {
+        match err {
+            crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_restore_testing_plan::GetRestoreTestingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError> for Error {
+    fn from(err: crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError) -> Self {
+        match err {
+            crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_restore_testing_selection::GetRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_supported_resource_types::GetSupportedResourceTypesError, R>>
     for Error
 where
@@ -2102,6 +2394,52 @@ impl From<crate::operation::list_restore_jobs::ListRestoreJobsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError> for Error {
+    fn from(err: crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError) -> Self {
+        match err {
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError::MissingParameterValueException(
+                inner,
+            ) => Error::MissingParameterValueException(inner),
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError, R>>
     for Error
 where
@@ -2129,6 +2467,73 @@ impl From<crate::operation::list_restore_job_summaries::ListRestoreJobSummariesE
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_restore_job_summaries::ListRestoreJobSummariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError> for Error {
+    fn from(err: crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError) -> Self {
+        match err {
+            crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_restore_testing_plans::ListRestoreTestingPlansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError> for Error {
+    fn from(err: crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError) -> Self {
+        match err {
+            crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_restore_testing_selections::ListRestoreTestingSelectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2277,6 +2682,45 @@ impl From<crate::operation::put_backup_vault_notifications::PutBackupVaultNotifi
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_backup_vault_notifications::PutBackupVaultNotificationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_restore_validation_result::PutRestoreValidationResultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_restore_validation_result::PutRestoreValidationResultError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_restore_validation_result::PutRestoreValidationResultError> for Error {
+    fn from(err: crate::operation::put_restore_validation_result::PutRestoreValidationResultError) -> Self {
+        match err {
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_restore_validation_result::PutRestoreValidationResultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2686,6 +3130,87 @@ impl From<crate::operation::update_report_plan::UpdateReportPlanError> for Error
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::update_report_plan::UpdateReportPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError> for Error {
+    fn from(err: crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError) -> Self {
+        match err {
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_restore_testing_plan::UpdateRestoreTestingPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError> for Error {
+    fn from(err: crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError) -> Self {
+        match err {
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

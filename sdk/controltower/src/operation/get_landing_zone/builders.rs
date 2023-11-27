@@ -22,7 +22,7 @@ impl GetLandingZoneInputBuilder {
 }
 /// Fluent builder constructing a request to `GetLandingZone`.
 ///
-/// <p>Returns details about the landing zone. Displays a message in case of error. </p>
+/// <p>Returns details about the landing zone. Displays a message in case of error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLandingZoneFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetLandingZoneFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn landing_zone_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.landing_zone_identifier(input.into());
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn set_landing_zone_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_landing_zone_identifier(input);
         self
     }
-    /// <p>The unique identifier of the landing zone. </p>
+    /// <p>The unique identifier of the landing zone.</p>
     pub fn get_landing_zone_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_landing_zone_identifier()
     }

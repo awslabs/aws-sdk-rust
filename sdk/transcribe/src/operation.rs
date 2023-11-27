@@ -25,6 +25,9 @@ pub mod delete_call_analytics_job;
 /// Types for the `DeleteLanguageModel` operation.
 pub mod delete_language_model;
 
+/// Types for the `DeleteMedicalScribeJob` operation.
+pub mod delete_medical_scribe_job;
+
 /// Types for the `DeleteMedicalTranscriptionJob` operation.
 pub mod delete_medical_transcription_job;
 
@@ -48,6 +51,9 @@ pub mod get_call_analytics_category;
 
 /// Types for the `GetCallAnalyticsJob` operation.
 pub mod get_call_analytics_job;
+
+/// Types for the `GetMedicalScribeJob` operation.
+pub mod get_medical_scribe_job;
 
 /// Types for the `GetMedicalTranscriptionJob` operation.
 pub mod get_medical_transcription_job;
@@ -73,6 +79,9 @@ pub mod list_call_analytics_jobs;
 /// Types for the `ListLanguageModels` operation.
 pub mod list_language_models;
 
+/// Types for the `ListMedicalScribeJobs` operation.
+pub mod list_medical_scribe_jobs;
+
 /// Types for the `ListMedicalTranscriptionJobs` operation.
 pub mod list_medical_transcription_jobs;
 
@@ -93,6 +102,9 @@ pub mod list_vocabulary_filters;
 
 /// Types for the `StartCallAnalyticsJob` operation.
 pub mod start_call_analytics_job;
+
+/// Types for the `StartMedicalScribeJob` operation.
+pub mod start_medical_scribe_job;
 
 /// Types for the `StartMedicalTranscriptionJob` operation.
 pub mod start_medical_transcription_job;

@@ -13,9 +13,11 @@ pub struct CreateOptionGroupInput {
     /// </ul>
     /// <p>Example: <code>myoptiongroup</code> </p>
     pub option_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -48,9 +50,11 @@ impl CreateOptionGroupInput {
     pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -135,9 +139,11 @@ impl CreateOptionGroupInputBuilder {
     pub fn get_option_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.option_group_name
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -155,9 +161,11 @@ impl CreateOptionGroupInputBuilder {
         self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -174,9 +182,11 @@ impl CreateOptionGroupInputBuilder {
         self.engine_name = input;
         self
     }
-    /// <p>Specifies the name of the engine that this option group should be associated with.</p>
+    /// <p>The name of the engine to associate this option group with.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

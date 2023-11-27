@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsInput {
-    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub status: ::std::option::Option<crate::types::TranscriptionJobStatus>,
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
     pub job_name_contains: ::std::option::Option<::std::string::String>,
     /// <p>If your <code>ListMedicalTranscriptionJobs</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListMedicalTranscriptionJobsInput {
-    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TranscriptionJobStatus> {
         self.status.as_ref()
     }
@@ -25,7 +25,7 @@ impl ListMedicalTranscriptionJobsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -47,17 +47,17 @@ pub struct ListMedicalTranscriptionJobsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListMedicalTranscriptionJobsInputBuilder {
-    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub fn status(mut self, input: crate::types::TranscriptionJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
+    /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TranscriptionJobStatus> {
         &self.status
     }
@@ -89,17 +89,17 @@ impl ListMedicalTranscriptionJobsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

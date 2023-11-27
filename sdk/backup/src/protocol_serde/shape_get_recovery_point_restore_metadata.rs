@@ -147,6 +147,13 @@ pub(crate) fn de_get_recovery_point_restore_metadata(
                             .transpose()?,
                     );
                 }
+                "ResourceType" => {
+                    builder = builder.set_resource_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "RestoreMetadata" => {
                     builder = builder.set_restore_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
                 }

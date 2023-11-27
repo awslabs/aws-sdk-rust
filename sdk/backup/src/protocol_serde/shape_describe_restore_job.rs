@@ -157,6 +157,9 @@ pub(crate) fn de_describe_restore_job(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "CreatedBy" => {
+                    builder = builder.set_created_by(crate::protocol_serde::shape_restore_job_creator::de_restore_job_creator(tokens)?);
+                }
                 "CreatedResourceArn" => {
                     builder = builder.set_created_resource_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -169,6 +172,20 @@ pub(crate) fn de_describe_restore_job(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "DeletionStatus" => {
+                    builder = builder.set_deletion_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RestoreDeletionStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "DeletionStatusMessage" => {
+                    builder = builder.set_deletion_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "ExpectedCompletionTimeMinutes" => {
                     builder = builder.set_expected_completion_time_minutes(
@@ -198,6 +215,12 @@ pub(crate) fn de_describe_restore_job(
                             .transpose()?,
                     );
                 }
+                "RecoveryPointCreationDate" => {
+                    builder = builder.set_recovery_point_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "ResourceType" => {
                     builder = builder.set_resource_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -221,6 +244,20 @@ pub(crate) fn de_describe_restore_job(
                 }
                 "StatusMessage" => {
                     builder = builder.set_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ValidationStatus" => {
+                    builder = builder.set_validation_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RestoreValidationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "ValidationStatusMessage" => {
+                    builder = builder.set_validation_status_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

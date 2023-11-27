@@ -243,15 +243,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ResetLandingZ
 pub enum ResetLandingZoneError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
+    /// <p>Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>Unexpected error during processing of request.</p>
+    /// <p>An unexpected error occurred during processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>Request references a resource which does not exist.</p>
+    /// <p>The request references a resource that does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Request was denied due to request throttling.</p>
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
+    /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

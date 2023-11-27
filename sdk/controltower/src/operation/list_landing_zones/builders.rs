@@ -23,7 +23,7 @@ impl ListLandingZonesInputBuilder {
 /// Fluent builder constructing a request to `ListLandingZones`.
 ///
 /// <p>Returns the landing zone ARN for the landing zone deployed in your managed account. This API also creates an ARN for existing accounts that do not yet have a landing zone ARN. </p>
-/// <p>The return limit is one landing zone ARN. </p>
+/// <p>Returns one landing zone ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLandingZonesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -115,31 +115,31 @@ impl ListLandingZonesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_landing_zones::paginator::ListLandingZonesPaginator {
         crate::operation::list_landing_zones::paginator::ListLandingZonesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The token to continue the list from a previous API call with the same parameters. </p>
+    /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The token to continue the list from a previous API call with the same parameters. </p>
+    /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The token to continue the list from a previous API call with the same parameters. </p>
+    /// <p>The token to continue the list from a previous API call with the same parameters.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of returned landing zone ARNs. </p>
+    /// <p>The maximum number of returned landing zone ARNs, which is one.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of returned landing zone ARNs. </p>
+    /// <p>The maximum number of returned landing zone ARNs, which is one.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of returned landing zone ARNs. </p>
+    /// <p>The maximum number of returned landing zone ARNs, which is one.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

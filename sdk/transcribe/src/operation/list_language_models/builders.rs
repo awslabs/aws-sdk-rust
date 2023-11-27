@@ -115,17 +115,17 @@ impl ListLanguageModelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_language_models::paginator::ListLanguageModelsPaginator {
         crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
+    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn status_equals(mut self, input: crate::types::ModelStatus) -> Self {
         self.inner = self.inner.status_equals(input);
         self
     }
-    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
+    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn set_status_equals(mut self, input: ::std::option::Option<crate::types::ModelStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
-    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
+    /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you do not include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn get_status_equals(&self) -> &::std::option::Option<crate::types::ModelStatus> {
         self.inner.get_status_equals()
     }
@@ -157,17 +157,17 @@ impl ListLanguageModelsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.</p>
+    /// <p>The maximum number of custom language models to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

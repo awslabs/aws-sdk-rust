@@ -180,9 +180,11 @@ impl DescribeOptionGroupsFluentBuilder {
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -199,9 +201,11 @@ impl DescribeOptionGroupsFluentBuilder {
         self.inner = self.inner.engine_name(input.into());
         self
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -218,9 +222,11 @@ impl DescribeOptionGroupsFluentBuilder {
         self.inner = self.inner.set_engine_name(input);
         self
     }
-    /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
+    /// <p>A filter to only include option groups associated with this database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

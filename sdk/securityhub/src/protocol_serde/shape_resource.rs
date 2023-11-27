@@ -40,6 +40,12 @@ pub fn ser_resource(
         crate::protocol_serde::shape_resource_details::ser_resource_details(&mut object_13, var_12)?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.application_name {
+        object.key("ApplicationName").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.application_arn {
+        object.key("ApplicationArn").string(var_15.as_str());
+    }
     Ok(())
 }
 
@@ -103,6 +109,20 @@ where
                         }
                         "Details" => {
                             builder = builder.set_details(crate::protocol_serde::shape_resource_details::de_resource_details(tokens)?);
+                        }
+                        "ApplicationName" => {
+                            builder = builder.set_application_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ApplicationArn" => {
+                            builder = builder.set_application_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

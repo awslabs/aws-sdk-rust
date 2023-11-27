@@ -78,14 +78,21 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>Valid Values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
     /// <p>Default: Same as the source.</p>
     pub license_model: ::std::option::Option<::std::string::String>,
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for the new instance.</p>
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -222,8 +229,13 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>For the list of permissions required for the IAM role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc"> Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub custom_iam_instance_profile: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub backup_target: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the DB instance.</p>
@@ -344,9 +356,14 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
     }
@@ -354,6 +371,8 @@ impl RestoreDbInstanceToPointInTimeInput {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -552,8 +571,13 @@ impl RestoreDbInstanceToPointInTimeInput {
     pub fn custom_iam_instance_profile(&self) -> ::std::option::Option<&str> {
         self.custom_iam_instance_profile.as_deref()
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(&self) -> ::std::option::Option<&str> {
         self.backup_target.as_deref()
@@ -961,23 +985,38 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
         self
     }
-    /// <p>The database name for the restored DB instance.</p> <note>
-    /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
-    /// </note>
+    /// <p>The database name for the restored DB instance.</p>
+    /// <p>This parameter doesn't apply to the following DB instances:</p>
+    /// <ul>
+    /// <li> <p>RDS Custom</p> </li>
+    /// <li> <p>RDS for Db2</p> </li>
+    /// <li> <p>RDS for MariaDB</p> </li>
+    /// <li> <p>RDS for MySQL</p> </li>
+    /// </ul>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
     }
@@ -985,6 +1024,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -1010,6 +1051,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -1035,6 +1078,8 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -1639,22 +1684,37 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     pub fn get_custom_iam_instance_profile(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_iam_instance_profile
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn backup_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.backup_target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn set_backup_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.backup_target = input;
         self
     }
-    /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
-    /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
+    /// <p>The location for storing automated backups and manual snapshots for the restored DB instance.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>outposts</code> (Amazon Web Services Outposts)</p> </li>
+    /// <li> <p> <code>region</code> (Amazon Web Services Region)</p> </li>
+    /// </ul>
+    /// <p>Default: <code>region</code> </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
     pub fn get_backup_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.backup_target

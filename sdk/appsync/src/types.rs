@@ -109,11 +109,25 @@ pub use crate::types::_api_caching_behavior::ApiCachingBehavior;
 
 pub use crate::types::_schema_status::SchemaStatus;
 
+pub use crate::types::_data_source_introspection_status::DataSourceIntrospectionStatus;
+
+pub use crate::types::_rds_data_api_config::RdsDataApiConfig;
+
 pub use crate::types::_source_api_association_summary::SourceApiAssociationSummary;
 
 pub use crate::types::_ownership::Ownership;
 
 pub use crate::types::_output_type::OutputType;
+
+pub use crate::types::_data_source_introspection_result::DataSourceIntrospectionResult;
+
+pub use crate::types::_data_source_introspection_model::DataSourceIntrospectionModel;
+
+pub use crate::types::_data_source_introspection_model_index::DataSourceIntrospectionModelIndex;
+
+pub use crate::types::_data_source_introspection_model_field::DataSourceIntrospectionModelField;
+
+pub use crate::types::_data_source_introspection_model_field_type::DataSourceIntrospectionModelFieldType;
 
 pub use crate::types::_api_association::ApiAssociation;
 
@@ -167,6 +181,18 @@ mod _conflict_handler_type;
 
 mod _data_source;
 
+mod _data_source_introspection_model;
+
+mod _data_source_introspection_model_field;
+
+mod _data_source_introspection_model_field_type;
+
+mod _data_source_introspection_model_index;
+
+mod _data_source_introspection_result;
+
+mod _data_source_introspection_status;
+
 mod _data_source_type;
 
 mod _default_action;
@@ -216,6 +242,8 @@ mod _output_type;
 mod _ownership;
 
 mod _pipeline_config;
+
+mod _rds_data_api_config;
 
 mod _rds_http_endpoint_config;
 

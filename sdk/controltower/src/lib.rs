@@ -19,7 +19,7 @@
 //!   - the ARN associated with the target organizational unit (OU), which we call the targetIdentifier.
 //!   - the ARN associated with a resource that you wish to tag or untag.
 //!
-//! __To get the controlIdentifier for your AWS Control Tower control:__
+//! __To get the controlIdentifier for your Amazon Web Services Control Tower control:__
 //!
 //! The controlIdentifier is an ARN that is specified for each control. You can view the controlIdentifier in the console on the __Control details__ page, as well as in the documentation.
 //!

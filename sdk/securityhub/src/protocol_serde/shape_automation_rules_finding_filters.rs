@@ -423,6 +423,42 @@ pub fn ser_automation_rules_finding_filters(
         }
         array_138.finish();
     }
+    if let Some(var_141) = &input.resource_application_arn {
+        let mut array_142 = object.key("ResourceApplicationArn").start_array();
+        for item_143 in var_141 {
+            {
+                #[allow(unused_mut)]
+                let mut object_144 = array_142.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_144, item_143)?;
+                object_144.finish();
+            }
+        }
+        array_142.finish();
+    }
+    if let Some(var_145) = &input.resource_application_name {
+        let mut array_146 = object.key("ResourceApplicationName").start_array();
+        for item_147 in var_145 {
+            {
+                #[allow(unused_mut)]
+                let mut object_148 = array_146.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_148, item_147)?;
+                object_148.finish();
+            }
+        }
+        array_146.finish();
+    }
+    if let Some(var_149) = &input.aws_account_name {
+        let mut array_150 = object.key("AwsAccountName").start_array();
+        for item_151 in var_149 {
+            {
+                #[allow(unused_mut)]
+                let mut object_152 = array_150.value().start_object();
+                crate::protocol_serde::shape_string_filter::ser_string_filter(&mut object_152, item_151)?;
+                object_152.finish();
+            }
+        }
+        array_150.finish();
+    }
     Ok(())
 }
 
@@ -550,6 +586,17 @@ where
                         }
                         "UserDefinedFields" => {
                             builder = builder.set_user_defined_fields(crate::protocol_serde::shape_map_filter_list::de_map_filter_list(tokens)?);
+                        }
+                        "ResourceApplicationArn" => {
+                            builder =
+                                builder.set_resource_application_arn(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "ResourceApplicationName" => {
+                            builder = builder
+                                .set_resource_application_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
+                        }
+                        "AwsAccountName" => {
+                            builder = builder.set_aws_account_name(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

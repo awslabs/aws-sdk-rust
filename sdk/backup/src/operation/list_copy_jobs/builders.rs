@@ -114,17 +114,17 @@ impl ListCopyJobsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator {
         crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return MaxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
@@ -324,24 +324,27 @@ impl ListCopyJobsFluentBuilder {
     pub fn get_by_parent_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_parent_job_id()
     }
-    /// <p>This parameter returns the job count for the specified message category.</p>
-    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
+    /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn by_message_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_message_category(input.into());
         self
     }
-    /// <p>This parameter returns the job count for the specified message category.</p>
-    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
+    /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn set_by_message_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_message_category(input);
         self
     }
-    /// <p>This parameter returns the job count for the specified message category.</p>
-    /// <p>Example accepted strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted MessageCategory strings.</p>
+    /// <p>This is an optional parameter that can be used to filter out jobs with a MessageCategory which matches the value you input.</p>
+    /// <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>.</p>
+    /// <p>View <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a> for a list of accepted strings.</p>
     /// <p>The the value ANY returns count of all message categories.</p>
     /// <p> <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns the sum.</p>
     pub fn get_by_message_category(&self) -> &::std::option::Option<::std::string::String> {

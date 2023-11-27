@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLandingZoneOperationOutput {
-    /// <p>The landing zone operation details. </p>
+    /// <p>Details about a landing zone operation.</p>
     pub operation_details: ::std::option::Option<crate::types::LandingZoneOperationDetail>,
     _request_id: Option<String>,
 }
 impl GetLandingZoneOperationOutput {
-    /// <p>The landing zone operation details. </p>
+    /// <p>Details about a landing zone operation.</p>
     pub fn operation_details(&self) -> ::std::option::Option<&crate::types::LandingZoneOperationDetail> {
         self.operation_details.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetLandingZoneOperationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLandingZoneOperationOutputBuilder {
-    /// <p>The landing zone operation details. </p>
+    /// <p>Details about a landing zone operation.</p>
     /// This field is required.
     pub fn operation_details(mut self, input: crate::types::LandingZoneOperationDetail) -> Self {
         self.operation_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The landing zone operation details. </p>
+    /// <p>Details about a landing zone operation.</p>
     pub fn set_operation_details(mut self, input: ::std::option::Option<crate::types::LandingZoneOperationDetail>) -> Self {
         self.operation_details = input;
         self
     }
-    /// <p>The landing zone operation details. </p>
+    /// <p>Details about a landing zone operation.</p>
     pub fn get_operation_details(&self) -> &::std::option::Option<crate::types::LandingZoneOperationDetail> {
         &self.operation_details
     }

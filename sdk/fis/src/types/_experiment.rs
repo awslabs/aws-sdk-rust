@@ -28,6 +28,10 @@ pub struct Experiment {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration for experiment logging.</p>
     pub log_configuration: ::std::option::Option<crate::types::ExperimentLogConfiguration>,
+    /// <p>The experiment options for the experiment.</p>
+    pub experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
+    /// <p>The count of target account configurations for the experiment.</p>
+    pub target_account_configurations_count: ::std::option::Option<i64>,
 }
 impl Experiment {
     /// <p>The ID of the experiment.</p>
@@ -80,6 +84,14 @@ impl Experiment {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::ExperimentLogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::ExperimentOptions> {
+        self.experiment_options.as_ref()
+    }
+    /// <p>The count of target account configurations for the experiment.</p>
+    pub fn target_account_configurations_count(&self) -> ::std::option::Option<i64> {
+        self.target_account_configurations_count
+    }
 }
 impl Experiment {
     /// Creates a new builder-style object to manufacture [`Experiment`](crate::types::Experiment).
@@ -104,6 +116,8 @@ pub struct ExperimentBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::ExperimentLogConfiguration>,
+    pub(crate) experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
+    pub(crate) target_account_configurations_count: ::std::option::Option<i64>,
 }
 impl ExperimentBuilder {
     /// <p>The ID of the experiment.</p>
@@ -304,6 +318,34 @@ impl ExperimentBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::ExperimentLogConfiguration> {
         &self.log_configuration
     }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn experiment_options(mut self, input: crate::types::ExperimentOptions) -> Self {
+        self.experiment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::ExperimentOptions>) -> Self {
+        self.experiment_options = input;
+        self
+    }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::ExperimentOptions> {
+        &self.experiment_options
+    }
+    /// <p>The count of target account configurations for the experiment.</p>
+    pub fn target_account_configurations_count(mut self, input: i64) -> Self {
+        self.target_account_configurations_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The count of target account configurations for the experiment.</p>
+    pub fn set_target_account_configurations_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.target_account_configurations_count = input;
+        self
+    }
+    /// <p>The count of target account configurations for the experiment.</p>
+    pub fn get_target_account_configurations_count(&self) -> &::std::option::Option<i64> {
+        &self.target_account_configurations_count
+    }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
     pub fn build(self) -> crate::types::Experiment {
         crate::types::Experiment {
@@ -319,6 +361,8 @@ impl ExperimentBuilder {
             end_time: self.end_time,
             tags: self.tags,
             log_configuration: self.log_configuration,
+            experiment_options: self.experiment_options,
+            target_account_configurations_count: self.target_account_configurations_count,
         }
     }
 }

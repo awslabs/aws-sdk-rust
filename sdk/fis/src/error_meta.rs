@@ -90,6 +90,50 @@ impl From<crate::operation::create_experiment_template::CreateExperimentTemplate
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError> for Error {
+    fn from(err: crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError) -> Self {
+        match err {
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_target_account_configuration::CreateTargetAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_experiment_template::DeleteExperimentTemplateError, R>>
     for Error
 where
@@ -117,6 +161,44 @@ impl From<crate::operation::delete_experiment_template::DeleteExperimentTemplate
                 Error::ValidationException(inner)
             }
             crate::operation::delete_experiment_template::DeleteExperimentTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError> for Error {
+    fn from(err: crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_target_account_configuration::DeleteTargetAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -166,6 +248,40 @@ impl From<crate::operation::get_experiment::GetExperimentError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError> for Error {
+    fn from(err: crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError) -> Self {
+        match err {
+            crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_experiment_target_account_configuration::GetExperimentTargetAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_experiment_template::GetExperimentTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -190,6 +306,41 @@ impl From<crate::operation::get_experiment_template::GetExperimentTemplateError>
             }
             crate::operation::get_experiment_template::GetExperimentTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_experiment_template::GetExperimentTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError> for Error {
+    fn from(err: crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError) -> Self {
+        match err {
+            crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_target_account_configuration::GetTargetAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -242,6 +393,41 @@ impl From<crate::operation::list_actions::ListActionsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError> for Error {
+    fn from(err: crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError) -> Self {
+        match err {
+            crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_experiment_resolved_targets::ListExperimentResolvedTargetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_experiments::ListExperimentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -261,6 +447,40 @@ impl From<crate::operation::list_experiments::ListExperimentsError> for Error {
         match err {
             crate::operation::list_experiments::ListExperimentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_experiments::ListExperimentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError> for Error {
+    fn from(err: crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_experiment_target_account_configurations::ListExperimentTargetAccountConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -309,6 +529,44 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError> for Error {
+    fn from(err: crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_target_account_configurations::ListTargetAccountConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -461,6 +719,44 @@ impl From<crate::operation::update_experiment_template::UpdateExperimentTemplate
                 Error::ValidationException(inner)
             }
             crate::operation::update_experiment_template::UpdateExperimentTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError> for Error {
+    fn from(err: crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError) -> Self {
+        match err {
+            crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_target_account_configuration::UpdateTargetAccountConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -41,6 +41,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "LastBackupVaultArn" => {
+                            builder = builder.set_last_backup_vault_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastRecoveryPointArn" => {
+                            builder = builder.set_last_recovery_point_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

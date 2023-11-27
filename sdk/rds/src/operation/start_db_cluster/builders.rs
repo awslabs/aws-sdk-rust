@@ -22,9 +22,9 @@ impl StartDbClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDBCluster`.
 ///
-/// <p>Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services console, the stop-db-cluster CLI command, or the StopDBCluster action.</p>
+/// <p>Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services console, the stop-db-cluster CLI command, or the <code>StopDBCluster</code> operation.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-cluster-stop-start.html"> Stopping and Starting an Aurora Cluster</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>
-/// <p>This action only applies to Aurora DB clusters.</p>
+/// <p>This operation only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDBClusterFluentBuilder {

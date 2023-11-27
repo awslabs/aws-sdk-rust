@@ -16,6 +16,8 @@ pub struct EnabledControlDetails {
     pub status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     /// <p>The drift status of the enabled control.</p>
     pub drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>>,
 }
 impl EnabledControlDetails {
     /// <p>The ARN of the enabled control.</p>
@@ -44,6 +46,12 @@ impl EnabledControlDetails {
     pub fn drift_status_summary(&self) -> ::std::option::Option<&crate::types::DriftStatusSummary> {
         self.drift_status_summary.as_ref()
     }
+    /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::EnabledControlParameterSummary] {
+        self.parameters.as_deref().unwrap_or_default()
+    }
 }
 impl EnabledControlDetails {
     /// Creates a new builder-style object to manufacture [`EnabledControlDetails`](crate::types::EnabledControlDetails).
@@ -62,6 +70,7 @@ pub struct EnabledControlDetailsBuilder {
     pub(crate) target_regions: ::std::option::Option<::std::vec::Vec<crate::types::Region>>,
     pub(crate) status_summary: ::std::option::Option<crate::types::EnablementStatusSummary>,
     pub(crate) drift_status_summary: ::std::option::Option<crate::types::DriftStatusSummary>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>>,
 }
 impl EnabledControlDetailsBuilder {
     /// <p>The ARN of the enabled control.</p>
@@ -154,6 +163,26 @@ impl EnabledControlDetailsBuilder {
     pub fn get_drift_status_summary(&self) -> &::std::option::Option<crate::types::DriftStatusSummary> {
         &self.drift_status_summary
     }
+    /// Appends an item to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
+    pub fn parameters(mut self, input: crate::types::EnabledControlParameterSummary) -> Self {
+        let mut v = self.parameters.unwrap_or_default();
+        v.push(input);
+        self.parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>Array of <code>EnabledControlParameter</code> objects.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameterSummary>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`EnabledControlDetails`](crate::types::EnabledControlDetails).
     pub fn build(self) -> crate::types::EnabledControlDetails {
         crate::types::EnabledControlDetails {
@@ -163,6 +192,7 @@ impl EnabledControlDetailsBuilder {
             target_regions: self.target_regions,
             status_summary: self.status_summary,
             drift_status_summary: self.drift_status_summary,
+            parameters: self.parameters,
         }
     }
 }

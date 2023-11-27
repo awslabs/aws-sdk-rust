@@ -7,6 +7,8 @@ pub use crate::types::_landing_zone_detail::LandingZoneDetailBuilder;
 
 pub use crate::types::_landing_zone_drift_status_summary::LandingZoneDriftStatusSummaryBuilder;
 
+pub use crate::types::_enabled_control_parameter::EnabledControlParameterBuilder;
+
 pub use crate::types::_enabled_control_summary::EnabledControlSummaryBuilder;
 
 pub use crate::types::_drift_status_summary::DriftStatusSummaryBuilder;
@@ -14,6 +16,8 @@ pub use crate::types::_drift_status_summary::DriftStatusSummaryBuilder;
 pub use crate::types::_enablement_status_summary::EnablementStatusSummaryBuilder;
 
 pub use crate::types::_enabled_control_details::EnabledControlDetailsBuilder;
+
+pub use crate::types::_enabled_control_parameter_summary::EnabledControlParameterSummaryBuilder;
 
 pub use crate::types::_region::RegionBuilder;
 

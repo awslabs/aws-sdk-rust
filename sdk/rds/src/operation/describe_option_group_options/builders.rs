@@ -22,7 +22,7 @@ impl DescribeOptionGroupOptionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeOptionGroupOptions`.
 ///
-/// <p>Describes all available options.</p>
+/// <p>Describes all available options for the specified engine.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,9 +114,11 @@ impl DescribeOptionGroupOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator {
         crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -133,9 +135,11 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self.inner = self.inner.engine_name(input.into());
         self
     }
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>
@@ -152,9 +156,11 @@ impl DescribeOptionGroupOptionsFluentBuilder {
         self.inner = self.inner.set_engine_name(input);
         self
     }
-    /// <p>A required parameter. Options available for the given engine name are described.</p>
+    /// <p>The name of the engine to describe options for.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p> <code>db2-ae</code> </p> </li>
+    /// <li> <p> <code>db2-se</code> </p> </li>
     /// <li> <p> <code>mariadb</code> </p> </li>
     /// <li> <p> <code>mysql</code> </p> </li>
     /// <li> <p> <code>oracle-ee</code> </p> </li>

@@ -4,8 +4,14 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateExperimentTemplate` operation.
 pub mod create_experiment_template;
 
+/// Types for the `CreateTargetAccountConfiguration` operation.
+pub mod create_target_account_configuration;
+
 /// Types for the `DeleteExperimentTemplate` operation.
 pub mod delete_experiment_template;
+
+/// Types for the `DeleteTargetAccountConfiguration` operation.
+pub mod delete_target_account_configuration;
 
 /// Types for the `GetAction` operation.
 pub mod get_action;
@@ -13,14 +19,26 @@ pub mod get_action;
 /// Types for the `GetExperiment` operation.
 pub mod get_experiment;
 
+/// Types for the `GetExperimentTargetAccountConfiguration` operation.
+pub mod get_experiment_target_account_configuration;
+
 /// Types for the `GetExperimentTemplate` operation.
 pub mod get_experiment_template;
+
+/// Types for the `GetTargetAccountConfiguration` operation.
+pub mod get_target_account_configuration;
 
 /// Types for the `GetTargetResourceType` operation.
 pub mod get_target_resource_type;
 
 /// Types for the `ListActions` operation.
 pub mod list_actions;
+
+/// Types for the `ListExperimentResolvedTargets` operation.
+pub mod list_experiment_resolved_targets;
+
+/// Types for the `ListExperimentTargetAccountConfigurations` operation.
+pub mod list_experiment_target_account_configurations;
 
 /// Types for the `ListExperimentTemplates` operation.
 pub mod list_experiment_templates;
@@ -30,6 +48,9 @@ pub mod list_experiments;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTargetAccountConfigurations` operation.
+pub mod list_target_account_configurations;
 
 /// Types for the `ListTargetResourceTypes` operation.
 pub mod list_target_resource_types;
@@ -48,3 +69,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateExperimentTemplate` operation.
 pub mod update_experiment_template;
+
+/// Types for the `UpdateTargetAccountConfiguration` operation.
+pub mod update_target_account_configuration;

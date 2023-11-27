@@ -5,7 +5,7 @@
 pub struct ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains.</p>
     pub enabled_controls: ::std::vec::Vec<crate::types::EnabledControlSummary>,
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListEnabledControlsOutput {
         use std::ops::Deref;
         self.enabled_controls.deref()
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListEnabledControlsOutputBuilder {
     pub fn get_enabled_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlSummary>> {
         &self.enabled_controls
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
+    /// <p>Retrieves the next page of results. If the string is empty, the response is the end of the results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

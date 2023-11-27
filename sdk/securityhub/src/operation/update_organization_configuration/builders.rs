@@ -22,7 +22,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
 ///
-/// <p>Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator account.</p>
+/// <p>Updates the configuration of your organization in Security Hub. Only the Security Hub administrator account can invoke this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,44 +108,61 @@ impl UpdateOrganizationConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
-    /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    /// <p>Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is <code>false</code>.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which Security Hub is enabled and associate the policy with new organization accounts.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable(input);
         self
     }
-    /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
-    /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    /// <p>Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is <code>false</code>.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which Security Hub is enabled and associate the policy with new organization accounts.</p>
     pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable(input);
         self
     }
-    /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
-    /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
+    /// <p>Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
+    /// <p>If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is <code>false</code>.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which Security Hub is enabled and associate the policy with new organization accounts.</p>
     pub fn get_auto_enable(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable()
     }
-    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
-    /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
-    /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> in new member accounts when they join the organization.</p>
+    /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+    /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which specific security standards are enabled and associate the policy with new organization accounts.</p>
     pub fn auto_enable_standards(mut self, input: crate::types::AutoEnableStandards) -> Self {
         self.inner = self.inner.auto_enable_standards(input);
         self
     }
-    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
-    /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
-    /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> in new member accounts when they join the organization.</p>
+    /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+    /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which specific security standards are enabled and associate the policy with new organization accounts.</p>
     pub fn set_auto_enable_standards(mut self, input: ::std::option::Option<crate::types::AutoEnableStandards>) -> Self {
         self.inner = self.inner.set_auto_enable_standards(input);
         self
     }
-    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> for new member accounts in the organization.</p>
-    /// <p>By default, this parameter is equal to <code>DEFAULT</code>, and new member accounts are automatically enabled with default Security Hub standards.</p>
-    /// <p>To opt out of enabling default standards for new member accounts, set this parameter equal to <code>NONE</code>.</p>
+    /// <p>Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default standards</a> in new member accounts when they join the organization.</p>
+    /// <p>The default value of this parameter is equal to <code>DEFAULT</code>.</p>
+    /// <p>If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member accounts.</p>
+    /// <p>If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which specific security standards are enabled and associate the policy with new organization accounts.</p>
     pub fn get_auto_enable_standards(&self) -> &::std::option::Option<crate::types::AutoEnableStandards> {
         self.inner.get_auto_enable_standards()
+    }
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
+        self.inner = self.inner.organization_configuration(input);
+        self
+    }
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
+        self.inner = self.inner.set_organization_configuration(input);
+        self
+    }
+    /// <p> Provides information about the way an organization is configured in Security Hub. </p>
+    pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
+        self.inner.get_organization_configuration()
     }
 }

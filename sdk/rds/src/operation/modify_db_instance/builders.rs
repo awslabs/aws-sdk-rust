@@ -135,21 +135,21 @@ impl ModifyDBInstanceFluentBuilder {
         self.inner.get_db_instance_identifier()
     }
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
-    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
+    /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.inner = self.inner.allocated_storage(input);
         self
     }
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
-    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
+    /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
     }
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
-    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
+    /// <p>For RDS for Db2, MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL, the value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p>
     /// <p>For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.</p>
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocated_storage()
@@ -318,7 +318,7 @@ impl ModifyDBInstanceFluentBuilder {
     }
     /// <p>The new password for the master user.</p>
     /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
-    /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+    /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -329,10 +329,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -345,7 +346,7 @@ impl ModifyDBInstanceFluentBuilder {
     }
     /// <p>The new password for the master user.</p>
     /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
-    /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+    /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -356,10 +357,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -372,7 +374,7 @@ impl ModifyDBInstanceFluentBuilder {
     }
     /// <p>The new password for the master user.</p>
     /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
-    /// <p>Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
+    /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
@@ -383,10 +385,11 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
-    /// <li> <p>Can include any printable ASCII character except "/", """, or "@".</p> </li>
+    /// <li> <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p> </li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - Must contain from 8 to 255 characters.</p> </li>
     /// <li> <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p> </li>
     /// <li> <p>RDS for MySQL - Must contain from 8 to 41 characters.</p> </li>
@@ -683,6 +686,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -697,6 +701,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -711,6 +716,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
+    /// <li> <p>RDS for Db2 - <code>bring-your-own-license</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>general-public-license</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>license-included</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>general-public-license</code> </p> </li>
@@ -899,21 +905,21 @@ impl ModifyDBInstanceFluentBuilder {
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate_identifier()
     }
-    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
-    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
-    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
+    /// <p>The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance from its current domain. You must create the domain before this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
@@ -1081,6 +1087,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Default:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora - <code>3306</code> </p> </li>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
@@ -1103,6 +1110,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Default:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora - <code>3306</code> </p> </li>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>
@@ -1125,6 +1133,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Default:</p>
     /// <ul>
     /// <li> <p>Amazon Aurora - <code>3306</code> </p> </li>
+    /// <li> <p>RDS for Db2 - <code>50000</code> </p> </li>
     /// <li> <p>RDS for MariaDB - <code>3306</code> </p> </li>
     /// <li> <p>RDS for Microsoft SQL Server - <code>1433</code> </p> </li>
     /// <li> <p>RDS for MySQL - <code>3306</code> </p> </li>

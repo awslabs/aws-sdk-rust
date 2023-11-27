@@ -69,7 +69,19 @@ pub use crate::types::_api_key::ApiKeyBuilder;
 
 pub use crate::types::_api_cache::ApiCacheBuilder;
 
+pub use crate::types::_rds_data_api_config::RdsDataApiConfigBuilder;
+
 pub use crate::types::_source_api_association_summary::SourceApiAssociationSummaryBuilder;
+
+pub use crate::types::_data_source_introspection_result::DataSourceIntrospectionResultBuilder;
+
+pub use crate::types::_data_source_introspection_model::DataSourceIntrospectionModelBuilder;
+
+pub use crate::types::_data_source_introspection_model_index::DataSourceIntrospectionModelIndexBuilder;
+
+pub use crate::types::_data_source_introspection_model_field::DataSourceIntrospectionModelFieldBuilder;
+
+pub use crate::types::_data_source_introspection_model_field_type::DataSourceIntrospectionModelFieldTypeBuilder;
 
 pub use crate::types::_api_association::ApiAssociationBuilder;
 
