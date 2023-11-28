@@ -15,7 +15,7 @@ pub struct ListCustomModelsInput {
     pub foundation_model_arn_equals: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort by in the returned list of models.</p>
     pub sort_by: ::std::option::Option<crate::types::SortModelsBy>,
@@ -47,7 +47,7 @@ impl ListCustomModelsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -166,17 +166,17 @@ impl ListCustomModelsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

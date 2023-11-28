@@ -6,7 +6,9 @@
 pub struct Error {
     /// <p>The error key.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>The version ID of the error.</p>
+    /// <p>The version ID of the error.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code is a string that uniquely identifies an error condition. It is meant to be read and understood by programs that detect and handle errors by type. The following is a list of Amazon S3 error codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error responses</a>.</p>
     /// <ul>
@@ -637,7 +639,9 @@ impl Error {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The version ID of the error.</p>
+    /// <p>The version ID of the error.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -1300,17 +1304,23 @@ impl ErrorBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>The version ID of the error.</p>
+    /// <p>The version ID of the error.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version ID of the error.</p>
+    /// <p>The version ID of the error.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>The version ID of the error.</p>
+    /// <p>The version ID of the error.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }

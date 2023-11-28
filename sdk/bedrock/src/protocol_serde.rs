@@ -135,6 +135,8 @@ pub(crate) mod shape_cloud_watch_config;
 
 pub(crate) mod shape_custom_model_summary;
 
+pub(crate) mod shape_foundation_model_lifecycle;
+
 pub(crate) mod shape_foundation_model_summary;
 
 pub(crate) mod shape_inference_type_list;

@@ -7,7 +7,9 @@ pub struct GetObjectAclOutput {
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>A list of grants.</p>
     pub grants: ::std::option::Option<::std::vec::Vec<crate::types::Grant>>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -23,7 +25,9 @@ impl GetObjectAclOutput {
     pub fn grants(&self) -> &[crate::types::Grant] {
         self.grants.as_deref().unwrap_or_default()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -90,17 +94,23 @@ impl GetObjectAclOutputBuilder {
     pub fn get_grants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grant>> {
         &self.grants
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
         &self.request_charged
     }

@@ -31,7 +31,9 @@ pub struct ListObjectVersionsOutput {
     /// <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
     /// <p> <code>KeyMarker, NextKeyMarker, Prefix, Key</code>, and <code>Delimiter</code>.</p>
     pub encoding_type: ::std::option::Option<crate::types::EncodingType>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
@@ -97,7 +99,9 @@ impl ListObjectVersionsOutput {
     pub fn encoding_type(&self) -> ::std::option::Option<&crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -347,17 +351,23 @@ impl ListObjectVersionsOutputBuilder {
     pub fn get_encoding_type(&self) -> &::std::option::Option<crate::types::EncodingType> {
         &self.encoding_type
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
         &self.request_charged
     }

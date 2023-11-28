@@ -181,6 +181,8 @@ pub use crate::types::_event_stream_destination_details::EventStreamDestinationD
 
 pub use crate::types::_domain_stats::DomainStats;
 
+pub use crate::types::_detected_profile_object_type::DetectedProfileObjectType;
+
 pub use crate::types::_integration_config::IntegrationConfig;
 
 pub use crate::types::_appflow_integration::AppflowIntegration;
@@ -224,6 +226,8 @@ mod _consolidation;
 mod _data_pull_mode;
 
 mod _destination_summary;
+
+mod _detected_profile_object_type;
 
 mod _domain_stats;
 

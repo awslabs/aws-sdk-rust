@@ -46,6 +46,9 @@ pub mod delete_profile_object_type;
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
 
+/// Types for the `DetectProfileObjectType` operation.
+pub mod detect_profile_object_type;
+
 /// Types for the `GetAutoMergingPreview` operation.
 pub mod get_auto_merging_preview;
 

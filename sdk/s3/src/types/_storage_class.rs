@@ -13,6 +13,7 @@
 /// # let storageclass = unimplemented!();
 /// match storageclass {
 ///     StorageClass::DeepArchive => { /* ... */ },
+///     StorageClass::ExpressOnezone => { /* ... */ },
 ///     StorageClass::Glacier => { /* ... */ },
 ///     StorageClass::GlacierIr => { /* ... */ },
 ///     StorageClass::IntelligentTiering => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
     #[allow(missing_docs)] // documentation missing in model
+    ExpressOnezone,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
     GlacierIr,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for StorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => StorageClass::DeepArchive,
+            "EXPRESS_ONEZONE" => StorageClass::ExpressOnezone,
             "GLACIER" => StorageClass::Glacier,
             "GLACIER_IR" => StorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => StorageClass::IntelligentTiering,
@@ -102,6 +106,7 @@ impl StorageClass {
     pub fn as_str(&self) -> &str {
         match self {
             StorageClass::DeepArchive => "DEEP_ARCHIVE",
+            StorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
             StorageClass::Glacier => "GLACIER",
             StorageClass::GlacierIr => "GLACIER_IR",
             StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
@@ -118,6 +123,7 @@ impl StorageClass {
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
+            "EXPRESS_ONEZONE",
             "GLACIER",
             "GLACIER_IR",
             "INTELLIGENT_TIERING",

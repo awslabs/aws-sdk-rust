@@ -14,6 +14,7 @@
 /// match phonenumbertype {
 ///     PhoneNumberType::Did => { /* ... */ },
 ///     PhoneNumberType::Shared => { /* ... */ },
+///     PhoneNumberType::ShortCode => { /* ... */ },
 ///     PhoneNumberType::ThirdPartyDid => { /* ... */ },
 ///     PhoneNumberType::ThirdPartyTf => { /* ... */ },
 ///     PhoneNumberType::TollFree => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Shared,
     #[allow(missing_docs)] // documentation missing in model
+    ShortCode,
+    #[allow(missing_docs)] // documentation missing in model
     ThirdPartyDid,
     #[allow(missing_docs)] // documentation missing in model
     ThirdPartyTf,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for PhoneNumberType {
         match s {
             "DID" => PhoneNumberType::Did,
             "SHARED" => PhoneNumberType::Shared,
+            "SHORT_CODE" => PhoneNumberType::ShortCode,
             "THIRD_PARTY_DID" => PhoneNumberType::ThirdPartyDid,
             "THIRD_PARTY_TF" => PhoneNumberType::ThirdPartyTf,
             "TOLL_FREE" => PhoneNumberType::TollFree,
@@ -87,6 +91,7 @@ impl PhoneNumberType {
         match self {
             PhoneNumberType::Did => "DID",
             PhoneNumberType::Shared => "SHARED",
+            PhoneNumberType::ShortCode => "SHORT_CODE",
             PhoneNumberType::ThirdPartyDid => "THIRD_PARTY_DID",
             PhoneNumberType::ThirdPartyTf => "THIRD_PARTY_TF",
             PhoneNumberType::TollFree => "TOLL_FREE",
@@ -96,7 +101,7 @@ impl PhoneNumberType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DID", "SHARED", "THIRD_PARTY_DID", "THIRD_PARTY_TF", "TOLL_FREE", "UIFN"]
+        &["DID", "SHARED", "SHORT_CODE", "THIRD_PARTY_DID", "THIRD_PARTY_TF", "TOLL_FREE", "UIFN"]
     }
 }
 impl ::std::convert::AsRef<str> for PhoneNumberType {

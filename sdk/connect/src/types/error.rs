@@ -41,6 +41,8 @@ pub use crate::types::error::_maximum_result_returned_exception::MaximumResultRe
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
+pub use crate::types::error::_output_type_not_found_exception::OutputTypeNotFoundException;
+
 pub use crate::types::error::_user_not_found_exception::UserNotFoundException;
 
 pub use crate::types::error::_contact_flow_not_published_exception::ContactFlowNotPublishedException;
@@ -72,6 +74,8 @@ mod _limit_exceeded_exception;
 mod _maximum_result_returned_exception;
 
 mod _outbound_contact_not_permitted_exception;
+
+mod _output_type_not_found_exception;
 
 mod _property_validation_exception;
 

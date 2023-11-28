@@ -245,6 +245,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteBucketC
             .set_use_arn_region(cfg.load::<crate::config::UseArnRegion>().map(|ty| ty.0))
             .set_disable_multi_region_access_points(cfg.load::<crate::config::DisableMultiRegionAccessPoints>().map(|ty| ty.0))
             .set_accelerate(cfg.load::<crate::config::Accelerate>().map(|ty| ty.0))
+            .set_disable_s3_express_session_auth(cfg.load::<crate::config::DisableS3ExpressSessionAuth>().map(|ty| ty.0))
+            .set_use_s3_express_control_endpoint(Some(true))
             .set_bucket(Some(
                 _input
                     .bucket

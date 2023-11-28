@@ -209,6 +209,21 @@ pub(crate) fn list_evaluation_forms_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_realtime_contact_analysis_segments_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder,
+) -> crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder {
+    if builder.channel.is_none() {
+        builder.channel = "no value was set".parse::<crate::types::RealTimeContactAnalysisSupportedChannel>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RealTimeContactAnalysisStatus>().ok()
+    }
+    if builder.segments.is_none() {
+        builder.segments = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_rules_output_output_correct_errors(
     mut builder: crate::operation::list_rules::builders::ListRulesOutputBuilder,
 ) -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
@@ -857,6 +872,81 @@ pub(crate) fn queue_quick_connect_config_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_segment_attachments_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentAttachmentsBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentAttachmentsBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.participant_id.is_none() {
+        builder.participant_id = Some(Default::default())
+    }
+    if builder.participant_role.is_none() {
+        builder.participant_role = "no value was set".parse::<crate::types::ParticipantRole>().ok()
+    }
+    if builder.attachments.is_none() {
+        builder.attachments = Some(Default::default())
+    }
+    if builder.time.is_none() {
+        builder.time = Some(crate::types::RealTimeContactAnalysisTimeData::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_segment_categories_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentCategoriesBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentCategoriesBuilder {
+    if builder.matched_details.is_none() {
+        builder.matched_details = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_segment_event_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentEventBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentEventBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = Some(Default::default())
+    }
+    if builder.time.is_none() {
+        builder.time = Some(crate::types::RealTimeContactAnalysisTimeData::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_segment_issues_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentIssuesBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentIssuesBuilder {
+    if builder.issues_detected.is_none() {
+        builder.issues_detected = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_segment_transcript_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentTranscriptBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.participant_id.is_none() {
+        builder.participant_id = Some(Default::default())
+    }
+    if builder.participant_role.is_none() {
+        builder.participant_role = "no value was set".parse::<crate::types::ParticipantRole>().ok()
+    }
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    if builder.time.is_none() {
+        builder.time = Some(crate::types::RealTimeContactAnalysisTimeData::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn rule_action_correct_errors(mut builder: crate::types::builders::RuleActionBuilder) -> crate::types::builders::RuleActionBuilder {
     if builder.action_type.is_none() {
         builder.action_type = "no value was set".parse::<crate::types::ActionType>().ok()
@@ -990,6 +1080,36 @@ pub(crate) fn task_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_attachment_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisAttachmentBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisAttachmentBuilder {
+    if builder.attachment_name.is_none() {
+        builder.attachment_name = Some(Default::default())
+    }
+    if builder.attachment_id.is_none() {
+        builder.attachment_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_category_details_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisCategoryDetailsBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisCategoryDetailsBuilder {
+    if builder.points_of_interest.is_none() {
+        builder.points_of_interest = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_issue_detected_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder {
+    if builder.transcript_items.is_none() {
+        builder.transcript_items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_form_numeric_question_properties_correct_errors(
     mut builder: crate::types::builders::EvaluationFormNumericQuestionPropertiesBuilder,
 ) -> crate::types::builders::EvaluationFormNumericQuestionPropertiesBuilder {
@@ -1011,6 +1131,18 @@ pub(crate) fn evaluation_form_single_select_question_properties_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_character_interval_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisCharacterIntervalBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisCharacterIntervalBuilder {
+    if builder.begin_offset_char.is_none() {
+        builder.begin_offset_char = Some(Default::default())
+    }
+    if builder.end_offset_char.is_none() {
+        builder.end_offset_char = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn reference_correct_errors(mut builder: crate::types::builders::ReferenceBuilder) -> crate::types::builders::ReferenceBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
@@ -1026,6 +1158,15 @@ pub(crate) fn evaluation_form_single_select_question_automation_correct_errors(
 ) -> crate::types::builders::EvaluationFormSingleSelectQuestionAutomationBuilder {
     if builder.options.is_none() {
         builder.options = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_transcript_item_with_content_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -1059,6 +1200,15 @@ pub(crate) fn numeric_question_property_value_automation_correct_errors(
 ) -> crate::types::builders::NumericQuestionPropertyValueAutomationBuilder {
     if builder.label.is_none() {
         builder.label = "no value was set".parse::<crate::types::NumericQuestionPropertyAutomationLabel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn real_time_contact_analysis_transcript_item_with_character_offsets_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }

@@ -146,6 +146,8 @@ mod create_bucket;
 
 mod create_multipart_upload;
 
+mod create_session;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -278,6 +280,8 @@ mod list_bucket_inventory_configurations;
 mod list_bucket_metrics_configurations;
 
 mod list_buckets;
+
+mod list_directory_buckets;
 
 mod list_multipart_uploads;
 

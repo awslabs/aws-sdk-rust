@@ -17,6 +17,7 @@
 ///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnPostChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
+///     EventSourceName::OnRealTimeChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnSalesforceCaseCreate => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketCreate => { /* ... */ },
 ///     EventSourceName::OnZendeskTicketStatusUpdate => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnRealTimeCallAnalysisAvailable,
     #[allow(missing_docs)] // documentation missing in model
+    OnRealTimeChatAnalysisAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     OnSalesforceCaseCreate,
     #[allow(missing_docs)] // documentation missing in model
     OnZendeskTicketCreate,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for EventSourceName {
             "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
             "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
             "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
+            "OnRealTimeChatAnalysisAvailable" => EventSourceName::OnRealTimeChatAnalysisAvailable,
             "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
             "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
             "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
@@ -98,6 +102,7 @@ impl EventSourceName {
             EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
             EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
             EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
+            EventSourceName::OnRealTimeChatAnalysisAvailable => "OnRealTimeChatAnalysisAvailable",
             EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
             EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
             EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
@@ -112,6 +117,7 @@ impl EventSourceName {
             "OnPostCallAnalysisAvailable",
             "OnPostChatAnalysisAvailable",
             "OnRealTimeCallAnalysisAvailable",
+            "OnRealTimeChatAnalysisAvailable",
             "OnSalesforceCaseCreate",
             "OnZendeskTicketCreate",
             "OnZendeskTicketStatusUpdate",

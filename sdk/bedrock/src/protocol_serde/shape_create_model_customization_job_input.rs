@@ -27,57 +27,60 @@ pub fn ser_create_model_customization_job_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.hyper_parameters {
+    if let Some(var_9) = &input.customization_type {
+        object.key("customizationType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.hyper_parameters {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("hyperParameters").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("hyperParameters").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
-    if let Some(var_13) = &input.job_name {
-        object.key("jobName").string(var_13.as_str());
+    if let Some(var_14) = &input.job_name {
+        object.key("jobName").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.job_tags {
-        let mut array_15 = object.key("jobTags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.job_tags {
+        let mut array_16 = object.key("jobTags").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.output_data_config {
+    if let Some(var_19) = &input.output_data_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("outputDataConfig").start_object();
-        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("outputDataConfig").start_object();
+        crate::protocol_serde::shape_output_data_config::ser_output_data_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.role_arn {
-        object.key("roleArn").string(var_20.as_str());
+    if let Some(var_21) = &input.role_arn {
+        object.key("roleArn").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.training_data_config {
+    if let Some(var_22) = &input.training_data_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("trainingDataConfig").start_object();
-        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_23 = object.key("trainingDataConfig").start_object();
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_23) = &input.validation_data_config {
+    if let Some(var_24) = &input.validation_data_config {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("validationDataConfig").start_object();
-        crate::protocol_serde::shape_validation_data_config::ser_validation_data_config(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_25 = object.key("validationDataConfig").start_object();
+        crate::protocol_serde::shape_validation_data_config::ser_validation_data_config(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_25) = &input.vpc_config {
+    if let Some(var_26) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_27 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_27, var_26)?;
+        object_27.finish();
     }
     Ok(())
 }

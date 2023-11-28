@@ -123,6 +123,24 @@ pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 
 pub use crate::types::_disconnect_reason::DisconnectReasonBuilder;
 
+pub use crate::types::_connection_data::ConnectionDataBuilder;
+
+pub use crate::types::_meeting::MeetingBuilder;
+
+pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurationBuilder;
+
+pub use crate::types::_audio_features::AudioFeaturesBuilder;
+
+pub use crate::types::_media_placement::MediaPlacementBuilder;
+
+pub use crate::types::_attendee::AttendeeBuilder;
+
+pub use crate::types::_participant_details::ParticipantDetailsBuilder;
+
+pub use crate::types::_allowed_capabilities::AllowedCapabilitiesBuilder;
+
+pub use crate::types::_participant_capabilities::ParticipantCapabilitiesBuilder;
+
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
 pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
@@ -135,7 +153,9 @@ pub use crate::types::_persistent_chat::PersistentChatBuilder;
 
 pub use crate::types::_chat_message::ChatMessageBuilder;
 
-pub use crate::types::_participant_details::ParticipantDetailsBuilder;
+pub use crate::types::_new_session_details::NewSessionDetailsBuilder;
+
+pub use crate::types::_chat_event::ChatEventBuilder;
 
 pub use crate::types::_vocabulary_summary::VocabularySummaryBuilder;
 
@@ -227,6 +247,32 @@ pub use crate::types::_routing_profile_summary::RoutingProfileSummaryBuilder;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummaryBuilder;
 
+pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeContactAnalysisSegmentAttachmentsBuilder;
+
+pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAnalysisAttachmentBuilder;
+
+pub use crate::types::_real_time_contact_analysis_segment_event::RealTimeContactAnalysisSegmentEventBuilder;
+
+pub use crate::types::_real_time_contact_analysis_segment_issues::RealTimeContactAnalysisSegmentIssuesBuilder;
+
+pub use crate::types::_real_time_contact_analysis_issue_detected::RealTimeContactAnalysisIssueDetectedBuilder;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_content::RealTimeContactAnalysisTranscriptItemWithContentBuilder;
+
+pub use crate::types::_real_time_contact_analysis_character_interval::RealTimeContactAnalysisCharacterIntervalBuilder;
+
+pub use crate::types::_real_time_contact_analysis_segment_categories::RealTimeContactAnalysisSegmentCategoriesBuilder;
+
+pub use crate::types::_real_time_contact_analysis_category_details::RealTimeContactAnalysisCategoryDetailsBuilder;
+
+pub use crate::types::_real_time_contact_analysis_point_of_interest::RealTimeContactAnalysisPointOfInterestBuilder;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder;
+
+pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscriptBuilder;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_redaction::RealTimeContactAnalysisTranscriptItemRedactionBuilder;
+
 pub use crate::types::_quick_connect_summary::QuickConnectSummaryBuilder;
 
 pub use crate::types::_queue_summary::QueueSummaryBuilder;
@@ -246,6 +292,8 @@ pub use crate::types::_instance_summary::InstanceSummaryBuilder;
 pub use crate::types::_attribute::AttributeBuilder;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummaryBuilder;
+
+pub use crate::types::_flow_association_summary::FlowAssociationSummaryBuilder;
 
 pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummaryBuilder;
 
@@ -276,6 +324,8 @@ pub use crate::types::_evaluation_score::EvaluationScoreBuilder;
 pub use crate::types::_lex_bot_config::LexBotConfigBuilder;
 
 pub use crate::types::_lex_v2_bot::LexV2BotBuilder;
+
+pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResultBuilder;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;
 
@@ -403,4 +453,4 @@ pub use crate::types::_campaign::CampaignBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 
-pub use crate::types::_flow_association_summary::FlowAssociationSummaryBuilder;
+pub use crate::types::_error_result::ErrorResultBuilder;

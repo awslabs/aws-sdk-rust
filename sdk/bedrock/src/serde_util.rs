@@ -213,6 +213,15 @@ pub(crate) fn custom_model_summary_correct_errors(
     builder
 }
 
+pub(crate) fn foundation_model_lifecycle_correct_errors(
+    mut builder: crate::types::builders::FoundationModelLifecycleBuilder,
+) -> crate::types::builders::FoundationModelLifecycleBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FoundationModelLifecycleStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn foundation_model_summary_correct_errors(
     mut builder: crate::types::builders::FoundationModelSummaryBuilder,
 ) -> crate::types::builders::FoundationModelSummaryBuilder {

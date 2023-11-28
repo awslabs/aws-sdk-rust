@@ -18,6 +18,10 @@ pub struct ListPhoneNumbersSummary {
     pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Connect instance that phone numbers are claimed to. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The description of the phone number.</p>
+    pub phone_number_description: ::std::option::Option<::std::string::String>,
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersSummary {
     /// <p>A unique identifier for the phone number.</p>
@@ -48,6 +52,14 @@ impl ListPhoneNumbersSummary {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
+    /// <p>The description of the phone number.</p>
+    pub fn phone_number_description(&self) -> ::std::option::Option<&str> {
+        self.phone_number_description.as_deref()
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn source_phone_number_arn(&self) -> ::std::option::Option<&str> {
+        self.source_phone_number_arn.as_deref()
+    }
 }
 impl ListPhoneNumbersSummary {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersSummary`](crate::types::ListPhoneNumbersSummary).
@@ -67,6 +79,8 @@ pub struct ListPhoneNumbersSummaryBuilder {
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_number_description: ::std::option::Option<::std::string::String>,
+    pub(crate) source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListPhoneNumbersSummaryBuilder {
     /// <p>A unique identifier for the phone number.</p>
@@ -167,6 +181,34 @@ impl ListPhoneNumbersSummaryBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
+    /// <p>The description of the phone number.</p>
+    pub fn phone_number_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the phone number.</p>
+    pub fn set_phone_number_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.phone_number_description = input;
+        self
+    }
+    /// <p>The description of the phone number.</p>
+    pub fn get_phone_number_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.phone_number_description
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn source_phone_number_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_phone_number_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn set_source_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_phone_number_arn = input;
+        self
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn get_source_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_phone_number_arn
+    }
     /// Consumes the builder and constructs a [`ListPhoneNumbersSummary`](crate::types::ListPhoneNumbersSummary).
     pub fn build(self) -> crate::types::ListPhoneNumbersSummary {
         crate::types::ListPhoneNumbersSummary {
@@ -177,6 +219,8 @@ impl ListPhoneNumbersSummaryBuilder {
             phone_number_type: self.phone_number_type,
             target_arn: self.target_arn,
             instance_id: self.instance_id,
+            phone_number_description: self.phone_number_description,
+            source_phone_number_arn: self.source_phone_number_arn,
         }
     }
 }

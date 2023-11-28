@@ -22,6 +22,8 @@ pub struct FoundationModelDetails {
     pub customizations_supported: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>>,
     /// <p>The inference types that the model supports.</p>
     pub inference_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::InferenceType>>,
+    /// <p>Contains details about whether a model version is available or deprecated</p>
+    pub model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelDetails {
     /// <p>The model ARN.</p>
@@ -70,6 +72,10 @@ impl FoundationModelDetails {
     pub fn inference_types_supported(&self) -> &[crate::types::InferenceType] {
         self.inference_types_supported.as_deref().unwrap_or_default()
     }
+    /// <p>Contains details about whether a model version is available or deprecated</p>
+    pub fn model_lifecycle(&self) -> ::std::option::Option<&crate::types::FoundationModelLifecycle> {
+        self.model_lifecycle.as_ref()
+    }
 }
 impl FoundationModelDetails {
     /// Creates a new builder-style object to manufacture [`FoundationModelDetails`](crate::types::FoundationModelDetails).
@@ -91,6 +97,7 @@ pub struct FoundationModelDetailsBuilder {
     pub(crate) response_streaming_supported: ::std::option::Option<bool>,
     pub(crate) customizations_supported: ::std::option::Option<::std::vec::Vec<crate::types::ModelCustomization>>,
     pub(crate) inference_types_supported: ::std::option::Option<::std::vec::Vec<crate::types::InferenceType>>,
+    pub(crate) model_lifecycle: ::std::option::Option<crate::types::FoundationModelLifecycle>,
 }
 impl FoundationModelDetailsBuilder {
     /// <p>The model ARN.</p>
@@ -245,6 +252,20 @@ impl FoundationModelDetailsBuilder {
     pub fn get_inference_types_supported(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceType>> {
         &self.inference_types_supported
     }
+    /// <p>Contains details about whether a model version is available or deprecated</p>
+    pub fn model_lifecycle(mut self, input: crate::types::FoundationModelLifecycle) -> Self {
+        self.model_lifecycle = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about whether a model version is available or deprecated</p>
+    pub fn set_model_lifecycle(mut self, input: ::std::option::Option<crate::types::FoundationModelLifecycle>) -> Self {
+        self.model_lifecycle = input;
+        self
+    }
+    /// <p>Contains details about whether a model version is available or deprecated</p>
+    pub fn get_model_lifecycle(&self) -> &::std::option::Option<crate::types::FoundationModelLifecycle> {
+        &self.model_lifecycle
+    }
     /// Consumes the builder and constructs a [`FoundationModelDetails`](crate::types::FoundationModelDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::FoundationModelDetailsBuilder::model_arn)
@@ -270,6 +291,7 @@ impl FoundationModelDetailsBuilder {
             response_streaming_supported: self.response_streaming_supported,
             customizations_supported: self.customizations_supported,
             inference_types_supported: self.inference_types_supported,
+            model_lifecycle: self.model_lifecycle,
         })
     }
 }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProvisionedModelThroughputInput {
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Bedrock ignores the request, but does not return an error.</p>
+    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Number of model units to allocate.</p>
     pub model_units: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ pub struct CreateProvisionedModelThroughputInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProvisionedModelThroughputInput {
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Bedrock ignores the request, but does not return an error.</p>
+    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -63,17 +63,17 @@ pub struct CreateProvisionedModelThroughputInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProvisionedModelThroughputInputBuilder {
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Bedrock ignores the request, but does not return an error.</p>
+    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Bedrock ignores the request, but does not return an error.</p>
+    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique token value that you can provide. If this token matches a previous request, Bedrock ignores the request, but does not return an error.</p>
+    /// <p>Unique token value that you can provide. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

@@ -13,6 +13,7 @@
 /// # let objectstorageclass = unimplemented!();
 /// match objectstorageclass {
 ///     ObjectStorageClass::DeepArchive => { /* ... */ },
+///     ObjectStorageClass::ExpressOnezone => { /* ... */ },
 ///     ObjectStorageClass::Glacier => { /* ... */ },
 ///     ObjectStorageClass::GlacierIr => { /* ... */ },
 ///     ObjectStorageClass::IntelligentTiering => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum ObjectStorageClass {
     #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
     #[allow(missing_docs)] // documentation missing in model
+    ExpressOnezone,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
     GlacierIr,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for ObjectStorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => ObjectStorageClass::DeepArchive,
+            "EXPRESS_ONEZONE" => ObjectStorageClass::ExpressOnezone,
             "GLACIER" => ObjectStorageClass::Glacier,
             "GLACIER_IR" => ObjectStorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => ObjectStorageClass::IntelligentTiering,
@@ -102,6 +106,7 @@ impl ObjectStorageClass {
     pub fn as_str(&self) -> &str {
         match self {
             ObjectStorageClass::DeepArchive => "DEEP_ARCHIVE",
+            ObjectStorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
             ObjectStorageClass::Glacier => "GLACIER",
             ObjectStorageClass::GlacierIr => "GLACIER_IR",
             ObjectStorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
@@ -118,6 +123,7 @@ impl ObjectStorageClass {
     pub const fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
+            "EXPRESS_ONEZONE",
             "GLACIER",
             "GLACIER_IR",
             "INTELLIGENT_TIERING",

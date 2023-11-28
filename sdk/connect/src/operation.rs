@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `ActivateEvaluationForm` operation.
 pub mod activate_evaluation_form;
 
+/// Types for the `AssociateAnalyticsDataSet` operation.
+pub mod associate_analytics_data_set;
+
 /// Types for the `AssociateApprovedOrigin` operation.
 pub mod associate_approved_origin;
 
@@ -12,6 +15,9 @@ pub mod associate_bot;
 
 /// Types for the `AssociateDefaultVocabulary` operation.
 pub mod associate_default_vocabulary;
+
+/// Types for the `AssociateFlow` operation.
+pub mod associate_flow;
 
 /// Types for the `AssociateInstanceStorageConfig` operation.
 pub mod associate_instance_storage_config;
@@ -36,6 +42,12 @@ pub mod associate_security_key;
 
 /// Types for the `AssociateTrafficDistributionGroupUser` operation.
 pub mod associate_traffic_distribution_group_user;
+
+/// Types for the `BatchAssociateAnalyticsDataSet` operation.
+pub mod batch_associate_analytics_data_set;
+
+/// Types for the `BatchDisassociateAnalyticsDataSet` operation.
+pub mod batch_disassociate_analytics_data_set;
 
 /// Types for the `BatchGetFlowAssociation` operation.
 pub mod batch_get_flow_association;
@@ -250,11 +262,17 @@ pub mod describe_view;
 /// Types for the `DescribeVocabulary` operation.
 pub mod describe_vocabulary;
 
+/// Types for the `DisassociateAnalyticsDataSet` operation.
+pub mod disassociate_analytics_data_set;
+
 /// Types for the `DisassociateApprovedOrigin` operation.
 pub mod disassociate_approved_origin;
 
 /// Types for the `DisassociateBot` operation.
 pub mod disassociate_bot;
+
+/// Types for the `DisassociateFlow` operation.
+pub mod disassociate_flow;
 
 /// Types for the `DisassociateInstanceStorageConfig` operation.
 pub mod disassociate_instance_storage_config;
@@ -295,6 +313,9 @@ pub mod get_current_user_data;
 /// Types for the `GetFederationToken` operation.
 pub mod get_federation_token;
 
+/// Types for the `GetFlowAssociation` operation.
+pub mod get_flow_association;
+
 /// Types for the `GetMetricData` operation.
 pub mod get_metric_data;
 
@@ -310,8 +331,14 @@ pub mod get_task_template;
 /// Types for the `GetTrafficDistribution` operation.
 pub mod get_traffic_distribution;
 
+/// Types for the `ImportPhoneNumber` operation.
+pub mod import_phone_number;
+
 /// Types for the `ListAgentStatuses` operation.
 pub mod list_agent_statuses;
+
+/// Types for the `ListAnalyticsDataAssociations` operation.
+pub mod list_analytics_data_associations;
 
 /// Types for the `ListApprovedOrigins` operation.
 pub mod list_approved_origins;
@@ -339,6 +366,9 @@ pub mod list_evaluation_form_versions;
 
 /// Types for the `ListEvaluationForms` operation.
 pub mod list_evaluation_forms;
+
+/// Types for the `ListFlowAssociations` operation.
+pub mod list_flow_associations;
 
 /// Types for the `ListHoursOfOperations` operation.
 pub mod list_hours_of_operations;
@@ -378,6 +408,9 @@ pub mod list_queues;
 
 /// Types for the `ListQuickConnects` operation.
 pub mod list_quick_connects;
+
+/// Types for the `ListRealtimeContactAnalysisSegmentsV2` operation.
+pub mod list_realtime_contact_analysis_segments_v2;
 
 /// Types for the `ListRoutingProfileQueues` operation.
 pub mod list_routing_profile_queues;
@@ -472,6 +505,9 @@ pub mod search_users;
 /// Types for the `SearchVocabularies` operation.
 pub mod search_vocabularies;
 
+/// Types for the `SendChatIntegrationEvent` operation.
+pub mod send_chat_integration_event;
+
 /// Types for the `StartChatContact` operation.
 pub mod start_chat_contact;
 
@@ -489,6 +525,9 @@ pub mod start_outbound_voice_contact;
 
 /// Types for the `StartTaskContact` operation.
 pub mod start_task_contact;
+
+/// Types for the `StartWebRTCContact` operation.
+pub mod start_web_rtc_contact;
 
 /// Types for the `StopContact` operation.
 pub mod stop_contact;

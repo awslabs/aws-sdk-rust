@@ -185,17 +185,17 @@ impl ListModelCustomizationJobsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>Continuation token from the previous response, for Bedrock to list the next set of results.</p>
+    /// <p>Continuation token from the previous response, for Amazon Bedrock to list the next set of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

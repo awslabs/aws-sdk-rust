@@ -355,6 +355,8 @@ pub use crate::types::_archive_status::ArchiveStatus;
 
 pub use crate::types::_checksum_mode::ChecksumMode;
 
+pub use crate::types::_location_type::LocationType;
+
 pub use crate::types::_get_object_attributes_parts::GetObjectAttributesParts;
 
 pub use crate::types::_object_part::ObjectPart;
@@ -377,7 +379,19 @@ pub use crate::types::_delete::Delete;
 
 pub use crate::types::_object_identifier::ObjectIdentifier;
 
+pub use crate::types::_session_credentials::SessionCredentials;
+
+pub use crate::types::_session_mode::SessionMode;
+
 pub use crate::types::_create_bucket_configuration::CreateBucketConfiguration;
+
+pub use crate::types::_bucket_info::BucketInfo;
+
+pub use crate::types::_bucket_type::BucketType;
+
+pub use crate::types::_data_redundancy::DataRedundancy;
+
+pub use crate::types::_location_info::LocationInfo;
 
 pub use crate::types::_copy_object_result::CopyObjectResult;
 
@@ -417,6 +431,8 @@ mod _bucket_accelerate_status;
 
 mod _bucket_canned_acl;
 
+mod _bucket_info;
+
 mod _bucket_lifecycle_configuration;
 
 mod _bucket_location_constraint;
@@ -424,6 +440,8 @@ mod _bucket_location_constraint;
 mod _bucket_logging_status;
 
 mod _bucket_logs_permission;
+
+mod _bucket_type;
 
 mod _bucket_versioning_status;
 
@@ -458,6 +476,8 @@ mod _create_bucket_configuration;
 mod _csv_input;
 
 mod _csv_output;
+
+mod _data_redundancy;
 
 mod _default_retention;
 
@@ -562,6 +582,10 @@ mod _lifecycle_rule;
 mod _lifecycle_rule_and_operator;
 
 mod _lifecycle_rule_filter;
+
+mod _location_info;
+
+mod _location_type;
 
 mod _logging_enabled;
 
@@ -728,6 +752,10 @@ mod _server_side_encryption_by_default;
 mod _server_side_encryption_configuration;
 
 mod _server_side_encryption_rule;
+
+mod _session_credentials;
+
+mod _session_mode;
 
 mod _simple_prefix;
 

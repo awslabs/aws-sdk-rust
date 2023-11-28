@@ -36,6 +36,9 @@
 /// - It might inadvertently shadow other intended match arms.
 /// <p>If present, indicates that the requester was successfully charged for the
 /// request.</p>
+/// <note>
+/// <p>This functionality is not supported for directory buckets.</p>
+/// </note>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

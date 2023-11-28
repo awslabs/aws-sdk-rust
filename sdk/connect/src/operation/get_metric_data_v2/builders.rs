@@ -225,8 +225,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
-    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
-    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
+    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> </p> </li>
+    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::FilterV2) -> Self {
         self.inner = self.inner.filters(input);
@@ -245,8 +245,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
-    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
-    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
+    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> </p> </li>
+    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -265,8 +265,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>
     /// <p>Note the following limits:</p>
     /// <ul>
-    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> </p> </li>
-    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> </li>
+    /// <li> <p> <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> </p> </li>
+    /// <li> <p> <b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> </li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterV2>> {
         self.inner.get_filters()
@@ -277,21 +277,21 @@ impl GetMetricDataV2FluentBuilder {
     ///
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> </p>
     pub fn groupings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groupings(input.into());
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> </p>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> </p>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_groupings()
     }
@@ -306,7 +306,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Percent</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -315,6 +315,20 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_ANSWER_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_ADHERENT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -359,14 +373,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -385,7 +400,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -394,7 +409,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -402,14 +417,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -418,7 +433,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -427,14 +442,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -443,14 +458,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -460,7 +476,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -468,7 +484,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -476,14 +492,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -492,7 +508,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -500,7 +516,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -508,7 +524,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -516,14 +532,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -531,7 +547,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -541,7 +557,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -550,6 +566,41 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_PUT_ON_HOLD
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_INTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
@@ -557,14 +608,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
@@ -572,7 +623,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -581,21 +632,21 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -603,7 +654,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -611,7 +662,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -619,7 +670,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -627,7 +678,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -639,11 +690,42 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
+    /// SUM_AFTER_CONTACT_WORK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONNECTING_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_FLOW_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -651,7 +733,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -660,14 +742,70 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ERROR_STATUS_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HANDLE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_IDLE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_AND_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_NON_PRODUCTIVE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ONLINE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// </dl>
     pub fn metrics(mut self, input: crate::types::MetricV2) -> Self {
@@ -681,7 +819,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Percent</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -690,6 +828,20 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_ANSWER_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_ADHERENT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -734,14 +886,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -760,7 +913,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -769,7 +922,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -777,14 +930,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -793,7 +946,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -802,14 +955,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -818,14 +971,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -835,7 +989,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -843,7 +997,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -851,14 +1005,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -867,7 +1021,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -875,7 +1029,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -883,7 +1037,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -891,14 +1045,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -906,7 +1060,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -916,7 +1070,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -925,6 +1079,41 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_PUT_ON_HOLD
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_INTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
@@ -932,14 +1121,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
@@ -947,7 +1136,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -956,21 +1145,21 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -978,7 +1167,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -986,7 +1175,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -994,7 +1183,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -1002,7 +1191,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -1014,11 +1203,42 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
+    /// SUM_AFTER_CONTACT_WORK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONNECTING_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_FLOW_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -1026,7 +1246,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -1035,14 +1255,70 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ERROR_STATUS_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HANDLE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_IDLE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_AND_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_NON_PRODUCTIVE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ONLINE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// </dl>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>) -> Self {
@@ -1056,7 +1332,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Percent</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -1065,6 +1341,20 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy </p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_ANSWER_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// AGENT_NON_ADHERENT_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -1109,14 +1399,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1135,7 +1426,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1144,7 +1435,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -1152,14 +1443,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1168,7 +1459,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1177,14 +1468,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1193,14 +1484,15 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1210,7 +1502,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -1218,7 +1510,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -1226,14 +1518,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1242,7 +1534,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -1250,7 +1542,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -1258,7 +1550,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -1266,14 +1558,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -1281,7 +1573,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1291,7 +1583,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1300,6 +1592,41 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_PUT_ON_HOLD
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_TRANSFERRED_OUT_INTERNAL
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
@@ -1307,14 +1634,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
     /// </dd>
     /// <dt>
@@ -1322,7 +1649,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature</p> <note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p> <note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1331,21 +1658,21 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -1353,7 +1680,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -1361,7 +1688,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -1369,7 +1696,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -1377,7 +1704,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -1389,11 +1716,42 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
+    /// SUM_AFTER_CONTACT_WORK_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONNECTING_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> </p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <note>
+    /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_FLOW_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_CONTACT_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -1401,7 +1759,7 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than"). </p>
     /// </dd>
     /// <dt>
@@ -1410,14 +1768,70 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ERROR_STATUS_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HANDLE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_IDLE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_AND_HOLD_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_INTERACTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_NON_PRODUCTIVE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
+    /// SUM_ONLINE_TIME_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// </dl>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricV2>> {

@@ -1,6 +1,6 @@
 # aws-sdk-bedrock
 
-Describes the API operations for creating and managing Bedrock models.
+Describes the API operations for creating and managing Amazon Bedrock models.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
-aws-sdk-bedrock = "1.3.0"
+aws-sdk-bedrock = "1.4.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

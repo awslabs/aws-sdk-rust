@@ -314,6 +314,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetObjectEndp
             .set_use_arn_region(cfg.load::<crate::config::UseArnRegion>().map(|ty| ty.0))
             .set_disable_multi_region_access_points(cfg.load::<crate::config::DisableMultiRegionAccessPoints>().map(|ty| ty.0))
             .set_accelerate(cfg.load::<crate::config::Accelerate>().map(|ty| ty.0))
+            .set_disable_s3_express_session_auth(cfg.load::<crate::config::DisableS3ExpressSessionAuth>().map(|ty| ty.0))
             .set_bucket(Some(
                 _input
                     .bucket
@@ -343,6 +344,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetObjectEndp
 #[derive(::std::fmt::Debug)]
 pub enum GetObjectError {
     /// <p>Object is archived and inaccessible until restored.</p>
+    /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
     /// <p>The specified key does not exist.</p>
     NoSuchKey(crate::types::error::NoSuchKey),

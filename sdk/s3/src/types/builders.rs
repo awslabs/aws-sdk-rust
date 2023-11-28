@@ -251,7 +251,13 @@ pub use crate::types::_delete::DeleteBuilder;
 
 pub use crate::types::_object_identifier::ObjectIdentifierBuilder;
 
+pub use crate::types::_session_credentials::SessionCredentialsBuilder;
+
 pub use crate::types::_create_bucket_configuration::CreateBucketConfigurationBuilder;
+
+pub use crate::types::_bucket_info::BucketInfoBuilder;
+
+pub use crate::types::_location_info::LocationInfoBuilder;
 
 pub use crate::types::_copy_object_result::CopyObjectResultBuilder;
 

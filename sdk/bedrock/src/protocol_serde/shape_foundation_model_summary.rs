@@ -62,6 +62,11 @@ where
                             builder = builder
                                 .set_inference_types_supported(crate::protocol_serde::shape_inference_type_list::de_inference_type_list(tokens)?);
                         }
+                        "modelLifecycle" => {
+                            builder = builder.set_model_lifecycle(
+                                crate::protocol_serde::shape_foundation_model_lifecycle::de_foundation_model_lifecycle(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

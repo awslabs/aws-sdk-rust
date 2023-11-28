@@ -22,6 +22,8 @@ pub struct ModelCustomizationJobSummary {
     pub custom_model_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the custom model.</p>
     pub custom_model_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl ModelCustomizationJobSummary {
     /// <p>ARN of the customization job.</p>
@@ -63,6 +65,10 @@ impl ModelCustomizationJobSummary {
     pub fn custom_model_name(&self) -> ::std::option::Option<&str> {
         self.custom_model_name.as_deref()
     }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+        self.customization_type.as_ref()
+    }
 }
 impl ModelCustomizationJobSummary {
     /// Creates a new builder-style object to manufacture [`ModelCustomizationJobSummary`](crate::types::ModelCustomizationJobSummary).
@@ -84,6 +90,7 @@ pub struct ModelCustomizationJobSummaryBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) custom_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl ModelCustomizationJobSummaryBuilder {
     /// <p>ARN of the customization job.</p>
@@ -217,6 +224,20 @@ impl ModelCustomizationJobSummaryBuilder {
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_model_name
     }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.customization_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.customization_type = input;
+        self
+    }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        &self.customization_type
+    }
     /// Consumes the builder and constructs a [`ModelCustomizationJobSummary`](crate::types::ModelCustomizationJobSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_arn`](crate::types::builders::ModelCustomizationJobSummaryBuilder::job_arn)
@@ -260,6 +281,7 @@ impl ModelCustomizationJobSummaryBuilder {
             end_time: self.end_time,
             custom_model_arn: self.custom_model_arn,
             custom_model_name: self.custom_model_name,
+            customization_type: self.customization_type,
         })
     }
 }

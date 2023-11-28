@@ -253,6 +253,8 @@ pub(crate) mod shape_reason_summary;
 
 pub(crate) mod shape_s3_bucket_configuration;
 
+pub(crate) mod shape_s3_express_directory_bucket_configuration;
+
 pub(crate) mod shape_secrets_manager_secret_configuration;
 
 pub(crate) mod shape_shared_via_list;

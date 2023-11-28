@@ -138,11 +138,15 @@ impl Client {
 
 mod activate_evaluation_form;
 
+mod associate_analytics_data_set;
+
 mod associate_approved_origin;
 
 mod associate_bot;
 
 mod associate_default_vocabulary;
+
+mod associate_flow;
 
 mod associate_instance_storage_config;
 
@@ -159,6 +163,10 @@ mod associate_routing_profile_queues;
 mod associate_security_key;
 
 mod associate_traffic_distribution_group_user;
+
+mod batch_associate_analytics_data_set;
+
+mod batch_disassociate_analytics_data_set;
 
 mod batch_get_flow_association;
 
@@ -329,9 +337,13 @@ mod describe_view;
 
 mod describe_vocabulary;
 
+mod disassociate_analytics_data_set;
+
 mod disassociate_approved_origin;
 
 mod disassociate_bot;
+
+mod disassociate_flow;
 
 mod disassociate_instance_storage_config;
 
@@ -359,6 +371,8 @@ mod get_current_user_data;
 
 mod get_federation_token;
 
+mod get_flow_association;
+
 mod get_metric_data;
 
 mod get_metric_data_v2;
@@ -369,7 +383,11 @@ mod get_task_template;
 
 mod get_traffic_distribution;
 
+mod import_phone_number;
+
 mod list_agent_statuses;
+
+mod list_analytics_data_associations;
 
 mod list_approved_origins;
 
@@ -388,6 +406,8 @@ mod list_default_vocabularies;
 mod list_evaluation_form_versions;
 
 mod list_evaluation_forms;
+
+mod list_flow_associations;
 
 mod list_hours_of_operations;
 
@@ -414,6 +434,8 @@ mod list_queue_quick_connects;
 mod list_queues;
 
 mod list_quick_connects;
+
+mod list_realtime_contact_analysis_segments_v2;
 
 mod list_routing_profile_queues;
 
@@ -477,6 +499,8 @@ mod search_users;
 
 mod search_vocabularies;
 
+mod send_chat_integration_event;
+
 mod start_chat_contact;
 
 mod start_contact_evaluation;
@@ -488,6 +512,8 @@ mod start_contact_streaming;
 mod start_outbound_voice_contact;
 
 mod start_task_contact;
+
+mod start_web_rtc_contact;
 
 mod stop_contact;
 

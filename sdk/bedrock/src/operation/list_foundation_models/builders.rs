@@ -22,7 +22,7 @@ impl ListFoundationModelsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFoundationModels`.
 ///
-/// <p>List of Bedrock foundation models that you can use. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the Bedrock User Guide.</p>
+/// <p>List of Amazon Bedrock foundation models that you can use. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFoundationModelsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListFoundationModelsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn by_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_provider(input.into());
         self
     }
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn set_by_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_provider(input);
         self
     }
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn get_by_provider(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_provider()
     }

@@ -87,7 +87,9 @@ pub struct WriteGetObjectResponseInput {
     pub parts_count: ::std::option::Option<i32>,
     /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     pub replication_status: ::std::option::Option<crate::types::ReplicationStatus>,
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
     /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     pub restore: ::std::option::Option<::std::string::String>,
@@ -255,7 +257,9 @@ impl WriteGetObjectResponseInput {
     pub fn replication_status(&self) -> ::std::option::Option<&crate::types::ReplicationStatus> {
         self.replication_status.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
@@ -899,17 +903,23 @@ impl WriteGetObjectResponseInputBuilder {
     pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         &self.replication_status
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.request_charged = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.request_charged = input;
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
         &self.request_charged
     }

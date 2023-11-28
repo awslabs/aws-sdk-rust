@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFoundationModelsInput {
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub by_provider: ::std::option::Option<::std::string::String>,
     /// <p>List by customization type.</p>
     pub by_customization_type: ::std::option::Option<crate::types::ModelCustomization>,
@@ -13,7 +13,7 @@ pub struct ListFoundationModelsInput {
     pub by_inference_type: ::std::option::Option<crate::types::InferenceType>,
 }
 impl ListFoundationModelsInput {
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn by_provider(&self) -> ::std::option::Option<&str> {
         self.by_provider.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct ListFoundationModelsInputBuilder {
     pub(crate) by_inference_type: ::std::option::Option<crate::types::InferenceType>,
 }
 impl ListFoundationModelsInputBuilder {
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn by_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.by_provider = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn set_by_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.by_provider = input;
         self
     }
-    /// <p>A Bedrock model provider.</p>
+    /// <p>A Amazon Bedrock model provider.</p>
     pub fn get_by_provider(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_provider
     }

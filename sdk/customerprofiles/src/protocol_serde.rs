@@ -53,6 +53,8 @@ pub(crate) mod shape_delete_profile_object_type;
 
 pub(crate) mod shape_delete_workflow;
 
+pub(crate) mod shape_detect_profile_object_type;
+
 pub(crate) mod shape_get_auto_merging_preview;
 
 pub(crate) mod shape_get_calculated_attribute_definition;
@@ -157,6 +159,8 @@ pub(crate) mod shape_delete_profile_key_input;
 
 pub(crate) mod shape_delete_profile_object_input;
 
+pub(crate) mod shape_detect_profile_object_type_input;
+
 pub(crate) mod shape_get_auto_merging_preview_input;
 
 pub(crate) mod shape_get_integration_input;
@@ -210,6 +214,8 @@ pub(crate) mod shape_conditions;
 pub(crate) mod shape_conflict_resolution;
 
 pub(crate) mod shape_consolidation;
+
+pub(crate) mod shape_detected_profile_object_types;
 
 pub(crate) mod shape_domain_list;
 
@@ -292,6 +298,8 @@ pub(crate) mod shape_attribute_item;
 pub(crate) mod shape_attribute_list;
 
 pub(crate) mod shape_attribute_types_selector;
+
+pub(crate) mod shape_detected_profile_object_type;
 
 pub(crate) mod shape_event_stream_summary;
 

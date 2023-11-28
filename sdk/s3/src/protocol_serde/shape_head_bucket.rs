@@ -46,6 +46,30 @@ pub fn de_head_bucket_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::head_bucket::builders::HeadBucketOutputBuilder::default();
+        output = output.set_access_point_alias(
+            crate::protocol_serde::shape_head_bucket_output::de_access_point_alias_header(_response_headers).map_err(|_| {
+                crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse AccessPointAlias from header `x-amz-access-point-alias")
+            })?,
+        );
+        output = output.set_bucket_location_name(
+            crate::protocol_serde::shape_head_bucket_output::de_bucket_location_name_header(_response_headers).map_err(|_| {
+                crate::operation::head_bucket::HeadBucketError::unhandled(
+                    "Failed to parse BucketLocationName from header `x-amz-bucket-location-name",
+                )
+            })?,
+        );
+        output = output.set_bucket_location_type(
+            crate::protocol_serde::shape_head_bucket_output::de_bucket_location_type_header(_response_headers).map_err(|_| {
+                crate::operation::head_bucket::HeadBucketError::unhandled(
+                    "Failed to parse BucketLocationType from header `x-amz-bucket-location-type",
+                )
+            })?,
+        );
+        output = output.set_bucket_region(
+            crate::protocol_serde::shape_head_bucket_output::de_bucket_region_header(_response_headers).map_err(|_| {
+                crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse BucketRegion from header `x-amz-bucket-region")
+            })?,
+        );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

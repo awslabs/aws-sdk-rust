@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFoundationModelsOutput {
-    /// <p>A list of bedrock foundation models.</p>
+    /// <p>A list of Amazon Bedrock foundation models.</p>
     pub model_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FoundationModelSummary>>,
     _request_id: Option<String>,
 }
 impl ListFoundationModelsOutput {
-    /// <p>A list of bedrock foundation models.</p>
+    /// <p>A list of Amazon Bedrock foundation models.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_summaries.is_none()`.
     pub fn model_summaries(&self) -> &[crate::types::FoundationModelSummary] {
@@ -39,19 +39,19 @@ impl ListFoundationModelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_model_summaries`](Self::set_model_summaries).
     ///
-    /// <p>A list of bedrock foundation models.</p>
+    /// <p>A list of Amazon Bedrock foundation models.</p>
     pub fn model_summaries(mut self, input: crate::types::FoundationModelSummary) -> Self {
         let mut v = self.model_summaries.unwrap_or_default();
         v.push(input);
         self.model_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of bedrock foundation models.</p>
+    /// <p>A list of Amazon Bedrock foundation models.</p>
     pub fn set_model_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FoundationModelSummary>>) -> Self {
         self.model_summaries = input;
         self
     }
-    /// <p>A list of bedrock foundation models.</p>
+    /// <p>A list of Amazon Bedrock foundation models.</p>
     pub fn get_model_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FoundationModelSummary>> {
         &self.model_summaries
     }

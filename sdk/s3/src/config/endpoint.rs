@@ -7496,6 +7496,744 @@ mod test {
                 .build()
         );
     }
+
+    /// Data Plane with short AZ
+    #[test]
+    fn test_274() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--use1-az1--x-s3.s3express-use1-az1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--use1-az1--x-s3.s3express-use1-az1.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane with short AZ fips
+    #[test]
+    fn test_275() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--use1-az1--x-s3.s3express-fips-use1-az1.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--use1-az1--x-s3.s3express-fips-use1-az1.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane with long AZ
+    #[test]
+    fn test_276() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-northeast-1".to_string())
+            .bucket("mybucket--apne1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "ap-northeast-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane with long AZ fips
+    #[test]
+    fn test_277() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-northeast-1".to_string())
+            .bucket("mybucket--apne1-az1--x-s3".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "ap-northeast-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control plane with short AZ bucket
+    #[test]
+    fn test_278() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control plane with short AZ bucket and fips
+    #[test]
+    fn test_279() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control-fips.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control-fips.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control plane without bucket
+    #[test]
+    fn test_280() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control plane without bucket and fips
+    #[test]
+    fn test_281() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control-fips.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane sigv4 auth with short AZ
+    #[test]
+    fn test_282() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--usw2-az1--x-s3.s3express-usw2-az1.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--usw2-az1--x-s3.s3express-usw2-az1.us-west-2.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane sigv4 auth with short AZ fips
+    #[test]
+    fn test_283() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--usw2-az1--x-s3.s3express-fips-usw2-az1.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--usw2-az1--x-s3.s3express-fips-usw2-az1.us-west-2.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane sigv4 auth with long AZ
+    #[test]
+    fn test_284() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-northeast-1".to_string())
+            .bucket("mybucket--apne1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "ap-northeast-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data Plane sigv4 auth with long AZ fips
+    #[test]
+    fn test_285() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("ap-northeast-1".to_string())
+            .bucket("mybucket--apne1-az1--x-s3".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint =
+            endpoint.expect("Expected valid endpoint: https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "ap-northeast-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control Plane host override
+    #[test]
+    fn test_286() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(true)
+            .endpoint("https://custom.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--usw2-az1--x-s3.custom.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--usw2-az1--x-s3.custom.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control Plane host override no bucket
+    #[test]
+    fn test_287() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(true)
+            .endpoint("https://custom.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://custom.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://custom.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data plane host override non virtual session auth
+    #[test]
+    fn test_288() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .endpoint("https://10.0.0.1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://10.0.0.1/mybucket--usw2-az1--x-s3");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://10.0.0.1/mybucket--usw2-az1--x-s3")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Control Plane host override ip
+    #[test]
+    fn test_289() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(true)
+            .disable_s3_express_session_auth(true)
+            .endpoint("https://10.0.0.1".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://10.0.0.1/mybucket--usw2-az1--x-s3");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://10.0.0.1/mybucket--usw2-az1--x-s3")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// Data plane host override
+    #[test]
+    fn test_290() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("mybucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .endpoint("https://custom.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mybucket--usw2-az1--x-s3.custom.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://mybucket--usw2-az1--x-s3.custom.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4-s3express".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .property("backend", "S3Express".to_string())
+                .build()
+        );
+    }
+
+    /// bad format error
+    #[test]
+    fn test_291() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--usaz1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Unrecognized S3Express bucket name format. [bad format error]");
+        assert_eq!(format!("{}", error), "Unrecognized S3Express bucket name format.")
+    }
+
+    /// bad format error no session auth
+    #[test]
+    fn test_292() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--usaz1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Unrecognized S3Express bucket name format. [bad format error no session auth]");
+        assert_eq!(format!("{}", error), "Unrecognized S3Express bucket name format.")
+    }
+
+    /// dual-stack error
+    #[test]
+    fn test_293() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: S3Express does not support Dual-stack. [dual-stack error]");
+        assert_eq!(format!("{}", error), "S3Express does not support Dual-stack.")
+    }
+
+    /// accelerate error
+    #[test]
+    fn test_294() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("mybucket--use1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(true)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: S3Express does not support S3 Accelerate. [accelerate error]");
+        assert_eq!(format!("{}", error), "S3Express does not support S3 Accelerate.")
+    }
+
+    /// Data plane bucket format error
+    #[test]
+    fn test_295() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .bucket("my.bucket--use1-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .use_s3_express_control_endpoint(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: S3Express bucket name is not a valid virtual hostable name. [Data plane bucket format error]");
+        assert_eq!(format!("{}", error), "S3Express bucket name is not a valid virtual hostable name.")
+    }
+
+    /// host override data plane bucket error session auth
+    #[test]
+    fn test_296() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("my.bucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .endpoint("https://custom.com".to_string())
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: S3Express bucket name is not a valid virtual hostable name. [host override data plane bucket error session auth]",
+        );
+        assert_eq!(format!("{}", error), "S3Express bucket name is not a valid virtual hostable name.")
+    }
+
+    /// host override data plane bucket error
+    #[test]
+    fn test_297() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .bucket("my.bucket--usw2-az1--x-s3".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .accelerate(false)
+            .endpoint("https://custom.com".to_string())
+            .disable_s3_express_session_auth(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: S3Express bucket name is not a valid virtual hostable name. [host override data plane bucket error]");
+        assert_eq!(format!("{}", error), "S3Express bucket name is not a valid virtual hostable name.")
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon Simple Storage Service
@@ -7594,6 +8332,10 @@ pub struct Params {
     pub(crate) disable_multi_region_access_points: bool,
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub(crate) use_arn_region: ::std::option::Option<bool>,
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. CreateBucket)
+    pub(crate) use_s3_express_control_endpoint: ::std::option::Option<bool>,
+    /// Parameter to indicate whether S3Express session auth should be disabled
+    pub(crate) disable_s3_express_session_auth: ::std::option::Option<bool>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -7656,6 +8398,14 @@ impl Params {
     pub fn use_arn_region(&self) -> ::std::option::Option<bool> {
         self.use_arn_region
     }
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. CreateBucket)
+    pub fn use_s3_express_control_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_s3_express_control_endpoint
+    }
+    /// Parameter to indicate whether S3Express session auth should be disabled
+    pub fn disable_s3_express_session_auth(&self) -> ::std::option::Option<bool> {
+        self.disable_s3_express_session_auth
+    }
 }
 
 /// Builder for [`Params`]
@@ -7675,6 +8425,8 @@ pub struct ParamsBuilder {
     disable_access_points: ::std::option::Option<bool>,
     disable_multi_region_access_points: ::std::option::Option<bool>,
     use_arn_region: ::std::option::Option<bool>,
+    use_s3_express_control_endpoint: ::std::option::Option<bool>,
+    disable_s3_express_session_auth: ::std::option::Option<bool>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -7714,6 +8466,8 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("disable_multi_region_access_points"))?,
                 use_arn_region: self.use_arn_region,
+                use_s3_express_control_endpoint: self.use_s3_express_control_endpoint,
+                disable_s3_express_session_auth: self.disable_s3_express_session_auth,
             },
         )
     }
@@ -7937,6 +8691,36 @@ impl ParamsBuilder {
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub fn set_use_arn_region(mut self, param: Option<bool>) -> Self {
         self.use_arn_region = param;
+        self
+    }
+    /// Sets the value for use_s3_express_control_endpoint
+    ///
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. CreateBucket)
+    pub fn use_s3_express_control_endpoint(mut self, value: impl Into<bool>) -> Self {
+        self.use_s3_express_control_endpoint = Some(value.into());
+        self
+    }
+
+    /// Sets the value for use_s3_express_control_endpoint
+    ///
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. CreateBucket)
+    pub fn set_use_s3_express_control_endpoint(mut self, param: Option<bool>) -> Self {
+        self.use_s3_express_control_endpoint = param;
+        self
+    }
+    /// Sets the value for disable_s3_express_session_auth
+    ///
+    /// Parameter to indicate whether S3Express session auth should be disabled
+    pub fn disable_s3_express_session_auth(mut self, value: impl Into<bool>) -> Self {
+        self.disable_s3_express_session_auth = Some(value.into());
+        self
+    }
+
+    /// Sets the value for disable_s3_express_session_auth
+    ///
+    /// Parameter to indicate whether S3Express session auth should be disabled
+    pub fn set_disable_s3_express_session_auth(mut self, param: Option<bool>) -> Self {
+        self.disable_s3_express_session_auth = param;
         self
     }
 }

@@ -18,6 +18,9 @@ pub mod create_bucket;
 /// Types for the `CreateMultipartUpload` operation.
 pub mod create_multipart_upload;
 
+/// Types for the `CreateSession` operation.
+pub mod create_session;
+
 /// Types for the `DeleteBucket` operation.
 pub mod delete_bucket;
 
@@ -176,6 +179,9 @@ pub mod list_bucket_metrics_configurations;
 
 /// Types for the `ListBuckets` operation.
 pub mod list_buckets;
+
+/// Types for the `ListDirectoryBuckets` operation.
+pub mod list_directory_buckets;
 
 /// Types for the `ListMultipartUploads` operation.
 pub mod list_multipart_uploads;

@@ -51,6 +51,8 @@ pub(crate) mod shape_create_bucket_input;
 
 pub(crate) mod shape_create_multipart_upload;
 
+pub(crate) mod shape_create_session;
+
 pub(crate) mod shape_delete_bucket;
 
 pub(crate) mod shape_delete_bucket_analytics_configuration;
@@ -158,6 +160,8 @@ pub(crate) mod shape_list_bucket_inventory_configurations;
 pub(crate) mod shape_list_bucket_metrics_configurations;
 
 pub(crate) mod shape_list_buckets;
+
+pub(crate) mod shape_list_directory_buckets;
 
 pub(crate) mod shape_list_multipart_uploads;
 
@@ -343,6 +347,8 @@ pub(crate) mod shape_get_object_torrent_output;
 
 pub(crate) mod shape_get_public_access_block_output;
 
+pub(crate) mod shape_head_bucket_output;
+
 pub(crate) mod shape_head_object_output;
 
 pub(crate) mod shape_invalid_object_state;
@@ -497,6 +503,8 @@ pub(crate) mod shape_scan_range;
 
 pub(crate) mod shape_server_side_encryption_configuration;
 
+pub(crate) mod shape_session_credentials;
+
 pub(crate) mod shape_tag_set;
 
 pub(crate) mod shape_tagging;
@@ -512,6 +520,8 @@ pub(crate) mod shape_abort_incomplete_multipart_upload;
 pub(crate) mod shape_analytics_filter;
 
 pub(crate) mod shape_bucket;
+
+pub(crate) mod shape_bucket_info;
 
 pub(crate) mod shape_completed_part;
 
@@ -544,6 +554,8 @@ pub(crate) mod shape_json_output;
 pub(crate) mod shape_lifecycle_expiration;
 
 pub(crate) mod shape_lifecycle_rule_filter;
+
+pub(crate) mod shape_location_info;
 
 pub(crate) mod shape_metrics_filter;
 

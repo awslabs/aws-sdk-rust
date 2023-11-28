@@ -18,8 +18,10 @@ pub enum Configuration {
     RdsDbClusterSnapshot(crate::types::RdsDbClusterSnapshotConfiguration),
     /// <p>The access control configuration is for an Amazon RDS DB snapshot.</p>
     RdsDbSnapshot(crate::types::RdsDbSnapshotConfiguration),
-    /// <p>The access control configuration is for an Amazon S3 Bucket. </p>
+    /// <p>The access control configuration is for an Amazon S3 bucket. </p>
     S3Bucket(crate::types::S3BucketConfiguration),
+    /// <p>The access control configuration is for an Amazon S3 directory bucket.</p>
+    S3ExpressDirectoryBucket(crate::types::S3ExpressDirectoryBucketConfiguration),
     /// <p>The access control configuration is for a Secrets Manager secret.</p>
     SecretsManagerSecret(crate::types::SecretsManagerSecretConfiguration),
     /// <p>The access control configuration is for an Amazon SNS topic</p>
@@ -140,6 +142,19 @@ impl Configuration {
     /// Returns true if this is a [`S3Bucket`](crate::types::Configuration::S3Bucket).
     pub fn is_s3_bucket(&self) -> bool {
         self.as_s3_bucket().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3ExpressDirectoryBucket`](crate::types::Configuration::S3ExpressDirectoryBucket), extracting the inner [`S3ExpressDirectoryBucketConfiguration`](crate::types::S3ExpressDirectoryBucketConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_express_directory_bucket(&self) -> ::std::result::Result<&crate::types::S3ExpressDirectoryBucketConfiguration, &Self> {
+        if let Configuration::S3ExpressDirectoryBucket(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3ExpressDirectoryBucket`](crate::types::Configuration::S3ExpressDirectoryBucket).
+    pub fn is_s3_express_directory_bucket(&self) -> bool {
+        self.as_s3_express_directory_bucket().is_ok()
     }
     /// Tries to convert the enum instance into [`SecretsManagerSecret`](crate::types::Configuration::SecretsManagerSecret), extracting the inner [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

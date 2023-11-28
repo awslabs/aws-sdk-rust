@@ -275,6 +275,18 @@ impl Builder {
         self.config.store_or_unset(accelerate.map(crate::config::Accelerate));
         self
     }
+
+    /// Disables this client's usage of Session Auth for S3Express       buckets and reverts to using conventional SigV4 for those.
+    pub fn disable_s3_express_session_auth(mut self, disable_s3_express_session_auth: impl Into<bool>) -> Self {
+        self.set_disable_s3_express_session_auth(Some(disable_s3_express_session_auth.into()));
+        self
+    }
+    /// Disables this client's usage of Session Auth for S3Express       buckets and reverts to using conventional SigV4 for those.
+    pub fn set_disable_s3_express_session_auth(&mut self, disable_s3_express_session_auth: Option<bool>) -> &mut Self {
+        self.config
+            .store_or_unset(disable_s3_express_session_auth.map(crate::config::DisableS3ExpressSessionAuth));
+        self
+    }
     /// Sets the endpoint resolver to use when making requests.
     ///
 
@@ -1349,6 +1361,12 @@ impl ::aws_smithy_types::config_bag::Storable for DisableMultiRegionAccessPoints
 #[derive(Debug, Clone)]
 pub(crate) struct Accelerate(pub(crate) bool);
 impl ::aws_smithy_types::config_bag::Storable for Accelerate {
+    type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
+}
+
+#[derive(Debug, Clone)]
+pub(crate) struct DisableS3ExpressSessionAuth(pub(crate) bool);
+impl ::aws_smithy_types::config_bag::Storable for DisableS3ExpressSessionAuth {
     type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
 }
 

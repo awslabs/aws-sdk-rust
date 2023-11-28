@@ -160,17 +160,17 @@ impl ListQuickConnectsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_quick_connect_types`](Self::set_quick_connect_types).
     ///
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_types(mut self, input: crate::types::QuickConnectType) -> Self {
         self.inner = self.inner.quick_connect_types(input);
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn set_quick_connect_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>>) -> Self {
         self.inner = self.inner.set_quick_connect_types(input);
         self
     }
-    /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
+    /// <p>The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn get_quick_connect_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QuickConnectType>> {
         self.inner.get_quick_connect_types()
     }

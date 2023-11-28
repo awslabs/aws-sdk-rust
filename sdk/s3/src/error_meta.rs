@@ -8,6 +8,7 @@ pub enum Error {
     /// <p>The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p>
     BucketAlreadyOwnedByYou(crate::types::error::BucketAlreadyOwnedByYou),
     /// <p>Object is archived and inaccessible until restored.</p>
+    /// <p>If the object you are retrieving is stored in the S3 Glacier Flexible Retrieval storage class, the S3 Glacier Deep Archive storage class, the S3 Intelligent-Tiering Archive Access tier, or the S3 Intelligent-Tiering Deep Archive Access tier, before you can retrieve the object you must first restore a copy using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this operation returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
     InvalidObjectState(crate::types::error::InvalidObjectState),
     /// <p>The specified bucket does not exist.</p>
     NoSuchBucket(crate::types::error::NoSuchBucket),
@@ -187,6 +188,28 @@ impl From<crate::operation::create_multipart_upload::CreateMultipartUploadError>
     fn from(err: crate::operation::create_multipart_upload::CreateMultipartUploadError) -> Self {
         match err {
             crate::operation::create_multipart_upload::CreateMultipartUploadError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_session::CreateSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_session::CreateSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_session::CreateSessionError> for Error {
+    fn from(err: crate::operation::create_session::CreateSessionError) -> Self {
+        match err {
+            crate::operation::create_session::CreateSessionError::NoSuchBucket(inner) => Error::NoSuchBucket(inner),
+            crate::operation::create_session::CreateSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1515,6 +1538,27 @@ impl From<crate::operation::list_buckets::ListBucketsError> for Error {
     fn from(err: crate::operation::list_buckets::ListBucketsError) -> Self {
         match err {
             crate::operation::list_buckets::ListBucketsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_directory_buckets::ListDirectoryBucketsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_directory_buckets::ListDirectoryBucketsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_directory_buckets::ListDirectoryBucketsError> for Error {
+    fn from(err: crate::operation::list_directory_buckets::ListDirectoryBucketsError) -> Self {
+        match err {
+            crate::operation::list_directory_buckets::ListDirectoryBucketsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

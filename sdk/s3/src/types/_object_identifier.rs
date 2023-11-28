@@ -8,7 +8,9 @@ pub struct ObjectIdentifier {
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
     pub key: ::std::string::String,
-    /// <p>VersionId for the specific version of the object to delete.</p>
+    /// <p>Version ID for the specific version of the object to delete.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl ObjectIdentifier {
@@ -19,7 +21,9 @@ impl ObjectIdentifier {
         use std::ops::Deref;
         self.key.deref()
     }
-    /// <p>VersionId for the specific version of the object to delete.</p>
+    /// <p>Version ID for the specific version of the object to delete.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -60,17 +64,23 @@ impl ObjectIdentifierBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>VersionId for the specific version of the object to delete.</p>
+    /// <p>Version ID for the specific version of the object to delete.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>VersionId for the specific version of the object to delete.</p>
+    /// <p>Version ID for the specific version of the object to delete.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
-    /// <p>VersionId for the specific version of the object to delete.</p>
+    /// <p>Version ID for the specific version of the object to delete.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }

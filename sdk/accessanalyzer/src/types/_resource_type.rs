@@ -22,6 +22,7 @@
 ///     ResourceType::AwsRdsDbclustersnapshot => { /* ... */ },
 ///     ResourceType::AwsRdsDbsnapshot => { /* ... */ },
 ///     ResourceType::AwsS3Bucket => { /* ... */ },
+///     ResourceType::AwsS3ExpressDirectorybucket => { /* ... */ },
 ///     ResourceType::AwsSnsTopic => { /* ... */ },
 ///     ResourceType::AwsSqsQueue => { /* ... */ },
 ///     ResourceType::AwsSecretsmanagerSecret => { /* ... */ },
@@ -73,6 +74,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsS3Bucket,
     #[allow(missing_docs)] // documentation missing in model
+    AwsS3ExpressDirectorybucket,
+    #[allow(missing_docs)] // documentation missing in model
     AwsSnsTopic,
     #[allow(missing_docs)] // documentation missing in model
     AwsSqsQueue,
@@ -95,6 +98,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::RDS::DBClusterSnapshot" => ResourceType::AwsRdsDbclustersnapshot,
             "AWS::RDS::DBSnapshot" => ResourceType::AwsRdsDbsnapshot,
             "AWS::S3::Bucket" => ResourceType::AwsS3Bucket,
+            "AWS::S3Express::DirectoryBucket" => ResourceType::AwsS3ExpressDirectorybucket,
             "AWS::SNS::Topic" => ResourceType::AwsSnsTopic,
             "AWS::SQS::Queue" => ResourceType::AwsSqsQueue,
             "AWS::SecretsManager::Secret" => ResourceType::AwsSecretsmanagerSecret,
@@ -123,6 +127,7 @@ impl ResourceType {
             ResourceType::AwsRdsDbclustersnapshot => "AWS::RDS::DBClusterSnapshot",
             ResourceType::AwsRdsDbsnapshot => "AWS::RDS::DBSnapshot",
             ResourceType::AwsS3Bucket => "AWS::S3::Bucket",
+            ResourceType::AwsS3ExpressDirectorybucket => "AWS::S3Express::DirectoryBucket",
             ResourceType::AwsSnsTopic => "AWS::SNS::Topic",
             ResourceType::AwsSqsQueue => "AWS::SQS::Queue",
             ResourceType::AwsSecretsmanagerSecret => "AWS::SecretsManager::Secret",
@@ -142,6 +147,7 @@ impl ResourceType {
             "AWS::RDS::DBClusterSnapshot",
             "AWS::RDS::DBSnapshot",
             "AWS::S3::Bucket",
+            "AWS::S3Express::DirectoryBucket",
             "AWS::SNS::Topic",
             "AWS::SQS::Queue",
             "AWS::SecretsManager::Secret",

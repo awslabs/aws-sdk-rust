@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`job_name(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::job_name): <p>Job name associated with this model.</p>
     ///   - [`job_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::job_arn): <p>Job ARN associated with this model.</p>
     ///   - [`base_model_arn(String)`](crate::operation::get_custom_model::GetCustomModelOutput::base_model_arn): <p>ARN of the base model.</p>
+    ///   - [`customization_type(Option<CustomizationType>)`](crate::operation::get_custom_model::GetCustomModelOutput::customization_type): <p>The type of model customization.</p>
     ///   - [`model_kms_key_arn(Option<String>)`](crate::operation::get_custom_model::GetCustomModelOutput::model_kms_key_arn): <p>The custom model is encrypted at rest using this key.</p>
     ///   - [`hyper_parameters(Option<HashMap::<String, String>>)`](crate::operation::get_custom_model::GetCustomModelOutput::hyper_parameters): <p>Hyperparameter values associated with this model.</p>
     ///   - [`training_data_config(Option<TrainingDataConfig>)`](crate::operation::get_custom_model::GetCustomModelOutput::training_data_config): <p>Information about the training dataset.</p>

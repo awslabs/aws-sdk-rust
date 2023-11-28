@@ -25,11 +25,15 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_activate_evaluation_form;
 
+pub(crate) mod shape_associate_analytics_data_set;
+
 pub(crate) mod shape_associate_approved_origin;
 
 pub(crate) mod shape_associate_bot;
 
 pub(crate) mod shape_associate_default_vocabulary;
+
+pub(crate) mod shape_associate_flow;
 
 pub(crate) mod shape_associate_instance_storage_config;
 
@@ -46,6 +50,10 @@ pub(crate) mod shape_associate_routing_profile_queues;
 pub(crate) mod shape_associate_security_key;
 
 pub(crate) mod shape_associate_traffic_distribution_group_user;
+
+pub(crate) mod shape_batch_associate_analytics_data_set;
+
+pub(crate) mod shape_batch_disassociate_analytics_data_set;
 
 pub(crate) mod shape_batch_get_flow_association;
 
@@ -189,9 +197,13 @@ pub(crate) mod shape_describe_view;
 
 pub(crate) mod shape_describe_vocabulary;
 
+pub(crate) mod shape_disassociate_analytics_data_set;
+
 pub(crate) mod shape_disassociate_approved_origin;
 
 pub(crate) mod shape_disassociate_bot;
+
+pub(crate) mod shape_disassociate_flow;
 
 pub(crate) mod shape_disassociate_instance_storage_config;
 
@@ -219,6 +231,8 @@ pub(crate) mod shape_get_current_user_data;
 
 pub(crate) mod shape_get_federation_token;
 
+pub(crate) mod shape_get_flow_association;
+
 pub(crate) mod shape_get_metric_data;
 
 pub(crate) mod shape_get_metric_data_v2;
@@ -229,7 +243,11 @@ pub(crate) mod shape_get_task_template;
 
 pub(crate) mod shape_get_traffic_distribution;
 
+pub(crate) mod shape_import_phone_number;
+
 pub(crate) mod shape_list_agent_statuses;
+
+pub(crate) mod shape_list_analytics_data_associations;
 
 pub(crate) mod shape_list_approved_origins;
 
@@ -248,6 +266,8 @@ pub(crate) mod shape_list_default_vocabularies;
 pub(crate) mod shape_list_evaluation_form_versions;
 
 pub(crate) mod shape_list_evaluation_forms;
+
+pub(crate) mod shape_list_flow_associations;
 
 pub(crate) mod shape_list_hours_of_operations;
 
@@ -274,6 +294,8 @@ pub(crate) mod shape_list_queue_quick_connects;
 pub(crate) mod shape_list_queues;
 
 pub(crate) mod shape_list_quick_connects;
+
+pub(crate) mod shape_list_realtime_contact_analysis_segments_v2;
 
 pub(crate) mod shape_list_routing_profile_queues;
 
@@ -337,6 +359,8 @@ pub(crate) mod shape_search_users;
 
 pub(crate) mod shape_search_vocabularies;
 
+pub(crate) mod shape_send_chat_integration_event;
+
 pub(crate) mod shape_start_chat_contact;
 
 pub(crate) mod shape_start_contact_evaluation;
@@ -348,6 +372,8 @@ pub(crate) mod shape_start_contact_streaming;
 pub(crate) mod shape_start_outbound_voice_contact;
 
 pub(crate) mod shape_start_task_contact;
+
+pub(crate) mod shape_start_web_rtc_contact;
 
 pub(crate) mod shape_stop_contact;
 
@@ -463,11 +489,15 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_activate_evaluation_form_input;
 
+pub(crate) mod shape_associate_analytics_data_set_input;
+
 pub(crate) mod shape_associate_approved_origin_input;
 
 pub(crate) mod shape_associate_bot_input;
 
 pub(crate) mod shape_associate_default_vocabulary_input;
+
+pub(crate) mod shape_associate_flow_input;
 
 pub(crate) mod shape_associate_instance_storage_config_input;
 
@@ -484,6 +514,10 @@ pub(crate) mod shape_associate_routing_profile_queues_input;
 pub(crate) mod shape_associate_security_key_input;
 
 pub(crate) mod shape_associate_traffic_distribution_group_user_input;
+
+pub(crate) mod shape_batch_associate_analytics_data_set_input;
+
+pub(crate) mod shape_batch_disassociate_analytics_data_set_input;
 
 pub(crate) mod shape_batch_get_flow_association_input;
 
@@ -545,6 +579,8 @@ pub(crate) mod shape_deactivate_evaluation_form_input;
 
 pub(crate) mod shape_destination_not_allowed_exception;
 
+pub(crate) mod shape_disassociate_analytics_data_set_input;
+
 pub(crate) mod shape_disassociate_bot_input;
 
 pub(crate) mod shape_disassociate_queue_quick_connects_input;
@@ -565,6 +601,8 @@ pub(crate) mod shape_get_metric_data_v2_input;
 
 pub(crate) mod shape_idempotency_exception;
 
+pub(crate) mod shape_import_phone_number_input;
+
 pub(crate) mod shape_internal_service_exception;
 
 pub(crate) mod shape_invalid_contact_flow_exception;
@@ -581,11 +619,15 @@ pub(crate) mod shape_list_default_vocabularies_input;
 
 pub(crate) mod shape_list_phone_numbers_v2_input;
 
+pub(crate) mod shape_list_realtime_contact_analysis_segments_v2_input;
+
 pub(crate) mod shape_maximum_result_returned_exception;
 
 pub(crate) mod shape_monitor_contact_input;
 
 pub(crate) mod shape_outbound_contact_not_permitted_exception;
+
+pub(crate) mod shape_output_type_not_found_exception;
 
 pub(crate) mod shape_property_validation_exception;
 
@@ -623,6 +665,8 @@ pub(crate) mod shape_search_users_input;
 
 pub(crate) mod shape_search_vocabularies_input;
 
+pub(crate) mod shape_send_chat_integration_event_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_chat_contact_input;
@@ -636,6 +680,8 @@ pub(crate) mod shape_start_contact_streaming_input;
 pub(crate) mod shape_start_outbound_voice_contact_input;
 
 pub(crate) mod shape_start_task_contact_input;
+
+pub(crate) mod shape_start_web_rtc_contact_input;
 
 pub(crate) mod shape_stop_contact_input;
 
@@ -749,6 +795,10 @@ pub(crate) mod shape_agent_status;
 
 pub(crate) mod shape_agent_status_summary_list;
 
+pub(crate) mod shape_allowed_capabilities;
+
+pub(crate) mod shape_analytics_data_association_results;
+
 pub(crate) mod shape_answer_machine_detection_config;
 
 pub(crate) mod shape_application;
@@ -763,11 +813,15 @@ pub(crate) mod shape_attributes_list;
 
 pub(crate) mod shape_available_numbers_list;
 
+pub(crate) mod shape_chat_event;
+
 pub(crate) mod shape_chat_message;
 
 pub(crate) mod shape_chat_streaming_configuration;
 
 pub(crate) mod shape_claimed_phone_number_summary;
+
+pub(crate) mod shape_connection_data;
 
 pub(crate) mod shape_contact;
 
@@ -789,9 +843,13 @@ pub(crate) mod shape_current_metric_results;
 
 pub(crate) mod shape_current_metric_sort_criteria;
 
+pub(crate) mod shape_data_set_ids;
+
 pub(crate) mod shape_default_vocabulary_list;
 
 pub(crate) mod shape_disconnect_reason;
+
+pub(crate) mod shape_error_results;
 
 pub(crate) mod shape_evaluation;
 
@@ -875,6 +933,8 @@ pub(crate) mod shape_metric_results_v2;
 
 pub(crate) mod shape_metric_v2;
 
+pub(crate) mod shape_new_session_details;
+
 pub(crate) mod shape_origins_list;
 
 pub(crate) mod shape_outbound_caller_config;
@@ -926,6 +986,8 @@ pub(crate) mod shape_quick_connect_search_filter;
 pub(crate) mod shape_quick_connect_search_summary_list;
 
 pub(crate) mod shape_quick_connect_summary_list;
+
+pub(crate) mod shape_realtime_contact_analysis_segments;
 
 pub(crate) mod shape_reference;
 
@@ -1039,7 +1101,11 @@ pub(crate) mod shape_agent_status_summary;
 
 pub(crate) mod shape_allowed_access_control_tags;
 
+pub(crate) mod shape_analytics_data_association_result;
+
 pub(crate) mod shape_assign_contact_category_action_definition;
+
+pub(crate) mod shape_attendee;
 
 pub(crate) mod shape_available_number_summary;
 
@@ -1066,6 +1132,8 @@ pub(crate) mod shape_distribution;
 pub(crate) mod shape_distribution_list;
 
 pub(crate) mod shape_endpoint;
+
+pub(crate) mod shape_error_result;
 
 pub(crate) mod shape_evaluation_answer_data;
 
@@ -1135,9 +1203,13 @@ pub(crate) mod shape_list_phone_numbers_summary;
 
 pub(crate) mod shape_media_concurrencies;
 
+pub(crate) mod shape_meeting;
+
 pub(crate) mod shape_metric_filter_v2;
 
 pub(crate) mod shape_metric_result_v2;
+
+pub(crate) mod shape_participant_capabilities;
 
 pub(crate) mod shape_phone_number_quick_connect_config;
 
@@ -1162,6 +1234,8 @@ pub(crate) mod shape_quick_connect_summary;
 pub(crate) mod shape_read_only_field_info;
 
 pub(crate) mod shape_read_only_task_template_fields;
+
+pub(crate) mod shape_realtime_contact_analysis_segment;
 
 pub(crate) mod shape_reference_summary;
 
@@ -1275,6 +1349,10 @@ pub(crate) mod shape_hierarchy_path_reference;
 
 pub(crate) mod shape_historical_metric_data_collections;
 
+pub(crate) mod shape_media_placement;
+
+pub(crate) mod shape_meeting_features_configuration;
+
 pub(crate) mod shape_metric_data_collections_v2;
 
 pub(crate) mod shape_metric_interval;
@@ -1284,6 +1362,16 @@ pub(crate) mod shape_notification_recipient_type;
 pub(crate) mod shape_number_reference;
 
 pub(crate) mod shape_participant_timer_configuration;
+
+pub(crate) mod shape_real_time_contact_analysis_segment_attachments;
+
+pub(crate) mod shape_real_time_contact_analysis_segment_categories;
+
+pub(crate) mod shape_real_time_contact_analysis_segment_event;
+
+pub(crate) mod shape_real_time_contact_analysis_segment_issues;
+
+pub(crate) mod shape_real_time_contact_analysis_segment_transcript;
 
 pub(crate) mod shape_routing_profile_reference;
 
@@ -1305,6 +1393,8 @@ pub(crate) mod shape_action_summary;
 
 pub(crate) mod shape_agent_contact_reference;
 
+pub(crate) mod shape_audio_features;
+
 pub(crate) mod shape_current_metric_data;
 
 pub(crate) mod shape_evaluation_form_numeric_question_properties;
@@ -1321,6 +1411,16 @@ pub(crate) mod shape_participant_timer_value;
 
 pub(crate) mod shape_queue_reference;
 
+pub(crate) mod shape_real_time_contact_analysis_attachments;
+
+pub(crate) mod shape_real_time_contact_analysis_issues_detected;
+
+pub(crate) mod shape_real_time_contact_analysis_matched_details;
+
+pub(crate) mod shape_real_time_contact_analysis_time_data;
+
+pub(crate) mod shape_real_time_contact_analysis_transcript_item_redaction;
+
 pub(crate) mod shape_contact_references;
 
 pub(crate) mod shape_evaluation_form_numeric_question_automation;
@@ -1331,11 +1431,25 @@ pub(crate) mod shape_evaluation_form_single_select_question_automation;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option;
 
+pub(crate) mod shape_real_time_contact_analysis_attachment;
+
+pub(crate) mod shape_real_time_contact_analysis_category_details;
+
+pub(crate) mod shape_real_time_contact_analysis_character_intervals;
+
+pub(crate) mod shape_real_time_contact_analysis_issue_detected;
+
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option;
 
 pub(crate) mod shape_metric_filters_v2_list;
 
 pub(crate) mod shape_numeric_question_property_value_automation;
+
+pub(crate) mod shape_real_time_contact_analysis_character_interval;
+
+pub(crate) mod shape_real_time_contact_analysis_points_of_interest;
+
+pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_content;
 
 pub(crate) mod shape_threshold_collections;
 
@@ -1347,8 +1461,16 @@ pub(crate) mod shape_evaluation_form_numeric_question_option_list;
 
 pub(crate) mod shape_evaluation_form_single_select_question_option_list;
 
+pub(crate) mod shape_real_time_contact_analysis_point_of_interest;
+
+pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_content;
+
 pub(crate) mod shape_single_select_question_rule_category_automation;
 
 pub(crate) mod shape_evaluation_form_single_select_question_automation_option_list;
 
 pub(crate) mod shape_metric_filter_value_list;
+
+pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_offsets;
+
+pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_character_offsets;

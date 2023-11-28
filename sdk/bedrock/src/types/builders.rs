@@ -21,6 +21,8 @@ pub use crate::types::_provisioned_model_summary::ProvisionedModelSummaryBuilder
 
 pub use crate::types::_foundation_model_summary::FoundationModelSummaryBuilder;
 
+pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycleBuilder;
+
 pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetailsBuilder;

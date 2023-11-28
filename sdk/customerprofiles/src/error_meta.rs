@@ -530,6 +530,45 @@ impl From<crate::operation::delete_workflow::DeleteWorkflowError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_profile_object_type::DetectProfileObjectTypeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detect_profile_object_type::DetectProfileObjectTypeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detect_profile_object_type::DetectProfileObjectTypeError> for Error {
+    fn from(err: crate::operation::detect_profile_object_type::DetectProfileObjectTypeError) -> Self {
+        match err {
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::detect_profile_object_type::DetectProfileObjectTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

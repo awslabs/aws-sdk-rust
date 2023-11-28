@@ -13,6 +13,8 @@ pub struct GetCustomModelOutput {
     pub job_arn: ::std::string::String,
     /// <p>ARN of the base model.</p>
     pub base_model_arn: ::std::string::String,
+    /// <p>The type of model customization.</p>
+    pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Hyperparameter values associated with this model.</p>
@@ -55,6 +57,10 @@ impl GetCustomModelOutput {
     pub fn base_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.base_model_arn.deref()
+    }
+    /// <p>The type of model customization.</p>
+    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+        self.customization_type.as_ref()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn model_kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -112,6 +118,7 @@ pub struct GetCustomModelOutputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) base_model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
     pub(crate) model_kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
@@ -196,6 +203,20 @@ impl GetCustomModelOutputBuilder {
     /// <p>ARN of the base model.</p>
     pub fn get_base_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_arn
+    }
+    /// <p>The type of model customization.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.customization_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of model customization.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.customization_type = input;
+        self
+    }
+    /// <p>The type of model customization.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        &self.customization_type
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn model_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -376,6 +397,7 @@ impl GetCustomModelOutputBuilder {
                     "base_model_arn was not specified but it is required when building GetCustomModelOutput",
                 )
             })?,
+            customization_type: self.customization_type,
             model_kms_key_arn: self.model_kms_key_arn,
             hyper_parameters: self.hyper_parameters,
             training_data_config: self.training_data_config,

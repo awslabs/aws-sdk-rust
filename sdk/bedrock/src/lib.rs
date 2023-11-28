@@ -12,7 +12,7 @@
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
-//! Describes the API operations for creating and managing Bedrock models.
+//! Describes the API operations for creating and managing Amazon Bedrock models.
 //!
 //! ## Getting Started
 //!
@@ -26,7 +26,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrock = "1.3.0"
+//! aws-sdk-bedrock = "1.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

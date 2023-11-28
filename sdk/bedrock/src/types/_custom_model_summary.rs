@@ -14,6 +14,8 @@ pub struct CustomModelSummary {
     pub base_model_arn: ::std::string::String,
     /// <p>The base model name.</p>
     pub base_model_name: ::std::string::String,
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl CustomModelSummary {
     /// <p>The ARN of the custom model.</p>
@@ -40,6 +42,10 @@ impl CustomModelSummary {
         use std::ops::Deref;
         self.base_model_name.deref()
     }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+        self.customization_type.as_ref()
+    }
 }
 impl CustomModelSummary {
     /// Creates a new builder-style object to manufacture [`CustomModelSummary`](crate::types::CustomModelSummary).
@@ -57,6 +63,7 @@ pub struct CustomModelSummaryBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) base_model_arn: ::std::option::Option<::std::string::String>,
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
 }
 impl CustomModelSummaryBuilder {
     /// <p>The ARN of the custom model.</p>
@@ -134,6 +141,20 @@ impl CustomModelSummaryBuilder {
     pub fn get_base_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_name
     }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.customization_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.customization_type = input;
+        self
+    }
+    /// <p>Specifies whether to carry out continued pre-training of a model or whether to fine-tune it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a>.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        &self.customization_type
+    }
     /// Consumes the builder and constructs a [`CustomModelSummary`](crate::types::CustomModelSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_arn`](crate::types::builders::CustomModelSummaryBuilder::model_arn)
@@ -173,6 +194,7 @@ impl CustomModelSummaryBuilder {
                     "base_model_name was not specified but it is required when building CustomModelSummary",
                 )
             })?,
+            customization_type: self.customization_type,
         })
     }
 }

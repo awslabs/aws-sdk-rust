@@ -23,7 +23,7 @@ impl CreateModelCustomizationJobInputBuilder {
 /// Fluent builder constructing a request to `CreateModelCustomizationJob`.
 ///
 /// <p>Creates a fine-tuning job to customize a base model.</p>
-/// <p>You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Training data contains input and output text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the training data. Bedrock returns validation loss metrics and output generations after the job completes. </p>
+/// <p>You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Training data contains input and output text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the training data. Amazon Bedrock returns validation loss metrics and output generations after the job completes. </p>
 /// <p> Model-customization jobs are asynchronous and the completion time depends on the base model and the training/validation data size. To monitor a job, use the <code>GetModelCustomizationJob</code> operation to retrieve the job status.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -139,17 +139,17 @@ impl CreateModelCustomizationJobFluentBuilder {
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_model_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
@@ -180,6 +180,20 @@ impl CreateModelCustomizationJobFluentBuilder {
     /// <p>Name of the base model.</p>
     pub fn get_base_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_base_model_identifier()
+    }
+    /// <p>The customization type.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.inner = self.inner.customization_type(input);
+        self
+    }
+    /// <p>The customization type.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.inner = self.inner.set_customization_type(input);
+        self
+    }
+    /// <p>The customization type.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        self.inner.get_customization_type()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn custom_model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

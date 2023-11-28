@@ -138,6 +138,13 @@ pub(crate) fn de_get_custom_model(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "customizationType" => {
+                    builder = builder.set_customization_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::CustomizationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "hyperParameters" => {
                     builder = builder.set_hyper_parameters(
                         crate::protocol_serde::shape_model_customization_hyper_parameters::de_model_customization_hyper_parameters(tokens)?,

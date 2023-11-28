@@ -27,7 +27,7 @@ pub struct GetModelCustomizationJobOutput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>ARN of the base model.</p>
     pub base_model_arn: ::std::string::String,
-    /// <p>The hyperparameter values for the job.</p>
+    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
     pub hyper_parameters: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     /// <p>S3 Location of the training data.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
@@ -35,6 +35,8 @@ pub struct GetModelCustomizationJobOutput {
     pub validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
     /// <p>Output data configuration </p>
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
+    /// <p>The type of model customization.</p>
+    pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub output_model_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metrics associated with the custom job.</p>
@@ -99,7 +101,7 @@ impl GetModelCustomizationJobOutput {
         use std::ops::Deref;
         self.base_model_arn.deref()
     }
-    /// <p>The hyperparameter values for the job.</p>
+    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
     pub fn hyper_parameters(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.hyper_parameters
     }
@@ -114,6 +116,10 @@ impl GetModelCustomizationJobOutput {
     /// <p>Output data configuration </p>
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
+    }
+    /// <p>The type of model customization.</p>
+    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+        self.customization_type.as_ref()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn output_model_kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -166,6 +172,7 @@ pub struct GetModelCustomizationJobOutputBuilder {
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     pub(crate) validation_data_config: ::std::option::Option<crate::types::ValidationDataConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
+    pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
     pub(crate) output_model_kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) training_metrics: ::std::option::Option<crate::types::TrainingMetrics>,
     pub(crate) validation_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ValidatorMetric>>,
@@ -351,7 +358,7 @@ impl GetModelCustomizationJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
-    /// <p>The hyperparameter values for the job.</p>
+    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
     pub fn hyper_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -362,7 +369,7 @@ impl GetModelCustomizationJobOutputBuilder {
         self.hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The hyperparameter values for the job.</p>
+    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
     pub fn set_hyper_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -370,7 +377,7 @@ impl GetModelCustomizationJobOutputBuilder {
         self.hyper_parameters = input;
         self
     }
-    /// <p>The hyperparameter values for the job.</p>
+    /// <p>The hyperparameter values for the job. For information about hyperparameters for specific models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-guidelines.html">Guidelines for model customization</a>.</p>
     pub fn get_hyper_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.hyper_parameters
     }
@@ -418,6 +425,20 @@ impl GetModelCustomizationJobOutputBuilder {
     /// <p>Output data configuration </p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::OutputDataConfig> {
         &self.output_data_config
+    }
+    /// <p>The type of model customization.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.customization_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of model customization.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.customization_type = input;
+        self
+    }
+    /// <p>The type of model customization.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        &self.customization_type
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn output_model_kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -557,6 +578,7 @@ impl GetModelCustomizationJobOutputBuilder {
             training_data_config: self.training_data_config,
             validation_data_config: self.validation_data_config,
             output_data_config: self.output_data_config,
+            customization_type: self.customization_type,
             output_model_kms_key_arn: self.output_model_kms_key_arn,
             training_metrics: self.training_metrics,
             validation_metrics: self.validation_metrics,

@@ -158,6 +158,13 @@ pub(crate) fn de_get_model_customization_job(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "customizationType" => {
+                    builder = builder.set_customization_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::CustomizationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "endTime" => {
                     builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -41,6 +41,8 @@ pub use crate::types::error::_maximum_result_returned_exception::MaximumResultRe
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
+pub use crate::types::error::_output_type_not_found_exception::OutputTypeNotFoundExceptionBuilder;
+
 pub use crate::types::error::_user_not_found_exception::UserNotFoundExceptionBuilder;
 
 pub use crate::types::error::_contact_flow_not_published_exception::ContactFlowNotPublishedExceptionBuilder;

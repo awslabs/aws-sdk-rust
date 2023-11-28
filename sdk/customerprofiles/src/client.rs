@@ -193,6 +193,8 @@ mod delete_profile_object_type;
 
 mod delete_workflow;
 
+mod detect_profile_object_type;
+
 mod get_auto_merging_preview;
 
 mod get_calculated_attribute_definition;

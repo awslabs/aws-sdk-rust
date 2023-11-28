@@ -186,6 +186,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBucketsR
                 ::std::write!(output, "/").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::list_buckets::ListBucketsInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                query.push_kv("x-id", "ListBuckets");
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::list_buckets::ListBucketsInput,
@@ -193,6 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBucketsR
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -235,6 +244,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBucketsEn
             .set_use_arn_region(cfg.load::<crate::config::UseArnRegion>().map(|ty| ty.0))
             .set_disable_multi_region_access_points(cfg.load::<crate::config::DisableMultiRegionAccessPoints>().map(|ty| ty.0))
             .set_accelerate(cfg.load::<crate::config::Accelerate>().map(|ty| ty.0))
+            .set_disable_s3_express_session_auth(cfg.load::<crate::config::DisableS3ExpressSessionAuth>().map(|ty| ty.0))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

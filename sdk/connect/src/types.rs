@@ -205,6 +205,28 @@ pub use crate::types::_agent_status_state::AgentStatusState;
 
 pub use crate::types::_disconnect_reason::DisconnectReason;
 
+pub use crate::types::_connection_data::ConnectionData;
+
+pub use crate::types::_meeting::Meeting;
+
+pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfiguration;
+
+pub use crate::types::_audio_features::AudioFeatures;
+
+pub use crate::types::_meeting_feature_status::MeetingFeatureStatus;
+
+pub use crate::types::_media_placement::MediaPlacement;
+
+pub use crate::types::_attendee::Attendee;
+
+pub use crate::types::_participant_details::ParticipantDetails;
+
+pub use crate::types::_allowed_capabilities::AllowedCapabilities;
+
+pub use crate::types::_participant_capabilities::ParticipantCapabilities;
+
+pub use crate::types::_video_capability::VideoCapability;
+
 pub use crate::types::_traffic_type::TrafficType;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfig;
@@ -223,7 +245,11 @@ pub use crate::types::_rehydration_type::RehydrationType;
 
 pub use crate::types::_chat_message::ChatMessage;
 
-pub use crate::types::_participant_details::ParticipantDetails;
+pub use crate::types::_new_session_details::NewSessionDetails;
+
+pub use crate::types::_chat_event::ChatEvent;
+
+pub use crate::types::_chat_event_type::ChatEventType;
 
 pub use crate::types::_vocabulary_summary::VocabularySummary;
 
@@ -337,6 +363,50 @@ pub use crate::types::_routing_profile_summary::RoutingProfileSummary;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummary;
 
+pub use crate::types::_realtime_contact_analysis_segment::RealtimeContactAnalysisSegment;
+
+pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeContactAnalysisSegmentAttachments;
+
+pub use crate::types::_real_time_contact_analysis_time_data::RealTimeContactAnalysisTimeData;
+
+pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAnalysisAttachment;
+
+pub use crate::types::_artifact_status::ArtifactStatus;
+
+pub use crate::types::_participant_role::ParticipantRole;
+
+pub use crate::types::_real_time_contact_analysis_segment_event::RealTimeContactAnalysisSegmentEvent;
+
+pub use crate::types::_real_time_contact_analysis_segment_issues::RealTimeContactAnalysisSegmentIssues;
+
+pub use crate::types::_real_time_contact_analysis_issue_detected::RealTimeContactAnalysisIssueDetected;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_content::RealTimeContactAnalysisTranscriptItemWithContent;
+
+pub use crate::types::_real_time_contact_analysis_character_interval::RealTimeContactAnalysisCharacterInterval;
+
+pub use crate::types::_real_time_contact_analysis_segment_categories::RealTimeContactAnalysisSegmentCategories;
+
+pub use crate::types::_real_time_contact_analysis_category_details::RealTimeContactAnalysisCategoryDetails;
+
+pub use crate::types::_real_time_contact_analysis_point_of_interest::RealTimeContactAnalysisPointOfInterest;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets;
+
+pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscript;
+
+pub use crate::types::_real_time_contact_analysis_sentiment_label::RealTimeContactAnalysisSentimentLabel;
+
+pub use crate::types::_real_time_contact_analysis_transcript_item_redaction::RealTimeContactAnalysisTranscriptItemRedaction;
+
+pub use crate::types::_real_time_contact_analysis_status::RealTimeContactAnalysisStatus;
+
+pub use crate::types::_real_time_contact_analysis_supported_channel::RealTimeContactAnalysisSupportedChannel;
+
+pub use crate::types::_real_time_contact_analysis_segment_type::RealTimeContactAnalysisSegmentType;
+
+pub use crate::types::_real_time_contact_analysis_output_type::RealTimeContactAnalysisOutputType;
+
 pub use crate::types::_quick_connect_summary::QuickConnectSummary;
 
 pub use crate::types::_queue_summary::QueueSummary;
@@ -366,6 +436,10 @@ pub use crate::types::_directory_type::DirectoryType;
 pub use crate::types::_attribute::Attribute;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummary;
+
+pub use crate::types::_flow_association_summary::FlowAssociationSummary;
+
+pub use crate::types::_list_flow_association_resource_type::ListFlowAssociationResourceType;
 
 pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummary;
 
@@ -408,6 +482,8 @@ pub use crate::types::_lex_bot_config::LexBotConfig;
 pub use crate::types::_lex_v2_bot::LexV2Bot;
 
 pub use crate::types::_lex_version::LexVersion;
+
+pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResult;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummary;
 
@@ -456,6 +532,8 @@ pub use crate::types::_queue_reference::QueueReference;
 pub use crate::types::_grouping::Grouping;
 
 pub use crate::types::_filters::Filters;
+
+pub use crate::types::_flow_association_resource_type::FlowAssociationResourceType;
 
 pub use crate::types::_credentials::Credentials;
 
@@ -551,8 +629,6 @@ pub use crate::types::_participant_token_credentials::ParticipantTokenCredential
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
 
-pub use crate::types::_participant_role::ParticipantRole;
-
 pub use crate::types::_failed_request::FailedRequest;
 
 pub use crate::types::_failure_reason_code::FailureReasonCode;
@@ -567,9 +643,7 @@ pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_endpoint_type::EndpointType;
 
-pub use crate::types::_flow_association_summary::FlowAssociationSummary;
-
-pub use crate::types::_list_flow_association_resource_type::ListFlowAssociationResourceType;
+pub use crate::types::_error_result::ErrorResult;
 
 mod _action_summary;
 
@@ -593,15 +667,25 @@ mod _agent_status_summary;
 
 mod _agent_status_type;
 
+mod _allowed_capabilities;
+
+mod _analytics_data_association_result;
+
 mod _answer_machine_detection_config;
 
 mod _application;
+
+mod _artifact_status;
 
 mod _assign_contact_category_action_definition;
 
 mod _attachment_reference;
 
+mod _attendee;
+
 mod _attribute;
+
+mod _audio_features;
 
 mod _available_number_summary;
 
@@ -610,6 +694,10 @@ mod _behavior_type;
 mod _campaign;
 
 mod _channel;
+
+mod _chat_event;
+
+mod _chat_event_type;
 
 mod _chat_message;
 
@@ -620,6 +708,8 @@ mod _chat_streaming_configuration;
 mod _claimed_phone_number_summary;
 
 mod _comparison;
+
+mod _connection_data;
 
 mod _contact;
 
@@ -684,6 +774,8 @@ mod _encryption_type;
 mod _endpoint;
 
 mod _endpoint_type;
+
+mod _error_result;
 
 mod _evaluation;
 
@@ -756,6 +848,8 @@ mod _failure_reason_code;
 mod _filter_v2;
 
 mod _filters;
+
+mod _flow_association_resource_type;
 
 mod _flow_association_summary;
 
@@ -849,6 +943,14 @@ mod _list_phone_numbers_summary;
 
 mod _media_concurrency;
 
+mod _media_placement;
+
+mod _meeting;
+
+mod _meeting_feature_status;
+
+mod _meeting_features_configuration;
+
 mod _metric_data_v2;
 
 mod _metric_filter_v2;
@@ -860,6 +962,8 @@ mod _metric_result_v2;
 mod _metric_v2;
 
 mod _monitor_capability;
+
+mod _new_session_details;
 
 mod _notification_content_type;
 
@@ -874,6 +978,8 @@ mod _numeric_question_property_automation_label;
 mod _numeric_question_property_value_automation;
 
 mod _outbound_caller_config;
+
+mod _participant_capabilities;
 
 mod _participant_details;
 
@@ -952,6 +1058,46 @@ mod _quick_connect_summary;
 mod _quick_connect_type;
 
 mod _read_only_field_info;
+
+mod _real_time_contact_analysis_attachment;
+
+mod _real_time_contact_analysis_category_details;
+
+mod _real_time_contact_analysis_character_interval;
+
+mod _real_time_contact_analysis_issue_detected;
+
+mod _real_time_contact_analysis_output_type;
+
+mod _real_time_contact_analysis_point_of_interest;
+
+mod _real_time_contact_analysis_segment_attachments;
+
+mod _real_time_contact_analysis_segment_categories;
+
+mod _real_time_contact_analysis_segment_event;
+
+mod _real_time_contact_analysis_segment_issues;
+
+mod _real_time_contact_analysis_segment_transcript;
+
+mod _real_time_contact_analysis_segment_type;
+
+mod _real_time_contact_analysis_sentiment_label;
+
+mod _real_time_contact_analysis_status;
+
+mod _real_time_contact_analysis_supported_channel;
+
+mod _real_time_contact_analysis_time_data;
+
+mod _real_time_contact_analysis_transcript_item_redaction;
+
+mod _real_time_contact_analysis_transcript_item_with_character_offsets;
+
+mod _real_time_contact_analysis_transcript_item_with_content;
+
+mod _realtime_contact_analysis_segment;
 
 mod _reference;
 
@@ -1114,6 +1260,8 @@ mod _user_search_filter;
 mod _user_search_summary;
 
 mod _user_summary;
+
+mod _video_capability;
 
 mod _view;
 

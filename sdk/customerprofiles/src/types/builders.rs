@@ -125,6 +125,8 @@ pub use crate::types::_event_stream_destination_details::EventStreamDestinationD
 
 pub use crate::types::_domain_stats::DomainStatsBuilder;
 
+pub use crate::types::_detected_profile_object_type::DetectedProfileObjectTypeBuilder;
+
 pub use crate::types::_integration_config::IntegrationConfigBuilder;
 
 pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;

@@ -170,6 +170,8 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWSMarketplace Metering | [aws-sdk-marketplacemetering](https://crates.io/crates/aws-sdk-marketplacemetering) ([docs](https://docs.rs/aws-sdk-marketplacemetering)) |
 | AWSServerlessApplicationRepository | [aws-sdk-serverlessapplicationrepository](https://crates.io/crates/aws-sdk-serverlessapplicationrepository) ([docs](https://docs.rs/aws-sdk-serverlessapplicationrepository)) |
 | Access Analyzer | [aws-sdk-accessanalyzer](https://crates.io/crates/aws-sdk-accessanalyzer) ([docs](https://docs.rs/aws-sdk-accessanalyzer)) |
+| Agents for Amazon Bedrock | [aws-sdk-bedrockagent](https://crates.io/crates/aws-sdk-bedrockagent) ([docs](https://docs.rs/aws-sdk-bedrockagent)) |
+| Agents for Amazon Bedrock Runtime | [aws-sdk-bedrockagentruntime](https://crates.io/crates/aws-sdk-bedrockagentruntime) ([docs](https://docs.rs/aws-sdk-bedrockagentruntime)) |
 | Alexa For Business | [aws-sdk-alexaforbusiness](https://crates.io/crates/aws-sdk-alexaforbusiness) ([docs](https://docs.rs/aws-sdk-alexaforbusiness)) |
 | Amazon API Gateway | [aws-sdk-apigateway](https://crates.io/crates/aws-sdk-apigateway) ([docs](https://docs.rs/aws-sdk-apigateway)) |
 | Amazon AppConfig | [aws-sdk-appconfig](https://crates.io/crates/aws-sdk-appconfig) ([docs](https://docs.rs/aws-sdk-appconfig)) |
@@ -300,6 +302,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Pinpoint SMS and Voice Service | [aws-sdk-pinpointsmsvoice](https://crates.io/crates/aws-sdk-pinpointsmsvoice) ([docs](https://docs.rs/aws-sdk-pinpointsmsvoice)) |
 | Amazon Polly | [aws-sdk-polly](https://crates.io/crates/aws-sdk-polly) ([docs](https://docs.rs/aws-sdk-polly)) |
 | Amazon Prometheus Service | [aws-sdk-amp](https://crates.io/crates/aws-sdk-amp) ([docs](https://docs.rs/aws-sdk-amp)) |
+| Amazon Q Connect | [aws-sdk-qconnect](https://crates.io/crates/aws-sdk-qconnect) ([docs](https://docs.rs/aws-sdk-qconnect)) |
 | Amazon QLDB | [aws-sdk-qldb](https://crates.io/crates/aws-sdk-qldb) ([docs](https://docs.rs/aws-sdk-qldb)) |
 | Amazon QLDB Session | [aws-sdk-qldbsession](https://crates.io/crates/aws-sdk-qldbsession) ([docs](https://docs.rs/aws-sdk-qldbsession)) |
 | Amazon QuickSight | [aws-sdk-quicksight](https://crates.io/crates/aws-sdk-quicksight) ([docs](https://docs.rs/aws-sdk-quicksight)) |
@@ -377,6 +380,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
 | PcaConnectorAd | [aws-sdk-pcaconnectorad](https://crates.io/crates/aws-sdk-pcaconnectorad) ([docs](https://docs.rs/aws-sdk-pcaconnectorad)) |
+| QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
 | Redshift Data API Service | [aws-sdk-redshiftdata](https://crates.io/crates/aws-sdk-redshiftdata) ([docs](https://docs.rs/aws-sdk-redshiftdata)) |
 | Redshift Serverless | [aws-sdk-redshiftserverless](https://crates.io/crates/aws-sdk-redshiftserverless) ([docs](https://docs.rs/aws-sdk-redshiftserverless)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |

@@ -22,7 +22,7 @@ impl GetFoundationModelInputBuilder {
 }
 /// Fluent builder constructing a request to `GetFoundationModel`.
 ///
-/// <p>Get details about a Bedrock foundation model.</p>
+/// <p>Get details about a Amazon Bedrock foundation model.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFoundationModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

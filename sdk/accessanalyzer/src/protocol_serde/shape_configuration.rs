@@ -70,6 +70,15 @@ pub fn ser_configuration(
             crate::protocol_serde::shape_sqs_queue_configuration::ser_sqs_queue_configuration(&mut object_11, inner)?;
             object_11.finish();
         }
+        crate::types::Configuration::S3ExpressDirectoryBucket(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_7.key("s3ExpressDirectoryBucket").start_object();
+            crate::protocol_serde::shape_s3_express_directory_bucket_configuration::ser_s3_express_directory_bucket_configuration(
+                &mut object_12,
+                inner,
+            )?;
+            object_12.finish();
+        }
         crate::types::Configuration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Configuration"))
         }
@@ -156,6 +165,14 @@ where
                         "sqsQueue" => Some(crate::types::Configuration::SqsQueue(
                             crate::protocol_serde::shape_sqs_queue_configuration::de_sqs_queue_configuration(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sqsQueue' cannot be null")
+                            })?,
+                        )),
+                        "s3ExpressDirectoryBucket" => Some(crate::types::Configuration::S3ExpressDirectoryBucket(
+                            crate::protocol_serde::shape_s3_express_directory_bucket_configuration::de_s3_express_directory_bucket_configuration(
+                                tokens,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3ExpressDirectoryBucket' cannot be null")
                             })?,
                         )),
                         _ => {

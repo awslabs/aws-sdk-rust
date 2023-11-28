@@ -4681,3 +4681,503 @@ async fn operation_input_test_get_object_139() {
                                     "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
                                 );
 }
+
+#[::tokio::test]
+async fn operation_input_test_get_object_140() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--use1-az1--x-s3.s3express-use1-az1.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://mybucket--use1-az1--x-s3.s3express-use1-az1.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_141() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--use1-az1--x-s3.s3express-fips-use1-az1.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://mybucket--use1-az1--x-s3.s3express-fips-use1-az1.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_142() {
+    /* builtIns: {
+        "AWS::Region": "ap-northeast-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("ap-northeast-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--apne1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com"),
+        "expected URI to start with `https://mybucket--apne1-az1--x-s3.s3express-apne1-az1.ap-northeast-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_143() {
+    /* builtIns: {
+        "AWS::Region": "ap-northeast-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("ap-northeast-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--apne1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com"),
+        "expected URI to start with `https://mybucket--apne1-az1--x-s3.s3express-fips-apne1-az1.ap-northeast-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_144() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_145() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com/mybucket--use1-az1--x-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_directory_buckets_146() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(client.list_directory_buckets().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_directory_buckets_147() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(client.list_directory_buckets().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_148() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://10.0.0.1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://10.0.0.1");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usw2-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://10.0.0.1/mybucket--usw2-az1--x-s3"),
+        "expected URI to start with `https://10.0.0.1/mybucket--usw2-az1--x-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_149() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://custom.com"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://custom.com");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usw2-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--usw2-az1--x-s3.custom.com"),
+        "expected URI to start with `https://mybucket--usw2-az1--x-s3.custom.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_150() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usaz1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express bucket name format. [bad format error]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express bucket name format."),
+        "expected error to contain `Unrecognized S3Express bucket name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_151() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--usaz1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express bucket name format. [bad format error no session auth]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express bucket name format."),
+        "expected error to contain `Unrecognized S3Express bucket name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_152() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express does not support Dual-stack. [dual-stack error]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_153() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::S3::Accelerate": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.accelerate(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--use1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express does not support S3 Accelerate. [accelerate error]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support S3 Accelerate."),
+        "expected error to contain `S3Express does not support S3 Accelerate.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_154() {
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("my.bucket--use1-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express bucket name is not a valid virtual hostable name. [Data plane bucket format error]");
+    assert!(
+        format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
+        "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_155() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://custom.com"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://custom.com");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("my.bucket--usw2-az1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err(
+        "expected error: S3Express bucket name is not a valid virtual hostable name. [host override data plane bucket error session auth]",
+    );
+    assert!(
+        format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
+        "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",
+        error
+    );
+}

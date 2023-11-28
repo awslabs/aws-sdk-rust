@@ -1,12 +1,12 @@
 [workspace]
 exclude = [
+    "examples/test-utils",
+    "examples/cross_service",
     "examples/webassembly",
     "examples/lambda",
     "examples/examples",
-    "examples/test-utils",
-    "examples/cross_service",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -71,6 +71,8 @@ members = [
     "sdk/batch",
     "sdk/bcmdataexports",
     "sdk/bedrock",
+    "sdk/bedrockagent",
+    "sdk/bedrockagentruntime",
     "sdk/bedrockruntime",
     "sdk/billingconductor",
     "sdk/braket",
@@ -306,6 +308,8 @@ members = [
     "sdk/pricing",
     "sdk/privatenetworks",
     "sdk/proton",
+    "sdk/qbusiness",
+    "sdk/qconnect",
     "sdk/qldb",
     "sdk/qldbsession",
     "sdk/quicksight",

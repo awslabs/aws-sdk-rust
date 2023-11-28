@@ -127,6 +127,8 @@ pub use crate::types::_access_preview::AccessPreview;
 
 pub use crate::types::_configuration::Configuration;
 
+pub use crate::types::_s3_express_directory_bucket_configuration::S3ExpressDirectoryBucketConfiguration;
+
 pub use crate::types::_sqs_queue_configuration::SqsQueueConfiguration;
 
 pub use crate::types::_sns_topic_configuration::SnsTopicConfiguration;
@@ -324,6 +326,8 @@ mod _s3_access_point_configuration;
 mod _s3_bucket_acl_grant_configuration;
 
 mod _s3_bucket_configuration;
+
+mod _s3_express_directory_bucket_configuration;
 
 mod _s3_public_access_block_configuration;
 

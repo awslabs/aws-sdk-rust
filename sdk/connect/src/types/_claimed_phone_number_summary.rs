@@ -31,6 +31,8 @@ pub struct ClaimedPhoneNumberSummary {
     /// <p>You will not be billed for the phone number during the 1-day period if number claiming fails. </p>
     /// </note>
     pub phone_number_status: ::std::option::Option<crate::types::PhoneNumberStatus>,
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClaimedPhoneNumberSummary {
     /// <p>A unique identifier for the phone number.</p>
@@ -80,6 +82,10 @@ impl ClaimedPhoneNumberSummary {
     pub fn phone_number_status(&self) -> ::std::option::Option<&crate::types::PhoneNumberStatus> {
         self.phone_number_status.as_ref()
     }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn source_phone_number_arn(&self) -> ::std::option::Option<&str> {
+        self.source_phone_number_arn.as_deref()
+    }
 }
 impl ClaimedPhoneNumberSummary {
     /// Creates a new builder-style object to manufacture [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).
@@ -102,6 +108,7 @@ pub struct ClaimedPhoneNumberSummaryBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) phone_number_status: ::std::option::Option<crate::types::PhoneNumberStatus>,
+    pub(crate) source_phone_number_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClaimedPhoneNumberSummaryBuilder {
     /// <p>A unique identifier for the phone number.</p>
@@ -271,6 +278,20 @@ impl ClaimedPhoneNumberSummaryBuilder {
     pub fn get_phone_number_status(&self) -> &::std::option::Option<crate::types::PhoneNumberStatus> {
         &self.phone_number_status
     }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn source_phone_number_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_phone_number_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn set_source_phone_number_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_phone_number_arn = input;
+        self
+    }
+    /// <p>The claimed phone number ARN that was previously imported from the external service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+    pub fn get_source_phone_number_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_phone_number_arn
+    }
     /// Consumes the builder and constructs a [`ClaimedPhoneNumberSummary`](crate::types::ClaimedPhoneNumberSummary).
     pub fn build(self) -> crate::types::ClaimedPhoneNumberSummary {
         crate::types::ClaimedPhoneNumberSummary {
@@ -284,6 +305,7 @@ impl ClaimedPhoneNumberSummaryBuilder {
             instance_id: self.instance_id,
             tags: self.tags,
             phone_number_status: self.phone_number_status,
+            source_phone_number_arn: self.source_phone_number_arn,
         }
     }
 }

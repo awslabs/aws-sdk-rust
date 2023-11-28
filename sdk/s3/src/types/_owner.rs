@@ -14,7 +14,9 @@ pub struct Owner {
     /// <li> <p>Asia Pacific (Tokyo)</p> </li>
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Container for the ID of the owner.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -30,7 +32,9 @@ impl Owner {
     /// <li> <p>Asia Pacific (Tokyo)</p> </li>
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -64,7 +68,9 @@ impl OwnerBuilder {
     /// <li> <p>Asia Pacific (Tokyo)</p> </li>
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
@@ -79,7 +85,9 @@ impl OwnerBuilder {
     /// <li> <p>Asia Pacific (Tokyo)</p> </li>
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
@@ -94,7 +102,9 @@ impl OwnerBuilder {
     /// <li> <p>Asia Pacific (Tokyo)</p> </li>
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
-    /// </ul>
+    /// </ul> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }

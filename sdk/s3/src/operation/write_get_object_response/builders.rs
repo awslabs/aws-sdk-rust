@@ -22,6 +22,9 @@ impl WriteGetObjectResponseInputBuilder {
 }
 /// Fluent builder constructing a request to `WriteGetObjectResponse`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Passes transformed objects to a <code>GetObject</code> operation when using Object Lambda access points. For information about Object Lambda access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with Object Lambda access points</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>This operation supports metadata that can be returned by <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>, in addition to <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>, <code>ErrorCode</code>, and <code>ErrorMessage</code>. The <code>GetObject</code> response metadata is supported so that the <code>WriteGetObjectResponse</code> caller, typically an Lambda function, can provide the same metadata when it internally invokes <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called by a customer-owned Lambda function, the metadata returned to the end user <code>GetObject</code> call might differ from what Amazon S3 would normally return.</p>
 /// <p>You can include any number of metadata headers. When including a metadata header, it should be prefaced with <code>x-amz-meta</code>. For example, <code>x-amz-meta-my-custom-header: MyCustomValue</code>. The primary use case for this is to forward <code>GetObject</code> metadata.</p>
@@ -614,17 +617,23 @@ impl WriteGetObjectResponseFluentBuilder {
     pub fn get_replication_status(&self) -> &::std::option::Option<crate::types::ReplicationStatus> {
         self.inner.get_replication_status()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
         self.inner = self.inner.request_charged(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn set_request_charged(mut self, input: ::std::option::Option<crate::types::RequestCharged>) -> Self {
         self.inner = self.inner.set_request_charged(input);
         self
     }
-    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p> <note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
         self.inner.get_request_charged()
     }

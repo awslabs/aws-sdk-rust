@@ -7,12 +7,14 @@ pub struct CreateModelCustomizationJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>Enter a name for the custom model.</p>
     pub custom_model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>Name of the base model.</p>
     pub base_model_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The customization type.</p>
+    pub customization_type: ::std::option::Option<crate::types::CustomizationType>,
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub custom_model_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Assign tags to the job.</p>
@@ -39,7 +41,7 @@ impl CreateModelCustomizationJobInput {
     pub fn custom_model_name(&self) -> ::std::option::Option<&str> {
         self.custom_model_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -50,6 +52,10 @@ impl CreateModelCustomizationJobInput {
     /// <p>Name of the base model.</p>
     pub fn base_model_identifier(&self) -> ::std::option::Option<&str> {
         self.base_model_identifier.as_deref()
+    }
+    /// <p>The customization type.</p>
+    pub fn customization_type(&self) -> ::std::option::Option<&crate::types::CustomizationType> {
+        self.customization_type.as_ref()
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn custom_model_kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -104,6 +110,7 @@ pub struct CreateModelCustomizationJobInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) base_model_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) customization_type: ::std::option::Option<crate::types::CustomizationType>,
     pub(crate) custom_model_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) custom_model_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -144,18 +151,18 @@ impl CreateModelCustomizationJobInputBuilder {
     pub fn get_custom_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_model_name
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that Bedrock can assume to perform tasks on your behalf. For example, during model training, Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code> permission. </p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
@@ -187,6 +194,20 @@ impl CreateModelCustomizationJobInputBuilder {
     /// <p>Name of the base model.</p>
     pub fn get_base_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.base_model_identifier
+    }
+    /// <p>The customization type.</p>
+    pub fn customization_type(mut self, input: crate::types::CustomizationType) -> Self {
+        self.customization_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customization type.</p>
+    pub fn set_customization_type(mut self, input: ::std::option::Option<crate::types::CustomizationType>) -> Self {
+        self.customization_type = input;
+        self
+    }
+    /// <p>The customization type.</p>
+    pub fn get_customization_type(&self) -> &::std::option::Option<crate::types::CustomizationType> {
+        &self.customization_type
     }
     /// <p>The custom model is encrypted at rest using this key.</p>
     pub fn custom_model_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -340,6 +361,7 @@ impl CreateModelCustomizationJobInputBuilder {
             role_arn: self.role_arn,
             client_request_token: self.client_request_token,
             base_model_identifier: self.base_model_identifier,
+            customization_type: self.customization_type,
             custom_model_kms_key_id: self.custom_model_kms_key_id,
             job_tags: self.job_tags,
             custom_model_tags: self.custom_model_tags,
