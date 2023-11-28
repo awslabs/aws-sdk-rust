@@ -57,6 +57,8 @@ pub enum Error {
     InvalidCacheParameterGroupStateFault(crate::types::error::InvalidCacheParameterGroupStateFault),
     /// <p>The current state of the cache security group does not allow deletion.</p>
     InvalidCacheSecurityGroupStateFault(crate::types::error::InvalidCacheSecurityGroupStateFault),
+    /// <p>You must enter valid credentials.</p>
+    InvalidCredentialsException(crate::types::error::InvalidCredentialsException),
     /// <p>The Global datastore is not available or in primary-only state.</p>
     InvalidGlobalReplicationGroupStateFault(crate::types::error::InvalidGlobalReplicationGroupStateFault),
     /// <p>The KMS key supplied is not valid.</p>
@@ -67,6 +69,10 @@ pub enum Error {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
+    /// <p>The account for these credentials is not currently active.</p>
+    InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
     /// <p>The current state of the snapshot does not allow the requested operation to occur.</p>
     InvalidSnapshotStateFault(crate::types::error::InvalidSnapshotStateFault),
     /// <p>An invalid subnet identifier was specified.</p>
@@ -103,6 +109,18 @@ pub enum Error {
     ReservedCacheNodeQuotaExceededFault(crate::types::error::ReservedCacheNodeQuotaExceededFault),
     /// <p>The requested cache node offering does not exist.</p>
     ReservedCacheNodesOfferingNotFoundFault(crate::types::error::ReservedCacheNodesOfferingNotFoundFault),
+    /// <p>A serverless cache with this name already exists.</p>
+    ServerlessCacheAlreadyExistsFault(crate::types::error::ServerlessCacheAlreadyExistsFault),
+    /// <p>The serverless cache was not found or does not exist.</p>
+    ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
+    /// <p>The number of serverless caches exceeds the customer quota.</p>
+    ServerlessCacheQuotaForCustomerExceededFault(crate::types::error::ServerlessCacheQuotaForCustomerExceededFault),
+    /// <p>A serverless cache snapshot with this name already exists. Available for Redis only.</p>
+    ServerlessCacheSnapshotAlreadyExistsFault(crate::types::error::ServerlessCacheSnapshotAlreadyExistsFault),
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
+    /// <p>The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis only.</p>
+    ServerlessCacheSnapshotQuotaExceededFault(crate::types::error::ServerlessCacheSnapshotQuotaExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The service update doesn't exist</p>
@@ -181,11 +199,14 @@ impl ::std::fmt::Display for Error {
             Error::InvalidCacheClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidCacheParameterGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidCacheSecurityGroupStateFault(inner) => inner.fmt(f),
+            Error::InvalidCredentialsException(inner) => inner.fmt(f),
             Error::InvalidGlobalReplicationGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidKmsKeyFault(inner) => inner.fmt(f),
             Error::InvalidParameterCombinationException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::InvalidReplicationGroupStateFault(inner) => inner.fmt(f),
+            Error::InvalidServerlessCacheSnapshotStateFault(inner) => inner.fmt(f),
+            Error::InvalidServerlessCacheStateFault(inner) => inner.fmt(f),
             Error::InvalidSnapshotStateFault(inner) => inner.fmt(f),
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidUserGroupStateFault(inner) => inner.fmt(f),
@@ -204,6 +225,12 @@ impl ::std::fmt::Display for Error {
             Error::ReservedCacheNodeNotFoundFault(inner) => inner.fmt(f),
             Error::ReservedCacheNodeQuotaExceededFault(inner) => inner.fmt(f),
             Error::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheNotFoundFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheSnapshotNotFoundFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheSnapshotQuotaExceededFault(inner) => inner.fmt(f),
             Error::ServiceLinkedRoleNotFoundFault(inner) => inner.fmt(f),
             Error::ServiceUpdateNotFoundFault(inner) => inner.fmt(f),
             Error::SnapshotAlreadyExistsFault(inner) => inner.fmt(f),
@@ -269,11 +296,14 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidCacheClusterStateFault(inner) => inner.meta(),
             Self::InvalidCacheParameterGroupStateFault(inner) => inner.meta(),
             Self::InvalidCacheSecurityGroupStateFault(inner) => inner.meta(),
+            Self::InvalidCredentialsException(inner) => inner.meta(),
             Self::InvalidGlobalReplicationGroupStateFault(inner) => inner.meta(),
             Self::InvalidKmsKeyFault(inner) => inner.meta(),
             Self::InvalidParameterCombinationException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::InvalidReplicationGroupStateFault(inner) => inner.meta(),
+            Self::InvalidServerlessCacheSnapshotStateFault(inner) => inner.meta(),
+            Self::InvalidServerlessCacheStateFault(inner) => inner.meta(),
             Self::InvalidSnapshotStateFault(inner) => inner.meta(),
             Self::InvalidSubnet(inner) => inner.meta(),
             Self::InvalidUserGroupStateFault(inner) => inner.meta(),
@@ -292,6 +322,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ReservedCacheNodeNotFoundFault(inner) => inner.meta(),
             Self::ReservedCacheNodeQuotaExceededFault(inner) => inner.meta(),
             Self::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.meta(),
+            Self::ServerlessCacheAlreadyExistsFault(inner) => inner.meta(),
+            Self::ServerlessCacheNotFoundFault(inner) => inner.meta(),
+            Self::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.meta(),
+            Self::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.meta(),
+            Self::ServerlessCacheSnapshotNotFoundFault(inner) => inner.meta(),
+            Self::ServerlessCacheSnapshotQuotaExceededFault(inner) => inner.meta(),
             Self::ServiceLinkedRoleNotFoundFault(inner) => inner.meta(),
             Self::ServiceUpdateNotFoundFault(inner) => inner.meta(),
             Self::SnapshotAlreadyExistsFault(inner) => inner.meta(),
@@ -346,11 +382,23 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
             crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidServerlessCacheSnapshotStateFault(inner) => {
+                Error::InvalidServerlessCacheSnapshotStateFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::ReplicationGroupNotFoundFault(inner) => {
                 Error::ReplicationGroupNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::ReservedCacheNodeNotFoundFault(inner) => {
                 Error::ReservedCacheNodeNotFoundFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
             }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::TagQuotaPerResourceExceeded(inner) => {
@@ -485,6 +533,58 @@ impl From<crate::operation::complete_migration::CompleteMigrationError> for Erro
                 Error::ReplicationGroupNotUnderMigrationFault(inner)
             }
             crate::operation::complete_migration::CompleteMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError> for Error {
+    fn from(err: crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError) -> Self {
+        match err {
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::InvalidServerlessCacheSnapshotStateFault(inner) => {
+                Error::InvalidServerlessCacheSnapshotStateFault(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::ServerlessCacheSnapshotAlreadyExistsFault(inner) => {
+                Error::ServerlessCacheSnapshotAlreadyExistsFault(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::ServerlessCacheSnapshotQuotaExceededFault(inner) => {
+                Error::ServerlessCacheSnapshotQuotaExceededFault(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::TagQuotaPerResourceExceeded(inner) => {
+                Error::TagQuotaPerResourceExceeded(inner)
+            }
+            crate::operation::copy_serverless_cache_snapshot::CopyServerlessCacheSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -822,6 +922,115 @@ impl From<crate::operation::create_replication_group::CreateReplicationGroupErro
                 Error::UserGroupNotFoundFault(inner)
             }
             crate::operation::create_replication_group::CreateReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_serverless_cache::CreateServerlessCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_serverless_cache::CreateServerlessCacheError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_serverless_cache::CreateServerlessCacheError> for Error {
+    fn from(err: crate::operation::create_serverless_cache::CreateServerlessCacheError) -> Self {
+        match err {
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::InvalidCredentialsException(inner) => {
+                Error::InvalidCredentialsException(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::InvalidUserGroupStateFault(inner) => {
+                Error::InvalidUserGroupStateFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::ServerlessCacheAlreadyExistsFault(inner) => {
+                Error::ServerlessCacheAlreadyExistsFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::ServerlessCacheQuotaForCustomerExceededFault(inner) => {
+                Error::ServerlessCacheQuotaForCustomerExceededFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::TagQuotaPerResourceExceeded(inner) => {
+                Error::TagQuotaPerResourceExceeded(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::UserGroupNotFoundFault(inner) => {
+                Error::UserGroupNotFoundFault(inner)
+            }
+            crate::operation::create_serverless_cache::CreateServerlessCacheError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError> for Error {
+    fn from(err: crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError) -> Self {
+        match err {
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::ServerlessCacheSnapshotAlreadyExistsFault(
+                inner,
+            ) => Error::ServerlessCacheSnapshotAlreadyExistsFault(inner),
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::ServerlessCacheSnapshotQuotaExceededFault(
+                inner,
+            ) => Error::ServerlessCacheSnapshotQuotaExceededFault(inner),
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::TagQuotaPerResourceExceeded(inner) => {
+                Error::TagQuotaPerResourceExceeded(inner)
+            }
+            crate::operation::create_serverless_cache_snapshot::CreateServerlessCacheSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1250,6 +1459,91 @@ impl From<crate::operation::delete_replication_group::DeleteReplicationGroupErro
                 Error::SnapshotQuotaExceededFault(inner)
             }
             crate::operation::delete_replication_group::DeleteReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_serverless_cache::DeleteServerlessCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_serverless_cache::DeleteServerlessCacheError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_serverless_cache::DeleteServerlessCacheError> for Error {
+    fn from(err: crate::operation::delete_serverless_cache::DeleteServerlessCacheError) -> Self {
+        match err {
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::InvalidCredentialsException(inner) => {
+                Error::InvalidCredentialsException(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::ServerlessCacheSnapshotAlreadyExistsFault(inner) => {
+                Error::ServerlessCacheSnapshotAlreadyExistsFault(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::delete_serverless_cache::DeleteServerlessCacheError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError> for Error {
+    fn from(err: crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError) -> Self {
+        match err {
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError::InvalidServerlessCacheSnapshotStateFault(
+                inner,
+            ) => Error::InvalidServerlessCacheSnapshotStateFault(inner),
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
+            }
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::delete_serverless_cache_snapshot::DeleteServerlessCacheSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1740,6 +2034,83 @@ impl From<crate::operation::describe_reserved_cache_nodes_offerings::DescribeRes
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_serverless_caches::DescribeServerlessCachesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_serverless_caches::DescribeServerlessCachesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_serverless_caches::DescribeServerlessCachesError> for Error {
+    fn from(err: crate::operation::describe_serverless_caches::DescribeServerlessCachesError) -> Self {
+        match err {
+            crate::operation::describe_serverless_caches::DescribeServerlessCachesError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::describe_serverless_caches::DescribeServerlessCachesError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_serverless_caches::DescribeServerlessCachesError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::describe_serverless_caches::DescribeServerlessCachesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError> for Error {
+    fn from(err: crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError) -> Self {
+        match err {
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError::InvalidParameterCombinationException(
+                inner,
+            ) => Error::InvalidParameterCombinationException(inner),
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError::ServerlessCacheSnapshotNotFoundFault(
+                inner,
+            ) => Error::ServerlessCacheSnapshotNotFoundFault(inner),
+            crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_updates::DescribeServiceUpdatesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1919,6 +2290,47 @@ impl From<crate::operation::disassociate_global_replication_group::DisassociateG
             crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::InvalidParameterCombinationException(inner) => Error::InvalidParameterCombinationException(inner),
             crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
             crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError> for Error {
+    fn from(err: crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError) -> Self {
+        match err {
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError::InvalidServerlessCacheSnapshotStateFault(
+                inner,
+            ) => Error::InvalidServerlessCacheSnapshotStateFault(inner),
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
+            }
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::export_serverless_cache_snapshot::ExportServerlessCacheSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2133,11 +2545,23 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidServerlessCacheSnapshotStateFault(inner) => {
+                Error::InvalidServerlessCacheSnapshotStateFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ReplicationGroupNotFoundFault(inner) => {
                 Error::ReplicationGroupNotFoundFault(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ReservedCacheNodeNotFoundFault(inner) => {
                 Error::ReservedCacheNodeNotFoundFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::SnapshotNotFoundFault(inner) => Error::SnapshotNotFoundFault(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::UserGroupNotFoundFault(inner) => Error::UserGroupNotFoundFault(inner),
@@ -2422,6 +2846,53 @@ impl From<crate::operation::modify_replication_group_shard_configuration::Modify
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_serverless_cache::ModifyServerlessCacheError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_serverless_cache::ModifyServerlessCacheError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_serverless_cache::ModifyServerlessCacheError> for Error {
+    fn from(err: crate::operation::modify_serverless_cache::ModifyServerlessCacheError) -> Self {
+        match err {
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::InvalidCredentialsException(inner) => {
+                Error::InvalidCredentialsException(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::InvalidUserGroupStateFault(inner) => {
+                Error::InvalidUserGroupStateFault(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::ServiceLinkedRoleNotFoundFault(inner) => {
+                Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::UserGroupNotFoundFault(inner) => {
+                Error::UserGroupNotFoundFault(inner)
+            }
+            crate::operation::modify_serverless_cache::ModifyServerlessCacheError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_user::ModifyUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2621,11 +3092,23 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidServerlessCacheSnapshotStateFault(inner) => {
+                Error::InvalidServerlessCacheSnapshotStateFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReplicationGroupNotFoundFault(inner) => {
                 Error::ReplicationGroupNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReservedCacheNodeNotFoundFault(inner) => {
                 Error::ReservedCacheNodeNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ServerlessCacheSnapshotNotFoundFault(inner) => {
+                Error::ServerlessCacheSnapshotNotFoundFault(inner)
             }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::SnapshotNotFoundFault(inner) => {
                 Error::SnapshotNotFoundFault(inner)
@@ -2855,11 +3338,14 @@ impl ::std::error::Error for Error {
             Error::InvalidCacheClusterStateFault(inner) => inner.source(),
             Error::InvalidCacheParameterGroupStateFault(inner) => inner.source(),
             Error::InvalidCacheSecurityGroupStateFault(inner) => inner.source(),
+            Error::InvalidCredentialsException(inner) => inner.source(),
             Error::InvalidGlobalReplicationGroupStateFault(inner) => inner.source(),
             Error::InvalidKmsKeyFault(inner) => inner.source(),
             Error::InvalidParameterCombinationException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::InvalidReplicationGroupStateFault(inner) => inner.source(),
+            Error::InvalidServerlessCacheSnapshotStateFault(inner) => inner.source(),
+            Error::InvalidServerlessCacheStateFault(inner) => inner.source(),
             Error::InvalidSnapshotStateFault(inner) => inner.source(),
             Error::InvalidSubnet(inner) => inner.source(),
             Error::InvalidUserGroupStateFault(inner) => inner.source(),
@@ -2878,6 +3364,12 @@ impl ::std::error::Error for Error {
             Error::ReservedCacheNodeNotFoundFault(inner) => inner.source(),
             Error::ReservedCacheNodeQuotaExceededFault(inner) => inner.source(),
             Error::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.source(),
+            Error::ServerlessCacheAlreadyExistsFault(inner) => inner.source(),
+            Error::ServerlessCacheNotFoundFault(inner) => inner.source(),
+            Error::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.source(),
+            Error::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.source(),
+            Error::ServerlessCacheSnapshotNotFoundFault(inner) => inner.source(),
+            Error::ServerlessCacheSnapshotQuotaExceededFault(inner) => inner.source(),
             Error::ServiceLinkedRoleNotFoundFault(inner) => inner.source(),
             Error::ServiceUpdateNotFoundFault(inner) => inner.source(),
             Error::SnapshotAlreadyExistsFault(inner) => inner.source(),
@@ -2929,11 +3421,14 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidCacheClusterStateFault(e) => e.request_id(),
             Self::InvalidCacheParameterGroupStateFault(e) => e.request_id(),
             Self::InvalidCacheSecurityGroupStateFault(e) => e.request_id(),
+            Self::InvalidCredentialsException(e) => e.request_id(),
             Self::InvalidGlobalReplicationGroupStateFault(e) => e.request_id(),
             Self::InvalidKmsKeyFault(e) => e.request_id(),
             Self::InvalidParameterCombinationException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::InvalidReplicationGroupStateFault(e) => e.request_id(),
+            Self::InvalidServerlessCacheSnapshotStateFault(e) => e.request_id(),
+            Self::InvalidServerlessCacheStateFault(e) => e.request_id(),
             Self::InvalidSnapshotStateFault(e) => e.request_id(),
             Self::InvalidSubnet(e) => e.request_id(),
             Self::InvalidUserGroupStateFault(e) => e.request_id(),
@@ -2952,6 +3447,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ReservedCacheNodeNotFoundFault(e) => e.request_id(),
             Self::ReservedCacheNodeQuotaExceededFault(e) => e.request_id(),
             Self::ReservedCacheNodesOfferingNotFoundFault(e) => e.request_id(),
+            Self::ServerlessCacheAlreadyExistsFault(e) => e.request_id(),
+            Self::ServerlessCacheNotFoundFault(e) => e.request_id(),
+            Self::ServerlessCacheQuotaForCustomerExceededFault(e) => e.request_id(),
+            Self::ServerlessCacheSnapshotAlreadyExistsFault(e) => e.request_id(),
+            Self::ServerlessCacheSnapshotNotFoundFault(e) => e.request_id(),
+            Self::ServerlessCacheSnapshotQuotaExceededFault(e) => e.request_id(),
             Self::ServiceLinkedRoleNotFoundFault(e) => e.request_id(),
             Self::ServiceUpdateNotFoundFault(e) => e.request_id(),
             Self::SnapshotAlreadyExistsFault(e) => e.request_id(),

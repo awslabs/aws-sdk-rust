@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`minimum_engine_version(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
     ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
     ///   - [`replication_groups(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
+    ///   - [`serverless_caches(Option<Vec::<String>>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::serverless_caches): <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
     ///   - [`arn(Option<String>)`](crate::operation::modify_user_group::ModifyUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
     /// - On failure, responds with [`SdkError<ModifyUserGroupError>`](crate::operation::modify_user_group::ModifyUserGroupError)
     pub fn modify_user_group(&self) -> crate::operation::modify_user_group::builders::ModifyUserGroupFluentBuilder {

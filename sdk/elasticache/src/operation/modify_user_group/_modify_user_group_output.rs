@@ -17,6 +17,8 @@ pub struct ModifyUserGroupOutput {
     pub pending_changes: ::std::option::Option<crate::types::UserGroupPendingChanges>,
     /// <p>A list of replication groups that the user group can access.</p>
     pub replication_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    pub serverless_caches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -54,6 +56,12 @@ impl ModifyUserGroupOutput {
     pub fn replication_groups(&self) -> &[::std::string::String] {
         self.replication_groups.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.serverless_caches.is_none()`.
+    pub fn serverless_caches(&self) -> &[::std::string::String] {
+        self.serverless_caches.as_deref().unwrap_or_default()
+    }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
@@ -82,6 +90,7 @@ pub struct ModifyUserGroupOutputBuilder {
     pub(crate) minimum_engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) pending_changes: ::std::option::Option<crate::types::UserGroupPendingChanges>,
     pub(crate) replication_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) serverless_caches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -196,6 +205,26 @@ impl ModifyUserGroupOutputBuilder {
     pub fn get_replication_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.replication_groups
     }
+    /// Appends an item to `serverless_caches`.
+    ///
+    /// To override the contents of this collection use [`set_serverless_caches`](Self::set_serverless_caches).
+    ///
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    pub fn serverless_caches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.serverless_caches.unwrap_or_default();
+        v.push(input.into());
+        self.serverless_caches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    pub fn set_serverless_caches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.serverless_caches = input;
+        self
+    }
+    /// <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
+    pub fn get_serverless_caches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.serverless_caches
+    }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -229,6 +258,7 @@ impl ModifyUserGroupOutputBuilder {
             minimum_engine_version: self.minimum_engine_version,
             pending_changes: self.pending_changes,
             replication_groups: self.replication_groups,
+            serverless_caches: self.serverless_caches,
             arn: self.arn,
             _request_id: self._request_id,
         }

@@ -16,6 +16,9 @@ pub mod batch_stop_update_action;
 /// Types for the `CompleteMigration` operation.
 pub mod complete_migration;
 
+/// Types for the `CopyServerlessCacheSnapshot` operation.
+pub mod copy_serverless_cache_snapshot;
+
 /// Types for the `CopySnapshot` operation.
 pub mod copy_snapshot;
 
@@ -36,6 +39,12 @@ pub mod create_global_replication_group;
 
 /// Types for the `CreateReplicationGroup` operation.
 pub mod create_replication_group;
+
+/// Types for the `CreateServerlessCache` operation.
+pub mod create_serverless_cache;
+
+/// Types for the `CreateServerlessCacheSnapshot` operation.
+pub mod create_serverless_cache_snapshot;
 
 /// Types for the `CreateSnapshot` operation.
 pub mod create_snapshot;
@@ -69,6 +78,12 @@ pub mod delete_global_replication_group;
 
 /// Types for the `DeleteReplicationGroup` operation.
 pub mod delete_replication_group;
+
+/// Types for the `DeleteServerlessCache` operation.
+pub mod delete_serverless_cache;
+
+/// Types for the `DeleteServerlessCacheSnapshot` operation.
+pub mod delete_serverless_cache_snapshot;
 
 /// Types for the `DeleteSnapshot` operation.
 pub mod delete_snapshot;
@@ -115,6 +130,12 @@ pub mod describe_reserved_cache_nodes;
 /// Types for the `DescribeReservedCacheNodesOfferings` operation.
 pub mod describe_reserved_cache_nodes_offerings;
 
+/// Types for the `DescribeServerlessCacheSnapshots` operation.
+pub mod describe_serverless_cache_snapshots;
+
+/// Types for the `DescribeServerlessCaches` operation.
+pub mod describe_serverless_caches;
+
 /// Types for the `DescribeServiceUpdates` operation.
 pub mod describe_service_updates;
 
@@ -132,6 +153,9 @@ pub mod describe_users;
 
 /// Types for the `DisassociateGlobalReplicationGroup` operation.
 pub mod disassociate_global_replication_group;
+
+/// Types for the `ExportServerlessCacheSnapshot` operation.
+pub mod export_serverless_cache_snapshot;
 
 /// Types for the `FailoverGlobalReplicationGroup` operation.
 pub mod failover_global_replication_group;
@@ -165,6 +189,9 @@ pub mod modify_replication_group;
 
 /// Types for the `ModifyReplicationGroupShardConfiguration` operation.
 pub mod modify_replication_group_shard_configuration;
+
+/// Types for the `ModifyServerlessCache` operation.
+pub mod modify_serverless_cache;
 
 /// Types for the `ModifyUser` operation.
 pub mod modify_user;

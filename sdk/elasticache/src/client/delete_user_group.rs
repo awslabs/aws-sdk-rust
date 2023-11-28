@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`minimum_engine_version(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
     ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
     ///   - [`replication_groups(Option<Vec::<String>>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
+    ///   - [`serverless_caches(Option<Vec::<String>>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::serverless_caches): <p>Indicates which serverless caches the specified user group is associated with. Available for Redis only.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
     /// - On failure, responds with [`SdkError<DeleteUserGroupError>`](crate::operation::delete_user_group::DeleteUserGroupError)
     pub fn delete_user_group(&self) -> crate::operation::delete_user_group::builders::DeleteUserGroupFluentBuilder {

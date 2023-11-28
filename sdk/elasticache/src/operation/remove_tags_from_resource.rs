@@ -261,10 +261,18 @@ pub enum RemoveTagsFromResourceError {
     InvalidArnFault(crate::types::error::InvalidArnFault),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
+    /// <p>The state of the serverless cache snapshot was not received. Available for Redis only.</p>
+    InvalidServerlessCacheSnapshotStateFault(crate::types::error::InvalidServerlessCacheSnapshotStateFault),
+    /// <p>The account for these credentials is not currently active.</p>
+    InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::types::error::ReplicationGroupNotFoundFault),
     /// <p>The requested reserved cache node was not found.</p>
     ReservedCacheNodeNotFoundFault(crate::types::error::ReservedCacheNodeNotFoundFault),
+    /// <p>The serverless cache was not found or does not exist.</p>
+    ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
+    /// <p>This serverless cache snapshot could not be found or does not exist. Available for Redis only.</p>
+    ServerlessCacheSnapshotNotFoundFault(crate::types::error::ServerlessCacheSnapshotNotFoundFault),
     /// <p>The requested snapshot name does not refer to an existing snapshot.</p>
     SnapshotNotFoundFault(crate::types::error::SnapshotNotFoundFault),
     /// <p>The requested tag was not found on this resource.</p>
@@ -312,8 +320,12 @@ impl RemoveTagsFromResourceError {
             Self::CacheSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidReplicationGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidServerlessCacheSnapshotStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidServerlessCacheStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReservedCacheNodeNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServerlessCacheNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServerlessCacheSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TagNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UserGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -345,6 +357,14 @@ impl RemoveTagsFromResourceError {
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
         matches!(self, Self::InvalidReplicationGroupStateFault(_))
     }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::InvalidServerlessCacheSnapshotStateFault`.
+    pub fn is_invalid_serverless_cache_snapshot_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidServerlessCacheSnapshotStateFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::InvalidServerlessCacheStateFault`.
+    pub fn is_invalid_serverless_cache_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidServerlessCacheStateFault(_))
+    }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::ReplicationGroupNotFoundFault`.
     pub fn is_replication_group_not_found_fault(&self) -> bool {
         matches!(self, Self::ReplicationGroupNotFoundFault(_))
@@ -352,6 +372,14 @@ impl RemoveTagsFromResourceError {
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::ReservedCacheNodeNotFoundFault`.
     pub fn is_reserved_cache_node_not_found_fault(&self) -> bool {
         matches!(self, Self::ReservedCacheNodeNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::ServerlessCacheNotFoundFault`.
+    pub fn is_serverless_cache_not_found_fault(&self) -> bool {
+        matches!(self, Self::ServerlessCacheNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::ServerlessCacheSnapshotNotFoundFault`.
+    pub fn is_serverless_cache_snapshot_not_found_fault(&self) -> bool {
+        matches!(self, Self::ServerlessCacheSnapshotNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::SnapshotNotFoundFault`.
     pub fn is_snapshot_not_found_fault(&self) -> bool {
@@ -379,8 +407,12 @@ impl ::std::error::Error for RemoveTagsFromResourceError {
             Self::CacheSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidServerlessCacheSnapshotStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidServerlessCacheStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReservedCacheNodeNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServerlessCacheNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServerlessCacheSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::TagNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::UserGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -398,8 +430,12 @@ impl ::std::fmt::Display for RemoveTagsFromResourceError {
             Self::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidArnFault(_inner) => _inner.fmt(f),
             Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidServerlessCacheSnapshotStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidServerlessCacheStateFault(_inner) => _inner.fmt(f),
             Self::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ReservedCacheNodeNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ServerlessCacheNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ServerlessCacheSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::SnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::TagNotFoundFault(_inner) => _inner.fmt(f),
             Self::UserGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -431,8 +467,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsFro
             Self::CacheSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidServerlessCacheSnapshotStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidServerlessCacheStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReservedCacheNodeNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServerlessCacheNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServerlessCacheSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TagNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UserGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

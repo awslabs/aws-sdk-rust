@@ -67,6 +67,14 @@ pub use crate::types::_authentication::AuthenticationBuilder;
 
 pub use crate::types::_authentication_mode::AuthenticationModeBuilder;
 
+pub use crate::types::_serverless_cache::ServerlessCacheBuilder;
+
+pub use crate::types::_cache_usage_limits::CacheUsageLimitsBuilder;
+
+pub use crate::types::_ecpu_per_second::EcpuPerSecondBuilder;
+
+pub use crate::types::_data_storage::DataStorageBuilder;
+
 pub use crate::types::_resharding_configuration::ReshardingConfigurationBuilder;
 
 pub use crate::types::_log_delivery_configuration_request::LogDeliveryConfigurationRequestBuilder;
@@ -82,6 +90,10 @@ pub use crate::types::_availability_zone::AvailabilityZoneBuilder;
 pub use crate::types::_configure_shard::ConfigureShardBuilder;
 
 pub use crate::types::_regional_configuration::RegionalConfigurationBuilder;
+
+pub use crate::types::_serverless_cache_snapshot::ServerlessCacheSnapshotBuilder;
+
+pub use crate::types::_serverless_cache_configuration::ServerlessCacheConfigurationBuilder;
 
 pub use crate::types::_user::UserBuilder;
 

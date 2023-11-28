@@ -130,6 +130,42 @@ pub fn de_remove_tags_from_resource_http_error(
                 tmp
             })
         }
+        "InvalidServerlessCacheSnapshotStateFault" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidServerlessCacheSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidServerlessCacheSnapshotStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_serverless_cache_snapshot_state_fault::de_invalid_serverless_cache_snapshot_state_fault_xml_err(_response_body, output).map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidServerlessCacheStateFault" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidServerlessCacheStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidServerlessCacheStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_serverless_cache_state_fault::de_invalid_serverless_cache_state_fault_xml_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ReplicationGroupNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ReplicationGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -166,6 +202,45 @@ pub fn de_remove_tags_from_resource_http_error(
             }
             tmp
         }),
+        "ServerlessCacheNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ServerlessCacheNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServerlessCacheNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_serverless_cache_not_found_fault::de_serverless_cache_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServerlessCacheSnapshotNotFoundFault" => {
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::ServerlessCacheSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServerlessCacheSnapshotNotFoundFaultBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_serverless_cache_snapshot_not_found_fault::de_serverless_cache_snapshot_not_found_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "SnapshotNotFoundFault" => crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::SnapshotNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

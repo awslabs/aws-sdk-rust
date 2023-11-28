@@ -123,6 +123,26 @@ pub(crate) fn reflens_describe_reserved_cache_nodes_offerings_output_output_mark
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_serverless_cache_snapshots_output_output_next_token(
+    input: &crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_serverless_caches_output_output_next_token(
+    input: &crate::operation::describe_serverless_caches::DescribeServerlessCachesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_service_updates_output_output_marker(
     input: &crate::operation::describe_service_updates::DescribeServiceUpdatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -291,6 +311,26 @@ pub(crate) fn lens_describe_reserved_cache_nodes_offerings_output_output_reserve
     input: crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNodesOffering>> {
     let input = match input.reserved_cache_nodes_offerings {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_serverless_cache_snapshots_output_output_serverless_cache_snapshots(
+    input: crate::operation::describe_serverless_cache_snapshots::DescribeServerlessCacheSnapshotsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerlessCacheSnapshot>> {
+    let input = match input.serverless_cache_snapshots {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_serverless_caches_output_output_serverless_caches(
+    input: crate::operation::describe_serverless_caches::DescribeServerlessCachesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerlessCache>> {
+    let input = match input.serverless_caches {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

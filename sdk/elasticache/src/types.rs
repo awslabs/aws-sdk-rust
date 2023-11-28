@@ -97,6 +97,16 @@ pub use crate::types::_authentication_mode::AuthenticationMode;
 
 pub use crate::types::_input_authentication_type::InputAuthenticationType;
 
+pub use crate::types::_serverless_cache::ServerlessCache;
+
+pub use crate::types::_cache_usage_limits::CacheUsageLimits;
+
+pub use crate::types::_ecpu_per_second::EcpuPerSecond;
+
+pub use crate::types::_data_storage::DataStorage;
+
+pub use crate::types::_data_storage_unit::DataStorageUnit;
+
 pub use crate::types::_resharding_configuration::ReshardingConfiguration;
 
 pub use crate::types::_log_delivery_configuration_request::LogDeliveryConfigurationRequest;
@@ -116,6 +126,10 @@ pub use crate::types::_az_mode::AzMode;
 pub use crate::types::_configure_shard::ConfigureShard;
 
 pub use crate::types::_regional_configuration::RegionalConfiguration;
+
+pub use crate::types::_serverless_cache_snapshot::ServerlessCacheSnapshot;
+
+pub use crate::types::_serverless_cache_configuration::ServerlessCacheConfiguration;
 
 pub use crate::types::_user::User;
 
@@ -219,6 +233,8 @@ mod _cache_security_group_membership;
 
 mod _cache_subnet_group;
 
+mod _cache_usage_limits;
+
 mod _change_type;
 
 mod _cloud_watch_logs_destination_details;
@@ -229,6 +245,10 @@ mod _configure_shard;
 
 mod _customer_node_endpoint;
 
+mod _data_storage;
+
+mod _data_storage_unit;
+
 mod _data_tiering_status;
 
 mod _destination_details;
@@ -236,6 +256,8 @@ mod _destination_details;
 mod _destination_type;
 
 mod _ec2_security_group;
+
+mod _ecpu_per_second;
 
 mod _endpoint;
 
@@ -322,6 +344,12 @@ mod _resharding_configuration;
 mod _resharding_status;
 
 mod _security_group_membership;
+
+mod _serverless_cache;
+
+mod _serverless_cache_configuration;
+
+mod _serverless_cache_snapshot;
 
 mod _service_update;
 

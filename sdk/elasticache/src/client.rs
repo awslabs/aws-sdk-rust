@@ -146,6 +146,8 @@ mod batch_stop_update_action;
 
 mod complete_migration;
 
+mod copy_serverless_cache_snapshot;
+
 mod copy_snapshot;
 
 mod create_cache_cluster;
@@ -159,6 +161,10 @@ mod create_cache_subnet_group;
 mod create_global_replication_group;
 
 mod create_replication_group;
+
+mod create_serverless_cache;
+
+mod create_serverless_cache_snapshot;
 
 mod create_snapshot;
 
@@ -209,6 +215,10 @@ mod delete_global_replication_group;
 
 mod delete_replication_group;
 
+mod delete_serverless_cache;
+
+mod delete_serverless_cache_snapshot;
+
 mod delete_snapshot;
 
 mod delete_user;
@@ -239,6 +249,10 @@ mod describe_reserved_cache_nodes;
 
 mod describe_reserved_cache_nodes_offerings;
 
+mod describe_serverless_cache_snapshots;
+
+mod describe_serverless_caches;
+
 mod describe_service_updates;
 
 mod describe_snapshots;
@@ -250,6 +264,8 @@ mod describe_user_groups;
 mod describe_users;
 
 mod disassociate_global_replication_group;
+
+mod export_serverless_cache_snapshot;
 
 mod failover_global_replication_group;
 
@@ -272,6 +288,8 @@ mod modify_global_replication_group;
 mod modify_replication_group;
 
 mod modify_replication_group_shard_configuration;
+
+mod modify_serverless_cache;
 
 mod modify_user;
 

@@ -39,7 +39,15 @@ pub use crate::types::error::_tag_not_found_fault::TagNotFoundFaultBuilder;
 
 pub use crate::types::error::_snapshot_not_found_fault::SnapshotNotFoundFaultBuilder;
 
+pub use crate::types::error::_serverless_cache_snapshot_not_found_fault::ServerlessCacheSnapshotNotFoundFaultBuilder;
+
+pub use crate::types::error::_serverless_cache_not_found_fault::ServerlessCacheNotFoundFaultBuilder;
+
 pub use crate::types::error::_reserved_cache_node_not_found_fault::ReservedCacheNodeNotFoundFaultBuilder;
+
+pub use crate::types::error::_invalid_serverless_cache_state_fault::InvalidServerlessCacheStateFaultBuilder;
+
+pub use crate::types::error::_invalid_serverless_cache_snapshot_state_fault::InvalidServerlessCacheSnapshotStateFaultBuilder;
 
 pub use crate::types::error::_invalid_arn_fault::InvalidArnFaultBuilder;
 
@@ -66,6 +74,8 @@ pub use crate::types::error::_duplicate_user_name_fault::DuplicateUserNameFaultB
 pub use crate::types::error::_default_user_required::DefaultUserRequiredBuilder;
 
 pub use crate::types::error::_invalid_user_state_fault::InvalidUserStateFaultBuilder;
+
+pub use crate::types::error::_invalid_credentials_exception::InvalidCredentialsExceptionBuilder;
 
 pub use crate::types::error::_node_quota_for_customer_exceeded_fault::NodeQuotaForCustomerExceededFaultBuilder;
 
@@ -95,6 +105,8 @@ pub use crate::types::error::_default_user_associated_to_user_group_fault::Defau
 
 pub use crate::types::error::_invalid_snapshot_state_fault::InvalidSnapshotStateFaultBuilder;
 
+pub use crate::types::error::_serverless_cache_snapshot_already_exists_fault::ServerlessCacheSnapshotAlreadyExistsFaultBuilder;
+
 pub use crate::types::error::_snapshot_quota_exceeded_fault::SnapshotQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_snapshot_feature_not_supported_fault::SnapshotFeatureNotSupportedFaultBuilder;
@@ -110,6 +122,12 @@ pub use crate::types::error::_user_group_already_exists_fault::UserGroupAlreadyE
 pub use crate::types::error::_user_quota_exceeded_fault::UserQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_user_already_exists_fault::UserAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_serverless_cache_snapshot_quota_exceeded_fault::ServerlessCacheSnapshotQuotaExceededFaultBuilder;
+
+pub use crate::types::error::_serverless_cache_quota_for_customer_exceeded_fault::ServerlessCacheQuotaForCustomerExceededFaultBuilder;
+
+pub use crate::types::error::_serverless_cache_already_exists_fault::ServerlessCacheAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_replication_group_already_exists_fault::ReplicationGroupAlreadyExistsFaultBuilder;
 

@@ -39,7 +39,15 @@ pub use crate::types::error::_tag_not_found_fault::TagNotFoundFault;
 
 pub use crate::types::error::_snapshot_not_found_fault::SnapshotNotFoundFault;
 
+pub use crate::types::error::_serverless_cache_snapshot_not_found_fault::ServerlessCacheSnapshotNotFoundFault;
+
+pub use crate::types::error::_serverless_cache_not_found_fault::ServerlessCacheNotFoundFault;
+
 pub use crate::types::error::_reserved_cache_node_not_found_fault::ReservedCacheNodeNotFoundFault;
+
+pub use crate::types::error::_invalid_serverless_cache_state_fault::InvalidServerlessCacheStateFault;
+
+pub use crate::types::error::_invalid_serverless_cache_snapshot_state_fault::InvalidServerlessCacheSnapshotStateFault;
 
 pub use crate::types::error::_invalid_arn_fault::InvalidArnFault;
 
@@ -66,6 +74,8 @@ pub use crate::types::error::_duplicate_user_name_fault::DuplicateUserNameFault;
 pub use crate::types::error::_default_user_required::DefaultUserRequired;
 
 pub use crate::types::error::_invalid_user_state_fault::InvalidUserStateFault;
+
+pub use crate::types::error::_invalid_credentials_exception::InvalidCredentialsException;
 
 pub use crate::types::error::_node_quota_for_customer_exceeded_fault::NodeQuotaForCustomerExceededFault;
 
@@ -95,6 +105,8 @@ pub use crate::types::error::_default_user_associated_to_user_group_fault::Defau
 
 pub use crate::types::error::_invalid_snapshot_state_fault::InvalidSnapshotStateFault;
 
+pub use crate::types::error::_serverless_cache_snapshot_already_exists_fault::ServerlessCacheSnapshotAlreadyExistsFault;
+
 pub use crate::types::error::_snapshot_quota_exceeded_fault::SnapshotQuotaExceededFault;
 
 pub use crate::types::error::_snapshot_feature_not_supported_fault::SnapshotFeatureNotSupportedFault;
@@ -110,6 +122,12 @@ pub use crate::types::error::_user_group_already_exists_fault::UserGroupAlreadyE
 pub use crate::types::error::_user_quota_exceeded_fault::UserQuotaExceededFault;
 
 pub use crate::types::error::_user_already_exists_fault::UserAlreadyExistsFault;
+
+pub use crate::types::error::_serverless_cache_snapshot_quota_exceeded_fault::ServerlessCacheSnapshotQuotaExceededFault;
+
+pub use crate::types::error::_serverless_cache_quota_for_customer_exceeded_fault::ServerlessCacheQuotaForCustomerExceededFault;
+
+pub use crate::types::error::_serverless_cache_already_exists_fault::ServerlessCacheAlreadyExistsFault;
 
 pub use crate::types::error::_replication_group_already_exists_fault::ReplicationGroupAlreadyExistsFault;
 
@@ -187,6 +205,8 @@ mod _invalid_cache_parameter_group_state_fault;
 
 mod _invalid_cache_security_group_state_fault;
 
+mod _invalid_credentials_exception;
+
 mod _invalid_global_replication_group_state_fault;
 
 mod _invalid_kms_key_fault;
@@ -196,6 +216,10 @@ mod _invalid_parameter_combination_exception;
 mod _invalid_parameter_value_exception;
 
 mod _invalid_replication_group_state_fault;
+
+mod _invalid_serverless_cache_snapshot_state_fault;
+
+mod _invalid_serverless_cache_state_fault;
 
 mod _invalid_snapshot_state_fault;
 
@@ -232,6 +256,18 @@ mod _reserved_cache_node_not_found_fault;
 mod _reserved_cache_node_quota_exceeded_fault;
 
 mod _reserved_cache_nodes_offering_not_found_fault;
+
+mod _serverless_cache_already_exists_fault;
+
+mod _serverless_cache_not_found_fault;
+
+mod _serverless_cache_quota_for_customer_exceeded_fault;
+
+mod _serverless_cache_snapshot_already_exists_fault;
+
+mod _serverless_cache_snapshot_not_found_fault;
+
+mod _serverless_cache_snapshot_quota_exceeded_fault;
 
 mod _service_linked_role_not_found_fault;
 

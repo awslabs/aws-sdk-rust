@@ -258,6 +258,11 @@ pub fn ser_create_replication_group_input_input_input(
     if let Some(var_100) = &input.cluster_mode {
         scope_99.string(var_100.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_101 = writer.prefix("ServerlessCacheSnapshotName");
+    if let Some(var_102) = &input.serverless_cache_snapshot_name {
+        scope_101.string(var_102);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

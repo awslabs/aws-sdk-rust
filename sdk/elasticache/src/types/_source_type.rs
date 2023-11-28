@@ -17,6 +17,8 @@
 ///     SourceType::CacheSecurityGroup => { /* ... */ },
 ///     SourceType::CacheSubnetGroup => { /* ... */ },
 ///     SourceType::ReplicationGroup => { /* ... */ },
+///     SourceType::ServerlessCache => { /* ... */ },
+///     SourceType::ServerlessCacheSnapshot => { /* ... */ },
 ///     SourceType::User => { /* ... */ },
 ///     SourceType::UserGroup => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +59,10 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     ReplicationGroup,
     #[allow(missing_docs)] // documentation missing in model
+    ServerlessCache,
+    #[allow(missing_docs)] // documentation missing in model
+    ServerlessCacheSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     #[allow(missing_docs)] // documentation missing in model
     UserGroup,
@@ -72,6 +78,8 @@ impl ::std::convert::From<&str> for SourceType {
             "cache-security-group" => SourceType::CacheSecurityGroup,
             "cache-subnet-group" => SourceType::CacheSubnetGroup,
             "replication-group" => SourceType::ReplicationGroup,
+            "serverless-cache" => SourceType::ServerlessCache,
+            "serverless-cache-snapshot" => SourceType::ServerlessCacheSnapshot,
             "user" => SourceType::User,
             "user-group" => SourceType::UserGroup,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,6 +102,8 @@ impl SourceType {
             SourceType::CacheSecurityGroup => "cache-security-group",
             SourceType::CacheSubnetGroup => "cache-subnet-group",
             SourceType::ReplicationGroup => "replication-group",
+            SourceType::ServerlessCache => "serverless-cache",
+            SourceType::ServerlessCacheSnapshot => "serverless-cache-snapshot",
             SourceType::User => "user",
             SourceType::UserGroup => "user-group",
             SourceType::Unknown(value) => value.as_str(),
@@ -107,6 +117,8 @@ impl SourceType {
             "cache-security-group",
             "cache-subnet-group",
             "replication-group",
+            "serverless-cache",
+            "serverless-cache-snapshot",
             "user",
             "user-group",
         ]

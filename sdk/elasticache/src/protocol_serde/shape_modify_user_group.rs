@@ -276,8 +276,18 @@ pub fn de_modify_user_group(
                 builder = builder.set_replication_groups(var_7);
             }
             ,
-            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ARN */ =>  {
+            s if s.matches("ServerlessCaches") /* ServerlessCaches com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ServerlessCaches */ =>  {
                 let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_ug_serverless_cache_id_list::de_ug_serverless_cache_id_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_caches(var_8);
+            }
+            ,
+            s if s.matches("ARN") /* ARN com.amazonaws.elasticache.synthetic#ModifyUserGroupOutput$ARN */ =>  {
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -286,7 +296,7 @@ pub fn de_modify_user_group(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_8);
+                builder = builder.set_arn(var_9);
             }
             ,
             _ => {}

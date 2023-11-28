@@ -43,6 +43,10 @@ pub(crate) mod shape_complete_migration;
 
 pub(crate) mod shape_complete_migration_input;
 
+pub(crate) mod shape_copy_serverless_cache_snapshot;
+
+pub(crate) mod shape_copy_serverless_cache_snapshot_input;
+
 pub(crate) mod shape_copy_snapshot;
 
 pub(crate) mod shape_copy_snapshot_input;
@@ -70,6 +74,14 @@ pub(crate) mod shape_create_global_replication_group_input;
 pub(crate) mod shape_create_replication_group;
 
 pub(crate) mod shape_create_replication_group_input;
+
+pub(crate) mod shape_create_serverless_cache;
+
+pub(crate) mod shape_create_serverless_cache_input;
+
+pub(crate) mod shape_create_serverless_cache_snapshot;
+
+pub(crate) mod shape_create_serverless_cache_snapshot_input;
 
 pub(crate) mod shape_create_snapshot;
 
@@ -114,6 +126,14 @@ pub(crate) mod shape_delete_global_replication_group_input;
 pub(crate) mod shape_delete_replication_group;
 
 pub(crate) mod shape_delete_replication_group_input;
+
+pub(crate) mod shape_delete_serverless_cache;
+
+pub(crate) mod shape_delete_serverless_cache_input;
+
+pub(crate) mod shape_delete_serverless_cache_snapshot;
+
+pub(crate) mod shape_delete_serverless_cache_snapshot_input;
 
 pub(crate) mod shape_delete_snapshot;
 
@@ -175,6 +195,14 @@ pub(crate) mod shape_describe_reserved_cache_nodes_offerings;
 
 pub(crate) mod shape_describe_reserved_cache_nodes_offerings_input;
 
+pub(crate) mod shape_describe_serverless_cache_snapshots;
+
+pub(crate) mod shape_describe_serverless_cache_snapshots_input;
+
+pub(crate) mod shape_describe_serverless_caches;
+
+pub(crate) mod shape_describe_serverless_caches_input;
+
 pub(crate) mod shape_describe_service_updates;
 
 pub(crate) mod shape_describe_service_updates_input;
@@ -198,6 +226,10 @@ pub(crate) mod shape_describe_users_input;
 pub(crate) mod shape_disassociate_global_replication_group;
 
 pub(crate) mod shape_disassociate_global_replication_group_input;
+
+pub(crate) mod shape_export_serverless_cache_snapshot;
+
+pub(crate) mod shape_export_serverless_cache_snapshot_input;
 
 pub(crate) mod shape_failover_global_replication_group;
 
@@ -242,6 +274,10 @@ pub(crate) mod shape_modify_replication_group_input;
 pub(crate) mod shape_modify_replication_group_shard_configuration;
 
 pub(crate) mod shape_modify_replication_group_shard_configuration_input;
+
+pub(crate) mod shape_modify_serverless_cache;
+
+pub(crate) mod shape_modify_serverless_cache_input;
 
 pub(crate) mod shape_modify_user;
 
@@ -321,6 +357,8 @@ pub(crate) mod shape_cache_subnet_group_quota_exceeded_fault;
 
 pub(crate) mod shape_cache_subnet_quota_exceeded_fault;
 
+pub(crate) mod shape_cache_usage_limits;
+
 pub(crate) mod shape_cluster_quota_for_customer_exceeded_fault;
 
 pub(crate) mod shape_configure_shard;
@@ -349,6 +387,8 @@ pub(crate) mod shape_invalid_cache_parameter_group_state_fault;
 
 pub(crate) mod shape_invalid_cache_security_group_state_fault;
 
+pub(crate) mod shape_invalid_credentials_exception;
+
 pub(crate) mod shape_invalid_global_replication_group_state_fault;
 
 pub(crate) mod shape_invalid_kms_key_fault;
@@ -358,6 +398,10 @@ pub(crate) mod shape_invalid_parameter_combination_exception;
 pub(crate) mod shape_invalid_parameter_value_exception;
 
 pub(crate) mod shape_invalid_replication_group_state_fault;
+
+pub(crate) mod shape_invalid_serverless_cache_snapshot_state_fault;
+
+pub(crate) mod shape_invalid_serverless_cache_state_fault;
 
 pub(crate) mod shape_invalid_snapshot_state_fault;
 
@@ -404,6 +448,18 @@ pub(crate) mod shape_reserved_cache_node_quota_exceeded_fault;
 pub(crate) mod shape_reserved_cache_nodes_offering_not_found_fault;
 
 pub(crate) mod shape_resharding_configuration;
+
+pub(crate) mod shape_serverless_cache_already_exists_fault;
+
+pub(crate) mod shape_serverless_cache_not_found_fault;
+
+pub(crate) mod shape_serverless_cache_quota_for_customer_exceeded_fault;
+
+pub(crate) mod shape_serverless_cache_snapshot_already_exists_fault;
+
+pub(crate) mod shape_serverless_cache_snapshot_not_found_fault;
+
+pub(crate) mod shape_serverless_cache_snapshot_quota_exceeded_fault;
 
 pub(crate) mod shape_service_linked_role_not_found_fault;
 
@@ -465,7 +521,11 @@ pub(crate) mod shape_cache_subnet_group;
 
 pub(crate) mod shape_cache_subnet_groups;
 
+pub(crate) mod shape_data_storage;
+
 pub(crate) mod shape_destination_details;
+
+pub(crate) mod shape_ecpu_per_second;
 
 pub(crate) mod shape_engine_defaults;
 
@@ -491,6 +551,14 @@ pub(crate) mod shape_reserved_cache_node_list;
 
 pub(crate) mod shape_reserved_cache_nodes_offering_list;
 
+pub(crate) mod shape_serverless_cache;
+
+pub(crate) mod shape_serverless_cache_list;
+
+pub(crate) mod shape_serverless_cache_snapshot;
+
+pub(crate) mod shape_serverless_cache_snapshot_list;
+
 pub(crate) mod shape_service_update_list;
 
 pub(crate) mod shape_snapshot;
@@ -500,6 +568,8 @@ pub(crate) mod shape_snapshot_list;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_ug_replication_group_id_list;
+
+pub(crate) mod shape_ug_serverless_cache_id_list;
 
 pub(crate) mod shape_unprocessed_update_action_list;
 
@@ -567,9 +637,15 @@ pub(crate) mod shape_replication_group_pending_modified_values;
 
 pub(crate) mod shape_reserved_cache_nodes_offering;
 
+pub(crate) mod shape_security_group_ids_list;
+
 pub(crate) mod shape_security_group_membership_list;
 
+pub(crate) mod shape_serverless_cache_configuration;
+
 pub(crate) mod shape_service_update;
+
+pub(crate) mod shape_subnet_ids_list;
 
 pub(crate) mod shape_subnet_list;
 

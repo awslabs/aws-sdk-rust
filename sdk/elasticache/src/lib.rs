@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
-//! aws-sdk-elasticache = "1.3.0"
+//! aws-sdk-elasticache = "1.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -195,6 +195,8 @@ mod lens;
 mod endpoint_lib;
 
 mod rest_xml_wrapped_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;
