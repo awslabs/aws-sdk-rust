@@ -5,11 +5,37 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_resource_type::ResourceType;
 
-pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
-
 pub use crate::types::_access_denied_exception_reason::AccessDeniedExceptionReason;
 
+pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSummary;
+
+pub use crate::types::_privacy_budget_type::PrivacyBudgetType;
+
+pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
+
+pub use crate::types::_privacy_budget_template::PrivacyBudgetTemplate;
+
+pub use crate::types::_privacy_budget_template_parameters_output::PrivacyBudgetTemplateParametersOutput;
+
+pub use crate::types::_differential_privacy_template_parameters_output::DifferentialPrivacyTemplateParametersOutput;
+
+pub use crate::types::_privacy_budget_template_auto_refresh::PrivacyBudgetTemplateAutoRefresh;
+
+pub use crate::types::_privacy_budget_template_parameters_input::PrivacyBudgetTemplateParametersInput;
+
+pub use crate::types::_differential_privacy_template_parameters_input::DifferentialPrivacyTemplateParametersInput;
+
+pub use crate::types::_privacy_budget_template_update_parameters::PrivacyBudgetTemplateUpdateParameters;
+
+pub use crate::types::_differential_privacy_template_update_parameters::DifferentialPrivacyTemplateUpdateParameters;
+
 pub use crate::types::_protected_query::ProtectedQuery;
+
+pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParameters;
+
+pub use crate::types::_differential_privacy_sensitivity_parameters::DifferentialPrivacySensitivityParameters;
+
+pub use crate::types::_differential_privacy_aggregation_type::DifferentialPrivacyAggregationType;
 
 pub use crate::types::_protected_query_error::ProtectedQueryError;
 
@@ -39,7 +65,25 @@ pub use crate::types::_target_protected_query_status::TargetProtectedQueryStatus
 
 pub use crate::types::_protected_query_type::ProtectedQueryType;
 
+pub use crate::types::_privacy_impact::PrivacyImpact;
+
+pub use crate::types::_differential_privacy_privacy_impact::DifferentialPrivacyPrivacyImpact;
+
+pub use crate::types::_differential_privacy_preview_aggregation::DifferentialPrivacyPreviewAggregation;
+
+pub use crate::types::_preview_privacy_impact_parameters_input::PreviewPrivacyImpactParametersInput;
+
+pub use crate::types::_differential_privacy_preview_parameters_input::DifferentialPrivacyPreviewParametersInput;
+
 pub use crate::types::_protected_query_summary::ProtectedQuerySummary;
+
+pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummary;
+
+pub use crate::types::_privacy_budget::PrivacyBudget;
+
+pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyPrivacyBudget;
+
+pub use crate::types::_differential_privacy_privacy_budget_aggregation::DifferentialPrivacyPrivacyBudgetAggregation;
 
 pub use crate::types::_membership_summary::MembershipSummary;
 
@@ -68,6 +112,10 @@ pub use crate::types::_configured_table_analysis_rule_policy::ConfiguredTableAna
 pub use crate::types::_configured_table_analysis_rule_policy_v1::ConfiguredTableAnalysisRulePolicyV1;
 
 pub use crate::types::_analysis_rule_custom::AnalysisRuleCustom;
+
+pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfiguration;
+
+pub use crate::types::_differential_privacy_column::DifferentialPrivacyColumn;
 
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregation;
 
@@ -101,6 +149,10 @@ pub use crate::types::_configured_table_association_summary::ConfiguredTableAsso
 
 pub use crate::types::_configured_table_association::ConfiguredTableAssociation;
 
+pub use crate::types::_configured_audience_model_association_summary::ConfiguredAudienceModelAssociationSummary;
+
+pub use crate::types::_configured_audience_model_association::ConfiguredAudienceModelAssociation;
+
 pub use crate::types::_schema_summary::SchemaSummary;
 
 pub use crate::types::_analysis_rule_type::AnalysisRuleType;
@@ -115,6 +167,12 @@ pub use crate::types::_query_compute_payment_config::QueryComputePaymentConfig;
 
 pub use crate::types::_member_status::MemberStatus;
 
+pub use crate::types::_collaboration_privacy_budget_template_summary::CollaborationPrivacyBudgetTemplateSummary;
+
+pub use crate::types::_collaboration_privacy_budget_summary::CollaborationPrivacyBudgetSummary;
+
+pub use crate::types::_collaboration_configured_audience_model_association_summary::CollaborationConfiguredAudienceModelAssociationSummary;
+
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
 
 pub use crate::types::_analysis_rule::AnalysisRule;
@@ -126,6 +184,10 @@ pub use crate::types::_analysis_rule_policy_v1::AnalysisRulePolicyV1;
 pub use crate::types::_schema::Schema;
 
 pub use crate::types::_column::Column;
+
+pub use crate::types::_collaboration_privacy_budget_template::CollaborationPrivacyBudgetTemplate;
+
+pub use crate::types::_collaboration_configured_audience_model_association::CollaborationConfiguredAudienceModelAssociation;
 
 pub use crate::types::_collaboration_analysis_template::CollaborationAnalysisTemplate;
 
@@ -207,11 +269,25 @@ mod _collaboration_analysis_template;
 
 mod _collaboration_analysis_template_summary;
 
+mod _collaboration_configured_audience_model_association;
+
+mod _collaboration_configured_audience_model_association_summary;
+
+mod _collaboration_privacy_budget_summary;
+
+mod _collaboration_privacy_budget_template;
+
+mod _collaboration_privacy_budget_template_summary;
+
 mod _collaboration_query_log_status;
 
 mod _collaboration_summary;
 
 mod _column;
+
+mod _configured_audience_model_association;
+
+mod _configured_audience_model_association_summary;
 
 mod _configured_table;
 
@@ -232,6 +308,32 @@ mod _configured_table_summary;
 mod _conflict_exception_reason;
 
 mod _data_encryption_metadata;
+
+mod _differential_privacy_aggregation_type;
+
+mod _differential_privacy_column;
+
+mod _differential_privacy_configuration;
+
+mod _differential_privacy_parameters;
+
+mod _differential_privacy_preview_aggregation;
+
+mod _differential_privacy_preview_parameters_input;
+
+mod _differential_privacy_privacy_budget;
+
+mod _differential_privacy_privacy_budget_aggregation;
+
+mod _differential_privacy_privacy_impact;
+
+mod _differential_privacy_sensitivity_parameters;
+
+mod _differential_privacy_template_parameters_input;
+
+mod _differential_privacy_template_parameters_output;
+
+mod _differential_privacy_template_update_parameters;
 
 mod _filterable_member_status;
 
@@ -268,6 +370,28 @@ mod _membership_summary;
 mod _parameter_type;
 
 mod _payment_configuration;
+
+mod _preview_privacy_impact_parameters_input;
+
+mod _privacy_budget;
+
+mod _privacy_budget_summary;
+
+mod _privacy_budget_template;
+
+mod _privacy_budget_template_auto_refresh;
+
+mod _privacy_budget_template_parameters_input;
+
+mod _privacy_budget_template_parameters_output;
+
+mod _privacy_budget_template_summary;
+
+mod _privacy_budget_template_update_parameters;
+
+mod _privacy_budget_type;
+
+mod _privacy_impact;
 
 mod _protected_query;
 

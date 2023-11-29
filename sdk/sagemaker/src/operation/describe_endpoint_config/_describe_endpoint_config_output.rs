@@ -21,6 +21,12 @@ pub struct DescribeEndpointConfigOutput {
     pub explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.</p>
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
+    pub enable_network_isolation: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointConfigOutput {
@@ -64,6 +70,18 @@ impl DescribeEndpointConfigOutput {
     pub fn shadow_production_variants(&self) -> &[crate::types::ProductionVariant] {
         self.shadow_production_variants.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
+        self.vpc_config.as_ref()
+    }
+    /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
+    pub fn enable_network_isolation(&self) -> ::std::option::Option<bool> {
+        self.enable_network_isolation
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointConfigOutput {
     fn request_id(&self) -> Option<&str> {
@@ -90,6 +108,9 @@ pub struct DescribeEndpointConfigOutputBuilder {
     pub(crate) async_inference_config: ::std::option::Option<crate::types::AsyncInferenceConfig>,
     pub(crate) explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
+    pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointConfigOutputBuilder {
@@ -234,6 +255,48 @@ impl DescribeEndpointConfigOutputBuilder {
     pub fn get_shadow_production_variants(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>> {
         &self.shadow_production_variants
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
+    pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
+    pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.</p>
+    pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_arn
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
+        self.vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
+        self.vpc_config = input;
+        self
+    }
+    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>. </p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
+        &self.vpc_config
+    }
+    /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
+    pub fn enable_network_isolation(mut self, input: bool) -> Self {
+        self.enable_network_isolation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
+    pub fn set_enable_network_isolation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_network_isolation = input;
+        self
+    }
+    /// <p>Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.</p>
+    pub fn get_enable_network_isolation(&self) -> &::std::option::Option<bool> {
+        &self.enable_network_isolation
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -255,6 +318,9 @@ impl DescribeEndpointConfigOutputBuilder {
             async_inference_config: self.async_inference_config,
             explainer_config: self.explainer_config,
             shadow_production_variants: self.shadow_production_variants,
+            execution_role_arn: self.execution_role_arn,
+            vpc_config: self.vpc_config,
+            enable_network_isolation: self.enable_network_isolation,
             _request_id: self._request_id,
         }
     }

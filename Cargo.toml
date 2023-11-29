@@ -2,8 +2,8 @@
 exclude = [
     "examples/test-utils",
     "examples/cross_service",
-    "examples/webassembly",
     "examples/lambda",
+    "examples/webassembly",
     "examples/examples",
     "tests/no-default-features",
     "tests/webassembly"
@@ -84,6 +84,7 @@ members = [
     "sdk/chimesdkmessaging",
     "sdk/chimesdkvoice",
     "sdk/cleanrooms",
+    "sdk/cleanroomsml",
     "sdk/cloud9",
     "sdk/cloudcontrol",
     "sdk/clouddirectory",

@@ -159,6 +159,8 @@ pub struct DescribeTrainingJobOutput {
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the warm pool associated with the training job.</p>
     pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
 }
 impl DescribeTrainingJobOutput {
@@ -414,6 +416,10 @@ impl DescribeTrainingJobOutput {
     pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
         self.warm_pool_status.as_ref()
     }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
+        self.infra_check_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTrainingJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -472,6 +478,7 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
 }
 impl DescribeTrainingJobOutputBuilder {
@@ -1356,6 +1363,20 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
         &self.warm_pool_status
     }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
+        self.infra_check_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn set_infra_check_config(mut self, input: ::std::option::Option<crate::types::InfraCheckConfig>) -> Self {
+        self.infra_check_config = input;
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
+        &self.infra_check_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -1409,6 +1430,7 @@ impl DescribeTrainingJobOutputBuilder {
             retry_strategy: self.retry_strategy,
             environment: self.environment,
             warm_pool_status: self.warm_pool_status,
+            infra_check_config: self.infra_check_config,
             _request_id: self._request_id,
         }
     }

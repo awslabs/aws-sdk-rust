@@ -151,6 +151,16 @@ pub use crate::types::_real_time_inference_config::RealTimeInferenceConfigBuilde
 
 pub use crate::types::_inference_experiment_schedule::InferenceExperimentScheduleBuilder;
 
+pub use crate::types::_inference_component_runtime_config::InferenceComponentRuntimeConfigBuilder;
+
+pub use crate::types::_inference_component_specification::InferenceComponentSpecificationBuilder;
+
+pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirementsBuilder;
+
+pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParametersBuilder;
+
+pub use crate::types::_inference_component_container_specification::InferenceComponentContainerSpecificationBuilder;
+
 pub use crate::types::_feature_parameter::FeatureParameterBuilder;
 
 pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdateBuilder;
@@ -192,6 +202,10 @@ pub use crate::types::_device::DeviceBuilder;
 pub use crate::types::_edge_output_config::EdgeOutputConfigBuilder;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
+
+pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
+
+pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuilder;
 
@@ -431,6 +445,10 @@ pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_production_variant_summary::ProductionVariantSummaryBuilder;
 
+pub use crate::types::_production_variant_routing_config::ProductionVariantRoutingConfigBuilder;
+
+pub use crate::types::_production_variant_managed_instance_scaling::ProductionVariantManagedInstanceScalingBuilder;
+
 pub use crate::types::_production_variant_serverless_config::ProductionVariantServerlessConfigBuilder;
 
 pub use crate::types::_production_variant_status::ProductionVariantStatusBuilder;
@@ -667,6 +685,8 @@ pub use crate::types::_inference_recommendations_job::InferenceRecommendationsJo
 
 pub use crate::types::_inference_experiment_summary::InferenceExperimentSummaryBuilder;
 
+pub use crate::types::_inference_component_summary::InferenceComponentSummaryBuilder;
+
 pub use crate::types::_image_version::ImageVersionBuilder;
 
 pub use crate::types::_image::ImageBuilder;
@@ -710,6 +730,12 @@ pub use crate::types::_compilation_job_summary::CompilationJobSummaryBuilder;
 pub use crate::types::_code_repository_summary::CodeRepositorySummaryBuilder;
 
 pub use crate::types::_git_config::GitConfigBuilder;
+
+pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
+
+pub use crate::types::_cluster_node_summary::ClusterNodeSummaryBuilder;
+
+pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetailsBuilder;
 
 pub use crate::types::_auto_ml_candidate::AutoMlCandidateBuilder;
 
@@ -770,6 +796,8 @@ pub use crate::types::_edge_model_stat::EdgeModelStatBuilder;
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_device_stats::DeviceStatsBuilder;
+
+pub use crate::types::_infra_check_config::InfraCheckConfigBuilder;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatusBuilder;
 
@@ -852,6 +880,12 @@ pub use crate::types::_phase::PhaseBuilder;
 pub use crate::types::_model_variant_config_summary::ModelVariantConfigSummaryBuilder;
 
 pub use crate::types::_endpoint_metadata::EndpointMetadataBuilder;
+
+pub use crate::types::_inference_component_runtime_config_summary::InferenceComponentRuntimeConfigSummaryBuilder;
+
+pub use crate::types::_inference_component_specification_summary::InferenceComponentSpecificationSummaryBuilder;
+
+pub use crate::types::_inference_component_container_specification_summary::InferenceComponentContainerSpecificationSummaryBuilder;
 
 pub use crate::types::_autotune::AutotuneBuilder;
 
@@ -938,6 +972,10 @@ pub use crate::types::_target_platform::TargetPlatformBuilder;
 pub use crate::types::_input_config::InputConfigBuilder;
 
 pub use crate::types::_model_digests::ModelDigestsBuilder;
+
+pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
+
+pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
 

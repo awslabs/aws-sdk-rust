@@ -46,6 +46,7 @@ impl super::Client {
     ///   - [`retry_strategy(Option<RetryStrategy>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::retry_strategy): <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     ///   - [`environment(Option<HashMap::<String, String>>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::environment): <p>The environment variables to set in the Docker container.</p>
     ///   - [`warm_pool_status(Option<WarmPoolStatus>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::warm_pool_status): <p>The status of the warm pool associated with the training job.</p>
+    ///   - [`infra_check_config(Option<InfraCheckConfig>)`](crate::operation::describe_training_job::DescribeTrainingJobOutput::infra_check_config): <p>Contains information about the infrastructure health check configuration for the training job.</p>
     /// - On failure, responds with [`SdkError<DescribeTrainingJobError>`](crate::operation::describe_training_job::DescribeTrainingJobError)
     pub fn describe_training_job(&self) -> crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder {
         crate::operation::describe_training_job::builders::DescribeTrainingJobFluentBuilder::new(self.handle.clone())

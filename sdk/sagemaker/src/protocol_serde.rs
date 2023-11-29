@@ -45,6 +45,8 @@ pub(crate) mod shape_create_auto_ml_job;
 
 pub(crate) mod shape_create_auto_ml_job_v2;
 
+pub(crate) mod shape_create_cluster;
+
 pub(crate) mod shape_create_code_repository;
 
 pub(crate) mod shape_create_compilation_job;
@@ -82,6 +84,8 @@ pub(crate) mod shape_create_hyper_parameter_tuning_job;
 pub(crate) mod shape_create_image;
 
 pub(crate) mod shape_create_image_version;
+
+pub(crate) mod shape_create_inference_component;
 
 pub(crate) mod shape_create_inference_experiment;
 
@@ -151,6 +155,8 @@ pub(crate) mod shape_delete_artifact;
 
 pub(crate) mod shape_delete_association;
 
+pub(crate) mod shape_delete_cluster;
+
 pub(crate) mod shape_delete_code_repository;
 
 pub(crate) mod shape_delete_context;
@@ -184,6 +190,8 @@ pub(crate) mod shape_delete_human_task_ui;
 pub(crate) mod shape_delete_image;
 
 pub(crate) mod shape_delete_image_version;
+
+pub(crate) mod shape_delete_inference_component;
 
 pub(crate) mod shape_delete_inference_experiment;
 
@@ -245,6 +253,10 @@ pub(crate) mod shape_describe_auto_ml_job;
 
 pub(crate) mod shape_describe_auto_ml_job_v2;
 
+pub(crate) mod shape_describe_cluster;
+
+pub(crate) mod shape_describe_cluster_node;
+
 pub(crate) mod shape_describe_code_repository;
 
 pub(crate) mod shape_describe_compilation_job;
@@ -286,6 +298,8 @@ pub(crate) mod shape_describe_hyper_parameter_tuning_job;
 pub(crate) mod shape_describe_image;
 
 pub(crate) mod shape_describe_image_version;
+
+pub(crate) mod shape_describe_inference_component;
 
 pub(crate) mod shape_describe_inference_experiment;
 
@@ -385,6 +399,10 @@ pub(crate) mod shape_list_auto_ml_jobs;
 
 pub(crate) mod shape_list_candidates_for_auto_ml_job;
 
+pub(crate) mod shape_list_cluster_nodes;
+
+pub(crate) mod shape_list_clusters;
+
 pub(crate) mod shape_list_code_repositories;
 
 pub(crate) mod shape_list_compilation_jobs;
@@ -426,6 +444,8 @@ pub(crate) mod shape_list_hyper_parameter_tuning_jobs;
 pub(crate) mod shape_list_image_versions;
 
 pub(crate) mod shape_list_images;
+
+pub(crate) mod shape_list_inference_components;
 
 pub(crate) mod shape_list_inference_experiments;
 
@@ -571,6 +591,8 @@ pub(crate) mod shape_update_app_image_config;
 
 pub(crate) mod shape_update_artifact;
 
+pub(crate) mod shape_update_cluster;
+
 pub(crate) mod shape_update_code_repository;
 
 pub(crate) mod shape_update_context;
@@ -596,6 +618,10 @@ pub(crate) mod shape_update_hub;
 pub(crate) mod shape_update_image;
 
 pub(crate) mod shape_update_image_version;
+
+pub(crate) mod shape_update_inference_component;
+
+pub(crate) mod shape_update_inference_component_runtime_config;
 
 pub(crate) mod shape_update_inference_experiment;
 
@@ -663,6 +689,8 @@ pub(crate) mod shape_create_auto_ml_job_input;
 
 pub(crate) mod shape_create_auto_ml_job_v2_input;
 
+pub(crate) mod shape_create_cluster_input;
+
 pub(crate) mod shape_create_code_repository_input;
 
 pub(crate) mod shape_create_compilation_job_input;
@@ -700,6 +728,8 @@ pub(crate) mod shape_create_hyper_parameter_tuning_job_input;
 pub(crate) mod shape_create_image_input;
 
 pub(crate) mod shape_create_image_version_input;
+
+pub(crate) mod shape_create_inference_component_input;
 
 pub(crate) mod shape_create_inference_experiment_input;
 
@@ -769,6 +799,8 @@ pub(crate) mod shape_delete_artifact_input;
 
 pub(crate) mod shape_delete_association_input;
 
+pub(crate) mod shape_delete_cluster_input;
+
 pub(crate) mod shape_delete_code_repository_input;
 
 pub(crate) mod shape_delete_context_input;
@@ -802,6 +834,8 @@ pub(crate) mod shape_delete_human_task_ui_input;
 pub(crate) mod shape_delete_image_input;
 
 pub(crate) mod shape_delete_image_version_input;
+
+pub(crate) mod shape_delete_inference_component_input;
 
 pub(crate) mod shape_delete_inference_experiment_input;
 
@@ -863,6 +897,10 @@ pub(crate) mod shape_describe_auto_ml_job_input;
 
 pub(crate) mod shape_describe_auto_ml_job_v2_input;
 
+pub(crate) mod shape_describe_cluster_input;
+
+pub(crate) mod shape_describe_cluster_node_input;
+
 pub(crate) mod shape_describe_code_repository_input;
 
 pub(crate) mod shape_describe_compilation_job_input;
@@ -904,6 +942,8 @@ pub(crate) mod shape_describe_hyper_parameter_tuning_job_input;
 pub(crate) mod shape_describe_image_input;
 
 pub(crate) mod shape_describe_image_version_input;
+
+pub(crate) mod shape_describe_inference_component_input;
 
 pub(crate) mod shape_describe_inference_experiment_input;
 
@@ -997,6 +1037,10 @@ pub(crate) mod shape_list_auto_ml_jobs_input;
 
 pub(crate) mod shape_list_candidates_for_auto_ml_job_input;
 
+pub(crate) mod shape_list_cluster_nodes_input;
+
+pub(crate) mod shape_list_clusters_input;
+
 pub(crate) mod shape_list_code_repositories_input;
 
 pub(crate) mod shape_list_compilation_jobs_input;
@@ -1038,6 +1082,8 @@ pub(crate) mod shape_list_hyper_parameter_tuning_jobs_input;
 pub(crate) mod shape_list_image_versions_input;
 
 pub(crate) mod shape_list_images_input;
+
+pub(crate) mod shape_list_inference_components_input;
 
 pub(crate) mod shape_list_inference_experiments_input;
 
@@ -1189,6 +1235,8 @@ pub(crate) mod shape_update_app_image_config_input;
 
 pub(crate) mod shape_update_artifact_input;
 
+pub(crate) mod shape_update_cluster_input;
+
 pub(crate) mod shape_update_code_repository_input;
 
 pub(crate) mod shape_update_context_input;
@@ -1214,6 +1262,10 @@ pub(crate) mod shape_update_hub_input;
 pub(crate) mod shape_update_image_input;
 
 pub(crate) mod shape_update_image_version_input;
+
+pub(crate) mod shape_update_inference_component_input;
+
+pub(crate) mod shape_update_inference_component_runtime_config_input;
 
 pub(crate) mod shape_update_inference_experiment_input;
 
@@ -1324,6 +1376,16 @@ pub(crate) mod shape_batch_describe_model_package_error_map;
 pub(crate) mod shape_channel;
 
 pub(crate) mod shape_checkpoint_config;
+
+pub(crate) mod shape_cluster_instance_group_details_list;
+
+pub(crate) mod shape_cluster_instance_group_specification;
+
+pub(crate) mod shape_cluster_node_details;
+
+pub(crate) mod shape_cluster_node_summaries;
+
+pub(crate) mod shape_cluster_summaries;
 
 pub(crate) mod shape_code_repository_summary_list;
 
@@ -1495,6 +1557,16 @@ pub(crate) mod shape_image_versions;
 
 pub(crate) mod shape_images;
 
+pub(crate) mod shape_inference_component_runtime_config;
+
+pub(crate) mod shape_inference_component_runtime_config_summary;
+
+pub(crate) mod shape_inference_component_specification;
+
+pub(crate) mod shape_inference_component_specification_summary;
+
+pub(crate) mod shape_inference_component_summary_list;
+
 pub(crate) mod shape_inference_execution_config;
 
 pub(crate) mod shape_inference_experiment_data_storage_config;
@@ -1510,6 +1582,8 @@ pub(crate) mod shape_inference_recommendations_job_steps;
 pub(crate) mod shape_inference_recommendations_jobs;
 
 pub(crate) mod shape_inference_specification;
+
+pub(crate) mod shape_infra_check_config;
 
 pub(crate) mod shape_input_config;
 
@@ -1937,6 +2011,16 @@ pub(crate) mod shape_channel_specifications;
 
 pub(crate) mod shape_clarify_explainer_config;
 
+pub(crate) mod shape_cluster_instance_group_details;
+
+pub(crate) mod shape_cluster_instance_status_details;
+
+pub(crate) mod shape_cluster_life_cycle_config;
+
+pub(crate) mod shape_cluster_node_summary;
+
+pub(crate) mod shape_cluster_summary;
+
 pub(crate) mod shape_code_repository_summary;
 
 pub(crate) mod shape_cognito_member_definition;
@@ -2074,6 +2158,16 @@ pub(crate) mod shape_image_classification_job_config;
 pub(crate) mod shape_image_config;
 
 pub(crate) mod shape_image_version;
+
+pub(crate) mod shape_inference_component_compute_resource_requirements;
+
+pub(crate) mod shape_inference_component_container_specification;
+
+pub(crate) mod shape_inference_component_container_specification_summary;
+
+pub(crate) mod shape_inference_component_startup_parameters;
+
+pub(crate) mod shape_inference_component_summary;
 
 pub(crate) mod shape_inference_experiment_summary;
 
@@ -2226,6 +2320,10 @@ pub(crate) mod shape_processing_s3_input;
 pub(crate) mod shape_product_listings;
 
 pub(crate) mod shape_production_variant_core_dump_config;
+
+pub(crate) mod shape_production_variant_managed_instance_scaling;
+
+pub(crate) mod shape_production_variant_routing_config;
 
 pub(crate) mod shape_production_variant_serverless_config;
 
@@ -2423,6 +2521,8 @@ pub(crate) mod shape_custom_image;
 
 pub(crate) mod shape_custom_images;
 
+pub(crate) mod shape_deployed_image;
+
 pub(crate) mod shape_deployed_images;
 
 pub(crate) mod shape_direct_deploy_settings;
@@ -2575,6 +2675,8 @@ pub(crate) mod shape_stairs;
 
 pub(crate) mod shape_tabular_resolved_attributes;
 
+pub(crate) mod shape_text_generation_hyper_parameters;
+
 pub(crate) mod shape_text_generation_resolved_attributes;
 
 pub(crate) mod shape_time_series_config;
@@ -2640,8 +2742,6 @@ pub(crate) mod shape_compression_types;
 pub(crate) mod shape_condition_step_metadata;
 
 pub(crate) mod shape_continuous_parameter_range_specification;
-
-pub(crate) mod shape_deployed_image;
 
 pub(crate) mod shape_device_names;
 

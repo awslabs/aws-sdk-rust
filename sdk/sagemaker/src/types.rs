@@ -27,6 +27,8 @@ pub use crate::types::_oidc_config::OidcConfig;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_studio_web_portal::StudioWebPortal;
+
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
 pub use crate::types::_direct_deploy_settings::DirectDeploySettings;
@@ -199,6 +201,16 @@ pub use crate::types::_model_infrastructure_type::ModelInfrastructureType;
 
 pub use crate::types::_inference_experiment_schedule::InferenceExperimentSchedule;
 
+pub use crate::types::_inference_component_runtime_config::InferenceComponentRuntimeConfig;
+
+pub use crate::types::_inference_component_specification::InferenceComponentSpecification;
+
+pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirements;
+
+pub use crate::types::_inference_component_startup_parameters::InferenceComponentStartupParameters;
+
+pub use crate::types::_inference_component_container_specification::InferenceComponentContainerSpecification;
+
 pub use crate::types::_processor::Processor;
 
 pub use crate::types::_job_type::JobType;
@@ -249,6 +261,8 @@ pub use crate::types::_variant_property::VariantProperty;
 
 pub use crate::types::_variant_property_type::VariantPropertyType;
 
+pub use crate::types::_app_network_access_type::AppNetworkAccessType;
+
 pub use crate::types::_app_security_group_management::AppSecurityGroupManagement;
 
 pub use crate::types::_default_space_settings::DefaultSpaceSettings;
@@ -266,6 +280,12 @@ pub use crate::types::_edge_output_config::EdgeOutputConfig;
 pub use crate::types::_edge_preset_deployment_type::EdgePresetDeploymentType;
 
 pub use crate::types::_git_config_for_update::GitConfigForUpdate;
+
+pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecification;
+
+pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
+
+pub use crate::types::_cluster_instance_type::ClusterInstanceType;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfig;
 
@@ -602,6 +622,14 @@ pub use crate::types::_inference_specification::InferenceSpecification;
 pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_production_variant_summary::ProductionVariantSummary;
+
+pub use crate::types::_production_variant_routing_config::ProductionVariantRoutingConfig;
+
+pub use crate::types::_routing_strategy::RoutingStrategy;
+
+pub use crate::types::_production_variant_managed_instance_scaling::ProductionVariantManagedInstanceScaling;
+
+pub use crate::types::_managed_instance_scaling_status::ManagedInstanceScalingStatus;
 
 pub use crate::types::_production_variant_serverless_config::ProductionVariantServerlessConfig;
 
@@ -993,6 +1021,12 @@ pub use crate::types::_inference_experiment_type::InferenceExperimentType;
 
 pub use crate::types::_sort_inference_experiments_by::SortInferenceExperimentsBy;
 
+pub use crate::types::_inference_component_summary::InferenceComponentSummary;
+
+pub use crate::types::_inference_component_status::InferenceComponentStatus;
+
+pub use crate::types::_inference_component_sort_key::InferenceComponentSortKey;
+
 pub use crate::types::_image_version::ImageVersion;
 
 pub use crate::types::_image_version_status::ImageVersionStatus;
@@ -1100,6 +1134,18 @@ pub use crate::types::_git_config::GitConfig;
 pub use crate::types::_code_repository_sort_order::CodeRepositorySortOrder;
 
 pub use crate::types::_code_repository_sort_by::CodeRepositorySortBy;
+
+pub use crate::types::_cluster_summary::ClusterSummary;
+
+pub use crate::types::_cluster_status::ClusterStatus;
+
+pub use crate::types::_cluster_sort_by::ClusterSortBy;
+
+pub use crate::types::_cluster_node_summary::ClusterNodeSummary;
+
+pub use crate::types::_cluster_instance_status_details::ClusterInstanceStatusDetails;
+
+pub use crate::types::_cluster_instance_status::ClusterInstanceStatus;
 
 pub use crate::types::_auto_ml_candidate::AutoMlCandidate;
 
@@ -1213,6 +1259,8 @@ pub use crate::types::_agent_version::AgentVersion;
 
 pub use crate::types::_device_stats::DeviceStats;
 
+pub use crate::types::_infra_check_config::InfraCheckConfig;
+
 pub use crate::types::_profiling_status::ProfilingStatus;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatus;
@@ -1311,6 +1359,12 @@ pub use crate::types::_model_variant_status::ModelVariantStatus;
 
 pub use crate::types::_endpoint_metadata::EndpointMetadata;
 
+pub use crate::types::_inference_component_runtime_config_summary::InferenceComponentRuntimeConfigSummary;
+
+pub use crate::types::_inference_component_specification_summary::InferenceComponentSpecificationSummary;
+
+pub use crate::types::_inference_component_container_specification_summary::InferenceComponentContainerSpecificationSummary;
+
 pub use crate::types::_autotune::Autotune;
 
 pub use crate::types::_autotune_mode::AutotuneMode;
@@ -1403,8 +1457,6 @@ pub use crate::types::_domain_settings::DomainSettings;
 
 pub use crate::types::_r_studio_server_pro_domain_settings::RStudioServerProDomainSettings;
 
-pub use crate::types::_app_network_access_type::AppNetworkAccessType;
-
 pub use crate::types::_auth_mode::AuthMode;
 
 pub use crate::types::_edge_model::EdgeModel;
@@ -1428,6 +1480,10 @@ pub use crate::types::_input_config::InputConfig;
 pub use crate::types::_framework::Framework;
 
 pub use crate::types::_model_digests::ModelDigests;
+
+pub use crate::types::_cluster_node_details::ClusterNodeDetails;
+
+pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
 pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfigName;
 
@@ -1792,6 +1848,28 @@ mod _clarify_text_config;
 mod _clarify_text_granularity;
 
 mod _clarify_text_language;
+
+mod _cluster_instance_group_details;
+
+mod _cluster_instance_group_specification;
+
+mod _cluster_instance_status;
+
+mod _cluster_instance_status_details;
+
+mod _cluster_instance_type;
+
+mod _cluster_life_cycle_config;
+
+mod _cluster_node_details;
+
+mod _cluster_node_summary;
+
+mod _cluster_sort_by;
+
+mod _cluster_status;
+
+mod _cluster_summary;
 
 mod _code_repository;
 
@@ -2167,6 +2245,28 @@ mod _image_version_sort_order;
 
 mod _image_version_status;
 
+mod _inference_component_compute_resource_requirements;
+
+mod _inference_component_container_specification;
+
+mod _inference_component_container_specification_summary;
+
+mod _inference_component_runtime_config;
+
+mod _inference_component_runtime_config_summary;
+
+mod _inference_component_sort_key;
+
+mod _inference_component_specification;
+
+mod _inference_component_specification_summary;
+
+mod _inference_component_startup_parameters;
+
+mod _inference_component_status;
+
+mod _inference_component_summary;
+
 mod _inference_execution_config;
 
 mod _inference_execution_mode;
@@ -2192,6 +2292,8 @@ mod _inference_recommendations_job;
 mod _inference_recommendations_job_step;
 
 mod _inference_specification;
+
+mod _infra_check_config;
 
 mod _input_config;
 
@@ -2276,6 +2378,8 @@ mod _list_labeling_jobs_for_workteam_sort_by_options;
 mod _list_workforces_sort_by_options;
 
 mod _list_workteams_sort_by_options;
+
+mod _managed_instance_scaling_status;
 
 mod _member_definition;
 
@@ -2663,6 +2767,10 @@ mod _production_variant_core_dump_config;
 
 mod _production_variant_instance_type;
 
+mod _production_variant_managed_instance_scaling;
+
+mod _production_variant_routing_config;
+
 mod _production_variant_serverless_config;
 
 mod _production_variant_serverless_update_config;
@@ -2795,6 +2903,8 @@ mod _rolling_update_policy;
 
 mod _root_access;
 
+mod _routing_strategy;
+
 mod _rule_evaluation_status;
 
 mod _s3_data_distribution;
@@ -2912,6 +3022,8 @@ mod _studio_lifecycle_config_app_type;
 mod _studio_lifecycle_config_details;
 
 mod _studio_lifecycle_config_sort_key;
+
+mod _studio_web_portal;
 
 mod _subscribed_workteam;
 

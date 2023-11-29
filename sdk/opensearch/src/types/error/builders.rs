@@ -21,6 +21,6 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuil
 
 pub use crate::types::error::_invalid_type_exception::InvalidTypeExceptionBuilder;
 
-pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenExceptionBuilder;
-
 pub use crate::types::error::_dependency_failure_exception::DependencyFailureExceptionBuilder;
+
+pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenExceptionBuilder;

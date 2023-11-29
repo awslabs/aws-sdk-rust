@@ -24,6 +24,8 @@ pub struct ProtectedQuery {
     pub result: ::std::option::Option<crate::types::ProtectedQueryResult>,
     /// <p>An error thrown by the protected query.</p>
     pub error: ::std::option::Option<crate::types::ProtectedQueryError>,
+    /// <p>The sensitivity parameters of the differential privacy results of the protected query.</p>
+    pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyParameters>,
 }
 impl ProtectedQuery {
     /// <p>The identifier for a protected query instance.</p>
@@ -69,6 +71,10 @@ impl ProtectedQuery {
     pub fn error(&self) -> ::std::option::Option<&crate::types::ProtectedQueryError> {
         self.error.as_ref()
     }
+    /// <p>The sensitivity parameters of the differential privacy results of the protected query.</p>
+    pub fn differential_privacy(&self) -> ::std::option::Option<&crate::types::DifferentialPrivacyParameters> {
+        self.differential_privacy.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ProtectedQuery {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for ProtectedQuery {
         formatter.field("statistics", &self.statistics);
         formatter.field("result", &self.result);
         formatter.field("error", &self.error);
+        formatter.field("differential_privacy", &self.differential_privacy);
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct ProtectedQueryBuilder {
     pub(crate) statistics: ::std::option::Option<crate::types::ProtectedQueryStatistics>,
     pub(crate) result: ::std::option::Option<crate::types::ProtectedQueryResult>,
     pub(crate) error: ::std::option::Option<crate::types::ProtectedQueryError>,
+    pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyParameters>,
 }
 impl ProtectedQueryBuilder {
     /// <p>The identifier for a protected query instance.</p>
@@ -254,6 +262,20 @@ impl ProtectedQueryBuilder {
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ProtectedQueryError> {
         &self.error
     }
+    /// <p>The sensitivity parameters of the differential privacy results of the protected query.</p>
+    pub fn differential_privacy(mut self, input: crate::types::DifferentialPrivacyParameters) -> Self {
+        self.differential_privacy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sensitivity parameters of the differential privacy results of the protected query.</p>
+    pub fn set_differential_privacy(mut self, input: ::std::option::Option<crate::types::DifferentialPrivacyParameters>) -> Self {
+        self.differential_privacy = input;
+        self
+    }
+    /// <p>The sensitivity parameters of the differential privacy results of the protected query.</p>
+    pub fn get_differential_privacy(&self) -> &::std::option::Option<crate::types::DifferentialPrivacyParameters> {
+        &self.differential_privacy
+    }
     /// Consumes the builder and constructs a [`ProtectedQuery`](crate::types::ProtectedQuery).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedQueryBuilder::id)
@@ -298,6 +320,7 @@ impl ProtectedQueryBuilder {
             statistics: self.statistics,
             result: self.result,
             error: self.error,
+            differential_privacy: self.differential_privacy,
         })
     }
 }
@@ -314,6 +337,7 @@ impl ::std::fmt::Debug for ProtectedQueryBuilder {
         formatter.field("statistics", &self.statistics);
         formatter.field("result", &self.result);
         formatter.field("error", &self.error);
+        formatter.field("differential_privacy", &self.differential_privacy);
         formatter.finish()
     }
 }

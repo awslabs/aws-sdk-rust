@@ -77,6 +77,16 @@ where
                                 crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?,
                             );
                         }
+                        "ManagedInstanceScaling" => {
+                            builder = builder.set_managed_instance_scaling(
+                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens)?
+                                );
+                        }
+                        "RoutingConfig" => {
+                            builder = builder.set_routing_config(
+                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

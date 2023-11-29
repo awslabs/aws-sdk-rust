@@ -162,7 +162,6 @@ impl DescribeModelOutputBuilder {
         &self.inference_execution_config
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the model.</p>
-    /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self

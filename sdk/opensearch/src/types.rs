@@ -149,6 +149,10 @@ pub use crate::types::_saml_options_input::SamlOptionsInput;
 
 pub use crate::types::_master_user_options::MasterUserOptions;
 
+pub use crate::types::_data_source_type::DataSourceType;
+
+pub use crate::types::_s3_glue_data_catalog::S3GlueDataCatalog;
+
 pub use crate::types::_service_software_options::ServiceSoftwareOptions;
 
 pub use crate::types::_deployment_status::DeploymentStatus;
@@ -188,6 +192,8 @@ pub use crate::types::_engine_type::EngineType;
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetails;
 
 pub use crate::types::_maintenance_status::MaintenanceStatus;
+
+pub use crate::types::_data_source_details::DataSourceDetails;
 
 pub use crate::types::_upgrade_status::UpgradeStatus;
 
@@ -355,6 +361,10 @@ mod _connection_properties;
 
 mod _cross_cluster_search_connection_properties;
 
+mod _data_source_details;
+
+mod _data_source_type;
+
 mod _deployment_status;
 
 mod _describe_packages_filter;
@@ -494,6 +504,8 @@ mod _reserved_instance_offering;
 mod _reserved_instance_payment_option;
 
 mod _rollback_on_disable;
+
+mod _s3_glue_data_catalog;
 
 mod _saml_idp;
 

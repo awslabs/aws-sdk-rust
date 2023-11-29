@@ -254,5 +254,18 @@ pub fn ser_invoke_endpoint_headers(
             builder = builder.header("X-Amzn-SageMaker-Enable-Explanations", header_value);
         }
     }
+    if let ::std::option::Option::Some(inner_17) = &input.inference_component_name {
+        let formatted_18 = inner_17.as_str();
+        if !formatted_18.is_empty() {
+            let header_value = formatted_18;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "inference_component_name",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("X-Amzn-SageMaker-Inference-Component", header_value);
+        }
+    }
     Ok(builder)
 }

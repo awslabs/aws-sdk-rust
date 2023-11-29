@@ -6,7 +6,7 @@
 pub enum ConfiguredTableAnalysisRulePolicyV1 {
     /// <p>Analysis rule type that enables only aggregation queries on a configured table.</p>
     Aggregation(crate::types::AnalysisRuleAggregation),
-    /// <p>A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables.</p>
+    /// <p>A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables. It supports differential privacy.</p>
     Custom(crate::types::AnalysisRuleCustom),
     /// <p>Analysis rule type that enables only list queries on a configured table.</p>
     List(crate::types::AnalysisRuleList),

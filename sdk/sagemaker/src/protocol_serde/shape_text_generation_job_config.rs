@@ -12,6 +12,16 @@ pub fn ser_text_generation_job_config(
     if let Some(var_3) = &input.base_model_name {
         object.key("BaseModelName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.text_generation_hyper_parameters {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("TextGenerationHyperParameters").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +50,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "TextGenerationHyperParameters" => {
+                            builder = builder.set_text_generation_hyper_parameters(
+                                crate::protocol_serde::shape_text_generation_hyper_parameters::de_text_generation_hyper_parameters(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

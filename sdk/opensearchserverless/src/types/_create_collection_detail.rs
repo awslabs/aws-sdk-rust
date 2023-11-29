@@ -18,6 +18,8 @@ pub struct CreateCollectionDetail {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the collection.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Creates details about an OpenSearch Serverless collection.</p>
+    pub standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     /// <p>The Epoch time when the collection was created.</p>
     pub created_date: ::std::option::Option<i64>,
     /// <p>The date and time when the collection was last modified.</p>
@@ -52,6 +54,10 @@ impl CreateCollectionDetail {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>Creates details about an OpenSearch Serverless collection.</p>
+    pub fn standby_replicas(&self) -> ::std::option::Option<&crate::types::StandbyReplicas> {
+        self.standby_replicas.as_ref()
+    }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<i64> {
         self.created_date
@@ -79,6 +85,7 @@ pub struct CreateCollectionDetailBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) standby_replicas: ::std::option::Option<crate::types::StandbyReplicas>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
 }
@@ -181,6 +188,20 @@ impl CreateCollectionDetailBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>Creates details about an OpenSearch Serverless collection.</p>
+    pub fn standby_replicas(mut self, input: crate::types::StandbyReplicas) -> Self {
+        self.standby_replicas = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Creates details about an OpenSearch Serverless collection.</p>
+    pub fn set_standby_replicas(mut self, input: ::std::option::Option<crate::types::StandbyReplicas>) -> Self {
+        self.standby_replicas = input;
+        self
+    }
+    /// <p>Creates details about an OpenSearch Serverless collection.</p>
+    pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
+        &self.standby_replicas
+    }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
         self.created_date = ::std::option::Option::Some(input);
@@ -219,6 +240,7 @@ impl CreateCollectionDetailBuilder {
             description: self.description,
             arn: self.arn,
             kms_key_arn: self.kms_key_arn,
+            standby_replicas: self.standby_replicas,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
         }

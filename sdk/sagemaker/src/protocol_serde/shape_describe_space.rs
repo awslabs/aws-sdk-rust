@@ -130,6 +130,13 @@ pub(crate) fn de_describe_space(
                 "SpaceSettings" => {
                     builder = builder.set_space_settings(crate::protocol_serde::shape_space_settings::de_space_settings(tokens)?);
                 }
+                "Url" => {
+                    builder = builder.set_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

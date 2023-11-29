@@ -13,6 +13,16 @@ pub struct UpdateDomainInput {
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the VPC used for non-EFS traffic.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
+    /// </ul>
+    /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
+    pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
 }
 impl UpdateDomainInput {
     /// <p>The ID of the domain to be updated.</p>
@@ -35,6 +45,22 @@ impl UpdateDomainInput {
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
+    pub fn subnet_ids(&self) -> &[::std::string::String] {
+        self.subnet_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
+    /// </ul>
+    /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
+    pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
+        self.app_network_access_type.as_ref()
+    }
 }
 impl UpdateDomainInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
@@ -52,6 +78,8 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
 }
 impl UpdateDomainInputBuilder {
     /// <p>The ID of the domain to be updated.</p>
@@ -125,6 +153,58 @@ impl UpdateDomainInputBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
+    /// Appends an item to `subnet_ids`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+    ///
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.subnet_ids.unwrap_or_default();
+        v.push(input.into());
+        self.subnet_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
+    pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_ids = input;
+        self
+    }
+    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
+    pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_ids
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
+    /// </ul>
+    /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
+    pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
+        self.app_network_access_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
+    /// </ul>
+    /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
+    pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
+        self.app_network_access_type = input;
+        self
+    }
+    /// <p>Specifies the VPC used for non-EFS traffic.</p>
+    /// <ul>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.</p> </li>
+    /// </ul>
+    /// <p>This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same request.</p>
+    pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
+        &self.app_network_access_type
+    }
     /// Consumes the builder and constructs a [`UpdateDomainInput`](crate::operation::update_domain::UpdateDomainInput).
     pub fn build(
         self,
@@ -135,6 +215,8 @@ impl UpdateDomainInputBuilder {
             domain_settings_for_update: self.domain_settings_for_update,
             default_space_settings: self.default_space_settings,
             app_security_group_management: self.app_security_group_management,
+            subnet_ids: self.subnet_ids,
+            app_network_access_type: self.app_network_access_type,
         })
     }
 }

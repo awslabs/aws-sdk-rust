@@ -34,6 +34,9 @@ pub mod create_auto_ml_job;
 /// Types for the `CreateAutoMLJobV2` operation.
 pub mod create_auto_ml_job_v2;
 
+/// Types for the `CreateCluster` operation.
+pub mod create_cluster;
+
 /// Types for the `CreateCodeRepository` operation.
 pub mod create_code_repository;
 
@@ -90,6 +93,9 @@ pub mod create_image;
 
 /// Types for the `CreateImageVersion` operation.
 pub mod create_image_version;
+
+/// Types for the `CreateInferenceComponent` operation.
+pub mod create_inference_component;
 
 /// Types for the `CreateInferenceExperiment` operation.
 pub mod create_inference_experiment;
@@ -193,6 +199,9 @@ pub mod delete_artifact;
 /// Types for the `DeleteAssociation` operation.
 pub mod delete_association;
 
+/// Types for the `DeleteCluster` operation.
+pub mod delete_cluster;
+
 /// Types for the `DeleteCodeRepository` operation.
 pub mod delete_code_repository;
 
@@ -243,6 +252,9 @@ pub mod delete_image;
 
 /// Types for the `DeleteImageVersion` operation.
 pub mod delete_image_version;
+
+/// Types for the `DeleteInferenceComponent` operation.
+pub mod delete_inference_component;
 
 /// Types for the `DeleteInferenceExperiment` operation.
 pub mod delete_inference_experiment;
@@ -334,6 +346,12 @@ pub mod describe_auto_ml_job;
 /// Types for the `DescribeAutoMLJobV2` operation.
 pub mod describe_auto_ml_job_v2;
 
+/// Types for the `DescribeCluster` operation.
+pub mod describe_cluster;
+
+/// Types for the `DescribeClusterNode` operation.
+pub mod describe_cluster_node;
+
 /// Types for the `DescribeCodeRepository` operation.
 pub mod describe_code_repository;
 
@@ -396,6 +414,9 @@ pub mod describe_image;
 
 /// Types for the `DescribeImageVersion` operation.
 pub mod describe_image_version;
+
+/// Types for the `DescribeInferenceComponent` operation.
+pub mod describe_inference_component;
 
 /// Types for the `DescribeInferenceExperiment` operation.
 pub mod describe_inference_experiment;
@@ -544,6 +565,12 @@ pub mod list_auto_ml_jobs;
 /// Types for the `ListCandidatesForAutoMLJob` operation.
 pub mod list_candidates_for_auto_ml_job;
 
+/// Types for the `ListClusterNodes` operation.
+pub mod list_cluster_nodes;
+
+/// Types for the `ListClusters` operation.
+pub mod list_clusters;
+
 /// Types for the `ListCodeRepositories` operation.
 pub mod list_code_repositories;
 
@@ -606,6 +633,9 @@ pub mod list_image_versions;
 
 /// Types for the `ListImages` operation.
 pub mod list_images;
+
+/// Types for the `ListInferenceComponents` operation.
+pub mod list_inference_components;
 
 /// Types for the `ListInferenceExperiments` operation.
 pub mod list_inference_experiments;
@@ -823,6 +853,9 @@ pub mod update_app_image_config;
 /// Types for the `UpdateArtifact` operation.
 pub mod update_artifact;
 
+/// Types for the `UpdateCluster` operation.
+pub mod update_cluster;
+
 /// Types for the `UpdateCodeRepository` operation.
 pub mod update_code_repository;
 
@@ -861,6 +894,12 @@ pub mod update_image;
 
 /// Types for the `UpdateImageVersion` operation.
 pub mod update_image_version;
+
+/// Types for the `UpdateInferenceComponent` operation.
+pub mod update_inference_component;
+
+/// Types for the `UpdateInferenceComponentRuntimeConfig` operation.
+pub mod update_inference_component_runtime_config;
 
 /// Types for the `UpdateInferenceExperiment` operation.
 pub mod update_inference_experiment;

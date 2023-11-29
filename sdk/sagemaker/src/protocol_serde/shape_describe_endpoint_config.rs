@@ -104,6 +104,19 @@ pub(crate) fn de_describe_endpoint_config(
                     builder = builder
                         .set_shadow_production_variants(crate::protocol_serde::shape_production_variant_list::de_production_variant_list(tokens)?);
                 }
+                "ExecutionRoleArn" => {
+                    builder = builder.set_execution_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "VpcConfig" => {
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
+                }
+                "EnableNetworkIsolation" => {
+                    builder = builder.set_enable_network_isolation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

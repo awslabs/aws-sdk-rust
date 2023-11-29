@@ -63,5 +63,17 @@ pub fn ser_create_endpoint_config_input_input(
         }
         array_18.finish();
     }
+    if let Some(var_21) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_24);
+    }
     Ok(())
 }

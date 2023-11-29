@@ -266,4 +266,18 @@ impl InvokeEndpointFluentBuilder {
     pub fn get_enable_explanations(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_enable_explanations()
     }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn inference_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.inference_component_name(input.into());
+        self
+    }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_inference_component_name(input);
+        self
+    }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_inference_component_name()
+    }
 }

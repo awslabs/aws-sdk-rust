@@ -69,6 +69,11 @@ where
                         "error" => {
                             builder = builder.set_error(crate::protocol_serde::shape_protected_query_error::de_protected_query_error(tokens)?);
                         }
+                        "differentialPrivacy" => {
+                            builder = builder.set_differential_privacy(
+                                crate::protocol_serde::shape_differential_privacy_parameters::de_differential_privacy_parameters(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

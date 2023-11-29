@@ -10,9 +10,9 @@ pub struct CreateDomainInput {
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
-    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>The VPC subnets that the domain uses for communication.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
@@ -20,7 +20,7 @@ pub struct CreateDomainInput {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
     pub app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     /// <p>Use <code>KmsKeyId</code>.</p>
@@ -49,13 +49,13 @@ impl CreateDomainInput {
     pub fn default_user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
         self.default_user_settings.as_ref()
     }
-    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>The VPC subnets that the domain uses for communication.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -69,7 +69,7 @@ impl CreateDomainInput {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
     pub fn app_network_access_type(&self) -> ::std::option::Option<&crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
@@ -173,34 +173,34 @@ impl CreateDomainInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>The VPC subnets that the domain uses for communication.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>The VPC subnets that the domain uses for communication.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>The VPC subnets that Studio uses for communication.</p>
+    /// <p>The VPC subnets that the domain uses for communication.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
-    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+    /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
@@ -230,7 +230,7 @@ impl CreateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
         self.app_network_access_type = ::std::option::Option::Some(input);
@@ -239,7 +239,7 @@ impl CreateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.app_network_access_type = input;
@@ -248,7 +248,7 @@ impl CreateDomainInputBuilder {
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p> </li>
     /// </ul>
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         &self.app_network_access_type

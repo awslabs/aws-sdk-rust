@@ -28,6 +28,10 @@ pub struct ProductionVariant {
     pub container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p> You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>. </p>
     pub enable_ssm_access: ::std::option::Option<bool>,
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
@@ -78,6 +82,14 @@ impl ProductionVariant {
     pub fn enable_ssm_access(&self) -> ::std::option::Option<bool> {
         self.enable_ssm_access
     }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn managed_instance_scaling(&self) -> ::std::option::Option<&crate::types::ProductionVariantManagedInstanceScaling> {
+        self.managed_instance_scaling.as_ref()
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantRoutingConfig> {
+        self.routing_config.as_ref()
+    }
 }
 impl ProductionVariant {
     /// Creates a new builder-style object to manufacture [`ProductionVariant`](crate::types::ProductionVariant).
@@ -102,6 +114,8 @@ pub struct ProductionVariantBuilder {
     pub(crate) model_data_download_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,
     pub(crate) enable_ssm_access: ::std::option::Option<bool>,
+    pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
+    pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
@@ -120,7 +134,6 @@ impl ProductionVariantBuilder {
         &self.variant_name
     }
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
-    /// This field is required.
     pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_name = ::std::option::Option::Some(input.into());
         self
@@ -274,6 +287,34 @@ impl ProductionVariantBuilder {
     pub fn get_enable_ssm_access(&self) -> &::std::option::Option<bool> {
         &self.enable_ssm_access
     }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn managed_instance_scaling(mut self, input: crate::types::ProductionVariantManagedInstanceScaling) -> Self {
+        self.managed_instance_scaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn set_managed_instance_scaling(mut self, input: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>) -> Self {
+        self.managed_instance_scaling = input;
+        self
+    }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn get_managed_instance_scaling(&self) -> &::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling> {
+        &self.managed_instance_scaling
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn routing_config(mut self, input: crate::types::ProductionVariantRoutingConfig) -> Self {
+        self.routing_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>) -> Self {
+        self.routing_config = input;
+        self
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::ProductionVariantRoutingConfig> {
+        &self.routing_config
+    }
     /// Consumes the builder and constructs a [`ProductionVariant`](crate::types::ProductionVariant).
     pub fn build(self) -> crate::types::ProductionVariant {
         crate::types::ProductionVariant {
@@ -289,6 +330,8 @@ impl ProductionVariantBuilder {
             model_data_download_timeout_in_seconds: self.model_data_download_timeout_in_seconds,
             container_startup_health_check_timeout_in_seconds: self.container_startup_health_check_timeout_in_seconds,
             enable_ssm_access: self.enable_ssm_access,
+            managed_instance_scaling: self.managed_instance_scaling,
+            routing_config: self.routing_config,
         }
     }
 }

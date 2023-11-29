@@ -209,6 +209,45 @@ impl From<crate::operation::create_collaboration::CreateCollaborationError> for 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError> for Error {
+    fn from(err: crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError) -> Self {
+        match err {
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configured_table::CreateConfiguredTableError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -382,6 +421,52 @@ impl From<crate::operation::create_membership::CreateMembershipError> for Error 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError> for Error {
+    fn from(err: crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError) -> Self {
+        match err {
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_privacy_budget_template::CreatePrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_analysis_template::DeleteAnalysisTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -438,6 +523,43 @@ impl From<crate::operation::delete_collaboration::DeleteCollaborationError> for 
             crate::operation::delete_collaboration::DeleteCollaborationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_collaboration::DeleteCollaborationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_collaboration::DeleteCollaborationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError> for Error {
+    fn from(err: crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError) -> Self {
+        match err {
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_configured_audience_model_association::DeleteConfiguredAudienceModelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -632,6 +754,49 @@ impl From<crate::operation::delete_membership::DeleteMembershipError> for Error 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError> for Error {
+    fn from(err: crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError) -> Self {
+        match err {
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_privacy_budget_template::DeletePrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_template::GetAnalysisTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -731,6 +896,145 @@ impl From<crate::operation::get_collaboration_analysis_template::GetCollaboratio
                 Error::ValidationException(inner)
             }
             crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError,
+    ) -> Self {
+        match err {
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_collaboration_configured_audience_model_association::GetCollaborationConfiguredAudienceModelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError> for Error {
+    fn from(err: crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError) -> Self {
+        match err {
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_collaboration_privacy_budget_template::GetCollaborationPrivacyBudgetTemplateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError> for Error {
+    fn from(err: crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError) -> Self {
+        match err {
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_configured_audience_model_association::GetConfiguredAudienceModelAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -876,6 +1180,45 @@ impl From<crate::operation::get_membership::GetMembershipError> for Error {
             crate::operation::get_membership::GetMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_membership::GetMembershipError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_membership::GetMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError> for Error {
+    fn from(err: crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError) -> Self {
+        match err {
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1050,6 +1393,131 @@ impl From<crate::operation::list_collaboration_analysis_templates::ListCollabora
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError> for Error {
+    fn from(err: crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError) -> Self {
+        match err {
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError> for Error {
+    fn from(err: crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError) -> Self {
+        match err {
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_collaborations::ListCollaborationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1072,6 +1540,43 @@ impl From<crate::operation::list_collaborations::ListCollaborationsError> for Er
             crate::operation::list_collaborations::ListCollaborationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_collaborations::ListCollaborationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_collaborations::ListCollaborationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError> for Error {
+    fn from(err: crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError) -> Self {
+        match err {
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1200,6 +1705,73 @@ impl From<crate::operation::list_memberships::ListMembershipsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_privacy_budgets::ListPrivacyBudgetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_privacy_budgets::ListPrivacyBudgetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_privacy_budgets::ListPrivacyBudgetsError> for Error {
+    fn from(err: crate::operation::list_privacy_budgets::ListPrivacyBudgetsError) -> Self {
+        match err {
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_privacy_budgets::ListPrivacyBudgetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError> for Error {
+    fn from(err: crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError) -> Self {
+        match err {
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1278,6 +1850,36 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::preview_privacy_impact::PreviewPrivacyImpactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::preview_privacy_impact::PreviewPrivacyImpactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::preview_privacy_impact::PreviewPrivacyImpactError> for Error {
+    fn from(err: crate::operation::preview_privacy_impact::PreviewPrivacyImpactError) -> Self {
+        match err {
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1416,6 +2018,43 @@ impl From<crate::operation::update_collaboration::UpdateCollaborationError> for 
             crate::operation::update_collaboration::UpdateCollaborationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_collaboration::UpdateCollaborationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_collaboration::UpdateCollaborationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError> for Error {
+    fn from(err: crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError) -> Self {
+        match err {
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_configured_audience_model_association::UpdateConfiguredAudienceModelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1580,6 +2219,52 @@ impl From<crate::operation::update_membership::UpdateMembershipError> for Error 
             crate::operation::update_membership::UpdateMembershipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_membership::UpdateMembershipError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_membership::UpdateMembershipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError> for Error {
+    fn from(err: crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError) -> Self {
+        match err {
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

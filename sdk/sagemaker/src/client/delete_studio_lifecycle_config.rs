@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStudioLifecycleConfig`](crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`studio_lifecycle_config_name(impl Into<String>)`](crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigFluentBuilder::studio_lifecycle_config_name) / [`set_studio_lifecycle_config_name(Option<String>)`](crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigFluentBuilder::set_studio_lifecycle_config_name):<br>required: **true**<br><p>The name of the Studio Lifecycle Configuration to delete.</p><br>
+    ///   - [`studio_lifecycle_config_name(impl Into<String>)`](crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigFluentBuilder::studio_lifecycle_config_name) / [`set_studio_lifecycle_config_name(Option<String>)`](crate::operation::delete_studio_lifecycle_config::builders::DeleteStudioLifecycleConfigFluentBuilder::set_studio_lifecycle_config_name):<br>required: **true**<br><p>The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.</p><br>
     /// - On success, responds with [`DeleteStudioLifecycleConfigOutput`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput)
     /// - On failure, responds with [`SdkError<DeleteStudioLifecycleConfigError>`](crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError)
     pub fn delete_studio_lifecycle_config(

@@ -37,6 +37,8 @@ pub use crate::types::_collection_filters::CollectionFilters;
 
 pub use crate::types::_create_collection_detail::CreateCollectionDetail;
 
+pub use crate::types::_standby_replicas::StandbyReplicas;
+
 pub use crate::types::_collection_type::CollectionType;
 
 pub use crate::types::_tag::Tag;
@@ -154,6 +156,8 @@ mod _security_policy_stats;
 mod _security_policy_summary;
 
 mod _security_policy_type;
+
+mod _standby_replicas;
 
 mod _tag;
 

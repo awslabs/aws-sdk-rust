@@ -144,6 +144,8 @@ mod create_analysis_template;
 
 mod create_collaboration;
 
+mod create_configured_audience_model_association;
+
 mod create_configured_table;
 
 mod create_configured_table_analysis_rule;
@@ -151,6 +153,8 @@ mod create_configured_table_analysis_rule;
 mod create_configured_table_association;
 
 mod create_membership;
+
+mod create_privacy_budget_template;
 
 /// Operation customization and supporting types.
 ///
@@ -183,6 +187,8 @@ mod delete_analysis_template;
 
 mod delete_collaboration;
 
+mod delete_configured_audience_model_association;
+
 mod delete_configured_table;
 
 mod delete_configured_table_analysis_rule;
@@ -193,11 +199,19 @@ mod delete_member;
 
 mod delete_membership;
 
+mod delete_privacy_budget_template;
+
 mod get_analysis_template;
 
 mod get_collaboration;
 
 mod get_collaboration_analysis_template;
+
+mod get_collaboration_configured_audience_model_association;
+
+mod get_collaboration_privacy_budget_template;
+
+mod get_configured_audience_model_association;
 
 mod get_configured_table;
 
@@ -206,6 +220,8 @@ mod get_configured_table_analysis_rule;
 mod get_configured_table_association;
 
 mod get_membership;
+
+mod get_privacy_budget_template;
 
 mod get_protected_query;
 
@@ -217,7 +233,15 @@ mod list_analysis_templates;
 
 mod list_collaboration_analysis_templates;
 
+mod list_collaboration_configured_audience_model_associations;
+
+mod list_collaboration_privacy_budget_templates;
+
+mod list_collaboration_privacy_budgets;
+
 mod list_collaborations;
+
+mod list_configured_audience_model_associations;
 
 mod list_configured_table_associations;
 
@@ -227,11 +251,17 @@ mod list_members;
 
 mod list_memberships;
 
+mod list_privacy_budget_templates;
+
+mod list_privacy_budgets;
+
 mod list_protected_queries;
 
 mod list_schemas;
 
 mod list_tags_for_resource;
+
+mod preview_privacy_impact;
 
 mod start_protected_query;
 
@@ -243,6 +273,8 @@ mod update_analysis_template;
 
 mod update_collaboration;
 
+mod update_configured_audience_model_association;
+
 mod update_configured_table;
 
 mod update_configured_table_analysis_rule;
@@ -250,5 +282,7 @@ mod update_configured_table_analysis_rule;
 mod update_configured_table_association;
 
 mod update_membership;
+
+mod update_privacy_budget_template;
 
 mod update_protected_query;

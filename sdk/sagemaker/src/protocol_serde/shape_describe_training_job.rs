@@ -282,6 +282,9 @@ pub(crate) fn de_describe_training_job(
                 "WarmPoolStatus" => {
                     builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens)?);
                 }
+                "InfraCheckConfig" => {
+                    builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

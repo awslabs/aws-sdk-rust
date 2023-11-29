@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_accept_inbound_connection;
 
+pub(crate) mod shape_add_data_source;
+
 pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_associate_package;
@@ -40,6 +42,8 @@ pub(crate) mod shape_create_outbound_connection;
 pub(crate) mod shape_create_package;
 
 pub(crate) mod shape_create_vpc_endpoint;
+
+pub(crate) mod shape_delete_data_source;
 
 pub(crate) mod shape_delete_domain;
 
@@ -85,6 +89,8 @@ pub(crate) mod shape_dissociate_package;
 
 pub(crate) mod shape_get_compatible_versions;
 
+pub(crate) mod shape_get_data_source;
+
 pub(crate) mod shape_get_domain_maintenance_status;
 
 pub(crate) mod shape_get_package_version_history;
@@ -92,6 +98,8 @@ pub(crate) mod shape_get_package_version_history;
 pub(crate) mod shape_get_upgrade_history;
 
 pub(crate) mod shape_get_upgrade_status;
+
+pub(crate) mod shape_list_data_sources;
 
 pub(crate) mod shape_list_domain_maintenances;
 
@@ -127,6 +135,8 @@ pub(crate) mod shape_start_domain_maintenance;
 
 pub(crate) mod shape_start_service_software_update;
 
+pub(crate) mod shape_update_data_source;
+
 pub(crate) mod shape_update_domain_config;
 
 pub(crate) mod shape_update_package;
@@ -146,6 +156,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_add_data_source_input;
 
 pub(crate) mod shape_add_tags_input;
 
@@ -205,6 +217,8 @@ pub(crate) mod shape_start_domain_maintenance_input;
 
 pub(crate) mod shape_start_service_software_update_input;
 
+pub(crate) mod shape_update_data_source_input;
+
 pub(crate) mod shape_update_domain_config_input;
 
 pub(crate) mod shape_update_package_input;
@@ -242,6 +256,10 @@ pub(crate) mod shape_cognito_options;
 pub(crate) mod shape_compatible_versions_list;
 
 pub(crate) mod shape_connection_properties;
+
+pub(crate) mod shape_data_source_list;
+
+pub(crate) mod shape_data_source_type;
 
 pub(crate) mod shape_describe_packages_filter;
 
@@ -371,6 +389,8 @@ pub(crate) mod shape_compatible_versions_map;
 
 pub(crate) mod shape_cross_cluster_search_connection_properties;
 
+pub(crate) mod shape_data_source_details;
+
 pub(crate) mod shape_domain_endpoint_options_status;
 
 pub(crate) mod shape_domain_info;
@@ -416,6 +436,8 @@ pub(crate) mod shape_plugin_properties;
 pub(crate) mod shape_reserved_instance;
 
 pub(crate) mod shape_reserved_instance_offering;
+
+pub(crate) mod shape_s3_glue_data_catalog;
 
 pub(crate) mod shape_saml_options_input;
 

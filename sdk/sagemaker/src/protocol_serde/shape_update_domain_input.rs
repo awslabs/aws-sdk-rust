@@ -27,5 +27,17 @@ pub fn ser_update_domain_input_input(
     if let Some(var_8) = &input.app_security_group_management {
         object.key("AppSecurityGroupManagement").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.subnet_ids {
+        let mut array_10 = object.key("SubnetIds").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
+    }
+    if let Some(var_12) = &input.app_network_access_type {
+        object.key("AppNetworkAccessType").string(var_12.as_str());
+    }
     Ok(())
 }

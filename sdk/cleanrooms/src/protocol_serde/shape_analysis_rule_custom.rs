@@ -21,6 +21,12 @@ pub fn ser_analysis_rule_custom(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.differential_privacy {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("differentialPrivacy").start_object();
+        crate::protocol_serde::shape_differential_privacy_configuration::ser_differential_privacy_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +52,11 @@ where
                         "allowedAnalysisProviders" => {
                             builder = builder.set_allowed_analysis_providers(
                                 crate::protocol_serde::shape_allowed_analysis_provider_list::de_allowed_analysis_provider_list(tokens)?,
+                            );
+                        }
+                        "differentialPrivacy" => {
+                            builder = builder.set_differential_privacy(
+                                crate::protocol_serde::shape_differential_privacy_configuration::de_differential_privacy_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

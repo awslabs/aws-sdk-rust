@@ -521,4 +521,18 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         self.inner.get_retry_strategy()
     }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
+        self.inner = self.inner.infra_check_config(input);
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn set_infra_check_config(mut self, input: ::std::option::Option<crate::types::InfraCheckConfig>) -> Self {
+        self.inner = self.inner.set_infra_check_config(input);
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
+        self.inner.get_infra_check_config()
+    }
 }

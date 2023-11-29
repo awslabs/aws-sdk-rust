@@ -22,6 +22,10 @@ pub struct ProductionVariantSummary {
     pub current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     /// <p>The serverless configuration requested for the endpoint update.</p>
     pub desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
 }
 impl ProductionVariantSummary {
     /// <p>The name of the variant.</p>
@@ -64,6 +68,14 @@ impl ProductionVariantSummary {
     pub fn desired_serverless_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
         self.desired_serverless_config.as_ref()
     }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn managed_instance_scaling(&self) -> ::std::option::Option<&crate::types::ProductionVariantManagedInstanceScaling> {
+        self.managed_instance_scaling.as_ref()
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn routing_config(&self) -> ::std::option::Option<&crate::types::ProductionVariantRoutingConfig> {
+        self.routing_config.as_ref()
+    }
 }
 impl ProductionVariantSummary {
     /// Creates a new builder-style object to manufacture [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
@@ -85,6 +97,8 @@ pub struct ProductionVariantSummaryBuilder {
     pub(crate) variant_status: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantStatus>>,
     pub(crate) current_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     pub(crate) desired_serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub(crate) managed_instance_scaling: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>,
+    pub(crate) routing_config: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>,
 }
 impl ProductionVariantSummaryBuilder {
     /// <p>The name of the variant.</p>
@@ -226,6 +240,34 @@ impl ProductionVariantSummaryBuilder {
     pub fn get_desired_serverless_config(&self) -> &::std::option::Option<crate::types::ProductionVariantServerlessConfig> {
         &self.desired_serverless_config
     }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn managed_instance_scaling(mut self, input: crate::types::ProductionVariantManagedInstanceScaling) -> Self {
+        self.managed_instance_scaling = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn set_managed_instance_scaling(mut self, input: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling>) -> Self {
+        self.managed_instance_scaling = input;
+        self
+    }
+    /// <p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>
+    pub fn get_managed_instance_scaling(&self) -> &::std::option::Option<crate::types::ProductionVariantManagedInstanceScaling> {
+        &self.managed_instance_scaling
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn routing_config(mut self, input: crate::types::ProductionVariantRoutingConfig) -> Self {
+        self.routing_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn set_routing_config(mut self, input: ::std::option::Option<crate::types::ProductionVariantRoutingConfig>) -> Self {
+        self.routing_config = input;
+        self
+    }
+    /// <p>Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.</p>
+    pub fn get_routing_config(&self) -> &::std::option::Option<crate::types::ProductionVariantRoutingConfig> {
+        &self.routing_config
+    }
     /// Consumes the builder and constructs a [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
     pub fn build(self) -> crate::types::ProductionVariantSummary {
         crate::types::ProductionVariantSummary {
@@ -238,6 +280,8 @@ impl ProductionVariantSummaryBuilder {
             variant_status: self.variant_status,
             current_serverless_config: self.current_serverless_config,
             desired_serverless_config: self.desired_serverless_config,
+            managed_instance_scaling: self.managed_instance_scaling,
+            routing_config: self.routing_config,
         }
     }
 }

@@ -22,7 +22,7 @@ impl ListStudioLifecycleConfigsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListStudioLifecycleConfigs`.
 ///
-/// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
+/// <p>Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

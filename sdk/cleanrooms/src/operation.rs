@@ -13,6 +13,9 @@ pub mod create_analysis_template;
 /// Types for the `CreateCollaboration` operation.
 pub mod create_collaboration;
 
+/// Types for the `CreateConfiguredAudienceModelAssociation` operation.
+pub mod create_configured_audience_model_association;
+
 /// Types for the `CreateConfiguredTable` operation.
 pub mod create_configured_table;
 
@@ -25,11 +28,17 @@ pub mod create_configured_table_association;
 /// Types for the `CreateMembership` operation.
 pub mod create_membership;
 
+/// Types for the `CreatePrivacyBudgetTemplate` operation.
+pub mod create_privacy_budget_template;
+
 /// Types for the `DeleteAnalysisTemplate` operation.
 pub mod delete_analysis_template;
 
 /// Types for the `DeleteCollaboration` operation.
 pub mod delete_collaboration;
+
+/// Types for the `DeleteConfiguredAudienceModelAssociation` operation.
+pub mod delete_configured_audience_model_association;
 
 /// Types for the `DeleteConfiguredTable` operation.
 pub mod delete_configured_table;
@@ -46,6 +55,9 @@ pub mod delete_member;
 /// Types for the `DeleteMembership` operation.
 pub mod delete_membership;
 
+/// Types for the `DeletePrivacyBudgetTemplate` operation.
+pub mod delete_privacy_budget_template;
+
 /// Types for the `GetAnalysisTemplate` operation.
 pub mod get_analysis_template;
 
@@ -54,6 +66,15 @@ pub mod get_collaboration;
 
 /// Types for the `GetCollaborationAnalysisTemplate` operation.
 pub mod get_collaboration_analysis_template;
+
+/// Types for the `GetCollaborationConfiguredAudienceModelAssociation` operation.
+pub mod get_collaboration_configured_audience_model_association;
+
+/// Types for the `GetCollaborationPrivacyBudgetTemplate` operation.
+pub mod get_collaboration_privacy_budget_template;
+
+/// Types for the `GetConfiguredAudienceModelAssociation` operation.
+pub mod get_configured_audience_model_association;
 
 /// Types for the `GetConfiguredTable` operation.
 pub mod get_configured_table;
@@ -66,6 +87,9 @@ pub mod get_configured_table_association;
 
 /// Types for the `GetMembership` operation.
 pub mod get_membership;
+
+/// Types for the `GetPrivacyBudgetTemplate` operation.
+pub mod get_privacy_budget_template;
 
 /// Types for the `GetProtectedQuery` operation.
 pub mod get_protected_query;
@@ -82,8 +106,20 @@ pub mod list_analysis_templates;
 /// Types for the `ListCollaborationAnalysisTemplates` operation.
 pub mod list_collaboration_analysis_templates;
 
+/// Types for the `ListCollaborationConfiguredAudienceModelAssociations` operation.
+pub mod list_collaboration_configured_audience_model_associations;
+
+/// Types for the `ListCollaborationPrivacyBudgetTemplates` operation.
+pub mod list_collaboration_privacy_budget_templates;
+
+/// Types for the `ListCollaborationPrivacyBudgets` operation.
+pub mod list_collaboration_privacy_budgets;
+
 /// Types for the `ListCollaborations` operation.
 pub mod list_collaborations;
+
+/// Types for the `ListConfiguredAudienceModelAssociations` operation.
+pub mod list_configured_audience_model_associations;
 
 /// Types for the `ListConfiguredTableAssociations` operation.
 pub mod list_configured_table_associations;
@@ -97,6 +133,12 @@ pub mod list_members;
 /// Types for the `ListMemberships` operation.
 pub mod list_memberships;
 
+/// Types for the `ListPrivacyBudgetTemplates` operation.
+pub mod list_privacy_budget_templates;
+
+/// Types for the `ListPrivacyBudgets` operation.
+pub mod list_privacy_budgets;
+
 /// Types for the `ListProtectedQueries` operation.
 pub mod list_protected_queries;
 
@@ -105,6 +147,9 @@ pub mod list_schemas;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PreviewPrivacyImpact` operation.
+pub mod preview_privacy_impact;
 
 /// Types for the `StartProtectedQuery` operation.
 pub mod start_protected_query;
@@ -121,6 +166,9 @@ pub mod update_analysis_template;
 /// Types for the `UpdateCollaboration` operation.
 pub mod update_collaboration;
 
+/// Types for the `UpdateConfiguredAudienceModelAssociation` operation.
+pub mod update_configured_audience_model_association;
+
 /// Types for the `UpdateConfiguredTable` operation.
 pub mod update_configured_table;
 
@@ -132,6 +180,9 @@ pub mod update_configured_table_association;
 
 /// Types for the `UpdateMembership` operation.
 pub mod update_membership;
+
+/// Types for the `UpdatePrivacyBudgetTemplate` operation.
+pub mod update_privacy_budget_template;
 
 /// Types for the `UpdateProtectedQuery` operation.
 pub mod update_protected_query;

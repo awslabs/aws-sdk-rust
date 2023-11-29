@@ -9,11 +9,14 @@ pub fn ser_resource_spec(
     if let Some(var_2) = &input.sage_maker_image_version_arn {
         object.key("SageMakerImageVersionArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.instance_type {
-        object.key("InstanceType").string(var_3.as_str());
+    if let Some(var_3) = &input.sage_maker_image_version_alias {
+        object.key("SageMakerImageVersionAlias").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.lifecycle_config_arn {
-        object.key("LifecycleConfigArn").string(var_4.as_str());
+    if let Some(var_4) = &input.instance_type {
+        object.key("InstanceType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.lifecycle_config_arn {
+        object.key("LifecycleConfigArn").string(var_5.as_str());
     }
     Ok(())
 }
@@ -42,6 +45,13 @@ where
                         }
                         "SageMakerImageVersionArn" => {
                             builder = builder.set_sage_maker_image_version_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SageMakerImageVersionAlias" => {
+                            builder = builder.set_sage_maker_image_version_alias(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

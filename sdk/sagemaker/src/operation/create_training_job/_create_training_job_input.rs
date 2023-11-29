@@ -64,6 +64,8 @@ pub struct CreateTrainingJobInput {
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
 }
 impl CreateTrainingJobInput {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
@@ -179,6 +181,10 @@ impl CreateTrainingJobInput {
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
+        self.infra_check_config.as_ref()
+    }
 }
 impl CreateTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
@@ -213,6 +219,7 @@ pub struct CreateTrainingJobInputBuilder {
     pub(crate) profiler_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
+    pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
 }
 impl CreateTrainingJobInputBuilder {
     /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
@@ -629,6 +636,20 @@ impl CreateTrainingJobInputBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         &self.retry_strategy
     }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
+        self.infra_check_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn set_infra_check_config(mut self, input: ::std::option::Option<crate::types::InfraCheckConfig>) -> Self {
+        self.infra_check_config = input;
+        self
+    }
+    /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
+    pub fn get_infra_check_config(&self) -> &::std::option::Option<crate::types::InfraCheckConfig> {
+        &self.infra_check_config
+    }
     /// Consumes the builder and constructs a [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn build(
         self,
@@ -656,6 +677,7 @@ impl CreateTrainingJobInputBuilder {
             profiler_rule_configurations: self.profiler_rule_configurations,
             environment: self.environment,
             retry_strategy: self.retry_strategy,
+            infra_check_config: self.infra_check_config,
         })
     }
 }

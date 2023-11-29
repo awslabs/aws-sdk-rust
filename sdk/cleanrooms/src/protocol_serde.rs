@@ -31,6 +31,8 @@ pub(crate) mod shape_create_analysis_template;
 
 pub(crate) mod shape_create_collaboration;
 
+pub(crate) mod shape_create_configured_audience_model_association;
+
 pub(crate) mod shape_create_configured_table;
 
 pub(crate) mod shape_create_configured_table_analysis_rule;
@@ -39,9 +41,13 @@ pub(crate) mod shape_create_configured_table_association;
 
 pub(crate) mod shape_create_membership;
 
+pub(crate) mod shape_create_privacy_budget_template;
+
 pub(crate) mod shape_delete_analysis_template;
 
 pub(crate) mod shape_delete_collaboration;
+
+pub(crate) mod shape_delete_configured_audience_model_association;
 
 pub(crate) mod shape_delete_configured_table;
 
@@ -53,11 +59,19 @@ pub(crate) mod shape_delete_member;
 
 pub(crate) mod shape_delete_membership;
 
+pub(crate) mod shape_delete_privacy_budget_template;
+
 pub(crate) mod shape_get_analysis_template;
 
 pub(crate) mod shape_get_collaboration;
 
 pub(crate) mod shape_get_collaboration_analysis_template;
+
+pub(crate) mod shape_get_collaboration_configured_audience_model_association;
+
+pub(crate) mod shape_get_collaboration_privacy_budget_template;
+
+pub(crate) mod shape_get_configured_audience_model_association;
 
 pub(crate) mod shape_get_configured_table;
 
@@ -66,6 +80,8 @@ pub(crate) mod shape_get_configured_table_analysis_rule;
 pub(crate) mod shape_get_configured_table_association;
 
 pub(crate) mod shape_get_membership;
+
+pub(crate) mod shape_get_privacy_budget_template;
 
 pub(crate) mod shape_get_protected_query;
 
@@ -77,7 +93,15 @@ pub(crate) mod shape_list_analysis_templates;
 
 pub(crate) mod shape_list_collaboration_analysis_templates;
 
+pub(crate) mod shape_list_collaboration_configured_audience_model_associations;
+
+pub(crate) mod shape_list_collaboration_privacy_budget_templates;
+
+pub(crate) mod shape_list_collaboration_privacy_budgets;
+
 pub(crate) mod shape_list_collaborations;
+
+pub(crate) mod shape_list_configured_audience_model_associations;
 
 pub(crate) mod shape_list_configured_table_associations;
 
@@ -87,11 +111,17 @@ pub(crate) mod shape_list_members;
 
 pub(crate) mod shape_list_memberships;
 
+pub(crate) mod shape_list_privacy_budget_templates;
+
+pub(crate) mod shape_list_privacy_budgets;
+
 pub(crate) mod shape_list_protected_queries;
 
 pub(crate) mod shape_list_schemas;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_preview_privacy_impact;
 
 pub(crate) mod shape_start_protected_query;
 
@@ -103,6 +133,8 @@ pub(crate) mod shape_update_analysis_template;
 
 pub(crate) mod shape_update_collaboration;
 
+pub(crate) mod shape_update_configured_audience_model_association;
+
 pub(crate) mod shape_update_configured_table;
 
 pub(crate) mod shape_update_configured_table_analysis_rule;
@@ -110,6 +142,8 @@ pub(crate) mod shape_update_configured_table_analysis_rule;
 pub(crate) mod shape_update_configured_table_association;
 
 pub(crate) mod shape_update_membership;
+
+pub(crate) mod shape_update_privacy_budget_template;
 
 pub(crate) mod shape_update_protected_query;
 
@@ -133,6 +167,8 @@ pub(crate) mod shape_create_analysis_template_input;
 
 pub(crate) mod shape_create_collaboration_input;
 
+pub(crate) mod shape_create_configured_audience_model_association_input;
+
 pub(crate) mod shape_create_configured_table_analysis_rule_input;
 
 pub(crate) mod shape_create_configured_table_association_input;
@@ -141,7 +177,11 @@ pub(crate) mod shape_create_configured_table_input;
 
 pub(crate) mod shape_create_membership_input;
 
+pub(crate) mod shape_create_privacy_budget_template_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_preview_privacy_impact_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -157,6 +197,8 @@ pub(crate) mod shape_update_analysis_template_input;
 
 pub(crate) mod shape_update_collaboration_input;
 
+pub(crate) mod shape_update_configured_audience_model_association_input;
+
 pub(crate) mod shape_update_configured_table_analysis_rule_input;
 
 pub(crate) mod shape_update_configured_table_association_input;
@@ -164,6 +206,8 @@ pub(crate) mod shape_update_configured_table_association_input;
 pub(crate) mod shape_update_configured_table_input;
 
 pub(crate) mod shape_update_membership_input;
+
+pub(crate) mod shape_update_privacy_budget_template_input;
 
 pub(crate) mod shape_update_protected_query_input;
 
@@ -191,7 +235,21 @@ pub(crate) mod shape_collaboration_analysis_template_list;
 
 pub(crate) mod shape_collaboration_analysis_template_summary_list;
 
+pub(crate) mod shape_collaboration_configured_audience_model_association;
+
+pub(crate) mod shape_collaboration_configured_audience_model_association_summary_list;
+
+pub(crate) mod shape_collaboration_privacy_budget_summary_list;
+
+pub(crate) mod shape_collaboration_privacy_budget_template;
+
+pub(crate) mod shape_collaboration_privacy_budget_template_summary_list;
+
 pub(crate) mod shape_collaboration_summary_list;
+
+pub(crate) mod shape_configured_audience_model_association;
+
+pub(crate) mod shape_configured_audience_model_association_summary_list;
 
 pub(crate) mod shape_configured_table;
 
@@ -220,6 +278,20 @@ pub(crate) mod shape_membership_protected_query_result_configuration;
 pub(crate) mod shape_membership_summary_list;
 
 pub(crate) mod shape_payment_configuration;
+
+pub(crate) mod shape_preview_privacy_impact_parameters_input;
+
+pub(crate) mod shape_privacy_budget_summary_list;
+
+pub(crate) mod shape_privacy_budget_template;
+
+pub(crate) mod shape_privacy_budget_template_parameters_input;
+
+pub(crate) mod shape_privacy_budget_template_summary_list;
+
+pub(crate) mod shape_privacy_budget_template_update_parameters;
+
+pub(crate) mod shape_privacy_impact;
 
 pub(crate) mod shape_protected_query;
 
@@ -259,9 +331,17 @@ pub(crate) mod shape_batch_get_schema_error;
 
 pub(crate) mod shape_collaboration_analysis_template_summary;
 
+pub(crate) mod shape_collaboration_configured_audience_model_association_summary;
+
+pub(crate) mod shape_collaboration_privacy_budget_summary;
+
+pub(crate) mod shape_collaboration_privacy_budget_template_summary;
+
 pub(crate) mod shape_collaboration_summary;
 
 pub(crate) mod shape_column_list;
+
+pub(crate) mod shape_configured_audience_model_association_summary;
 
 pub(crate) mod shape_configured_table_analysis_rule_policy_v1;
 
@@ -270,6 +350,16 @@ pub(crate) mod shape_configured_table_analysis_rule_type_list;
 pub(crate) mod shape_configured_table_association_summary;
 
 pub(crate) mod shape_configured_table_summary;
+
+pub(crate) mod shape_differential_privacy_parameters;
+
+pub(crate) mod shape_differential_privacy_preview_parameters_input;
+
+pub(crate) mod shape_differential_privacy_privacy_impact;
+
+pub(crate) mod shape_differential_privacy_template_parameters_input;
+
+pub(crate) mod shape_differential_privacy_template_update_parameters;
 
 pub(crate) mod shape_glue_table_reference;
 
@@ -282,6 +372,12 @@ pub(crate) mod shape_membership_protected_query_output_configuration;
 pub(crate) mod shape_membership_query_compute_payment_config;
 
 pub(crate) mod shape_membership_summary;
+
+pub(crate) mod shape_privacy_budget_summary;
+
+pub(crate) mod shape_privacy_budget_template_parameters_output;
+
+pub(crate) mod shape_privacy_budget_template_summary;
 
 pub(crate) mod shape_protected_query_error;
 
@@ -309,7 +405,15 @@ pub(crate) mod shape_analysis_rule_policy_v1;
 
 pub(crate) mod shape_column;
 
+pub(crate) mod shape_differential_privacy_preview_aggregation_list;
+
+pub(crate) mod shape_differential_privacy_sensitivity_parameters_list;
+
+pub(crate) mod shape_differential_privacy_template_parameters_output;
+
 pub(crate) mod shape_parameter_map;
+
+pub(crate) mod shape_privacy_budget;
 
 pub(crate) mod shape_protected_query_output;
 
@@ -320,6 +424,14 @@ pub(crate) mod shape_query_tables;
 pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
+
+pub(crate) mod shape_differential_privacy_configuration;
+
+pub(crate) mod shape_differential_privacy_preview_aggregation;
+
+pub(crate) mod shape_differential_privacy_privacy_budget;
+
+pub(crate) mod shape_differential_privacy_sensitivity_parameters;
 
 pub(crate) mod shape_protected_query_member_output_list;
 
@@ -335,10 +447,18 @@ pub(crate) mod shape_allowed_analysis_provider_list;
 
 pub(crate) mod shape_analysis_rule_column_list;
 
+pub(crate) mod shape_differential_privacy_column;
+
+pub(crate) mod shape_differential_privacy_privacy_budget_aggregation_list;
+
 pub(crate) mod shape_join_operators_list;
 
 pub(crate) mod shape_protected_query_single_member_output;
 
 pub(crate) mod shape_scalar_functions_list;
+
+pub(crate) mod shape_differential_privacy_column_list;
+
+pub(crate) mod shape_differential_privacy_privacy_budget_aggregation;
 
 pub(crate) mod shape_analysis_rule_column_name_list;

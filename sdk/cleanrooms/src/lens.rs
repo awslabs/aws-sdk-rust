@@ -19,8 +19,48 @@ pub(crate) fn reflens_list_collaboration_analysis_templates_output_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_collaboration_configured_audience_model_associations_output_output_next_token(
+    input: &crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_privacy_budget_templates_output_output_next_token(
+    input: &crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_collaboration_privacy_budgets_output_output_next_token(
+    input: &crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_collaborations_output_output_next_token(
     input: &crate::operation::list_collaborations::ListCollaborationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_configured_audience_model_associations_output_output_next_token(
+    input: &crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -69,6 +109,26 @@ pub(crate) fn reflens_list_memberships_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_privacy_budget_templates_output_output_next_token(
+    input: &crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_privacy_budgets_output_output_next_token(
+    input: &crate::operation::list_privacy_budgets::ListPrivacyBudgetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_protected_queries_output_output_next_token(
     input: &crate::operation::list_protected_queries::ListProtectedQueriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,10 +163,38 @@ pub(crate) fn lens_list_collaboration_analysis_templates_output_output_collabora
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_collaboration_configured_audience_model_associations_output_output_collaboration_configured_audience_model_association_summaries(
+    input: crate::operation::list_collaboration_configured_audience_model_associations::ListCollaborationConfiguredAudienceModelAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationConfiguredAudienceModelAssociationSummary>> {
+    let input = input.collaboration_configured_audience_model_association_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_privacy_budget_templates_output_output_collaboration_privacy_budget_template_summaries(
+    input: crate::operation::list_collaboration_privacy_budget_templates::ListCollaborationPrivacyBudgetTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetTemplateSummary>> {
+    let input = input.collaboration_privacy_budget_template_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_collaboration_privacy_budgets_output_output_collaboration_privacy_budget_summaries(
+    input: crate::operation::list_collaboration_privacy_budgets::ListCollaborationPrivacyBudgetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationPrivacyBudgetSummary>> {
+    let input = input.collaboration_privacy_budget_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_collaborations_output_output_collaboration_list(
     input: crate::operation::list_collaborations::ListCollaborationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CollaborationSummary>> {
     let input = input.collaboration_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_configured_audience_model_associations_output_output_configured_audience_model_association_summaries(
+    input: crate::operation::list_configured_audience_model_associations::ListConfiguredAudienceModelAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredAudienceModelAssociationSummary>> {
+    let input = input.configured_audience_model_association_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -135,6 +223,20 @@ pub(crate) fn lens_list_memberships_output_output_membership_summaries(
     input: crate::operation::list_memberships::ListMembershipsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
     let input = input.membership_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_privacy_budget_templates_output_output_privacy_budget_template_summaries(
+    input: crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetTemplateSummary>> {
+    let input = input.privacy_budget_template_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_privacy_budgets_output_output_privacy_budget_summaries(
+    input: crate::operation::list_privacy_budgets::ListPrivacyBudgetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PrivacyBudgetSummary>> {
+    let input = input.privacy_budget_summaries;
     ::std::option::Option::Some(input)
 }
 

@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptInboundConnection` operation.
 pub mod accept_inbound_connection;
 
+/// Types for the `AddDataSource` operation.
+pub mod add_data_source;
+
 /// Types for the `AddTags` operation.
 pub mod add_tags;
 
@@ -27,6 +30,9 @@ pub mod create_package;
 
 /// Types for the `CreateVpcEndpoint` operation.
 pub mod create_vpc_endpoint;
+
+/// Types for the `DeleteDataSource` operation.
+pub mod delete_data_source;
 
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
@@ -94,6 +100,9 @@ pub mod dissociate_package;
 /// Types for the `GetCompatibleVersions` operation.
 pub mod get_compatible_versions;
 
+/// Types for the `GetDataSource` operation.
+pub mod get_data_source;
+
 /// Types for the `GetDomainMaintenanceStatus` operation.
 pub mod get_domain_maintenance_status;
 
@@ -105,6 +114,9 @@ pub mod get_upgrade_history;
 
 /// Types for the `GetUpgradeStatus` operation.
 pub mod get_upgrade_status;
+
+/// Types for the `ListDataSources` operation.
+pub mod list_data_sources;
 
 /// Types for the `ListDomainMaintenances` operation.
 pub mod list_domain_maintenances;
@@ -156,6 +168,9 @@ pub mod start_domain_maintenance;
 
 /// Types for the `StartServiceSoftwareUpdate` operation.
 pub mod start_service_software_update;
+
+/// Types for the `UpdateDataSource` operation.
+pub mod update_data_source;
 
 /// Types for the `UpdateDomainConfig` operation.
 pub mod update_domain_config;

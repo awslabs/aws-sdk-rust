@@ -60,6 +60,21 @@ pub fn ser_production_variant(
     if let Some(var_14) = &input.enable_ssm_access {
         object.key("EnableSSMAccess").boolean(*var_14);
     }
+    if let Some(var_15) = &input.managed_instance_scaling {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("ManagedInstanceScaling").start_object();
+        crate::protocol_serde::shape_production_variant_managed_instance_scaling::ser_production_variant_managed_instance_scaling(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.routing_config {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("RoutingConfig").start_object();
+        crate::protocol_serde::shape_production_variant_routing_config::ser_production_variant_routing_config(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -151,6 +166,16 @@ where
                         }
                         "EnableSSMAccess" => {
                             builder = builder.set_enable_ssm_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "ManagedInstanceScaling" => {
+                            builder = builder.set_managed_instance_scaling(
+                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling::de_production_variant_managed_instance_scaling(tokens)?
+                                );
+                        }
+                        "RoutingConfig" => {
+                            builder = builder.set_routing_config(
+                                crate::protocol_serde::shape_production_variant_routing_config::de_production_variant_routing_config(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

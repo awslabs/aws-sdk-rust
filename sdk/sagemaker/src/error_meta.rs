@@ -310,6 +310,29 @@ impl From<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2Error> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cluster::CreateClusterError> for Error {
+    fn from(err: crate::operation::create_cluster::CreateClusterError) -> Self {
+        match err {
+            crate::operation::create_cluster::CreateClusterError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_cluster::CreateClusterError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_repository::CreateCodeRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -781,6 +804,33 @@ impl From<crate::operation::create_image_version::CreateImageVersionError> for E
             crate::operation::create_image_version::CreateImageVersionError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::create_image_version::CreateImageVersionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::create_image_version::CreateImageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_component::CreateInferenceComponentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_component::CreateInferenceComponentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_inference_component::CreateInferenceComponentError> for Error {
+    fn from(err: crate::operation::create_inference_component::CreateInferenceComponentError) -> Self {
+        match err {
+            crate::operation::create_inference_component::CreateInferenceComponentError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_inference_component::CreateInferenceComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1678,6 +1728,29 @@ impl From<crate::operation::delete_association::DeleteAssociationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
+    fn from(err: crate::operation::delete_cluster::DeleteClusterError) -> Self {
+        match err {
+            crate::operation::delete_cluster::DeleteClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_cluster::DeleteClusterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_code_repository::DeleteCodeRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2071,6 +2144,30 @@ impl From<crate::operation::delete_image_version::DeleteImageVersionError> for E
             crate::operation::delete_image_version::DeleteImageVersionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::delete_image_version::DeleteImageVersionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_image_version::DeleteImageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_component::DeleteInferenceComponentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_component::DeleteInferenceComponentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_inference_component::DeleteInferenceComponentError> for Error {
+    fn from(err: crate::operation::delete_inference_component::DeleteInferenceComponentError) -> Self {
+        match err {
+            crate::operation::delete_inference_component::DeleteInferenceComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2817,6 +2914,50 @@ impl From<crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster::DescribeClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster::DescribeClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster::DescribeClusterError> for Error {
+    fn from(err: crate::operation::describe_cluster::DescribeClusterError) -> Self {
+        match err {
+            crate::operation::describe_cluster::DescribeClusterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_cluster::DescribeClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_node::DescribeClusterNodeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cluster_node::DescribeClusterNodeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cluster_node::DescribeClusterNodeError> for Error {
+    fn from(err: crate::operation::describe_cluster_node::DescribeClusterNodeError) -> Self {
+        match err {
+            crate::operation::describe_cluster_node::DescribeClusterNodeError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_cluster_node::DescribeClusterNodeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_code_repository::DescribeCodeRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3320,6 +3461,30 @@ impl From<crate::operation::describe_image_version::DescribeImageVersionError> f
         match err {
             crate::operation::describe_image_version::DescribeImageVersionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_image_version::DescribeImageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inference_component::DescribeInferenceComponentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inference_component::DescribeInferenceComponentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_inference_component::DescribeInferenceComponentError> for Error {
+    fn from(err: crate::operation::describe_inference_component::DescribeInferenceComponentError) -> Self {
+        match err {
+            crate::operation::describe_inference_component::DescribeInferenceComponentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4586,6 +4751,49 @@ impl From<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAu
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_nodes::ListClusterNodesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cluster_nodes::ListClusterNodesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cluster_nodes::ListClusterNodesError> for Error {
+    fn from(err: crate::operation::list_cluster_nodes::ListClusterNodesError) -> Self {
+        match err {
+            crate::operation::list_cluster_nodes::ListClusterNodesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_cluster_nodes::ListClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_clusters::ListClustersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_clusters::ListClustersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_clusters::ListClustersError> for Error {
+    fn from(err: crate::operation::list_clusters::ListClustersError) -> Self {
+        match err {
+            crate::operation::list_clusters::ListClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_code_repositories::ListCodeRepositoriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5054,6 +5262,30 @@ impl From<crate::operation::list_image_versions::ListImageVersionsError> for Err
         match err {
             crate::operation::list_image_versions::ListImageVersionsError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::list_image_versions::ListImageVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_components::ListInferenceComponentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_components::ListInferenceComponentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_inference_components::ListInferenceComponentsError> for Error {
+    fn from(err: crate::operation::list_inference_components::ListInferenceComponentsError) -> Self {
+        match err {
+            crate::operation::list_inference_components::ListInferenceComponentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6850,6 +7082,30 @@ impl From<crate::operation::update_artifact::UpdateArtifactError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster::UpdateClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
+    fn from(err: crate::operation::update_cluster::UpdateClusterError) -> Self {
+        match err {
+            crate::operation::update_cluster::UpdateClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cluster::UpdateClusterError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::update_cluster::UpdateClusterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_cluster::UpdateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7154,6 +7410,70 @@ impl From<crate::operation::update_image_version::UpdateImageVersionError> for E
             crate::operation::update_image_version::UpdateImageVersionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::update_image_version::UpdateImageVersionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_image_version::UpdateImageVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_inference_component::UpdateInferenceComponentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_inference_component::UpdateInferenceComponentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_inference_component::UpdateInferenceComponentError> for Error {
+    fn from(err: crate::operation::update_inference_component::UpdateInferenceComponentError) -> Self {
+        match err {
+            crate::operation::update_inference_component::UpdateInferenceComponentError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::update_inference_component::UpdateInferenceComponentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError> for Error {
+    fn from(err: crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError) -> Self {
+        match err {
+            crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

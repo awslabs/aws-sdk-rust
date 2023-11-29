@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStudioLifecycleConfigInput {
-    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStudioLifecycleConfigInput {
-    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub fn studio_lifecycle_config_name(&self) -> ::std::option::Option<&str> {
         self.studio_lifecycle_config_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeStudioLifecycleConfigInputBuilder {
     pub(crate) studio_lifecycle_config_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStudioLifecycleConfigInputBuilder {
-    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     /// This field is required.
     pub fn studio_lifecycle_config_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub fn set_studio_lifecycle_config_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_lifecycle_config_name = input;
         self
     }
-    /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
+    /// <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.</p>
     pub fn get_studio_lifecycle_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.studio_lifecycle_config_name
     }

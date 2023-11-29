@@ -77,6 +77,20 @@ pub(crate) fn create_collaboration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_configured_audience_model_association_output_output_correct_errors(
+    mut builder: crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationOutputBuilder,
+) -> crate::operation::create_configured_audience_model_association::builders::CreateConfiguredAudienceModelAssociationOutputBuilder {
+    if builder.configured_audience_model_association.is_none() {
+        builder.configured_audience_model_association = {
+            let builder = crate::types::builders::ConfiguredAudienceModelAssociationBuilder::default();
+            crate::serde_util::configured_audience_model_association_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_configured_table_output_output_correct_errors(
     mut builder: crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder,
 ) -> crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder {
@@ -125,6 +139,18 @@ pub(crate) fn create_membership_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_privacy_budget_template_output_output_correct_errors(
+    mut builder: crate::operation::create_privacy_budget_template::builders::CreatePrivacyBudgetTemplateOutputBuilder,
+) -> crate::operation::create_privacy_budget_template::builders::CreatePrivacyBudgetTemplateOutputBuilder {
+    if builder.privacy_budget_template.is_none() {
+        builder.privacy_budget_template = {
+            let builder = crate::types::builders::PrivacyBudgetTemplateBuilder::default();
+            crate::serde_util::privacy_budget_template_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_analysis_template_output_output_correct_errors(
     mut builder: crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder,
 ) -> crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder {
@@ -156,6 +182,46 @@ pub(crate) fn get_collaboration_analysis_template_output_output_correct_errors(
         builder.collaboration_analysis_template = {
             let builder = crate::types::builders::CollaborationAnalysisTemplateBuilder::default();
             crate::serde_util::collaboration_analysis_template_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_collaboration_configured_audience_model_association_output_output_correct_errors(mut builder: crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationOutputBuilder) -> crate::operation::get_collaboration_configured_audience_model_association::builders::GetCollaborationConfiguredAudienceModelAssociationOutputBuilder{
+    if builder.collaboration_configured_audience_model_association.is_none() {
+        builder.collaboration_configured_audience_model_association = {
+            let builder = crate::types::builders::CollaborationConfiguredAudienceModelAssociationBuilder::default();
+            crate::serde_util::collaboration_configured_audience_model_association_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_collaboration_privacy_budget_template_output_output_correct_errors(
+    mut builder: crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder,
+) -> crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder {
+    if builder.collaboration_privacy_budget_template.is_none() {
+        builder.collaboration_privacy_budget_template = {
+            let builder = crate::types::builders::CollaborationPrivacyBudgetTemplateBuilder::default();
+            crate::serde_util::collaboration_privacy_budget_template_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_configured_audience_model_association_output_output_correct_errors(
+    mut builder: crate::operation::get_configured_audience_model_association::builders::GetConfiguredAudienceModelAssociationOutputBuilder,
+) -> crate::operation::get_configured_audience_model_association::builders::GetConfiguredAudienceModelAssociationOutputBuilder {
+    if builder.configured_audience_model_association.is_none() {
+        builder.configured_audience_model_association = {
+            let builder = crate::types::builders::ConfiguredAudienceModelAssociationBuilder::default();
+            crate::serde_util::configured_audience_model_association_correct_errors(builder)
+                .build()
+                .ok()
         }
     }
     builder
@@ -204,6 +270,18 @@ pub(crate) fn get_membership_output_output_correct_errors(
         builder.membership = {
             let builder = crate::types::builders::MembershipBuilder::default();
             crate::serde_util::membership_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_privacy_budget_template_output_output_correct_errors(
+    mut builder: crate::operation::get_privacy_budget_template::builders::GetPrivacyBudgetTemplateOutputBuilder,
+) -> crate::operation::get_privacy_budget_template::builders::GetPrivacyBudgetTemplateOutputBuilder {
+    if builder.privacy_budget_template.is_none() {
+        builder.privacy_budget_template = {
+            let builder = crate::types::builders::PrivacyBudgetTemplateBuilder::default();
+            crate::serde_util::privacy_budget_template_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -263,11 +341,45 @@ pub(crate) fn list_collaboration_analysis_templates_output_output_correct_errors
     builder
 }
 
+pub(crate) fn list_collaboration_configured_audience_model_associations_output_output_correct_errors(mut builder: crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder) -> crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder{
+    if builder.collaboration_configured_audience_model_association_summaries.is_none() {
+        builder.collaboration_configured_audience_model_association_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_privacy_budget_templates_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_privacy_budget_templates::builders::ListCollaborationPrivacyBudgetTemplatesOutputBuilder,
+) -> crate::operation::list_collaboration_privacy_budget_templates::builders::ListCollaborationPrivacyBudgetTemplatesOutputBuilder {
+    if builder.collaboration_privacy_budget_template_summaries.is_none() {
+        builder.collaboration_privacy_budget_template_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_collaboration_privacy_budgets_output_output_correct_errors(
+    mut builder: crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder,
+) -> crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder {
+    if builder.collaboration_privacy_budget_summaries.is_none() {
+        builder.collaboration_privacy_budget_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_collaborations_output_output_correct_errors(
     mut builder: crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder,
 ) -> crate::operation::list_collaborations::builders::ListCollaborationsOutputBuilder {
     if builder.collaboration_list.is_none() {
         builder.collaboration_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_configured_audience_model_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder,
+) -> crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder {
+    if builder.configured_audience_model_association_summaries.is_none() {
+        builder.configured_audience_model_association_summaries = Some(Default::default())
     }
     builder
 }
@@ -308,6 +420,24 @@ pub(crate) fn list_memberships_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_privacy_budget_templates_output_output_correct_errors(
+    mut builder: crate::operation::list_privacy_budget_templates::builders::ListPrivacyBudgetTemplatesOutputBuilder,
+) -> crate::operation::list_privacy_budget_templates::builders::ListPrivacyBudgetTemplatesOutputBuilder {
+    if builder.privacy_budget_template_summaries.is_none() {
+        builder.privacy_budget_template_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_privacy_budgets_output_output_correct_errors(
+    mut builder: crate::operation::list_privacy_budgets::builders::ListPrivacyBudgetsOutputBuilder,
+) -> crate::operation::list_privacy_budgets::builders::ListPrivacyBudgetsOutputBuilder {
+    if builder.privacy_budget_summaries.is_none() {
+        builder.privacy_budget_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_protected_queries_output_output_correct_errors(
     mut builder: crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder,
 ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
@@ -331,6 +461,15 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn preview_privacy_impact_output_output_correct_errors(
+    mut builder: crate::operation::preview_privacy_impact::builders::PreviewPrivacyImpactOutputBuilder,
+) -> crate::operation::preview_privacy_impact::builders::PreviewPrivacyImpactOutputBuilder {
+    if builder.privacy_impact.is_none() {
+        builder.privacy_impact = Some(crate::types::PrivacyImpact::Unknown)
     }
     builder
 }
@@ -366,6 +505,20 @@ pub(crate) fn update_collaboration_output_output_correct_errors(
         builder.collaboration = {
             let builder = crate::types::builders::CollaborationBuilder::default();
             crate::serde_util::collaboration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_configured_audience_model_association_output_output_correct_errors(
+    mut builder: crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationOutputBuilder,
+) -> crate::operation::update_configured_audience_model_association::builders::UpdateConfiguredAudienceModelAssociationOutputBuilder {
+    if builder.configured_audience_model_association.is_none() {
+        builder.configured_audience_model_association = {
+            let builder = crate::types::builders::ConfiguredAudienceModelAssociationBuilder::default();
+            crate::serde_util::configured_audience_model_association_correct_errors(builder)
+                .build()
+                .ok()
         }
     }
     builder
@@ -414,6 +567,18 @@ pub(crate) fn update_membership_output_output_correct_errors(
         builder.membership = {
             let builder = crate::types::builders::MembershipBuilder::default();
             crate::serde_util::membership_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_privacy_budget_template_output_output_correct_errors(
+    mut builder: crate::operation::update_privacy_budget_template::builders::UpdatePrivacyBudgetTemplateOutputBuilder,
+) -> crate::operation::update_privacy_budget_template::builders::UpdatePrivacyBudgetTemplateOutputBuilder {
+    if builder.privacy_budget_template.is_none() {
+        builder.privacy_budget_template = {
+            let builder = crate::types::builders::PrivacyBudgetTemplateBuilder::default();
+            crate::serde_util::privacy_budget_template_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -505,6 +670,45 @@ pub(crate) fn collaboration_correct_errors(
     }
     if builder.query_log_status.is_none() {
         builder.query_log_status = "no value was set".parse::<crate::types::CollaborationQueryLogStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn configured_audience_model_association_correct_errors(
+    mut builder: crate::types::builders::ConfiguredAudienceModelAssociationBuilder,
+) -> crate::types::builders::ConfiguredAudienceModelAssociationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.configured_audience_model_arn.is_none() {
+        builder.configured_audience_model_arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.manage_resource_policies.is_none() {
+        builder.manage_resource_policies = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -648,6 +852,45 @@ pub(crate) fn membership_correct_errors(mut builder: crate::types::builders::Mem
     builder
 }
 
+pub(crate) fn privacy_budget_template_correct_errors(
+    mut builder: crate::types::builders::PrivacyBudgetTemplateBuilder,
+) -> crate::types::builders::PrivacyBudgetTemplateBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.privacy_budget_type.is_none() {
+        builder.privacy_budget_type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.auto_refresh.is_none() {
+        builder.auto_refresh = "no value was set".parse::<crate::types::PrivacyBudgetTemplateAutoRefresh>().ok()
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::PrivacyBudgetTemplateParametersOutput::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn collaboration_analysis_template_correct_errors(
     mut builder: crate::types::builders::CollaborationAnalysisTemplateBuilder,
 ) -> crate::types::builders::CollaborationAnalysisTemplateBuilder {
@@ -686,6 +929,75 @@ pub(crate) fn collaboration_analysis_template_correct_errors(
     }
     if builder.source.is_none() {
         builder.source = Some(crate::types::AnalysisSource::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn collaboration_configured_audience_model_association_correct_errors(
+    mut builder: crate::types::builders::CollaborationConfiguredAudienceModelAssociationBuilder,
+) -> crate::types::builders::CollaborationConfiguredAudienceModelAssociationBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.configured_audience_model_arn.is_none() {
+        builder.configured_audience_model_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn collaboration_privacy_budget_template_correct_errors(
+    mut builder: crate::types::builders::CollaborationPrivacyBudgetTemplateBuilder,
+) -> crate::types::builders::CollaborationPrivacyBudgetTemplateBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.privacy_budget_type.is_none() {
+        builder.privacy_budget_type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.auto_refresh.is_none() {
+        builder.auto_refresh = "no value was set".parse::<crate::types::PrivacyBudgetTemplateAutoRefresh>().ok()
+    }
+    if builder.parameters.is_none() {
+        builder.parameters = Some(crate::types::PrivacyBudgetTemplateParametersOutput::Unknown)
     }
     builder
 }
@@ -877,6 +1189,102 @@ pub(crate) fn collaboration_analysis_template_summary_correct_errors(
     builder
 }
 
+pub(crate) fn collaboration_configured_audience_model_association_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationConfiguredAudienceModelAssociationSummaryBuilder,
+) -> crate::types::builders::CollaborationConfiguredAudienceModelAssociationSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn collaboration_privacy_budget_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder,
+) -> crate::types::builders::CollaborationPrivacyBudgetSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.privacy_budget_template_id.is_none() {
+        builder.privacy_budget_template_id = Some(Default::default())
+    }
+    if builder.privacy_budget_template_arn.is_none() {
+        builder.privacy_budget_template_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.budget.is_none() {
+        builder.budget = Some(crate::types::PrivacyBudget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn collaboration_privacy_budget_template_summary_correct_errors(
+    mut builder: crate::types::builders::CollaborationPrivacyBudgetTemplateSummaryBuilder,
+) -> crate::types::builders::CollaborationPrivacyBudgetTemplateSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.creator_account_id.is_none() {
+        builder.creator_account_id = Some(Default::default())
+    }
+    if builder.privacy_budget_type.is_none() {
+        builder.privacy_budget_type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn collaboration_summary_correct_errors(
     mut builder: crate::types::builders::CollaborationSummaryBuilder,
 ) -> crate::types::builders::CollaborationSummaryBuilder {
@@ -903,6 +1311,42 @@ pub(crate) fn collaboration_summary_correct_errors(
     }
     if builder.member_status.is_none() {
         builder.member_status = "no value was set".parse::<crate::types::MemberStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn configured_audience_model_association_summary_correct_errors(
+    mut builder: crate::types::builders::ConfiguredAudienceModelAssociationSummaryBuilder,
+) -> crate::types::builders::ConfiguredAudienceModelAssociationSummaryBuilder {
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.configured_audience_model_arn.is_none() {
+        builder.configured_audience_model_arn = Some(Default::default())
     }
     builder
 }
@@ -978,6 +1422,24 @@ pub(crate) fn data_encryption_metadata_correct_errors(
     }
     if builder.preserve_nulls.is_none() {
         builder.preserve_nulls = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_parameters_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyParametersBuilder,
+) -> crate::types::builders::DifferentialPrivacyParametersBuilder {
+    if builder.sensitivity_parameters.is_none() {
+        builder.sensitivity_parameters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_privacy_impact_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyPrivacyImpactBuilder,
+) -> crate::types::builders::DifferentialPrivacyPrivacyImpactBuilder {
+    if builder.aggregations.is_none() {
+        builder.aggregations = Some(Default::default())
     }
     builder
 }
@@ -1062,6 +1524,78 @@ pub(crate) fn membership_summary_correct_errors(
             let builder = crate::types::builders::MembershipPaymentConfigurationBuilder::default();
             Some(crate::serde_util::membership_payment_configuration_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn privacy_budget_summary_correct_errors(
+    mut builder: crate::types::builders::PrivacyBudgetSummaryBuilder,
+) -> crate::types::builders::PrivacyBudgetSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.privacy_budget_template_id.is_none() {
+        builder.privacy_budget_template_id = Some(Default::default())
+    }
+    if builder.privacy_budget_template_arn.is_none() {
+        builder.privacy_budget_template_arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.budget.is_none() {
+        builder.budget = Some(crate::types::PrivacyBudget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn privacy_budget_template_summary_correct_errors(
+    mut builder: crate::types::builders::PrivacyBudgetTemplateSummaryBuilder,
+) -> crate::types::builders::PrivacyBudgetTemplateSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.collaboration_id.is_none() {
+        builder.collaboration_id = Some(Default::default())
+    }
+    if builder.collaboration_arn.is_none() {
+        builder.collaboration_arn = Some(Default::default())
+    }
+    if builder.privacy_budget_type.is_none() {
+        builder.privacy_budget_type = "no value was set".parse::<crate::types::PrivacyBudgetType>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1190,6 +1724,18 @@ pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnB
     builder
 }
 
+pub(crate) fn differential_privacy_template_parameters_output_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyTemplateParametersOutputBuilder,
+) -> crate::types::builders::DifferentialPrivacyTemplateParametersOutputBuilder {
+    if builder.epsilon.is_none() {
+        builder.epsilon = Some(Default::default())
+    }
+    if builder.users_noise_per_query.is_none() {
+        builder.users_noise_per_query = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn glue_table_reference_correct_errors(
     mut builder: crate::types::builders::GlueTableReferenceBuilder,
 ) -> crate::types::builders::GlueTableReferenceBuilder {
@@ -1256,6 +1802,45 @@ pub(crate) fn analysis_rule_list_correct_errors(
     builder
 }
 
+pub(crate) fn differential_privacy_preview_aggregation_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder,
+) -> crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DifferentialPrivacyAggregationType>().ok()
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_privacy_budget_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyPrivacyBudgetBuilder,
+) -> crate::types::builders::DifferentialPrivacyPrivacyBudgetBuilder {
+    if builder.aggregations.is_none() {
+        builder.aggregations = Some(Default::default())
+    }
+    if builder.epsilon.is_none() {
+        builder.epsilon = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_sensitivity_parameters_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacySensitivityParametersBuilder,
+) -> crate::types::builders::DifferentialPrivacySensitivityParametersBuilder {
+    if builder.aggregation_type.is_none() {
+        builder.aggregation_type = "no value was set".parse::<crate::types::DifferentialPrivacyAggregationType>().ok()
+    }
+    if builder.aggregation_expression.is_none() {
+        builder.aggregation_expression = Some(Default::default())
+    }
+    if builder.user_contribution_limit.is_none() {
+        builder.user_contribution_limit = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_s3_output_correct_errors(
     mut builder: crate::types::builders::ProtectedQueryS3OutputBuilder,
 ) -> crate::types::builders::ProtectedQueryS3OutputBuilder {
@@ -1282,6 +1867,15 @@ pub(crate) fn query_compute_payment_config_correct_errors(
 ) -> crate::types::builders::QueryComputePaymentConfigBuilder {
     if builder.is_responsible.is_none() {
         builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_configuration_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyConfigurationBuilder,
+) -> crate::types::builders::DifferentialPrivacyConfigurationBuilder {
+    if builder.columns.is_none() {
+        builder.columns = Some(Default::default())
     }
     builder
 }
@@ -1318,6 +1912,30 @@ pub(crate) fn aggregation_constraint_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::AggregationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_privacy_budget_aggregation_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder,
+) -> crate::types::builders::DifferentialPrivacyPrivacyBudgetAggregationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DifferentialPrivacyAggregationType>().ok()
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
+    }
+    if builder.remaining_count.is_none() {
+        builder.remaining_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn differential_privacy_column_correct_errors(
+    mut builder: crate::types::builders::DifferentialPrivacyColumnBuilder,
+) -> crate::types::builders::DifferentialPrivacyColumnBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

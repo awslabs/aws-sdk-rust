@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_space::DescribeSpaceOutput::creation_time): <p>The creation time.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::failure_reason): <p>The failure reason.</p>
     ///   - [`space_settings(Option<SpaceSettings>)`](crate::operation::describe_space::DescribeSpaceOutput::space_settings): <p>A collection of space settings.</p>
+    ///   - [`url(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::url): <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>  <p>The following application types are supported:</p>  <ul>   <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>   <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>  </ul>
     /// - On failure, responds with [`SdkError<DescribeSpaceError>`](crate::operation::describe_space::DescribeSpaceError)
     pub fn describe_space(&self) -> crate::operation::describe_space::builders::DescribeSpaceFluentBuilder {
         crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::new(self.handle.clone())

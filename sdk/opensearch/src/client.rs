@@ -138,6 +138,8 @@ impl Client {
 
 mod accept_inbound_connection;
 
+mod add_data_source;
+
 mod add_tags;
 
 mod associate_package;
@@ -180,6 +182,8 @@ mod create_vpc_endpoint;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_data_source;
 
 mod delete_domain;
 
@@ -225,6 +229,8 @@ mod dissociate_package;
 
 mod get_compatible_versions;
 
+mod get_data_source;
+
 mod get_domain_maintenance_status;
 
 mod get_package_version_history;
@@ -232,6 +238,8 @@ mod get_package_version_history;
 mod get_upgrade_history;
 
 mod get_upgrade_status;
+
+mod list_data_sources;
 
 mod list_domain_maintenances;
 
@@ -266,6 +274,8 @@ mod revoke_vpc_endpoint_access;
 mod start_domain_maintenance;
 
 mod start_service_software_update;
+
+mod update_data_source;
 
 mod update_domain_config;
 

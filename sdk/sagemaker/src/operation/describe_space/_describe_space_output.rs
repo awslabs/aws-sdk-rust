@@ -21,6 +21,13 @@ pub struct DescribeSpaceOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A collection of space settings.</p>
     pub space_settings: ::std::option::Option<crate::types::SpaceSettings>,
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
+    /// </ul>
+    pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutput {
@@ -60,6 +67,15 @@ impl DescribeSpaceOutput {
     pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
         self.space_settings.as_ref()
     }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
+    /// </ul>
+    pub fn url(&self) -> ::std::option::Option<&str> {
+        self.url.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeSpaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +102,7 @@ pub struct DescribeSpaceOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) space_settings: ::std::option::Option<crate::types::SpaceSettings>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutputBuilder {
@@ -215,6 +232,35 @@ impl DescribeSpaceOutputBuilder {
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
         &self.space_settings
     }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
+    /// </ul>
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
+    /// </ul>
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.url = input;
+        self
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>
+    /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
+    /// </ul>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -236,6 +282,7 @@ impl DescribeSpaceOutputBuilder {
             creation_time: self.creation_time,
             failure_reason: self.failure_reason,
             space_settings: self.space_settings,
+            url: self.url,
             _request_id: self._request_id,
         }
     }

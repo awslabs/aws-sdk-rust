@@ -27,6 +27,8 @@ pub struct InvokeEndpointInput {
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a> section in the developer guide for more information. </p>
     pub enable_explanations: ::std::option::Option<::std::string::String>,
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -73,6 +75,10 @@ impl InvokeEndpointInput {
     pub fn enable_explanations(&self) -> ::std::option::Option<&str> {
         self.enable_explanations.as_deref()
     }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn inference_component_name(&self) -> ::std::option::Option<&str> {
+        self.inference_component_name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -87,6 +93,7 @@ impl ::std::fmt::Debug for InvokeEndpointInput {
         formatter.field("target_container_hostname", &self.target_container_hostname);
         formatter.field("inference_id", &self.inference_id);
         formatter.field("enable_explanations", &self.enable_explanations);
+        formatter.field("inference_component_name", &self.inference_component_name);
         formatter.finish()
     }
 }
@@ -111,6 +118,7 @@ pub struct InvokeEndpointInputBuilder {
     pub(crate) target_container_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_explanations: ::std::option::Option<::std::string::String>,
+    pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -267,6 +275,20 @@ impl InvokeEndpointInputBuilder {
     pub fn get_enable_explanations(&self) -> &::std::option::Option<::std::string::String> {
         &self.enable_explanations
     }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn inference_component_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inference_component_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn set_inference_component_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inference_component_name = input;
+        self
+    }
+    /// <p>If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.</p>
+    pub fn get_inference_component_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.inference_component_name
+    }
     /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::operation::invoke_endpoint::InvokeEndpointInput).
     pub fn build(
         self,
@@ -282,6 +304,7 @@ impl InvokeEndpointInputBuilder {
             target_container_hostname: self.target_container_hostname,
             inference_id: self.inference_id,
             enable_explanations: self.enable_explanations,
+            inference_component_name: self.inference_component_name,
         })
     }
 }
@@ -298,6 +321,7 @@ impl ::std::fmt::Debug for InvokeEndpointInputBuilder {
         formatter.field("target_container_hostname", &self.target_container_hostname);
         formatter.field("inference_id", &self.inference_id);
         formatter.field("enable_explanations", &self.enable_explanations);
+        formatter.field("inference_component_name", &self.inference_component_name);
         formatter.finish()
     }
 }

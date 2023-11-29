@@ -26,6 +26,15 @@ pub(crate) fn create_auto_ml_job_v2_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_cluster_output_output_correct_errors(
+    mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
+) -> crate::operation::create_cluster::builders::CreateClusterOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_code_repository_output_output_correct_errors(
     mut builder: crate::operation::create_code_repository::builders::CreateCodeRepositoryOutputBuilder,
 ) -> crate::operation::create_code_repository::builders::CreateCodeRepositoryOutputBuilder {
@@ -121,6 +130,15 @@ pub(crate) fn create_hyper_parameter_tuning_job_output_output_correct_errors(
 ) -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobOutputBuilder {
     if builder.hyper_parameter_tuning_job_arn.is_none() {
         builder.hyper_parameter_tuning_job_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_inference_component_output_output_correct_errors(
+    mut builder: crate::operation::create_inference_component::builders::CreateInferenceComponentOutputBuilder,
+) -> crate::operation::create_inference_component::builders::CreateInferenceComponentOutputBuilder {
+    if builder.inference_component_arn.is_none() {
+        builder.inference_component_arn = Some(Default::default())
     }
     builder
 }
@@ -281,6 +299,15 @@ pub(crate) fn create_workforce_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_cluster_output_output_correct_errors(
+    mut builder: crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder,
+) -> crate::operation::delete_cluster::builders::DeleteClusterOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder,
 ) -> crate::operation::delete_inference_experiment::builders::DeleteInferenceExperimentOutputBuilder {
@@ -397,6 +424,33 @@ pub(crate) fn describe_auto_ml_job_v2_output_output_correct_errors(
     }
     if builder.auto_ml_job_secondary_status.is_none() {
         builder.auto_ml_job_secondary_status = "no value was set".parse::<crate::types::AutoMlJobSecondaryStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn describe_cluster_output_output_correct_errors(
+    mut builder: crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder,
+) -> crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.cluster_status.is_none() {
+        builder.cluster_status = "no value was set".parse::<crate::types::ClusterStatus>().ok()
+    }
+    if builder.instance_groups.is_none() {
+        builder.instance_groups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_cluster_node_output_output_correct_errors(
+    mut builder: crate::operation::describe_cluster_node::builders::DescribeClusterNodeOutputBuilder,
+) -> crate::operation::describe_cluster_node::builders::DescribeClusterNodeOutputBuilder {
+    if builder.node_details.is_none() {
+        builder.node_details = {
+            let builder = crate::types::builders::ClusterNodeDetailsBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }
@@ -827,6 +881,30 @@ pub(crate) fn describe_hyper_parameter_tuning_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_inference_component_output_output_correct_errors(
+    mut builder: crate::operation::describe_inference_component::builders::DescribeInferenceComponentOutputBuilder,
+) -> crate::operation::describe_inference_component::builders::DescribeInferenceComponentOutputBuilder {
+    if builder.inference_component_name.is_none() {
+        builder.inference_component_name = Some(Default::default())
+    }
+    if builder.inference_component_arn.is_none() {
+        builder.inference_component_arn = Some(Default::default())
+    }
+    if builder.endpoint_name.is_none() {
+        builder.endpoint_name = Some(Default::default())
+    }
+    if builder.endpoint_arn.is_none() {
+        builder.endpoint_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn describe_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentOutputBuilder,
 ) -> crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentOutputBuilder {
@@ -943,9 +1021,6 @@ pub(crate) fn describe_model_output_output_correct_errors(
 ) -> crate::operation::describe_model::builders::DescribeModelOutputBuilder {
     if builder.model_name.is_none() {
         builder.model_name = Some(Default::default())
-    }
-    if builder.execution_role_arn.is_none() {
-        builder.execution_role_arn = Some(Default::default())
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -1451,6 +1526,30 @@ pub(crate) fn list_candidates_for_auto_ml_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_cluster_nodes_output_output_correct_errors(
+    mut builder: crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder,
+) -> crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder {
+    if builder.next_token.is_none() {
+        builder.next_token = Some(Default::default())
+    }
+    if builder.cluster_node_summaries.is_none() {
+        builder.cluster_node_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_clusters_output_output_correct_errors(
+    mut builder: crate::operation::list_clusters::builders::ListClustersOutputBuilder,
+) -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
+    if builder.next_token.is_none() {
+        builder.next_token = Some(Default::default())
+    }
+    if builder.cluster_summaries.is_none() {
+        builder.cluster_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_code_repositories_output_output_correct_errors(
     mut builder: crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder,
 ) -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesOutputBuilder {
@@ -1594,6 +1693,15 @@ pub(crate) fn list_hyper_parameter_tuning_jobs_output_output_correct_errors(
 ) -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder {
     if builder.hyper_parameter_tuning_job_summaries.is_none() {
         builder.hyper_parameter_tuning_job_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_inference_components_output_output_correct_errors(
+    mut builder: crate::operation::list_inference_components::builders::ListInferenceComponentsOutputBuilder,
+) -> crate::operation::list_inference_components::builders::ListInferenceComponentsOutputBuilder {
+    if builder.inference_components.is_none() {
+        builder.inference_components = Some(Default::default())
     }
     builder
 }
@@ -1844,6 +1952,15 @@ pub(crate) fn stop_inference_experiment_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cluster_output_output_correct_errors(
+    mut builder: crate::operation::update_cluster::builders::UpdateClusterOutputBuilder,
+) -> crate::operation::update_cluster::builders::UpdateClusterOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_code_repository_output_output_correct_errors(
     mut builder: crate::operation::update_code_repository::builders::UpdateCodeRepositoryOutputBuilder,
 ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryOutputBuilder {
@@ -1885,6 +2002,24 @@ pub(crate) fn update_hub_output_output_correct_errors(
 ) -> crate::operation::update_hub::builders::UpdateHubOutputBuilder {
     if builder.hub_arn.is_none() {
         builder.hub_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_inference_component_output_output_correct_errors(
+    mut builder: crate::operation::update_inference_component::builders::UpdateInferenceComponentOutputBuilder,
+) -> crate::operation::update_inference_component::builders::UpdateInferenceComponentOutputBuilder {
+    if builder.inference_component_arn.is_none() {
+        builder.inference_component_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_inference_component_runtime_config_output_output_correct_errors(
+    mut builder: crate::operation::update_inference_component_runtime_config::builders::UpdateInferenceComponentRuntimeConfigOutputBuilder,
+) -> crate::operation::update_inference_component_runtime_config::builders::UpdateInferenceComponentRuntimeConfigOutputBuilder {
+    if builder.inference_component_arn.is_none() {
+        builder.inference_component_arn = Some(Default::default())
     }
     builder
 }
@@ -3168,6 +3303,69 @@ pub(crate) fn clarify_explainer_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_instance_status_details_correct_errors(
+    mut builder: crate::types::builders::ClusterInstanceStatusDetailsBuilder,
+) -> crate::types::builders::ClusterInstanceStatusDetailsBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ClusterInstanceStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn cluster_life_cycle_config_correct_errors(
+    mut builder: crate::types::builders::ClusterLifeCycleConfigBuilder,
+) -> crate::types::builders::ClusterLifeCycleConfigBuilder {
+    if builder.source_s3_uri.is_none() {
+        builder.source_s3_uri = Some(Default::default())
+    }
+    if builder.on_create.is_none() {
+        builder.on_create = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cluster_node_summary_correct_errors(
+    mut builder: crate::types::builders::ClusterNodeSummaryBuilder,
+) -> crate::types::builders::ClusterNodeSummaryBuilder {
+    if builder.instance_group_name.is_none() {
+        builder.instance_group_name = Some(Default::default())
+    }
+    if builder.instance_id.is_none() {
+        builder.instance_id = Some(Default::default())
+    }
+    if builder.instance_type.is_none() {
+        builder.instance_type = "no value was set".parse::<crate::types::ClusterInstanceType>().ok()
+    }
+    if builder.launch_time.is_none() {
+        builder.launch_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.instance_status.is_none() {
+        builder.instance_status = {
+            let builder = crate::types::builders::ClusterInstanceStatusDetailsBuilder::default();
+            Some(crate::serde_util::cluster_instance_status_details_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn cluster_summary_correct_errors(
+    mut builder: crate::types::builders::ClusterSummaryBuilder,
+) -> crate::types::builders::ClusterSummaryBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.cluster_name.is_none() {
+        builder.cluster_name = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.cluster_status.is_none() {
+        builder.cluster_status = "no value was set".parse::<crate::types::ClusterStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn code_repository_summary_correct_errors(
     mut builder: crate::types::builders::CodeRepositorySummaryBuilder,
 ) -> crate::types::builders::CodeRepositorySummaryBuilder {
@@ -3695,6 +3893,42 @@ pub(crate) fn image_version_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn inference_component_compute_resource_requirements_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentComputeResourceRequirementsBuilder,
+) -> crate::types::builders::InferenceComponentComputeResourceRequirementsBuilder {
+    if builder.min_memory_required_in_mb.is_none() {
+        builder.min_memory_required_in_mb = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn inference_component_summary_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentSummaryBuilder,
+) -> crate::types::builders::InferenceComponentSummaryBuilder {
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.inference_component_arn.is_none() {
+        builder.inference_component_arn = Some(Default::default())
+    }
+    if builder.inference_component_name.is_none() {
+        builder.inference_component_name = Some(Default::default())
+    }
+    if builder.endpoint_arn.is_none() {
+        builder.endpoint_arn = Some(Default::default())
+    }
+    if builder.endpoint_name.is_none() {
+        builder.endpoint_name = Some(Default::default())
+    }
+    if builder.variant_name.is_none() {
+        builder.variant_name = Some(Default::default())
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn inference_experiment_summary_correct_errors(
     mut builder: crate::types::builders::InferenceExperimentSummaryBuilder,
 ) -> crate::types::builders::InferenceExperimentSummaryBuilder {
@@ -4182,9 +4416,6 @@ pub(crate) fn production_variant_correct_errors(
 ) -> crate::types::builders::ProductionVariantBuilder {
     if builder.variant_name.is_none() {
         builder.variant_name = Some(Default::default())
-    }
-    if builder.model_name.is_none() {
-        builder.model_name = Some(Default::default())
     }
     builder
 }
@@ -4890,6 +5121,15 @@ pub(crate) fn production_variant_core_dump_config_correct_errors(
 ) -> crate::types::builders::ProductionVariantCoreDumpConfigBuilder {
     if builder.destination_s3_uri.is_none() {
         builder.destination_s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn production_variant_routing_config_correct_errors(
+    mut builder: crate::types::builders::ProductionVariantRoutingConfigBuilder,
+) -> crate::types::builders::ProductionVariantRoutingConfigBuilder {
+    if builder.routing_strategy.is_none() {
+        builder.routing_strategy = "no value was set".parse::<crate::types::RoutingStrategy>().ok()
     }
     builder
 }

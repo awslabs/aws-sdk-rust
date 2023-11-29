@@ -158,6 +158,8 @@ mod create_auto_ml_job;
 
 mod create_auto_ml_job_v2;
 
+mod create_cluster;
+
 mod create_code_repository;
 
 mod create_compilation_job;
@@ -195,6 +197,8 @@ mod create_hyper_parameter_tuning_job;
 mod create_image;
 
 mod create_image_version;
+
+mod create_inference_component;
 
 mod create_inference_experiment;
 
@@ -291,6 +295,8 @@ mod delete_artifact;
 
 mod delete_association;
 
+mod delete_cluster;
+
 mod delete_code_repository;
 
 mod delete_context;
@@ -324,6 +330,8 @@ mod delete_human_task_ui;
 mod delete_image;
 
 mod delete_image_version;
+
+mod delete_inference_component;
 
 mod delete_inference_experiment;
 
@@ -385,6 +393,10 @@ mod describe_auto_ml_job;
 
 mod describe_auto_ml_job_v2;
 
+mod describe_cluster;
+
+mod describe_cluster_node;
+
 mod describe_code_repository;
 
 mod describe_compilation_job;
@@ -426,6 +438,8 @@ mod describe_hyper_parameter_tuning_job;
 mod describe_image;
 
 mod describe_image_version;
+
+mod describe_inference_component;
 
 mod describe_inference_experiment;
 
@@ -525,6 +539,10 @@ mod list_auto_ml_jobs;
 
 mod list_candidates_for_auto_ml_job;
 
+mod list_cluster_nodes;
+
+mod list_clusters;
+
 mod list_code_repositories;
 
 mod list_compilation_jobs;
@@ -566,6 +584,8 @@ mod list_hyper_parameter_tuning_jobs;
 mod list_image_versions;
 
 mod list_images;
+
+mod list_inference_components;
 
 mod list_inference_experiments;
 
@@ -711,6 +731,8 @@ mod update_app_image_config;
 
 mod update_artifact;
 
+mod update_cluster;
+
 mod update_code_repository;
 
 mod update_context;
@@ -736,6 +758,10 @@ mod update_hub;
 mod update_image;
 
 mod update_image_version;
+
+mod update_inference_component;
+
+mod update_inference_component_runtime_config;
 
 mod update_inference_experiment;
 

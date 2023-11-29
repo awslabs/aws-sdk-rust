@@ -168,6 +168,20 @@ impl CreateCollectionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Indicates whether standby replicas should be used for a collection.</p>
+    pub fn standby_replicas(mut self, input: crate::types::StandbyReplicas) -> Self {
+        self.inner = self.inner.standby_replicas(input);
+        self
+    }
+    /// <p>Indicates whether standby replicas should be used for a collection.</p>
+    pub fn set_standby_replicas(mut self, input: ::std::option::Option<crate::types::StandbyReplicas>) -> Self {
+        self.inner = self.inner.set_standby_replicas(input);
+        self
+    }
+    /// <p>Indicates whether standby replicas should be used for a collection.</p>
+    pub fn get_standby_replicas(&self) -> &::std::option::Option<crate::types::StandbyReplicas> {
+        self.inner.get_standby_replicas()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

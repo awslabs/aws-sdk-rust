@@ -8,6 +8,8 @@ pub struct ResourceSpec {
     pub sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image version created on the instance.</p>
     pub sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The SageMakerImageVersionAlias.</p>
+    pub sage_maker_image_version_alias: ::std::option::Option<::std::string::String>,
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
     /// <p>For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>. KernelGateway apps also support all other values for available instance types.</p>
@@ -24,6 +26,10 @@ impl ResourceSpec {
     /// <p>The ARN of the image version created on the instance.</p>
     pub fn sage_maker_image_version_arn(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_version_arn.as_deref()
+    }
+    /// <p>The SageMakerImageVersionAlias.</p>
+    pub fn sage_maker_image_version_alias(&self) -> ::std::option::Option<&str> {
+        self.sage_maker_image_version_alias.as_deref()
     }
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
@@ -50,6 +56,7 @@ impl ResourceSpec {
 pub struct ResourceSpecBuilder {
     pub(crate) sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sage_maker_image_version_alias: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::AppInstanceType>,
     pub(crate) lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
@@ -81,6 +88,20 @@ impl ResourceSpecBuilder {
     /// <p>The ARN of the image version created on the instance.</p>
     pub fn get_sage_maker_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sage_maker_image_version_arn
+    }
+    /// <p>The SageMakerImageVersionAlias.</p>
+    pub fn sage_maker_image_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sage_maker_image_version_alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The SageMakerImageVersionAlias.</p>
+    pub fn set_sage_maker_image_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sage_maker_image_version_alias = input;
+        self
+    }
+    /// <p>The SageMakerImageVersionAlias.</p>
+    pub fn get_sage_maker_image_version_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sage_maker_image_version_alias
     }
     /// <p>The instance type that the image version runs on.</p> <note>
     /// <p> <b>JupyterServer apps</b> only support the <code>system</code> value.</p>
@@ -124,6 +145,7 @@ impl ResourceSpecBuilder {
         crate::types::ResourceSpec {
             sage_maker_image_arn: self.sage_maker_image_arn,
             sage_maker_image_version_arn: self.sage_maker_image_version_arn,
+            sage_maker_image_version_alias: self.sage_maker_image_version_alias,
             instance_type: self.instance_type,
             lifecycle_config_arn: self.lifecycle_config_arn,
         }

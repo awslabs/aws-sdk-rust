@@ -24,5 +24,8 @@ pub fn ser_create_presigned_domain_url_input_input(
     if let Some(var_5) = &input.space_name {
         object.key("SpaceName").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.landing_uri {
+        object.key("LandingUri").string(var_6.as_str());
+    }
     Ok(())
 }

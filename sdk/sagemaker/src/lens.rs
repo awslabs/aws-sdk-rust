@@ -259,6 +259,16 @@ pub(crate) fn reflens_list_images_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_inference_components_output_output_next_token(
+    input: &crate::operation::list_inference_components::ListInferenceComponentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_inference_experiments_output_output_next_token(
     input: &crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -953,6 +963,16 @@ pub(crate) fn lens_list_images_output_output_images(
     input: crate::operation::list_images::ListImagesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Image>> {
     let input = match input.images {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_inference_components_output_output_inference_components(
+    input: crate::operation::list_inference_components::ListInferenceComponentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceComponentSummary>> {
+    let input = match input.inference_components {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -63,6 +63,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "standbyReplicas" => {
+                            builder = builder.set_standby_replicas(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StandbyReplicas::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "createdDate" => {
                             builder = builder.set_created_date(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

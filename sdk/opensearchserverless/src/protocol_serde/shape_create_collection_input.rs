@@ -24,8 +24,11 @@ pub fn ser_create_collection_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.client_token {
-        object.key("clientToken").string(var_8.as_str());
+    if let Some(var_8) = &input.standby_replicas {
+        object.key("standbyReplicas").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.client_token {
+        object.key("clientToken").string(var_9.as_str());
     }
     Ok(())
 }

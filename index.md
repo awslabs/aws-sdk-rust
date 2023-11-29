@@ -317,6 +317,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon SageMaker Feature Store Runtime | [aws-sdk-sagemakerfeaturestoreruntime](https://crates.io/crates/aws-sdk-sagemakerfeaturestoreruntime) ([docs](https://docs.rs/aws-sdk-sagemakerfeaturestoreruntime)) |
 | Amazon SageMaker Metrics Service | [aws-sdk-sagemakermetrics](https://crates.io/crates/aws-sdk-sagemakermetrics) ([docs](https://docs.rs/aws-sdk-sagemakermetrics)) |
 | Amazon SageMaker Runtime | [aws-sdk-sagemakerruntime](https://crates.io/crates/aws-sdk-sagemakerruntime) ([docs](https://docs.rs/aws-sdk-sagemakerruntime)) |
+| Amazon SageMaker Runtime | [aws-sdk-sagemakerruntime](https://crates.io/crates/aws-sdk-sagemakerruntime) ([docs](https://docs.rs/aws-sdk-sagemakerruntime)) |
 | Amazon SageMaker Service | [aws-sdk-sagemaker](https://crates.io/crates/aws-sdk-sagemaker) ([docs](https://docs.rs/aws-sdk-sagemaker)) |
 | Amazon SageMaker geospatial capabilities | [aws-sdk-sagemakergeospatial](https://crates.io/crates/aws-sdk-sagemakergeospatial) ([docs](https://docs.rs/aws-sdk-sagemakergeospatial)) |
 | Amazon Sagemaker Edge Manager | [aws-sdk-sagemakeredge](https://crates.io/crates/aws-sdk-sagemakeredge) ([docs](https://docs.rs/aws-sdk-sagemakeredge)) |
@@ -353,6 +354,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AmplifyBackend | [aws-sdk-amplifybackend](https://crates.io/crates/aws-sdk-amplifybackend) ([docs](https://docs.rs/aws-sdk-amplifybackend)) |
 | AppFabric | [aws-sdk-appfabric](https://crates.io/crates/aws-sdk-appfabric) ([docs](https://docs.rs/aws-sdk-appfabric)) |
 | Application Auto Scaling | [aws-sdk-applicationautoscaling](https://crates.io/crates/aws-sdk-applicationautoscaling) ([docs](https://docs.rs/aws-sdk-applicationautoscaling)) |
+| Application Auto Scaling | [aws-sdk-applicationautoscaling](https://crates.io/crates/aws-sdk-applicationautoscaling) ([docs](https://docs.rs/aws-sdk-applicationautoscaling)) |
 | Application Migration Service | [aws-sdk-mgn](https://crates.io/crates/aws-sdk-mgn) ([docs](https://docs.rs/aws-sdk-mgn)) |
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) |
 | Auto Scaling | [aws-sdk-autoscaling](https://crates.io/crates/aws-sdk-autoscaling) ([docs](https://docs.rs/aws-sdk-autoscaling)) |
@@ -388,3 +390,4 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |
 | Synthetics | [aws-sdk-synthetics](https://crates.io/crates/aws-sdk-synthetics) ([docs](https://docs.rs/aws-sdk-synthetics)) |
 | TrustedAdvisor Public API | [aws-sdk-trustedadvisor](https://crates.io/crates/aws-sdk-trustedadvisor) ([docs](https://docs.rs/aws-sdk-trustedadvisor)) |
+| cleanrooms-ml | [aws-sdk-cleanroomsml](https://crates.io/crates/aws-sdk-cleanroomsml) ([docs](https://docs.rs/aws-sdk-cleanroomsml)) |

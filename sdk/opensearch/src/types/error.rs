@@ -21,9 +21,9 @@ pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
 pub use crate::types::error::_invalid_type_exception::InvalidTypeException;
 
-pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
-
 pub use crate::types::error::_dependency_failure_exception::DependencyFailureException;
+
+pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
 mod _access_denied_exception;
 
