@@ -25,13 +25,23 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_zonal_shift;
 
+pub(crate) mod shape_create_practice_run_configuration;
+
+pub(crate) mod shape_delete_practice_run_configuration;
+
 pub(crate) mod shape_get_managed_resource;
+
+pub(crate) mod shape_list_autoshifts;
 
 pub(crate) mod shape_list_managed_resources;
 
 pub(crate) mod shape_list_zonal_shifts;
 
 pub(crate) mod shape_start_zonal_shift;
+
+pub(crate) mod shape_update_practice_run_configuration;
+
+pub(crate) mod shape_update_zonal_autoshift_configuration;
 
 pub(crate) mod shape_update_zonal_shift;
 
@@ -47,6 +57,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_practice_run_configuration_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -55,17 +67,39 @@ pub(crate) mod shape_start_zonal_shift_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_update_practice_run_configuration_input;
+
+pub(crate) mod shape_update_zonal_autoshift_configuration_input;
+
 pub(crate) mod shape_update_zonal_shift_input;
 
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_applied_weights;
 
+pub(crate) mod shape_autoshift_summaries;
+
+pub(crate) mod shape_autoshifts_in_resource;
+
+pub(crate) mod shape_control_condition;
+
 pub(crate) mod shape_managed_resource_summaries;
+
+pub(crate) mod shape_practice_run_configuration;
 
 pub(crate) mod shape_zonal_shift_summaries;
 
 pub(crate) mod shape_zonal_shifts_in_resource;
+
+pub(crate) mod shape_autoshift_in_resource;
+
+pub(crate) mod shape_autoshift_summary;
+
+pub(crate) mod shape_blocked_dates;
+
+pub(crate) mod shape_blocked_windows;
+
+pub(crate) mod shape_control_conditions;
 
 pub(crate) mod shape_managed_resource_summary;
 

@@ -12,5 +12,11 @@ pub fn ser_update_app_image_config_input_input(
         crate::protocol_serde::shape_kernel_gateway_image_config::ser_kernel_gateway_image_config(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.jupyter_lab_app_image_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("JupyterLabAppImageConfig").start_object();
+        crate::protocol_serde::shape_jupyter_lab_app_image_config::ser_jupyter_lab_app_image_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

@@ -2933,6 +2933,15 @@ pub(crate) fn output_data_config_correct_errors(
     builder
 }
 
+pub(crate) fn ownership_settings_correct_errors(
+    mut builder: crate::types::builders::OwnershipSettingsBuilder,
+) -> crate::types::builders::OwnershipSettingsBuilder {
+    if builder.owner_user_profile_name.is_none() {
+        builder.owner_user_profile_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn parallelism_configuration_correct_errors(
     mut builder: crate::types::builders::ParallelismConfigurationBuilder,
 ) -> crate::types::builders::ParallelismConfigurationBuilder {
@@ -3004,6 +3013,15 @@ pub(crate) fn source_algorithm_specification_correct_errors(
 ) -> crate::types::builders::SourceAlgorithmSpecificationBuilder {
     if builder.source_algorithms.is_none() {
         builder.source_algorithms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn space_sharing_settings_correct_errors(
+    mut builder: crate::types::builders::SpaceSharingSettingsBuilder,
+) -> crate::types::builders::SpaceSharingSettingsBuilder {
+    if builder.sharing_type.is_none() {
+        builder.sharing_type = "no value was set".parse::<crate::types::SharingType>().ok()
     }
     builder
 }
@@ -3410,6 +3428,18 @@ pub(crate) fn compilation_job_summary_correct_errors(
     }
     if builder.compilation_job_status.is_none() {
         builder.compilation_job_status = "no value was set".parse::<crate::types::CompilationJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_posix_user_config_correct_errors(
+    mut builder: crate::types::builders::CustomPosixUserConfigBuilder,
+) -> crate::types::builders::CustomPosixUserConfigBuilder {
+    if builder.uid.is_none() {
+        builder.uid = Some(Default::default())
+    }
+    if builder.gid.is_none() {
+        builder.gid = Some(Default::default())
     }
     builder
 }
@@ -4842,11 +4872,32 @@ pub(crate) fn clarify_shap_config_correct_errors(
     builder
 }
 
+pub(crate) fn default_ebs_storage_settings_correct_errors(
+    mut builder: crate::types::builders::DefaultEbsStorageSettingsBuilder,
+) -> crate::types::builders::DefaultEbsStorageSettingsBuilder {
+    if builder.default_ebs_volume_size_in_gb.is_none() {
+        builder.default_ebs_volume_size_in_gb = Some(Default::default())
+    }
+    if builder.maximum_ebs_volume_size_in_gb.is_none() {
+        builder.maximum_ebs_volume_size_in_gb = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn device_selection_config_correct_errors(
     mut builder: crate::types::builders::DeviceSelectionConfigBuilder,
 ) -> crate::types::builders::DeviceSelectionConfigBuilder {
     if builder.device_subset_type.is_none() {
         builder.device_subset_type = "no value was set".parse::<crate::types::DeviceSubsetType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ebs_storage_settings_correct_errors(
+    mut builder: crate::types::builders::EbsStorageSettingsBuilder,
+) -> crate::types::builders::EbsStorageSettingsBuilder {
+    if builder.ebs_volume_size_in_gb.is_none() {
+        builder.ebs_volume_size_in_gb = Some(Default::default())
     }
     builder
 }
@@ -5420,6 +5471,24 @@ pub(crate) fn edge_model_summary_correct_errors(
     }
     if builder.model_version.is_none() {
         builder.model_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn efs_file_system_correct_errors(
+    mut builder: crate::types::builders::EfsFileSystemBuilder,
+) -> crate::types::builders::EfsFileSystemBuilder {
+    if builder.file_system_id.is_none() {
+        builder.file_system_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn efs_file_system_config_correct_errors(
+    mut builder: crate::types::builders::EfsFileSystemConfigBuilder,
+) -> crate::types::builders::EfsFileSystemConfigBuilder {
+    if builder.file_system_id.is_none() {
+        builder.file_system_id = Some(Default::default())
     }
     builder
 }

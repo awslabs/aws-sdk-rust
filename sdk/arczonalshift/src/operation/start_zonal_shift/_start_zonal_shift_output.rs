@@ -5,20 +5,20 @@
 pub struct StartZonalShiftOutput {
     /// <p>The identifier of a zonal shift.</p>
     pub zonal_shift_id: ::std::string::String,
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub resource_identifier: ::std::string::String,
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub away_from: ::std::string::String,
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub expiry_time: ::aws_smithy_types::DateTime,
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE:</b> The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -33,30 +33,30 @@ impl StartZonalShiftOutput {
         use std::ops::Deref;
         self.zonal_shift_id.deref()
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn resource_identifier(&self) -> &str {
         use std::ops::Deref;
         self.resource_identifier.deref()
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn away_from(&self) -> &str {
         use std::ops::Deref;
         self.away_from.deref()
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn expiry_time(&self) -> &::aws_smithy_types::DateTime {
         &self.expiry_time
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE:</b> The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -110,76 +110,76 @@ impl StartZonalShiftOutputBuilder {
     pub fn get_zonal_shift_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.zonal_shift_id
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     /// This field is required.
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_identifier = input;
         self
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     /// This field is required.
     pub fn away_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.away_from = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.away_from = input;
         self
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.away_from
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     /// This field is required.
     pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiry_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiry_time
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE:</b> The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -191,7 +191,7 @@ impl StartZonalShiftOutputBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE:</b> The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -202,7 +202,7 @@ impl StartZonalShiftOutputBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE:</b> The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE:</b> The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED:</b> The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED:</b> The zonal shift was canceled.</p> </li>
     /// </ul>

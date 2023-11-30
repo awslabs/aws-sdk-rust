@@ -18,6 +18,8 @@ pub struct AppDetails {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl AppDetails {
     /// <p>The domain ID.</p>
@@ -48,6 +50,10 @@ impl AppDetails {
     pub fn space_name(&self) -> ::std::option::Option<&str> {
         self.space_name.as_deref()
     }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
+        self.resource_spec.as_ref()
+    }
 }
 impl AppDetails {
     /// Creates a new builder-style object to manufacture [`AppDetails`](crate::types::AppDetails).
@@ -67,6 +73,7 @@ pub struct AppDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AppStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl AppDetailsBuilder {
     /// <p>The domain ID.</p>
@@ -167,6 +174,20 @@ impl AppDetailsBuilder {
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.space_name
     }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
+        self.resource_spec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
+        self.resource_spec = input;
+        self
+    }
+    /// <p>Specifies the ARN's of a SageMaker image and SageMaker image version, and the instance type that the version runs on.</p>
+    pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
+        &self.resource_spec
+    }
     /// Consumes the builder and constructs a [`AppDetails`](crate::types::AppDetails).
     pub fn build(self) -> crate::types::AppDetails {
         crate::types::AppDetails {
@@ -177,6 +198,7 @@ impl AppDetailsBuilder {
             status: self.status,
             creation_time: self.creation_time,
             space_name: self.space_name,
+            resource_spec: self.resource_spec,
         }
     }
 }

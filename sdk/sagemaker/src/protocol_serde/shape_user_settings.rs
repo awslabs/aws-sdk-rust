@@ -57,11 +57,47 @@ pub fn ser_user_settings(
         crate::protocol_serde::shape_canvas_app_settings::ser_canvas_app_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.default_landing_uri {
-        object.key("DefaultLandingUri").string(var_19.as_str());
+    if let Some(var_19) = &input.jupyter_lab_app_settings {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("JupyterLabAppSettings").start_object();
+        crate::protocol_serde::shape_jupyter_lab_app_settings::ser_jupyter_lab_app_settings(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.studio_web_portal {
-        object.key("StudioWebPortal").string(var_20.as_str());
+    if let Some(var_21) = &input.code_editor_app_settings {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("CodeEditorAppSettings").start_object();
+        crate::protocol_serde::shape_code_editor_app_settings::ser_code_editor_app_settings(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.space_storage_settings {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("SpaceStorageSettings").start_object();
+        crate::protocol_serde::shape_default_space_storage_settings::ser_default_space_storage_settings(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.default_landing_uri {
+        object.key("DefaultLandingUri").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.studio_web_portal {
+        object.key("StudioWebPortal").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.custom_posix_user_config {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("CustomPosixUserConfig").start_object();
+        crate::protocol_serde::shape_custom_posix_user_config::ser_custom_posix_user_config(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.custom_file_system_configs {
+        let mut array_30 = object.key("CustomFileSystemConfigs").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_custom_file_system_config::ser_custom_file_system_config(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
     }
     Ok(())
 }
@@ -122,6 +158,21 @@ where
                             builder =
                                 builder.set_canvas_app_settings(crate::protocol_serde::shape_canvas_app_settings::de_canvas_app_settings(tokens)?);
                         }
+                        "JupyterLabAppSettings" => {
+                            builder = builder.set_jupyter_lab_app_settings(
+                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens)?,
+                            );
+                        }
+                        "CodeEditorAppSettings" => {
+                            builder = builder.set_code_editor_app_settings(
+                                crate::protocol_serde::shape_code_editor_app_settings::de_code_editor_app_settings(tokens)?,
+                            );
+                        }
+                        "SpaceStorageSettings" => {
+                            builder = builder.set_space_storage_settings(
+                                crate::protocol_serde::shape_default_space_storage_settings::de_default_space_storage_settings(tokens)?,
+                            );
+                        }
                         "DefaultLandingUri" => {
                             builder = builder.set_default_landing_uri(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -134,6 +185,16 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::StudioWebPortal::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "CustomPosixUserConfig" => {
+                            builder = builder.set_custom_posix_user_config(
+                                crate::protocol_serde::shape_custom_posix_user_config::de_custom_posix_user_config(tokens)?,
+                            );
+                        }
+                        "CustomFileSystemConfigs" => {
+                            builder = builder.set_custom_file_system_configs(
+                                crate::protocol_serde::shape_custom_file_system_configs::de_custom_file_system_configs(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

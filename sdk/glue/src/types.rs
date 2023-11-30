@@ -681,6 +681,14 @@ pub use crate::types::_job::Job;
 
 pub use crate::types::_dev_endpoint::DevEndpoint;
 
+pub use crate::types::_data_quality_observation::DataQualityObservation;
+
+pub use crate::types::_metric_based_observation::MetricBasedObservation;
+
+pub use crate::types::_data_quality_metric_values::DataQualityMetricValues;
+
+pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResult;
+
 pub use crate::types::_data_quality_rule_result::DataQualityRuleResult;
 
 pub use crate::types::_data_quality_rule_result_status::DataQualityRuleResultStatus;
@@ -963,7 +971,13 @@ mod _data_format;
 
 mod _data_lake_principal;
 
+mod _data_quality_analyzer_result;
+
 mod _data_quality_evaluation_run_additional_run_options;
+
+mod _data_quality_metric_values;
+
+mod _data_quality_observation;
 
 mod _data_quality_result;
 
@@ -1210,6 +1224,8 @@ mod _metadata_info;
 mod _metadata_key_value_pair;
 
 mod _metadata_operation;
+
+mod _metric_based_observation;
 
 mod _microsoft_sql_server_catalog_source;
 

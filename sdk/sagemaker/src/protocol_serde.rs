@@ -1591,6 +1591,8 @@ pub(crate) mod shape_input_data_config;
 
 pub(crate) mod shape_instance_metadata_service_configuration;
 
+pub(crate) mod shape_jupyter_lab_app_image_config;
+
 pub(crate) mod shape_kernel_gateway_image_config;
 
 pub(crate) mod shape_label_counters;
@@ -1737,6 +1739,8 @@ pub(crate) mod shape_output_data_config;
 
 pub(crate) mod shape_output_parameter;
 
+pub(crate) mod shape_ownership_settings;
+
 pub(crate) mod shape_parallelism_configuration;
 
 pub(crate) mod shape_parameter;
@@ -1846,6 +1850,8 @@ pub(crate) mod shape_source_ip_config;
 pub(crate) mod shape_space_list;
 
 pub(crate) mod shape_space_settings;
+
+pub(crate) mod shape_space_sharing_settings;
 
 pub(crate) mod shape_stopping_condition;
 
@@ -2021,6 +2027,8 @@ pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_summary;
 
+pub(crate) mod shape_code_editor_app_settings;
+
 pub(crate) mod shape_code_repository_summary;
 
 pub(crate) mod shape_cognito_member_definition;
@@ -2035,11 +2043,23 @@ pub(crate) mod shape_compilation_job_summary;
 
 pub(crate) mod shape_container_arguments;
 
+pub(crate) mod shape_container_config;
+
 pub(crate) mod shape_container_entrypoint;
 
 pub(crate) mod shape_content_types;
 
 pub(crate) mod shape_context_summary;
+
+pub(crate) mod shape_custom_file_system;
+
+pub(crate) mod shape_custom_file_system_config;
+
+pub(crate) mod shape_custom_file_system_configs;
+
+pub(crate) mod shape_custom_file_systems;
+
+pub(crate) mod shape_custom_posix_user_config;
 
 pub(crate) mod shape_data_catalog_config;
 
@@ -2048,6 +2068,8 @@ pub(crate) mod shape_data_source;
 pub(crate) mod shape_dataset_definition;
 
 pub(crate) mod shape_debug_rule_evaluation_status;
+
+pub(crate) mod shape_default_space_storage_settings;
 
 pub(crate) mod shape_deployment_stage_status_summary;
 
@@ -2180,6 +2202,8 @@ pub(crate) mod shape_inference_recommendations_job_step;
 pub(crate) mod shape_instance_group;
 
 pub(crate) mod shape_instance_groups;
+
+pub(crate) mod shape_jupyter_lab_app_settings;
 
 pub(crate) mod shape_jupyter_server_app_settings;
 
@@ -2403,7 +2427,13 @@ pub(crate) mod shape_source_algorithm;
 
 pub(crate) mod shape_source_algorithm_list;
 
+pub(crate) mod shape_space_code_editor_app_settings;
+
 pub(crate) mod shape_space_details;
+
+pub(crate) mod shape_space_jupyter_lab_app_settings;
+
+pub(crate) mod shape_space_storage_settings;
 
 pub(crate) mod shape_studio_lifecycle_config_details;
 
@@ -2519,7 +2549,15 @@ pub(crate) mod shape_csv_content_types;
 
 pub(crate) mod shape_custom_image;
 
+pub(crate) mod shape_custom_image_container_arguments;
+
+pub(crate) mod shape_custom_image_container_entrypoint;
+
+pub(crate) mod shape_custom_image_container_environment_variables;
+
 pub(crate) mod shape_custom_images;
+
+pub(crate) mod shape_default_ebs_storage_settings;
 
 pub(crate) mod shape_deployed_image;
 
@@ -2527,9 +2565,15 @@ pub(crate) mod shape_deployed_images;
 
 pub(crate) mod shape_direct_deploy_settings;
 
+pub(crate) mod shape_ebs_storage_settings;
+
 pub(crate) mod shape_edge_deployment_status;
 
 pub(crate) mod shape_edge_model_summaries;
+
+pub(crate) mod shape_efs_file_system;
+
+pub(crate) mod shape_efs_file_system_config;
 
 pub(crate) mod shape_endpoint;
 
@@ -2617,6 +2661,8 @@ pub(crate) mod shape_monitoring_inputs;
 
 pub(crate) mod shape_monitoring_s3_output;
 
+pub(crate) mod shape_ownership_settings_summary;
+
 pub(crate) mod shape_parameter_range;
 
 pub(crate) mod shape_pending_production_variant_summary;
@@ -2670,6 +2716,10 @@ pub(crate) mod shape_s3_model_data_source;
 pub(crate) mod shape_scaling_policy;
 
 pub(crate) mod shape_selective_execution_result;
+
+pub(crate) mod shape_space_settings_summary;
+
+pub(crate) mod shape_space_sharing_settings_summary;
 
 pub(crate) mod shape_stairs;
 

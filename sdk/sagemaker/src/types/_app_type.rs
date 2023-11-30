@@ -12,6 +12,8 @@
 /// ```text
 /// # let apptype = unimplemented!();
 /// match apptype {
+///     AppType::CodeEditor => { /* ... */ },
+///     AppType::JupyterLab => { /* ... */ },
 ///     AppType::JupyterServer => { /* ... */ },
 ///     AppType::KernelGateway => { /* ... */ },
 ///     AppType::RSessionGateway => { /* ... */ },
@@ -45,6 +47,10 @@
 )]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeEditor,
+    #[allow(missing_docs)] // documentation missing in model
+    JupyterLab,
+    #[allow(missing_docs)] // documentation missing in model
     JupyterServer,
     #[allow(missing_docs)] // documentation missing in model
     KernelGateway,
@@ -61,6 +67,8 @@ pub enum AppType {
 impl ::std::convert::From<&str> for AppType {
     fn from(s: &str) -> Self {
         match s {
+            "CodeEditor" => AppType::CodeEditor,
+            "JupyterLab" => AppType::JupyterLab,
             "JupyterServer" => AppType::JupyterServer,
             "KernelGateway" => AppType::KernelGateway,
             "RSessionGateway" => AppType::RSessionGateway,
@@ -81,6 +89,8 @@ impl AppType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AppType::CodeEditor => "CodeEditor",
+            AppType::JupyterLab => "JupyterLab",
             AppType::JupyterServer => "JupyterServer",
             AppType::KernelGateway => "KernelGateway",
             AppType::RSessionGateway => "RSessionGateway",
@@ -91,7 +101,15 @@ impl AppType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JupyterServer", "KernelGateway", "RSessionGateway", "RStudioServerPro", "TensorBoard"]
+        &[
+            "CodeEditor",
+            "JupyterLab",
+            "JupyterServer",
+            "KernelGateway",
+            "RSessionGateway",
+            "RStudioServerPro",
+            "TensorBoard",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AppType {

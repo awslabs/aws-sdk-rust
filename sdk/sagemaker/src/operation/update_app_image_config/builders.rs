@@ -136,4 +136,18 @@ impl UpdateAppImageConfigFluentBuilder {
     pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         self.inner.get_kernel_gateway_image_config()
     }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn jupyter_lab_app_image_config(mut self, input: crate::types::JupyterLabAppImageConfig) -> Self {
+        self.inner = self.inner.jupyter_lab_app_image_config(input);
+        self
+    }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn set_jupyter_lab_app_image_config(mut self, input: ::std::option::Option<crate::types::JupyterLabAppImageConfig>) -> Self {
+        self.inner = self.inner.set_jupyter_lab_app_image_config(input);
+        self
+    }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
+        self.inner.get_jupyter_lab_app_image_config()
+    }
 }

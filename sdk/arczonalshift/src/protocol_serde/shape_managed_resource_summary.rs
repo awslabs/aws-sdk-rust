@@ -31,6 +31,31 @@ where
                         "availabilityZones" => {
                             builder = builder.set_availability_zones(crate::protocol_serde::shape_availability_zones::de_availability_zones(tokens)?);
                         }
+                        "appliedWeights" => {
+                            builder = builder.set_applied_weights(crate::protocol_serde::shape_applied_weights::de_applied_weights(tokens)?);
+                        }
+                        "zonalShifts" => {
+                            builder = builder.set_zonal_shifts(crate::protocol_serde::shape_zonal_shifts_in_resource::de_zonal_shifts_in_resource(
+                                tokens,
+                            )?);
+                        }
+                        "autoshifts" => {
+                            builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(tokens)?);
+                        }
+                        "zonalAutoshiftStatus" => {
+                            builder = builder.set_zonal_autoshift_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "practiceRunStatus" => {
+                            builder = builder.set_practice_run_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

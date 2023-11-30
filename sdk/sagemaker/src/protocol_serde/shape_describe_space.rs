@@ -137,6 +137,20 @@ pub(crate) fn de_describe_space(
                             .transpose()?,
                     );
                 }
+                "SpaceDisplayName" => {
+                    builder = builder.set_space_display_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "OwnershipSettings" => {
+                    builder = builder.set_ownership_settings(crate::protocol_serde::shape_ownership_settings::de_ownership_settings(tokens)?);
+                }
+                "SpaceSharingSettings" => {
+                    builder =
+                        builder.set_space_sharing_settings(crate::protocol_serde::shape_space_sharing_settings::de_space_sharing_settings(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

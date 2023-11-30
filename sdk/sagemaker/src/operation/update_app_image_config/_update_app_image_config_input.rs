@@ -7,6 +7,8 @@ pub struct UpdateAppImageConfigInput {
     pub app_image_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The new KernelGateway app to run on the image.</p>
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
+    /// <p>The JupyterLab app running on the image.</p>
+    pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
 }
 impl UpdateAppImageConfigInput {
     /// <p>The name of the AppImageConfig to update.</p>
@@ -16,6 +18,10 @@ impl UpdateAppImageConfigInput {
     /// <p>The new KernelGateway app to run on the image.</p>
     pub fn kernel_gateway_image_config(&self) -> ::std::option::Option<&crate::types::KernelGatewayImageConfig> {
         self.kernel_gateway_image_config.as_ref()
+    }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
+        self.jupyter_lab_app_image_config.as_ref()
     }
 }
 impl UpdateAppImageConfigInput {
@@ -31,6 +37,7 @@ impl UpdateAppImageConfigInput {
 pub struct UpdateAppImageConfigInputBuilder {
     pub(crate) app_image_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
+    pub(crate) jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
 }
 impl UpdateAppImageConfigInputBuilder {
     /// <p>The name of the AppImageConfig to update.</p>
@@ -62,6 +69,20 @@ impl UpdateAppImageConfigInputBuilder {
     pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         &self.kernel_gateway_image_config
     }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn jupyter_lab_app_image_config(mut self, input: crate::types::JupyterLabAppImageConfig) -> Self {
+        self.jupyter_lab_app_image_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn set_jupyter_lab_app_image_config(mut self, input: ::std::option::Option<crate::types::JupyterLabAppImageConfig>) -> Self {
+        self.jupyter_lab_app_image_config = input;
+        self
+    }
+    /// <p>The JupyterLab app running on the image.</p>
+    pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
+        &self.jupyter_lab_app_image_config
+    }
     /// Consumes the builder and constructs a [`UpdateAppImageConfigInput`](crate::operation::update_app_image_config::UpdateAppImageConfigInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl UpdateAppImageConfigInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_app_image_config::UpdateAppImageConfigInput {
             app_image_config_name: self.app_image_config_name,
             kernel_gateway_image_config: self.kernel_gateway_image_config,
+            jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
         })
     }
 }

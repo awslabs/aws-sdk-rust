@@ -140,10 +140,25 @@ pub(crate) fn de_get_managed_resource(
                             .transpose()?,
                     );
                 }
+                "autoshifts" => {
+                    builder = builder.set_autoshifts(crate::protocol_serde::shape_autoshifts_in_resource::de_autoshifts_in_resource(tokens)?);
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "practiceRunConfiguration" => {
+                    builder = builder.set_practice_run_configuration(
+                        crate::protocol_serde::shape_practice_run_configuration::de_practice_run_configuration(tokens)?,
+                    );
+                }
+                "zonalAutoshiftStatus" => {
+                    builder = builder.set_zonal_autoshift_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ZonalAutoshiftStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

@@ -1055,7 +1055,11 @@ pub(crate) mod shape_dag_nodes;
 
 pub(crate) mod shape_data_catalog_encryption_settings;
 
+pub(crate) mod shape_data_quality_analyzer_results;
+
 pub(crate) mod shape_data_quality_evaluation_run_additional_run_options;
+
+pub(crate) mod shape_data_quality_observations;
 
 pub(crate) mod shape_data_quality_result_description_list;
 
@@ -1382,6 +1386,10 @@ pub(crate) mod shape_csv_classifier;
 pub(crate) mod shape_custom_code;
 
 pub(crate) mod shape_custom_entity_type;
+
+pub(crate) mod shape_data_quality_analyzer_result;
+
+pub(crate) mod shape_data_quality_observation;
 
 pub(crate) mod shape_data_quality_result;
 
@@ -1711,6 +1719,8 @@ pub(crate) mod shape_long_column_statistics_data;
 
 pub(crate) mod shape_mapping;
 
+pub(crate) mod shape_metric_based_observation;
+
 pub(crate) mod shape_mongo_db_target_list;
 
 pub(crate) mod shape_node_list;
@@ -1771,6 +1781,8 @@ pub(crate) mod shape_column_importance;
 
 pub(crate) mod shape_column_value_string_list;
 
+pub(crate) mod shape_data_quality_metric_values;
+
 pub(crate) mod shape_datatype;
 
 pub(crate) mod shape_decimal_number;
@@ -1784,6 +1796,8 @@ pub(crate) mod shape_glue_studio_schema_column;
 pub(crate) mod shape_key_schema_element;
 
 pub(crate) mod shape_location_map;
+
+pub(crate) mod shape_new_rules;
 
 pub(crate) mod shape_node;
 

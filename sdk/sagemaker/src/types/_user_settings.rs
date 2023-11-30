@@ -26,6 +26,12 @@ pub struct UserSettings {
     pub r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     /// <p>The Canvas app settings.</p>
     pub canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
+    /// <p>The settings for the JupyterLab application.</p>
+    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
+    /// <p>The Code Editor application settings.</p>
+    pub code_editor_app_settings: ::std::option::Option<crate::types::CodeEditorAppSettings>,
+    /// <p>The storage settings for a private space.</p>
+    pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
     /// <li> <p> <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li>
@@ -34,6 +40,10 @@ pub struct UserSettings {
     pub default_landing_uri: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
     pub studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
 }
 impl UserSettings {
     /// <p>The execution role for the user.</p>
@@ -77,6 +87,18 @@ impl UserSettings {
     pub fn canvas_app_settings(&self) -> ::std::option::Option<&crate::types::CanvasAppSettings> {
         self.canvas_app_settings.as_ref()
     }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
+        self.jupyter_lab_app_settings.as_ref()
+    }
+    /// <p>The Code Editor application settings.</p>
+    pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::CodeEditorAppSettings> {
+        self.code_editor_app_settings.as_ref()
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceStorageSettings> {
+        self.space_storage_settings.as_ref()
+    }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
     /// <li> <p> <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li>
@@ -88,6 +110,16 @@ impl UserSettings {
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
     pub fn studio_web_portal(&self) -> ::std::option::Option<&crate::types::StudioWebPortal> {
         self.studio_web_portal.as_ref()
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn custom_posix_user_config(&self) -> ::std::option::Option<&crate::types::CustomPosixUserConfig> {
+        self.custom_posix_user_config.as_ref()
+    }
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_file_system_configs.is_none()`.
+    pub fn custom_file_system_configs(&self) -> &[crate::types::CustomFileSystemConfig] {
+        self.custom_file_system_configs.as_deref().unwrap_or_default()
     }
 }
 impl UserSettings {
@@ -110,8 +142,13 @@ pub struct UserSettingsBuilder {
     pub(crate) r_studio_server_pro_app_settings: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
     pub(crate) r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     pub(crate) canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
+    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
+    pub(crate) code_editor_app_settings: ::std::option::Option<crate::types::CodeEditorAppSettings>,
+    pub(crate) space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     pub(crate) default_landing_uri: ::std::option::Option<::std::string::String>,
     pub(crate) studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
+    pub(crate) custom_posix_user_config: ::std::option::Option<crate::types::CustomPosixUserConfig>,
+    pub(crate) custom_file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>,
 }
 impl UserSettingsBuilder {
     /// <p>The execution role for the user.</p>
@@ -255,6 +292,48 @@ impl UserSettingsBuilder {
     pub fn get_canvas_app_settings(&self) -> &::std::option::Option<crate::types::CanvasAppSettings> {
         &self.canvas_app_settings
     }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(mut self, input: crate::types::JupyterLabAppSettings) -> Self {
+        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
+        self.jupyter_lab_app_settings = input;
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
+        &self.jupyter_lab_app_settings
+    }
+    /// <p>The Code Editor application settings.</p>
+    pub fn code_editor_app_settings(mut self, input: crate::types::CodeEditorAppSettings) -> Self {
+        self.code_editor_app_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Code Editor application settings.</p>
+    pub fn set_code_editor_app_settings(mut self, input: ::std::option::Option<crate::types::CodeEditorAppSettings>) -> Self {
+        self.code_editor_app_settings = input;
+        self
+    }
+    /// <p>The Code Editor application settings.</p>
+    pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::CodeEditorAppSettings> {
+        &self.code_editor_app_settings
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn space_storage_settings(mut self, input: crate::types::DefaultSpaceStorageSettings) -> Self {
+        self.space_storage_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>) -> Self {
+        self.space_storage_settings = input;
+        self
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceStorageSettings> {
+        &self.space_storage_settings
+    }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
     /// <li> <p> <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p> </li>
@@ -295,6 +374,40 @@ impl UserSettingsBuilder {
     pub fn get_studio_web_portal(&self) -> &::std::option::Option<crate::types::StudioWebPortal> {
         &self.studio_web_portal
     }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn custom_posix_user_config(mut self, input: crate::types::CustomPosixUserConfig) -> Self {
+        self.custom_posix_user_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn set_custom_posix_user_config(mut self, input: ::std::option::Option<crate::types::CustomPosixUserConfig>) -> Self {
+        self.custom_posix_user_config = input;
+        self
+    }
+    /// <p>Details about the POSIX identity that is used for file system operations.</p>
+    pub fn get_custom_posix_user_config(&self) -> &::std::option::Option<crate::types::CustomPosixUserConfig> {
+        &self.custom_posix_user_config
+    }
+    /// Appends an item to `custom_file_system_configs`.
+    ///
+    /// To override the contents of this collection use [`set_custom_file_system_configs`](Self::set_custom_file_system_configs).
+    ///
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn custom_file_system_configs(mut self, input: crate::types::CustomFileSystemConfig) -> Self {
+        let mut v = self.custom_file_system_configs.unwrap_or_default();
+        v.push(input);
+        self.custom_file_system_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn set_custom_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>>) -> Self {
+        self.custom_file_system_configs = input;
+        self
+    }
+    /// <p>The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker Studio.</p>
+    pub fn get_custom_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystemConfig>> {
+        &self.custom_file_system_configs
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     pub fn build(self) -> crate::types::UserSettings {
         crate::types::UserSettings {
@@ -307,8 +420,13 @@ impl UserSettingsBuilder {
             r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings,
             r_session_app_settings: self.r_session_app_settings,
             canvas_app_settings: self.canvas_app_settings,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
+            code_editor_app_settings: self.code_editor_app_settings,
+            space_storage_settings: self.space_storage_settings,
             default_landing_uri: self.default_landing_uri,
             studio_web_portal: self.studio_web_portal,
+            custom_posix_user_config: self.custom_posix_user_config,
+            custom_file_system_configs: self.custom_file_system_configs,
         }
     }
 }

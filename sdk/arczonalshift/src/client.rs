@@ -120,16 +120,26 @@ impl Client {
 
 mod cancel_zonal_shift;
 
+mod create_practice_run_configuration;
+
 /// Operation customization and supporting types.
 ///
 pub mod customize;
 
+mod delete_practice_run_configuration;
+
 mod get_managed_resource;
+
+mod list_autoshifts;
 
 mod list_managed_resources;
 
 mod list_zonal_shifts;
 
 mod start_zonal_shift;
+
+mod update_practice_run_configuration;
+
+mod update_zonal_autoshift_configuration;
 
 mod update_zonal_shift;

@@ -9,6 +9,8 @@ pub struct UpdateSpaceInput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of space settings.</p>
     pub space_settings: ::std::option::Option<crate::types::SpaceSettings>,
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSpaceInput {
     /// <p>The ID of the associated Domain.</p>
@@ -22,6 +24,10 @@ impl UpdateSpaceInput {
     /// <p>A collection of space settings.</p>
     pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
         self.space_settings.as_ref()
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+        self.space_display_name.as_deref()
     }
 }
 impl UpdateSpaceInput {
@@ -38,6 +44,7 @@ pub struct UpdateSpaceInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) space_settings: ::std::option::Option<crate::types::SpaceSettings>,
+    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSpaceInputBuilder {
     /// <p>The ID of the associated Domain.</p>
@@ -84,12 +91,27 @@ impl UpdateSpaceInputBuilder {
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
         &self.space_settings
     }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_display_name = input;
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_display_name
+    }
     /// Consumes the builder and constructs a [`UpdateSpaceInput`](crate::operation::update_space::UpdateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_space::UpdateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
             domain_id: self.domain_id,
             space_name: self.space_name,
             space_settings: self.space_settings,
+            space_display_name: self.space_display_name,
         })
     }
 }

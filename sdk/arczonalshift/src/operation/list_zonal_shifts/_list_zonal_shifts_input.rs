@@ -8,13 +8,15 @@ pub struct ListZonalShiftsInput {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ZonalShiftStatus>,
     /// <p>The number of objects that you want to return with this call.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListZonalShiftsInput {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -24,7 +26,7 @@ impl ListZonalShiftsInput {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -34,6 +36,10 @@ impl ListZonalShiftsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+        self.resource_identifier.as_deref()
     }
 }
 impl ListZonalShiftsInput {
@@ -50,6 +56,7 @@ pub struct ListZonalShiftsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ZonalShiftStatus>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListZonalShiftsInputBuilder {
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
@@ -69,7 +76,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -80,7 +87,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -91,7 +98,7 @@ impl ListZonalShiftsInputBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -112,6 +119,20 @@ impl ListZonalShiftsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_identifier = input;
+        self
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_identifier
+    }
     /// Consumes the builder and constructs a [`ListZonalShiftsInput`](crate::operation::list_zonal_shifts::ListZonalShiftsInput).
     pub fn build(
         self,
@@ -120,6 +141,7 @@ impl ListZonalShiftsInputBuilder {
             next_token: self.next_token,
             status: self.status,
             max_results: self.max_results,
+            resource_identifier: self.resource_identifier,
         })
     }
 }

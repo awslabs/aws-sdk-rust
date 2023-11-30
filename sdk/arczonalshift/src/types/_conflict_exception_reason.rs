@@ -12,6 +12,9 @@
 /// ```text
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
+///     ConflictExceptionReason::AutoshiftEnabled => { /* ... */ },
+///     ConflictExceptionReason::PracticeConfigurationAlreadyExists => { /* ... */ },
+///     ConflictExceptionReason::PracticeConfigurationDoesNotExist => { /* ... */ },
 ///     ConflictExceptionReason::SimultaneousZonalShiftsConflict => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftStatusNotActive => { /* ... */ },
@@ -43,6 +46,12 @@
 )]
 pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    AutoshiftEnabled,
+    #[allow(missing_docs)] // documentation missing in model
+    PracticeConfigurationAlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
+    PracticeConfigurationDoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
     SimultaneousZonalShiftsConflict,
     #[allow(missing_docs)] // documentation missing in model
     ZonalShiftAlreadyExists,
@@ -55,6 +64,9 @@ pub enum ConflictExceptionReason {
 impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "AutoShiftEnabled" => ConflictExceptionReason::AutoshiftEnabled,
+            "PracticeConfigurationAlreadyExists" => ConflictExceptionReason::PracticeConfigurationAlreadyExists,
+            "PracticeConfigurationDoesNotExist" => ConflictExceptionReason::PracticeConfigurationDoesNotExist,
             "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
             "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
             "ZonalShiftStatusNotActive" => ConflictExceptionReason::ZonalShiftStatusNotActive,
@@ -73,6 +85,9 @@ impl ConflictExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConflictExceptionReason::AutoshiftEnabled => "AutoShiftEnabled",
+            ConflictExceptionReason::PracticeConfigurationAlreadyExists => "PracticeConfigurationAlreadyExists",
+            ConflictExceptionReason::PracticeConfigurationDoesNotExist => "PracticeConfigurationDoesNotExist",
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
             ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
             ConflictExceptionReason::ZonalShiftStatusNotActive => "ZonalShiftStatusNotActive",
@@ -81,7 +96,14 @@ impl ConflictExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SimultaneousZonalShiftsConflict", "ZonalShiftAlreadyExists", "ZonalShiftStatusNotActive"]
+        &[
+            "AutoShiftEnabled",
+            "PracticeConfigurationAlreadyExists",
+            "PracticeConfigurationDoesNotExist",
+            "SimultaneousZonalShiftsConflict",
+            "ZonalShiftAlreadyExists",
+            "ZonalShiftStatusNotActive",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ConflictExceptionReason {

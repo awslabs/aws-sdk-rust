@@ -27,7 +27,29 @@ pub use crate::types::_oidc_config::OidcConfig;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_custom_file_system_config::CustomFileSystemConfig;
+
+pub use crate::types::_efs_file_system_config::EfsFileSystemConfig;
+
+pub use crate::types::_custom_posix_user_config::CustomPosixUserConfig;
+
 pub use crate::types::_studio_web_portal::StudioWebPortal;
+
+pub use crate::types::_default_space_storage_settings::DefaultSpaceStorageSettings;
+
+pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettings;
+
+pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
+
+pub use crate::types::_resource_spec::ResourceSpec;
+
+pub use crate::types::_app_instance_type::AppInstanceType;
+
+pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettings;
+
+pub use crate::types::_code_repository::CodeRepository;
+
+pub use crate::types::_custom_image::CustomImage;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
@@ -49,12 +71,6 @@ pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSe
 
 pub use crate::types::_r_session_app_settings::RSessionAppSettings;
 
-pub use crate::types::_custom_image::CustomImage;
-
-pub use crate::types::_resource_spec::ResourceSpec;
-
-pub use crate::types::_app_instance_type::AppInstanceType;
-
 pub use crate::types::_r_studio_server_pro_app_settings::RStudioServerProAppSettings;
 
 pub use crate::types::_r_studio_server_pro_user_group::RStudioServerProUserGroup;
@@ -66,8 +82,6 @@ pub use crate::types::_tensor_board_app_settings::TensorBoardAppSettings;
 pub use crate::types::_kernel_gateway_app_settings::KernelGatewayAppSettings;
 
 pub use crate::types::_jupyter_server_app_settings::JupyterServerAppSettings;
-
-pub use crate::types::_code_repository::CodeRepository;
 
 pub use crate::types::_sharing_settings::SharingSettings;
 
@@ -90,6 +104,20 @@ pub use crate::types::_processing_instance_type::ProcessingInstanceType;
 pub use crate::types::_profiler_config_for_update::ProfilerConfigForUpdate;
 
 pub use crate::types::_space_settings::SpaceSettings;
+
+pub use crate::types::_custom_file_system::CustomFileSystem;
+
+pub use crate::types::_efs_file_system::EfsFileSystem;
+
+pub use crate::types::_app_type::AppType;
+
+pub use crate::types::_space_storage_settings::SpaceStorageSettings;
+
+pub use crate::types::_ebs_storage_settings::EbsStorageSettings;
+
+pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettings;
+
+pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettings;
 
 pub use crate::types::_tag::Tag;
 
@@ -286,6 +314,10 @@ pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGrou
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfig;
 
 pub use crate::types::_cluster_instance_type::ClusterInstanceType;
+
+pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfig;
+
+pub use crate::types::_container_config::ContainerConfig;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfig;
 
@@ -823,6 +855,14 @@ pub use crate::types::_device_deployment_status::DeviceDeploymentStatus;
 
 pub use crate::types::_space_details::SpaceDetails;
 
+pub use crate::types::_ownership_settings_summary::OwnershipSettingsSummary;
+
+pub use crate::types::_space_sharing_settings_summary::SpaceSharingSettingsSummary;
+
+pub use crate::types::_sharing_type::SharingType;
+
+pub use crate::types::_space_settings_summary::SpaceSettingsSummary;
+
 pub use crate::types::_space_status::SpaceStatus;
 
 pub use crate::types::_space_sort_key::SpaceSortKey;
@@ -1207,8 +1247,6 @@ pub use crate::types::_app_details::AppDetails;
 
 pub use crate::types::_app_status::AppStatus;
 
-pub use crate::types::_app_type::AppType;
-
 pub use crate::types::_app_sort_key::AppSortKey;
 
 pub use crate::types::_app_image_config_details::AppImageConfigDetails;
@@ -1264,6 +1302,10 @@ pub use crate::types::_infra_check_config::InfraCheckConfig;
 pub use crate::types::_profiling_status::ProfilingStatus;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatus;
+
+pub use crate::types::_space_sharing_settings::SpaceSharingSettings;
+
+pub use crate::types::_ownership_settings::OwnershipSettings;
 
 pub use crate::types::_direct_internet_access::DirectInternetAccess;
 
@@ -1871,6 +1913,8 @@ mod _cluster_status;
 
 mod _cluster_summary;
 
+mod _code_editor_app_settings;
+
 mod _code_repository;
 
 mod _code_repository_sort_by;
@@ -1901,6 +1945,8 @@ mod _condition_outcome;
 
 mod _condition_step_metadata;
 
+mod _container_config;
+
 mod _container_definition;
 
 mod _container_mode;
@@ -1919,7 +1965,13 @@ mod _convergence_detected;
 
 mod _cross_account_filter_option;
 
+mod _custom_file_system;
+
+mod _custom_file_system_config;
+
 mod _custom_image;
+
+mod _custom_posix_user_config;
 
 mod _customized_metric_specification;
 
@@ -1951,7 +2003,11 @@ mod _debug_rule_configuration;
 
 mod _debug_rule_evaluation_status;
 
+mod _default_ebs_storage_settings;
+
 mod _default_space_settings;
+
+mod _default_space_storage_settings;
 
 mod _deployed_image;
 
@@ -2013,6 +2069,8 @@ mod _drift_check_model_quality;
 
 mod _dynamic_scaling_configuration;
 
+mod _ebs_storage_settings;
+
 mod _edge;
 
 mod _edge_deployment_config;
@@ -2040,6 +2098,10 @@ mod _edge_preset_deployment_output;
 mod _edge_preset_deployment_status;
 
 mod _edge_preset_deployment_type;
+
+mod _efs_file_system;
+
+mod _efs_file_system_config;
 
 mod _emr_step_metadata;
 
@@ -2312,6 +2374,10 @@ mod _integer_parameter_range_specification;
 mod _job_type;
 
 mod _join_source;
+
+mod _jupyter_lab_app_image_config;
+
+mod _jupyter_lab_app_settings;
 
 mod _jupyter_server_app_settings;
 
@@ -2675,6 +2741,10 @@ mod _output_data_config;
 
 mod _output_parameter;
 
+mod _ownership_settings;
+
+mod _ownership_settings_summary;
+
 mod _parallelism_configuration;
 
 mod _parameter;
@@ -2959,6 +3029,8 @@ mod _shadow_model_variant_config;
 
 mod _sharing_settings;
 
+mod _sharing_type;
+
 mod _shuffle_config;
 
 mod _skip_model_validation;
@@ -2995,13 +3067,25 @@ mod _source_algorithm_specification;
 
 mod _source_ip_config;
 
+mod _space_code_editor_app_settings;
+
 mod _space_details;
 
+mod _space_jupyter_lab_app_settings;
+
 mod _space_settings;
+
+mod _space_settings_summary;
+
+mod _space_sharing_settings;
+
+mod _space_sharing_settings_summary;
 
 mod _space_sort_key;
 
 mod _space_status;
+
+mod _space_storage_settings;
 
 mod _split_type;
 

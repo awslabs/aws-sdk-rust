@@ -62,6 +62,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ResourceSpec" => {
+                            builder = builder.set_resource_spec(crate::protocol_serde::shape_resource_spec::de_resource_spec(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

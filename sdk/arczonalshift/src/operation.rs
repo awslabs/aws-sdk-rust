@@ -4,8 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CancelZonalShift` operation.
 pub mod cancel_zonal_shift;
 
+/// Types for the `CreatePracticeRunConfiguration` operation.
+pub mod create_practice_run_configuration;
+
+/// Types for the `DeletePracticeRunConfiguration` operation.
+pub mod delete_practice_run_configuration;
+
 /// Types for the `GetManagedResource` operation.
 pub mod get_managed_resource;
+
+/// Types for the `ListAutoshifts` operation.
+pub mod list_autoshifts;
 
 /// Types for the `ListManagedResources` operation.
 pub mod list_managed_resources;
@@ -15,6 +24,12 @@ pub mod list_zonal_shifts;
 
 /// Types for the `StartZonalShift` operation.
 pub mod start_zonal_shift;
+
+/// Types for the `UpdatePracticeRunConfiguration` operation.
+pub mod update_practice_run_configuration;
+
+/// Types for the `UpdateZonalAutoshiftConfiguration` operation.
+pub mod update_zonal_autoshift_configuration;
 
 /// Types for the `UpdateZonalShift` operation.
 pub mod update_zonal_shift;

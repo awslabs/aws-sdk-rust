@@ -12,6 +12,8 @@
 /// ```text
 /// # let studiolifecycleconfigapptype = unimplemented!();
 /// match studiolifecycleconfigapptype {
+///     StudioLifecycleConfigAppType::CodeEditor => { /* ... */ },
+///     StudioLifecycleConfigAppType::JupyterLab => { /* ... */ },
 ///     StudioLifecycleConfigAppType::JupyterServer => { /* ... */ },
 ///     StudioLifecycleConfigAppType::KernelGateway => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +44,10 @@
 )]
 pub enum StudioLifecycleConfigAppType {
     #[allow(missing_docs)] // documentation missing in model
+    CodeEditor,
+    #[allow(missing_docs)] // documentation missing in model
+    JupyterLab,
+    #[allow(missing_docs)] // documentation missing in model
     JupyterServer,
     #[allow(missing_docs)] // documentation missing in model
     KernelGateway,
@@ -52,6 +58,8 @@ pub enum StudioLifecycleConfigAppType {
 impl ::std::convert::From<&str> for StudioLifecycleConfigAppType {
     fn from(s: &str) -> Self {
         match s {
+            "CodeEditor" => StudioLifecycleConfigAppType::CodeEditor,
+            "JupyterLab" => StudioLifecycleConfigAppType::JupyterLab,
             "JupyterServer" => StudioLifecycleConfigAppType::JupyterServer,
             "KernelGateway" => StudioLifecycleConfigAppType::KernelGateway,
             other => StudioLifecycleConfigAppType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +77,8 @@ impl StudioLifecycleConfigAppType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StudioLifecycleConfigAppType::CodeEditor => "CodeEditor",
+            StudioLifecycleConfigAppType::JupyterLab => "JupyterLab",
             StudioLifecycleConfigAppType::JupyterServer => "JupyterServer",
             StudioLifecycleConfigAppType::KernelGateway => "KernelGateway",
             StudioLifecycleConfigAppType::Unknown(value) => value.as_str(),
@@ -76,7 +86,7 @@ impl StudioLifecycleConfigAppType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JupyterServer", "KernelGateway"]
+        &["CodeEditor", "JupyterLab", "JupyterServer", "KernelGateway"]
     }
 }
 impl ::std::convert::AsRef<str> for StudioLifecycleConfigAppType {

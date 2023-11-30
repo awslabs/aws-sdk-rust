@@ -22,8 +22,8 @@ impl GetManagedResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetManagedResource`.
 ///
-/// <p>Get information about a resource that's been registered for zonal shifts with Amazon Route 53 Application Recovery Controller in this AWS Region. Resources that are registered for zonal shifts are managed resources in Route 53 ARC.</p>
-/// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+/// <p>Get information about a resource that's been registered for zonal shifts with Amazon Route 53 Application Recovery Controller in this Amazon Web Services Region. Resources that are registered for zonal shifts are managed resources in Route 53 ARC. You can start zonal shifts and configure zonal autoshift for managed resources.</p>
+/// <p>At this time, you can only start a zonal shift or configure zonal autoshift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,20 +109,20 @@ impl GetManagedResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
-    /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
+    /// <p>The identifier for the resource to shift away traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    /// <p>At this time, supported resources are Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }

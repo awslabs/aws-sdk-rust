@@ -11,6 +11,12 @@ pub struct GetManagedResourceOutput {
     pub applied_weights: ::std::collections::HashMap<::std::string::String, f32>,
     /// <p>The zonal shifts that are currently active for a resource. </p>
     pub zonal_shifts: ::std::vec::Vec<crate::types::ZonalShiftInResource>,
+    /// <p>An array of the autoshifts that are active for the resource.</p>
+    pub autoshifts: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>,
+    /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
+    pub practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
+    /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    pub zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
     _request_id: Option<String>,
 }
 impl GetManagedResourceOutput {
@@ -30,6 +36,20 @@ impl GetManagedResourceOutput {
     pub fn zonal_shifts(&self) -> &[crate::types::ZonalShiftInResource] {
         use std::ops::Deref;
         self.zonal_shifts.deref()
+    }
+    /// <p>An array of the autoshifts that are active for the resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.autoshifts.is_none()`.
+    pub fn autoshifts(&self) -> &[crate::types::AutoshiftInResource] {
+        self.autoshifts.as_deref().unwrap_or_default()
+    }
+    /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
+    pub fn practice_run_configuration(&self) -> ::std::option::Option<&crate::types::PracticeRunConfiguration> {
+        self.practice_run_configuration.as_ref()
+    }
+    /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    pub fn zonal_autoshift_status(&self) -> ::std::option::Option<&crate::types::ZonalAutoshiftStatus> {
+        self.zonal_autoshift_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetManagedResourceOutput {
@@ -52,6 +72,9 @@ pub struct GetManagedResourceOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) applied_weights: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
     pub(crate) zonal_shifts: ::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>>,
+    pub(crate) autoshifts: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>,
+    pub(crate) practice_run_configuration: ::std::option::Option<crate::types::PracticeRunConfiguration>,
+    pub(crate) zonal_autoshift_status: ::std::option::Option<crate::types::ZonalAutoshiftStatus>,
     _request_id: Option<String>,
 }
 impl GetManagedResourceOutputBuilder {
@@ -123,6 +146,54 @@ impl GetManagedResourceOutputBuilder {
     pub fn get_zonal_shifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ZonalShiftInResource>> {
         &self.zonal_shifts
     }
+    /// Appends an item to `autoshifts`.
+    ///
+    /// To override the contents of this collection use [`set_autoshifts`](Self::set_autoshifts).
+    ///
+    /// <p>An array of the autoshifts that are active for the resource.</p>
+    pub fn autoshifts(mut self, input: crate::types::AutoshiftInResource) -> Self {
+        let mut v = self.autoshifts.unwrap_or_default();
+        v.push(input);
+        self.autoshifts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of the autoshifts that are active for the resource.</p>
+    pub fn set_autoshifts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>>) -> Self {
+        self.autoshifts = input;
+        self
+    }
+    /// <p>An array of the autoshifts that are active for the resource.</p>
+    pub fn get_autoshifts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutoshiftInResource>> {
+        &self.autoshifts
+    }
+    /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
+    pub fn practice_run_configuration(mut self, input: crate::types::PracticeRunConfiguration) -> Self {
+        self.practice_run_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
+    pub fn set_practice_run_configuration(mut self, input: ::std::option::Option<crate::types::PracticeRunConfiguration>) -> Self {
+        self.practice_run_configuration = input;
+        self
+    }
+    /// <p>The practice run configuration for zonal autoshift that's associated with the resource.</p>
+    pub fn get_practice_run_configuration(&self) -> &::std::option::Option<crate::types::PracticeRunConfiguration> {
+        &self.practice_run_configuration
+    }
+    /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    pub fn zonal_autoshift_status(mut self, input: crate::types::ZonalAutoshiftStatus) -> Self {
+        self.zonal_autoshift_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    pub fn set_zonal_autoshift_status(mut self, input: ::std::option::Option<crate::types::ZonalAutoshiftStatus>) -> Self {
+        self.zonal_autoshift_status = input;
+        self
+    }
+    /// <p>The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>, Amazon Web Services shifts traffic for a resource away from an Availability Zone, on your behalf, when Amazon Web Services determines that there's an issue in the Availability Zone that could potentially affect customers.</p>
+    pub fn get_zonal_autoshift_status(&self) -> &::std::option::Option<crate::types::ZonalAutoshiftStatus> {
+        &self.zonal_autoshift_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -155,6 +226,9 @@ impl GetManagedResourceOutputBuilder {
                     "zonal_shifts was not specified but it is required when building GetManagedResourceOutput",
                 )
             })?,
+            autoshifts: self.autoshifts,
+            practice_run_configuration: self.practice_run_configuration,
+            zonal_autoshift_status: self.zonal_autoshift_status,
             _request_id: self._request_id,
         })
     }

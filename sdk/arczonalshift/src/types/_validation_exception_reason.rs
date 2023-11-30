@@ -12,8 +12,11 @@
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
+///     ValidationExceptionReason::InvalidAlarmCondition => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAz => { /* ... */ },
+///     ValidationExceptionReason::InvalidConditionType => { /* ... */ },
 ///     ValidationExceptionReason::InvalidExpiresIn => { /* ... */ },
+///     ValidationExceptionReason::InvalidPracticeBlocker => { /* ... */ },
 ///     ValidationExceptionReason::InvalidResourceIdentifier => { /* ... */ },
 ///     ValidationExceptionReason::InvalidStatus => { /* ... */ },
 ///     ValidationExceptionReason::InvalidToken => { /* ... */ },
@@ -47,9 +50,15 @@
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    InvalidAlarmCondition,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidAz,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidConditionType,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidExpiresIn,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidPracticeBlocker,
     #[allow(missing_docs)] // documentation missing in model
     InvalidResourceIdentifier,
     #[allow(missing_docs)] // documentation missing in model
@@ -67,8 +76,11 @@ pub enum ValidationExceptionReason {
 impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "InvalidAlarmCondition" => ValidationExceptionReason::InvalidAlarmCondition,
             "InvalidAz" => ValidationExceptionReason::InvalidAz,
+            "InvalidConditionType" => ValidationExceptionReason::InvalidConditionType,
             "InvalidExpiresIn" => ValidationExceptionReason::InvalidExpiresIn,
+            "InvalidPracticeBlocker" => ValidationExceptionReason::InvalidPracticeBlocker,
             "InvalidResourceIdentifier" => ValidationExceptionReason::InvalidResourceIdentifier,
             "InvalidStatus" => ValidationExceptionReason::InvalidStatus,
             "InvalidToken" => ValidationExceptionReason::InvalidToken,
@@ -89,8 +101,11 @@ impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidationExceptionReason::InvalidAlarmCondition => "InvalidAlarmCondition",
             ValidationExceptionReason::InvalidAz => "InvalidAz",
+            ValidationExceptionReason::InvalidConditionType => "InvalidConditionType",
             ValidationExceptionReason::InvalidExpiresIn => "InvalidExpiresIn",
+            ValidationExceptionReason::InvalidPracticeBlocker => "InvalidPracticeBlocker",
             ValidationExceptionReason::InvalidResourceIdentifier => "InvalidResourceIdentifier",
             ValidationExceptionReason::InvalidStatus => "InvalidStatus",
             ValidationExceptionReason::InvalidToken => "InvalidToken",
@@ -102,8 +117,11 @@ impl ValidationExceptionReason {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "InvalidAlarmCondition",
             "InvalidAz",
+            "InvalidConditionType",
             "InvalidExpiresIn",
+            "InvalidPracticeBlocker",
             "InvalidResourceIdentifier",
             "InvalidStatus",
             "InvalidToken",

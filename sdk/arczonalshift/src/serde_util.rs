@@ -59,6 +59,42 @@ pub(crate) fn cancel_zonal_shift_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_practice_run_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder,
+) -> crate::operation::create_practice_run_configuration::builders::CreatePracticeRunConfigurationOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.zonal_autoshift_status.is_none() {
+        builder.zonal_autoshift_status = "no value was set".parse::<crate::types::ZonalAutoshiftStatus>().ok()
+    }
+    if builder.practice_run_configuration.is_none() {
+        builder.practice_run_configuration = {
+            let builder = crate::types::builders::PracticeRunConfigurationBuilder::default();
+            crate::serde_util::practice_run_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn delete_practice_run_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder,
+) -> crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.zonal_autoshift_status.is_none() {
+        builder.zonal_autoshift_status = "no value was set".parse::<crate::types::ZonalAutoshiftStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_managed_resource_output_output_correct_errors(
     mut builder: crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder,
 ) -> crate::operation::get_managed_resource::builders::GetManagedResourceOutputBuilder {
@@ -107,6 +143,39 @@ pub(crate) fn start_zonal_shift_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_practice_run_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder,
+) -> crate::operation::update_practice_run_configuration::builders::UpdatePracticeRunConfigurationOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.zonal_autoshift_status.is_none() {
+        builder.zonal_autoshift_status = "no value was set".parse::<crate::types::ZonalAutoshiftStatus>().ok()
+    }
+    if builder.practice_run_configuration.is_none() {
+        builder.practice_run_configuration = {
+            let builder = crate::types::builders::PracticeRunConfigurationBuilder::default();
+            crate::serde_util::practice_run_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_zonal_autoshift_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_zonal_autoshift_configuration::builders::UpdateZonalAutoshiftConfigurationOutputBuilder,
+) -> crate::operation::update_zonal_autoshift_configuration::builders::UpdateZonalAutoshiftConfigurationOutputBuilder {
+    if builder.resource_identifier.is_none() {
+        builder.resource_identifier = Some(Default::default())
+    }
+    if builder.zonal_autoshift_status.is_none() {
+        builder.zonal_autoshift_status = "no value was set".parse::<crate::types::ZonalAutoshiftStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_zonal_shift_output_output_correct_errors(
     mut builder: crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder,
 ) -> crate::operation::update_zonal_shift::builders::UpdateZonalShiftOutputBuilder {
@@ -130,6 +199,48 @@ pub(crate) fn update_zonal_shift_output_output_correct_errors(
     }
     if builder.comment.is_none() {
         builder.comment = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn practice_run_configuration_correct_errors(
+    mut builder: crate::types::builders::PracticeRunConfigurationBuilder,
+) -> crate::types::builders::PracticeRunConfigurationBuilder {
+    if builder.outcome_alarms.is_none() {
+        builder.outcome_alarms = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn autoshift_in_resource_correct_errors(
+    mut builder: crate::types::builders::AutoshiftInResourceBuilder,
+) -> crate::types::builders::AutoshiftInResourceBuilder {
+    if builder.applied_status.is_none() {
+        builder.applied_status = "no value was set".parse::<crate::types::AutoshiftAppliedStatus>().ok()
+    }
+    if builder.away_from.is_none() {
+        builder.away_from = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn autoshift_summary_correct_errors(
+    mut builder: crate::types::builders::AutoshiftSummaryBuilder,
+) -> crate::types::builders::AutoshiftSummaryBuilder {
+    if builder.away_from.is_none() {
+        builder.away_from = Some(Default::default())
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AutoshiftExecutionStatus>().ok()
     }
     builder
 }
@@ -193,6 +304,18 @@ pub(crate) fn zonal_shift_summary_correct_errors(
     }
     if builder.comment.is_none() {
         builder.comment = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn control_condition_correct_errors(
+    mut builder: crate::types::builders::ControlConditionBuilder,
+) -> crate::types::builders::ControlConditionBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ControlConditionType>().ok()
+    }
+    if builder.alarm_identifier.is_none() {
+        builder.alarm_identifier = Some(Default::default())
     }
     builder
 }

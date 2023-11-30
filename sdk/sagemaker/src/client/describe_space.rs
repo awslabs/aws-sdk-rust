@@ -16,6 +16,9 @@ impl super::Client {
     ///   - [`failure_reason(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::failure_reason): <p>The failure reason.</p>
     ///   - [`space_settings(Option<SpaceSettings>)`](crate::operation::describe_space::DescribeSpaceOutput::space_settings): <p>A collection of space settings.</p>
     ///   - [`url(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::url): <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>  <p>The following application types are supported:</p>  <ul>   <li> <p>Studio Classic: <code>&amp;redirect=JupyterServer</code> </p> </li>   <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>  </ul>
+    ///   - [`space_display_name(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::space_display_name): <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    ///   - [`ownership_settings(Option<OwnershipSettings>)`](crate::operation::describe_space::DescribeSpaceOutput::ownership_settings): <p>The collection of ownership settings for a space.</p>
+    ///   - [`space_sharing_settings(Option<SpaceSharingSettings>)`](crate::operation::describe_space::DescribeSpaceOutput::space_sharing_settings): <p>The collection of space sharing settings for a space.</p>
     /// - On failure, responds with [`SdkError<DescribeSpaceError>`](crate::operation::describe_space::DescribeSpaceError)
     pub fn describe_space(&self) -> crate::operation::describe_space::builders::DescribeSpaceFluentBuilder {
         crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::new(self.handle.clone())

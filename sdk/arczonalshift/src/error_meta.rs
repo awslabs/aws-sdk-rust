@@ -13,7 +13,7 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -91,6 +91,106 @@ impl From<crate::operation::cancel_zonal_shift::CancelZonalShiftError> for Error
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError> for Error {
+    fn from(err: crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError) -> Self {
+        match err {
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_practice_run_configuration::CreatePracticeRunConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError> for Error {
+    fn from(err: crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_practice_run_configuration::DeletePracticeRunConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_managed_resource::GetManagedResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -116,6 +216,31 @@ impl From<crate::operation::get_managed_resource::GetManagedResourceError> for E
             crate::operation::get_managed_resource::GetManagedResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_managed_resource::GetManagedResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_managed_resource::GetManagedResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autoshifts::ListAutoshiftsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autoshifts::ListAutoshiftsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autoshifts::ListAutoshiftsError> for Error {
+    fn from(err: crate::operation::list_autoshifts::ListAutoshiftsError) -> Self {
+        match err {
+            crate::operation::list_autoshifts::ListAutoshiftsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_autoshifts::ListAutoshiftsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_autoshifts::ListAutoshiftsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_autoshifts::ListAutoshiftsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_autoshifts::ListAutoshiftsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -195,6 +320,108 @@ impl From<crate::operation::start_zonal_shift::StartZonalShiftError> for Error {
             crate::operation::start_zonal_shift::StartZonalShiftError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_zonal_shift::StartZonalShiftError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_zonal_shift::StartZonalShiftError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError> for Error {
+    fn from(err: crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError) -> Self {
+        match err {
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_practice_run_configuration::UpdatePracticeRunConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError> for Error {
+    fn from(err: crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError) -> Self {
+        match err {
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_zonal_autoshift_configuration::UpdateZonalAutoshiftConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

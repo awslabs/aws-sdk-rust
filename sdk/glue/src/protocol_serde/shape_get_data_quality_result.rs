@@ -193,6 +193,15 @@ pub(crate) fn de_get_data_quality_result(
                         tokens,
                     )?);
                 }
+                "AnalyzerResults" => {
+                    builder = builder
+                        .set_analyzer_results(crate::protocol_serde::shape_data_quality_analyzer_results::de_data_quality_analyzer_results(tokens)?);
+                }
+                "Observations" => {
+                    builder = builder.set_observations(crate::protocol_serde::shape_data_quality_observations::de_data_quality_observations(
+                        tokens,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

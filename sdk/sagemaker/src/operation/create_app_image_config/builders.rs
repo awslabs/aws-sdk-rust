@@ -154,4 +154,18 @@ impl CreateAppImageConfigFluentBuilder {
     pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         self.inner.get_kernel_gateway_image_config()
     }
+    /// <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in the <code>AppImageConfig</code> API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.</p>
+    pub fn jupyter_lab_app_image_config(mut self, input: crate::types::JupyterLabAppImageConfig) -> Self {
+        self.inner = self.inner.jupyter_lab_app_image_config(input);
+        self
+    }
+    /// <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in the <code>AppImageConfig</code> API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.</p>
+    pub fn set_jupyter_lab_app_image_config(mut self, input: ::std::option::Option<crate::types::JupyterLabAppImageConfig>) -> Self {
+        self.inner = self.inner.set_jupyter_lab_app_image_config(input);
+        self
+    }
+    /// <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in the <code>AppImageConfig</code> API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.</p>
+    pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
+        self.inner.get_jupyter_lab_app_image_config()
+    }
 }

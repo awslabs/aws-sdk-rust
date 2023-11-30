@@ -45,6 +45,11 @@ where
                                 crate::protocol_serde::shape_kernel_gateway_image_config::de_kernel_gateway_image_config(tokens)?,
                             );
                         }
+                        "JupyterLabAppImageConfig" => {
+                            builder = builder.set_jupyter_lab_app_image_config(
+                                crate::protocol_serde::shape_jupyter_lab_app_image_config::de_jupyter_lab_app_image_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -15,5 +15,8 @@ pub fn ser_update_space_input_input(
         crate::protocol_serde::shape_space_settings::ser_space_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.space_display_name {
+        object.key("SpaceDisplayName").string(var_5.as_str());
+    }
     Ok(())
 }

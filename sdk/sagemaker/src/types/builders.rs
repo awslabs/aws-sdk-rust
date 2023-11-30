@@ -25,6 +25,24 @@ pub use crate::types::_oidc_config::OidcConfigBuilder;
 
 pub use crate::types::_user_settings::UserSettingsBuilder;
 
+pub use crate::types::_efs_file_system_config::EfsFileSystemConfigBuilder;
+
+pub use crate::types::_custom_posix_user_config::CustomPosixUserConfigBuilder;
+
+pub use crate::types::_default_space_storage_settings::DefaultSpaceStorageSettingsBuilder;
+
+pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettingsBuilder;
+
+pub use crate::types::_code_editor_app_settings::CodeEditorAppSettingsBuilder;
+
+pub use crate::types::_resource_spec::ResourceSpecBuilder;
+
+pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettingsBuilder;
+
+pub use crate::types::_code_repository::CodeRepositoryBuilder;
+
+pub use crate::types::_custom_image::CustomImageBuilder;
+
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
 pub use crate::types::_direct_deploy_settings::DirectDeploySettingsBuilder;
@@ -41,10 +59,6 @@ pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSe
 
 pub use crate::types::_r_session_app_settings::RSessionAppSettingsBuilder;
 
-pub use crate::types::_custom_image::CustomImageBuilder;
-
-pub use crate::types::_resource_spec::ResourceSpecBuilder;
-
 pub use crate::types::_r_studio_server_pro_app_settings::RStudioServerProAppSettingsBuilder;
 
 pub use crate::types::_tensor_board_app_settings::TensorBoardAppSettingsBuilder;
@@ -52,8 +66,6 @@ pub use crate::types::_tensor_board_app_settings::TensorBoardAppSettingsBuilder;
 pub use crate::types::_kernel_gateway_app_settings::KernelGatewayAppSettingsBuilder;
 
 pub use crate::types::_jupyter_server_app_settings::JupyterServerAppSettingsBuilder;
-
-pub use crate::types::_code_repository::CodeRepositoryBuilder;
 
 pub use crate::types::_sharing_settings::SharingSettingsBuilder;
 
@@ -68,6 +80,16 @@ pub use crate::types::_profiler_rule_configuration::ProfilerRuleConfigurationBui
 pub use crate::types::_profiler_config_for_update::ProfilerConfigForUpdateBuilder;
 
 pub use crate::types::_space_settings::SpaceSettingsBuilder;
+
+pub use crate::types::_efs_file_system::EfsFileSystemBuilder;
+
+pub use crate::types::_space_storage_settings::SpaceStorageSettingsBuilder;
+
+pub use crate::types::_ebs_storage_settings::EbsStorageSettingsBuilder;
+
+pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettingsBuilder;
+
+pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettingsBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -206,6 +228,10 @@ pub use crate::types::_git_config_for_update::GitConfigForUpdateBuilder;
 pub use crate::types::_cluster_instance_group_specification::ClusterInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_cluster_life_cycle_config::ClusterLifeCycleConfigBuilder;
+
+pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfigBuilder;
+
+pub use crate::types::_container_config::ContainerConfigBuilder;
 
 pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuilder;
 
@@ -571,6 +597,12 @@ pub use crate::types::_device_deployment_summary::DeviceDeploymentSummaryBuilder
 
 pub use crate::types::_space_details::SpaceDetailsBuilder;
 
+pub use crate::types::_ownership_settings_summary::OwnershipSettingsSummaryBuilder;
+
+pub use crate::types::_space_sharing_settings_summary::SpaceSharingSettingsSummaryBuilder;
+
+pub use crate::types::_space_settings_summary::SpaceSettingsSummaryBuilder;
+
 pub use crate::types::_resource_catalog::ResourceCatalogBuilder;
 
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
@@ -800,6 +832,10 @@ pub use crate::types::_device_stats::DeviceStatsBuilder;
 pub use crate::types::_infra_check_config::InfraCheckConfigBuilder;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatusBuilder;
+
+pub use crate::types::_space_sharing_settings::SpaceSharingSettingsBuilder;
+
+pub use crate::types::_ownership_settings::OwnershipSettingsBuilder;
 
 pub use crate::types::_monitoring_network_config::MonitoringNetworkConfigBuilder;
 

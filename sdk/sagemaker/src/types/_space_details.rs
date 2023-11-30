@@ -14,6 +14,14 @@ pub struct SpaceDetails {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The name of the space that appears in the Studio UI.</p>
+    pub space_display_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies summary information about the space settings.</p>
+    pub space_settings_summary: ::std::option::Option<crate::types::SpaceSettingsSummary>,
+    /// <p>Specifies summary information about the space sharing settings.</p>
+    pub space_sharing_settings_summary: ::std::option::Option<crate::types::SpaceSharingSettingsSummary>,
+    /// <p>Specifies summary information about the ownership settings.</p>
+    pub ownership_settings_summary: ::std::option::Option<crate::types::OwnershipSettingsSummary>,
 }
 impl SpaceDetails {
     /// <p>The ID of the associated Domain.</p>
@@ -36,6 +44,22 @@ impl SpaceDetails {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>The name of the space that appears in the Studio UI.</p>
+    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+        self.space_display_name.as_deref()
+    }
+    /// <p>Specifies summary information about the space settings.</p>
+    pub fn space_settings_summary(&self) -> ::std::option::Option<&crate::types::SpaceSettingsSummary> {
+        self.space_settings_summary.as_ref()
+    }
+    /// <p>Specifies summary information about the space sharing settings.</p>
+    pub fn space_sharing_settings_summary(&self) -> ::std::option::Option<&crate::types::SpaceSharingSettingsSummary> {
+        self.space_sharing_settings_summary.as_ref()
+    }
+    /// <p>Specifies summary information about the ownership settings.</p>
+    pub fn ownership_settings_summary(&self) -> ::std::option::Option<&crate::types::OwnershipSettingsSummary> {
+        self.ownership_settings_summary.as_ref()
+    }
 }
 impl SpaceDetails {
     /// Creates a new builder-style object to manufacture [`SpaceDetails`](crate::types::SpaceDetails).
@@ -53,6 +77,10 @@ pub struct SpaceDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::SpaceStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) space_settings_summary: ::std::option::Option<crate::types::SpaceSettingsSummary>,
+    pub(crate) space_sharing_settings_summary: ::std::option::Option<crate::types::SpaceSharingSettingsSummary>,
+    pub(crate) ownership_settings_summary: ::std::option::Option<crate::types::OwnershipSettingsSummary>,
 }
 impl SpaceDetailsBuilder {
     /// <p>The ID of the associated Domain.</p>
@@ -125,6 +153,62 @@ impl SpaceDetailsBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>The name of the space that appears in the Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_display_name = input;
+        self
+    }
+    /// <p>The name of the space that appears in the Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_display_name
+    }
+    /// <p>Specifies summary information about the space settings.</p>
+    pub fn space_settings_summary(mut self, input: crate::types::SpaceSettingsSummary) -> Self {
+        self.space_settings_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies summary information about the space settings.</p>
+    pub fn set_space_settings_summary(mut self, input: ::std::option::Option<crate::types::SpaceSettingsSummary>) -> Self {
+        self.space_settings_summary = input;
+        self
+    }
+    /// <p>Specifies summary information about the space settings.</p>
+    pub fn get_space_settings_summary(&self) -> &::std::option::Option<crate::types::SpaceSettingsSummary> {
+        &self.space_settings_summary
+    }
+    /// <p>Specifies summary information about the space sharing settings.</p>
+    pub fn space_sharing_settings_summary(mut self, input: crate::types::SpaceSharingSettingsSummary) -> Self {
+        self.space_sharing_settings_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies summary information about the space sharing settings.</p>
+    pub fn set_space_sharing_settings_summary(mut self, input: ::std::option::Option<crate::types::SpaceSharingSettingsSummary>) -> Self {
+        self.space_sharing_settings_summary = input;
+        self
+    }
+    /// <p>Specifies summary information about the space sharing settings.</p>
+    pub fn get_space_sharing_settings_summary(&self) -> &::std::option::Option<crate::types::SpaceSharingSettingsSummary> {
+        &self.space_sharing_settings_summary
+    }
+    /// <p>Specifies summary information about the ownership settings.</p>
+    pub fn ownership_settings_summary(mut self, input: crate::types::OwnershipSettingsSummary) -> Self {
+        self.ownership_settings_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies summary information about the ownership settings.</p>
+    pub fn set_ownership_settings_summary(mut self, input: ::std::option::Option<crate::types::OwnershipSettingsSummary>) -> Self {
+        self.ownership_settings_summary = input;
+        self
+    }
+    /// <p>Specifies summary information about the ownership settings.</p>
+    pub fn get_ownership_settings_summary(&self) -> &::std::option::Option<crate::types::OwnershipSettingsSummary> {
+        &self.ownership_settings_summary
+    }
     /// Consumes the builder and constructs a [`SpaceDetails`](crate::types::SpaceDetails).
     pub fn build(self) -> crate::types::SpaceDetails {
         crate::types::SpaceDetails {
@@ -133,6 +217,10 @@ impl SpaceDetailsBuilder {
             status: self.status,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            space_display_name: self.space_display_name,
+            space_settings_summary: self.space_settings_summary,
+            space_sharing_settings_summary: self.space_sharing_settings_summary,
+            ownership_settings_summary: self.ownership_settings_summary,
         }
     }
 }

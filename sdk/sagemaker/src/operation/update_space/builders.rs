@@ -150,4 +150,18 @@ impl UpdateSpaceFluentBuilder {
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
         self.inner.get_space_settings()
     }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.space_display_name(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_space_display_name(input);
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_display_name()
+    }
 }

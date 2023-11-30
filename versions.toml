@@ -190,9 +190,9 @@ model_hash = 'db94397b2a8010465e1e77eec87a5061d0e1708509da01233a9330a1a1d46f3c'
 
 [crates.aws-sdk-arczonalshift]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'db680ed73ec736f4b92621a3654ce5e7ef4a2e4948491fdadaacdf1da7042157'
-model_hash = '822429af8874f4bf10181a0c0dc17d56841d24fcf5293418df761249f31f23b3'
+version = '1.4.0'
+source_hash = '34e365c214c9dc379f48e50addb401085c2e97c5f0d46df72ec94a874e686c75'
+model_hash = '0a2b2dc5a0e53412f53f6ad90b53d033e4b4d85861c187b338ed49912a704210'
 
 [crates.aws-sdk-athena]
 category = 'AwsSdk'
@@ -928,9 +928,9 @@ model_hash = '9b0cc2aaef022bb5d81b21663b13bf971d10c3d3ec0b09ffb034cb6f57391dbe'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '23c4d44bdecc079083f00c545e51e5f89e8afe39b6abfaf9eede019fb94e6c36'
-model_hash = '86b88b209a162b59aa9a4882da2a174f8ba0aaf007c88a3e407c84a59f39e6d1'
+version = '1.4.0'
+source_hash = 'b95098f69df9ebe506a57a7f0d766121645ac7aa1544f373413874ca454d6b6b'
+model_hash = 'b03409523ad82a9315c98460c14f6145b0ff7a8342e60ab5a34e569947249cb5'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
@@ -1882,9 +1882,9 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.4.0'
-source_hash = '38d09ceba56a185bdaf6eebb186852ba2f9edf67a958ddf983791a5a5747bc29'
-model_hash = '0f7afb90f63a264587bc7dd30986915238d4c543683d9f7ecce7f81a2168b8c3'
+version = '1.5.0'
+source_hash = '4673a060cd96970fe7c50b4d04a72b0518385d46d1760bd1f53eae8359481d89'
+model_hash = 'a51cb1492bbc35c5ff48378a22ada5b82ab20cd12fa4db4d1cac9a108da5799c'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2396,12 +2396,7 @@ source_hash = '11a719c09fac2708e6e2a232de738eccefa9dc532282f571eb75656d40a2b8bc'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '272babb73dc3f79128a1ef0521e9967c012b6800492cd482ca10615db9517752'
-
-[release]
-tag = 'release-2023-11-30'
-
 [release.crates]
-aws-sdk-marketplaceagreement = '1.0.0'
-aws-sdk-marketplacecatalog = '1.4.0'
-aws-sdk-marketplacedeployment = '1.0.0'
-aws-sdk-redshiftserverless = '1.4.0'
+aws-sdk-arczonalshift = '1.4.0'
+aws-sdk-glue = '1.4.0'
+aws-sdk-sagemaker = '1.5.0'

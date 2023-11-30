@@ -4,25 +4,38 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZonalShiftInResource {
-    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
+    /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub applied_status: crate::types::AppliedStatus,
     /// <p>The identifier of a zonal shift.</p>
     pub zonal_shift_id: ::std::string::String,
     /// <p>The identifier for the resource to include in a zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
     pub resource_identifier: ::std::string::String,
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub away_from: ::std::string::String,
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub expiry_time: ::aws_smithy_types::DateTime,
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub start_time: ::aws_smithy_types::DateTime,
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
     pub comment: ::std::string::String,
+    /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING:</b> Outcome value when a practice run is in progress.</p> </li>
+    /// <li> <p> <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+    /// <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p> </li>
+    /// <li> <p> <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p> </li>
+    /// </ul>
+    /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub practice_run_outcome: ::std::option::Option<crate::types::PracticeRunOutcome>,
 }
 impl ZonalShiftInResource {
-    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
+    /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn applied_status(&self) -> &crate::types::AppliedStatus {
         &self.applied_status
     }
@@ -37,17 +50,17 @@ impl ZonalShiftInResource {
         use std::ops::Deref;
         self.resource_identifier.deref()
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn away_from(&self) -> &str {
         use std::ops::Deref;
         self.away_from.deref()
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn expiry_time(&self) -> &::aws_smithy_types::DateTime {
         &self.expiry_time
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.start_time
     }
@@ -55,6 +68,17 @@ impl ZonalShiftInResource {
     pub fn comment(&self) -> &str {
         use std::ops::Deref;
         self.comment.deref()
+    }
+    /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING:</b> Outcome value when a practice run is in progress.</p> </li>
+    /// <li> <p> <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+    /// <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p> </li>
+    /// <li> <p> <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p> </li>
+    /// </ul>
+    /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn practice_run_outcome(&self) -> ::std::option::Option<&crate::types::PracticeRunOutcome> {
+        self.practice_run_outcome.as_ref()
     }
 }
 impl ZonalShiftInResource {
@@ -75,20 +99,27 @@ pub struct ZonalShiftInResourceBuilder {
     pub(crate) expiry_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) practice_run_outcome: ::std::option::Option<crate::types::PracticeRunOutcome>,
 }
 impl ZonalShiftInResourceBuilder {
-    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
+    /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     /// This field is required.
     pub fn applied_status(mut self, input: crate::types::AppliedStatus) -> Self {
         self.applied_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
+    /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn set_applied_status(mut self, input: ::std::option::Option<crate::types::AppliedStatus>) -> Self {
         self.applied_status = input;
         self
     }
-    /// <p>An <code>appliedStatus</code> for a zonal shift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. </p>
+    /// <p>The <code>appliedStatus</code> field specifies which application traffic shift is in effect for a resource when there is more than one traffic shift active. There can be more than one application traffic shift in progress at the same time - that is, practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code> field for an autoshift for a resource can have one of two values: <code>APPLIED</code> or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect for the resource has an applied status set to <code>APPLIED</code>.</p>
+    /// <p>The overall principle for precedence is that zonal shifts that you start as a customer take precedence autoshifts, which take precedence over practice runs. That is, customer-started zonal shifts &gt; autoshifts &gt; practice run zonal shifts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html">How zonal autoshift and practice runs work</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
     pub fn get_applied_status(&self) -> &::std::option::Option<crate::types::AppliedStatus> {
         &self.applied_status
     }
@@ -125,51 +156,51 @@ impl ZonalShiftInResourceBuilder {
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_identifier
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     /// This field is required.
     pub fn away_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.away_from = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn set_away_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.away_from = input;
         self
     }
-    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the AWS Region.</p>
+    /// <p>The Availability Zone that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.away_from
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     /// This field is required.
     pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiry_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn set_expiry_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiry_time = input;
         self
     }
-    /// <p>The expiry time (expiration time) for the zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
-    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift, for example, if you're ready to restore traffic to the Availability Zone. Or you can update the zonal shift to specify another length of time to expire in.</p>
+    /// <p>The expiry time (expiration time) for a customer-started zonal shift. A zonal shift is temporary and must be set to expire when you start the zonal shift. You can initially set a zonal shift to expire in a maximum of three days (72 hours). However, you can update a zonal shift to set a new expiration at any time. </p>
+    /// <p>When you start a zonal shift, you specify how long you want it to be active, which Route 53 ARC converts to an expiry time (expiration time). You can cancel a zonal shift when you're ready to restore traffic to the Availability Zone, or just wait for it to expire. Or you can update the zonal shift to specify another length of time to expire in.</p>
     pub fn get_expiry_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiry_time
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     /// This field is required.
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The time (UTC) when the zonal shift is started.</p>
+    /// <p>The time (UTC) when the zonal shift starts.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
@@ -187,6 +218,41 @@ impl ZonalShiftInResourceBuilder {
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. That is, a new comment overwrites any existing comment string.</p>
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
+    }
+    /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING:</b> Outcome value when a practice run is in progress.</p> </li>
+    /// <li> <p> <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+    /// <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p> </li>
+    /// <li> <p> <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p> </li>
+    /// </ul>
+    /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn practice_run_outcome(mut self, input: crate::types::PracticeRunOutcome) -> Self {
+        self.practice_run_outcome = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING:</b> Outcome value when a practice run is in progress.</p> </li>
+    /// <li> <p> <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+    /// <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p> </li>
+    /// <li> <p> <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p> </li>
+    /// </ul>
+    /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn set_practice_run_outcome(mut self, input: ::std::option::Option<crate::types::PracticeRunOutcome>) -> Self {
+        self.practice_run_outcome = input;
+        self
+    }
+    /// <p>The outcome, or end state, returned for a practice run. The following values can be returned:</p>
+    /// <ul>
+    /// <li> <p> <b>PENDING:</b> Outcome value when a practice run is in progress.</p> </li>
+    /// <li> <p> <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice run configuration does not go into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed the expected 30 minute zonal shift.</p> </li>
+    /// <li> <p> <b>INTERRUPTED:</b> Outcome value when the practice run was stopped before the expected 30 minute zonal shift duration, or there was another problem with the practice run that created an inconclusive outcome.</p> </li>
+    /// <li> <p> <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run configuration goes into an <code>ALARM</code> state during the practice run, and the practice run was not interrupted before it completed.</p> </li>
+    /// </ul>
+    /// <p>For more information about practice run outcomes, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.configure.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
+    pub fn get_practice_run_outcome(&self) -> &::std::option::Option<crate::types::PracticeRunOutcome> {
+        &self.practice_run_outcome
     }
     /// Consumes the builder and constructs a [`ZonalShiftInResource`](crate::types::ZonalShiftInResource).
     /// This method will fail if any of the following fields are not set:
@@ -241,6 +307,7 @@ impl ZonalShiftInResourceBuilder {
                     "comment was not specified but it is required when building ZonalShiftInResource",
                 )
             })?,
+            practice_run_outcome: self.practice_run_outcome,
         })
     }
 }

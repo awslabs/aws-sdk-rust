@@ -14,6 +14,8 @@ pub struct AppImageConfigDetails {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration for the file system and kernels in the SageMaker image.</p>
     pub kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
 }
 impl AppImageConfigDetails {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
@@ -36,6 +38,10 @@ impl AppImageConfigDetails {
     pub fn kernel_gateway_image_config(&self) -> ::std::option::Option<&crate::types::KernelGatewayImageConfig> {
         self.kernel_gateway_image_config.as_ref()
     }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn jupyter_lab_app_image_config(&self) -> ::std::option::Option<&crate::types::JupyterLabAppImageConfig> {
+        self.jupyter_lab_app_image_config.as_ref()
+    }
 }
 impl AppImageConfigDetails {
     /// Creates a new builder-style object to manufacture [`AppImageConfigDetails`](crate::types::AppImageConfigDetails).
@@ -53,6 +59,7 @@ pub struct AppImageConfigDetailsBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kernel_gateway_image_config: ::std::option::Option<crate::types::KernelGatewayImageConfig>,
+    pub(crate) jupyter_lab_app_image_config: ::std::option::Option<crate::types::JupyterLabAppImageConfig>,
 }
 impl AppImageConfigDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
@@ -125,6 +132,20 @@ impl AppImageConfigDetailsBuilder {
     pub fn get_kernel_gateway_image_config(&self) -> &::std::option::Option<crate::types::KernelGatewayImageConfig> {
         &self.kernel_gateway_image_config
     }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn jupyter_lab_app_image_config(mut self, input: crate::types::JupyterLabAppImageConfig) -> Self {
+        self.jupyter_lab_app_image_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn set_jupyter_lab_app_image_config(mut self, input: ::std::option::Option<crate::types::JupyterLabAppImageConfig>) -> Self {
+        self.jupyter_lab_app_image_config = input;
+        self
+    }
+    /// <p>The configuration for the file system and the runtime, such as the environment variables and entry point.</p>
+    pub fn get_jupyter_lab_app_image_config(&self) -> &::std::option::Option<crate::types::JupyterLabAppImageConfig> {
+        &self.jupyter_lab_app_image_config
+    }
     /// Consumes the builder and constructs a [`AppImageConfigDetails`](crate::types::AppImageConfigDetails).
     pub fn build(self) -> crate::types::AppImageConfigDetails {
         crate::types::AppImageConfigDetails {
@@ -133,6 +154,7 @@ impl AppImageConfigDetailsBuilder {
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
             kernel_gateway_image_config: self.kernel_gateway_image_config,
+            jupyter_lab_app_image_config: self.jupyter_lab_app_image_config,
         }
     }
 }

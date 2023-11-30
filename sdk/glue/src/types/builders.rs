@@ -515,6 +515,14 @@ pub use crate::types::_job::JobBuilder;
 
 pub use crate::types::_dev_endpoint::DevEndpointBuilder;
 
+pub use crate::types::_data_quality_observation::DataQualityObservationBuilder;
+
+pub use crate::types::_metric_based_observation::MetricBasedObservationBuilder;
+
+pub use crate::types::_data_quality_metric_values::DataQualityMetricValuesBuilder;
+
+pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResultBuilder;
+
 pub use crate::types::_data_quality_rule_result::DataQualityRuleResultBuilder;
 
 pub use crate::types::_code_gen_edge::CodeGenEdgeBuilder;

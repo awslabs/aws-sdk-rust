@@ -28,6 +28,12 @@ pub struct DescribeSpaceOutput {
     /// <li> <p>JupyterLab: <code>&amp;redirect=JupyterLab</code> </p> </li>
     /// </ul>
     pub url: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub space_display_name: ::std::option::Option<::std::string::String>,
+    /// <p>The collection of ownership settings for a space.</p>
+    pub ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutput {
@@ -76,6 +82,18 @@ impl DescribeSpaceOutput {
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+        self.space_display_name.as_deref()
+    }
+    /// <p>The collection of ownership settings for a space.</p>
+    pub fn ownership_settings(&self) -> ::std::option::Option<&crate::types::OwnershipSettings> {
+        self.ownership_settings.as_ref()
+    }
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub fn space_sharing_settings(&self) -> ::std::option::Option<&crate::types::SpaceSharingSettings> {
+        self.space_sharing_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeSpaceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -103,6 +121,9 @@ pub struct DescribeSpaceOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) space_settings: ::std::option::Option<crate::types::SpaceSettings>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
+    pub(crate) space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutputBuilder {
@@ -261,6 +282,48 @@ impl DescribeSpaceOutputBuilder {
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_display_name = input;
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_display_name
+    }
+    /// <p>The collection of ownership settings for a space.</p>
+    pub fn ownership_settings(mut self, input: crate::types::OwnershipSettings) -> Self {
+        self.ownership_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The collection of ownership settings for a space.</p>
+    pub fn set_ownership_settings(mut self, input: ::std::option::Option<crate::types::OwnershipSettings>) -> Self {
+        self.ownership_settings = input;
+        self
+    }
+    /// <p>The collection of ownership settings for a space.</p>
+    pub fn get_ownership_settings(&self) -> &::std::option::Option<crate::types::OwnershipSettings> {
+        &self.ownership_settings
+    }
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub fn space_sharing_settings(mut self, input: crate::types::SpaceSharingSettings) -> Self {
+        self.space_sharing_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub fn set_space_sharing_settings(mut self, input: ::std::option::Option<crate::types::SpaceSharingSettings>) -> Self {
+        self.space_sharing_settings = input;
+        self
+    }
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub fn get_space_sharing_settings(&self) -> &::std::option::Option<crate::types::SpaceSharingSettings> {
+        &self.space_sharing_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -283,6 +346,9 @@ impl DescribeSpaceOutputBuilder {
             failure_reason: self.failure_reason,
             space_settings: self.space_settings,
             url: self.url,
+            space_display_name: self.space_display_name,
+            ownership_settings: self.ownership_settings,
+            space_sharing_settings: self.space_sharing_settings,
             _request_id: self._request_id,
         }
     }

@@ -22,7 +22,8 @@ impl ListZonalShiftsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListZonalShifts`.
 ///
-/// <p>Lists all the active zonal shifts in Amazon Route 53 Application Recovery Controller in your AWS account in this AWS Region.</p>
+/// <p>Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery Controller in your Amazon Web Services account in this Amazon Web Services Region. <code>ListZonalShifts</code> returns customer-started zonal shifts, as well as practice run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.</p>
+/// <p>The <code>ListZonalShifts</code> operation does not list autoshifts. For more information about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListZonalShiftsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -131,7 +132,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -142,7 +143,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -153,7 +154,7 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>A status for a zonal shift.</p>
     /// <p>The <code>Status</code> for a zonal shift can have one of the following values:</p>
     /// <ul>
-    /// <li> <p> <b>ACTIVE</b>: The zonal shift is started and active.</p> </li>
+    /// <li> <p> <b>ACTIVE</b>: The zonal shift has been started and active.</p> </li>
     /// <li> <p> <b>EXPIRED</b>: The zonal shift has expired (the expiry time was exceeded).</p> </li>
     /// <li> <p> <b>CANCELED</b>: The zonal shift was canceled.</p> </li>
     /// </ul>
@@ -173,5 +174,19 @@ impl ListZonalShiftsFluentBuilder {
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_identifier(input.into());
+        self
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_resource_identifier(input);
+        self
+    }
+    /// <p>The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
+    pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_resource_identifier()
     }
 }
