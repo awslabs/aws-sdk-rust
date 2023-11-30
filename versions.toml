@@ -2396,6 +2396,10 @@ source_hash = '11a719c09fac2708e6e2a232de738eccefa9dc532282f571eb75656d40a2b8bc'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '272babb73dc3f79128a1ef0521e9967c012b6800492cd482ca10615db9517752'
+
+[release]
+tag = 'release-2023-11-30'
+
 [release.crates]
 aws-sdk-marketplaceagreement = '1.0.0'
 aws-sdk-marketplacecatalog = '1.4.0'
