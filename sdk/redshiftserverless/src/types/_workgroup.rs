@@ -16,7 +16,7 @@ pub struct Workgroup {
     pub base_capacity: ::std::option::Option<i32>,
     /// <p>The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.</p>
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub config_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>,
     /// <p>An array of security group IDs to associate with the workgroup.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -44,6 +44,8 @@ pub struct Workgroup {
     pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.</p>
     pub max_capacity: ::std::option::Option<i32>,
+    /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
+    pub cross_account_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -70,7 +72,7 @@ impl Workgroup {
     pub fn enhanced_vpc_routing(&self) -> ::std::option::Option<bool> {
         self.enhanced_vpc_routing
     }
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.config_parameters.is_none()`.
     pub fn config_parameters(&self) -> &[crate::types::ConfigParameter] {
@@ -132,6 +134,12 @@ impl Workgroup {
     pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
+    /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_vpcs.is_none()`.
+    pub fn cross_account_vpcs(&self) -> &[::std::string::String] {
+        self.cross_account_vpcs.as_deref().unwrap_or_default()
+    }
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::types::Workgroup).
@@ -164,6 +172,7 @@ pub struct WorkgroupBuilder {
     pub(crate) workgroup_version: ::std::option::Option<::std::string::String>,
     pub(crate) patch_version: ::std::option::Option<::std::string::String>,
     pub(crate) max_capacity: ::std::option::Option<i32>,
+    pub(crate) cross_account_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl WorkgroupBuilder {
     /// <p>The unique identifier of the workgroup.</p>
@@ -254,19 +263,19 @@ impl WorkgroupBuilder {
     ///
     /// To override the contents of this collection use [`set_config_parameters`](Self::set_config_parameters).
     ///
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn config_parameters(mut self, input: crate::types::ConfigParameter) -> Self {
         let mut v = self.config_parameters.unwrap_or_default();
         v.push(input);
         self.config_parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn set_config_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
         self.config_parameters = input;
         self
     }
-    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, , <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
+    /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitive_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
     pub fn get_config_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigParameter>> {
         &self.config_parameters
     }
@@ -464,6 +473,26 @@ impl WorkgroupBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<i32> {
         &self.max_capacity
     }
+    /// Appends an item to `cross_account_vpcs`.
+    ///
+    /// To override the contents of this collection use [`set_cross_account_vpcs`](Self::set_cross_account_vpcs).
+    ///
+    /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
+    pub fn cross_account_vpcs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.cross_account_vpcs.unwrap_or_default();
+        v.push(input.into());
+        self.cross_account_vpcs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
+    pub fn set_cross_account_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.cross_account_vpcs = input;
+        self
+    }
+    /// <p>A list of VPCs. Each entry is the unique identifier of a virtual private cloud with access to Amazon Redshift Serverless. If all of the VPCs for the grantee are allowed, it shows an asterisk.</p>
+    pub fn get_cross_account_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.cross_account_vpcs
+    }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
@@ -487,6 +516,7 @@ impl WorkgroupBuilder {
             workgroup_version: self.workgroup_version,
             patch_version: self.patch_version,
             max_capacity: self.max_capacity,
+            cross_account_vpcs: self.cross_account_vpcs,
         }
     }
 }

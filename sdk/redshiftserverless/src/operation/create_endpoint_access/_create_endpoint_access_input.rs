@@ -11,6 +11,8 @@ pub struct CreateEndpointAccessInput {
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl CreateEndpointAccessInput {
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
@@ -33,6 +35,10 @@ impl CreateEndpointAccessInput {
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
 }
 impl CreateEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
@@ -49,6 +55,7 @@ pub struct CreateEndpointAccessInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
 }
 impl CreateEndpointAccessInputBuilder {
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
@@ -121,6 +128,20 @@ impl CreateEndpointAccessInputBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input;
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// Consumes the builder and constructs a [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
     pub fn build(
         self,
@@ -131,6 +152,7 @@ impl CreateEndpointAccessInputBuilder {
             subnet_ids: self.subnet_ids,
             workgroup_name: self.workgroup_name,
             vpc_security_group_ids: self.vpc_security_group_ids,
+            owner_account: self.owner_account,
         })
     }
 }

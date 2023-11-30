@@ -9,35 +9,47 @@ pub fn ser_list_entities_input_input(
     if let Some(var_2) = &input.entity_type {
         object.key("EntityType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.filter_list {
-        let mut array_4 = object.key("FilterList").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.entity_type_filters {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("EntityTypeFilters").start_object();
+        crate::protocol_serde::shape_entity_type_filters::ser_entity_type_filters(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.entity_type_sort {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("EntityTypeSort").start_object();
+        crate::protocol_serde::shape_entity_type_sort::ser_entity_type_sort(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.filter_list {
+        let mut array_8 = object.key("FilterList").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_filter::ser_filter(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_filter::ser_filter(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_4.finish();
+        array_8.finish();
     }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_11) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8.as_str());
+    if let Some(var_12) = &input.next_token {
+        object.key("NextToken").string(var_12.as_str());
     }
-    if let Some(var_9) = &input.ownership_type {
-        object.key("OwnershipType").string(var_9.as_str());
+    if let Some(var_13) = &input.ownership_type {
+        object.key("OwnershipType").string(var_13.as_str());
     }
-    if let Some(var_10) = &input.sort {
+    if let Some(var_14) = &input.sort {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Sort").start_object();
-        crate::protocol_serde::shape_sort::ser_sort(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_15 = object.key("Sort").start_object();
+        crate::protocol_serde::shape_sort::ser_sort(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

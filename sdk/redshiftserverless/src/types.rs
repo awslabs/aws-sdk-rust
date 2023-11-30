@@ -21,6 +21,8 @@ pub use crate::types::_usage_limit_period::UsageLimitPeriod;
 
 pub use crate::types::_usage_limit_usage_type::UsageLimitUsageType;
 
+pub use crate::types::_snapshot_copy_configuration::SnapshotCopyConfiguration;
+
 pub use crate::types::_snapshot::Snapshot;
 
 pub use crate::types::_snapshot_status::SnapshotStatus;
@@ -32,6 +34,16 @@ pub use crate::types::_namespace::Namespace;
 pub use crate::types::_namespace_status::NamespaceStatus;
 
 pub use crate::types::_log_export::LogExport;
+
+pub use crate::types::_scheduled_action_response::ScheduledActionResponse;
+
+pub use crate::types::_target_action::TargetAction;
+
+pub use crate::types::_create_snapshot_schedule_action_parameters::CreateSnapshotScheduleActionParameters;
+
+pub use crate::types::_state::State;
+
+pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_recovery_point::RecoveryPoint;
 
@@ -46,6 +58,8 @@ pub use crate::types::_association::Association;
 mod _association;
 
 mod _config_parameter;
+
+mod _create_snapshot_schedule_action_parameters;
 
 mod _endpoint;
 
@@ -63,13 +77,23 @@ mod _recovery_point;
 
 mod _resource_policy;
 
+mod _schedule;
+
+mod _scheduled_action_response;
+
 mod _snapshot;
 
+mod _snapshot_copy_configuration;
+
 mod _snapshot_status;
+
+mod _state;
 
 mod _table_restore_status;
 
 mod _tag;
+
+mod _target_action;
 
 mod _usage_limit;
 

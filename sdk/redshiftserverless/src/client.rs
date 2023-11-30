@@ -144,7 +144,11 @@ mod create_endpoint_access;
 
 mod create_namespace;
 
+mod create_scheduled_action;
+
 mod create_snapshot;
+
+mod create_snapshot_copy_configuration;
 
 mod create_usage_limit;
 
@@ -185,7 +189,11 @@ mod delete_namespace;
 
 mod delete_resource_policy;
 
+mod delete_scheduled_action;
+
 mod delete_snapshot;
+
+mod delete_snapshot_copy_configuration;
 
 mod delete_usage_limit;
 
@@ -203,6 +211,8 @@ mod get_recovery_point;
 
 mod get_resource_policy;
 
+mod get_scheduled_action;
+
 mod get_snapshot;
 
 mod get_table_restore_status;
@@ -218,6 +228,10 @@ mod list_endpoint_access;
 mod list_namespaces;
 
 mod list_recovery_points;
+
+mod list_scheduled_actions;
+
+mod list_snapshot_copy_configurations;
 
 mod list_snapshots;
 
@@ -235,6 +249,8 @@ mod restore_from_recovery_point;
 
 mod restore_from_snapshot;
 
+mod restore_table_from_recovery_point;
+
 mod restore_table_from_snapshot;
 
 mod tag_resource;
@@ -247,7 +263,11 @@ mod update_endpoint_access;
 
 mod update_namespace;
 
+mod update_scheduled_action;
+
 mod update_snapshot;
+
+mod update_snapshot_copy_configuration;
 
 mod update_usage_limit;
 

@@ -235,6 +235,37 @@ impl From<crate::operation::create_namespace::CreateNamespaceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_scheduled_action::CreateScheduledActionError> for Error {
+    fn from(err: crate::operation::create_scheduled_action::CreateScheduledActionError) -> Self {
+        match err {
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_scheduled_action::CreateScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_scheduled_action::CreateScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -261,6 +292,56 @@ impl From<crate::operation::create_snapshot::CreateSnapshotError> for Error {
             crate::operation::create_snapshot::CreateSnapshotError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::create_snapshot::CreateSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_snapshot::CreateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError> for Error {
+    fn from(err: crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError) -> Self {
+        match err {
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -450,6 +531,36 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_action::DeleteScheduledActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_scheduled_action::DeleteScheduledActionError> for Error {
+    fn from(err: crate::operation::delete_scheduled_action::DeleteScheduledActionError) -> Self {
+        match err {
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scheduled_action::DeleteScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot::DeleteSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -472,6 +583,53 @@ impl From<crate::operation::delete_snapshot::DeleteSnapshotError> for Error {
             crate::operation::delete_snapshot::DeleteSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_snapshot::DeleteSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_snapshot::DeleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError> for Error {
+    fn from(err: crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -693,6 +851,32 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_action::GetScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_action::GetScheduledActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_scheduled_action::GetScheduledActionError> for Error {
+    fn from(err: crate::operation::get_scheduled_action::GetScheduledActionError) -> Self {
+        match err {
+            crate::operation::get_scheduled_action::GetScheduledActionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_scheduled_action::GetScheduledActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_scheduled_action::GetScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_scheduled_action::GetScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_snapshot::GetSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -906,6 +1090,84 @@ impl From<crate::operation::list_recovery_points::ListRecoveryPointsError> for E
             crate::operation::list_recovery_points::ListRecoveryPointsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_recovery_points::ListRecoveryPointsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_recovery_points::ListRecoveryPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_actions::ListScheduledActionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scheduled_actions::ListScheduledActionsError> for Error {
+    fn from(err: crate::operation::list_scheduled_actions::ListScheduledActionsError) -> Self {
+        match err {
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::InvalidPaginationException(inner) => {
+                Error::InvalidPaginationException(inner)
+            }
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_scheduled_actions::ListScheduledActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError> for Error {
+    fn from(err: crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::InvalidPaginationException(inner) => {
+                Error::InvalidPaginationException(inner)
+            }
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1138,6 +1400,50 @@ impl From<crate::operation::restore_from_snapshot::RestoreFromSnapshotError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError> for Error {
+    fn from(err: crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError) -> Self {
+        match err {
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError, R>>
     for Error
 where
@@ -1325,6 +1631,37 @@ impl From<crate::operation::update_namespace::UpdateNamespaceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_action::UpdateScheduledActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_scheduled_action::UpdateScheduledActionError> for Error {
+    fn from(err: crate::operation::update_scheduled_action::UpdateScheduledActionError) -> Self {
+        match err {
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scheduled_action::UpdateScheduledActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_snapshot::UpdateSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1347,6 +1684,53 @@ impl From<crate::operation::update_snapshot::UpdateSnapshotError> for Error {
             crate::operation::update_snapshot::UpdateSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_snapshot::UpdateSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_snapshot::UpdateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError> for Error {
+    fn from(err: crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError) -> Self {
+        match err {
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_snapshot_copy_configuration::UpdateSnapshotCopyConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

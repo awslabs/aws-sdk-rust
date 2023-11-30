@@ -1,10 +1,10 @@
 [workspace]
 exclude = [
+    "examples/lambda",
     "examples/test-utils",
     "examples/cross_service",
-    "examples/lambda",
-    "examples/webassembly",
     "examples/examples",
+    "examples/webassembly",
     "tests/no-default-features",
     "tests/webassembly"
 ]
@@ -253,8 +253,10 @@ members = [
     "sdk/macie2",
     "sdk/managedblockchain",
     "sdk/managedblockchainquery",
+    "sdk/marketplaceagreement",
     "sdk/marketplacecatalog",
     "sdk/marketplacecommerceanalytics",
+    "sdk/marketplacedeployment",
     "sdk/marketplaceentitlement",
     "sdk/marketplacemetering",
     "sdk/mediaconnect",

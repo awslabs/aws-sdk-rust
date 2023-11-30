@@ -44,6 +44,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_snapshot_copy_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_snapshot_copy_configuration::builders::CreateSnapshotCopyConfigurationOutputBuilder,
+) -> crate::operation::create_snapshot_copy_configuration::builders::CreateSnapshotCopyConfigurationOutputBuilder {
+    if builder.snapshot_copy_configuration.is_none() {
+        builder.snapshot_copy_configuration = {
+            let builder = crate::types::builders::SnapshotCopyConfigurationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn insufficient_capacity_exception_correct_errors(
     mut builder: crate::types::error::builders::InsufficientCapacityExceptionBuilder,
 ) -> crate::types::error::builders::InsufficientCapacityExceptionBuilder {
@@ -59,6 +71,18 @@ pub(crate) fn delete_namespace_output_output_correct_errors(
     if builder.namespace.is_none() {
         builder.namespace = {
             let builder = crate::types::builders::NamespaceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn delete_snapshot_copy_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_snapshot_copy_configuration::builders::DeleteSnapshotCopyConfigurationOutputBuilder,
+) -> crate::operation::delete_snapshot_copy_configuration::builders::DeleteSnapshotCopyConfigurationOutputBuilder {
+    if builder.snapshot_copy_configuration.is_none() {
+        builder.snapshot_copy_configuration = {
+            let builder = crate::types::builders::SnapshotCopyConfigurationBuilder::default();
             Some(builder.build())
         }
     }
@@ -128,6 +152,15 @@ pub(crate) fn list_namespaces_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_snapshot_copy_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_snapshot_copy_configurations::builders::ListSnapshotCopyConfigurationsOutputBuilder,
+) -> crate::operation::list_snapshot_copy_configurations::builders::ListSnapshotCopyConfigurationsOutputBuilder {
+    if builder.snapshot_copy_configurations.is_none() {
+        builder.snapshot_copy_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_workgroups_output_output_correct_errors(
     mut builder: crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder,
 ) -> crate::operation::list_workgroups::builders::ListWorkgroupsOutputBuilder {
@@ -143,6 +176,18 @@ pub(crate) fn update_namespace_output_output_correct_errors(
     if builder.namespace.is_none() {
         builder.namespace = {
             let builder = crate::types::builders::NamespaceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_snapshot_copy_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_snapshot_copy_configuration::builders::UpdateSnapshotCopyConfigurationOutputBuilder,
+) -> crate::operation::update_snapshot_copy_configuration::builders::UpdateSnapshotCopyConfigurationOutputBuilder {
+    if builder.snapshot_copy_configuration.is_none() {
+        builder.snapshot_copy_configuration = {
+            let builder = crate::types::builders::SnapshotCopyConfigurationBuilder::default();
             Some(builder.build())
         }
     }
@@ -167,6 +212,18 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_snapshot_schedule_action_parameters_correct_errors(
+    mut builder: crate::types::builders::CreateSnapshotScheduleActionParametersBuilder,
+) -> crate::types::builders::CreateSnapshotScheduleActionParametersBuilder {
+    if builder.namespace_name.is_none() {
+        builder.namespace_name = Some(Default::default())
+    }
+    if builder.snapshot_name_prefix.is_none() {
+        builder.snapshot_name_prefix = Some(Default::default())
     }
     builder
 }

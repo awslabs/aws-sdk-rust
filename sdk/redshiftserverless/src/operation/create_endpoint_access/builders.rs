@@ -172,4 +172,18 @@ impl CreateEndpointAccessFluentBuilder {
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owner_account(input.into());
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owner_account(input);
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
 }

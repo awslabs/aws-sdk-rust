@@ -7,11 +7,173 @@ pub use crate::types::_entity::Entity;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
+pub use crate::types::_resale_authorization_summary::ResaleAuthorizationSummary;
+
+pub use crate::types::_resale_authorization_status_string::ResaleAuthorizationStatusString;
+
+pub use crate::types::_offer_summary::OfferSummary;
+
+pub use crate::types::_offer_targeting_string::OfferTargetingString;
+
+pub use crate::types::_offer_state_string::OfferStateString;
+
+pub use crate::types::_saa_s_product_summary::SaaSProductSummary;
+
+pub use crate::types::_saa_s_product_visibility_string::SaaSProductVisibilityString;
+
+pub use crate::types::_data_product_summary::DataProductSummary;
+
+pub use crate::types::_data_product_visibility_string::DataProductVisibilityString;
+
+pub use crate::types::_container_product_summary::ContainerProductSummary;
+
+pub use crate::types::_container_product_visibility_string::ContainerProductVisibilityString;
+
+pub use crate::types::_ami_product_summary::AmiProductSummary;
+
+pub use crate::types::_ami_product_visibility_string::AmiProductVisibilityString;
+
+pub use crate::types::_entity_type_sort::EntityTypeSort;
+
+pub use crate::types::_resale_authorization_sort::ResaleAuthorizationSort;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_resale_authorization_sort_by::ResaleAuthorizationSortBy;
+
+pub use crate::types::_container_product_sort::ContainerProductSort;
+
+pub use crate::types::_container_product_sort_by::ContainerProductSortBy;
+
+pub use crate::types::_offer_sort::OfferSort;
+
+pub use crate::types::_offer_sort_by::OfferSortBy;
+
+pub use crate::types::_ami_product_sort::AmiProductSort;
+
+pub use crate::types::_ami_product_sort_by::AmiProductSortBy;
+
+pub use crate::types::_saa_s_product_sort::SaaSProductSort;
+
+pub use crate::types::_saa_s_product_sort_by::SaaSProductSortBy;
+
+pub use crate::types::_data_product_sort::DataProductSort;
+
+pub use crate::types::_data_product_sort_by::DataProductSortBy;
+
+pub use crate::types::_entity_type_filters::EntityTypeFilters;
+
+pub use crate::types::_resale_authorization_filters::ResaleAuthorizationFilters;
+
+pub use crate::types::_resale_authorization_last_modified_date_filter::ResaleAuthorizationLastModifiedDateFilter;
+
+pub use crate::types::_resale_authorization_last_modified_date_filter_date_range::ResaleAuthorizationLastModifiedDateFilterDateRange;
+
+pub use crate::types::_resale_authorization_offer_extended_status_filter::ResaleAuthorizationOfferExtendedStatusFilter;
+
+pub use crate::types::_resale_authorization_status_filter::ResaleAuthorizationStatusFilter;
+
+pub use crate::types::_resale_authorization_reseller_legal_name_filter::ResaleAuthorizationResellerLegalNameFilter;
+
+pub use crate::types::_resale_authorization_reseller_account_id_filter::ResaleAuthorizationResellerAccountIdFilter;
+
+pub use crate::types::_resale_authorization_manufacturer_legal_name_filter::ResaleAuthorizationManufacturerLegalNameFilter;
+
+pub use crate::types::_resale_authorization_product_name_filter::ResaleAuthorizationProductNameFilter;
+
+pub use crate::types::_resale_authorization_manufacturer_account_id_filter::ResaleAuthorizationManufacturerAccountIdFilter;
+
+pub use crate::types::_resale_authorization_availability_end_date_filter::ResaleAuthorizationAvailabilityEndDateFilter;
+
+pub use crate::types::_resale_authorization_availability_end_date_filter_date_range::ResaleAuthorizationAvailabilityEndDateFilterDateRange;
+
+pub use crate::types::_resale_authorization_created_date_filter::ResaleAuthorizationCreatedDateFilter;
+
+pub use crate::types::_resale_authorization_created_date_filter_date_range::ResaleAuthorizationCreatedDateFilterDateRange;
+
+pub use crate::types::_resale_authorization_product_id_filter::ResaleAuthorizationProductIdFilter;
+
+pub use crate::types::_resale_authorization_name_filter::ResaleAuthorizationNameFilter;
+
+pub use crate::types::_resale_authorization_entity_id_filter::ResaleAuthorizationEntityIdFilter;
+
+pub use crate::types::_container_product_filters::ContainerProductFilters;
+
+pub use crate::types::_container_product_visibility_filter::ContainerProductVisibilityFilter;
+
+pub use crate::types::_container_product_title_filter::ContainerProductTitleFilter;
+
+pub use crate::types::_container_product_last_modified_date_filter::ContainerProductLastModifiedDateFilter;
+
+pub use crate::types::_container_product_last_modified_date_filter_date_range::ContainerProductLastModifiedDateFilterDateRange;
+
+pub use crate::types::_container_product_entity_id_filter::ContainerProductEntityIdFilter;
+
+pub use crate::types::_offer_filters::OfferFilters;
+
+pub use crate::types::_offer_last_modified_date_filter::OfferLastModifiedDateFilter;
+
+pub use crate::types::_offer_last_modified_date_filter_date_range::OfferLastModifiedDateFilterDateRange;
+
+pub use crate::types::_offer_targeting_filter::OfferTargetingFilter;
+
+pub use crate::types::_offer_state_filter::OfferStateFilter;
+
+pub use crate::types::_offer_buyer_accounts_filter::OfferBuyerAccountsFilter;
+
+pub use crate::types::_offer_availability_end_date_filter::OfferAvailabilityEndDateFilter;
+
+pub use crate::types::_offer_availability_end_date_filter_date_range::OfferAvailabilityEndDateFilterDateRange;
+
+pub use crate::types::_offer_release_date_filter::OfferReleaseDateFilter;
+
+pub use crate::types::_offer_release_date_filter_date_range::OfferReleaseDateFilterDateRange;
+
+pub use crate::types::_offer_product_id_filter::OfferProductIdFilter;
+
+pub use crate::types::_offer_name_filter::OfferNameFilter;
+
+pub use crate::types::_offer_entity_id_filter::OfferEntityIdFilter;
+
+pub use crate::types::_ami_product_filters::AmiProductFilters;
+
+pub use crate::types::_ami_product_visibility_filter::AmiProductVisibilityFilter;
+
+pub use crate::types::_ami_product_title_filter::AmiProductTitleFilter;
+
+pub use crate::types::_ami_product_last_modified_date_filter::AmiProductLastModifiedDateFilter;
+
+pub use crate::types::_ami_product_last_modified_date_filter_date_range::AmiProductLastModifiedDateFilterDateRange;
+
+pub use crate::types::_ami_product_entity_id_filter::AmiProductEntityIdFilter;
+
+pub use crate::types::_saa_s_product_filters::SaaSProductFilters;
+
+pub use crate::types::_saa_s_product_last_modified_date_filter::SaaSProductLastModifiedDateFilter;
+
+pub use crate::types::_saa_s_product_last_modified_date_filter_date_range::SaaSProductLastModifiedDateFilterDateRange;
+
+pub use crate::types::_saa_s_product_visibility_filter::SaaSProductVisibilityFilter;
+
+pub use crate::types::_saa_s_product_title_filter::SaaSProductTitleFilter;
+
+pub use crate::types::_saa_s_product_entity_id_filter::SaaSProductEntityIdFilter;
+
+pub use crate::types::_data_product_filters::DataProductFilters;
+
+pub use crate::types::_data_product_last_modified_date_filter::DataProductLastModifiedDateFilter;
+
+pub use crate::types::_data_product_last_modified_date_filter_date_range::DataProductLastModifiedDateFilterDateRange;
+
+pub use crate::types::_data_product_visibility_filter::DataProductVisibilityFilter;
+
+pub use crate::types::_data_product_title_filter::DataProductTitleFilter;
+
+pub use crate::types::_data_product_entity_id_filter::DataProductEntityIdFilter;
+
 pub use crate::types::_ownership_type::OwnershipType;
 
 pub use crate::types::_sort::Sort;
-
-pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_filter::Filter;
 
@@ -25,6 +187,26 @@ pub use crate::types::_change_summary::ChangeSummary;
 
 pub use crate::types::_error_detail::ErrorDetail;
 
+mod _ami_product_entity_id_filter;
+
+mod _ami_product_filters;
+
+mod _ami_product_last_modified_date_filter;
+
+mod _ami_product_last_modified_date_filter_date_range;
+
+mod _ami_product_sort;
+
+mod _ami_product_sort_by;
+
+mod _ami_product_summary;
+
+mod _ami_product_title_filter;
+
+mod _ami_product_visibility_filter;
+
+mod _ami_product_visibility_string;
+
 mod _change;
 
 mod _change_set_summary_list_item;
@@ -33,9 +215,53 @@ mod _change_status;
 
 mod _change_summary;
 
+mod _container_product_entity_id_filter;
+
+mod _container_product_filters;
+
+mod _container_product_last_modified_date_filter;
+
+mod _container_product_last_modified_date_filter_date_range;
+
+mod _container_product_sort;
+
+mod _container_product_sort_by;
+
+mod _container_product_summary;
+
+mod _container_product_title_filter;
+
+mod _container_product_visibility_filter;
+
+mod _container_product_visibility_string;
+
+mod _data_product_entity_id_filter;
+
+mod _data_product_filters;
+
+mod _data_product_last_modified_date_filter;
+
+mod _data_product_last_modified_date_filter_date_range;
+
+mod _data_product_sort;
+
+mod _data_product_sort_by;
+
+mod _data_product_summary;
+
+mod _data_product_title_filter;
+
+mod _data_product_visibility_filter;
+
+mod _data_product_visibility_string;
+
 mod _entity;
 
 mod _entity_summary;
+
+mod _entity_type_filters;
+
+mod _entity_type_sort;
 
 mod _error_detail;
 
@@ -43,7 +269,105 @@ mod _failure_code;
 
 mod _filter;
 
+mod _offer_availability_end_date_filter;
+
+mod _offer_availability_end_date_filter_date_range;
+
+mod _offer_buyer_accounts_filter;
+
+mod _offer_entity_id_filter;
+
+mod _offer_filters;
+
+mod _offer_last_modified_date_filter;
+
+mod _offer_last_modified_date_filter_date_range;
+
+mod _offer_name_filter;
+
+mod _offer_product_id_filter;
+
+mod _offer_release_date_filter;
+
+mod _offer_release_date_filter_date_range;
+
+mod _offer_sort;
+
+mod _offer_sort_by;
+
+mod _offer_state_filter;
+
+mod _offer_state_string;
+
+mod _offer_summary;
+
+mod _offer_targeting_filter;
+
+mod _offer_targeting_string;
+
 mod _ownership_type;
+
+mod _resale_authorization_availability_end_date_filter;
+
+mod _resale_authorization_availability_end_date_filter_date_range;
+
+mod _resale_authorization_created_date_filter;
+
+mod _resale_authorization_created_date_filter_date_range;
+
+mod _resale_authorization_entity_id_filter;
+
+mod _resale_authorization_filters;
+
+mod _resale_authorization_last_modified_date_filter;
+
+mod _resale_authorization_last_modified_date_filter_date_range;
+
+mod _resale_authorization_manufacturer_account_id_filter;
+
+mod _resale_authorization_manufacturer_legal_name_filter;
+
+mod _resale_authorization_name_filter;
+
+mod _resale_authorization_offer_extended_status_filter;
+
+mod _resale_authorization_product_id_filter;
+
+mod _resale_authorization_product_name_filter;
+
+mod _resale_authorization_reseller_account_id_filter;
+
+mod _resale_authorization_reseller_legal_name_filter;
+
+mod _resale_authorization_sort;
+
+mod _resale_authorization_sort_by;
+
+mod _resale_authorization_status_filter;
+
+mod _resale_authorization_status_string;
+
+mod _resale_authorization_summary;
+
+mod _saa_s_product_entity_id_filter;
+
+mod _saa_s_product_filters;
+
+mod _saa_s_product_last_modified_date_filter;
+
+mod _saa_s_product_last_modified_date_filter_date_range;
+
+mod _saa_s_product_sort;
+
+mod _saa_s_product_sort_by;
+
+mod _saa_s_product_summary;
+
+mod _saa_s_product_title_filter;
+
+mod _saa_s_product_visibility_filter;
+
+mod _saa_s_product_visibility_string;
 
 mod _sort;
 

@@ -142,4 +142,18 @@ impl ListWorkgroupsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.owner_account(input.into());
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_owner_account(input);
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_owner_account()
+    }
 }

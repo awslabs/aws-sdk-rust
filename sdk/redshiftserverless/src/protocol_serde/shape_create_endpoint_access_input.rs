@@ -27,5 +27,8 @@ pub fn ser_create_endpoint_access_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_9) = &input.owner_account {
+        object.key("ownerAccount").string(var_9.as_str());
+    }
     Ok(())
 }

@@ -1352,17 +1352,29 @@ version = '1.3.0'
 source_hash = 'e3f112ad78a5558dbc94395fbc904eb1ae4dbcfac465e3c8bf28ceb3caad6a05'
 model_hash = '62e348240fb4135ad6907a3454c12d87d630858088b821d17df28b7ce3c08976'
 
+[crates.aws-sdk-marketplaceagreement]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = 'e6a89d9de232863c1b3dedf03b0ac3de0564650636938cf8f6fe7325b666a951'
+model_hash = '7628550e920b50e1c9e3e9a0318647c0a33fb2c0d8d7bf6baa29e4a7d711b860'
+
 [crates.aws-sdk-marketplacecatalog]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '33d671c5a06e33cc1faa2e9f7f6a6e9d5288f1a062c0094099438338c04d2f74'
-model_hash = 'dbfbf3ef15206aafdd3582d5ed52cbe24726f4a54bf6e59f911180ed2d2f6848'
+version = '1.4.0'
+source_hash = '28b040b8854c1be7108e128e3ae85288e6a79f3c927681ca26b479cc1696d58e'
+model_hash = '0fa92249916920c534c5448422414614d46327b89c9ff5a3c2a4e5048bbc259c'
 
 [crates.aws-sdk-marketplacecommerceanalytics]
 category = 'AwsSdk'
 version = '1.3.0'
 source_hash = 'c79b50fea46cac022c449de9d5a51de2cf580e6ab203e36b17bf7af92a704d61'
 model_hash = '169990f7ee1b7e3faefaccacaf3063153e33541d0d5522567d9902b3332fd29e'
+
+[crates.aws-sdk-marketplacedeployment]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = '50b9b50ba29537fb5bb3a20479bb1ada5d11bce109f9c1a5694cf9dac639c943'
+model_hash = '137500e567737e786370a4438e395d8a57cc902cd4b29cccbea258e7fa4e077f'
 
 [crates.aws-sdk-marketplaceentitlement]
 category = 'AwsSdk'
@@ -1756,9 +1768,9 @@ model_hash = '1645d194dc34314c0275a1f38bb0fd1e3e85047cc9924258cfe663c0b12504d8'
 
 [crates.aws-sdk-redshiftserverless]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'e4467582752906c7a69d3de4d24dd5fa69780794bc3145771df7b16f77c48528'
-model_hash = '406784bcbb828d407d4788369c35670dc0316de1d1d2d0ef35de6c95948818d2'
+version = '1.4.0'
+source_hash = '901b382605d56820129bf9dfbb56eba3ec737271454dcfb66431ce50bee65375'
+model_hash = '23b50da6da7405bacfdd6d8304bec0df9a53c74e77737b8afbf218e862a78f3d'
 
 [crates.aws-sdk-rekognition]
 category = 'AwsSdk'
@@ -2384,16 +2396,8 @@ source_hash = '11a719c09fac2708e6e2a232de738eccefa9dc532282f571eb75656d40a2b8bc'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '272babb73dc3f79128a1ef0521e9967c012b6800492cd482ca10615db9517752'
-
-[release]
-tag = 'release-2023-11-29'
-
 [release.crates]
-aws-sdk-applicationautoscaling = '1.4.0'
-aws-sdk-cleanrooms = '1.4.0'
-aws-sdk-cleanroomsml = '1.0.0'
-aws-sdk-opensearch = '1.4.0'
-aws-sdk-opensearchserverless = '1.4.0'
-aws-sdk-sagemaker = '1.4.0'
-aws-sdk-sagemakerruntime = '1.4.0'
-aws-sdk-sts = '1.3.1'
+aws-sdk-marketplaceagreement = '1.0.0'
+aws-sdk-marketplacecatalog = '1.4.0'
+aws-sdk-marketplacedeployment = '1.0.0'
+aws-sdk-redshiftserverless = '1.4.0'

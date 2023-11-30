@@ -18,5 +18,8 @@ pub fn ser_list_endpoint_access_input_input(
     if let Some(var_4) = &input.vpc_id {
         object.key("vpcId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.owner_account {
+        object.key("ownerAccount").string(var_5.as_str());
+    }
     Ok(())
 }

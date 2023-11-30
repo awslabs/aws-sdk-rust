@@ -128,17 +128,17 @@ impl ListEntitiesFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>The type of entities to retrieve.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_type(input.into());
         self
     }
-    /// <p>The type of entities to retrieve.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
     }
-    /// <p>The type of entities to retrieve.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entity_type()
     }
@@ -215,5 +215,33 @@ impl ListEntitiesFluentBuilder {
     /// <p>Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the <code>SHARED</code> parameter.</p>
     pub fn get_ownership_type(&self) -> &::std::option::Option<crate::types::OwnershipType> {
         self.inner.get_ownership_type()
+    }
+    /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
+    pub fn entity_type_filters(mut self, input: crate::types::EntityTypeFilters) -> Self {
+        self.inner = self.inner.entity_type_filters(input);
+        self
+    }
+    /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
+    pub fn set_entity_type_filters(mut self, input: ::std::option::Option<crate::types::EntityTypeFilters>) -> Self {
+        self.inner = self.inner.set_entity_type_filters(input);
+        self
+    }
+    /// <p>A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter entities.</p>
+    pub fn get_entity_type_filters(&self) -> &::std::option::Option<crate::types::EntityTypeFilters> {
+        self.inner.get_entity_type_filters()
+    }
+    /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
+    pub fn entity_type_sort(mut self, input: crate::types::EntityTypeSort) -> Self {
+        self.inner = self.inner.entity_type_sort(input);
+        self
+    }
+    /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
+    pub fn set_entity_type_sort(mut self, input: ::std::option::Option<crate::types::EntityTypeSort>) -> Self {
+        self.inner = self.inner.set_entity_type_sort(input);
+        self
+    }
+    /// <p>A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.</p>
+    pub fn get_entity_type_sort(&self) -> &::std::option::Option<crate::types::EntityTypeSort> {
+        self.inner.get_entity_type_sort()
     }
 }

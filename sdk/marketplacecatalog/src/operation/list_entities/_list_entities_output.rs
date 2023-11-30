@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEntitiesOutput {
-    /// <p> Array of <code>EntitySummary</code> object.</p>
+    /// <p>Array of <code>EntitySummary</code> objects.</p>
     pub entity_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>,
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEntitiesOutput {
-    /// <p> Array of <code>EntitySummary</code> object.</p>
+    /// <p>Array of <code>EntitySummary</code> objects.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_summary_list.is_none()`.
     pub fn entity_summary_list(&self) -> &[crate::types::EntitySummary] {
@@ -46,19 +46,19 @@ impl ListEntitiesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entity_summary_list`](Self::set_entity_summary_list).
     ///
-    /// <p> Array of <code>EntitySummary</code> object.</p>
+    /// <p>Array of <code>EntitySummary</code> objects.</p>
     pub fn entity_summary_list(mut self, input: crate::types::EntitySummary) -> Self {
         let mut v = self.entity_summary_list.unwrap_or_default();
         v.push(input);
         self.entity_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p> Array of <code>EntitySummary</code> object.</p>
+    /// <p>Array of <code>EntitySummary</code> objects.</p>
     pub fn set_entity_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>>) -> Self {
         self.entity_summary_list = input;
         self
     }
-    /// <p> Array of <code>EntitySummary</code> object.</p>
+    /// <p>Array of <code>EntitySummary</code> objects.</p>
     pub fn get_entity_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntitySummary>> {
         &self.entity_summary_list
     }

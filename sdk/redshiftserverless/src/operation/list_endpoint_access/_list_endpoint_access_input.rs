@@ -11,6 +11,8 @@ pub struct ListEndpointAccessInput {
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ListEndpointAccessInput {
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
@@ -29,6 +31,10 @@ impl ListEndpointAccessInput {
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+        self.owner_account.as_deref()
+    }
 }
 impl ListEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
@@ -45,6 +51,7 @@ pub struct ListEndpointAccessInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ListEndpointAccessInputBuilder {
     /// <p>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code> operations, which returns results in the next page.</p>
@@ -103,6 +110,20 @@ impl ListEndpointAccessInputBuilder {
     pub fn get_vpc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_id
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input;
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// Consumes the builder and constructs a [`ListEndpointAccessInput`](crate::operation::list_endpoint_access::ListEndpointAccessInput).
     pub fn build(
         self,
@@ -113,6 +134,7 @@ impl ListEndpointAccessInputBuilder {
             max_results: self.max_results,
             workgroup_name: self.workgroup_name,
             vpc_id: self.vpc_id,
+            owner_account: self.owner_account,
         })
     }
 }

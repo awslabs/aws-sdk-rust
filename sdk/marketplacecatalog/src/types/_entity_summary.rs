@@ -16,6 +16,18 @@ pub struct EntitySummary {
     pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub visibility: ::std::option::Option<::std::string::String>,
+    /// <p>An object that contains summary information about the AMI product.</p>
+    pub ami_product_summary: ::std::option::Option<crate::types::AmiProductSummary>,
+    /// <p>An object that contains summary information about the container product.</p>
+    pub container_product_summary: ::std::option::Option<crate::types::ContainerProductSummary>,
+    /// <p>An object that contains summary information about the data product.</p>
+    pub data_product_summary: ::std::option::Option<crate::types::DataProductSummary>,
+    /// <p>An object that contains summary information about the SaaS product.</p>
+    pub saa_s_product_summary: ::std::option::Option<crate::types::SaaSProductSummary>,
+    /// <p>An object that contains summary information about the offer.</p>
+    pub offer_summary: ::std::option::Option<crate::types::OfferSummary>,
+    /// <p>An object that contains summary information about the Resale Authorization.</p>
+    pub resale_authorization_summary: ::std::option::Option<crate::types::ResaleAuthorizationSummary>,
 }
 impl EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -42,6 +54,30 @@ impl EntitySummary {
     pub fn visibility(&self) -> ::std::option::Option<&str> {
         self.visibility.as_deref()
     }
+    /// <p>An object that contains summary information about the AMI product.</p>
+    pub fn ami_product_summary(&self) -> ::std::option::Option<&crate::types::AmiProductSummary> {
+        self.ami_product_summary.as_ref()
+    }
+    /// <p>An object that contains summary information about the container product.</p>
+    pub fn container_product_summary(&self) -> ::std::option::Option<&crate::types::ContainerProductSummary> {
+        self.container_product_summary.as_ref()
+    }
+    /// <p>An object that contains summary information about the data product.</p>
+    pub fn data_product_summary(&self) -> ::std::option::Option<&crate::types::DataProductSummary> {
+        self.data_product_summary.as_ref()
+    }
+    /// <p>An object that contains summary information about the SaaS product.</p>
+    pub fn saa_s_product_summary(&self) -> ::std::option::Option<&crate::types::SaaSProductSummary> {
+        self.saa_s_product_summary.as_ref()
+    }
+    /// <p>An object that contains summary information about the offer.</p>
+    pub fn offer_summary(&self) -> ::std::option::Option<&crate::types::OfferSummary> {
+        self.offer_summary.as_ref()
+    }
+    /// <p>An object that contains summary information about the Resale Authorization.</p>
+    pub fn resale_authorization_summary(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationSummary> {
+        self.resale_authorization_summary.as_ref()
+    }
 }
 impl EntitySummary {
     /// Creates a new builder-style object to manufacture [`EntitySummary`](crate::types::EntitySummary).
@@ -60,6 +96,12 @@ pub struct EntitySummaryBuilder {
     pub(crate) entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_product_summary: ::std::option::Option<crate::types::AmiProductSummary>,
+    pub(crate) container_product_summary: ::std::option::Option<crate::types::ContainerProductSummary>,
+    pub(crate) data_product_summary: ::std::option::Option<crate::types::DataProductSummary>,
+    pub(crate) saa_s_product_summary: ::std::option::Option<crate::types::SaaSProductSummary>,
+    pub(crate) offer_summary: ::std::option::Option<crate::types::OfferSummary>,
+    pub(crate) resale_authorization_summary: ::std::option::Option<crate::types::ResaleAuthorizationSummary>,
 }
 impl EntitySummaryBuilder {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
@@ -146,6 +188,90 @@ impl EntitySummaryBuilder {
     pub fn get_visibility(&self) -> &::std::option::Option<::std::string::String> {
         &self.visibility
     }
+    /// <p>An object that contains summary information about the AMI product.</p>
+    pub fn ami_product_summary(mut self, input: crate::types::AmiProductSummary) -> Self {
+        self.ami_product_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the AMI product.</p>
+    pub fn set_ami_product_summary(mut self, input: ::std::option::Option<crate::types::AmiProductSummary>) -> Self {
+        self.ami_product_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the AMI product.</p>
+    pub fn get_ami_product_summary(&self) -> &::std::option::Option<crate::types::AmiProductSummary> {
+        &self.ami_product_summary
+    }
+    /// <p>An object that contains summary information about the container product.</p>
+    pub fn container_product_summary(mut self, input: crate::types::ContainerProductSummary) -> Self {
+        self.container_product_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the container product.</p>
+    pub fn set_container_product_summary(mut self, input: ::std::option::Option<crate::types::ContainerProductSummary>) -> Self {
+        self.container_product_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the container product.</p>
+    pub fn get_container_product_summary(&self) -> &::std::option::Option<crate::types::ContainerProductSummary> {
+        &self.container_product_summary
+    }
+    /// <p>An object that contains summary information about the data product.</p>
+    pub fn data_product_summary(mut self, input: crate::types::DataProductSummary) -> Self {
+        self.data_product_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the data product.</p>
+    pub fn set_data_product_summary(mut self, input: ::std::option::Option<crate::types::DataProductSummary>) -> Self {
+        self.data_product_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the data product.</p>
+    pub fn get_data_product_summary(&self) -> &::std::option::Option<crate::types::DataProductSummary> {
+        &self.data_product_summary
+    }
+    /// <p>An object that contains summary information about the SaaS product.</p>
+    pub fn saa_s_product_summary(mut self, input: crate::types::SaaSProductSummary) -> Self {
+        self.saa_s_product_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the SaaS product.</p>
+    pub fn set_saa_s_product_summary(mut self, input: ::std::option::Option<crate::types::SaaSProductSummary>) -> Self {
+        self.saa_s_product_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the SaaS product.</p>
+    pub fn get_saa_s_product_summary(&self) -> &::std::option::Option<crate::types::SaaSProductSummary> {
+        &self.saa_s_product_summary
+    }
+    /// <p>An object that contains summary information about the offer.</p>
+    pub fn offer_summary(mut self, input: crate::types::OfferSummary) -> Self {
+        self.offer_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the offer.</p>
+    pub fn set_offer_summary(mut self, input: ::std::option::Option<crate::types::OfferSummary>) -> Self {
+        self.offer_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the offer.</p>
+    pub fn get_offer_summary(&self) -> &::std::option::Option<crate::types::OfferSummary> {
+        &self.offer_summary
+    }
+    /// <p>An object that contains summary information about the Resale Authorization.</p>
+    pub fn resale_authorization_summary(mut self, input: crate::types::ResaleAuthorizationSummary) -> Self {
+        self.resale_authorization_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains summary information about the Resale Authorization.</p>
+    pub fn set_resale_authorization_summary(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationSummary>) -> Self {
+        self.resale_authorization_summary = input;
+        self
+    }
+    /// <p>An object that contains summary information about the Resale Authorization.</p>
+    pub fn get_resale_authorization_summary(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationSummary> {
+        &self.resale_authorization_summary
+    }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
@@ -155,6 +281,12 @@ impl EntitySummaryBuilder {
             entity_arn: self.entity_arn,
             last_modified_date: self.last_modified_date,
             visibility: self.visibility,
+            ami_product_summary: self.ami_product_summary,
+            container_product_summary: self.container_product_summary,
+            data_product_summary: self.data_product_summary,
+            saa_s_product_summary: self.saa_s_product_summary,
+            offer_summary: self.offer_summary,
+            resale_authorization_summary: self.resale_authorization_summary,
         }
     }
 }

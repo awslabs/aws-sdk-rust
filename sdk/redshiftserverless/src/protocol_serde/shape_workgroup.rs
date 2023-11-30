@@ -131,6 +131,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "crossAccountVpcs" => {
+                            builder = builder.set_cross_account_vpcs(crate::protocol_serde::shape_vpc_ids::de_vpc_ids(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

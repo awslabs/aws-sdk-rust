@@ -12,5 +12,8 @@ pub fn ser_list_workgroups_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.owner_account {
+        object.key("ownerAccount").string(var_3.as_str());
+    }
     Ok(())
 }

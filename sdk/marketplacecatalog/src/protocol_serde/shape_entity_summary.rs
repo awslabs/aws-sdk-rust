@@ -56,6 +56,31 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AmiProductSummary" => {
+                            builder =
+                                builder.set_ami_product_summary(crate::protocol_serde::shape_ami_product_summary::de_ami_product_summary(tokens)?);
+                        }
+                        "ContainerProductSummary" => {
+                            builder = builder.set_container_product_summary(
+                                crate::protocol_serde::shape_container_product_summary::de_container_product_summary(tokens)?,
+                            );
+                        }
+                        "DataProductSummary" => {
+                            builder =
+                                builder.set_data_product_summary(crate::protocol_serde::shape_data_product_summary::de_data_product_summary(tokens)?);
+                        }
+                        "SaaSProductSummary" => {
+                            builder = builder
+                                .set_saa_s_product_summary(crate::protocol_serde::shape_saa_s_product_summary::de_saa_s_product_summary(tokens)?);
+                        }
+                        "OfferSummary" => {
+                            builder = builder.set_offer_summary(crate::protocol_serde::shape_offer_summary::de_offer_summary(tokens)?);
+                        }
+                        "ResaleAuthorizationSummary" => {
+                            builder = builder.set_resale_authorization_summary(
+                                crate::protocol_serde::shape_resale_authorization_summary::de_resale_authorization_summary(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

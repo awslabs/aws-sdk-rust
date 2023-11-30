@@ -31,7 +31,11 @@ pub(crate) mod shape_create_endpoint_access;
 
 pub(crate) mod shape_create_namespace;
 
+pub(crate) mod shape_create_scheduled_action;
+
 pub(crate) mod shape_create_snapshot;
+
+pub(crate) mod shape_create_snapshot_copy_configuration;
 
 pub(crate) mod shape_create_usage_limit;
 
@@ -45,7 +49,11 @@ pub(crate) mod shape_delete_namespace;
 
 pub(crate) mod shape_delete_resource_policy;
 
+pub(crate) mod shape_delete_scheduled_action;
+
 pub(crate) mod shape_delete_snapshot;
+
+pub(crate) mod shape_delete_snapshot_copy_configuration;
 
 pub(crate) mod shape_delete_usage_limit;
 
@@ -63,6 +71,8 @@ pub(crate) mod shape_get_recovery_point;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_get_scheduled_action;
+
 pub(crate) mod shape_get_snapshot;
 
 pub(crate) mod shape_get_table_restore_status;
@@ -78,6 +88,10 @@ pub(crate) mod shape_list_endpoint_access;
 pub(crate) mod shape_list_namespaces;
 
 pub(crate) mod shape_list_recovery_points;
+
+pub(crate) mod shape_list_scheduled_actions;
+
+pub(crate) mod shape_list_snapshot_copy_configurations;
 
 pub(crate) mod shape_list_snapshots;
 
@@ -95,6 +109,8 @@ pub(crate) mod shape_restore_from_recovery_point;
 
 pub(crate) mod shape_restore_from_snapshot;
 
+pub(crate) mod shape_restore_table_from_recovery_point;
+
 pub(crate) mod shape_restore_table_from_snapshot;
 
 pub(crate) mod shape_tag_resource;
@@ -107,7 +123,11 @@ pub(crate) mod shape_update_endpoint_access;
 
 pub(crate) mod shape_update_namespace;
 
+pub(crate) mod shape_update_scheduled_action;
+
 pub(crate) mod shape_update_snapshot;
+
+pub(crate) mod shape_update_snapshot_copy_configuration;
 
 pub(crate) mod shape_update_usage_limit;
 
@@ -133,6 +153,10 @@ pub(crate) mod shape_create_endpoint_access_input;
 
 pub(crate) mod shape_create_namespace_input;
 
+pub(crate) mod shape_create_scheduled_action_input;
+
+pub(crate) mod shape_create_snapshot_copy_configuration_input;
+
 pub(crate) mod shape_create_snapshot_input;
 
 pub(crate) mod shape_create_usage_limit_input;
@@ -146,6 +170,10 @@ pub(crate) mod shape_delete_endpoint_access_input;
 pub(crate) mod shape_delete_namespace_input;
 
 pub(crate) mod shape_delete_resource_policy_input;
+
+pub(crate) mod shape_delete_scheduled_action_input;
+
+pub(crate) mod shape_delete_snapshot_copy_configuration_input;
 
 pub(crate) mod shape_delete_snapshot_input;
 
@@ -164,6 +192,8 @@ pub(crate) mod shape_get_namespace_input;
 pub(crate) mod shape_get_recovery_point_input;
 
 pub(crate) mod shape_get_resource_policy_input;
+
+pub(crate) mod shape_get_scheduled_action_input;
 
 pub(crate) mod shape_get_snapshot_input;
 
@@ -187,6 +217,10 @@ pub(crate) mod shape_list_namespaces_input;
 
 pub(crate) mod shape_list_recovery_points_input;
 
+pub(crate) mod shape_list_scheduled_actions_input;
+
+pub(crate) mod shape_list_snapshot_copy_configurations_input;
+
 pub(crate) mod shape_list_snapshots_input;
 
 pub(crate) mod shape_list_table_restore_status_input;
@@ -205,6 +239,8 @@ pub(crate) mod shape_restore_from_recovery_point_input;
 
 pub(crate) mod shape_restore_from_snapshot_input;
 
+pub(crate) mod shape_restore_table_from_recovery_point_input;
+
 pub(crate) mod shape_restore_table_from_snapshot_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -222,6 +258,10 @@ pub(crate) mod shape_update_custom_domain_association_input;
 pub(crate) mod shape_update_endpoint_access_input;
 
 pub(crate) mod shape_update_namespace_input;
+
+pub(crate) mod shape_update_scheduled_action_input;
+
+pub(crate) mod shape_update_snapshot_copy_configuration_input;
 
 pub(crate) mod shape_update_snapshot_input;
 
@@ -249,7 +289,17 @@ pub(crate) mod shape_recovery_point_list;
 
 pub(crate) mod shape_resource_policy;
 
+pub(crate) mod shape_schedule;
+
+pub(crate) mod shape_scheduled_action_response;
+
+pub(crate) mod shape_scheduled_actions_list;
+
 pub(crate) mod shape_snapshot;
+
+pub(crate) mod shape_snapshot_copy_configuration;
+
+pub(crate) mod shape_snapshot_copy_configurations;
 
 pub(crate) mod shape_snapshot_list;
 
@@ -260,6 +310,8 @@ pub(crate) mod shape_table_restore_status_list;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_target_action;
 
 pub(crate) mod shape_usage_limit;
 
@@ -275,17 +327,23 @@ pub(crate) mod shape_association;
 
 pub(crate) mod shape_config_parameter_list;
 
+pub(crate) mod shape_create_snapshot_schedule_action_parameters;
+
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_iam_role_arn_list;
 
 pub(crate) mod shape_log_export_list;
 
+pub(crate) mod shape_next_invocations_list;
+
 pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_vpc_endpoint;
+
+pub(crate) mod shape_vpc_ids;
 
 pub(crate) mod shape_vpc_security_group_membership_list;
 

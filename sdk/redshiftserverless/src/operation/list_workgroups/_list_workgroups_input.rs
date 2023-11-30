@@ -7,6 +7,8 @@ pub struct ListWorkgroupsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkgroupsInput {
     /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
@@ -16,6 +18,10 @@ impl ListWorkgroupsInput {
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to display the next page of results.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
+        self.owner_account.as_deref()
     }
 }
 impl ListWorkgroupsInput {
@@ -31,6 +37,7 @@ impl ListWorkgroupsInput {
 pub struct ListWorkgroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkgroupsInputBuilder {
     /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
@@ -61,6 +68,20 @@ impl ListWorkgroupsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn owner_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn set_owner_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account = input;
+        self
+    }
+    /// <p>The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.</p>
+    pub fn get_owner_account(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account
+    }
     /// Consumes the builder and constructs a [`ListWorkgroupsInput`](crate::operation::list_workgroups::ListWorkgroupsInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListWorkgroupsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_workgroups::ListWorkgroupsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            owner_account: self.owner_account,
         })
     }
 }

@@ -93,6 +93,10 @@ pub(crate) mod shape_change_set_summary_list;
 
 pub(crate) mod shape_entity_summary_list;
 
+pub(crate) mod shape_entity_type_filters;
+
+pub(crate) mod shape_entity_type_sort;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_sort;
@@ -101,16 +105,152 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_ami_product_filters;
+
+pub(crate) mod shape_ami_product_sort;
+
 pub(crate) mod shape_change_set_summary_list_item;
 
 pub(crate) mod shape_change_summary;
+
+pub(crate) mod shape_container_product_filters;
+
+pub(crate) mod shape_container_product_sort;
+
+pub(crate) mod shape_data_product_filters;
+
+pub(crate) mod shape_data_product_sort;
 
 pub(crate) mod shape_entity;
 
 pub(crate) mod shape_entity_summary;
 
+pub(crate) mod shape_offer_filters;
+
+pub(crate) mod shape_offer_sort;
+
+pub(crate) mod shape_resale_authorization_filters;
+
+pub(crate) mod shape_resale_authorization_sort;
+
+pub(crate) mod shape_saa_s_product_filters;
+
+pub(crate) mod shape_saa_s_product_sort;
+
+pub(crate) mod shape_ami_product_entity_id_filter;
+
+pub(crate) mod shape_ami_product_last_modified_date_filter;
+
+pub(crate) mod shape_ami_product_summary;
+
+pub(crate) mod shape_ami_product_title_filter;
+
+pub(crate) mod shape_ami_product_visibility_filter;
+
+pub(crate) mod shape_container_product_entity_id_filter;
+
+pub(crate) mod shape_container_product_last_modified_date_filter;
+
+pub(crate) mod shape_container_product_summary;
+
+pub(crate) mod shape_container_product_title_filter;
+
+pub(crate) mod shape_container_product_visibility_filter;
+
+pub(crate) mod shape_data_product_entity_id_filter;
+
+pub(crate) mod shape_data_product_last_modified_date_filter;
+
+pub(crate) mod shape_data_product_summary;
+
+pub(crate) mod shape_data_product_title_filter;
+
+pub(crate) mod shape_data_product_visibility_filter;
+
 pub(crate) mod shape_error_detail_list;
+
+pub(crate) mod shape_offer_availability_end_date_filter;
+
+pub(crate) mod shape_offer_buyer_accounts_filter;
+
+pub(crate) mod shape_offer_entity_id_filter;
+
+pub(crate) mod shape_offer_last_modified_date_filter;
+
+pub(crate) mod shape_offer_name_filter;
+
+pub(crate) mod shape_offer_product_id_filter;
+
+pub(crate) mod shape_offer_release_date_filter;
+
+pub(crate) mod shape_offer_state_filter;
+
+pub(crate) mod shape_offer_summary;
+
+pub(crate) mod shape_offer_targeting_filter;
+
+pub(crate) mod shape_resale_authorization_availability_end_date_filter;
+
+pub(crate) mod shape_resale_authorization_created_date_filter;
+
+pub(crate) mod shape_resale_authorization_entity_id_filter;
+
+pub(crate) mod shape_resale_authorization_last_modified_date_filter;
+
+pub(crate) mod shape_resale_authorization_manufacturer_account_id_filter;
+
+pub(crate) mod shape_resale_authorization_manufacturer_legal_name_filter;
+
+pub(crate) mod shape_resale_authorization_name_filter;
+
+pub(crate) mod shape_resale_authorization_offer_extended_status_filter;
+
+pub(crate) mod shape_resale_authorization_product_id_filter;
+
+pub(crate) mod shape_resale_authorization_product_name_filter;
+
+pub(crate) mod shape_resale_authorization_reseller_account_id_filter;
+
+pub(crate) mod shape_resale_authorization_reseller_legal_name_filter;
+
+pub(crate) mod shape_resale_authorization_status_filter;
+
+pub(crate) mod shape_resale_authorization_summary;
 
 pub(crate) mod shape_resource_id_list;
 
+pub(crate) mod shape_saa_s_product_entity_id_filter;
+
+pub(crate) mod shape_saa_s_product_last_modified_date_filter;
+
+pub(crate) mod shape_saa_s_product_summary;
+
+pub(crate) mod shape_saa_s_product_title_filter;
+
+pub(crate) mod shape_saa_s_product_visibility_filter;
+
+pub(crate) mod shape_ami_product_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_container_product_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_data_product_last_modified_date_filter_date_range;
+
 pub(crate) mod shape_error_detail;
+
+pub(crate) mod shape_offer_availability_end_date_filter_date_range;
+
+pub(crate) mod shape_offer_buyer_accounts_list;
+
+pub(crate) mod shape_offer_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_offer_release_date_filter_date_range;
+
+pub(crate) mod shape_offer_targeting_list;
+
+pub(crate) mod shape_resale_authorization_availability_end_date_filter_date_range;
+
+pub(crate) mod shape_resale_authorization_created_date_filter_date_range;
+
+pub(crate) mod shape_resale_authorization_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_saa_s_product_last_modified_date_filter_date_range;

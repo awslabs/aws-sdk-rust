@@ -13,11 +13,17 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_usage_limit::UsageLimitBuilder;
 
+pub use crate::types::_snapshot_copy_configuration::SnapshotCopyConfigurationBuilder;
+
 pub use crate::types::_snapshot::SnapshotBuilder;
 
 pub use crate::types::_table_restore_status::TableRestoreStatusBuilder;
 
 pub use crate::types::_namespace::NamespaceBuilder;
+
+pub use crate::types::_scheduled_action_response::ScheduledActionResponseBuilder;
+
+pub use crate::types::_create_snapshot_schedule_action_parameters::CreateSnapshotScheduleActionParametersBuilder;
 
 pub use crate::types::_recovery_point::RecoveryPointBuilder;
 

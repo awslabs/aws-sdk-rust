@@ -100,8 +100,10 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS License Manager | [aws-sdk-licensemanager](https://crates.io/crates/aws-sdk-licensemanager) ([docs](https://docs.rs/aws-sdk-licensemanager)) |
 | AWS License Manager Linux Subscriptions | [aws-sdk-licensemanagerlinuxsubscriptions](https://crates.io/crates/aws-sdk-licensemanagerlinuxsubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerlinuxsubscriptions)) |
 | AWS License Manager User Subscriptions | [aws-sdk-licensemanagerusersubscriptions](https://crates.io/crates/aws-sdk-licensemanagerusersubscriptions) ([docs](https://docs.rs/aws-sdk-licensemanagerusersubscriptions)) |
+| AWS Marketplace Agreement Service | [aws-sdk-marketplaceagreement](https://crates.io/crates/aws-sdk-marketplaceagreement) ([docs](https://docs.rs/aws-sdk-marketplaceagreement)) |
 | AWS Marketplace Catalog Service | [aws-sdk-marketplacecatalog](https://crates.io/crates/aws-sdk-marketplacecatalog) ([docs](https://docs.rs/aws-sdk-marketplacecatalog)) |
 | AWS Marketplace Commerce Analytics | [aws-sdk-marketplacecommerceanalytics](https://crates.io/crates/aws-sdk-marketplacecommerceanalytics) ([docs](https://docs.rs/aws-sdk-marketplacecommerceanalytics)) |
+| AWS Marketplace Deployment Service | [aws-sdk-marketplacedeployment](https://crates.io/crates/aws-sdk-marketplacedeployment) ([docs](https://docs.rs/aws-sdk-marketplacedeployment)) |
 | AWS Marketplace Entitlement Service | [aws-sdk-marketplaceentitlement](https://crates.io/crates/aws-sdk-marketplaceentitlement) ([docs](https://docs.rs/aws-sdk-marketplaceentitlement)) |
 | AWS MediaConnect | [aws-sdk-mediaconnect](https://crates.io/crates/aws-sdk-mediaconnect) ([docs](https://docs.rs/aws-sdk-mediaconnect)) |
 | AWS MediaTailor | [aws-sdk-mediatailor](https://crates.io/crates/aws-sdk-mediatailor) ([docs](https://docs.rs/aws-sdk-mediatailor)) |

@@ -6,9 +6,9 @@
 pub struct TableRestoreStatus {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
     pub table_restore_request_id: ::std::option::Option<::std::string::String>,
-    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A value that describes the current state of the table restore request. Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A message that explains the returned status. For example, if the status of the operation is <code>FAILED</code>, the message explains why the operation failed.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time that the table restore request was made, in Universal Coordinated Time (UTC).</p>
     pub request_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -34,17 +34,19 @@ pub struct TableRestoreStatus {
     pub target_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table to create from the restore operation.</p>
     pub new_table_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the recovery point being restored from.</p>
+    pub recovery_point_id: ::std::option::Option<::std::string::String>,
 }
 impl TableRestoreStatus {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
     pub fn table_restore_request_id(&self) -> ::std::option::Option<&str> {
         self.table_restore_request_id.as_deref()
     }
-    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A value that describes the current state of the table restore request. Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A message that explains the returned status. For example, if the status of the operation is <code>FAILED</code>, the message explains why the operation failed.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -96,6 +98,10 @@ impl TableRestoreStatus {
     pub fn new_table_name(&self) -> ::std::option::Option<&str> {
         self.new_table_name.as_deref()
     }
+    /// <p>The ID of the recovery point being restored from.</p>
+    pub fn recovery_point_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_point_id.as_deref()
+    }
 }
 impl TableRestoreStatus {
     /// Creates a new builder-style object to manufacture [`TableRestoreStatus`](crate::types::TableRestoreStatus).
@@ -123,6 +129,7 @@ pub struct TableRestoreStatusBuilder {
     pub(crate) target_database_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) new_table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) recovery_point_id: ::std::option::Option<::std::string::String>,
 }
 impl TableRestoreStatusBuilder {
     /// <p>The ID of the RestoreTableFromSnapshot request.</p>
@@ -139,31 +146,31 @@ impl TableRestoreStatusBuilder {
     pub fn get_table_restore_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_restore_request_id
     }
-    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A value that describes the current state of the table restore request. Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A value that describes the current state of the table restore request. Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A value that describes the current state of the table restore request. Possible values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A value that describes the current state of the table restore request. Possible values are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, and <code>IN_PROGRESS</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A message that explains the returned status. For example, if the status of the operation is <code>FAILED</code>, the message explains why the operation failed.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A message that explains the returned status. For example, if the status of the operation is <code>FAILED</code>, the message explains why the operation failed.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+    /// <p>A message that explains the returned status. For example, if the status of the operation is <code>FAILED</code>, the message explains why the operation failed.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
@@ -335,6 +342,20 @@ impl TableRestoreStatusBuilder {
     pub fn get_new_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_table_name
     }
+    /// <p>The ID of the recovery point being restored from.</p>
+    pub fn recovery_point_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recovery_point_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the recovery point being restored from.</p>
+    pub fn set_recovery_point_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recovery_point_id = input;
+        self
+    }
+    /// <p>The ID of the recovery point being restored from.</p>
+    pub fn get_recovery_point_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_point_id
+    }
     /// Consumes the builder and constructs a [`TableRestoreStatus`](crate::types::TableRestoreStatus).
     pub fn build(self) -> crate::types::TableRestoreStatus {
         crate::types::TableRestoreStatus {
@@ -353,6 +374,7 @@ impl TableRestoreStatusBuilder {
             target_database_name: self.target_database_name,
             target_schema_name: self.target_schema_name,
             new_table_name: self.new_table_name,
+            recovery_point_id: self.recovery_point_id,
         }
     }
 }

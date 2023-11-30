@@ -39,6 +39,26 @@ pub(crate) fn reflens_list_recovery_points_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_scheduled_actions_output_output_next_token(
+    input: &crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_snapshot_copy_configurations_output_output_next_token(
+    input: &crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_snapshots_output_output_next_token(
     input: &crate::operation::list_snapshots::ListSnapshotsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -110,6 +130,23 @@ pub(crate) fn lens_list_recovery_points_output_output_recovery_points(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_scheduled_actions_output_output_scheduled_actions(
+    input: crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.scheduled_actions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_snapshot_copy_configurations_output_output_snapshot_copy_configurations(
+    input: crate::operation::list_snapshot_copy_configurations::ListSnapshotCopyConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SnapshotCopyConfiguration>> {
+    let input = input.snapshot_copy_configurations;
     ::std::option::Option::Some(input)
 }
 

@@ -13,8 +13,14 @@ pub mod create_endpoint_access;
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
 
+/// Types for the `CreateScheduledAction` operation.
+pub mod create_scheduled_action;
+
 /// Types for the `CreateSnapshot` operation.
 pub mod create_snapshot;
+
+/// Types for the `CreateSnapshotCopyConfiguration` operation.
+pub mod create_snapshot_copy_configuration;
 
 /// Types for the `CreateUsageLimit` operation.
 pub mod create_usage_limit;
@@ -34,8 +40,14 @@ pub mod delete_namespace;
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
 
+/// Types for the `DeleteScheduledAction` operation.
+pub mod delete_scheduled_action;
+
 /// Types for the `DeleteSnapshot` operation.
 pub mod delete_snapshot;
+
+/// Types for the `DeleteSnapshotCopyConfiguration` operation.
+pub mod delete_snapshot_copy_configuration;
 
 /// Types for the `DeleteUsageLimit` operation.
 pub mod delete_usage_limit;
@@ -61,6 +73,9 @@ pub mod get_recovery_point;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `GetScheduledAction` operation.
+pub mod get_scheduled_action;
+
 /// Types for the `GetSnapshot` operation.
 pub mod get_snapshot;
 
@@ -84,6 +99,12 @@ pub mod list_namespaces;
 
 /// Types for the `ListRecoveryPoints` operation.
 pub mod list_recovery_points;
+
+/// Types for the `ListScheduledActions` operation.
+pub mod list_scheduled_actions;
+
+/// Types for the `ListSnapshotCopyConfigurations` operation.
+pub mod list_snapshot_copy_configurations;
 
 /// Types for the `ListSnapshots` operation.
 pub mod list_snapshots;
@@ -109,6 +130,9 @@ pub mod restore_from_recovery_point;
 /// Types for the `RestoreFromSnapshot` operation.
 pub mod restore_from_snapshot;
 
+/// Types for the `RestoreTableFromRecoveryPoint` operation.
+pub mod restore_table_from_recovery_point;
+
 /// Types for the `RestoreTableFromSnapshot` operation.
 pub mod restore_table_from_snapshot;
 
@@ -127,8 +151,14 @@ pub mod update_endpoint_access;
 /// Types for the `UpdateNamespace` operation.
 pub mod update_namespace;
 
+/// Types for the `UpdateScheduledAction` operation.
+pub mod update_scheduled_action;
+
 /// Types for the `UpdateSnapshot` operation.
 pub mod update_snapshot;
+
+/// Types for the `UpdateSnapshotCopyConfiguration` operation.
+pub mod update_snapshot_copy_configuration;
 
 /// Types for the `UpdateUsageLimit` operation.
 pub mod update_usage_limit;
