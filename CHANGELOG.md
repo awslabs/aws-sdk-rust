@@ -857,8 +857,6 @@ November 28th, 2023
 - `aws-sdk-customerprofiles` (1.4.0): This release introduces DetectProfileObjectType API to auto generate object type mapping.
 - `aws-sdk-qbusiness` (1.0.0): Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
 - `aws-sdk-qconnect` (1.0.0): Amazon Q in Connect, an LLM-enhanced evolution of Amazon Connect Wisdom. This release adds generative AI support to Amazon Q Connect QueryAssistant and GetRecommendations APIs.
-- `aws-sdk-s3` (1.4.0): Adds support for S3 Express One Zone.
-- `aws-sdk-s3control` (1.4.0): Adds support for S3 Express One Zone, and InvocationSchemaVersion 2.0 for S3 Batch Operations.
 
 **Crate Versions**
 <details>
