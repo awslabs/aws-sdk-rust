@@ -25,6 +25,8 @@ pub struct LockRuleOutput {
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
     pub lock_state: ::std::option::Option<crate::types::LockState>,
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl LockRuleOutput {
@@ -68,6 +70,10 @@ impl LockRuleOutput {
     pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
         self.lock_state.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for LockRuleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -93,6 +99,7 @@ pub struct LockRuleOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) lock_configuration: ::std::option::Option<crate::types::LockConfiguration>,
     pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
+    pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl LockRuleOutputBuilder {
@@ -232,6 +239,20 @@ impl LockRuleOutputBuilder {
     pub fn get_lock_state(&self) -> &::std::option::Option<crate::types::LockState> {
         &self.lock_state
     }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -252,6 +273,7 @@ impl LockRuleOutputBuilder {
             status: self.status,
             lock_configuration: self.lock_configuration,
             lock_state: self.lock_state,
+            rule_arn: self.rule_arn,
             _request_id: self._request_id,
         }
     }

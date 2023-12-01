@@ -22,7 +22,7 @@ impl SearchQuickResponsesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchQuickResponses`.
 ///
-/// <p>Searches existing Amazon Q quick responses in a Amazon Q knowledge base.</p>
+/// <p>Searches existing Amazon Q quick responses in an Amazon Q knowledge base.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchQuickResponsesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

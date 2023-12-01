@@ -221,6 +221,8 @@ mod list_tags_for_resource;
 
 mod notify_recommendations_received;
 
+mod put_feedback;
+
 mod query_assistant;
 
 mod remove_knowledge_base_template_uri;

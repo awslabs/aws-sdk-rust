@@ -303,6 +303,7 @@ impl From<crate::operation::update_rule::UpdateRuleError> for Error {
             crate::operation::update_rule::UpdateRuleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_rule::UpdateRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_rule::UpdateRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_rule::UpdateRuleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_rule::UpdateRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_rule::UpdateRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }

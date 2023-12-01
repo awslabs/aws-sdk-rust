@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`validation_settings(Option<ValidationSettings>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::validation_settings): <p>The current validation settings for the policy store.</p>
     ///   - [`created_date(DateTime)`](crate::operation::get_policy_store::GetPolicyStoreOutput::created_date): <p>The date and time that the policy store was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_policy_store::GetPolicyStoreOutput::last_updated_date): <p>The date and time that the policy store was last updated.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::description): <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     /// - On failure, responds with [`SdkError<GetPolicyStoreError>`](crate::operation::get_policy_store::GetPolicyStoreError)
     pub fn get_policy_store(&self) -> crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder {
         crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::new(self.handle.clone())

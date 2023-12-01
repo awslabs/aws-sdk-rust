@@ -1708,9 +1708,9 @@ model_hash = 'f13f835b7ec8715131f5900a4499bdf71b9b80446f7e5281f78d368f56c7e248'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
-version = '1.0.0'
-source_hash = '53d793a308f12589fc07532ef59dce7fca5d903c7309ef8d13dda01123e9aeb6'
-model_hash = '322374b6178acbf8e83765509bf4da0bdba3051b086ae23c359dded5a2f901a8'
+version = '1.1.0'
+source_hash = '1a4f08a76f5c355ea468b7096060532a9c58e4326134efcf6f3c052502243c85'
+model_hash = '010e2fb1e0f6f782e60c22a3b922229e48f7da046a7fab5d3b2e786cbaddbb61'
 
 [crates.aws-sdk-qldb]
 category = 'AwsSdk'
@@ -1738,9 +1738,9 @@ model_hash = '089a8b12162eb3a3ad06adcef9c96f68661e8a54206da0150dd56557476513ef'
 
 [crates.aws-sdk-rbin]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '7af38ad181eccf901f10d5b15f4b830b2acca95bff72145861229aaa39c47ddd'
-model_hash = '8ddb6f23161a8dd9a3716bb54ea5fb3fe24b84e0e1f53e0d22cfbe9891b9ef27'
+version = '1.4.0'
+source_hash = 'a20528796c7ca9fd7d8454d3d9d03bed2253dfc0c13382caa0fb9061c6c45e9f'
+model_hash = '33137a772550764a4312631b5ad37b61e0232d622a5d0bca86b20efd5bb76105'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
@@ -2188,9 +2188,9 @@ model_hash = 'ce72702d8baaff26bc29ba694fab60de0a76b50e1221c9df5a7b2d3645a2a431'
 
 [crates.aws-sdk-verifiedpermissions]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'af6639527073ff2677839d238594b306806f675cecd9779a714b482144c8c346'
-model_hash = '69644addf84b563968ab5cdabb0899fc864716bebc8f694be113d4592fe63f7c'
+version = '1.4.0'
+source_hash = 'fb1a7bed066bb0bcc2cbf49eb2a56630a0f176c7389c0088882e065970c6487b'
+model_hash = '2b73caf571b9cfa2b3ddd0ff8744d133fba1e111b61cd5980e705b94191824b6'
 
 [crates.aws-sdk-voiceid]
 category = 'AwsSdk'
@@ -2396,11 +2396,7 @@ source_hash = '11a719c09fac2708e6e2a232de738eccefa9dc532282f571eb75656d40a2b8bc'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '272babb73dc3f79128a1ef0521e9967c012b6800492cd482ca10615db9517752'
-
-[release]
-tag = 'release-2023-11-30'
-
 [release.crates]
-aws-sdk-arczonalshift = '1.4.0'
-aws-sdk-glue = '1.4.0'
-aws-sdk-sagemaker = '1.5.0'
+aws-sdk-qconnect = '1.1.0'
+aws-sdk-rbin = '1.4.0'
+aws-sdk-verifiedpermissions = '1.4.0'

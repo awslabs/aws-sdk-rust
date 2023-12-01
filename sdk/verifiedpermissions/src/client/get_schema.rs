@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`schema(String)`](crate::operation::get_schema::GetSchemaOutput::schema): <p>The body of the schema, written in Cedar schema JSON.</p>
     ///   - [`created_date(DateTime)`](crate::operation::get_schema::GetSchemaOutput::created_date): <p>The date and time that the schema was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_schema::GetSchemaOutput::last_updated_date): <p>The date and time that the schema was most recently updated.</p>
+    ///   - [`namespaces(Option<Vec::<String>>)`](crate::operation::get_schema::GetSchemaOutput::namespaces): <p>The namespaces of the entities referenced by this schema.</p>
     /// - On failure, responds with [`SdkError<GetSchemaError>`](crate::operation::get_schema::GetSchemaError)
     pub fn get_schema(&self) -> crate::operation::get_schema::builders::GetSchemaFluentBuilder {
         crate::operation::get_schema::builders::GetSchemaFluentBuilder::new(self.handle.clone())

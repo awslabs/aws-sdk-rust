@@ -88,6 +88,9 @@ pub mod list_tags_for_resource;
 /// Types for the `NotifyRecommendationsReceived` operation.
 pub mod notify_recommendations_received;
 
+/// Types for the `PutFeedback` operation.
+pub mod put_feedback;
+
 /// Types for the `QueryAssistant` operation.
 pub mod query_assistant;
 

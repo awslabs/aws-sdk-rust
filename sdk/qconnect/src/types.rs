@@ -121,6 +121,14 @@ pub use crate::types::_query_condition_comparison_operator::QueryConditionCompar
 
 pub use crate::types::_query_condition_field_name::QueryConditionFieldName;
 
+pub use crate::types::_content_feedback_data::ContentFeedbackData;
+
+pub use crate::types::_generative_content_feedback_data::GenerativeContentFeedbackData;
+
+pub use crate::types::_relevance::Relevance;
+
+pub use crate::types::_target_type::TargetType;
+
 pub use crate::types::_notify_recommendations_received_error::NotifyRecommendationsReceivedError;
 
 pub use crate::types::_recommendation_trigger::RecommendationTrigger;
@@ -201,6 +209,8 @@ mod _content_data;
 
 mod _content_data_details;
 
+mod _content_feedback_data;
+
 mod _content_reference;
 
 mod _content_status;
@@ -226,6 +236,8 @@ mod _filter;
 mod _filter_field;
 
 mod _filter_operator;
+
+mod _generative_content_feedback_data;
 
 mod _generative_data_details;
 
@@ -311,6 +323,8 @@ mod _recommendation_trigger_type;
 
 mod _recommendation_type;
 
+mod _relevance;
+
 mod _relevance_level;
 
 mod _rendering_configuration;
@@ -332,6 +346,8 @@ mod _source_configuration;
 mod _source_content_data_details;
 
 mod _source_content_type;
+
+mod _target_type;
 
 mod _text_data;
 

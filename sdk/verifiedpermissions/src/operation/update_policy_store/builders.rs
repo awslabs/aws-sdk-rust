@@ -138,4 +138,18 @@ impl UpdatePolicyStoreFluentBuilder {
     pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         self.inner.get_validation_settings()
     }
+    /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
 }

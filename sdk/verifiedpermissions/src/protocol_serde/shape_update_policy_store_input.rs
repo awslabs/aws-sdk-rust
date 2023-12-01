@@ -12,5 +12,8 @@ pub fn ser_update_policy_store_input_input(
         crate::protocol_serde::shape_validation_settings::ser_validation_settings(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
+    }
     Ok(())
 }

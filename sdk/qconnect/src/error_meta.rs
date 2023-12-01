@@ -846,6 +846,30 @@ impl From<crate::operation::notify_recommendations_received::NotifyRecommendatio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_feedback::PutFeedbackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_feedback::PutFeedbackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_feedback::PutFeedbackError> for Error {
+    fn from(err: crate::operation::put_feedback::PutFeedbackError) -> Self {
+        match err {
+            crate::operation::put_feedback::PutFeedbackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_feedback::PutFeedbackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_feedback::PutFeedbackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_feedback::PutFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::query_assistant::QueryAssistantError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

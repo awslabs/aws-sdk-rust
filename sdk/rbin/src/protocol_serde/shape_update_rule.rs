@@ -62,6 +62,24 @@ pub fn de_update_rule_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::update_rule::UpdateRuleError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_rule::UpdateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ValidationException" => crate::operation::update_rule::UpdateRuleError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -157,6 +175,13 @@ pub(crate) fn de_update_rule(
                 }
                 "RetentionPeriod" => {
                     builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
+                }
+                "RuleArn" => {
+                    builder = builder.set_rule_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "Status" => {
                     builder = builder.set_status(

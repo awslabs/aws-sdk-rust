@@ -81,6 +81,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_notify_recommendations_received;
 
+pub(crate) mod shape_put_feedback;
+
 pub(crate) mod shape_query_assistant;
 
 pub(crate) mod shape_remove_knowledge_base_template_uri;
@@ -133,6 +135,8 @@ pub(crate) mod shape_notify_recommendations_received_input;
 
 pub(crate) mod shape_precondition_failed_exception;
 
+pub(crate) mod shape_put_feedback_input;
+
 pub(crate) mod shape_query_assistant_input;
 
 pub(crate) mod shape_request_timeout_exception;
@@ -174,6 +178,8 @@ pub(crate) mod shape_assistant_data;
 pub(crate) mod shape_assistant_list;
 
 pub(crate) mod shape_content_data;
+
+pub(crate) mod shape_content_feedback_data;
 
 pub(crate) mod shape_content_summary;
 
@@ -248,6 +254,8 @@ pub(crate) mod shape_configuration;
 pub(crate) mod shape_content_metadata;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_generative_content_feedback_data;
 
 pub(crate) mod shape_import_job_summary;
 

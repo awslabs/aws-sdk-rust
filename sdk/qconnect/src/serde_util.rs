@@ -62,6 +62,27 @@ pub(crate) fn list_quick_responses_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn put_feedback_output_output_correct_errors(
+    mut builder: crate::operation::put_feedback::builders::PutFeedbackOutputBuilder,
+) -> crate::operation::put_feedback::builders::PutFeedbackOutputBuilder {
+    if builder.assistant_id.is_none() {
+        builder.assistant_id = Some(Default::default())
+    }
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
+    }
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.target_type.is_none() {
+        builder.target_type = "no value was set".parse::<crate::types::TargetType>().ok()
+    }
+    if builder.content_feedback.is_none() {
+        builder.content_feedback = Some(crate::types::ContentFeedbackData::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn query_assistant_output_output_correct_errors(
     mut builder: crate::operation::query_assistant::builders::QueryAssistantOutputBuilder,
 ) -> crate::operation::query_assistant::builders::QueryAssistantOutputBuilder {
@@ -393,6 +414,15 @@ pub(crate) fn external_source_configuration_correct_errors(
     }
     if builder.configuration.is_none() {
         builder.configuration = Some(crate::types::Configuration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn generative_content_feedback_data_correct_errors(
+    mut builder: crate::types::builders::GenerativeContentFeedbackDataBuilder,
+) -> crate::types::builders::GenerativeContentFeedbackDataBuilder {
+    if builder.relevance.is_none() {
+        builder.relevance = "no value was set".parse::<crate::types::Relevance>().ok()
     }
     builder
 }

@@ -71,6 +71,8 @@ pub use crate::types::_document::DocumentBuilder;
 
 pub use crate::types::_query_condition_item::QueryConditionItemBuilder;
 
+pub use crate::types::_generative_content_feedback_data::GenerativeContentFeedbackDataBuilder;
+
 pub use crate::types::_notify_recommendations_received_error::NotifyRecommendationsReceivedErrorBuilder;
 
 pub use crate::types::_recommendation_trigger::RecommendationTriggerBuilder;

@@ -155,6 +155,13 @@ pub(crate) fn de_lock_rule(
                 "RetentionPeriod" => {
                     builder = builder.set_retention_period(crate::protocol_serde::shape_retention_period::de_retention_period(tokens)?);
                 }
+                "RuleArn" => {
+                    builder = builder.set_rule_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

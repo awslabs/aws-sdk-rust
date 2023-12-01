@@ -156,6 +156,9 @@ pub(crate) fn de_get_schema(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "namespaces" => {
+                    builder = builder.set_namespaces(crate::protocol_serde::shape_namespace_list::de_namespace_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

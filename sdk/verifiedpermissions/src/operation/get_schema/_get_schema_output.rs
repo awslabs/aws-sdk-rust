@@ -11,6 +11,8 @@ pub struct GetSchemaOutput {
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the schema was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
+    /// <p>The namespaces of the entities referenced by this schema.</p>
+    pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSchemaOutput {
@@ -32,6 +34,12 @@ impl GetSchemaOutput {
     pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
+    /// <p>The namespaces of the entities referenced by this schema.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
+    pub fn namespaces(&self) -> &[::std::string::String] {
+        self.namespaces.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetSchemaOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -40,6 +48,7 @@ impl ::std::fmt::Debug for GetSchemaOutput {
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("namespaces", &self.namespaces);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -64,6 +73,7 @@ pub struct GetSchemaOutputBuilder {
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSchemaOutputBuilder {
@@ -127,6 +137,26 @@ impl GetSchemaOutputBuilder {
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
+    /// Appends an item to `namespaces`.
+    ///
+    /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
+    ///
+    /// <p>The namespaces of the entities referenced by this schema.</p>
+    pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.namespaces.unwrap_or_default();
+        v.push(input.into());
+        self.namespaces = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespaces of the entities referenced by this schema.</p>
+    pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.namespaces = input;
+        self
+    }
+    /// <p>The namespaces of the entities referenced by this schema.</p>
+    pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespaces
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -168,6 +198,7 @@ impl GetSchemaOutputBuilder {
                     "last_updated_date was not specified but it is required when building GetSchemaOutput",
                 )
             })?,
+            namespaces: self.namespaces,
             _request_id: self._request_id,
         })
     }
@@ -179,6 +210,7 @@ impl ::std::fmt::Debug for GetSchemaOutputBuilder {
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("namespaces", &self.namespaces);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

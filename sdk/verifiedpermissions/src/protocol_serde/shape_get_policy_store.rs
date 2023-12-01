@@ -159,6 +159,13 @@ pub(crate) fn de_get_policy_store(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "description" => {
+                    builder = builder.set_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -22,7 +22,7 @@ impl CreateQuickResponseInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateQuickResponse`.
 ///
-/// <p>Creates a Amazon Q quick response.</p>
+/// <p>Creates an Amazon Q quick response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateQuickResponseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

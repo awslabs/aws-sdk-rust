@@ -25,6 +25,8 @@ pub struct UpdateRuleOutput {
     pub lock_state: ::std::option::Option<crate::types::LockState>,
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     pub lock_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateRuleOutput {
@@ -68,6 +70,10 @@ impl UpdateRuleOutput {
     pub fn lock_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.lock_end_time.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
+        self.rule_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateRuleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -93,6 +99,7 @@ pub struct UpdateRuleOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
     pub(crate) lock_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateRuleOutputBuilder {
@@ -232,6 +239,20 @@ impl UpdateRuleOutputBuilder {
     pub fn get_lock_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.lock_end_time
     }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rule_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+    pub fn get_rule_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rule_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -252,6 +273,7 @@ impl UpdateRuleOutputBuilder {
             status: self.status,
             lock_state: self.lock_state,
             lock_end_time: self.lock_end_time,
+            rule_arn: self.rule_arn,
             _request_id: self._request_id,
         }
     }
