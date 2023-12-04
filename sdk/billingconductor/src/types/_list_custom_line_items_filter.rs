@@ -10,6 +10,8 @@ pub struct ListCustomLineItemsFilter {
     pub billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of custom line item ARNs to retrieve information.</p>
     pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Web Services accounts in which this custom line item will be applied to.</p>
+    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCustomLineItemsFilter {
     /// <p>A list of custom line items to retrieve information.</p>
@@ -30,6 +32,12 @@ impl ListCustomLineItemsFilter {
     pub fn arns(&self) -> &[::std::string::String] {
         self.arns.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Web Services accounts in which this custom line item will be applied to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
+    pub fn account_ids(&self) -> &[::std::string::String] {
+        self.account_ids.as_deref().unwrap_or_default()
+    }
 }
 impl ListCustomLineItemsFilter {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
@@ -45,6 +53,7 @@ pub struct ListCustomLineItemsFilterBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCustomLineItemsFilterBuilder {
     /// Appends an item to `names`.
@@ -107,12 +116,33 @@ impl ListCustomLineItemsFilterBuilder {
     pub fn get_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.arns
     }
+    /// Appends an item to `account_ids`.
+    ///
+    /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
+    ///
+    /// <p>The Amazon Web Services accounts in which this custom line item will be applied to.</p>
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.account_ids.unwrap_or_default();
+        v.push(input.into());
+        self.account_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services accounts in which this custom line item will be applied to.</p>
+    pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.account_ids = input;
+        self
+    }
+    /// <p>The Amazon Web Services accounts in which this custom line item will be applied to.</p>
+    pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.account_ids
+    }
     /// Consumes the builder and constructs a [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
     pub fn build(self) -> crate::types::ListCustomLineItemsFilter {
         crate::types::ListCustomLineItemsFilter {
             names: self.names,
             billing_groups: self.billing_groups,
             arns: self.arns,
+            account_ids: self.account_ids,
         }
     }
 }

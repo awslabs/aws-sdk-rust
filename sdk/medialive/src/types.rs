@@ -689,6 +689,12 @@ pub use crate::types::_feature_activations_output_static_image_overlay_schedule_
 
 pub use crate::types::_feature_activations_input_prepare_schedule_actions::FeatureActivationsInputPrepareScheduleActions;
 
+pub use crate::types::_color_correction_settings::ColorCorrectionSettings;
+
+pub use crate::types::_color_correction::ColorCorrection;
+
+pub use crate::types::_color_space::ColorSpace;
+
 pub use crate::types::_caption_description::CaptionDescription;
 
 pub use crate::types::_caption_destination_settings::CaptionDestinationSettings;
@@ -1206,6 +1212,12 @@ mod _channel_egress_endpoint;
 mod _channel_state;
 
 mod _channel_summary;
+
+mod _color_correction;
+
+mod _color_correction_settings;
+
+mod _color_space;
 
 mod _color_space_passthrough_settings;
 

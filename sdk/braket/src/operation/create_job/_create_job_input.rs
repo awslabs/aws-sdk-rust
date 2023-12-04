@@ -27,6 +27,8 @@ pub struct CreateJobInput {
     pub device_config: ::std::option::Option<crate::types::DeviceConfig>,
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
 }
 impl CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -79,6 +81,12 @@ impl CreateJobInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::Association] {
+        self.associations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateJobInput {
     /// Creates a new builder-style object to manufacture [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
@@ -103,6 +111,7 @@ pub struct CreateJobInputBuilder {
     pub(crate) hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) device_config: ::std::option::Option<crate::types::DeviceConfig>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
 }
 impl CreateJobInputBuilder {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -305,6 +314,26 @@ impl CreateJobInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `associations`.
+    ///
+    /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+    ///
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn associations(mut self, input: crate::types::Association) -> Self {
+        let mut v = self.associations.unwrap_or_default();
+        v.push(input);
+        self.associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
+        self.associations = input;
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        &self.associations
+    }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
@@ -320,6 +349,7 @@ impl CreateJobInputBuilder {
             hyper_parameters: self.hyper_parameters,
             device_config: self.device_config,
             tags: self.tags,
+            associations: self.associations,
         })
     }
 }

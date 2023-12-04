@@ -144,6 +144,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Server Migration Service | [aws-sdk-sms](https://crates.io/crates/aws-sdk-sms) ([docs](https://docs.rs/aws-sdk-sms)) |
 | AWS Service Catalog | [aws-sdk-servicecatalog](https://crates.io/crates/aws-sdk-servicecatalog) ([docs](https://docs.rs/aws-sdk-servicecatalog)) |
 | AWS Service Catalog App Registry | [aws-sdk-servicecatalogappregistry](https://crates.io/crates/aws-sdk-servicecatalogappregistry) ([docs](https://docs.rs/aws-sdk-servicecatalogappregistry)) |
+| AWS Service Catalog App Registry | [aws-sdk-servicecatalogappregistry](https://crates.io/crates/aws-sdk-servicecatalogappregistry) ([docs](https://docs.rs/aws-sdk-servicecatalogappregistry)) |
 | AWS Shield | [aws-sdk-shield](https://crates.io/crates/aws-sdk-shield) ([docs](https://docs.rs/aws-sdk-shield)) |
 | AWS Signer | [aws-sdk-signer](https://crates.io/crates/aws-sdk-signer) ([docs](https://docs.rs/aws-sdk-signer)) |
 | AWS SimSpace Weaver | [aws-sdk-simspaceweaver](https://crates.io/crates/aws-sdk-simspaceweaver) ([docs](https://docs.rs/aws-sdk-simspaceweaver)) |

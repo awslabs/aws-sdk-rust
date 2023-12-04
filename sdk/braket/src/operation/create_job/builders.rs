@@ -289,4 +289,22 @@ impl CreateJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// Appends an item to `associations`.
+    ///
+    /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+    ///
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn associations(mut self, input: crate::types::Association) -> Self {
+        self.inner = self.inner.associations(input);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
+        self.inner = self.inner.set_associations(input);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        self.inner.get_associations()
+    }
 }

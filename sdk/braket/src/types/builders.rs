@@ -3,6 +3,8 @@ pub use crate::types::_quantum_task_summary::QuantumTaskSummaryBuilder;
 
 pub use crate::types::_search_quantum_tasks_filter::SearchQuantumTasksFilterBuilder;
 
+pub use crate::types::_association::AssociationBuilder;
+
 pub use crate::types::_quantum_task_queue_info::QuantumTaskQueueInfoBuilder;
 
 pub use crate::types::_job_summary::JobSummaryBuilder;

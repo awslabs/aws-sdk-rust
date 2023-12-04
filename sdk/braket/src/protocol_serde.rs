@@ -91,6 +91,10 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_algorithm_specification;
 
+pub(crate) mod shape_association;
+
+pub(crate) mod shape_associations;
+
 pub(crate) mod shape_device_config;
 
 pub(crate) mod shape_device_queue_info_list;

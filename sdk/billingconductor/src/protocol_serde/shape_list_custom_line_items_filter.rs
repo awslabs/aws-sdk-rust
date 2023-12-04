@@ -30,5 +30,14 @@ pub fn ser_list_custom_line_items_filter(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.account_ids {
+        let mut array_11 = object.key("AccountIds").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }

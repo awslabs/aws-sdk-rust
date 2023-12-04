@@ -125,6 +125,9 @@ pub(crate) fn de_get_quantum_task(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "associations" => {
+                    builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens)?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

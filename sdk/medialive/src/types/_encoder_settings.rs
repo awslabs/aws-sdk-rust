@@ -14,6 +14,8 @@ pub struct EncoderSettings {
     pub blackout_slate: ::std::option::Option<crate::types::BlackoutSlate>,
     /// Settings for caption decriptions
     pub caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    /// Color correction settings
+    pub color_correction_settings: ::std::option::Option<crate::types::ColorCorrectionSettings>,
     /// Feature Activations
     pub feature_activations: ::std::option::Option<crate::types::FeatureActivations>,
     /// Configuration settings that apply to the event as a whole.
@@ -55,6 +57,10 @@ impl EncoderSettings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_descriptions.is_none()`.
     pub fn caption_descriptions(&self) -> &[crate::types::CaptionDescription] {
         self.caption_descriptions.as_deref().unwrap_or_default()
+    }
+    /// Color correction settings
+    pub fn color_correction_settings(&self) -> ::std::option::Option<&crate::types::ColorCorrectionSettings> {
+        self.color_correction_settings.as_ref()
     }
     /// Feature Activations
     pub fn feature_activations(&self) -> ::std::option::Option<&crate::types::FeatureActivations> {
@@ -109,6 +115,7 @@ pub struct EncoderSettingsBuilder {
     pub(crate) avail_configuration: ::std::option::Option<crate::types::AvailConfiguration>,
     pub(crate) blackout_slate: ::std::option::Option<crate::types::BlackoutSlate>,
     pub(crate) caption_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>>,
+    pub(crate) color_correction_settings: ::std::option::Option<crate::types::ColorCorrectionSettings>,
     pub(crate) feature_activations: ::std::option::Option<crate::types::FeatureActivations>,
     pub(crate) global_configuration: ::std::option::Option<crate::types::GlobalConfiguration>,
     pub(crate) motion_graphics_configuration: ::std::option::Option<crate::types::MotionGraphicsConfiguration>,
@@ -200,6 +207,20 @@ impl EncoderSettingsBuilder {
     /// Settings for caption decriptions
     pub fn get_caption_descriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CaptionDescription>> {
         &self.caption_descriptions
+    }
+    /// Color correction settings
+    pub fn color_correction_settings(mut self, input: crate::types::ColorCorrectionSettings) -> Self {
+        self.color_correction_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Color correction settings
+    pub fn set_color_correction_settings(mut self, input: ::std::option::Option<crate::types::ColorCorrectionSettings>) -> Self {
+        self.color_correction_settings = input;
+        self
+    }
+    /// Color correction settings
+    pub fn get_color_correction_settings(&self) -> &::std::option::Option<crate::types::ColorCorrectionSettings> {
+        &self.color_correction_settings
     }
     /// Feature Activations
     pub fn feature_activations(mut self, input: crate::types::FeatureActivations) -> Self {
@@ -334,6 +355,7 @@ impl EncoderSettingsBuilder {
             avail_configuration: self.avail_configuration,
             blackout_slate: self.blackout_slate,
             caption_descriptions: self.caption_descriptions,
+            color_correction_settings: self.color_correction_settings,
             feature_activations: self.feature_activations,
             global_configuration: self.global_configuration,
             motion_graphics_configuration: self.motion_graphics_configuration,

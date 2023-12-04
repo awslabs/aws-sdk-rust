@@ -59,6 +59,15 @@ pub(crate) fn multiplex_settings_correct_errors(
     builder
 }
 
+pub(crate) fn color_correction_settings_correct_errors(
+    mut builder: crate::types::builders::ColorCorrectionSettingsBuilder,
+) -> crate::types::builders::ColorCorrectionSettingsBuilder {
+    if builder.global_color_corrections.is_none() {
+        builder.global_color_corrections = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn motion_graphics_configuration_correct_errors(
     mut builder: crate::types::builders::MotionGraphicsConfigurationBuilder,
 ) -> crate::types::builders::MotionGraphicsConfigurationBuilder {
@@ -182,6 +191,21 @@ pub(crate) fn video_description_correct_errors(
 ) -> crate::types::builders::VideoDescriptionBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn color_correction_correct_errors(
+    mut builder: crate::types::builders::ColorCorrectionBuilder,
+) -> crate::types::builders::ColorCorrectionBuilder {
+    if builder.input_color_space.is_none() {
+        builder.input_color_space = "no value was set".parse::<crate::types::ColorSpace>().ok()
+    }
+    if builder.output_color_space.is_none() {
+        builder.output_color_space = "no value was set".parse::<crate::types::ColorSpace>().ok()
+    }
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
     }
     builder
 }

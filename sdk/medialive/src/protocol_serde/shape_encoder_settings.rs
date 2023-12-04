@@ -45,65 +45,71 @@ pub fn ser_encoder_settings(
         }
         array_12.finish();
     }
-    if let Some(var_15) = &input.feature_activations {
+    if let Some(var_15) = &input.color_correction_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("featureActivations").start_object();
-        crate::protocol_serde::shape_feature_activations::ser_feature_activations(&mut object_16, var_15)?;
+        let mut object_16 = object.key("colorCorrectionSettings").start_object();
+        crate::protocol_serde::shape_color_correction_settings::ser_color_correction_settings(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_17) = &input.global_configuration {
+    if let Some(var_17) = &input.feature_activations {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("globalConfiguration").start_object();
-        crate::protocol_serde::shape_global_configuration::ser_global_configuration(&mut object_18, var_17)?;
+        let mut object_18 = object.key("featureActivations").start_object();
+        crate::protocol_serde::shape_feature_activations::ser_feature_activations(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.motion_graphics_configuration {
+    if let Some(var_19) = &input.global_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("motionGraphicsConfiguration").start_object();
-        crate::protocol_serde::shape_motion_graphics_configuration::ser_motion_graphics_configuration(&mut object_20, var_19)?;
+        let mut object_20 = object.key("globalConfiguration").start_object();
+        crate::protocol_serde::shape_global_configuration::ser_global_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.nielsen_configuration {
+    if let Some(var_21) = &input.motion_graphics_configuration {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_22, var_21)?;
+        let mut object_22 = object.key("motionGraphicsConfiguration").start_object();
+        crate::protocol_serde::shape_motion_graphics_configuration::ser_motion_graphics_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.output_groups {
-        let mut array_24 = object.key("outputGroups").start_array();
-        for item_25 in var_23 {
+    if let Some(var_23) = &input.nielsen_configuration {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("nielsenConfiguration").start_object();
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.output_groups {
+        let mut array_26 = object.key("outputGroups").start_array();
+        for item_27 in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        array_24.finish();
+        array_26.finish();
     }
-    if let Some(var_27) = &input.timecode_config {
+    if let Some(var_29) = &input.timecode_config {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("timecodeConfig").start_object();
-        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_30 = object.key("timecodeConfig").start_object();
+        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_29) = &input.video_descriptions {
-        let mut array_30 = object.key("videoDescriptions").start_array();
-        for item_31 in var_29 {
+    if let Some(var_31) = &input.video_descriptions {
+        let mut array_32 = object.key("videoDescriptions").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_video_description::ser_video_description(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_video_description::ser_video_description(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_30.finish();
+        array_32.finish();
     }
-    if let Some(var_33) = &input.thumbnail_configuration {
+    if let Some(var_35) = &input.thumbnail_configuration {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("thumbnailConfiguration").start_object();
-        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_36 = object.key("thumbnailConfiguration").start_object();
+        crate::protocol_serde::shape_thumbnail_configuration::ser_thumbnail_configuration(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }
@@ -141,6 +147,11 @@ where
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
                                 crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens)?,
+                            );
+                        }
+                        "colorCorrectionSettings" => {
+                            builder = builder.set_color_correction_settings(
+                                crate::protocol_serde::shape_color_correction_settings::de_color_correction_settings(tokens)?,
                             );
                         }
                         "featureActivations" => {

@@ -6,39 +6,51 @@ pub fn ser_create_quantum_task_input_input(
     if let Some(var_1) = &input.action {
         object.key("action").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.client_token {
-        object.key("clientToken").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.device_arn {
-        object.key("deviceArn").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.device_parameters {
-        object.key("deviceParameters").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.job_token {
-        object.key("jobToken").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.output_s3_bucket {
-        object.key("outputS3Bucket").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.output_s3_key_prefix {
-        object.key("outputS3KeyPrefix").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.shots {
-        object.key("shots").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
-        );
-    }
-    if let Some(var_9) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+    if let Some(var_2) = &input.associations {
+        let mut array_3 = object.key("associations").start_array();
+        for item_4 in var_2 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_association::ser_association(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        object_10.finish();
+        array_3.finish();
+    }
+    if let Some(var_6) = &input.client_token {
+        object.key("clientToken").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.device_arn {
+        object.key("deviceArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.device_parameters {
+        object.key("deviceParameters").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.job_token {
+        object.key("jobToken").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.output_s3_bucket {
+        object.key("outputS3Bucket").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.output_s3_key_prefix {
+        object.key("outputS3KeyPrefix").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.shots {
+        object.key("shots").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
     }
     Ok(())
 }

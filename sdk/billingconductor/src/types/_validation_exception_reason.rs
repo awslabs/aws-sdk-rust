@@ -21,6 +21,7 @@
 ///     ValidationExceptionReason::DuplicatePricingruleArns => { /* ... */ },
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::IllegalAccounts => { /* ... */ },
+///     ValidationExceptionReason::IllegalAccountId => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingEntity => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingPeriod => { /* ... */ },
 ///     ValidationExceptionReason::IllegalBillingPeriodRange => { /* ... */ },
@@ -116,6 +117,8 @@ pub enum ValidationExceptionReason {
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
     IllegalAccounts,
+    #[allow(missing_docs)] // documentation missing in model
+    IllegalAccountId,
     #[allow(missing_docs)] // documentation missing in model
     IllegalBillingEntity,
     #[allow(missing_docs)] // documentation missing in model
@@ -232,6 +235,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "DUPLICATE_PRICINGRULE_ARNS" => ValidationExceptionReason::DuplicatePricingruleArns,
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "ILLEGAL_ACCOUNTS" => ValidationExceptionReason::IllegalAccounts,
+            "ILLEGAL_ACCOUNT_ID" => ValidationExceptionReason::IllegalAccountId,
             "ILLEGAL_BILLING_ENTITY" => ValidationExceptionReason::IllegalBillingEntity,
             "ILLEGAL_BILLING_PERIOD" => ValidationExceptionReason::IllegalBillingPeriod,
             "ILLEGAL_BILLING_PERIOD_RANGE" => ValidationExceptionReason::IllegalBillingPeriodRange,
@@ -306,6 +310,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::DuplicatePricingruleArns => "DUPLICATE_PRICINGRULE_ARNS",
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::IllegalAccounts => "ILLEGAL_ACCOUNTS",
+            ValidationExceptionReason::IllegalAccountId => "ILLEGAL_ACCOUNT_ID",
             ValidationExceptionReason::IllegalBillingEntity => "ILLEGAL_BILLING_ENTITY",
             ValidationExceptionReason::IllegalBillingPeriod => "ILLEGAL_BILLING_PERIOD",
             ValidationExceptionReason::IllegalBillingPeriodRange => "ILLEGAL_BILLING_PERIOD_RANGE",
@@ -371,6 +376,7 @@ impl ValidationExceptionReason {
             "DUPLICATE_PRICINGRULE_ARNS",
             "FIELD_VALIDATION_FAILED",
             "ILLEGAL_ACCOUNTS",
+            "ILLEGAL_ACCOUNT_ID",
             "ILLEGAL_BILLING_ENTITY",
             "ILLEGAL_BILLING_PERIOD",
             "ILLEGAL_BILLING_PERIOD_RANGE",

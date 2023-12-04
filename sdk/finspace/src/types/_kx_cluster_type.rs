@@ -13,6 +13,7 @@
 /// # let kxclustertype = unimplemented!();
 /// match kxclustertype {
 ///     KxClusterType::Gateway => { /* ... */ },
+///     KxClusterType::Gp => { /* ... */ },
 ///     KxClusterType::Hdb => { /* ... */ },
 ///     KxClusterType::Rdb => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -45,6 +46,8 @@ pub enum KxClusterType {
     #[allow(missing_docs)] // documentation missing in model
     Gateway,
     #[allow(missing_docs)] // documentation missing in model
+    Gp,
+    #[allow(missing_docs)] // documentation missing in model
     Hdb,
     #[allow(missing_docs)] // documentation missing in model
     Rdb,
@@ -56,6 +59,7 @@ impl ::std::convert::From<&str> for KxClusterType {
     fn from(s: &str) -> Self {
         match s {
             "GATEWAY" => KxClusterType::Gateway,
+            "GP" => KxClusterType::Gp,
             "HDB" => KxClusterType::Hdb,
             "RDB" => KxClusterType::Rdb,
             other => KxClusterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl KxClusterType {
     pub fn as_str(&self) -> &str {
         match self {
             KxClusterType::Gateway => "GATEWAY",
+            KxClusterType::Gp => "GP",
             KxClusterType::Hdb => "HDB",
             KxClusterType::Rdb => "RDB",
             KxClusterType::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl KxClusterType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GATEWAY", "HDB", "RDB"]
+        &["GATEWAY", "GP", "HDB", "RDB"]
     }
 }
 impl ::std::convert::AsRef<str> for KxClusterType {

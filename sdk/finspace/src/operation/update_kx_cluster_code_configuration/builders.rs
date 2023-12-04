@@ -165,16 +165,19 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
         self.inner.get_code()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn initialization_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.initialization_script(input.into());
         self
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn set_initialization_script(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_initialization_script(input);
         self
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn get_initialization_script(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_initialization_script()
     }
@@ -183,16 +186,19 @@ impl UpdateKxClusterCodeConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_command_line_arguments`](Self::set_command_line_arguments).
     ///
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn command_line_arguments(mut self, input: crate::types::KxCommandLineArgument) -> Self {
         self.inner = self.inner.command_line_arguments(input);
         self
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn set_command_line_arguments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>>) -> Self {
         self.inner = self.inner.set_command_line_arguments(input);
         self
     }
     /// <p>Specifies the key-value pairs to make them available inside the cluster.</p>
+    /// <p>You cannot update this parameter for a <code>NO_RESTART</code> deployment.</p>
     pub fn get_command_line_arguments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KxCommandLineArgument>> {
         self.inner.get_command_line_arguments()
     }

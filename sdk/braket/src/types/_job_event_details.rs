@@ -6,7 +6,7 @@
 pub struct JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub event_type: ::std::option::Option<crate::types::JobEventType>,
-    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl JobEventDetails {
     pub fn event_type(&self) -> ::std::option::Option<&crate::types::JobEventType> {
         self.event_type.as_ref()
     }
-    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn time_of_event(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_of_event.as_ref()
     }
@@ -55,17 +55,17 @@ impl JobEventDetailsBuilder {
     pub fn get_event_type(&self) -> &::std::option::Option<crate::types::JobEventType> {
         &self.event_type
     }
-    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn time_of_event(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.time_of_event = ::std::option::Option::Some(input);
         self
     }
-    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn set_time_of_event(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time_of_event = input;
         self
     }
-    /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+    /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn get_time_of_event(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time_of_event
     }

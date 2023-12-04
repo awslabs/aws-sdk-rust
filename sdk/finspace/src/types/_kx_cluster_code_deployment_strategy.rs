@@ -13,6 +13,7 @@
 /// # let kxclustercodedeploymentstrategy = unimplemented!();
 /// match kxclustercodedeploymentstrategy {
 ///     KxClusterCodeDeploymentStrategy::Force => { /* ... */ },
+///     KxClusterCodeDeploymentStrategy::NoRestart => { /* ... */ },
 ///     KxClusterCodeDeploymentStrategy::Rolling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum KxClusterCodeDeploymentStrategy {
     #[allow(missing_docs)] // documentation missing in model
     Force,
     #[allow(missing_docs)] // documentation missing in model
+    NoRestart,
+    #[allow(missing_docs)] // documentation missing in model
     Rolling,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for KxClusterCodeDeploymentStrategy {
     fn from(s: &str) -> Self {
         match s {
             "FORCE" => KxClusterCodeDeploymentStrategy::Force,
+            "NO_RESTART" => KxClusterCodeDeploymentStrategy::NoRestart,
             "ROLLING" => KxClusterCodeDeploymentStrategy::Rolling,
             other => KxClusterCodeDeploymentStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl KxClusterCodeDeploymentStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             KxClusterCodeDeploymentStrategy::Force => "FORCE",
+            KxClusterCodeDeploymentStrategy::NoRestart => "NO_RESTART",
             KxClusterCodeDeploymentStrategy::Rolling => "ROLLING",
             KxClusterCodeDeploymentStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FORCE", "ROLLING"]
+        &["FORCE", "NO_RESTART", "ROLLING"]
     }
 }
 impl ::std::convert::AsRef<str> for KxClusterCodeDeploymentStrategy {

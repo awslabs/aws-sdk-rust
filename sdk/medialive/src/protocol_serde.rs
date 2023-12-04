@@ -375,6 +375,8 @@ pub(crate) mod shape_channel_egress_endpoint;
 
 pub(crate) mod shape_channel_summary;
 
+pub(crate) mod shape_color_correction_settings;
+
 pub(crate) mod shape_feature_activations;
 
 pub(crate) mod shape_global_configuration;
@@ -461,6 +463,8 @@ pub(crate) mod shape_caption_destination_settings;
 
 pub(crate) mod shape_caption_selector;
 
+pub(crate) mod shape_color_correction;
+
 pub(crate) mod shape_failover_condition;
 
 pub(crate) mod shape_input_destination_vpc;
@@ -468,6 +472,8 @@ pub(crate) mod shape_input_destination_vpc;
 pub(crate) mod shape_input_location;
 
 pub(crate) mod shape_input_loss_behavior;
+
+pub(crate) mod shape_list_of_color_correction;
 
 pub(crate) mod shape_list_of_media_package_output_destination_settings;
 

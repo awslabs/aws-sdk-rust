@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`events(Option<Vec::<JobEventDetails>>)`](crate::operation::get_job::GetJobOutput::events): <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_job::GetJobOutput::tags): <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
     ///   - [`queue_info(Option<HybridJobQueueInfo>)`](crate::operation::get_job::GetJobOutput::queue_info): <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
+    ///   - [`associations(Option<Vec::<Association>>)`](crate::operation::get_job::GetJobOutput::associations): <p>The list of Amazon Braket resources associated with the hybrid job.</p>
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)
     pub fn get_job(&self) -> crate::operation::get_job::builders::GetJobFluentBuilder {
         crate::operation::get_job::builders::GetJobFluentBuilder::new(self.handle.clone())

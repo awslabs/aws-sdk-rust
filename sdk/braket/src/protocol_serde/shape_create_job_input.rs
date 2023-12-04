@@ -9,76 +9,88 @@ pub fn ser_create_job_input_input(
         crate::protocol_serde::shape_algorithm_specification::ser_algorithm_specification(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.checkpoint_config {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("checkpointConfig").start_object();
-        crate::protocol_serde::shape_job_checkpoint_config::ser_job_checkpoint_config(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.device_config {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("deviceConfig").start_object();
-        crate::protocol_serde::shape_device_config::ser_device_config(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.hyper_parameters {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("hyperParameters").start_object();
-        for (key_10, value_11) in var_8 {
-            {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
-            }
-        }
-        object_9.finish();
-    }
-    if let Some(var_12) = &input.input_data_config {
-        let mut array_13 = object.key("inputDataConfig").start_array();
-        for item_14 in var_12 {
+    if let Some(var_3) = &input.associations {
+        let mut array_4 = object.key("associations").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_input_file_config::ser_input_file_config(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_association::ser_association(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_13.finish();
+        array_4.finish();
     }
-    if let Some(var_16) = &input.instance_config {
+    if let Some(var_7) = &input.checkpoint_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("instanceConfig").start_object();
-        crate::protocol_serde::shape_instance_config::ser_instance_config(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_8 = object.key("checkpointConfig").start_object();
+        crate::protocol_serde::shape_job_checkpoint_config::ser_job_checkpoint_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_18) = &input.job_name {
-        object.key("jobName").string(var_18.as_str());
+    if let Some(var_9) = &input.client_token {
+        object.key("clientToken").string(var_9.as_str());
     }
-    if let Some(var_19) = &input.output_data_config {
+    if let Some(var_10) = &input.device_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("outputDataConfig").start_object();
-        crate::protocol_serde::shape_job_output_data_config::ser_job_output_data_config(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_11 = object.key("deviceConfig").start_object();
+        crate::protocol_serde::shape_device_config::ser_device_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_21) = &input.role_arn {
-        object.key("roleArn").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.stopping_condition {
+    if let Some(var_12) = &input.hyper_parameters {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("stoppingCondition").start_object();
-        crate::protocol_serde::shape_job_stopping_condition::ser_job_stopping_condition(&mut object_23, var_22)?;
-        object_23.finish();
-    }
-    if let Some(var_24) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_13 = object.key("hyperParameters").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_25.finish();
+        object_13.finish();
+    }
+    if let Some(var_16) = &input.input_data_config {
+        let mut array_17 = object.key("inputDataConfig").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_input_file_config::ser_input_file_config(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_20) = &input.instance_config {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("instanceConfig").start_object();
+        crate::protocol_serde::shape_instance_config::ser_instance_config(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.job_name {
+        object.key("jobName").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.output_data_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("outputDataConfig").start_object();
+        crate::protocol_serde::shape_job_output_data_config::ser_job_output_data_config(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.role_arn {
+        object.key("roleArn").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.stopping_condition {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("stoppingCondition").start_object();
+        crate::protocol_serde::shape_job_stopping_condition::ser_job_stopping_condition(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("tags").start_object();
+        for (key_30, value_31) in var_28 {
+            {
+                object_29.key(key_30.as_str()).string(value_31.as_str());
+            }
+        }
+        object_29.finish();
     }
     Ok(())
 }

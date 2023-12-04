@@ -30,6 +30,8 @@ pub struct CustomLineItemVersionListElement {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The inclusive start time. </p>
     pub start_time: i64,
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemVersionListElement {
     /// <p>The name of the custom line item.</p>
@@ -84,6 +86,10 @@ impl CustomLineItemVersionListElement {
     pub fn start_time(&self) -> i64 {
         self.start_time
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CustomLineItemVersionListElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -101,6 +107,7 @@ impl ::std::fmt::Debug for CustomLineItemVersionListElement {
         formatter.field("end_billing_period", &self.end_billing_period);
         formatter.field("arn", &self.arn);
         formatter.field("start_time", &self.start_time);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -128,6 +135,7 @@ pub struct CustomLineItemVersionListElementBuilder {
     pub(crate) end_billing_period: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<i64>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemVersionListElementBuilder {
     /// <p>The name of the custom line item.</p>
@@ -312,6 +320,20 @@ impl CustomLineItemVersionListElementBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`CustomLineItemVersionListElement`](crate::types::CustomLineItemVersionListElement).
     pub fn build(self) -> crate::types::CustomLineItemVersionListElement {
         crate::types::CustomLineItemVersionListElement {
@@ -328,6 +350,7 @@ impl CustomLineItemVersionListElementBuilder {
             end_billing_period: self.end_billing_period,
             arn: self.arn,
             start_time: self.start_time.unwrap_or_default(),
+            account_id: self.account_id,
         }
     }
 }
@@ -347,6 +370,7 @@ impl ::std::fmt::Debug for CustomLineItemVersionListElementBuilder {
         formatter.field("end_billing_period", &self.end_billing_period);
         formatter.field("arn", &self.arn);
         formatter.field("start_time", &self.start_time);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

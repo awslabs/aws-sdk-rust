@@ -7,6 +7,7 @@ pub struct KxClusterCodeDeploymentConfiguration {
     /// <p> The type of deployment that you want on a cluster. </p>
     /// <ul>
     /// <li> <p>ROLLING – This options updates the cluster by stopping the exiting q process and starting a new q process with updated configuration.</p> </li>
+    /// <li> <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>GP</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster. </p> <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p> </li>
     /// <li> <p>FORCE – This option updates the cluster by immediately stopping all the running processes before starting up new ones with the updated configuration. </p> </li>
     /// </ul>
     pub deployment_strategy: crate::types::KxClusterCodeDeploymentStrategy,
@@ -15,6 +16,7 @@ impl KxClusterCodeDeploymentConfiguration {
     /// <p> The type of deployment that you want on a cluster. </p>
     /// <ul>
     /// <li> <p>ROLLING – This options updates the cluster by stopping the exiting q process and starting a new q process with updated configuration.</p> </li>
+    /// <li> <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>GP</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster. </p> <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p> </li>
     /// <li> <p>FORCE – This option updates the cluster by immediately stopping all the running processes before starting up new ones with the updated configuration. </p> </li>
     /// </ul>
     pub fn deployment_strategy(&self) -> &crate::types::KxClusterCodeDeploymentStrategy {
@@ -38,6 +40,7 @@ impl KxClusterCodeDeploymentConfigurationBuilder {
     /// <p> The type of deployment that you want on a cluster. </p>
     /// <ul>
     /// <li> <p>ROLLING – This options updates the cluster by stopping the exiting q process and starting a new q process with updated configuration.</p> </li>
+    /// <li> <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>GP</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster. </p> <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p> </li>
     /// <li> <p>FORCE – This option updates the cluster by immediately stopping all the running processes before starting up new ones with the updated configuration. </p> </li>
     /// </ul>
     /// This field is required.
@@ -48,6 +51,7 @@ impl KxClusterCodeDeploymentConfigurationBuilder {
     /// <p> The type of deployment that you want on a cluster. </p>
     /// <ul>
     /// <li> <p>ROLLING – This options updates the cluster by stopping the exiting q process and starting a new q process with updated configuration.</p> </li>
+    /// <li> <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>GP</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster. </p> <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p> </li>
     /// <li> <p>FORCE – This option updates the cluster by immediately stopping all the running processes before starting up new ones with the updated configuration. </p> </li>
     /// </ul>
     pub fn set_deployment_strategy(mut self, input: ::std::option::Option<crate::types::KxClusterCodeDeploymentStrategy>) -> Self {
@@ -57,6 +61,7 @@ impl KxClusterCodeDeploymentConfigurationBuilder {
     /// <p> The type of deployment that you want on a cluster. </p>
     /// <ul>
     /// <li> <p>ROLLING – This options updates the cluster by stopping the exiting q process and starting a new q process with updated configuration.</p> </li>
+    /// <li> <p>NO_RESTART – This option updates the cluster without stopping the running q process. It is only available for <code>GP</code> type cluster. This option is quicker as it reduces the turn around time to update configuration on a cluster. </p> <p>With this deployment mode, you cannot update the <code>initializationScript</code> and <code>commandLineArguments</code> parameters.</p> </li>
     /// <li> <p>FORCE – This option updates the cluster by immediately stopping all the running processes before starting up new ones with the updated configuration. </p> </li>
     /// </ul>
     pub fn get_deployment_strategy(&self) -> &::std::option::Option<crate::types::KxClusterCodeDeploymentStrategy> {

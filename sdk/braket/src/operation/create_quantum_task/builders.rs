@@ -238,4 +238,22 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_token()
     }
+    /// Appends an item to `associations`.
+    ///
+    /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+    ///
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn associations(mut self, input: crate::types::Association) -> Self {
+        self.inner = self.inner.associations(input);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
+        self.inner = self.inner.set_associations(input);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        self.inner.get_associations()
+    }
 }

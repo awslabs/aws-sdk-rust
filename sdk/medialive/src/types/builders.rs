@@ -303,6 +303,10 @@ pub use crate::types::_input_loss_behavior::InputLossBehaviorBuilder;
 
 pub use crate::types::_feature_activations::FeatureActivationsBuilder;
 
+pub use crate::types::_color_correction_settings::ColorCorrectionSettingsBuilder;
+
+pub use crate::types::_color_correction::ColorCorrectionBuilder;
+
 pub use crate::types::_caption_description::CaptionDescriptionBuilder;
 
 pub use crate::types::_caption_destination_settings::CaptionDestinationSettingsBuilder;

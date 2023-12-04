@@ -17,6 +17,8 @@ pub struct CreateCustomLineItemInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p> A <code>CustomLineItemChargeDetails</code> that describes the charge details for a custom line item. </p>
     pub charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomLineItemInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -47,6 +49,10 @@ impl CreateCustomLineItemInput {
     pub fn charge_details(&self) -> ::std::option::Option<&crate::types::CustomLineItemChargeDetails> {
         self.charge_details.as_ref()
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateCustomLineItemInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -58,6 +64,7 @@ impl ::std::fmt::Debug for CreateCustomLineItemInput {
         formatter.field("billing_period_range", &self.billing_period_range);
         formatter.field("tags", &self.tags);
         formatter.field("charge_details", &self.charge_details);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -79,6 +86,7 @@ pub struct CreateCustomLineItemInputBuilder {
     pub(crate) billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) charge_details: ::std::option::Option<crate::types::CustomLineItemChargeDetails>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCustomLineItemInputBuilder {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
@@ -189,6 +197,20 @@ impl CreateCustomLineItemInputBuilder {
     pub fn get_charge_details(&self) -> &::std::option::Option<crate::types::CustomLineItemChargeDetails> {
         &self.charge_details
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
     pub fn build(
         self,
@@ -202,6 +224,7 @@ impl CreateCustomLineItemInputBuilder {
             billing_period_range: self.billing_period_range,
             tags: self.tags,
             charge_details: self.charge_details,
+            account_id: self.account_id,
         })
     }
 }
@@ -215,6 +238,7 @@ impl ::std::fmt::Debug for CreateCustomLineItemInputBuilder {
         formatter.field("billing_period_range", &self.billing_period_range);
         formatter.field("tags", &self.tags);
         formatter.field("charge_details", &self.charge_details);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

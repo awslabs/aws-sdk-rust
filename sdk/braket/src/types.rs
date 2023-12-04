@@ -7,6 +7,10 @@ pub use crate::types::_search_quantum_tasks_filter::SearchQuantumTasksFilter;
 
 pub use crate::types::_search_quantum_tasks_filter_operator::SearchQuantumTasksFilterOperator;
 
+pub use crate::types::_association::Association;
+
+pub use crate::types::_association_type::AssociationType;
+
 pub use crate::types::_cancellation_status::CancellationStatus;
 
 pub use crate::types::_quantum_task_queue_info::QuantumTaskQueueInfo;
@@ -70,6 +74,10 @@ pub use crate::types::_search_devices_filter::SearchDevicesFilter;
 pub use crate::types::_device_queue_info::DeviceQueueInfo;
 
 mod _algorithm_specification;
+
+mod _association;
+
+mod _association_type;
 
 mod _cancellation_status;
 

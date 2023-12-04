@@ -222,6 +222,16 @@ pub(crate) fn quantum_task_queue_info_correct_errors(
     builder
 }
 
+pub(crate) fn association_correct_errors(mut builder: crate::types::builders::AssociationBuilder) -> crate::types::builders::AssociationBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AssociationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn container_image_correct_errors(
     mut builder: crate::types::builders::ContainerImageBuilder,
 ) -> crate::types::builders::ContainerImageBuilder {

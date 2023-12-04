@@ -24,6 +24,8 @@ pub struct CustomLineItemListElement {
     pub last_modified_time: i64,
     /// <p>The number of resources that are associated to the custom line item.</p>
     pub association_size: i64,
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemListElement {
     /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
@@ -66,6 +68,10 @@ impl CustomLineItemListElement {
     pub fn association_size(&self) -> i64 {
         self.association_size
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CustomLineItemListElement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for CustomLineItemListElement {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("association_size", &self.association_size);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }
@@ -104,6 +111,7 @@ pub struct CustomLineItemListElementBuilder {
     pub(crate) creation_time: ::std::option::Option<i64>,
     pub(crate) last_modified_time: ::std::option::Option<i64>,
     pub(crate) association_size: ::std::option::Option<i64>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemListElementBuilder {
     /// <p>The Amazon Resource Names (ARNs) for custom line items.</p>
@@ -246,6 +254,20 @@ impl CustomLineItemListElementBuilder {
     pub fn get_association_size(&self) -> &::std::option::Option<i64> {
         &self.association_size
     }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account in which this custom line item will be applied to.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`CustomLineItemListElement`](crate::types::CustomLineItemListElement).
     pub fn build(self) -> crate::types::CustomLineItemListElement {
         crate::types::CustomLineItemListElement {
@@ -259,6 +281,7 @@ impl CustomLineItemListElementBuilder {
             creation_time: self.creation_time.unwrap_or_default(),
             last_modified_time: self.last_modified_time.unwrap_or_default(),
             association_size: self.association_size.unwrap_or_default(),
+            account_id: self.account_id,
         }
     }
 }
@@ -275,6 +298,7 @@ impl ::std::fmt::Debug for CustomLineItemListElementBuilder {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("association_size", &self.association_size);
+        formatter.field("account_id", &self.account_id);
         formatter.finish()
     }
 }

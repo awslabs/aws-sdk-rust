@@ -43,6 +43,8 @@ pub struct GetJobOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Queue information for the requested job. Only returned if <code>QueueInfo</code> is specified in the <code>additionalAttributeNames"</code> field in the <code>GetJob</code> API request.</p>
     pub queue_info: ::std::option::Option<crate::types::HybridJobQueueInfo>,
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
@@ -133,6 +135,12 @@ impl GetJobOutput {
     pub fn queue_info(&self) -> ::std::option::Option<&crate::types::HybridJobQueueInfo> {
         self.queue_info.as_ref()
     }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::Association] {
+        self.associations.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -170,6 +178,7 @@ pub struct GetJobOutputBuilder {
     pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::JobEventDetails>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) queue_info: ::std::option::Option<crate::types::HybridJobQueueInfo>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
@@ -492,6 +501,26 @@ impl GetJobOutputBuilder {
     pub fn get_queue_info(&self) -> &::std::option::Option<crate::types::HybridJobQueueInfo> {
         &self.queue_info
     }
+    /// Appends an item to `associations`.
+    ///
+    /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+    ///
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn associations(mut self, input: crate::types::Association) -> Self {
+        let mut v = self.associations.unwrap_or_default();
+        v.push(input);
+        self.associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
+        self.associations = input;
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the hybrid job.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        &self.associations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -555,6 +584,7 @@ impl GetJobOutputBuilder {
             events: self.events,
             tags: self.tags,
             queue_info: self.queue_info,
+            associations: self.associations,
             _request_id: self._request_id,
         })
     }

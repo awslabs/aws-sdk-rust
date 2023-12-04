@@ -129,6 +129,9 @@ pub(crate) fn de_get_job(
                     builder = builder
                         .set_algorithm_specification(crate::protocol_serde::shape_algorithm_specification::de_algorithm_specification(tokens)?);
                 }
+                "associations" => {
+                    builder = builder.set_associations(crate::protocol_serde::shape_associations::de_associations(tokens)?);
+                }
                 "billableDuration" => {
                     builder = builder.set_billable_duration(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

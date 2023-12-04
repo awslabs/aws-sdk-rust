@@ -280,15 +280,15 @@ model_hash = '25d346147e5e197741d2f2d369904f9872420b1c433383196f7060f5a376c59d'
 
 [crates.aws-sdk-billingconductor]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'b2d9d209e17b14d0b2f3d667e75308288495b5934f9f2477719c5004a06c4c71'
-model_hash = 'd2388005b8cfab17dc1c921ba92b7c07b6078ac9e452d9dbc70b9b4f71b22aca'
+version = '1.4.0'
+source_hash = '4dc04e44663727dfb6d27f4c24d11fa33b65fe57a559e4192a753cb1e2ed9196'
+model_hash = '7bb81403e1cf8a23e7ecf6de4cdee8910658ec038f931d6d71af43bc2746138a'
 
 [crates.aws-sdk-braket]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '2b1d783e49eb4450787730bdca9596aef9981664131350f219df92b094e9f37e'
-model_hash = '9bd9abd04c8e7fe72804e10402db7098467d775634376b4059cb9c16d29074e8'
+version = '1.4.0'
+source_hash = '72e84c6d0ec1916a1aabc5baabeb5bb480d34781a54b6c5a2bb63c9ed45f0f4d'
+model_hash = '15d1f6198b8c17946729fa36cf8fb8984f466ac1acd3f6c4a2797836b6c70779'
 
 [crates.aws-sdk-budgets]
 category = 'AwsSdk'
@@ -346,9 +346,9 @@ model_hash = 'a14cd97ba81f88bd64b45bde2c08e1ac62502f2d2f4dcb01c8bc12bcf520ce6d'
 
 [crates.aws-sdk-cloud9]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '063fc372dd7ff1ccbb749a2e27cc442d386dcf4de50e52a1ed7ed9669883e37f'
-model_hash = '8e0bff1cbd592eba303b00fba3c97af69084eab3e58af6cfd51d7969de456d72'
+version = '1.4.0'
+source_hash = '1974fbeb611eef594e93a0f548283bb4742d430d4ad07b9a448d3b13d4ce6733'
+model_hash = '16e855d22ef8d10f38060514d0a4178a31558544acc92fb2015e6bdba10125fc'
 
 [crates.aws-sdk-cloudcontrol]
 category = 'AwsSdk'
@@ -364,9 +364,9 @@ model_hash = '3efd089f35a2a1b2bb697823c0e3438b63bb82f419d7aa21c622d872d14eef8f'
 
 [crates.aws-sdk-cloudformation]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'dd1d7327c85012deae586611b61407703e1e4628005cc90baebaa5aeef5e36df'
-model_hash = 'cdc43065d64fec2360ce1af49388f792e6b75ab38b2364857455a840d750654f'
+version = '1.4.0'
+source_hash = '8bb68f899587fbcb639afbc936584cb2a1e2f26349a3f3173874922736506c64'
+model_hash = 'd1f0bd6a90c67b0b59031f997be8bc7cd94f85b59821fa33d38e4552713ea8f7'
 
 [crates.aws-sdk-cloudfront]
 category = 'AwsSdk'
@@ -850,9 +850,9 @@ model_hash = '46ccb563d968d97801d539b55901e369c43eb44ec86ad0c6aea95ae44317eb44'
 
 [crates.aws-sdk-finspace]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = 'd70367b26ac98ec4d3c4e38214d377bb81c069192a0a61bb1fe77c0d291aa2d0'
-model_hash = '41d05d36131f72b9b219532a6a13428abc6c46a9eb9483c1f15ffe48c60f7b27'
+version = '1.4.0'
+source_hash = '465981a137d7e0b524e238bd993cfc1f40a72302ce7788656a588d4c3e51945f'
+model_hash = 'fc3cc57ab5993e6273b474b692a16de6f85fdcacc1ba41d49d3dcffb7f89f04c'
 
 [crates.aws-sdk-finspacedata]
 category = 'AwsSdk'
@@ -1402,9 +1402,9 @@ model_hash = '10b675d0bb3ec56de76a5a68b23617824962b5d8454cca389be4f70aa392cc3b'
 
 [crates.aws-sdk-medialive]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '8c4286ef9ce324ffea883087df6b459b6b9c774f68065cf1d0881d9e23f1391d'
-model_hash = '9e0379f4f8744677c1af02f25d7b5074604450b5580cf7b4477b0a142ced6ac4'
+version = '1.4.0'
+source_hash = '1a89b51833875f3deb7320a89ce6f947e0161c058699cd1edca903b7b3f835a0'
+model_hash = 'f9f6581c45e6dc8e94491a3ead6c4106af4b5a7b5209642e336ecae349ef6b66'
 
 [crates.aws-sdk-mediapackage]
 category = 'AwsSdk'
@@ -1972,8 +1972,8 @@ model_hash = 'da138db16cbb4f04bbe6e4c4c47b85fb286457f9e21894afa7914d2889fff285'
 
 [crates.aws-sdk-servicecatalogappregistry]
 category = 'AwsSdk'
-version = '1.3.0'
-source_hash = '987919d93d542fccd5b54cf4905e74b9aa2de35ece431b36a5682f0cbd671d6f'
+version = '1.3.1'
+source_hash = '3779a47b089a577bb41505885c4dccc804cd2f9dfa70e2d2f1ad326a76f40ad9'
 model_hash = 'e18166d5bef7de423990e167b9486461cc3c89658386e655d34ec47fa154b737'
 
 [crates.aws-sdk-servicediscovery]
@@ -2396,11 +2396,11 @@ source_hash = '11a719c09fac2708e6e2a232de738eccefa9dc532282f571eb75656d40a2b8bc'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '272babb73dc3f79128a1ef0521e9967c012b6800492cd482ca10615db9517752'
-
-[release]
-tag = 'release-2023-12-01'
-
 [release.crates]
-aws-sdk-qconnect = '1.1.0'
-aws-sdk-rbin = '1.4.0'
-aws-sdk-verifiedpermissions = '1.4.0'
+aws-sdk-billingconductor = '1.4.0'
+aws-sdk-braket = '1.4.0'
+aws-sdk-cloud9 = '1.4.0'
+aws-sdk-cloudformation = '1.4.0'
+aws-sdk-finspace = '1.4.0'
+aws-sdk-medialive = '1.4.0'
+aws-sdk-servicecatalogappregistry = '1.3.1'

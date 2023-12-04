@@ -108,17 +108,17 @@ impl GetQuantumTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.quantum_task_arn(input.into());
         self
     }
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_quantum_task_arn(input);
         self
     }
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_quantum_task_arn()
     }

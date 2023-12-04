@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to return information for.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInput {
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
         self.quantum_task_arn.as_deref()
     }
@@ -35,18 +35,18 @@ pub struct GetQuantumTaskInputBuilder {
     pub(crate) additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInputBuilder {
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     /// This field is required.
     pub fn quantum_task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.quantum_task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quantum_task_arn = input;
         self
     }
-    /// <p>the ARN of the task to retrieve.</p>
+    /// <p>The ARN of the task to retrieve.</p>
     pub fn get_quantum_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.quantum_task_arn
     }

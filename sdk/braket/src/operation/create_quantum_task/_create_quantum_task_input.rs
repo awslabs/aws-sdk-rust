@@ -21,6 +21,8 @@ pub struct CreateQuantumTaskInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
     pub job_token: ::std::option::Option<::std::string::String>,
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
 }
 impl CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
@@ -59,6 +61,12 @@ impl CreateQuantumTaskInput {
     pub fn job_token(&self) -> ::std::option::Option<&str> {
         self.job_token.as_deref()
     }
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associations.is_none()`.
+    pub fn associations(&self) -> &[crate::types::Association] {
+        self.associations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateQuantumTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
@@ -80,6 +88,7 @@ pub struct CreateQuantumTaskInputBuilder {
     pub(crate) action: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) job_token: ::std::option::Option<::std::string::String>,
+    pub(crate) associations: ::std::option::Option<::std::vec::Vec<crate::types::Association>>,
 }
 impl CreateQuantumTaskInputBuilder {
     /// <p>The client token associated with the request.</p>
@@ -220,6 +229,26 @@ impl CreateQuantumTaskInputBuilder {
     pub fn get_job_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_token
     }
+    /// Appends an item to `associations`.
+    ///
+    /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+    ///
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn associations(mut self, input: crate::types::Association) -> Self {
+        let mut v = self.associations.unwrap_or_default();
+        v.push(input);
+        self.associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn set_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Association>>) -> Self {
+        self.associations = input;
+        self
+    }
+    /// <p>The list of Amazon Braket resources associated with the quantum task.</p>
+    pub fn get_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Association>> {
+        &self.associations
+    }
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
     pub fn build(
         self,
@@ -234,6 +263,7 @@ impl CreateQuantumTaskInputBuilder {
             action: self.action,
             tags: self.tags,
             job_token: self.job_token,
+            associations: self.associations,
         })
     }
 }
