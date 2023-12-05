@@ -9,6 +9,8 @@ pub struct ListDatabasesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -22,6 +24,10 @@ impl ListDatabasesInput {
     /// <p>Specifies the maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn work_group(&self) -> ::std::option::Option<&str> {
+        self.work_group.as_deref()
     }
 }
 impl ListDatabasesInput {
@@ -38,6 +44,7 @@ pub struct ListDatabasesInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl ListDatabasesInputBuilder {
     /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -83,6 +90,20 @@ impl ListDatabasesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.work_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.work_group = input;
+        self
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl ListDatabasesInputBuilder {
             catalog_name: self.catalog_name,
             next_token: self.next_token,
             max_results: self.max_results,
+            work_group: self.work_group,
         })
     }
 }

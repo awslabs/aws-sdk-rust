@@ -14,6 +14,7 @@
 /// match acceleratormanufacturer {
 ///     AcceleratorManufacturer::AmazonWebServices => { /* ... */ },
 ///     AcceleratorManufacturer::Amd => { /* ... */ },
+///     AcceleratorManufacturer::Habana => { /* ... */ },
 ///     AcceleratorManufacturer::Nvidia => { /* ... */ },
 ///     AcceleratorManufacturer::Xilinx => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum AcceleratorManufacturer {
     #[allow(missing_docs)] // documentation missing in model
     Amd,
     #[allow(missing_docs)] // documentation missing in model
+    Habana,
+    #[allow(missing_docs)] // documentation missing in model
     Nvidia,
     #[allow(missing_docs)] // documentation missing in model
     Xilinx,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for AcceleratorManufacturer {
         match s {
             "amazon-web-services" => AcceleratorManufacturer::AmazonWebServices,
             "amd" => AcceleratorManufacturer::Amd,
+            "habana" => AcceleratorManufacturer::Habana,
             "nvidia" => AcceleratorManufacturer::Nvidia,
             "xilinx" => AcceleratorManufacturer::Xilinx,
             other => AcceleratorManufacturer::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -79,6 +83,7 @@ impl AcceleratorManufacturer {
         match self {
             AcceleratorManufacturer::AmazonWebServices => "amazon-web-services",
             AcceleratorManufacturer::Amd => "amd",
+            AcceleratorManufacturer::Habana => "habana",
             AcceleratorManufacturer::Nvidia => "nvidia",
             AcceleratorManufacturer::Xilinx => "xilinx",
             AcceleratorManufacturer::Unknown(value) => value.as_str(),
@@ -86,7 +91,7 @@ impl AcceleratorManufacturer {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["amazon-web-services", "amd", "nvidia", "xilinx"]
+        &["amazon-web-services", "amd", "habana", "nvidia", "xilinx"]
     }
 }
 impl ::std::convert::AsRef<str> for AcceleratorManufacturer {

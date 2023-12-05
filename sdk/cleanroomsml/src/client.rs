@@ -6,9 +6,9 @@ pub(crate) struct Handle {
     pub(crate) runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
 }
 
-/// Client for cleanrooms-ml
+/// Client for AWS Clean Rooms ML
 ///
-/// Client for invoking operations on cleanrooms-ml. Each operation on cleanrooms-ml is a method on this
+/// Client for invoking operations on AWS Clean Rooms ML. Each operation on AWS Clean Rooms ML is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
 /// ## Constructing a `Client`
 ///

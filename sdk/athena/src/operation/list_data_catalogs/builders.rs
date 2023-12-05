@@ -144,4 +144,18 @@ impl ListDataCatalogsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.work_group(input.into());
+        self
+    }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_work_group(input);
+        self
+    }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_work_group()
+    }
 }

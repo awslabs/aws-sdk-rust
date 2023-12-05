@@ -13,12 +13,15 @@
 /// # let acceleratorname = unimplemented!();
 /// match acceleratorname {
 ///     AcceleratorName::A100 => { /* ... */ },
+///     AcceleratorName::A10G => { /* ... */ },
+///     AcceleratorName::H100 => { /* ... */ },
 ///     AcceleratorName::Inferentia => { /* ... */ },
 ///     AcceleratorName::K520 => { /* ... */ },
 ///     AcceleratorName::K80 => { /* ... */ },
 ///     AcceleratorName::M60 => { /* ... */ },
 ///     AcceleratorName::RadeonProV520 => { /* ... */ },
 ///     AcceleratorName::T4 => { /* ... */ },
+///     AcceleratorName::T4G => { /* ... */ },
 ///     AcceleratorName::V100 => { /* ... */ },
 ///     AcceleratorName::Vu9P => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +54,10 @@ pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     A100,
     #[allow(missing_docs)] // documentation missing in model
+    A10G,
+    #[allow(missing_docs)] // documentation missing in model
+    H100,
+    #[allow(missing_docs)] // documentation missing in model
     Inferentia,
     #[allow(missing_docs)] // documentation missing in model
     K520,
@@ -63,6 +70,8 @@ pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     T4,
     #[allow(missing_docs)] // documentation missing in model
+    T4G,
+    #[allow(missing_docs)] // documentation missing in model
     V100,
     #[allow(missing_docs)] // documentation missing in model
     Vu9P,
@@ -74,12 +83,15 @@ impl ::std::convert::From<&str> for AcceleratorName {
     fn from(s: &str) -> Self {
         match s {
             "a100" => AcceleratorName::A100,
+            "a10g" => AcceleratorName::A10G,
+            "h100" => AcceleratorName::H100,
             "inferentia" => AcceleratorName::Inferentia,
             "k520" => AcceleratorName::K520,
             "k80" => AcceleratorName::K80,
             "m60" => AcceleratorName::M60,
             "radeon-pro-v520" => AcceleratorName::RadeonProV520,
             "t4" => AcceleratorName::T4,
+            "t4g" => AcceleratorName::T4G,
             "v100" => AcceleratorName::V100,
             "vu9p" => AcceleratorName::Vu9P,
             other => AcceleratorName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -98,12 +110,15 @@ impl AcceleratorName {
     pub fn as_str(&self) -> &str {
         match self {
             AcceleratorName::A100 => "a100",
+            AcceleratorName::A10G => "a10g",
+            AcceleratorName::H100 => "h100",
             AcceleratorName::Inferentia => "inferentia",
             AcceleratorName::K520 => "k520",
             AcceleratorName::K80 => "k80",
             AcceleratorName::M60 => "m60",
             AcceleratorName::RadeonProV520 => "radeon-pro-v520",
             AcceleratorName::T4 => "t4",
+            AcceleratorName::T4G => "t4g",
             AcceleratorName::V100 => "v100",
             AcceleratorName::Vu9P => "vu9p",
             AcceleratorName::Unknown(value) => value.as_str(),
@@ -111,7 +126,20 @@ impl AcceleratorName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["a100", "inferentia", "k520", "k80", "m60", "radeon-pro-v520", "t4", "v100", "vu9p"]
+        &[
+            "a100",
+            "a10g",
+            "h100",
+            "inferentia",
+            "k520",
+            "k80",
+            "m60",
+            "radeon-pro-v520",
+            "t4",
+            "t4g",
+            "v100",
+            "vu9p",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AcceleratorName {

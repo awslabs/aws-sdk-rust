@@ -439,6 +439,8 @@ pub(crate) mod shape_execution_parameters;
 
 pub(crate) mod shape_executors_summary;
 
+pub(crate) mod shape_identity_center_configuration;
+
 pub(crate) mod shape_notebook_session_summary;
 
 pub(crate) mod shape_parameters_map;
@@ -448,6 +450,8 @@ pub(crate) mod shape_prepared_statement_summary;
 pub(crate) mod shape_query_execution_statistics;
 
 pub(crate) mod shape_query_execution_status;
+
+pub(crate) mod shape_query_results_s3_access_grants_configuration;
 
 pub(crate) mod shape_query_runtime_statistics_rows;
 

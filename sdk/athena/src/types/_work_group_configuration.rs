@@ -18,13 +18,17 @@ pub struct WorkGroupConfiguration {
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
     pub additional_configuration: ::std::option::Option<::std::string::String>,
-    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena. This setting does not apply to Athena SQL workgroups.</p>
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     pub enable_minimum_encryption_configuration: ::std::option::Option<bool>,
+    /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl WorkGroupConfiguration {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
@@ -55,7 +59,7 @@ impl WorkGroupConfiguration {
     pub fn additional_configuration(&self) -> ::std::option::Option<&str> {
         self.additional_configuration.as_deref()
     }
-    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -67,6 +71,14 @@ impl WorkGroupConfiguration {
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     pub fn enable_minimum_encryption_configuration(&self) -> ::std::option::Option<bool> {
         self.enable_minimum_encryption_configuration
+    }
+    /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
+        self.identity_center_configuration.as_ref()
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        self.query_results_s3_access_grants_configuration.as_ref()
     }
 }
 impl WorkGroupConfiguration {
@@ -90,6 +102,8 @@ pub struct WorkGroupConfigurationBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    pub(crate) query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl WorkGroupConfigurationBuilder {
     /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. To run the query, you must specify the query results location using one of the ways: either in the workgroup using this setting, or for individual queries (client-side), using <code>ResultConfiguration$OutputLocation</code>. If none of them is set, Athena issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>.</p>
@@ -190,17 +204,17 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_configuration
     }
-    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>Role used in a Spark session for accessing the user's resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
@@ -238,6 +252,37 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_enable_minimum_encryption_configuration(&self) -> &::std::option::Option<bool> {
         &self.enable_minimum_encryption_configuration
     }
+    /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>Specifies whether the workgroup is IAM Identity Center supported.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        &self.identity_center_configuration
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(mut self, input: crate::types::QueryResultsS3AccessGrantsConfiguration) -> Self {
+        self.query_results_s3_access_grants_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn set_query_results_s3_access_grants_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    ) -> Self {
+        self.query_results_s3_access_grants_configuration = input;
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        &self.query_results_s3_access_grants_configuration
+    }
     /// Consumes the builder and constructs a [`WorkGroupConfiguration`](crate::types::WorkGroupConfiguration).
     pub fn build(self) -> crate::types::WorkGroupConfiguration {
         crate::types::WorkGroupConfiguration {
@@ -251,6 +296,8 @@ impl WorkGroupConfigurationBuilder {
             execution_role: self.execution_role,
             customer_content_encryption_configuration: self.customer_content_encryption_configuration,
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
+            identity_center_configuration: self.identity_center_configuration,
+            query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
         }
     }
 }

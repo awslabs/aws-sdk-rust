@@ -22,13 +22,15 @@ pub struct WorkGroupConfigurationUpdates {
     pub remove_customer_content_encryption_configuration: ::std::option::Option<bool>,
     /// <p>Contains a user defined string in JSON format for a Spark-enabled workgroup.</p>
     pub additional_configuration: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the execution role used to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the customer managed KMS key that is used to encrypt the user's data stores in Athena. When an Amazon Web Services managed key is used, this value is null. This setting does not apply to Athena SQL workgroups.</p>
     pub customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     /// <p>Enforces a minimal level of encryption for the workgroup for query and calculation results that are written to Amazon S3. When enabled, workgroup users can set encryption only to the minimum level set by the administrator or higher when they submit queries. This setting does not apply to Spark-enabled workgroups.</p>
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     pub enable_minimum_encryption_configuration: ::std::option::Option<bool>,
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl WorkGroupConfigurationUpdates {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -67,7 +69,7 @@ impl WorkGroupConfigurationUpdates {
     pub fn additional_configuration(&self) -> ::std::option::Option<&str> {
         self.additional_configuration.as_deref()
     }
-    /// <p>The ARN of the execution role used to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -79,6 +81,10 @@ impl WorkGroupConfigurationUpdates {
     /// <p>The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the workgroup configuration for encryption is used.</p>
     pub fn enable_minimum_encryption_configuration(&self) -> ::std::option::Option<bool> {
         self.enable_minimum_encryption_configuration
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        self.query_results_s3_access_grants_configuration.as_ref()
     }
 }
 impl WorkGroupConfigurationUpdates {
@@ -104,6 +110,7 @@ pub struct WorkGroupConfigurationUpdatesBuilder {
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) customer_content_encryption_configuration: ::std::option::Option<crate::types::CustomerContentEncryptionConfiguration>,
     pub(crate) enable_minimum_encryption_configuration: ::std::option::Option<bool>,
+    pub(crate) query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl WorkGroupConfigurationUpdatesBuilder {
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set to "false" client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -232,17 +239,17 @@ impl WorkGroupConfigurationUpdatesBuilder {
     pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.additional_configuration
     }
-    /// <p>The ARN of the execution role used to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the execution role used to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The ARN of the execution role used to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
@@ -280,6 +287,23 @@ impl WorkGroupConfigurationUpdatesBuilder {
     pub fn get_enable_minimum_encryption_configuration(&self) -> &::std::option::Option<bool> {
         &self.enable_minimum_encryption_configuration
     }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(mut self, input: crate::types::QueryResultsS3AccessGrantsConfiguration) -> Self {
+        self.query_results_s3_access_grants_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn set_query_results_s3_access_grants_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    ) -> Self {
+        self.query_results_s3_access_grants_configuration = input;
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        &self.query_results_s3_access_grants_configuration
+    }
     /// Consumes the builder and constructs a [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
     pub fn build(self) -> crate::types::WorkGroupConfigurationUpdates {
         crate::types::WorkGroupConfigurationUpdates {
@@ -295,6 +319,7 @@ impl WorkGroupConfigurationUpdatesBuilder {
             execution_role: self.execution_role,
             customer_content_encryption_configuration: self.customer_content_encryption_configuration,
             enable_minimum_encryption_configuration: self.enable_minimum_encryption_configuration,
+            query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
         }
     }
 }

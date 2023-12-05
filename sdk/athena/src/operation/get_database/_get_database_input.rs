@@ -7,6 +7,8 @@ pub struct GetDatabaseInput {
     pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to return.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetDatabaseInput {
     /// <p>The name of the data catalog that contains the database to return.</p>
@@ -16,6 +18,10 @@ impl GetDatabaseInput {
     /// <p>The name of the database to return.</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn work_group(&self) -> ::std::option::Option<&str> {
+        self.work_group.as_deref()
     }
 }
 impl GetDatabaseInput {
@@ -31,6 +37,7 @@ impl GetDatabaseInput {
 pub struct GetDatabaseInputBuilder {
     pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetDatabaseInputBuilder {
     /// <p>The name of the data catalog that contains the database to return.</p>
@@ -63,11 +70,26 @@ impl GetDatabaseInputBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.work_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.work_group = input;
+        self
+    }
+    /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// Consumes the builder and constructs a [`GetDatabaseInput`](crate::operation::get_database::GetDatabaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_database::GetDatabaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_database::GetDatabaseInput {
             catalog_name: self.catalog_name,
             database_name: self.database_name,
+            work_group: self.work_group,
         })
     }
 }

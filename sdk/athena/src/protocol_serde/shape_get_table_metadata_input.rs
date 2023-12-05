@@ -12,5 +12,8 @@ pub fn ser_get_table_metadata_input_input(
     if let Some(var_3) = &input.table_name {
         object.key("TableName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.work_group {
+        object.key("WorkGroup").string(var_4.as_str());
+    }
     Ok(())
 }

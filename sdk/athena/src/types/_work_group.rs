@@ -14,6 +14,8 @@ pub struct WorkGroup {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the workgroup was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkGroup {
     /// <p>The workgroup name.</p>
@@ -37,6 +39,10 @@ impl WorkGroup {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_application_arn.as_deref()
+    }
 }
 impl WorkGroup {
     /// Creates a new builder-style object to manufacture [`WorkGroup`](crate::types::WorkGroup).
@@ -54,6 +60,7 @@ pub struct WorkGroupBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::WorkGroupConfiguration>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkGroupBuilder {
     /// <p>The workgroup name.</p>
@@ -127,6 +134,20 @@ impl WorkGroupBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_application_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_application_arn
+    }
     /// Consumes the builder and constructs a [`WorkGroup`](crate::types::WorkGroup).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WorkGroupBuilder::name)
@@ -142,6 +163,7 @@ impl WorkGroupBuilder {
             configuration: self.configuration,
             description: self.description,
             creation_time: self.creation_time,
+            identity_center_application_arn: self.identity_center_application_arn,
         })
     }
 }

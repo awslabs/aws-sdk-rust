@@ -3,6 +3,10 @@ pub use crate::types::_work_group_state::WorkGroupState;
 
 pub use crate::types::_work_group_configuration_updates::WorkGroupConfigurationUpdates;
 
+pub use crate::types::_query_results_s3_access_grants_configuration::QueryResultsS3AccessGrantsConfiguration;
+
+pub use crate::types::_authentication_type::AuthenticationType;
+
 pub use crate::types::_customer_content_encryption_configuration::CustomerContentEncryptionConfiguration;
 
 pub use crate::types::_engine_version::EngineVersion;
@@ -89,6 +93,8 @@ pub use crate::types::_work_group::WorkGroup;
 
 pub use crate::types::_work_group_configuration::WorkGroupConfiguration;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
+
 pub use crate::types::_session_statistics::SessionStatistics;
 
 pub use crate::types::_session_configuration::SessionConfiguration;
@@ -153,6 +159,8 @@ mod _application_dpu_sizes;
 
 mod _athena_error;
 
+mod _authentication_type;
+
 mod _calculation_configuration;
 
 mod _calculation_execution_state;
@@ -211,6 +219,8 @@ mod _executors_summary;
 
 mod _filter_definition;
 
+mod _identity_center_configuration;
+
 mod _named_query;
 
 mod _notebook_metadata;
@@ -232,6 +242,8 @@ mod _query_execution_state;
 mod _query_execution_statistics;
 
 mod _query_execution_status;
+
+mod _query_results_s3_access_grants_configuration;
 
 mod _query_runtime_statistics;
 

@@ -54,5 +54,14 @@ pub fn ser_work_group_configuration_updates(
     if let Some(var_15) = &input.enable_minimum_encryption_configuration {
         object.key("EnableMinimumEncryptionConfiguration").boolean(*var_15);
     }
+    if let Some(var_16) = &input.query_results_s3_access_grants_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
+        crate::protocol_serde::shape_query_results_s3_access_grants_configuration::ser_query_results_s3_access_grants_configuration(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
     Ok(())
 }

@@ -171,6 +171,18 @@ pub(crate) fn executors_summary_correct_errors(
     builder
 }
 
+pub(crate) fn query_results_s3_access_grants_configuration_correct_errors(
+    mut builder: crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder,
+) -> crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder {
+    if builder.enable_s3_access_grants.is_none() {
+        builder.enable_s3_access_grants = Some(Default::default())
+    }
+    if builder.authentication_type.is_none() {
+        builder.authentication_type = "no value was set".parse::<crate::types::AuthenticationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn acl_configuration_correct_errors(
     mut builder: crate::types::builders::AclConfigurationBuilder,
 ) -> crate::types::builders::AclConfigurationBuilder {

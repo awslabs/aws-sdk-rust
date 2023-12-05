@@ -30,6 +30,7 @@ pub struct CreateConfiguredAudienceModelInput {
     /// </ul>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
+    /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub child_resource_tag_on_create_policy: ::std::option::Option<crate::types::TagOnCreatePolicy>,
 }
 impl CreateConfiguredAudienceModelInput {
@@ -78,6 +79,7 @@ impl CreateConfiguredAudienceModelInput {
         self.tags.as_ref()
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
+    /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub fn child_resource_tag_on_create_policy(&self) -> ::std::option::Option<&crate::types::TagOnCreatePolicy> {
         self.child_resource_tag_on_create_policy.as_ref()
     }
@@ -262,16 +264,19 @@ impl CreateConfiguredAudienceModelInputBuilder {
         &self.tags
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
+    /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub fn child_resource_tag_on_create_policy(mut self, input: crate::types::TagOnCreatePolicy) -> Self {
         self.child_resource_tag_on_create_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
+    /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub fn set_child_resource_tag_on_create_policy(mut self, input: ::std::option::Option<crate::types::TagOnCreatePolicy>) -> Self {
         self.child_resource_tag_on_create_policy = input;
         self
     }
     /// <p>Configure how the service tags audience generation jobs created using this configured audience model. If you specify <code>NONE</code>, the tags from the <code>StartAudienceGenerationJob</code> request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>, the audience generation job inherits the tags from the configured audience model, by default. Tags in the <code>StartAudienceGenerationJob</code> will override the default.</p>
+    /// <p>When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.</p>
     pub fn get_child_resource_tag_on_create_policy(&self) -> &::std::option::Option<crate::types::TagOnCreatePolicy> {
         &self.child_resource_tag_on_create_policy
     }

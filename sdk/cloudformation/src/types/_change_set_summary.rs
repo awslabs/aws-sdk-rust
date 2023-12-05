@@ -28,7 +28,7 @@ pub struct ChangeSetSummary {
     pub parent_change_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The root change set ID.</p>
     pub root_change_set_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates if the stack set imports resources that already exist.</p>
+    /// <p>Indicates if the change set imports resources that already exist.</p>
     pub import_existing_resources: ::std::option::Option<bool>,
 }
 impl ChangeSetSummary {
@@ -80,7 +80,7 @@ impl ChangeSetSummary {
     pub fn root_change_set_id(&self) -> ::std::option::Option<&str> {
         self.root_change_set_id.as_deref()
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p>
+    /// <p>Indicates if the change set imports resources that already exist.</p>
     pub fn import_existing_resources(&self) -> ::std::option::Option<bool> {
         self.import_existing_resources
     }
@@ -279,17 +279,17 @@ impl ChangeSetSummaryBuilder {
     pub fn get_root_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.root_change_set_id
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p>
+    /// <p>Indicates if the change set imports resources that already exist.</p>
     pub fn import_existing_resources(mut self, input: bool) -> Self {
         self.import_existing_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p>
+    /// <p>Indicates if the change set imports resources that already exist.</p>
     pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.import_existing_resources = input;
         self
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p>
+    /// <p>Indicates if the change set imports resources that already exist.</p>
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {
         &self.import_existing_resources
     }

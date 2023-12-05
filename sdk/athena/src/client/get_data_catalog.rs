@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`name(impl Into<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::set_name):<br>required: **true**<br><p>The name of the data catalog to return.</p><br>
+    ///   - [`work_group(impl Into<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::work_group) / [`set_work_group(Option<String>)`](crate::operation::get_data_catalog::builders::GetDataCatalogFluentBuilder::set_work_group):<br>required: **false**<br><p>The name of the workgroup. Required if making an IAM Identity Center request.</p><br>
     /// - On success, responds with [`GetDataCatalogOutput`](crate::operation::get_data_catalog::GetDataCatalogOutput) with field(s):
     ///   - [`data_catalog(Option<DataCatalog>)`](crate::operation::get_data_catalog::GetDataCatalogOutput::data_catalog): <p>The data catalog returned.</p>
     /// - On failure, responds with [`SdkError<GetDataCatalogError>`](crate::operation::get_data_catalog::GetDataCatalogError)

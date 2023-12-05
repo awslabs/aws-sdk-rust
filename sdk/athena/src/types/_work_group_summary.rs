@@ -14,6 +14,8 @@ pub struct WorkGroupSummary {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkGroupSummary {
     /// <p>The name of the workgroup.</p>
@@ -36,6 +38,10 @@ impl WorkGroupSummary {
     pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn identity_center_application_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_application_arn.as_deref()
+    }
 }
 impl WorkGroupSummary {
     /// Creates a new builder-style object to manufacture [`WorkGroupSummary`](crate::types::WorkGroupSummary).
@@ -53,6 +59,7 @@ pub struct WorkGroupSummaryBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
+    pub(crate) identity_center_application_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkGroupSummaryBuilder {
     /// <p>The name of the workgroup.</p>
@@ -125,6 +132,20 @@ impl WorkGroupSummaryBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<crate::types::EngineVersion> {
         &self.engine_version
     }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn identity_center_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_application_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn set_identity_center_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_application_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
+    pub fn get_identity_center_application_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_application_arn
+    }
     /// Consumes the builder and constructs a [`WorkGroupSummary`](crate::types::WorkGroupSummary).
     pub fn build(self) -> crate::types::WorkGroupSummary {
         crate::types::WorkGroupSummary {
@@ -133,6 +154,7 @@ impl WorkGroupSummaryBuilder {
             description: self.description,
             creation_time: self.creation_time,
             engine_version: self.engine_version,
+            identity_center_application_arn: self.identity_center_application_arn,
         }
     }
 }

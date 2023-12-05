@@ -5,11 +5,17 @@
 pub struct GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetDataCatalogInput {
     /// <p>The name of the data catalog to return.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn work_group(&self) -> ::std::option::Option<&str> {
+        self.work_group.as_deref()
     }
 }
 impl GetDataCatalogInput {
@@ -24,6 +30,7 @@ impl GetDataCatalogInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetDataCatalogInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl GetDataCatalogInputBuilder {
     /// <p>The name of the data catalog to return.</p>
@@ -41,10 +48,27 @@ impl GetDataCatalogInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.work_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.work_group = input;
+        self
+    }
+    /// <p>The name of the workgroup. Required if making an IAM Identity Center request.</p>
+    pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.work_group
+    }
     /// Consumes the builder and constructs a [`GetDataCatalogInput`](crate::operation::get_data_catalog::GetDataCatalogInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_data_catalog::GetDataCatalogInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_data_catalog::GetDataCatalogInput { name: self.name })
+        ::std::result::Result::Ok(crate::operation::get_data_catalog::GetDataCatalogInput {
+            name: self.name,
+            work_group: self.work_group,
+        })
     }
 }

@@ -118,24 +118,28 @@ pub struct InstanceRequirementsRequest {
     pub accelerator_count: ::std::option::Option<crate::types::AcceleratorCountRequest>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>,
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
+    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
@@ -303,9 +307,10 @@ impl InstanceRequirementsRequest {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
@@ -316,15 +321,18 @@ impl InstanceRequirementsRequest {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
+    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     ///
@@ -875,9 +883,10 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
@@ -889,9 +898,10 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
@@ -901,9 +911,10 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
-    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p> </li>
+    /// <li> <p>For instance types with AMD devices, specify <code>amd</code>.</p> </li>
+    /// <li> <p>For instance types with Habana devices, specify <code>habana</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p> </li>
     /// <li> <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
@@ -916,15 +927,18 @@ impl InstanceRequirementsRequestBuilder {
     ///
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
+    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn accelerator_names(mut self, input: crate::types::AcceleratorName) -> Self {
@@ -935,15 +949,18 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
+    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn set_accelerator_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>) -> Self {
@@ -952,15 +969,18 @@ impl InstanceRequirementsRequestBuilder {
     }
     /// <p>The accelerators that must be on the instance type.</p>
     /// <ul>
+    /// <li> <p>For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
-    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
-    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
-    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.</p> </li>
     /// <li> <p>For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.</p> </li>
     /// <li> <p>For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p> </li>
+    /// <li> <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li>
+    /// <li> <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li>
+    /// <li> <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p> </li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn get_accelerator_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>> {

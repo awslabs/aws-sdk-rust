@@ -21,5 +21,8 @@ pub fn ser_list_table_metadata_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.work_group {
+        object.key("WorkGroup").string(var_6.as_str());
+    }
     Ok(())
 }

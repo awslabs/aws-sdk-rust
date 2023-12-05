@@ -15,5 +15,8 @@ pub fn ser_list_databases_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.work_group {
+        object.key("WorkGroup").string(var_4.as_str());
+    }
     Ok(())
 }

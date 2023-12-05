@@ -9,5 +9,8 @@ pub fn ser_get_database_input_input(
     if let Some(var_2) = &input.database_name {
         object.key("DatabaseName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.work_group {
+        object.key("WorkGroup").string(var_3.as_str());
+    }
     Ok(())
 }

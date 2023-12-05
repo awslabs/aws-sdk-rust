@@ -197,8 +197,8 @@ model_hash = '0a2b2dc5a0e53412f53f6ad90b53d033e4b4d85861c187b338ed49912a704210'
 [crates.aws-sdk-athena]
 category = 'AwsSdk'
 version = '1.4.0'
-source_hash = '10f4fdafe1ceb7a04a9edae7c6e0b24ca50db439b10d0184d6c9231cb8505b8d'
-model_hash = '35708ac7b0a056f491bce487339518513775e40e82ddb2722a6606bb8c92301b'
+source_hash = '40ed7ba133de163c4f124704d02a11c722ca806db4571a6024014c7ad28ef450'
+model_hash = '1a7bcd90139714c9a438db050d7016c1448a2a443db8129af4f7a92dbd2ae319'
 
 [crates.aws-sdk-auditmanager]
 category = 'AwsSdk'
@@ -341,8 +341,8 @@ model_hash = '3ae748db4585ccb150b7f7527e41346c78e08db1cf42a42a2f53f1be13d81326'
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
 version = '1.1.0'
-source_hash = '5fe9fdb0ba13e187c617c213dc13c3ea4390b3cb63c5a7761270b6caca9cd81b'
-model_hash = 'a14cd97ba81f88bd64b45bde2c08e1ac62502f2d2f4dcb01c8bc12bcf520ce6d'
+source_hash = '7bd7b52ef9f6f381f441a1f6785ba39e3049f45e2472709a6188aae02686a327'
+model_hash = 'ba8ad82f436b17287ba2b750337967048cedd50861fe8ac15325d8ab75cfb445'
 
 [crates.aws-sdk-cloud9]
 category = 'AwsSdk'
@@ -365,8 +365,8 @@ model_hash = '3efd089f35a2a1b2bb697823c0e3438b63bb82f419d7aa21c622d872d14eef8f'
 [crates.aws-sdk-cloudformation]
 category = 'AwsSdk'
 version = '1.5.0'
-source_hash = '394c76b195979c0477ecf660eaa7ad88254db31397d5ed9a621ad9e66b8d5569'
-model_hash = 'd1f0bd6a90c67b0b59031f997be8bc7cd94f85b59821fa33d38e4552713ea8f7'
+source_hash = 'eaa04253429c8ef91c4c9fa2fc0fbc8c81b17b1ed67ffbe0b0b639ed644e603b'
+model_hash = '7503c7e768812351d5d04830f4cf975aefcd91ecf7947d295f48880622ce71b9'
 
 [crates.aws-sdk-cloudfront]
 category = 'AwsSdk'
@@ -725,8 +725,8 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
 version = '1.4.0'
-source_hash = '73a021ed6a1ece46ba54775da6b3b5d30923176cee434dcb55b29af15f643752'
-model_hash = 'ef90dcba763d55f4a2a1de589d1be112d40672a38eefb56097ef015c73820709'
+source_hash = 'b513697375c41fe7a532da172a7719389f0d7878318d97d61792916e5a2055df'
+model_hash = '7702915bf744e1a6e89cfce0781fd0a8eaedf0e9d5b14422c9594323dc9fd955'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'

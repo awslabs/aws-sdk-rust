@@ -78,6 +78,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "QueryResultsS3AccessGrantsConfiguration" => {
+                            builder = builder.set_query_results_s3_access_grants_configuration(
+                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

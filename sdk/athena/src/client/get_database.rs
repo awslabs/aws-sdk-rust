@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`catalog_name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::catalog_name) / [`set_catalog_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_catalog_name):<br>required: **true**<br><p>The name of the data catalog that contains the database to return.</p><br>
     ///   - [`database_name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_database_name):<br>required: **true**<br><p>The name of the database to return.</p><br>
+    ///   - [`work_group(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::work_group) / [`set_work_group(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_work_group):<br>required: **false**<br><p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p><br>
     /// - On success, responds with [`GetDatabaseOutput`](crate::operation::get_database::GetDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::get_database::GetDatabaseOutput::database): <p>The database returned.</p>
     /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::operation::get_database::GetDatabaseError)

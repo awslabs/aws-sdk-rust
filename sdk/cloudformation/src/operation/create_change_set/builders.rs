@@ -501,21 +501,21 @@ impl CreateChangeSetFluentBuilder {
     pub fn get_on_stack_failure(&self) -> &::std::option::Option<crate::types::OnStackFailure> {
         self.inner.get_on_stack_failure()
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>Indicates if the change set imports resources that already exist.</p> <note>
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn import_existing_resources(mut self, input: bool) -> Self {
         self.inner = self.inner.import_existing_resources(input);
         self
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>Indicates if the change set imports resources that already exist.</p> <note>
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn set_import_existing_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_import_existing_resources(input);
         self
     }
-    /// <p>Indicates if the stack set imports resources that already exist.</p> <note>
+    /// <p>Indicates if the change set imports resources that already exist.</p> <note>
     /// <p>This parameter can only import resources that have custom names in templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name type</a> in the <i>CloudFormation User Guide</i>. To import resources that do not accept custom names, such as EC2 instances, use the resource import feature instead. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing existing resources into CloudFormation management</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </note>
     pub fn get_import_existing_resources(&self) -> &::std::option::Option<bool> {

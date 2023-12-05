@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionConfiguration {
-    /// <p>The ARN of the execution role used in a Spark session to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location that stores information for the notebook.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct SessionConfiguration {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SessionConfiguration {
-    /// <p>The ARN of the execution role used in a Spark session to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct SessionConfigurationBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SessionConfigurationBuilder {
-    /// <p>The ARN of the execution role used in a Spark session to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the execution role used in a Spark session to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The ARN of the execution role used in a Spark session to access user resources. This property applies only to Spark-enabled workgroups.</p>
+    /// <p>The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }

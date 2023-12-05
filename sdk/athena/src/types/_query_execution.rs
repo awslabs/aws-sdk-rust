@@ -28,6 +28,8 @@ pub struct QueryExecution {
     pub execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The kind of query statement that was run.</p>
     pub substatement_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl QueryExecution {
     /// <p>The unique identifier for each query execution.</p>
@@ -80,6 +82,10 @@ impl QueryExecution {
     pub fn substatement_type(&self) -> ::std::option::Option<&str> {
         self.substatement_type.as_deref()
     }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(&self) -> ::std::option::Option<&crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        self.query_results_s3_access_grants_configuration.as_ref()
+    }
 }
 impl QueryExecution {
     /// Creates a new builder-style object to manufacture [`QueryExecution`](crate::types::QueryExecution).
@@ -104,6 +110,7 @@ pub struct QueryExecutionBuilder {
     pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
     pub(crate) execution_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) substatement_type: ::std::option::Option<::std::string::String>,
+    pub(crate) query_results_s3_access_grants_configuration: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
 }
 impl QueryExecutionBuilder {
     /// <p>The unique identifier for each query execution.</p>
@@ -280,6 +287,23 @@ impl QueryExecutionBuilder {
     pub fn get_substatement_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.substatement_type
     }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn query_results_s3_access_grants_configuration(mut self, input: crate::types::QueryResultsS3AccessGrantsConfiguration) -> Self {
+        self.query_results_s3_access_grants_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn set_query_results_s3_access_grants_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration>,
+    ) -> Self {
+        self.query_results_s3_access_grants_configuration = input;
+        self
+    }
+    /// <p>Specifies whether Amazon S3 access grants are enabled for query results.</p>
+    pub fn get_query_results_s3_access_grants_configuration(&self) -> &::std::option::Option<crate::types::QueryResultsS3AccessGrantsConfiguration> {
+        &self.query_results_s3_access_grants_configuration
+    }
     /// Consumes the builder and constructs a [`QueryExecution`](crate::types::QueryExecution).
     pub fn build(self) -> crate::types::QueryExecution {
         crate::types::QueryExecution {
@@ -295,6 +319,7 @@ impl QueryExecutionBuilder {
             engine_version: self.engine_version,
             execution_parameters: self.execution_parameters,
             substatement_type: self.substatement_type,
+            query_results_s3_access_grants_configuration: self.query_results_s3_access_grants_configuration,
         }
     }
 }

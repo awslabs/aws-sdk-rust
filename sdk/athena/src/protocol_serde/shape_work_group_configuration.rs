@@ -48,6 +48,21 @@ pub fn ser_work_group_configuration(
     if let Some(var_13) = &input.enable_minimum_encryption_configuration {
         object.key("EnableMinimumEncryptionConfiguration").boolean(*var_13);
     }
+    if let Some(var_14) = &input.identity_center_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.query_results_s3_access_grants_configuration {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("QueryResultsS3AccessGrantsConfiguration").start_object();
+        crate::protocol_serde::shape_query_results_s3_access_grants_configuration::ser_query_results_s3_access_grants_configuration(
+            &mut object_17,
+            var_16,
+        )?;
+        object_17.finish();
+    }
     Ok(())
 }
 
@@ -116,6 +131,16 @@ where
                             builder = builder.set_enable_minimum_encryption_configuration(
                                 ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?,
                             );
+                        }
+                        "IdentityCenterConfiguration" => {
+                            builder = builder.set_identity_center_configuration(
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(tokens)?,
+                            );
+                        }
+                        "QueryResultsS3AccessGrantsConfiguration" => {
+                            builder = builder.set_query_results_s3_access_grants_configuration(
+                                    crate::protocol_serde::shape_query_results_s3_access_grants_configuration::de_query_results_s3_access_grants_configuration(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

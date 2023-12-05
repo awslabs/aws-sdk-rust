@@ -130,5 +130,5 @@ mod _training_dataset_summary;
 /// Builders
 pub mod builders;
 
-/// Error types that cleanrooms-ml can respond with.
+/// Error types that AWS Clean Rooms ML can respond with.
 pub mod error;

@@ -20,7 +20,7 @@ pub struct ColumnInfo {
     pub precision: i32,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub scale: i32,
-    /// <p>Indicates the column's nullable status.</p>
+    /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub nullable: ::std::option::Option<crate::types::ColumnNullable>,
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub case_sensitive: bool,
@@ -60,7 +60,7 @@ impl ColumnInfo {
     pub fn scale(&self) -> i32 {
         self.scale
     }
-    /// <p>Indicates the column's nullable status.</p>
+    /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn nullable(&self) -> ::std::option::Option<&crate::types::ColumnNullable> {
         self.nullable.as_ref()
     }
@@ -206,17 +206,17 @@ impl ColumnInfoBuilder {
     pub fn get_scale(&self) -> &::std::option::Option<i32> {
         &self.scale
     }
-    /// <p>Indicates the column's nullable status.</p>
+    /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn nullable(mut self, input: crate::types::ColumnNullable) -> Self {
         self.nullable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the column's nullable status.</p>
+    /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn set_nullable(mut self, input: ::std::option::Option<crate::types::ColumnNullable>) -> Self {
         self.nullable = input;
         self
     }
-    /// <p>Indicates the column's nullable status.</p>
+    /// <p>Unsupported constraint. This value always shows as <code>UNKNOWN</code>.</p>
     pub fn get_nullable(&self) -> &::std::option::Option<crate::types::ColumnNullable> {
         &self.nullable
     }
