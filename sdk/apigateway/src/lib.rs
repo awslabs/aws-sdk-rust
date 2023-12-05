@@ -25,8 +25,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
-//! aws-sdk-apigateway = "1.3.0"
+//! aws-config = { version = "1.0.2", features = ["behavior-version-latest"] }
+//! aws-sdk-apigateway = "1.4.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
