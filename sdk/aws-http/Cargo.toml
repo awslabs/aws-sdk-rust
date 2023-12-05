@@ -22,16 +22,16 @@ pin-project-lite = "0.2.9"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.0.2"
+version = "1.0.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-0-4-x"]
-version = "1.0.2"
+version = "1.0.3"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "1.0.2"
+version = "1.0.3"
 
 [dev-dependencies]
 bytes-utils = "0.1.2"

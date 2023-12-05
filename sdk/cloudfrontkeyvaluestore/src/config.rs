@@ -119,9 +119,12 @@ impl Config {
     pub fn region(&self) -> ::std::option::Option<&crate::config::Region> {
         self.config.load::<crate::config::Region>()
     }
-    /// Returns the credentials provider for this service
+    /// This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use.
+    #[deprecated(
+        note = "This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use."
+    )]
     pub fn credentials_provider(&self) -> Option<crate::config::SharedCredentialsProvider> {
-        self.config.load::<crate::config::SharedCredentialsProvider>().cloned()
+        ::std::option::Option::None
     }
 }
 /// Builder for creating a `Config`.
@@ -920,10 +923,10 @@ impl Builder {
             #[cfg(feature = "sigv4a")]
             {
                 self.runtime_components
-                    .push_identity_resolver(::aws_runtime::auth::sigv4a::SCHEME_ID, credentials_provider.clone());
+                    .set_identity_resolver(::aws_runtime::auth::sigv4a::SCHEME_ID, credentials_provider.clone());
             }
             self.runtime_components
-                .push_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
+                .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
         }
         self
     }
