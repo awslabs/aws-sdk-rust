@@ -5,6 +5,8 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
@@ -12,8 +14,6 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
-
-pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 mod _access_denied_exception;
 

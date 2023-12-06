@@ -15,6 +15,8 @@ pub struct CreateInstanceInput {
     pub inbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>Your contact center allows outbound calls.</p>
     pub outbound_calls_enabled: ::std::option::Option<bool>,
+    /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateInstanceInput {
     /// <p>The idempotency token.</p>
@@ -41,6 +43,10 @@ impl CreateInstanceInput {
     pub fn outbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.outbound_calls_enabled
     }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateInstanceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for CreateInstanceInput {
         formatter.field("directory_id", &self.directory_id);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -71,6 +78,7 @@ pub struct CreateInstanceInputBuilder {
     pub(crate) directory_id: ::std::option::Option<::std::string::String>,
     pub(crate) inbound_calls_enabled: ::std::option::Option<bool>,
     pub(crate) outbound_calls_enabled: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateInstanceInputBuilder {
     /// <p>The idempotency token.</p>
@@ -160,6 +168,26 @@ impl CreateInstanceInputBuilder {
     pub fn get_outbound_calls_enabled(&self) -> &::std::option::Option<bool> {
         &self.outbound_calls_enabled
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateInstanceInput`](crate::operation::create_instance::CreateInstanceInput).
     pub fn build(
         self,
@@ -171,6 +199,7 @@ impl CreateInstanceInputBuilder {
             directory_id: self.directory_id,
             inbound_calls_enabled: self.inbound_calls_enabled,
             outbound_calls_enabled: self.outbound_calls_enabled,
+            tags: self.tags,
         })
     }
 }
@@ -183,6 +212,7 @@ impl ::std::fmt::Debug for CreateInstanceInputBuilder {
         formatter.field("directory_id", &self.directory_id);
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

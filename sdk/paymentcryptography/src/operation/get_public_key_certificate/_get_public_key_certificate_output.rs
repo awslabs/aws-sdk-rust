@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetPublicKeyCertificateOutput {
-    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub key_certificate: ::std::string::String,
-    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub key_certificate_chain: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetPublicKeyCertificateOutput {
-    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub fn key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.key_certificate.deref()
     }
-    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub fn key_certificate_chain(&self) -> &str {
         use std::ops::Deref;
         self.key_certificate_chain.deref()
@@ -51,33 +51,33 @@ pub struct GetPublicKeyCertificateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPublicKeyCertificateOutputBuilder {
-    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     /// This field is required.
     pub fn key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub fn set_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_certificate = input;
         self
     }
-    /// <p>The public key component of the asymmetric key pair in a certificate (PEM) format. It is signed by the root certificate authority (CA) within your service account. The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
     pub fn get_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_certificate
     }
-    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     /// This field is required.
     pub fn key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub fn set_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_certificate_chain = input;
         self
     }
-    /// <p>The certificate chain that signed the public key certificate of the asymmetric key pair. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub fn get_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_certificate_chain
     }

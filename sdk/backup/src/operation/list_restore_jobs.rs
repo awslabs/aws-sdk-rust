@@ -197,46 +197,51 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                         query.push_kv("accountId", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.by_created_before {
+                if let ::std::option::Option::Some(inner_4) = &_input.by_resource_type {
+                    {
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.by_created_before {
                     {
                         query.push_kv(
                             "createdBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_4, ::aws_smithy_types::date_time::Format::DateTime)?,
-                        );
-                    }
-                }
-                if let ::std::option::Option::Some(inner_5) = &_input.by_created_after {
-                    {
-                        query.push_kv(
-                            "createdAfter",
                             &::aws_smithy_http::query::fmt_timestamp(inner_5, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.by_status {
-                    {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_6));
-                    }
-                }
-                if let ::std::option::Option::Some(inner_7) = &_input.by_complete_before {
+                if let ::std::option::Option::Some(inner_6) = &_input.by_created_after {
                     {
                         query.push_kv(
-                            "completeBefore",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_7, ::aws_smithy_types::date_time::Format::DateTime)?,
+                            "createdAfter",
+                            &::aws_smithy_http::query::fmt_timestamp(inner_6, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_8) = &_input.by_complete_after {
+                if let ::std::option::Option::Some(inner_7) = &_input.by_status {
+                    {
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_7));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.by_complete_before {
                     {
                         query.push_kv(
-                            "completeAfter",
+                            "completeBefore",
                             &::aws_smithy_http::query::fmt_timestamp(inner_8, ::aws_smithy_types::date_time::Format::DateTime)?,
                         );
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.by_restore_testing_plan_arn {
+                if let ::std::option::Option::Some(inner_9) = &_input.by_complete_after {
                     {
-                        query.push_kv("restoreTestingPlanArn", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv(
+                            "completeAfter",
+                            &::aws_smithy_http::query::fmt_timestamp(inner_9, ::aws_smithy_types::date_time::Format::DateTime)?,
+                        );
+                    }
+                }
+                if let ::std::option::Option::Some(inner_10) = &_input.by_restore_testing_plan_arn {
+                    {
+                        query.push_kv("restoreTestingPlanArn", &::aws_smithy_http::query::fmt_string(&inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

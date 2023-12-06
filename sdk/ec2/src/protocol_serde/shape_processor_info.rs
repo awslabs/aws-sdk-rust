@@ -42,6 +42,19 @@ pub fn de_processor_info(
                 builder = builder.set_supported_features(var_3);
             }
             ,
+            s if s.matches("manufacturer") /* Manufacturer com.amazonaws.ec2#ProcessorInfo$Manufacturer */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_manufacturer(var_4);
+            }
+            ,
             _ => {}
         }
     }

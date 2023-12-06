@@ -56,6 +56,8 @@ pub struct DescribeRecoveryPointOutput {
     pub is_parent: bool,
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
+    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    pub vault_type: ::std::option::Option<crate::types::VaultType>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutput {
@@ -158,6 +160,10 @@ impl DescribeRecoveryPointOutput {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
+    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    pub fn vault_type(&self) -> ::std::option::Option<&crate::types::VaultType> {
+        self.vault_type.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeRecoveryPointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -198,6 +204,7 @@ pub struct DescribeRecoveryPointOutputBuilder {
     pub(crate) composite_member_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) is_parent: ::std::option::Option<bool>,
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vault_type: ::std::option::Option<crate::types::VaultType>,
     _request_id: Option<String>,
 }
 impl DescribeRecoveryPointOutputBuilder {
@@ -544,6 +551,20 @@ impl DescribeRecoveryPointOutputBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
+    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    pub fn vault_type(mut self, input: crate::types::VaultType) -> Self {
+        self.vault_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    pub fn set_vault_type(mut self, input: ::std::option::Option<crate::types::VaultType>) -> Self {
+        self.vault_type = input;
+        self
+    }
+    /// <p>This is the type of vault in which the described recovery point is stored.</p>
+    pub fn get_vault_type(&self) -> &::std::option::Option<crate::types::VaultType> {
+        &self.vault_type
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -579,6 +600,7 @@ impl DescribeRecoveryPointOutputBuilder {
             composite_member_identifier: self.composite_member_identifier,
             is_parent: self.is_parent.unwrap_or_default(),
             resource_name: self.resource_name,
+            vault_type: self.vault_type,
             _request_id: self._request_id,
         }
     }

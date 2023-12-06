@@ -22,7 +22,8 @@ impl UpdateRegionSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateRegionSettings`.
 ///
-/// <p>Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.</p>
+/// <p>Updates the current service opt-in settings for the Region.</p>
+/// <p>Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRegionSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,11 +114,13 @@ impl UpdateRegionSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
     ///
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
+    /// <p>If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag condition. Service opt-in settings are disregarded in this situation.</p>
     pub fn resource_type_opt_in_preference(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
         self.inner = self.inner.resource_type_opt_in_preference(k.into(), v);
         self
     }
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
+    /// <p>If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag condition. Service opt-in settings are disregarded in this situation.</p>
     pub fn set_resource_type_opt_in_preference(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
@@ -126,6 +129,7 @@ impl UpdateRegionSettingsFluentBuilder {
         self
     }
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
+    /// <p>If resource assignments are only based on tags, then service opt-in settings are applied. If a resource type is explicitly assigned to a backup plan, such as Amazon S3, Amazon EC2, or Amazon RDS, it will be included in the backup even if the opt-in is not enabled for that particular service. If both a resource type and tags are specified in a resource assignment, the resource type specified in the backup plan takes priority over the tag condition. Service opt-in settings are disregarded in this situation.</p>
     pub fn get_resource_type_opt_in_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         self.inner.get_resource_type_opt_in_preference()
     }

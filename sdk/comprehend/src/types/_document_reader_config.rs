@@ -26,8 +26,8 @@ pub struct DocumentReaderConfig {
     pub document_read_mode: ::std::option::Option<crate::types::DocumentReadMode>,
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
-    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li>
     /// </ul>
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
 }
@@ -50,8 +50,8 @@ impl DocumentReaderConfig {
     }
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
-    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feature_types.is_none()`.
@@ -134,8 +134,8 @@ impl DocumentReaderConfigBuilder {
     ///
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
-    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li>
     /// </ul>
     pub fn feature_types(mut self, input: crate::types::DocumentReadFeatureTypes) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
@@ -145,8 +145,8 @@ impl DocumentReaderConfigBuilder {
     }
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
-    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li>
     /// </ul>
     pub fn set_feature_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>) -> Self {
         self.feature_types = input;
@@ -154,8 +154,8 @@ impl DocumentReaderConfigBuilder {
     }
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
-    /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
-    /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
+    /// <li> <p> <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p> </li>
+    /// <li> <p> <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p> </li>
     /// </ul>
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>> {
         &self.feature_types

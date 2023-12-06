@@ -35,6 +35,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "KeyCheckValue" => {
+                            builder = builder.set_key_check_value(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "KeyCheckValueAlgorithm" => {
+                            builder = builder.set_key_check_value_algorithm(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::KeyCheckValueAlgorithm::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

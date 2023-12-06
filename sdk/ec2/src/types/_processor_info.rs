@@ -10,6 +10,8 @@ pub struct ProcessorInfo {
     pub sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
     /// <p>Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.</p>
     pub supported_features: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
+    /// <p>The manufacturer of the processor.</p>
+    pub manufacturer: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorInfo {
     /// <p>The architectures supported by the instance type.</p>
@@ -28,6 +30,10 @@ impl ProcessorInfo {
     pub fn supported_features(&self) -> &[crate::types::SupportedAdditionalProcessorFeature] {
         self.supported_features.as_deref().unwrap_or_default()
     }
+    /// <p>The manufacturer of the processor.</p>
+    pub fn manufacturer(&self) -> ::std::option::Option<&str> {
+        self.manufacturer.as_deref()
+    }
 }
 impl ProcessorInfo {
     /// Creates a new builder-style object to manufacture [`ProcessorInfo`](crate::types::ProcessorInfo).
@@ -43,6 +49,7 @@ pub struct ProcessorInfoBuilder {
     pub(crate) supported_architectures: ::std::option::Option<::std::vec::Vec<crate::types::ArchitectureType>>,
     pub(crate) sustained_clock_speed_in_ghz: ::std::option::Option<f64>,
     pub(crate) supported_features: ::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>>,
+    pub(crate) manufacturer: ::std::option::Option<::std::string::String>,
 }
 impl ProcessorInfoBuilder {
     /// Appends an item to `supported_architectures`.
@@ -102,12 +109,27 @@ impl ProcessorInfoBuilder {
     pub fn get_supported_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SupportedAdditionalProcessorFeature>> {
         &self.supported_features
     }
+    /// <p>The manufacturer of the processor.</p>
+    pub fn manufacturer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.manufacturer = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The manufacturer of the processor.</p>
+    pub fn set_manufacturer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.manufacturer = input;
+        self
+    }
+    /// <p>The manufacturer of the processor.</p>
+    pub fn get_manufacturer(&self) -> &::std::option::Option<::std::string::String> {
+        &self.manufacturer
+    }
     /// Consumes the builder and constructs a [`ProcessorInfo`](crate::types::ProcessorInfo).
     pub fn build(self) -> crate::types::ProcessorInfo {
         crate::types::ProcessorInfo {
             supported_architectures: self.supported_architectures,
             sustained_clock_speed_in_ghz: self.sustained_clock_speed_in_ghz,
             supported_features: self.supported_features,
+            manufacturer: self.manufacturer,
         }
     }
 }

@@ -131,6 +131,8 @@ pub(crate) mod shape_alias;
 
 pub(crate) mod shape_aliases;
 
+pub(crate) mod shape_export_attributes;
+
 pub(crate) mod shape_export_key_material;
 
 pub(crate) mod shape_import_key_material;
@@ -146,6 +148,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_wrapped_key;
+
+pub(crate) mod shape_export_dukpt_initial_key;
 
 pub(crate) mod shape_export_tr31_key_block;
 

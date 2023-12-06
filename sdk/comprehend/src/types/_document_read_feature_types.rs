@@ -35,18 +35,7 @@
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code>
-/// as the read action, you must specify one or both of the following values:</p>
-/// <ul>
-/// <li>
-/// <p>
-/// <code>TABLES</code> - Returns additional information about any tables that are detected in the input document. </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>FORMS</code> - Returns additional information about any forms that are detected in the input document. </p>
-/// </li>
-/// </ul>
+/// <p>TABLES or FORMS</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DetectToxicContentInput {
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub text_segments: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>,
     /// <p>The language of the input text. Currently, English is the only supported language.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectToxicContentInput {
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.text_segments.is_none()`.
     pub fn text_segments(&self) -> &[crate::types::TextSegment] {
@@ -47,19 +47,19 @@ impl DetectToxicContentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_text_segments`](Self::set_text_segments).
     ///
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn text_segments(mut self, input: crate::types::TextSegment) -> Self {
         let mut v = self.text_segments.unwrap_or_default();
         v.push(input);
         self.text_segments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn set_text_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>) -> Self {
         self.text_segments = input;
         self
     }
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn get_text_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextSegment>> {
         &self.text_segments
     }

@@ -71,6 +71,8 @@ pub use crate::types::_recovery_point_member::RecoveryPointMember;
 
 pub use crate::types::_recovery_point_by_backup_vault::RecoveryPointByBackupVault;
 
+pub use crate::types::_vault_type::VaultType;
+
 pub use crate::types::_recovery_point_creator::RecoveryPointCreator;
 
 pub use crate::types::_protected_resource::ProtectedResource;
@@ -90,8 +92,6 @@ pub use crate::types::_copy_job::CopyJob;
 pub use crate::types::_copy_job_state::CopyJobState;
 
 pub use crate::types::_backup_vault_list_member::BackupVaultListMember;
-
-pub use crate::types::_vault_type::VaultType;
 
 pub use crate::types::_backup_selections_list_member::BackupSelectionsListMember;
 

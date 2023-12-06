@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifyDocumentOutput {
-    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    /// <p>For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher confidence score indicates that the input prompt is undesired in nature.</p>
+    /// <p>The classes used by the document being analyzed. These are used for models trained in multi-class mode. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    /// <p>For prompt safety classification, the response includes only two classes (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class. The value range of the score is zero to one, where one is the highest confidence.</p>
     pub classes: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>,
-    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// <p>The labels used in the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     pub labels: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>,
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub document_metadata: ::std::option::Option<crate::types::DocumentMetadata>,
@@ -20,14 +20,14 @@ pub struct ClassifyDocumentOutput {
     _request_id: Option<String>,
 }
 impl ClassifyDocumentOutput {
-    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    /// <p>For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher confidence score indicates that the input prompt is undesired in nature.</p>
+    /// <p>The classes used by the document being analyzed. These are used for models trained in multi-class mode. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    /// <p>For prompt safety classification, the response includes only two classes (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class. The value range of the score is zero to one, where one is the highest confidence.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.classes.is_none()`.
     pub fn classes(&self) -> &[crate::types::DocumentClass] {
         self.classes.as_deref().unwrap_or_default()
     }
-    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// <p>The labels used in the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.labels.is_none()`.
     pub fn labels(&self) -> &[crate::types::DocumentLabel] {
@@ -99,22 +99,22 @@ impl ClassifyDocumentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_classes`](Self::set_classes).
     ///
-    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    /// <p>For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher confidence score indicates that the input prompt is undesired in nature.</p>
+    /// <p>The classes used by the document being analyzed. These are used for models trained in multi-class mode. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    /// <p>For prompt safety classification, the response includes only two classes (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class. The value range of the score is zero to one, where one is the highest confidence.</p>
     pub fn classes(mut self, input: crate::types::DocumentClass) -> Self {
         let mut v = self.classes.unwrap_or_default();
         v.push(input);
         self.classes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    /// <p>For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher confidence score indicates that the input prompt is undesired in nature.</p>
+    /// <p>The classes used by the document being analyzed. These are used for models trained in multi-class mode. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    /// <p>For prompt safety classification, the response includes only two classes (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class. The value range of the score is zero to one, where one is the highest confidence.</p>
     pub fn set_classes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>>) -> Self {
         self.classes = input;
         self
     }
-    /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    /// <p>For prompt classification, the response includes a single class (<code>UNDESIRED_PROMPT</code>), along with a confidence score. A higher confidence score indicates that the input prompt is undesired in nature.</p>
+    /// <p>The classes used by the document being analyzed. These are used for models trained in multi-class mode. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    /// <p>For prompt safety classification, the response includes only two classes (SAFE_PROMPT and UNSAFE_PROMPT), along with a confidence score for each class. The value range of the score is zero to one, where one is the highest confidence.</p>
     pub fn get_classes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentClass>> {
         &self.classes
     }
@@ -122,19 +122,19 @@ impl ClassifyDocumentOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
-    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// <p>The labels used in the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     pub fn labels(mut self, input: crate::types::DocumentLabel) -> Self {
         let mut v = self.labels.unwrap_or_default();
         v.push(input);
         self.labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// <p>The labels used in the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     pub fn set_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// <p>The labels used in the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
     pub fn get_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DocumentLabel>> {
         &self.labels
     }

@@ -253,7 +253,7 @@ pub enum DetectEntitiesError {
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::types::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported languages</a> in the Comprehend Developer Guide. </p>
     UnsupportedLanguageException(crate::types::error::UnsupportedLanguageException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

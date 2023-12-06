@@ -22,7 +22,7 @@ impl StartDocumentClassificationJobInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDocumentClassificationJob`.
 ///
-/// <p>Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code> operation to track the progress of the job.</p>
+/// <p>Starts an asynchronous document classification job using a custom classification model. Use the <code>DescribeDocumentClassificationJob</code> operation to track the progress of the job.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDocumentClassificationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

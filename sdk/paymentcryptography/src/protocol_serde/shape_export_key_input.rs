@@ -12,5 +12,11 @@ pub fn ser_export_key_input_input(
     if let Some(var_3) = &input.export_key_identifier {
         object.key("ExportKeyIdentifier").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.export_attributes {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ExportAttributes").start_object();
+        crate::protocol_serde::shape_export_attributes::ser_export_attributes(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

@@ -7,6 +7,8 @@ pub struct ExportKeyInput {
     pub key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub export_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The attributes for IPEK generation during export.</p>
+    pub export_attributes: ::std::option::Option<crate::types::ExportAttributes>,
 }
 impl ExportKeyInput {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
@@ -16,6 +18,10 @@ impl ExportKeyInput {
     /// <p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p>
     pub fn export_key_identifier(&self) -> ::std::option::Option<&str> {
         self.export_key_identifier.as_deref()
+    }
+    /// <p>The attributes for IPEK generation during export.</p>
+    pub fn export_attributes(&self) -> ::std::option::Option<&crate::types::ExportAttributes> {
+        self.export_attributes.as_ref()
     }
 }
 impl ExportKeyInput {
@@ -31,6 +37,7 @@ impl ExportKeyInput {
 pub struct ExportKeyInputBuilder {
     pub(crate) key_material: ::std::option::Option<crate::types::ExportKeyMaterial>,
     pub(crate) export_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) export_attributes: ::std::option::Option<crate::types::ExportAttributes>,
 }
 impl ExportKeyInputBuilder {
     /// <p>The key block format type, for example, TR-34 or TR-31, to use during key material export.</p>
@@ -63,11 +70,26 @@ impl ExportKeyInputBuilder {
     pub fn get_export_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.export_key_identifier
     }
+    /// <p>The attributes for IPEK generation during export.</p>
+    pub fn export_attributes(mut self, input: crate::types::ExportAttributes) -> Self {
+        self.export_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The attributes for IPEK generation during export.</p>
+    pub fn set_export_attributes(mut self, input: ::std::option::Option<crate::types::ExportAttributes>) -> Self {
+        self.export_attributes = input;
+        self
+    }
+    /// <p>The attributes for IPEK generation during export.</p>
+    pub fn get_export_attributes(&self) -> &::std::option::Option<crate::types::ExportAttributes> {
+        &self.export_attributes
+    }
     /// Consumes the builder and constructs a [`ExportKeyInput`](crate::operation::export_key::ExportKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::export_key::ExportKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_key::ExportKeyInput {
             key_material: self.key_material,
             export_key_identifier: self.export_key_identifier,
+            export_attributes: self.export_attributes,
         })
     }
 }

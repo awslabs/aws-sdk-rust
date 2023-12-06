@@ -5,7 +5,7 @@
 pub struct GetParametersForExportInput {
     /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
     pub key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl GetParametersForExportInput {
@@ -13,7 +13,7 @@ impl GetParametersForExportInput {
     pub fn key_material_type(&self) -> ::std::option::Option<&crate::types::KeyMaterialType> {
         self.key_material_type.as_ref()
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn signing_key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.signing_key_algorithm.as_ref()
     }
@@ -48,18 +48,18 @@ impl GetParametersForExportInputBuilder {
     pub fn get_key_material_type(&self) -> &::std::option::Option<crate::types::KeyMaterialType> {
         &self.key_material_type
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     /// This field is required.
     pub fn signing_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.signing_key_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn set_signing_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.signing_key_algorithm = input;
         self
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.signing_key_algorithm
     }

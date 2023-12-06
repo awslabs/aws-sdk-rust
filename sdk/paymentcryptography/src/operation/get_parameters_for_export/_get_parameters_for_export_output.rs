@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForExportOutput {
-    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub signing_key_certificate: ::std::string::String,
-    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub signing_key_certificate_chain: ::std::string::String,
     /// <p>The algorithm of the signing key certificate for use in TR-34 key block generation. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub signing_key_algorithm: crate::types::KeyAlgorithm,
@@ -16,12 +16,12 @@ pub struct GetParametersForExportOutput {
     _request_id: Option<String>,
 }
 impl GetParametersForExportOutput {
-    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub fn signing_key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.signing_key_certificate.deref()
     }
-    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub fn signing_key_certificate_chain(&self) -> &str {
         use std::ops::Deref;
         self.signing_key_certificate_chain.deref()
@@ -76,33 +76,33 @@ pub struct GetParametersForExportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetParametersForExportOutputBuilder {
-    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     /// This field is required.
     pub fn signing_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub fn set_signing_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate = input;
         self
     }
-    /// <p>The signing key certificate of the public key for signature within the TR-34 key block cryptogram. The certificate expires after 7 days.</p>
+    /// <p>The signing key certificate in PEM format (base64 encoded) of the public key for signature within the TR-34 key block. The certificate expires after 7 days.</p>
     pub fn get_signing_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_certificate
     }
-    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     /// This field is required.
     pub fn signing_key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.signing_key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub fn set_signing_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signing_key_certificate_chain = input;
         self
     }
-    /// <p>The certificate chain that signed the signing key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The root certificate authority (CA) that signed the signing key certificate in PEM format (base64 encoded).</p>
     pub fn get_signing_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_key_certificate_chain
     }

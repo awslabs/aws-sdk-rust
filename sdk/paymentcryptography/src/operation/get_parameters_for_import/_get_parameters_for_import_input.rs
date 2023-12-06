@@ -3,17 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetParametersForImportInput {
-    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).</p>
+    /// <p>Import token is not required for TR-31, root public key cerificate or trusted public key certificate.</p>
     pub key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
-    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
+    /// <p>At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the only allowed algorithms for TR-34 WrappedKeyBlock import.</p>
     pub wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl GetParametersForImportInput {
-    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).</p>
+    /// <p>Import token is not required for TR-31, root public key cerificate or trusted public key certificate.</p>
     pub fn key_material_type(&self) -> ::std::option::Option<&crate::types::KeyMaterialType> {
         self.key_material_type.as_ref()
     }
-    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
+    /// <p>At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the only allowed algorithms for TR-34 WrappedKeyBlock import.</p>
     pub fn wrapping_key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.wrapping_key_algorithm.as_ref()
     }
@@ -33,33 +37,39 @@ pub struct GetParametersForImportInputBuilder {
     pub(crate) wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
 }
 impl GetParametersForImportInputBuilder {
-    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).</p>
+    /// <p>Import token is not required for TR-31, root public key cerificate or trusted public key certificate.</p>
     /// This field is required.
     pub fn key_material_type(mut self, input: crate::types::KeyMaterialType) -> Self {
         self.key_material_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).</p>
+    /// <p>Import token is not required for TR-31, root public key cerificate or trusted public key certificate.</p>
     pub fn set_key_material_type(mut self, input: ::std::option::Option<crate::types::KeyMaterialType>) -> Self {
         self.key_material_type = input;
         self
     }
-    /// <p>The key block format type such as TR-34 or TR-31 to use during key material import. Import token is only required for TR-34 key import <code>TR34_KEY_BLOCK</code>. Import token is not required for TR-31 key import.</p>
+    /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).</p>
+    /// <p>Import token is not required for TR-31, root public key cerificate or trusted public key certificate.</p>
     pub fn get_key_material_type(&self) -> &::std::option::Option<crate::types::KeyMaterialType> {
         &self.key_material_type
     }
-    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
+    /// <p>At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the only allowed algorithms for TR-34 WrappedKeyBlock import.</p>
     /// This field is required.
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
+    /// <p>At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the only allowed algorithms for TR-34 WrappedKeyBlock import.</p>
     pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.wrapping_key_algorithm = input;
         self
     }
-    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
+    /// <p>At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the only allowed algorithms for TR-34 WrappedKeyBlock import.</p>
     pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.wrapping_key_algorithm
     }

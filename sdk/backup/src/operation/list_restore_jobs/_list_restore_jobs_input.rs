@@ -9,6 +9,26 @@ pub struct ListRestoreJobsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub by_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub by_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns only restore jobs that were created after the specified date.</p>
@@ -34,6 +54,28 @@ impl ListRestoreJobsInput {
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn by_account_id(&self) -> ::std::option::Option<&str> {
         self.by_account_id.as_deref()
+    }
+    /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub fn by_resource_type(&self) -> ::std::option::Option<&str> {
+        self.by_resource_type.as_deref()
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn by_created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -74,6 +116,7 @@ pub struct ListRestoreJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) by_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) by_resource_type: ::std::option::Option<::std::string::String>,
     pub(crate) by_created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) by_status: ::std::option::Option<crate::types::RestoreJobStatus>,
@@ -123,6 +166,74 @@ impl ListRestoreJobsInputBuilder {
     /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn get_by_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.by_account_id
+    }
+    /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.by_resource_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.by_resource_type = input;
+        self
+    }
+    /// <p>Include this parameter to return only restore jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>Redshift</code> for Amazon Redshift</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>Timestream</code> for Amazon Timestream</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+    /// </ul>
+    pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.by_resource_type
     }
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub fn by_created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -216,6 +327,7 @@ impl ListRestoreJobsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             by_account_id: self.by_account_id,
+            by_resource_type: self.by_resource_type,
             by_created_before: self.by_created_before,
             by_created_after: self.by_created_after,
             by_status: self.by_status,

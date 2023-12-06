@@ -10,7 +10,7 @@ pub struct KeySummary {
     pub key_state: crate::types::KeyState,
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
     pub key_attributes: ::std::option::Option<crate::types::KeyAttributes>,
-    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub key_check_value: ::std::string::String,
     /// <p>Specifies whether the key is exportable. This data is immutable after the key is created.</p>
     pub exportable: bool,
@@ -31,7 +31,7 @@ impl KeySummary {
     pub fn key_attributes(&self) -> ::std::option::Option<&crate::types::KeyAttributes> {
         self.key_attributes.as_ref()
     }
-    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn key_check_value(&self) -> &str {
         use std::ops::Deref;
         self.key_check_value.deref()
@@ -109,18 +109,18 @@ impl KeySummaryBuilder {
     pub fn get_key_attributes(&self) -> &::std::option::Option<crate::types::KeyAttributes> {
         &self.key_attributes
     }
-    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }
-    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
     pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_check_value
     }

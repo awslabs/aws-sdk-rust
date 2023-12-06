@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetParametersForImportOutput {
-    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
     pub wrapping_key_certificate: ::std::string::String,
-    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub wrapping_key_certificate_chain: ::std::string::String,
-    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
     pub wrapping_key_algorithm: crate::types::KeyAlgorithm,
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
@@ -16,17 +16,17 @@ pub struct GetParametersForImportOutput {
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutput {
-    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
     pub fn wrapping_key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.wrapping_key_certificate.deref()
     }
-    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub fn wrapping_key_certificate_chain(&self) -> &str {
         use std::ops::Deref;
         self.wrapping_key_certificate_chain.deref()
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
     pub fn wrapping_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
         &self.wrapping_key_algorithm
     }
@@ -76,48 +76,48 @@ pub struct GetParametersForImportOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetParametersForImportOutputBuilder {
-    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
     /// This field is required.
     pub fn wrapping_key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
     pub fn set_wrapping_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate = input;
         self
     }
-    /// <p>The wrapping key certificate of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
+    /// <p>The wrapping key certificate in PEM format (base64 encoded) of the wrapping key for use within the TR-34 key block. The certificate expires in 7 days.</p>
     pub fn get_wrapping_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate
     }
-    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     /// This field is required.
     pub fn wrapping_key_certificate_chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.wrapping_key_certificate_chain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub fn set_wrapping_key_certificate_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wrapping_key_certificate_chain = input;
         self
     }
-    /// <p>The Amazon Web Services Payment Cryptography certificate chain that signed the wrapping key certificate. This is the root certificate authority (CA) within your service account.</p>
+    /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub fn get_wrapping_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate_chain
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
     /// This field is required.
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
     pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.wrapping_key_algorithm = input;
         self
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 key block. <code>RSA_2048</code> is the only wrapping key algorithm allowed.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
     pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.wrapping_key_algorithm
     }

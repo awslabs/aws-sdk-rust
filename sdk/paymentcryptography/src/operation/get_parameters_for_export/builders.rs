@@ -129,17 +129,17 @@ impl GetParametersForExportFluentBuilder {
     pub fn get_key_material_type(&self) -> &::std::option::Option<crate::types::KeyMaterialType> {
         self.inner.get_key_material_type()
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn signing_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.inner = self.inner.signing_key_algorithm(input);
         self
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn set_signing_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.inner = self.inner.set_signing_key_algorithm(input);
         self
     }
-    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block cryptogram. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
+    /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         self.inner.get_signing_key_algorithm()
     }

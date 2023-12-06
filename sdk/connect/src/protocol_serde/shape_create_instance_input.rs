@@ -21,5 +21,15 @@ pub fn ser_create_instance_input_input(
     if let Some(var_6) = &input.outbound_calls_enabled {
         object.key("OutboundCallsEnabled").boolean(*var_6);
     }
+    if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Tags").start_object();
+        for (key_9, value_10) in var_7 {
+            {
+                object_8.key(key_9.as_str()).string(value_10.as_str());
+            }
+        }
+        object_8.finish();
+    }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl DetectToxicContentInputBuilder {
 }
 /// Fluent builder constructing a request to `DetectToxicContent`.
 ///
-/// <p>Performs toxicity analysis on the list of text strings that you provide as input. The analysis uses the order of strings in the list to determine context when predicting toxicity. The API response contains a results list that matches the size of the input list. For more information about toxicity detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity detection</a> in the <i>Amazon Comprehend Developer Guide</i> </p>
+/// <p>Performs toxicity analysis on the list of text strings that you provide as input. The API response contains a results list that matches the size of the input list. For more information about toxicity detection, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/toxicity-detection.html">Toxicity detection</a> in the <i>Amazon Comprehend Developer Guide</i>. </p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectToxicContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +112,17 @@ impl DetectToxicContentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_text_segments`](Self::set_text_segments).
     ///
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn text_segments(mut self, input: crate::types::TextSegment) -> Self {
         self.inner = self.inner.text_segments(input);
         self
     }
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn set_text_segments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextSegment>>) -> Self {
         self.inner = self.inner.set_text_segments(input);
         self
     }
-    /// <p>A list of up to 10 text strings. The maximum size for the list is 10 KB.</p>
+    /// <p>A list of up to 10 text strings. Each string has a maximum size of 1 KB, and the maximum size of the list is 10 KB.</p>
     pub fn get_text_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextSegment>> {
         self.inner.get_text_segments()
     }

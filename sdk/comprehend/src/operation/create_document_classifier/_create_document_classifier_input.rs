@@ -27,7 +27,7 @@ pub struct CreateDocumentClassifierInput {
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub mode: ::std::option::Option<crate::types::DocumentClassifierMode>,
     /// <p>ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
@@ -89,7 +89,7 @@ impl CreateDocumentClassifierInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::DocumentClassifierMode> {
         self.mode.as_ref()
     }
@@ -298,17 +298,17 @@ impl CreateDocumentClassifierInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn mode(mut self, input: crate::types::DocumentClassifierMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and multi-label mode identifies one or more class labels for each document. Multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::DocumentClassifierMode> {
         &self.mode
     }

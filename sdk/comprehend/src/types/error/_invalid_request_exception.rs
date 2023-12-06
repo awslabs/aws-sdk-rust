@@ -8,13 +8,7 @@ pub struct InvalidRequestException {
     pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub reason: ::std::option::Option<crate::types::InvalidRequestReason>,
-    /// <p>Provides additional detail about why the request failed:</p>
-    /// <ul>
-    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
-    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
-    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
-    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
-    /// </ul>
+    /// <p>Provides additional detail about why the request failed.</p>
     pub detail: ::std::option::Option<crate::types::InvalidRequestDetail>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -23,13 +17,7 @@ impl InvalidRequestException {
     pub fn reason(&self) -> ::std::option::Option<&crate::types::InvalidRequestReason> {
         self.reason.as_ref()
     }
-    /// <p>Provides additional detail about why the request failed:</p>
-    /// <ul>
-    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
-    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
-    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
-    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
-    /// </ul>
+    /// <p>Provides additional detail about why the request failed.</p>
     pub fn detail(&self) -> ::std::option::Option<&crate::types::InvalidRequestDetail> {
         self.detail.as_ref()
     }
@@ -108,35 +96,17 @@ impl InvalidRequestExceptionBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::InvalidRequestReason> {
         &self.reason
     }
-    /// <p>Provides additional detail about why the request failed:</p>
-    /// <ul>
-    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
-    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
-    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
-    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
-    /// </ul>
+    /// <p>Provides additional detail about why the request failed.</p>
     pub fn detail(mut self, input: crate::types::InvalidRequestDetail) -> Self {
         self.detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides additional detail about why the request failed:</p>
-    /// <ul>
-    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
-    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
-    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
-    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
-    /// </ul>
+    /// <p>Provides additional detail about why the request failed.</p>
     pub fn set_detail(mut self, input: ::std::option::Option<crate::types::InvalidRequestDetail>) -> Self {
         self.detail = input;
         self
     }
-    /// <p>Provides additional detail about why the request failed:</p>
-    /// <ul>
-    /// <li> <p>Document size is too large - Check the size of your file and resubmit the request.</p> </li>
-    /// <li> <p>Document type is not supported - Check the file type and resubmit the request.</p> </li>
-    /// <li> <p>Too many pages in the document - Check the number of pages in your file and resubmit the request.</p> </li>
-    /// <li> <p>Access denied to Amazon Textract - Verify that your account has permission to use Amazon Textract API operations and resubmit the request.</p> </li>
-    /// </ul>
+    /// <p>Provides additional detail about why the request failed.</p>
     pub fn get_detail(&self) -> &::std::option::Option<crate::types::InvalidRequestDetail> {
         &self.detail
     }

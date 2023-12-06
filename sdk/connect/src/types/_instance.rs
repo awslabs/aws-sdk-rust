@@ -26,6 +26,8 @@ pub struct Instance {
     pub outbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>This URL allows contact center users to access the Amazon Connect admin website.</p>
     pub instance_access_url: ::std::option::Option<::std::string::String>,
+    /// <p>The tags of an instance.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl Instance {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -72,6 +74,10 @@ impl Instance {
     pub fn instance_access_url(&self) -> ::std::option::Option<&str> {
         self.instance_access_url.as_deref()
     }
+    /// <p>The tags of an instance.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Instance {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -87,6 +93,7 @@ impl ::std::fmt::Debug for Instance {
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
         formatter.field("instance_access_url", &self.instance_access_url);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -112,6 +119,7 @@ pub struct InstanceBuilder {
     pub(crate) inbound_calls_enabled: ::std::option::Option<bool>,
     pub(crate) outbound_calls_enabled: ::std::option::Option<bool>,
     pub(crate) instance_access_url: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl InstanceBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -268,6 +276,26 @@ impl InstanceBuilder {
     pub fn get_instance_access_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_access_url
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags of an instance.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags of an instance.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags of an instance.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
@@ -282,6 +310,7 @@ impl InstanceBuilder {
             inbound_calls_enabled: self.inbound_calls_enabled,
             outbound_calls_enabled: self.outbound_calls_enabled,
             instance_access_url: self.instance_access_url,
+            tags: self.tags,
         }
     }
 }
@@ -299,6 +328,7 @@ impl ::std::fmt::Debug for InstanceBuilder {
         formatter.field("inbound_calls_enabled", &self.inbound_calls_enabled);
         formatter.field("outbound_calls_enabled", &self.outbound_calls_enabled);
         formatter.field("instance_access_url", &self.instance_access_url);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
