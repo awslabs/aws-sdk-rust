@@ -206,6 +206,8 @@ pub enum Error {
     InvalidTriggerConfigException(crate::types::error::InvalidTriggerConfigException),
     /// <p>The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidUpdateOutdatedInstancesOnlyValueException(crate::types::error::InvalidUpdateOutdatedInstancesOnlyValueException),
+    /// <p>The <code>ZonalConfig</code> object is not valid.</p>
+    InvalidZonalDeploymentConfigurationException(crate::types::error::InvalidZonalDeploymentConfigurationException),
     /// <p>An attempt to return the status of an already completed lifecycle event occurred.</p>
     LifecycleEventAlreadyCompletedException(crate::types::error::LifecycleEventAlreadyCompletedException),
     /// <p>The limit for lifecycle hooks was exceeded.</p>
@@ -342,6 +344,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidTrafficRoutingConfigurationException(inner) => inner.fmt(f),
             Error::InvalidTriggerConfigException(inner) => inner.fmt(f),
             Error::InvalidUpdateOutdatedInstancesOnlyValueException(inner) => inner.fmt(f),
+            Error::InvalidZonalDeploymentConfigurationException(inner) => inner.fmt(f),
             Error::LifecycleEventAlreadyCompletedException(inner) => inner.fmt(f),
             Error::LifecycleHookLimitExceededException(inner) => inner.fmt(f),
             Error::MultipleIamArnsProvidedException(inner) => inner.fmt(f),
@@ -472,6 +475,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidTrafficRoutingConfigurationException(inner) => inner.meta(),
             Self::InvalidTriggerConfigException(inner) => inner.meta(),
             Self::InvalidUpdateOutdatedInstancesOnlyValueException(inner) => inner.meta(),
+            Self::InvalidZonalDeploymentConfigurationException(inner) => inner.meta(),
             Self::LifecycleEventAlreadyCompletedException(inner) => inner.meta(),
             Self::LifecycleHookLimitExceededException(inner) => inner.meta(),
             Self::MultipleIamArnsProvidedException(inner) => inner.meta(),
@@ -1044,6 +1048,9 @@ impl From<crate::operation::create_deployment_config::CreateDeploymentConfigErro
             }
             crate::operation::create_deployment_config::CreateDeploymentConfigError::InvalidTrafficRoutingConfigurationException(inner) => {
                 Error::InvalidTrafficRoutingConfigurationException(inner)
+            }
+            crate::operation::create_deployment_config::CreateDeploymentConfigError::InvalidZonalDeploymentConfigurationException(inner) => {
+                Error::InvalidZonalDeploymentConfigurationException(inner)
             }
             crate::operation::create_deployment_config::CreateDeploymentConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1936,6 +1943,9 @@ impl From<crate::operation::list_deployment_targets::ListDeploymentTargetsError>
             crate::operation::list_deployment_targets::ListDeploymentTargetsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
+            crate::operation::list_deployment_targets::ListDeploymentTargetsError::InvalidTargetFilterNameException(inner) => {
+                Error::InvalidTargetFilterNameException(inner)
+            }
             crate::operation::list_deployment_targets::ListDeploymentTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2613,6 +2623,7 @@ impl ::std::error::Error for Error {
             Error::InvalidTrafficRoutingConfigurationException(inner) => inner.source(),
             Error::InvalidTriggerConfigException(inner) => inner.source(),
             Error::InvalidUpdateOutdatedInstancesOnlyValueException(inner) => inner.source(),
+            Error::InvalidZonalDeploymentConfigurationException(inner) => inner.source(),
             Error::LifecycleEventAlreadyCompletedException(inner) => inner.source(),
             Error::LifecycleHookLimitExceededException(inner) => inner.source(),
             Error::MultipleIamArnsProvidedException(inner) => inner.source(),
@@ -2729,6 +2740,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidTrafficRoutingConfigurationException(e) => e.request_id(),
             Self::InvalidTriggerConfigException(e) => e.request_id(),
             Self::InvalidUpdateOutdatedInstancesOnlyValueException(e) => e.request_id(),
+            Self::InvalidZonalDeploymentConfigurationException(e) => e.request_id(),
             Self::LifecycleEventAlreadyCompletedException(e) => e.request_id(),
             Self::LifecycleHookLimitExceededException(e) => e.request_id(),
             Self::MultipleIamArnsProvidedException(e) => e.request_id(),

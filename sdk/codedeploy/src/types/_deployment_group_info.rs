@@ -54,6 +54,9 @@ pub struct DeploymentGroupInfo {
     /// <servicename></servicename>
     /// </clustername></code>. </p>
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
+    /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub termination_hook_enabled: bool,
 }
 impl DeploymentGroupInfo {
     /// <p>The application name.</p>
@@ -160,6 +163,11 @@ impl DeploymentGroupInfo {
     pub fn ecs_services(&self) -> &[crate::types::EcsService] {
         self.ecs_services.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn termination_hook_enabled(&self) -> bool {
+        self.termination_hook_enabled
+    }
 }
 impl DeploymentGroupInfo {
     /// Creates a new builder-style object to manufacture [`DeploymentGroupInfo`](crate::types::DeploymentGroupInfo).
@@ -194,6 +202,7 @@ pub struct DeploymentGroupInfoBuilder {
     pub(crate) on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     pub(crate) ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
+    pub(crate) termination_hook_enabled: ::std::option::Option<bool>,
 }
 impl DeploymentGroupInfoBuilder {
     /// <p>The application name.</p>
@@ -552,6 +561,23 @@ impl DeploymentGroupInfoBuilder {
     pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         &self.ecs_services
     }
+    /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn termination_hook_enabled(mut self, input: bool) -> Self {
+        self.termination_hook_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn set_termination_hook_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.termination_hook_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn get_termination_hook_enabled(&self) -> &::std::option::Option<bool> {
+        &self.termination_hook_enabled
+    }
     /// Consumes the builder and constructs a [`DeploymentGroupInfo`](crate::types::DeploymentGroupInfo).
     pub fn build(self) -> crate::types::DeploymentGroupInfo {
         crate::types::DeploymentGroupInfo {
@@ -577,6 +603,7 @@ impl DeploymentGroupInfoBuilder {
             on_premises_tag_set: self.on_premises_tag_set,
             compute_platform: self.compute_platform,
             ecs_services: self.ecs_services,
+            termination_hook_enabled: self.termination_hook_enabled.unwrap_or_default(),
         }
     }
 }

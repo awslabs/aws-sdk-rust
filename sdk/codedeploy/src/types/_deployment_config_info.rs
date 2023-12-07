@@ -8,7 +8,7 @@ pub struct DeploymentConfigInfo {
     pub deployment_config_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment configuration name.</p>
     pub deployment_config_name: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     /// <p>The time at which the deployment configuration was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,6 +16,8 @@ pub struct DeploymentConfigInfo {
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
+    /// <p>Information about a zonal configuration.</p>
+    pub zonal_config: ::std::option::Option<crate::types::ZonalConfig>,
 }
 impl DeploymentConfigInfo {
     /// <p>The deployment configuration ID.</p>
@@ -26,7 +28,7 @@ impl DeploymentConfigInfo {
     pub fn deployment_config_name(&self) -> ::std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn minimum_healthy_hosts(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
@@ -41,6 +43,10 @@ impl DeploymentConfigInfo {
     /// <p>The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.</p>
     pub fn traffic_routing_config(&self) -> ::std::option::Option<&crate::types::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
+    }
+    /// <p>Information about a zonal configuration.</p>
+    pub fn zonal_config(&self) -> ::std::option::Option<&crate::types::ZonalConfig> {
+        self.zonal_config.as_ref()
     }
 }
 impl DeploymentConfigInfo {
@@ -60,6 +66,7 @@ pub struct DeploymentConfigInfoBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     pub(crate) traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
+    pub(crate) zonal_config: ::std::option::Option<crate::types::ZonalConfig>,
 }
 impl DeploymentConfigInfoBuilder {
     /// <p>The deployment configuration ID.</p>
@@ -90,17 +97,17 @@ impl DeploymentConfigInfoBuilder {
     pub fn get_deployment_config_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.deployment_config_name
     }
-    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn minimum_healthy_hosts(mut self, input: crate::types::MinimumHealthyHosts) -> Self {
         self.minimum_healthy_hosts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn set_minimum_healthy_hosts(mut self, input: ::std::option::Option<crate::types::MinimumHealthyHosts>) -> Self {
         self.minimum_healthy_hosts = input;
         self
     }
-    /// <p>Information about the number or percentage of minimum healthy instance.</p>
+    /// <p>Information about the number or percentage of minimum healthy instances.</p>
     pub fn get_minimum_healthy_hosts(&self) -> &::std::option::Option<crate::types::MinimumHealthyHosts> {
         &self.minimum_healthy_hosts
     }
@@ -146,6 +153,20 @@ impl DeploymentConfigInfoBuilder {
     pub fn get_traffic_routing_config(&self) -> &::std::option::Option<crate::types::TrafficRoutingConfig> {
         &self.traffic_routing_config
     }
+    /// <p>Information about a zonal configuration.</p>
+    pub fn zonal_config(mut self, input: crate::types::ZonalConfig) -> Self {
+        self.zonal_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about a zonal configuration.</p>
+    pub fn set_zonal_config(mut self, input: ::std::option::Option<crate::types::ZonalConfig>) -> Self {
+        self.zonal_config = input;
+        self
+    }
+    /// <p>Information about a zonal configuration.</p>
+    pub fn get_zonal_config(&self) -> &::std::option::Option<crate::types::ZonalConfig> {
+        &self.zonal_config
+    }
     /// Consumes the builder and constructs a [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).
     pub fn build(self) -> crate::types::DeploymentConfigInfo {
         crate::types::DeploymentConfigInfo {
@@ -155,6 +176,7 @@ impl DeploymentConfigInfoBuilder {
             create_time: self.create_time,
             compute_platform: self.compute_platform,
             traffic_routing_config: self.traffic_routing_config,
+            zonal_config: self.zonal_config,
         }
     }
 }

@@ -119,6 +119,10 @@ where
                         "ecsServices" => {
                             builder = builder.set_ecs_services(crate::protocol_serde::shape_ecs_service_list::de_ecs_service_list(tokens)?);
                         }
+                        "terminationHookEnabled" => {
+                            builder =
+                                builder.set_termination_hook_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

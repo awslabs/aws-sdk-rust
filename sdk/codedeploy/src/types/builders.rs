@@ -81,6 +81,10 @@ pub use crate::types::_last_deployment_info::LastDeploymentInfoBuilder;
 
 pub use crate::types::_deployment_config_info::DeploymentConfigInfoBuilder;
 
+pub use crate::types::_zonal_config::ZonalConfigBuilder;
+
+pub use crate::types::_minimum_healthy_hosts_per_zone::MinimumHealthyHostsPerZoneBuilder;
+
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfigBuilder;
 
 pub use crate::types::_time_based_linear::TimeBasedLinearBuilder;

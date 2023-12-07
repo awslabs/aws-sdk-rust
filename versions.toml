@@ -460,9 +460,9 @@ model_hash = '1cb6d00c467528a6bf71c49c60d52bca105c4a37a5d3a59b0d2e6e069b211553'
 
 [crates.aws-sdk-codedeploy]
 category = 'AwsSdk'
-version = '1.4.0'
-source_hash = '5651cd78401473c68bf9f50bf605952c92bc6e3fcdd437b84b007942a639dcc0'
-model_hash = '76b33b52ffbe8020e998aee4267044cd67aaa9e447fa214fa5c9a475d3374d7d'
+version = '1.5.0'
+source_hash = 'c040e7db81fd6f8e585f6d65049f2bbb01155e5bb9cd3c6134e82bf9cc779917'
+model_hash = 'fddd68daaf661f3cda7d261afeafe97b0bd8aa43f2b9e4b8a5f7c6e7cbabb60f'
 
 [crates.aws-sdk-codeguruprofiler]
 category = 'AwsSdk'
@@ -2396,13 +2396,5 @@ source_hash = '2fb553a7e002783890790356ca186911d97f10e16958fd422103666b73b6e076'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f222e63ca57ba3b93a102d80ecb96a05ace205af57b589955aa5979db9b3091f'
-
-[release]
-tag = 'release-2023-12-06'
-
 [release.crates]
-aws-sdk-backup = '1.5.0'
-aws-sdk-comprehend = '1.4.1'
-aws-sdk-connect = '1.6.0'
-aws-sdk-ec2 = '1.5.0'
-aws-sdk-paymentcryptography = '1.5.0'
+aws-sdk-codedeploy = '1.5.0'

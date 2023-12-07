@@ -135,6 +135,12 @@ pub use crate::types::_last_deployment_info::LastDeploymentInfo;
 
 pub use crate::types::_deployment_config_info::DeploymentConfigInfo;
 
+pub use crate::types::_zonal_config::ZonalConfig;
+
+pub use crate::types::_minimum_healthy_hosts_per_zone::MinimumHealthyHostsPerZone;
+
+pub use crate::types::_minimum_healthy_hosts_per_zone_type::MinimumHealthyHostsPerZoneType;
+
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfig;
 
 pub use crate::types::_time_based_linear::TimeBasedLinear;
@@ -287,6 +293,10 @@ mod _load_balancer_info;
 
 mod _minimum_healthy_hosts;
 
+mod _minimum_healthy_hosts_per_zone;
+
+mod _minimum_healthy_hosts_per_zone_type;
+
 mod _minimum_healthy_hosts_type;
 
 mod _on_premises_tag_set;
@@ -346,6 +356,8 @@ mod _traffic_routing_type;
 mod _trigger_config;
 
 mod _trigger_event_type;
+
+mod _zonal_config;
 
 /// Builders
 pub mod builders;

@@ -133,6 +133,8 @@ pub use crate::types::error::_resource_validation_exception::ResourceValidationE
 
 pub use crate::types::error::_operation_not_supported_exception::OperationNotSupportedException;
 
+pub use crate::types::error::_invalid_target_filter_name_exception::InvalidTargetFilterNameException;
+
 pub use crate::types::error::_invalid_instance_type_exception::InvalidInstanceTypeException;
 
 pub use crate::types::error::_invalid_instance_status_exception::InvalidInstanceStatusException;
@@ -144,8 +146,6 @@ pub use crate::types::error::_invalid_time_range_exception::InvalidTimeRangeExce
 pub use crate::types::error::_invalid_external_id_exception::InvalidExternalIdException;
 
 pub use crate::types::error::_invalid_deployment_status_exception::InvalidDeploymentStatusException;
-
-pub use crate::types::error::_invalid_target_filter_name_exception::InvalidTargetFilterNameException;
 
 pub use crate::types::error::_invalid_compute_platform_exception::InvalidComputePlatformException;
 
@@ -188,6 +188,8 @@ pub use crate::types::error::_deployment_config_in_use_exception::DeploymentConf
 pub use crate::types::error::_role_required_exception::RoleRequiredException;
 
 pub use crate::types::error::_deployment_group_limit_exceeded_exception::DeploymentGroupLimitExceededException;
+
+pub use crate::types::error::_invalid_zonal_deployment_configuration_exception::InvalidZonalDeploymentConfigurationException;
 
 pub use crate::types::error::_invalid_minimum_healthy_host_value_exception::InvalidMinimumHealthyHostValueException;
 
@@ -404,6 +406,8 @@ mod _invalid_traffic_routing_configuration_exception;
 mod _invalid_trigger_config_exception;
 
 mod _invalid_update_outdated_instances_only_value_exception;
+
+mod _invalid_zonal_deployment_configuration_exception;
 
 mod _lifecycle_event_already_completed_exception;
 

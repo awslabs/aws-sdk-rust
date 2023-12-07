@@ -262,6 +262,8 @@ pub enum CreateDeploymentConfigError {
     InvalidMinimumHealthyHostValueException(crate::types::error::InvalidMinimumHealthyHostValueException),
     /// <p> The configuration that specifies how traffic is routed during a deployment is invalid.</p>
     InvalidTrafficRoutingConfigurationException(crate::types::error::InvalidTrafficRoutingConfigurationException),
+    /// <p>The <code>ZonalConfig</code> object is not valid.</p>
+    InvalidZonalDeploymentConfigurationException(crate::types::error::InvalidZonalDeploymentConfigurationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -302,6 +304,7 @@ impl CreateDeploymentConfigError {
             Self::InvalidDeploymentConfigNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidMinimumHealthyHostValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTrafficRoutingConfigurationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidZonalDeploymentConfigurationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -333,6 +336,10 @@ impl CreateDeploymentConfigError {
     pub fn is_invalid_traffic_routing_configuration_exception(&self) -> bool {
         matches!(self, Self::InvalidTrafficRoutingConfigurationException(_))
     }
+    /// Returns `true` if the error kind is `CreateDeploymentConfigError::InvalidZonalDeploymentConfigurationException`.
+    pub fn is_invalid_zonal_deployment_configuration_exception(&self) -> bool {
+        matches!(self, Self::InvalidZonalDeploymentConfigurationException(_))
+    }
 }
 impl ::std::error::Error for CreateDeploymentConfigError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -344,6 +351,7 @@ impl ::std::error::Error for CreateDeploymentConfigError {
             Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidMinimumHealthyHostValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTrafficRoutingConfigurationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidZonalDeploymentConfigurationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -358,6 +366,7 @@ impl ::std::fmt::Display for CreateDeploymentConfigError {
             Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
             Self::InvalidMinimumHealthyHostValueException(_inner) => _inner.fmt(f),
             Self::InvalidTrafficRoutingConfigurationException(_inner) => _inner.fmt(f),
+            Self::InvalidZonalDeploymentConfigurationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -386,6 +395,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploym
             Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidMinimumHealthyHostValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTrafficRoutingConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidZonalDeploymentConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

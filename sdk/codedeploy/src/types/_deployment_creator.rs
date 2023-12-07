@@ -17,6 +17,7 @@
 ///     DeploymentCreator::CodeDeploy => { /* ... */ },
 ///     DeploymentCreator::CodeDeployAutoUpdate => { /* ... */ },
 ///     DeploymentCreator::Autoscaling => { /* ... */ },
+///     DeploymentCreator::AutoscalingTermination => { /* ... */ },
 ///     DeploymentCreator::CodeDeployRollback => { /* ... */ },
 ///     DeploymentCreator::User => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -57,6 +58,8 @@ pub enum DeploymentCreator {
     #[allow(missing_docs)] // documentation missing in model
     Autoscaling,
     #[allow(missing_docs)] // documentation missing in model
+    AutoscalingTermination,
+    #[allow(missing_docs)] // documentation missing in model
     CodeDeployRollback,
     #[allow(missing_docs)] // documentation missing in model
     User,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for DeploymentCreator {
             "CodeDeploy" => DeploymentCreator::CodeDeploy,
             "CodeDeployAutoUpdate" => DeploymentCreator::CodeDeployAutoUpdate,
             "autoscaling" => DeploymentCreator::Autoscaling,
+            "autoscalingTermination" => DeploymentCreator::AutoscalingTermination,
             "codeDeployRollback" => DeploymentCreator::CodeDeployRollback,
             "user" => DeploymentCreator::User,
             other => DeploymentCreator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,6 +98,7 @@ impl DeploymentCreator {
             DeploymentCreator::CodeDeploy => "CodeDeploy",
             DeploymentCreator::CodeDeployAutoUpdate => "CodeDeployAutoUpdate",
             DeploymentCreator::Autoscaling => "autoscaling",
+            DeploymentCreator::AutoscalingTermination => "autoscalingTermination",
             DeploymentCreator::CodeDeployRollback => "codeDeployRollback",
             DeploymentCreator::User => "user",
             DeploymentCreator::Unknown(value) => value.as_str(),
@@ -107,6 +112,7 @@ impl DeploymentCreator {
             "CodeDeploy",
             "CodeDeployAutoUpdate",
             "autoscaling",
+            "autoscalingTermination",
             "codeDeployRollback",
             "user",
         ]

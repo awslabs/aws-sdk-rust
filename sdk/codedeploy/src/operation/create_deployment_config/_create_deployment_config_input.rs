@@ -19,6 +19,9 @@ pub struct CreateDeploymentConfigInput {
     pub traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub zonal_config: ::std::option::Option<crate::types::ZonalConfig>,
 }
 impl CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
@@ -44,6 +47,11 @@ impl CreateDeploymentConfigInput {
     pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn zonal_config(&self) -> ::std::option::Option<&crate::types::ZonalConfig> {
+        self.zonal_config.as_ref()
+    }
 }
 impl CreateDeploymentConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
@@ -60,6 +68,7 @@ pub struct CreateDeploymentConfigInputBuilder {
     pub(crate) minimum_healthy_hosts: ::std::option::Option<crate::types::MinimumHealthyHosts>,
     pub(crate) traffic_routing_config: ::std::option::Option<crate::types::TrafficRoutingConfig>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
+    pub(crate) zonal_config: ::std::option::Option<crate::types::ZonalConfig>,
 }
 impl CreateDeploymentConfigInputBuilder {
     /// <p>The name of the deployment configuration to create.</p>
@@ -140,6 +149,23 @@ impl CreateDeploymentConfigInputBuilder {
     pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
         &self.compute_platform
     }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn zonal_config(mut self, input: crate::types::ZonalConfig) -> Self {
+        self.zonal_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn set_zonal_config(mut self, input: ::std::option::Option<crate::types::ZonalConfig>) -> Self {
+        self.zonal_config = input;
+        self
+    }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn get_zonal_config(&self) -> &::std::option::Option<crate::types::ZonalConfig> {
+        &self.zonal_config
+    }
     /// Consumes the builder and constructs a [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
     pub fn build(
         self,
@@ -152,6 +178,7 @@ impl CreateDeploymentConfigInputBuilder {
             minimum_healthy_hosts: self.minimum_healthy_hosts,
             traffic_routing_config: self.traffic_routing_config,
             compute_platform: self.compute_platform,
+            zonal_config: self.zonal_config,
         })
     }
 }

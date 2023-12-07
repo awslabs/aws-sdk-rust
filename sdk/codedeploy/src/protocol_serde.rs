@@ -367,6 +367,8 @@ pub(crate) mod shape_invalid_trigger_config_exception;
 
 pub(crate) mod shape_invalid_update_outdated_instances_only_value_exception;
 
+pub(crate) mod shape_invalid_zonal_deployment_configuration_exception;
+
 pub(crate) mod shape_lifecycle_event_already_completed_exception;
 
 pub(crate) mod shape_lifecycle_hook_limit_exceeded_exception;
@@ -523,6 +525,8 @@ pub(crate) mod shape_traffic_routing_config;
 
 pub(crate) mod shape_trigger_config;
 
+pub(crate) mod shape_zonal_config;
+
 pub(crate) mod shape_alarm;
 
 pub(crate) mod shape_app_spec_content;
@@ -560,6 +564,8 @@ pub(crate) mod shape_lambda_target;
 pub(crate) mod shape_last_deployment_info;
 
 pub(crate) mod shape_lifecycle_event_list;
+
+pub(crate) mod shape_minimum_healthy_hosts_per_zone;
 
 pub(crate) mod shape_raw_string;
 

@@ -21,5 +21,11 @@ pub fn ser_create_deployment_config_input_input(
     if let Some(var_6) = &input.compute_platform {
         object.key("computePlatform").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.zonal_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("zonalConfig").start_object();
+        crate::protocol_serde::shape_zonal_config::ser_zonal_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

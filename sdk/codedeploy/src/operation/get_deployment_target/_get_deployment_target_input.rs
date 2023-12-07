@@ -34,6 +34,7 @@ pub struct GetDeploymentTargetInputBuilder {
 }
 impl GetDeploymentTargetInputBuilder {
     /// <p> The unique ID of a deployment. </p>
+    /// This field is required.
     pub fn deployment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deployment_id = ::std::option::Option::Some(input.into());
         self
@@ -48,6 +49,7 @@ impl GetDeploymentTargetInputBuilder {
         &self.deployment_id
     }
     /// <p> The unique ID of a deployment target. </p>
+    /// This field is required.
     pub fn target_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_id = ::std::option::Option::Some(input.into());
         self

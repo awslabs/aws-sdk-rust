@@ -6,17 +6,27 @@
 pub struct AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    /// <p>The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub hook: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub termination_hook: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroup {
     /// <p>The Auto Scaling group name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    /// <p>The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn hook(&self) -> ::std::option::Option<&str> {
         self.hook.as_deref()
+    }
+    /// <p>The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn termination_hook(&self) -> ::std::option::Option<&str> {
+        self.termination_hook.as_deref()
     }
 }
 impl AutoScalingGroup {
@@ -32,6 +42,7 @@ impl AutoScalingGroup {
 pub struct AutoScalingGroupBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) hook: ::std::option::Option<::std::string::String>,
+    pub(crate) termination_hook: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The Auto Scaling group name.</p>
@@ -48,25 +59,46 @@ impl AutoScalingGroupBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    /// <p>The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn hook(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hook = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    /// <p>The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_hook(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hook = input;
         self
     }
-    /// <p>An Auto Scaling lifecycle event hook name.</p>
+    /// <p>The name of the launch hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the launch hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn get_hook(&self) -> &::std::option::Option<::std::string::String> {
         &self.hook
+    }
+    /// <p>The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn termination_hook(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.termination_hook = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn set_termination_hook(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.termination_hook = input;
+        self
+    }
+    /// <p>The name of the termination hook that CodeDeploy installed into the Auto Scaling group.</p>
+    /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn get_termination_hook(&self) -> &::std::option::Option<::std::string::String> {
+        &self.termination_hook
     }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
             name: self.name,
             hook: self.hook,
+            termination_hook: self.termination_hook,
         }
     }
 }

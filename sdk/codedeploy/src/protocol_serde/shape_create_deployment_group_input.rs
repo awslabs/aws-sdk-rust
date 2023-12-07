@@ -129,5 +129,8 @@ pub fn ser_create_deployment_group_input_input(
         }
         array_40.finish();
     }
+    if let Some(var_43) = &input.termination_hook_enabled {
+        object.key("terminationHookEnabled").boolean(*var_43);
+    }
     Ok(())
 }

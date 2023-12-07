@@ -264,6 +264,8 @@ pub enum ListDeploymentTargetsError {
     InvalidInstanceTypeException(crate::types::error::InvalidInstanceTypeException),
     /// <p>The next token was specified in an invalid format.</p>
     InvalidNextTokenException(crate::types::error::InvalidNextTokenException),
+    /// <p> The target filter name is invalid. </p>
+    InvalidTargetFilterNameException(crate::types::error::InvalidTargetFilterNameException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -305,6 +307,7 @@ impl ListDeploymentTargetsError {
             Self::InvalidInstanceStatusException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInstanceTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidTargetFilterNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -340,6 +343,10 @@ impl ListDeploymentTargetsError {
     pub fn is_invalid_next_token_exception(&self) -> bool {
         matches!(self, Self::InvalidNextTokenException(_))
     }
+    /// Returns `true` if the error kind is `ListDeploymentTargetsError::InvalidTargetFilterNameException`.
+    pub fn is_invalid_target_filter_name_exception(&self) -> bool {
+        matches!(self, Self::InvalidTargetFilterNameException(_))
+    }
 }
 impl ::std::error::Error for ListDeploymentTargetsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -352,6 +359,7 @@ impl ::std::error::Error for ListDeploymentTargetsError {
             Self::InvalidInstanceStatusException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInstanceTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidTargetFilterNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -367,6 +375,7 @@ impl ::std::fmt::Display for ListDeploymentTargetsError {
             Self::InvalidInstanceStatusException(_inner) => _inner.fmt(f),
             Self::InvalidInstanceTypeException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidTargetFilterNameException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -396,6 +405,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListDeploymen
             Self::InvalidInstanceStatusException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInstanceTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidTargetFilterNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

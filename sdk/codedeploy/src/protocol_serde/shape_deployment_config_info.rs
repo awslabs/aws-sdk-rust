@@ -49,6 +49,9 @@ where
                             builder = builder
                                 .set_traffic_routing_config(crate::protocol_serde::shape_traffic_routing_config::de_traffic_routing_config(tokens)?);
                         }
+                        "zonalConfig" => {
+                            builder = builder.set_zonal_config(crate::protocol_serde::shape_zonal_config::de_zonal_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

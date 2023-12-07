@@ -120,5 +120,8 @@ pub fn ser_update_deployment_group_input_input(
         crate::protocol_serde::shape_on_premises_tag_set::ser_on_premises_tag_set(&mut object_39, var_38)?;
         object_39.finish();
     }
+    if let Some(var_40) = &input.termination_hook_enabled {
+        object.key("terminationHookEnabled").boolean(*var_40);
+    }
     Ok(())
 }

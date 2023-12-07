@@ -185,4 +185,21 @@ impl CreateDeploymentConfigFluentBuilder {
     pub fn get_compute_platform(&self) -> &::std::option::Option<crate::types::ComputePlatform> {
         self.inner.get_compute_platform()
     }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn zonal_config(mut self, input: crate::types::ZonalConfig) -> Self {
+        self.inner = self.inner.zonal_config(input);
+        self
+    }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn set_zonal_config(mut self, input: ::std::option::Option<crate::types::ZonalConfig>) -> Self {
+        self.inner = self.inner.set_zonal_config(input);
+        self
+    }
+    /// <p>Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability Zone</a> at a time, within an Amazon Web Services Region.</p>
+    /// <p>For more information about the zonal configuration feature, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config">zonal configuration</a> in the <i>CodeDeploy User Guide</i>.</p>
+    pub fn get_zonal_config(&self) -> &::std::option::Option<crate::types::ZonalConfig> {
+        self.inner.get_zonal_config()
+    }
 }
