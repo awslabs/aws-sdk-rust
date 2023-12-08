@@ -16,6 +16,7 @@
 ///     KxClusterType::Gp => { /* ... */ },
 ///     KxClusterType::Hdb => { /* ... */ },
 ///     KxClusterType::Rdb => { /* ... */ },
+///     KxClusterType::Tickerplant => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum KxClusterType {
     Hdb,
     #[allow(missing_docs)] // documentation missing in model
     Rdb,
+    #[allow(missing_docs)] // documentation missing in model
+    Tickerplant,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for KxClusterType {
             "GP" => KxClusterType::Gp,
             "HDB" => KxClusterType::Hdb,
             "RDB" => KxClusterType::Rdb,
+            "TICKERPLANT" => KxClusterType::Tickerplant,
             other => KxClusterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,13 @@ impl KxClusterType {
             KxClusterType::Gp => "GP",
             KxClusterType::Hdb => "HDB",
             KxClusterType::Rdb => "RDB",
+            KxClusterType::Tickerplant => "TICKERPLANT",
             KxClusterType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GATEWAY", "GP", "HDB", "RDB"]
+        &["GATEWAY", "GP", "HDB", "RDB", "TICKERPLANT"]
     }
 }
 impl ::std::convert::AsRef<str> for KxClusterType {

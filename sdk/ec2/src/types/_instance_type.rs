@@ -183,6 +183,8 @@
 ///     InstanceType::C7i4xlarge => { /* ... */ },
 ///     InstanceType::C7i8xlarge => { /* ... */ },
 ///     InstanceType::C7iLarge => { /* ... */ },
+///     InstanceType::C7iMetal24xl => { /* ... */ },
+///     InstanceType::C7iMetal48xl => { /* ... */ },
 ///     InstanceType::C7iXlarge => { /* ... */ },
 ///     InstanceType::Cc14xlarge => { /* ... */ },
 ///     InstanceType::Cc28xlarge => { /* ... */ },
@@ -279,7 +281,9 @@
 ///     InstanceType::I4g8xlarge => { /* ... */ },
 ///     InstanceType::I4gLarge => { /* ... */ },
 ///     InstanceType::I4gXlarge => { /* ... */ },
+///     InstanceType::I4i12xlarge => { /* ... */ },
 ///     InstanceType::I4i16xlarge => { /* ... */ },
+///     InstanceType::I4i24xlarge => { /* ... */ },
 ///     InstanceType::I4i2xlarge => { /* ... */ },
 ///     InstanceType::I4i32xlarge => { /* ... */ },
 ///     InstanceType::I4i4xlarge => { /* ... */ },
@@ -494,8 +498,11 @@
 ///     InstanceType::M7i4xlarge => { /* ... */ },
 ///     InstanceType::M7i8xlarge => { /* ... */ },
 ///     InstanceType::M7iLarge => { /* ... */ },
+///     InstanceType::M7iMetal24xl => { /* ... */ },
+///     InstanceType::M7iMetal48xl => { /* ... */ },
 ///     InstanceType::M7iXlarge => { /* ... */ },
 ///     InstanceType::Mac1Metal => { /* ... */ },
+///     InstanceType::Mac2M2Metal => { /* ... */ },
 ///     InstanceType::Mac2M2proMetal => { /* ... */ },
 ///     InstanceType::Mac2Metal => { /* ... */ },
 ///     InstanceType::P216xlarge => { /* ... */ },
@@ -686,6 +693,8 @@
 ///     InstanceType::R7i4xlarge => { /* ... */ },
 ///     InstanceType::R7i8xlarge => { /* ... */ },
 ///     InstanceType::R7iLarge => { /* ... */ },
+///     InstanceType::R7iMetal24xl => { /* ... */ },
+///     InstanceType::R7iMetal48xl => { /* ... */ },
 ///     InstanceType::R7iXlarge => { /* ... */ },
 ///     InstanceType::R7iz12xlarge => { /* ... */ },
 ///     InstanceType::R7iz16xlarge => { /* ... */ },
@@ -1154,6 +1163,10 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C7iLarge,
     #[allow(missing_docs)] // documentation missing in model
+    C7iMetal24xl,
+    #[allow(missing_docs)] // documentation missing in model
+    C7iMetal48xl,
+    #[allow(missing_docs)] // documentation missing in model
     C7iXlarge,
     #[allow(missing_docs)] // documentation missing in model
     Cc14xlarge,
@@ -1346,7 +1359,11 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     I4gXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    I4i12xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     I4i16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4i24xlarge,
     #[allow(missing_docs)] // documentation missing in model
     I4i2xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -1776,9 +1793,15 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M7iLarge,
     #[allow(missing_docs)] // documentation missing in model
+    M7iMetal24xl,
+    #[allow(missing_docs)] // documentation missing in model
+    M7iMetal48xl,
+    #[allow(missing_docs)] // documentation missing in model
     M7iXlarge,
     #[allow(missing_docs)] // documentation missing in model
     Mac1Metal,
+    #[allow(missing_docs)] // documentation missing in model
+    Mac2M2Metal,
     #[allow(missing_docs)] // documentation missing in model
     Mac2M2proMetal,
     #[allow(missing_docs)] // documentation missing in model
@@ -2160,6 +2183,10 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R7iLarge,
     #[allow(missing_docs)] // documentation missing in model
+    R7iMetal24xl,
+    #[allow(missing_docs)] // documentation missing in model
+    R7iMetal48xl,
+    #[allow(missing_docs)] // documentation missing in model
     R7iXlarge,
     #[allow(missing_docs)] // documentation missing in model
     R7iz12xlarge,
@@ -2533,6 +2560,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "c7i.4xlarge" => InstanceType::C7i4xlarge,
             "c7i.8xlarge" => InstanceType::C7i8xlarge,
             "c7i.large" => InstanceType::C7iLarge,
+            "c7i.metal-24xl" => InstanceType::C7iMetal24xl,
+            "c7i.metal-48xl" => InstanceType::C7iMetal48xl,
             "c7i.xlarge" => InstanceType::C7iXlarge,
             "cc1.4xlarge" => InstanceType::Cc14xlarge,
             "cc2.8xlarge" => InstanceType::Cc28xlarge,
@@ -2629,7 +2658,9 @@ impl ::std::convert::From<&str> for InstanceType {
             "i4g.8xlarge" => InstanceType::I4g8xlarge,
             "i4g.large" => InstanceType::I4gLarge,
             "i4g.xlarge" => InstanceType::I4gXlarge,
+            "i4i.12xlarge" => InstanceType::I4i12xlarge,
             "i4i.16xlarge" => InstanceType::I4i16xlarge,
+            "i4i.24xlarge" => InstanceType::I4i24xlarge,
             "i4i.2xlarge" => InstanceType::I4i2xlarge,
             "i4i.32xlarge" => InstanceType::I4i32xlarge,
             "i4i.4xlarge" => InstanceType::I4i4xlarge,
@@ -2844,8 +2875,11 @@ impl ::std::convert::From<&str> for InstanceType {
             "m7i.4xlarge" => InstanceType::M7i4xlarge,
             "m7i.8xlarge" => InstanceType::M7i8xlarge,
             "m7i.large" => InstanceType::M7iLarge,
+            "m7i.metal-24xl" => InstanceType::M7iMetal24xl,
+            "m7i.metal-48xl" => InstanceType::M7iMetal48xl,
             "m7i.xlarge" => InstanceType::M7iXlarge,
             "mac1.metal" => InstanceType::Mac1Metal,
+            "mac2-m2.metal" => InstanceType::Mac2M2Metal,
             "mac2-m2pro.metal" => InstanceType::Mac2M2proMetal,
             "mac2.metal" => InstanceType::Mac2Metal,
             "p2.16xlarge" => InstanceType::P216xlarge,
@@ -3036,6 +3070,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "r7i.4xlarge" => InstanceType::R7i4xlarge,
             "r7i.8xlarge" => InstanceType::R7i8xlarge,
             "r7i.large" => InstanceType::R7iLarge,
+            "r7i.metal-24xl" => InstanceType::R7iMetal24xl,
+            "r7i.metal-48xl" => InstanceType::R7iMetal48xl,
             "r7i.xlarge" => InstanceType::R7iXlarge,
             "r7iz.12xlarge" => InstanceType::R7iz12xlarge,
             "r7iz.16xlarge" => InstanceType::R7iz16xlarge,
@@ -3320,6 +3356,8 @@ impl InstanceType {
             InstanceType::C7i4xlarge => "c7i.4xlarge",
             InstanceType::C7i8xlarge => "c7i.8xlarge",
             InstanceType::C7iLarge => "c7i.large",
+            InstanceType::C7iMetal24xl => "c7i.metal-24xl",
+            InstanceType::C7iMetal48xl => "c7i.metal-48xl",
             InstanceType::C7iXlarge => "c7i.xlarge",
             InstanceType::Cc14xlarge => "cc1.4xlarge",
             InstanceType::Cc28xlarge => "cc2.8xlarge",
@@ -3416,7 +3454,9 @@ impl InstanceType {
             InstanceType::I4g8xlarge => "i4g.8xlarge",
             InstanceType::I4gLarge => "i4g.large",
             InstanceType::I4gXlarge => "i4g.xlarge",
+            InstanceType::I4i12xlarge => "i4i.12xlarge",
             InstanceType::I4i16xlarge => "i4i.16xlarge",
+            InstanceType::I4i24xlarge => "i4i.24xlarge",
             InstanceType::I4i2xlarge => "i4i.2xlarge",
             InstanceType::I4i32xlarge => "i4i.32xlarge",
             InstanceType::I4i4xlarge => "i4i.4xlarge",
@@ -3631,8 +3671,11 @@ impl InstanceType {
             InstanceType::M7i4xlarge => "m7i.4xlarge",
             InstanceType::M7i8xlarge => "m7i.8xlarge",
             InstanceType::M7iLarge => "m7i.large",
+            InstanceType::M7iMetal24xl => "m7i.metal-24xl",
+            InstanceType::M7iMetal48xl => "m7i.metal-48xl",
             InstanceType::M7iXlarge => "m7i.xlarge",
             InstanceType::Mac1Metal => "mac1.metal",
+            InstanceType::Mac2M2Metal => "mac2-m2.metal",
             InstanceType::Mac2M2proMetal => "mac2-m2pro.metal",
             InstanceType::Mac2Metal => "mac2.metal",
             InstanceType::P216xlarge => "p2.16xlarge",
@@ -3823,6 +3866,8 @@ impl InstanceType {
             InstanceType::R7i4xlarge => "r7i.4xlarge",
             InstanceType::R7i8xlarge => "r7i.8xlarge",
             InstanceType::R7iLarge => "r7i.large",
+            InstanceType::R7iMetal24xl => "r7i.metal-24xl",
+            InstanceType::R7iMetal48xl => "r7i.metal-48xl",
             InstanceType::R7iXlarge => "r7i.xlarge",
             InstanceType::R7iz12xlarge => "r7iz.12xlarge",
             InstanceType::R7iz16xlarge => "r7iz.16xlarge",
@@ -4098,6 +4143,8 @@ impl InstanceType {
             "c7i.4xlarge",
             "c7i.8xlarge",
             "c7i.large",
+            "c7i.metal-24xl",
+            "c7i.metal-48xl",
             "c7i.xlarge",
             "cc1.4xlarge",
             "cc2.8xlarge",
@@ -4194,7 +4241,9 @@ impl InstanceType {
             "i4g.8xlarge",
             "i4g.large",
             "i4g.xlarge",
+            "i4i.12xlarge",
             "i4i.16xlarge",
+            "i4i.24xlarge",
             "i4i.2xlarge",
             "i4i.32xlarge",
             "i4i.4xlarge",
@@ -4409,8 +4458,11 @@ impl InstanceType {
             "m7i.4xlarge",
             "m7i.8xlarge",
             "m7i.large",
+            "m7i.metal-24xl",
+            "m7i.metal-48xl",
             "m7i.xlarge",
             "mac1.metal",
+            "mac2-m2.metal",
             "mac2-m2pro.metal",
             "mac2.metal",
             "p2.16xlarge",
@@ -4601,6 +4653,8 @@ impl InstanceType {
             "r7i.4xlarge",
             "r7i.8xlarge",
             "r7i.large",
+            "r7i.metal-24xl",
+            "r7i.metal-48xl",
             "r7i.xlarge",
             "r7iz.12xlarge",
             "r7iz.16xlarge",

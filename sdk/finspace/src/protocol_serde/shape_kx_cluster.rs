@@ -56,6 +56,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "volumes" => {
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
+                        }
                         "initializationScript" => {
                             builder = builder.set_initialization_script(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

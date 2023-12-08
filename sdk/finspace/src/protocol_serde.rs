@@ -31,9 +31,15 @@ pub(crate) mod shape_create_kx_cluster;
 
 pub(crate) mod shape_create_kx_database;
 
+pub(crate) mod shape_create_kx_dataview;
+
 pub(crate) mod shape_create_kx_environment;
 
+pub(crate) mod shape_create_kx_scaling_group;
+
 pub(crate) mod shape_create_kx_user;
+
+pub(crate) mod shape_create_kx_volume;
 
 pub(crate) mod shape_delete_environment;
 
@@ -41,9 +47,15 @@ pub(crate) mod shape_delete_kx_cluster;
 
 pub(crate) mod shape_delete_kx_database;
 
+pub(crate) mod shape_delete_kx_dataview;
+
 pub(crate) mod shape_delete_kx_environment;
 
+pub(crate) mod shape_delete_kx_scaling_group;
+
 pub(crate) mod shape_delete_kx_user;
+
+pub(crate) mod shape_delete_kx_volume;
 
 pub(crate) mod shape_get_environment;
 
@@ -55,9 +67,15 @@ pub(crate) mod shape_get_kx_connection_string;
 
 pub(crate) mod shape_get_kx_database;
 
+pub(crate) mod shape_get_kx_dataview;
+
 pub(crate) mod shape_get_kx_environment;
 
+pub(crate) mod shape_get_kx_scaling_group;
+
 pub(crate) mod shape_get_kx_user;
+
+pub(crate) mod shape_get_kx_volume;
 
 pub(crate) mod shape_list_environments;
 
@@ -69,9 +87,15 @@ pub(crate) mod shape_list_kx_clusters;
 
 pub(crate) mod shape_list_kx_databases;
 
+pub(crate) mod shape_list_kx_dataviews;
+
 pub(crate) mod shape_list_kx_environments;
 
+pub(crate) mod shape_list_kx_scaling_groups;
+
 pub(crate) mod shape_list_kx_users;
+
+pub(crate) mod shape_list_kx_volumes;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -87,11 +111,15 @@ pub(crate) mod shape_update_kx_cluster_databases;
 
 pub(crate) mod shape_update_kx_database;
 
+pub(crate) mod shape_update_kx_dataview;
+
 pub(crate) mod shape_update_kx_environment;
 
 pub(crate) mod shape_update_kx_environment_network;
 
 pub(crate) mod shape_update_kx_user;
+
+pub(crate) mod shape_update_kx_volume;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -113,9 +141,15 @@ pub(crate) mod shape_create_kx_cluster_input;
 
 pub(crate) mod shape_create_kx_database_input;
 
+pub(crate) mod shape_create_kx_dataview_input;
+
 pub(crate) mod shape_create_kx_environment_input;
 
+pub(crate) mod shape_create_kx_scaling_group_input;
+
 pub(crate) mod shape_create_kx_user_input;
+
+pub(crate) mod shape_create_kx_volume_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -141,11 +175,15 @@ pub(crate) mod shape_update_kx_cluster_databases_input;
 
 pub(crate) mod shape_update_kx_database_input;
 
+pub(crate) mod shape_update_kx_dataview_input;
+
 pub(crate) mod shape_update_kx_environment_input;
 
 pub(crate) mod shape_update_kx_environment_network_input;
 
 pub(crate) mod shape_update_kx_user_input;
+
+pub(crate) mod shape_update_kx_volume_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -173,6 +211,8 @@ pub(crate) mod shape_error_info;
 
 pub(crate) mod shape_federation_parameters;
 
+pub(crate) mod shape_kx_attached_clusters;
+
 pub(crate) mod shape_kx_cache_storage_configuration;
 
 pub(crate) mod shape_kx_cache_storage_configurations;
@@ -180,6 +220,8 @@ pub(crate) mod shape_kx_cache_storage_configurations;
 pub(crate) mod shape_kx_changesets;
 
 pub(crate) mod shape_kx_cluster_code_deployment_configuration;
+
+pub(crate) mod shape_kx_cluster_name_list;
 
 pub(crate) mod shape_kx_clusters;
 
@@ -193,23 +235,45 @@ pub(crate) mod shape_kx_database_configurations;
 
 pub(crate) mod shape_kx_databases;
 
+pub(crate) mod shape_kx_dataview_active_version_list;
+
+pub(crate) mod shape_kx_dataview_segment_configuration;
+
+pub(crate) mod shape_kx_dataview_segment_configuration_list;
+
+pub(crate) mod shape_kx_dataviews;
+
 pub(crate) mod shape_kx_deployment_configuration;
 
 pub(crate) mod shape_kx_environment_list;
+
+pub(crate) mod shape_kx_nas1_configuration;
 
 pub(crate) mod shape_kx_node_summaries;
 
 pub(crate) mod shape_kx_savedown_storage_configuration;
 
+pub(crate) mod shape_kx_scaling_group_configuration;
+
+pub(crate) mod shape_kx_scaling_group_list;
+
 pub(crate) mod shape_kx_user_list;
+
+pub(crate) mod shape_kx_volumes;
 
 pub(crate) mod shape_superuser_parameters;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_tickerplant_log_configuration;
+
 pub(crate) mod shape_transit_gateway_configuration;
 
+pub(crate) mod shape_volumes;
+
 pub(crate) mod shape_vpc_configuration;
+
+pub(crate) mod shape_kx_attached_cluster;
 
 pub(crate) mod shape_kx_changeset_list_entry;
 
@@ -219,11 +283,21 @@ pub(crate) mod shape_kx_database_cache_configuration;
 
 pub(crate) mod shape_kx_database_list_entry;
 
+pub(crate) mod shape_kx_dataview_active_version;
+
+pub(crate) mod shape_kx_dataview_configuration;
+
+pub(crate) mod shape_kx_dataview_list_entry;
+
 pub(crate) mod shape_kx_environment;
 
 pub(crate) mod shape_kx_node;
 
+pub(crate) mod shape_kx_scaling_group;
+
 pub(crate) mod shape_kx_user;
+
+pub(crate) mod shape_kx_volume;
 
 pub(crate) mod shape_network_acl_configuration;
 
@@ -233,6 +307,12 @@ pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;
 
+pub(crate) mod shape_tickerplant_log_volumes;
+
+pub(crate) mod shape_volume;
+
+pub(crate) mod shape_attached_cluster_list;
+
 pub(crate) mod shape_attribute_map;
 
 pub(crate) mod shape_icmp_type_code;
@@ -240,5 +320,7 @@ pub(crate) mod shape_icmp_type_code;
 pub(crate) mod shape_kx_database_cache_configurations;
 
 pub(crate) mod shape_port_range;
+
+pub(crate) mod shape_segment_configuration_db_path_list;
 
 pub(crate) mod shape_db_paths;

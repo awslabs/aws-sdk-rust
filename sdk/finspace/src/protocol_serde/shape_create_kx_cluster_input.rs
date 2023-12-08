@@ -90,21 +90,33 @@ pub fn ser_create_kx_cluster_input_input(
         crate::protocol_serde::shape_kx_savedown_storage_configuration::ser_kx_savedown_storage_configuration(&mut object_29, var_28)?;
         object_29.finish();
     }
-    if let Some(var_30) = &input.tags {
+    if let Some(var_30) = &input.scaling_group_configuration {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("tags").start_object();
-        for (key_32, value_33) in var_30 {
-            {
-                object_31.key(key_32.as_str()).string(value_33.as_str());
-            }
-        }
+        let mut object_31 = object.key("scalingGroupConfiguration").start_object();
+        crate::protocol_serde::shape_kx_scaling_group_configuration::ser_kx_scaling_group_configuration(&mut object_31, var_30)?;
         object_31.finish();
     }
-    if let Some(var_34) = &input.vpc_configuration {
+    if let Some(var_32) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_35 = object.key("vpcConfiguration").start_object();
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_35, var_34)?;
-        object_35.finish();
+        let mut object_33 = object.key("tags").start_object();
+        for (key_34, value_35) in var_32 {
+            {
+                object_33.key(key_34.as_str()).string(value_35.as_str());
+            }
+        }
+        object_33.finish();
+    }
+    if let Some(var_36) = &input.tickerplant_log_configuration {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("tickerplantLogConfiguration").start_object();
+        crate::protocol_serde::shape_tickerplant_log_configuration::ser_tickerplant_log_configuration(&mut object_37, var_36)?;
+        object_37.finish();
+    }
+    if let Some(var_38) = &input.vpc_configuration {
+        #[allow(unused_mut)]
+        let mut object_39 = object.key("vpcConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(&mut object_39, var_38)?;
+        object_39.finish();
     }
     Ok(())
 }

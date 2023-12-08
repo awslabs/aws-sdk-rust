@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`user_name(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_user_name):<br>required: **true**<br><p>A unique identifier for the user that you want to delete.</p><br>
     ///   - [`environment_id(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that ensures idempotency. This token expires in 10 minutes.</p><br>
     /// - On success, responds with [`DeleteKxUserOutput`](crate::operation::delete_kx_user::DeleteKxUserOutput)
     /// - On failure, responds with [`SdkError<DeleteKxUserError>`](crate::operation::delete_kx_user::DeleteKxUserError)
     pub fn delete_kx_user(&self) -> crate::operation::delete_kx_user::builders::DeleteKxUserFluentBuilder {

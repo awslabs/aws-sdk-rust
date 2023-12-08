@@ -144,9 +144,15 @@ mod create_kx_cluster;
 
 mod create_kx_database;
 
+mod create_kx_dataview;
+
 mod create_kx_environment;
 
+mod create_kx_scaling_group;
+
 mod create_kx_user;
+
+mod create_kx_volume;
 
 /// Operation customization and supporting types.
 ///
@@ -181,9 +187,15 @@ mod delete_kx_cluster;
 
 mod delete_kx_database;
 
+mod delete_kx_dataview;
+
 mod delete_kx_environment;
 
+mod delete_kx_scaling_group;
+
 mod delete_kx_user;
+
+mod delete_kx_volume;
 
 mod get_environment;
 
@@ -195,9 +207,15 @@ mod get_kx_connection_string;
 
 mod get_kx_database;
 
+mod get_kx_dataview;
+
 mod get_kx_environment;
 
+mod get_kx_scaling_group;
+
 mod get_kx_user;
+
+mod get_kx_volume;
 
 mod list_environments;
 
@@ -209,9 +227,15 @@ mod list_kx_clusters;
 
 mod list_kx_databases;
 
+mod list_kx_dataviews;
+
 mod list_kx_environments;
 
+mod list_kx_scaling_groups;
+
 mod list_kx_users;
+
+mod list_kx_volumes;
 
 mod list_tags_for_resource;
 
@@ -227,8 +251,12 @@ mod update_kx_cluster_databases;
 
 mod update_kx_database;
 
+mod update_kx_dataview;
+
 mod update_kx_environment;
 
 mod update_kx_environment_network;
 
 mod update_kx_user;
+
+mod update_kx_volume;

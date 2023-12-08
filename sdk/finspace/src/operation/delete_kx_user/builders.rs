@@ -136,4 +136,18 @@ impl DeleteKxUserFluentBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
 }

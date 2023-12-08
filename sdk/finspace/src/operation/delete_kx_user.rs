@@ -59,9 +59,18 @@ impl DeleteKxUser {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
+        runtime_plugins = runtime_plugins
+            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+                |token_provider, input| {
+                    let input: &mut crate::operation::delete_kx_user::DeleteKxUserInput = input.downcast_mut().expect("correct type");
+                    if input.client_token.is_none() {
+                        input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                    }
+                },
+            ))
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -205,6 +214,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteKxUser
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::delete_kx_user::DeleteKxUserInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_3) = &_input.client_token {
+                    {
+                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::delete_kx_user::DeleteKxUserInput,
@@ -212,6 +233,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteKxUser
             ) -> ::std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http::request::Builder::new())?;
@@ -266,6 +288,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteKxUserE
 pub enum DeleteKxUserError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>There was a conflict with this action, and it could not be completed.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
@@ -308,6 +332,7 @@ impl DeleteKxUserError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -318,6 +343,10 @@ impl DeleteKxUserError {
     /// Returns `true` if the error kind is `DeleteKxUserError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteKxUserError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteKxUserError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -340,6 +369,7 @@ impl ::std::error::Error for DeleteKxUserError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -352,6 +382,7 @@ impl ::std::fmt::Display for DeleteKxUserError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -378,6 +409,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteKxUserE
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

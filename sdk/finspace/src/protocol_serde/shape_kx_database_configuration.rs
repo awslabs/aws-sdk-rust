@@ -21,6 +21,15 @@ pub fn ser_kx_database_configuration(
     if let Some(var_5) = &input.changeset_id {
         object.key("changesetId").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.dataview_name {
+        object.key("dataviewName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.dataview_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("dataviewConfiguration").start_object();
+        crate::protocol_serde::shape_kx_dataview_configuration::ser_kx_dataview_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +65,18 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "dataviewName" => {
+                            builder = builder.set_dataview_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "dataviewConfiguration" => {
+                            builder = builder.set_dataview_configuration(
+                                crate::protocol_serde::shape_kx_dataview_configuration::de_kx_dataview_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

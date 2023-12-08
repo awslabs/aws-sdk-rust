@@ -10,6 +10,10 @@ pub struct KxDatabaseConfiguration {
     pub cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     /// <p>A unique identifier of the changeset that is associated with the cluster.</p>
     pub changeset_id: ::std::option::Option<::std::string::String>,
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub dataview_name: ::std::option::Option<::std::string::String>,
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
+    pub dataview_configuration: ::std::option::Option<crate::types::KxDataviewConfiguration>,
 }
 impl KxDatabaseConfiguration {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
@@ -27,6 +31,14 @@ impl KxDatabaseConfiguration {
     pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+        self.dataview_name.as_deref()
+    }
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
+    pub fn dataview_configuration(&self) -> ::std::option::Option<&crate::types::KxDataviewConfiguration> {
+        self.dataview_configuration.as_ref()
+    }
 }
 impl KxDatabaseConfiguration {
     /// Creates a new builder-style object to manufacture [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
@@ -42,6 +54,8 @@ pub struct KxDatabaseConfigurationBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) cache_configurations: ::std::option::Option<::std::vec::Vec<crate::types::KxDatabaseCacheConfiguration>>,
     pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataview_configuration: ::std::option::Option<crate::types::KxDataviewConfiguration>,
 }
 impl KxDatabaseConfigurationBuilder {
     /// <p>The name of the kdb database. When this parameter is specified in the structure, S3 with the whole database is included by default.</p>
@@ -93,6 +107,34 @@ impl KxDatabaseConfigurationBuilder {
     pub fn get_changeset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.changeset_id
     }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn dataview_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataview_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataview_name = input;
+        self
+    }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataview_name
+    }
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
+    pub fn dataview_configuration(mut self, input: crate::types::KxDataviewConfiguration) -> Self {
+        self.dataview_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
+    pub fn set_dataview_configuration(mut self, input: ::std::option::Option<crate::types::KxDataviewConfiguration>) -> Self {
+        self.dataview_configuration = input;
+        self
+    }
+    /// <p> The configuration of the dataview to be used with specified cluster. </p>
+    pub fn get_dataview_configuration(&self) -> &::std::option::Option<crate::types::KxDataviewConfiguration> {
+        &self.dataview_configuration
+    }
     /// Consumes the builder and constructs a [`KxDatabaseConfiguration`](crate::types::KxDatabaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`database_name`](crate::types::builders::KxDatabaseConfigurationBuilder::database_name)
@@ -106,6 +148,8 @@ impl KxDatabaseConfigurationBuilder {
             })?,
             cache_configurations: self.cache_configurations,
             changeset_id: self.changeset_id,
+            dataview_name: self.dataview_name,
+            dataview_configuration: self.dataview_configuration,
         })
     }
 }

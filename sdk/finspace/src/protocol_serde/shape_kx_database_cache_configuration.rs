@@ -15,6 +15,9 @@ pub fn ser_kx_database_cache_configuration(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.dataview_name {
+        object.key("dataviewName").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -42,6 +45,13 @@ where
                         }
                         "dbPaths" => {
                             builder = builder.set_db_paths(crate::protocol_serde::shape_db_paths::de_db_paths(tokens)?);
+                        }
+                        "dataviewName" => {
+                            builder = builder.set_dataview_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -253,6 +253,11 @@ pub(crate) fn de_get_kx_cluster(
                         crate::protocol_serde::shape_kx_savedown_storage_configuration::de_kx_savedown_storage_configuration(tokens)?,
                     );
                 }
+                "scalingGroupConfiguration" => {
+                    builder = builder.set_scaling_group_configuration(
+                        crate::protocol_serde::shape_kx_scaling_group_configuration::de_kx_scaling_group_configuration(tokens)?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -266,6 +271,14 @@ pub(crate) fn de_get_kx_cluster(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "tickerplantLogConfiguration" => {
+                    builder = builder.set_tickerplant_log_configuration(
+                        crate::protocol_serde::shape_tickerplant_log_configuration::de_tickerplant_log_configuration(tokens)?,
+                    );
+                }
+                "volumes" => {
+                    builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
                 }
                 "vpcConfiguration" => {
                     builder = builder.set_vpc_configuration(crate::protocol_serde::shape_vpc_configuration::de_vpc_configuration(tokens)?);

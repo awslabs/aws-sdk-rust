@@ -13,9 +13,9 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
-
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
+
+pub use crate::types::error::_invalid_request_exception::InvalidRequestException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 

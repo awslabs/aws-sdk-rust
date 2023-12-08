@@ -11,6 +11,8 @@ pub struct KxDatabaseCacheConfiguration {
     pub cache_type: ::std::string::String,
     /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
     pub db_paths: ::std::vec::Vec<::std::string::String>,
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub dataview_name: ::std::option::Option<::std::string::String>,
 }
 impl KxDatabaseCacheConfiguration {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
@@ -26,6 +28,10 @@ impl KxDatabaseCacheConfiguration {
         use std::ops::Deref;
         self.db_paths.deref()
     }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn dataview_name(&self) -> ::std::option::Option<&str> {
+        self.dataview_name.as_deref()
+    }
 }
 impl KxDatabaseCacheConfiguration {
     /// Creates a new builder-style object to manufacture [`KxDatabaseCacheConfiguration`](crate::types::KxDatabaseCacheConfiguration).
@@ -40,6 +46,7 @@ impl KxDatabaseCacheConfiguration {
 pub struct KxDatabaseCacheConfigurationBuilder {
     pub(crate) cache_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dataview_name: ::std::option::Option<::std::string::String>,
 }
 impl KxDatabaseCacheConfigurationBuilder {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
@@ -86,6 +93,20 @@ impl KxDatabaseCacheConfigurationBuilder {
     pub fn get_db_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.db_paths
     }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn dataview_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataview_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn set_dataview_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataview_name = input;
+        self
+    }
+    /// <p> The name of the dataview to be used for caching historical data on disk. </p>
+    pub fn get_dataview_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataview_name
+    }
     /// Consumes the builder and constructs a [`KxDatabaseCacheConfiguration`](crate::types::KxDatabaseCacheConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`cache_type`](crate::types::builders::KxDatabaseCacheConfigurationBuilder::cache_type)
@@ -104,6 +125,7 @@ impl KxDatabaseCacheConfigurationBuilder {
                     "db_paths was not specified but it is required when building KxDatabaseCacheConfiguration",
                 )
             })?,
+            dataview_name: self.dataview_name,
         })
     }
 }

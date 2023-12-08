@@ -7,6 +7,8 @@ pub struct DeleteKxUserInput {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the kdb environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKxUserInput {
     /// <p>A unique identifier for the user that you want to delete.</p>
@@ -16,6 +18,10 @@ impl DeleteKxUserInput {
     /// <p>A unique identifier for the kdb environment.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DeleteKxUserInput {
@@ -31,6 +37,7 @@ impl DeleteKxUserInput {
 pub struct DeleteKxUserInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKxUserInputBuilder {
     /// <p>A unique identifier for the user that you want to delete.</p>
@@ -63,6 +70,20 @@ impl DeleteKxUserInputBuilder {
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DeleteKxUserInput`](crate::operation::delete_kx_user::DeleteKxUserInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl DeleteKxUserInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_kx_user::DeleteKxUserInput {
             user_name: self.user_name,
             environment_id: self.environment_id,
+            client_token: self.client_token,
         })
     }
 }

@@ -26,12 +26,15 @@ pub struct KxCluster {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub cluster_type: ::std::option::Option<crate::types::KxClusterType>,
     /// <p>A description of the cluster.</p>
     pub cluster_description: ::std::option::Option<::std::string::String>,
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub release_label: ::std::option::Option<::std::string::String>,
+    /// <p> A list of volumes attached to the cluster. </p>
+    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub initialization_script: ::std::option::Option<::std::string::String>,
     /// <p> An IAM role that defines a set of permissions associated with a cluster. These permissions are assumed when a cluster attempts to access another cluster. </p>
@@ -78,6 +81,7 @@ impl KxCluster {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn cluster_type(&self) -> ::std::option::Option<&crate::types::KxClusterType> {
         self.cluster_type.as_ref()
@@ -89,6 +93,12 @@ impl KxCluster {
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub fn release_label(&self) -> ::std::option::Option<&str> {
         self.release_label.as_deref()
+    }
+    /// <p> A list of volumes attached to the cluster. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
+    pub fn volumes(&self) -> &[crate::types::Volume] {
+        self.volumes.as_deref().unwrap_or_default()
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn initialization_script(&self) -> ::std::option::Option<&str> {
@@ -136,6 +146,7 @@ pub struct KxClusterBuilder {
     pub(crate) cluster_type: ::std::option::Option<crate::types::KxClusterType>,
     pub(crate) cluster_description: ::std::option::Option<::std::string::String>,
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) initialization_script: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) az_mode: ::std::option::Option<crate::types::KxAzMode>,
@@ -222,6 +233,7 @@ impl KxClusterBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn cluster_type(mut self, input: crate::types::KxClusterType) -> Self {
         self.cluster_type = ::std::option::Option::Some(input);
@@ -233,6 +245,7 @@ impl KxClusterBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
         self.cluster_type = input;
@@ -244,6 +257,7 @@ impl KxClusterBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
         &self.cluster_type
@@ -275,6 +289,26 @@ impl KxClusterBuilder {
     /// <p>A version of the FinSpace managed kdb to run.</p>
     pub fn get_release_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_label
+    }
+    /// Appends an item to `volumes`.
+    ///
+    /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+    ///
+    /// <p> A list of volumes attached to the cluster. </p>
+    pub fn volumes(mut self, input: crate::types::Volume) -> Self {
+        let mut v = self.volumes.unwrap_or_default();
+        v.push(input);
+        self.volumes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p> A list of volumes attached to the cluster. </p>
+    pub fn set_volumes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>) -> Self {
+        self.volumes = input;
+        self
+    }
+    /// <p> A list of volumes attached to the cluster. </p>
+    pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
+        &self.volumes
     }
     /// <p>Specifies a Q program that will be run at launch of a cluster. It is a relative path within <i>.zip</i> file that contains the custom code, which will be loaded on the cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.</p>
     pub fn initialization_script(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -381,6 +415,7 @@ impl KxClusterBuilder {
             cluster_type: self.cluster_type,
             cluster_description: self.cluster_description,
             release_label: self.release_label,
+            volumes: self.volumes,
             initialization_script: self.initialization_script,
             execution_role: self.execution_role,
             az_mode: self.az_mode,

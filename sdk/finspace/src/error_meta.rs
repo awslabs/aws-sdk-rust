@@ -198,6 +198,37 @@ impl From<crate::operation::create_kx_database::CreateKxDatabaseError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_dataview::CreateKxDataviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_dataview::CreateKxDataviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_kx_dataview::CreateKxDataviewError> for Error {
+    fn from(err: crate::operation::create_kx_dataview::CreateKxDataviewError) -> Self {
+        match err {
+            crate::operation::create_kx_dataview::CreateKxDataviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_kx_dataview::CreateKxDataviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_kx_dataview::CreateKxDataviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_environment::CreateKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -230,6 +261,42 @@ impl From<crate::operation::create_kx_environment::CreateKxEnvironmentError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_scaling_group::CreateKxScalingGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_scaling_group::CreateKxScalingGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_kx_scaling_group::CreateKxScalingGroupError> for Error {
+    fn from(err: crate::operation::create_kx_scaling_group::CreateKxScalingGroupError) -> Self {
+        match err {
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_kx_scaling_group::CreateKxScalingGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_user::CreateKxUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -258,6 +325,37 @@ impl From<crate::operation::create_kx_user::CreateKxUserError> for Error {
             crate::operation::create_kx_user::CreateKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_kx_user::CreateKxUserError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_kx_user::CreateKxUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_volume::CreateKxVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_kx_volume::CreateKxVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_kx_volume::CreateKxVolumeError> for Error {
+    fn from(err: crate::operation::create_kx_volume::CreateKxVolumeError) -> Self {
+        match err {
+            crate::operation::create_kx_volume::CreateKxVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_kx_volume::CreateKxVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_kx_volume::CreateKxVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -342,6 +440,33 @@ impl From<crate::operation::delete_kx_database::DeleteKxDatabaseError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_dataview::DeleteKxDataviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_dataview::DeleteKxDataviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_kx_dataview::DeleteKxDataviewError> for Error {
+    fn from(err: crate::operation::delete_kx_dataview::DeleteKxDataviewError) -> Self {
+        match err {
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_kx_dataview::DeleteKxDataviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_environment::DeleteKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -360,6 +485,7 @@ impl From<crate::operation::delete_kx_environment::DeleteKxEnvironmentError> for
     fn from(err: crate::operation::delete_kx_environment::DeleteKxEnvironmentError) -> Self {
         match err {
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -369,6 +495,42 @@ impl From<crate::operation::delete_kx_environment::DeleteKxEnvironmentError> for
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_kx_environment::DeleteKxEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError> for Error {
+    fn from(err: crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError) -> Self {
+        match err {
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_kx_scaling_group::DeleteKxScalingGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -390,11 +552,40 @@ impl From<crate::operation::delete_kx_user::DeleteKxUserError> for Error {
     fn from(err: crate::operation::delete_kx_user::DeleteKxUserError) -> Self {
         match err {
             crate::operation::delete_kx_user::DeleteKxUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_user::DeleteKxUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_kx_user::DeleteKxUserError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_kx_user::DeleteKxUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_kx_user::DeleteKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_kx_user::DeleteKxUserError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_kx_user::DeleteKxUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_volume::DeleteKxVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_kx_volume::DeleteKxVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_kx_volume::DeleteKxVolumeError> for Error {
+    fn from(err: crate::operation::delete_kx_volume::DeleteKxVolumeError) -> Self {
+        match err {
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_kx_volume::DeleteKxVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -537,6 +728,32 @@ impl From<crate::operation::get_kx_database::GetKxDatabaseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_dataview::GetKxDataviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_dataview::GetKxDataviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_kx_dataview::GetKxDataviewError> for Error {
+    fn from(err: crate::operation::get_kx_dataview::GetKxDataviewError) -> Self {
+        match err {
+            crate::operation::get_kx_dataview::GetKxDataviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_dataview::GetKxDataviewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_dataview::GetKxDataviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_dataview::GetKxDataviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_dataview::GetKxDataviewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_dataview::GetKxDataviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_environment::GetKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -555,10 +772,41 @@ impl From<crate::operation::get_kx_environment::GetKxEnvironmentError> for Error
     fn from(err: crate::operation::get_kx_environment::GetKxEnvironmentError) -> Self {
         match err {
             crate::operation::get_kx_environment::GetKxEnvironmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_environment::GetKxEnvironmentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::get_kx_environment::GetKxEnvironmentError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_kx_environment::GetKxEnvironmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_kx_environment::GetKxEnvironmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_kx_environment::GetKxEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_scaling_group::GetKxScalingGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_scaling_group::GetKxScalingGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_kx_scaling_group::GetKxScalingGroupError> for Error {
+    fn from(err: crate::operation::get_kx_scaling_group::GetKxScalingGroupError) -> Self {
+        match err {
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_scaling_group::GetKxScalingGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -588,6 +836,34 @@ impl From<crate::operation::get_kx_user::GetKxUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_volume::GetKxVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_kx_volume::GetKxVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_kx_volume::GetKxVolumeError> for Error {
+    fn from(err: crate::operation::get_kx_volume::GetKxVolumeError) -> Self {
+        match err {
+            crate::operation::get_kx_volume::GetKxVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_kx_volume::GetKxVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_environments::ListEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -605,6 +881,7 @@ where
 impl From<crate::operation::list_environments::ListEnvironmentsError> for Error {
     fn from(err: crate::operation::list_environments::ListEnvironmentsError) -> Self {
         match err {
+            crate::operation::list_environments::ListEnvironmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_environments::ListEnvironmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_environments::ListEnvironmentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_environments::ListEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -720,6 +997,32 @@ impl From<crate::operation::list_kx_databases::ListKxDatabasesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_dataviews::ListKxDataviewsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_dataviews::ListKxDataviewsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_kx_dataviews::ListKxDataviewsError> for Error {
+    fn from(err: crate::operation::list_kx_dataviews::ListKxDataviewsError) -> Self {
+        match err {
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_kx_dataviews::ListKxDataviewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_environments::ListKxEnvironmentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -737,9 +1040,42 @@ where
 impl From<crate::operation::list_kx_environments::ListKxEnvironmentsError> for Error {
     fn from(err: crate::operation::list_kx_environments::ListKxEnvironmentsError) -> Self {
         match err {
+            crate::operation::list_kx_environments::ListKxEnvironmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_kx_environments::ListKxEnvironmentsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_kx_environments::ListKxEnvironmentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_kx_environments::ListKxEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError> for Error {
+    fn from(err: crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError) -> Self {
+        match err {
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_kx_scaling_groups::ListKxScalingGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -766,6 +1102,34 @@ impl From<crate::operation::list_kx_users::ListKxUsersError> for Error {
             crate::operation::list_kx_users::ListKxUsersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_kx_users::ListKxUsersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_kx_users::ListKxUsersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_volumes::ListKxVolumesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_kx_volumes::ListKxVolumesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_kx_volumes::ListKxVolumesError> for Error {
+    fn from(err: crate::operation::list_kx_volumes::ListKxVolumesError) -> Self {
+        match err {
+            crate::operation::list_kx_volumes::ListKxVolumesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_kx_volumes::ListKxVolumesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -998,6 +1362,36 @@ impl From<crate::operation::update_kx_database::UpdateKxDatabaseError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_dataview::UpdateKxDataviewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_dataview::UpdateKxDataviewError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_kx_dataview::UpdateKxDataviewError> for Error {
+    fn from(err: crate::operation::update_kx_dataview::UpdateKxDataviewError) -> Self {
+        match err {
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_kx_dataview::UpdateKxDataviewError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_environment::UpdateKxEnvironmentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1096,6 +1490,34 @@ impl From<crate::operation::update_kx_user::UpdateKxUserError> for Error {
             crate::operation::update_kx_user::UpdateKxUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_kx_user::UpdateKxUserError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_kx_user::UpdateKxUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_volume::UpdateKxVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_kx_volume::UpdateKxVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_kx_volume::UpdateKxVolumeError> for Error {
+    fn from(err: crate::operation::update_kx_volume::UpdateKxVolumeError) -> Self {
+        match err {
+            crate::operation::update_kx_volume::UpdateKxVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_kx_volume::UpdateKxVolumeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

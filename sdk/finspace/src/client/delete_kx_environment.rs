@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`environment_id(impl Into<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>A unique identifier for the kdb environment.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder::set_client_token):<br>required: **false**<br><p>A token that ensures idempotency. This token expires in 10 minutes.</p><br>
     /// - On success, responds with [`DeleteKxEnvironmentOutput`](crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput)
     /// - On failure, responds with [`SdkError<DeleteKxEnvironmentError>`](crate::operation::delete_kx_environment::DeleteKxEnvironmentError)
     pub fn delete_kx_environment(&self) -> crate::operation::delete_kx_environment::builders::DeleteKxEnvironmentFluentBuilder {

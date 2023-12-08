@@ -156,6 +156,7 @@ impl CreateKxClusterFluentBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn cluster_type(mut self, input: crate::types::KxClusterType) -> Self {
         self.inner = self.inner.cluster_type(input);
@@ -167,6 +168,7 @@ impl CreateKxClusterFluentBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn set_cluster_type(mut self, input: ::std::option::Option<crate::types::KxClusterType>) -> Self {
         self.inner = self.inner.set_cluster_type(input);
@@ -178,9 +180,24 @@ impl CreateKxClusterFluentBuilder {
     /// <li> <p>RDB – A Realtime Database. This type of database captures all the data from a ticker plant and stores it in memory until the end of day, after which it writes all of its data to a disk and reloads the HDB. This cluster type requires local storage for temporary storage of data during the savedown process. If you specify this field in your request, you must provide the <code>savedownStorageConfiguration</code> parameter.</p> </li>
     /// <li> <p>GATEWAY – A gateway cluster allows you to access data across processes in kdb systems. It allows you to create your own routing logic using the initialization scripts and custom code. This type of cluster does not require a writable local storage.</p> </li>
     /// <li> <p>GP – A general purpose cluster allows you to quickly iterate on code during development by granting greater access to system commands and enabling a fast reload of custom code. This cluster type can optionally mount databases including cache and savedown storage. For this cluster type, the node count is fixed at 1. It does not support autoscaling and supports only <code>SINGLE</code> AZ mode.</p> </li>
+    /// <li> <p>Tickerplant – A tickerplant cluster allows you to subscribe to feed handlers based on IAM permissions. It can publish to RDBs, other Tickerplants, and real-time subscribers (RTS). Tickerplants can persist messages to log, which is readable by any RDB environment. It supports only single-node that is only one kdb process.</p> </li>
     /// </ul>
     pub fn get_cluster_type(&self) -> &::std::option::Option<crate::types::KxClusterType> {
         self.inner.get_cluster_type()
+    }
+    /// <p> A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    pub fn tickerplant_log_configuration(mut self, input: crate::types::TickerplantLogConfiguration) -> Self {
+        self.inner = self.inner.tickerplant_log_configuration(input);
+        self
+    }
+    /// <p> A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    pub fn set_tickerplant_log_configuration(mut self, input: ::std::option::Option<crate::types::TickerplantLogConfiguration>) -> Self {
+        self.inner = self.inner.set_tickerplant_log_configuration(input);
+        self
+    }
+    /// <p> A configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the location of the TP volume on the cluster will be available by using the global variable <code>.aws.tp_log_path</code>. </p>
+    pub fn get_tickerplant_log_configuration(&self) -> &::std::option::Option<crate::types::TickerplantLogConfiguration> {
+        self.inner.get_tickerplant_log_configuration()
     }
     /// Appends an item to `databases`.
     ///
@@ -422,5 +439,19 @@ impl CreateKxClusterFluentBuilder {
     /// <p>A list of key-value pairs to label the cluster. You can add up to 50 tags to a cluster.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>The structure that stores the configuration details of a scaling group.</p>
+    pub fn scaling_group_configuration(mut self, input: crate::types::KxScalingGroupConfiguration) -> Self {
+        self.inner = self.inner.scaling_group_configuration(input);
+        self
+    }
+    /// <p>The structure that stores the configuration details of a scaling group.</p>
+    pub fn set_scaling_group_configuration(mut self, input: ::std::option::Option<crate::types::KxScalingGroupConfiguration>) -> Self {
+        self.inner = self.inner.set_scaling_group_configuration(input);
+        self
+    }
+    /// <p>The structure that stores the configuration details of a scaling group.</p>
+    pub fn get_scaling_group_configuration(&self) -> &::std::option::Option<crate::types::KxScalingGroupConfiguration> {
+        self.inner.get_scaling_group_configuration()
     }
 }

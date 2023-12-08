@@ -13,11 +13,20 @@ pub mod create_kx_cluster;
 /// Types for the `CreateKxDatabase` operation.
 pub mod create_kx_database;
 
+/// Types for the `CreateKxDataview` operation.
+pub mod create_kx_dataview;
+
 /// Types for the `CreateKxEnvironment` operation.
 pub mod create_kx_environment;
 
+/// Types for the `CreateKxScalingGroup` operation.
+pub mod create_kx_scaling_group;
+
 /// Types for the `CreateKxUser` operation.
 pub mod create_kx_user;
+
+/// Types for the `CreateKxVolume` operation.
+pub mod create_kx_volume;
 
 /// Types for the `DeleteEnvironment` operation.
 pub mod delete_environment;
@@ -28,11 +37,20 @@ pub mod delete_kx_cluster;
 /// Types for the `DeleteKxDatabase` operation.
 pub mod delete_kx_database;
 
+/// Types for the `DeleteKxDataview` operation.
+pub mod delete_kx_dataview;
+
 /// Types for the `DeleteKxEnvironment` operation.
 pub mod delete_kx_environment;
 
+/// Types for the `DeleteKxScalingGroup` operation.
+pub mod delete_kx_scaling_group;
+
 /// Types for the `DeleteKxUser` operation.
 pub mod delete_kx_user;
+
+/// Types for the `DeleteKxVolume` operation.
+pub mod delete_kx_volume;
 
 /// Types for the `GetEnvironment` operation.
 pub mod get_environment;
@@ -49,11 +67,20 @@ pub mod get_kx_connection_string;
 /// Types for the `GetKxDatabase` operation.
 pub mod get_kx_database;
 
+/// Types for the `GetKxDataview` operation.
+pub mod get_kx_dataview;
+
 /// Types for the `GetKxEnvironment` operation.
 pub mod get_kx_environment;
 
+/// Types for the `GetKxScalingGroup` operation.
+pub mod get_kx_scaling_group;
+
 /// Types for the `GetKxUser` operation.
 pub mod get_kx_user;
+
+/// Types for the `GetKxVolume` operation.
+pub mod get_kx_volume;
 
 /// Types for the `ListEnvironments` operation.
 pub mod list_environments;
@@ -70,11 +97,20 @@ pub mod list_kx_clusters;
 /// Types for the `ListKxDatabases` operation.
 pub mod list_kx_databases;
 
+/// Types for the `ListKxDataviews` operation.
+pub mod list_kx_dataviews;
+
 /// Types for the `ListKxEnvironments` operation.
 pub mod list_kx_environments;
 
+/// Types for the `ListKxScalingGroups` operation.
+pub mod list_kx_scaling_groups;
+
 /// Types for the `ListKxUsers` operation.
 pub mod list_kx_users;
+
+/// Types for the `ListKxVolumes` operation.
+pub mod list_kx_volumes;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -97,6 +133,9 @@ pub mod update_kx_cluster_databases;
 /// Types for the `UpdateKxDatabase` operation.
 pub mod update_kx_database;
 
+/// Types for the `UpdateKxDataview` operation.
+pub mod update_kx_dataview;
+
 /// Types for the `UpdateKxEnvironment` operation.
 pub mod update_kx_environment;
 
@@ -105,3 +144,6 @@ pub mod update_kx_environment_network;
 
 /// Types for the `UpdateKxUser` operation.
 pub mod update_kx_user;
+
+/// Types for the `UpdateKxVolume` operation.
+pub mod update_kx_volume;
