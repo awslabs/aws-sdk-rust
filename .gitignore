@@ -5,6 +5,8 @@
 .idea/
 .vscode/
 
+
+
 # Rust build artifacts
 target/
 
