@@ -468,4 +468,24 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         self.inner.get_serverless_v2_scaling_configuration()
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
+    }
 }

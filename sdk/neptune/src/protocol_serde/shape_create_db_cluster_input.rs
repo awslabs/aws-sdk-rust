@@ -170,6 +170,11 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_66) = &input.global_cluster_identifier {
         scope_65.string(var_66);
     }
+    #[allow(unused_mut)]
+    let mut scope_67 = writer.prefix("StorageType");
+    if let Some(var_68) = &input.storage_type {
+        scope_67.string(var_68);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

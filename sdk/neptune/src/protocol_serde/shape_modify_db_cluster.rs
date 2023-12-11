@@ -194,6 +194,24 @@ pub fn de_modify_db_cluster_http_error(
             }
             tmp
         }),
+        "StorageTypeNotSupported" => crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotSupportedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::StorageTypeNotSupportedFaultBuilder::default();
+                output = crate::protocol_serde::shape_storage_type_not_supported_fault::de_storage_type_not_supported_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_cluster::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::modify_db_cluster::ModifyDBClusterError::generic(generic),
     })
 }

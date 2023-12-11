@@ -207,6 +207,30 @@ pub use crate::types::_resource::Resource;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_aws_ec2_client_vpn_endpoint_details::AwsEc2ClientVpnEndpointDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_connect_options_details::AwsEc2ClientVpnEndpointClientConnectOptionsDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_connect_options_status_details::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_connection_log_options_details::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_details::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_mutual_authentication_details::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_active_directory_details::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails;
+
+pub use crate::types::_aws_s3_access_point_details::AwsS3AccessPointDetails;
+
+pub use crate::types::_aws_s3_access_point_vpc_configuration_details::AwsS3AccessPointVpcConfigurationDetails;
+
+pub use crate::types::_aws_s3_account_public_access_block_details::AwsS3AccountPublicAccessBlockDetails;
+
 pub use crate::types::_aws_msk_cluster_details::AwsMskClusterDetails;
 
 pub use crate::types::_aws_msk_cluster_cluster_info_details::AwsMskClusterClusterInfoDetails;
@@ -1043,8 +1067,6 @@ pub use crate::types::_aws_secrets_manager_secret_rotation_rules::AwsSecretsMana
 
 pub use crate::types::_aws_s3_object_details::AwsS3ObjectDetails;
 
-pub use crate::types::_aws_s3_account_public_access_block_details::AwsS3AccountPublicAccessBlockDetails;
-
 pub use crate::types::_aws_s3_bucket_details::AwsS3BucketDetails;
 
 pub use crate::types::_aws_s3_bucket_object_lock_configuration::AwsS3BucketObjectLockConfiguration;
@@ -1675,6 +1697,24 @@ mod _aws_dynamo_db_table_sse_description;
 
 mod _aws_dynamo_db_table_stream_specification;
 
+mod _aws_ec2_client_vpn_endpoint_authentication_options_active_directory_details;
+
+mod _aws_ec2_client_vpn_endpoint_authentication_options_details;
+
+mod _aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details;
+
+mod _aws_ec2_client_vpn_endpoint_authentication_options_mutual_authentication_details;
+
+mod _aws_ec2_client_vpn_endpoint_client_connect_options_details;
+
+mod _aws_ec2_client_vpn_endpoint_client_connect_options_status_details;
+
+mod _aws_ec2_client_vpn_endpoint_client_login_banner_options_details;
+
+mod _aws_ec2_client_vpn_endpoint_connection_log_options_details;
+
+mod _aws_ec2_client_vpn_endpoint_details;
+
 mod _aws_ec2_eip_details;
 
 mod _aws_ec2_instance_details;
@@ -2254,6 +2294,10 @@ mod _aws_route53_hosted_zone_object_details;
 mod _aws_route53_hosted_zone_vpc_details;
 
 mod _aws_route53_query_logging_config_details;
+
+mod _aws_s3_access_point_details;
+
+mod _aws_s3_access_point_vpc_configuration_details;
 
 mod _aws_s3_account_public_access_block_details;
 

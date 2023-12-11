@@ -147,6 +147,30 @@ pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_resource_details::ResourceDetailsBuilder;
 
+pub use crate::types::_aws_ec2_client_vpn_endpoint_details::AwsEc2ClientVpnEndpointDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_login_banner_options_details::AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_connect_options_details::AwsEc2ClientVpnEndpointClientConnectOptionsDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_client_connect_options_status_details::AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_connection_log_options_details::AwsEc2ClientVpnEndpointConnectionLogOptionsDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_details::AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_mutual_authentication_details::AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsBuilder;
+
+pub use crate::types::_aws_ec2_client_vpn_endpoint_authentication_options_active_directory_details::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsBuilder;
+
+pub use crate::types::_aws_s3_access_point_details::AwsS3AccessPointDetailsBuilder;
+
+pub use crate::types::_aws_s3_access_point_vpc_configuration_details::AwsS3AccessPointVpcConfigurationDetailsBuilder;
+
+pub use crate::types::_aws_s3_account_public_access_block_details::AwsS3AccountPublicAccessBlockDetailsBuilder;
+
 pub use crate::types::_aws_msk_cluster_details::AwsMskClusterDetailsBuilder;
 
 pub use crate::types::_aws_msk_cluster_cluster_info_details::AwsMskClusterClusterInfoDetailsBuilder;
@@ -980,8 +1004,6 @@ pub use crate::types::_aws_secrets_manager_secret_details::AwsSecretsManagerSecr
 pub use crate::types::_aws_secrets_manager_secret_rotation_rules::AwsSecretsManagerSecretRotationRulesBuilder;
 
 pub use crate::types::_aws_s3_object_details::AwsS3ObjectDetailsBuilder;
-
-pub use crate::types::_aws_s3_account_public_access_block_details::AwsS3AccountPublicAccessBlockDetailsBuilder;
 
 pub use crate::types::_aws_s3_bucket_details::AwsS3BucketDetailsBuilder;
 

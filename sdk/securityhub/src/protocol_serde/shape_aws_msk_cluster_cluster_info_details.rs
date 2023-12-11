@@ -30,6 +30,9 @@ pub fn ser_aws_msk_cluster_cluster_info_details(
         crate::protocol_serde::shape_aws_msk_cluster_cluster_info_client_authentication_details::ser_aws_msk_cluster_cluster_info_client_authentication_details(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.enhanced_monitoring {
+        object.key("EnhancedMonitoring").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -78,6 +81,13 @@ where
                             builder = builder.set_client_authentication(
                                     crate::protocol_serde::shape_aws_msk_cluster_cluster_info_client_authentication_details::de_aws_msk_cluster_cluster_info_client_authentication_details(tokens)?
                                 );
+                        }
+                        "EnhancedMonitoring" => {
+                            builder = builder.set_enhanced_monitoring(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -574,17 +574,17 @@ impl CreateDBClusterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()
     }
@@ -632,5 +632,49 @@ impl CreateDBClusterFluentBuilder {
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_cluster_identifier()
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
     }
 }

@@ -69,6 +69,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
@@ -181,6 +185,12 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -211,6 +221,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -582,6 +593,26 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -608,6 +639,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             deletion_protection: self.deletion_protection,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            storage_type: self.storage_type,
         })
     }
 }

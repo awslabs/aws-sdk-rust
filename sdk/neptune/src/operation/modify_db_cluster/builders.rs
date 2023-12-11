@@ -379,17 +379,17 @@ impl ModifyDBClusterFluentBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_iam_database_authentication()
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn cloudwatch_logs_export_configuration(mut self, input: crate::types::CloudwatchLogsExportConfiguration) -> Self {
         self.inner = self.inner.cloudwatch_logs_export_configuration(input);
         self
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
         self.inner.get_cloudwatch_logs_export_configuration()
     }
@@ -509,5 +509,43 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         self.inner.get_serverless_v2_scaling_configuration()
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_storage_type()
     }
 }

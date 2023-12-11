@@ -561,6 +561,33 @@ pub fn de_db_cluster(
                 builder = builder.set_global_cluster_identifier(var_43);
             }
             ,
+            s if s.matches("IOOptimizedNextAllowedModificationTime") /* IOOptimizedNextAllowedModificationTime com.amazonaws.neptune#DBCluster$IOOptimizedNextAllowedModificationTime */ =>  {
+                let var_44 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.neptune#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_io_optimized_next_allowed_modification_time(var_44);
+            }
+            ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.neptune#DBCluster$StorageType */ =>  {
+                let var_45 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_45);
+            }
+            ,
             _ => {}
         }
     }

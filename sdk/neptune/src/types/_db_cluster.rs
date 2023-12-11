@@ -78,7 +78,7 @@ pub struct DbCluster {
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
-    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::ClusterPendingModifiedValues>,
@@ -93,6 +93,10 @@ pub struct DbCluster {
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
+    pub io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbCluster {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -252,7 +256,7 @@ impl DbCluster {
     pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshot
     }
-    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_cloudwatch_logs_exports.is_none()`.
     pub fn enabled_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
@@ -282,6 +286,14 @@ impl DbCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
+    pub fn io_optimized_next_allowed_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.io_optimized_next_allowed_modification_time.as_ref()
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
     }
 }
 impl DbCluster {
@@ -338,6 +350,8 @@ pub struct DbClusterBuilder {
     pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterBuilder {
     /// <p> <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size is not fixed, but instead automatically adjusts as needed.</p>
@@ -890,19 +904,19 @@ impl DbClusterBuilder {
     ///
     /// To override the contents of this collection use [`set_enabled_cloudwatch_logs_exports`](Self::set_enabled_cloudwatch_logs_exports).
     ///
-    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn enabled_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn set_enabled_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
-    /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster is configured to export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch) and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn get_enabled_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enabled_cloudwatch_logs_exports
     }
@@ -996,6 +1010,34 @@ impl DbClusterBuilder {
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
+    /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
+    pub fn io_optimized_next_allowed_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.io_optimized_next_allowed_modification_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
+    pub fn set_io_optimized_next_allowed_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.io_optimized_next_allowed_modification_time = input;
+        self
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
+    pub fn get_io_optimized_next_allowed_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.io_optimized_next_allowed_modification_time
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type associated with the DB cluster.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -1042,6 +1084,8 @@ impl DbClusterBuilder {
             automatic_restart_time: self.automatic_restart_time,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             global_cluster_identifier: self.global_cluster_identifier,
+            io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
+            storage_type: self.storage_type,
         }
     }
 }

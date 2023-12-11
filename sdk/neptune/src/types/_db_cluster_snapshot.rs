@@ -47,6 +47,8 @@ pub struct DbClusterSnapshot {
     pub source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of EC2 Availability Zones that instances in the DB cluster snapshot can be restored in.</p>
@@ -133,6 +135,10 @@ impl DbClusterSnapshot {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl DbClusterSnapshot {
     /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
@@ -165,6 +171,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_db_cluster_snapshot_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -459,6 +466,20 @@ impl DbClusterSnapshotBuilder {
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
         crate::types::DbClusterSnapshot {
@@ -482,6 +503,7 @@ impl DbClusterSnapshotBuilder {
             db_cluster_snapshot_arn: self.db_cluster_snapshot_arn,
             source_db_cluster_snapshot_arn: self.source_db_cluster_snapshot_arn,
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+            storage_type: self.storage_type,
         }
     }
 }

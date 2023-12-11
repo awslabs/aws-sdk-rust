@@ -5,7 +5,7 @@
 pub struct UpdateConfigurationPolicyInput {
     /// <p> The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy. </p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p> The name of the configuration policy. </p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the configuration policy. </p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl UpdateConfigurationPolicyInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p> The name of the configuration policy. </p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -71,17 +71,17 @@ impl UpdateConfigurationPolicyInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p> The name of the configuration policy. </p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p> The name of the configuration policy. </p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p> The name of the configuration policy. </p>
+    /// <p> The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: <code>-, ., !, *, /</code>. </p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

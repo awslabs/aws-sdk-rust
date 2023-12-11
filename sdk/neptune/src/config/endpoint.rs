@@ -1054,6 +1054,22 @@ mod test {
         let error = endpoint.expect_err("expected error: Invalid Configuration: Missing Region [Missing region]");
         assert_eq!(format!("{}", error), "Invalid Configuration: Missing Region")
     }
+
+    /// Partition doesn't support DualStack
+    #[test]
+    fn test_55() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: DualStack is enabled but this partition does not support DualStack [Partition doesn't support DualStack]");
+        assert_eq!(format!("{}", error), "DualStack is enabled but this partition does not support DualStack")
+    }
 }
 
 /// Endpoint resolver trait specific to Amazon Neptune

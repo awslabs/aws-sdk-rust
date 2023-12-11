@@ -8,7 +8,7 @@ pub struct CampaignLimits {
     pub daily: ::std::option::Option<i32>,
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
     pub maximum_duration: ::std::option::Option<i32>,
-    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub messages_per_second: ::std::option::Option<i32>,
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
     pub total: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl CampaignLimits {
     pub fn maximum_duration(&self) -> ::std::option::Option<i32> {
         self.maximum_duration
     }
-    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn messages_per_second(&self) -> ::std::option::Option<i32> {
         self.messages_per_second
     }
@@ -83,17 +83,17 @@ impl CampaignLimitsBuilder {
     pub fn get_maximum_duration(&self) -> &::std::option::Option<i32> {
         &self.maximum_duration
     }
-    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn messages_per_second(mut self, input: i32) -> Self {
         self.messages_per_second = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn set_messages_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.messages_per_second = input;
         self
     }
-    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
+    /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 1. The maximum value is 20,000.</p>
     pub fn get_messages_per_second(&self) -> &::std::option::Option<i32> {
         &self.messages_per_second
     }

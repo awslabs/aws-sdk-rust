@@ -138,6 +138,9 @@ pub fn ser_aws_dynamo_db_table_details(
     if let Some(var_39) = &input.table_status {
         object.key("TableStatus").string(var_39.as_str());
     }
+    if let Some(var_40) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_40);
+    }
     Ok(())
 }
 
@@ -269,6 +272,10 @@ where
                                         .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                         .transpose()?,
                                 );
+                            }
+                            "DeletionProtectionEnabled" => {
+                                builder = builder
+                                    .set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

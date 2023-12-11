@@ -91,7 +91,7 @@ pub struct CreateDbClusterInput {
     /// <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>
     /// <p>Default: <code>false</code>.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -100,6 +100,18 @@ pub struct CreateDbClusterInput {
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
@@ -242,7 +254,7 @@ impl CreateDbClusterInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
     pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
@@ -260,6 +272,20 @@ impl CreateDbClusterInput {
     /// <p>The ID of the Neptune global database to which this new DB cluster should be added.</p>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
     }
 }
 impl CreateDbClusterInput {
@@ -300,6 +326,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -774,19 +801,19 @@ impl CreateDbClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
-    /// <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    /// <p>A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune logs to Amazon CloudWatch logs</a>.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
@@ -835,6 +862,50 @@ impl CreateDbClusterInputBuilder {
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul> <note>
+    /// <p>When you create a Neptune cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
+    /// </note>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -867,6 +938,7 @@ impl CreateDbClusterInputBuilder {
             deletion_protection: self.deletion_protection,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             global_cluster_identifier: self.global_cluster_identifier,
+            storage_type: self.storage_type,
         })
     }
 }

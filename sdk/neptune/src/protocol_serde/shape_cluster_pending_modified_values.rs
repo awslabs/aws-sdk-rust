@@ -73,22 +73,20 @@ pub fn de_cluster_pending_modified_values(
                 builder = builder.set_backup_retention_period(var_5);
             }
             ,
-            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.neptune#ClusterPendingModifiedValues$AllocatedStorage */ =>  {
+            s if s.matches("StorageType") /* StorageType com.amazonaws.neptune#ClusterPendingModifiedValues$StorageType */ =>  {
                 let var_6 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.neptune#IntegerOptional`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_6);
+                builder = builder.set_storage_type(var_6);
             }
             ,
-            s if s.matches("Iops") /* Iops com.amazonaws.neptune#ClusterPendingModifiedValues$Iops */ =>  {
+            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.neptune#ClusterPendingModifiedValues$AllocatedStorage */ =>  {
                 let var_7 =
                     Some(
                          {
@@ -100,7 +98,22 @@ pub fn de_cluster_pending_modified_values(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_7);
+                builder = builder.set_allocated_storage(var_7);
+            }
+            ,
+            s if s.matches("Iops") /* Iops com.amazonaws.neptune#ClusterPendingModifiedValues$Iops */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.neptune#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_iops(var_8);
             }
             ,
             _ => {}

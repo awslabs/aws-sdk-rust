@@ -26,7 +26,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.0.3", features = ["behavior-version-latest"] }
-//! aws-sdk-pinpoint = "1.4.0"
+//! aws-sdk-pinpoint = "1.4.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

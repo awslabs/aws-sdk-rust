@@ -1516,9 +1516,9 @@ model_hash = '1cf3da4b3e44f88bad276b24156369c937ef32424822120c33e1fd7f918489f9'
 
 [crates.aws-sdk-neptune]
 category = 'AwsSdk'
-version = '1.4.0'
-source_hash = 'dd0fd6dc4b4a66a5ea256c73f4a6fe2894d9dbdff391f4026f6b0de368432172'
-model_hash = 'fa50925874545dc540c8f5002b3609b0b67eed426263d0d7644f08713affb710'
+version = '1.5.0'
+source_hash = '177c948268774f6c9c0939fc3449903c8e445b3b3cb1c9c31fcf0a32ea465b3d'
+model_hash = 'cd6b770da273bf7111eb89b20a90fa46c8505bb23b1207280b83246e9f612f57'
 
 [crates.aws-sdk-neptunedata]
 category = 'AwsSdk'
@@ -1648,9 +1648,9 @@ model_hash = 'f5f79e4e53bb45d6ea1f8eecdf31450aa0c631df87b7ee2e699630f709d36c44'
 
 [crates.aws-sdk-pinpoint]
 category = 'AwsSdk'
-version = '1.4.0'
-source_hash = '88034ac022d37ecd6360e1b46143d917979a3f06d4551fc82030c05ce349edc7'
-model_hash = '6d9418242fde10c4d55966370b4316b40bbdb5ef94da74144f8efe2833bf010f'
+version = '1.4.1'
+source_hash = '28cb43faae55ce83aa3248211948cfcdc9368b663bc86d74563da304f7b92f54'
+model_hash = '3bef0b6504bbe78b48fbb5a117ffa55c6df26310593379d699f87456aecac609'
 
 [crates.aws-sdk-pinpointemail]
 category = 'AwsSdk'
@@ -1948,9 +1948,9 @@ model_hash = '48d2531efe5409fb983ee7f3563399fae31c84ba23c738006f2a29337e4018ef'
 
 [crates.aws-sdk-securityhub]
 category = 'AwsSdk'
-version = '1.4.0'
-source_hash = '17588c231f326acae76d50be5d616885cbf08f8fca9b192af24ca2926985d8f6'
-model_hash = '7c62ab3974737d03c5565c25335702df06fe73ea63200bd1320ca7775c855bdc'
+version = '1.5.0'
+source_hash = '22ce9517b31d5ce0f85a1c4a083eae3c0fae2026a0f0486d214af1269b336b99'
+model_hash = 'c5da1fd1643497cf99ac9028ec0ae2d9c7c923df92d21ec3078173c3f5a71b62'
 
 [crates.aws-sdk-securitylake]
 category = 'AwsSdk'
@@ -2396,11 +2396,7 @@ source_hash = '2fb553a7e002783890790356ca186911d97f10e16958fd422103666b73b6e076'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'f222e63ca57ba3b93a102d80ecb96a05ace205af57b589955aa5979db9b3091f'
-
-[release]
-tag = 'release-2023-12-08'
-
 [release.crates]
-aws-sdk-cloudwatch = '1.5.0'
-aws-sdk-ec2 = '1.6.0'
-aws-sdk-finspace = '1.6.0'
+aws-sdk-neptune = '1.5.0'
+aws-sdk-pinpoint = '1.4.1'
+aws-sdk-securityhub = '1.5.0'

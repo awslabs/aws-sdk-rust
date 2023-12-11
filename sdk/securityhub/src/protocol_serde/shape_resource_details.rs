@@ -613,6 +613,18 @@ pub fn ser_resource_details(
         crate::protocol_serde::shape_aws_msk_cluster_details::ser_aws_msk_cluster_details(&mut object_196, var_195)?;
         object_196.finish();
     }
+    if let Some(var_197) = &input.aws_s3_access_point {
+        #[allow(unused_mut)]
+        let mut object_198 = object.key("AwsS3AccessPoint").start_object();
+        crate::protocol_serde::shape_aws_s3_access_point_details::ser_aws_s3_access_point_details(&mut object_198, var_197)?;
+        object_198.finish();
+    }
+    if let Some(var_199) = &input.aws_ec2_client_vpn_endpoint {
+        #[allow(unused_mut)]
+        let mut object_200 = object.key("AwsEc2ClientVpnEndpoint").start_object();
+        crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::ser_aws_ec2_client_vpn_endpoint_details(&mut object_200, var_199)?;
+        object_200.finish();
+    }
     Ok(())
 }
 
@@ -1098,6 +1110,16 @@ where
                         "AwsMskCluster" => {
                             builder = builder
                                 .set_aws_msk_cluster(crate::protocol_serde::shape_aws_msk_cluster_details::de_aws_msk_cluster_details(tokens)?);
+                        }
+                        "AwsS3AccessPoint" => {
+                            builder = builder.set_aws_s3_access_point(
+                                crate::protocol_serde::shape_aws_s3_access_point_details::de_aws_s3_access_point_details(tokens)?,
+                            );
+                        }
+                        "AwsEc2ClientVpnEndpoint" => {
+                            builder = builder.set_aws_ec2_client_vpn_endpoint(
+                                crate::protocol_serde::shape_aws_ec2_client_vpn_endpoint_details::de_aws_ec2_client_vpn_endpoint_details(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

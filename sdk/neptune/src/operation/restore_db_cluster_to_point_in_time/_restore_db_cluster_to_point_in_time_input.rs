@@ -79,6 +79,10 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -195,6 +199,12 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -223,6 +233,7 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -601,6 +612,26 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>standard</code>, <code>iopt1</code> </p>
+    /// <p>Default: <code>standard</code> </p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -626,6 +657,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
                 deletion_protection: self.deletion_protection,
                 serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+                storage_type: self.storage_type,
             },
         )
     }

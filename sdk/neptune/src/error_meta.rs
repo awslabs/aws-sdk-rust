@@ -1919,6 +1919,9 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
                 Error::InvalidVpcNetworkStateFault(inner)
             }
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
+            crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotSupportedFault(inner) => {
+                Error::StorageTypeNotSupportedFault(inner)
+            }
             crate::operation::modify_db_cluster::ModifyDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

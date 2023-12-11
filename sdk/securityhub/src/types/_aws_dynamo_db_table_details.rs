@@ -52,6 +52,8 @@ pub struct AwsDynamoDbTableDetails {
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     pub table_status: ::std::option::Option<::std::string::String>,
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
+    pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl AwsDynamoDbTableDetails {
     /// <p>A list of attribute definitions for the table.</p>
@@ -150,6 +152,10 @@ impl AwsDynamoDbTableDetails {
     pub fn table_status(&self) -> ::std::option::Option<&str> {
         self.table_status.as_deref()
     }
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
+    pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
+        self.deletion_protection_enabled
+    }
 }
 impl AwsDynamoDbTableDetails {
     /// Creates a new builder-style object to manufacture [`AwsDynamoDbTableDetails`](crate::types::AwsDynamoDbTableDetails).
@@ -181,6 +187,7 @@ pub struct AwsDynamoDbTableDetailsBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_size_bytes: ::std::option::Option<i64>,
     pub(crate) table_status: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl AwsDynamoDbTableDetailsBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -518,6 +525,20 @@ impl AwsDynamoDbTableDetailsBuilder {
     pub fn get_table_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_status
     }
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
+    pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
+        self.deletion_protection_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.deletion_protection_enabled = input;
+        self
+    }
+    /// <p> Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table. </p>
+    pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.deletion_protection_enabled
+    }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableDetails`](crate::types::AwsDynamoDbTableDetails).
     pub fn build(self) -> crate::types::AwsDynamoDbTableDetails {
         crate::types::AwsDynamoDbTableDetails {
@@ -540,6 +561,7 @@ impl AwsDynamoDbTableDetailsBuilder {
             table_name: self.table_name,
             table_size_bytes: self.table_size_bytes,
             table_status: self.table_status,
+            deletion_protection_enabled: self.deletion_protection_enabled,
         }
     }
 }

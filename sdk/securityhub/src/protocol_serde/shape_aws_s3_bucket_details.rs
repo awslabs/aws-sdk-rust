@@ -78,6 +78,9 @@ pub fn ser_aws_s3_bucket_details(
         crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::ser_aws_s3_bucket_object_lock_configuration(&mut object_21, var_20)?;
         object_21.finish();
     }
+    if let Some(var_22) = &input.name {
+        object.key("Name").string(var_22.as_str());
+    }
     Ok(())
 }
 
@@ -172,6 +175,13 @@ where
                                     crate::protocol_serde::shape_aws_s3_bucket_object_lock_configuration::de_aws_s3_bucket_object_lock_configuration(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "Name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

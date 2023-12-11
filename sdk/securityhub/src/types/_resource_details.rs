@@ -205,6 +205,10 @@ pub struct ResourceDetails {
     pub aws_route53_hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>,
     /// <p> Provides details about an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.</p>
     pub aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
+    pub aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
+    pub aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
@@ -599,6 +603,14 @@ impl ResourceDetails {
     pub fn aws_msk_cluster(&self) -> ::std::option::Option<&crate::types::AwsMskClusterDetails> {
         self.aws_msk_cluster.as_ref()
     }
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
+    pub fn aws_s3_access_point(&self) -> ::std::option::Option<&crate::types::AwsS3AccessPointDetails> {
+        self.aws_s3_access_point.as_ref()
+    }
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
+    pub fn aws_ec2_client_vpn_endpoint(&self) -> ::std::option::Option<&crate::types::AwsEc2ClientVpnEndpointDetails> {
+        self.aws_ec2_client_vpn_endpoint.as_ref()
+    }
 }
 impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::types::ResourceDetails).
@@ -708,6 +720,8 @@ pub struct ResourceDetailsBuilder {
     pub(crate) aws_dms_replication_instance: ::std::option::Option<crate::types::AwsDmsReplicationInstanceDetails>,
     pub(crate) aws_route53_hosted_zone: ::std::option::Option<crate::types::AwsRoute53HostedZoneDetails>,
     pub(crate) aws_msk_cluster: ::std::option::Option<crate::types::AwsMskClusterDetails>,
+    pub(crate) aws_s3_access_point: ::std::option::Option<crate::types::AwsS3AccessPointDetails>,
+    pub(crate) aws_ec2_client_vpn_endpoint: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>Details for an autoscaling group.</p>
@@ -2104,6 +2118,34 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_msk_cluster(&self) -> &::std::option::Option<crate::types::AwsMskClusterDetails> {
         &self.aws_msk_cluster
     }
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
+    pub fn aws_s3_access_point(mut self, input: crate::types::AwsS3AccessPointDetails) -> Self {
+        self.aws_s3_access_point = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
+    pub fn set_aws_s3_access_point(mut self, input: ::std::option::Option<crate::types::AwsS3AccessPointDetails>) -> Self {
+        self.aws_s3_access_point = input;
+        self
+    }
+    /// <p> Provides details about an Amazon Simple Storage Service (Amazon S3) access point. S3 access points are named network endpoints that are attached to S3 buckets that you can use to perform S3 object operations. </p>
+    pub fn get_aws_s3_access_point(&self) -> &::std::option::Option<crate::types::AwsS3AccessPointDetails> {
+        &self.aws_s3_access_point
+    }
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
+    pub fn aws_ec2_client_vpn_endpoint(mut self, input: crate::types::AwsEc2ClientVpnEndpointDetails) -> Self {
+        self.aws_ec2_client_vpn_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
+    pub fn set_aws_ec2_client_vpn_endpoint(mut self, input: ::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails>) -> Self {
+        self.aws_ec2_client_vpn_endpoint = input;
+        self
+    }
+    /// <p> Provides details about an Client VPN endpoint. A Client VPN endpoint is the resource that you create and configure to enable and manage client VPN sessions. It's the termination point for all client VPN sessions. </p>
+    pub fn get_aws_ec2_client_vpn_endpoint(&self) -> &::std::option::Option<crate::types::AwsEc2ClientVpnEndpointDetails> {
+        &self.aws_ec2_client_vpn_endpoint
+    }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
@@ -2204,6 +2246,8 @@ impl ResourceDetailsBuilder {
             aws_dms_replication_instance: self.aws_dms_replication_instance,
             aws_route53_hosted_zone: self.aws_route53_hosted_zone,
             aws_msk_cluster: self.aws_msk_cluster,
+            aws_s3_access_point: self.aws_s3_access_point,
+            aws_ec2_client_vpn_endpoint: self.aws_ec2_client_vpn_endpoint,
         }
     }
 }

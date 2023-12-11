@@ -669,6 +669,8 @@ pub(crate) mod shape_aws_dms_replication_task_details;
 
 pub(crate) mod shape_aws_dynamo_db_table_details;
 
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_details;
+
 pub(crate) mod shape_aws_ec2_eip_details;
 
 pub(crate) mod shape_aws_ec2_instance_details;
@@ -774,6 +776,8 @@ pub(crate) mod shape_aws_rds_event_subscription_details;
 pub(crate) mod shape_aws_redshift_cluster_details;
 
 pub(crate) mod shape_aws_route53_hosted_zone_details;
+
+pub(crate) mod shape_aws_s3_access_point_details;
 
 pub(crate) mod shape_aws_s3_account_public_access_block_details;
 
@@ -978,6 +982,14 @@ pub(crate) mod shape_aws_dynamo_db_table_restore_summary;
 pub(crate) mod shape_aws_dynamo_db_table_sse_description;
 
 pub(crate) mod shape_aws_dynamo_db_table_stream_specification;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_authentication_options_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_client_connect_options_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_client_login_banner_options_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_connection_log_options_details;
 
 pub(crate) mod shape_aws_ec2_instance_metadata_options;
 
@@ -1225,6 +1237,8 @@ pub(crate) mod shape_aws_route53_hosted_zone_vpc_details;
 
 pub(crate) mod shape_aws_route53_query_logging_config_details;
 
+pub(crate) mod shape_aws_s3_access_point_vpc_configuration_details;
+
 pub(crate) mod shape_aws_s3_bucket_bucket_lifecycle_configuration_details;
 
 pub(crate) mod shape_aws_s3_bucket_bucket_versioning_configuration;
@@ -1368,6 +1382,14 @@ pub(crate) mod shape_aws_dynamo_db_table_projection;
 pub(crate) mod shape_aws_dynamo_db_table_provisioned_throughput_override;
 
 pub(crate) mod shape_aws_dynamo_db_table_replica_global_secondary_index;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_authentication_options_active_directory_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_authentication_options_mutual_authentication_details;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_client_connect_options_status_details;
 
 pub(crate) mod shape_aws_ec2_launch_template_data_block_device_mapping_set_details;
 
@@ -1648,6 +1670,8 @@ pub(crate) mod shape_aws_dynamo_db_table_key_schema_list;
 pub(crate) mod shape_aws_dynamo_db_table_local_secondary_index_list;
 
 pub(crate) mod shape_aws_dynamo_db_table_replica_list;
+
+pub(crate) mod shape_aws_ec2_client_vpn_endpoint_authentication_options_list;
 
 pub(crate) mod shape_aws_ec2_instance_network_interfaces_list;
 

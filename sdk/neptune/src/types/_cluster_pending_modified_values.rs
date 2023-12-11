@@ -14,6 +14,8 @@ pub struct ClusterPendingModifiedValues {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The storage type for the DB cluster.</p>
+    pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
@@ -40,6 +42,10 @@ impl ClusterPendingModifiedValues {
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
     /// <p>The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
@@ -65,6 +71,7 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) iops: ::std::option::Option<i32>,
 }
@@ -139,6 +146,20 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
     }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// <p>The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
         self.allocated_storage = ::std::option::Option::Some(input);
@@ -175,6 +196,7 @@ impl ClusterPendingModifiedValuesBuilder {
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             engine_version: self.engine_version,
             backup_retention_period: self.backup_retention_period,
+            storage_type: self.storage_type,
             allocated_storage: self.allocated_storage,
             iops: self.iops,
         }

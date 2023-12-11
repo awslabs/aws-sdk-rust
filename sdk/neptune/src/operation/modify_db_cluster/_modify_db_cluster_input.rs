@@ -60,7 +60,7 @@ pub struct ModifyDbClusterInput {
     /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub cloudwatch_logs_export_configuration: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     /// <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>
     /// <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <code>DescribeDBEngineVersions</code>.</p>
@@ -85,6 +85,16 @@ pub struct ModifyDbClusterInput {
     /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub storage_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
@@ -170,7 +180,7 @@ impl ModifyDbClusterInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn cloudwatch_logs_export_configuration(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsExportConfiguration> {
         self.cloudwatch_logs_export_configuration.as_ref()
     }
@@ -209,6 +219,18 @@ impl ModifyDbClusterInput {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -240,6 +262,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>
@@ -516,17 +539,17 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn cloudwatch_logs_export_configuration(mut self, input: crate::types::CloudwatchLogsExportConfiguration) -> Self {
         self.cloudwatch_logs_export_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn set_cloudwatch_logs_export_configuration(mut self, input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>) -> Self {
         self.cloudwatch_logs_export_configuration = input;
         self
     }
-    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli">Using the CLI to publish Neptune audit logs to CloudWatch Logs</a>.</p>
     pub fn get_cloudwatch_logs_export_configuration(&self) -> &::std::option::Option<crate::types::CloudwatchLogsExportConfiguration> {
         &self.cloudwatch_logs_export_configuration
     }
@@ -647,6 +670,44 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfiguration> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The storage type to associate with the DB cluster.</p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li> <p> <code>standard | iopt1</code> </p> </li>
+    /// </ul>
+    /// <p>Default:</p>
+    /// <ul>
+    /// <li> <p> <code>standard</code> </p> </li>
+    /// </ul>
+    pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -671,6 +732,7 @@ impl ModifyDbClusterInputBuilder {
             deletion_protection: self.deletion_protection,
             copy_tags_to_snapshot: self.copy_tags_to_snapshot,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            storage_type: self.storage_type,
         })
     }
 }
