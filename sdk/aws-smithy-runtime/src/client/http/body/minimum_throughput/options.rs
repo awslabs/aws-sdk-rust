@@ -19,9 +19,18 @@ pub struct MinimumThroughputBodyOptions {
     /// If this is set to a positive value, whenever throughput is below the minimum throughput,
     /// a timer is started. If the timer expires before throughput rises above the minimum,
     /// an error is emitted.
+    ///
+    /// It is recommended to set this to a small value (e.g. 200ms) to avoid issues during
+    /// stream-startup.
     grace_period: Duration,
+
     /// The interval at which the throughput is checked.
     check_interval: Duration,
+
+    /// The period of time to consider when computing the throughput
+    ///
+    /// This SHOULD be longer than the check interval, or stuck-streams may evade detection.
+    check_window: Duration,
 }
 
 impl MinimumThroughputBodyOptions {
@@ -52,6 +61,10 @@ impl MinimumThroughputBodyOptions {
         self.minimum_throughput
     }
 
+    pub(crate) fn check_window(&self) -> Duration {
+        self.check_window
+    }
+
     /// The rate at which the throughput is checked.
     ///
     /// The actual rate throughput is checked may be higher than this value,
@@ -67,6 +80,7 @@ impl Default for MinimumThroughputBodyOptions {
             minimum_throughput: DEFAULT_MINIMUM_THROUGHPUT,
             grace_period: DEFAULT_GRACE_PERIOD,
             check_interval: DEFAULT_CHECK_INTERVAL,
+            check_window: DEFAULT_CHECK_WINDOW,
         }
     }
 }
@@ -79,12 +93,14 @@ pub struct MinimumThroughputBodyOptionsBuilder {
     grace_period: Option<Duration>,
 }
 
-const DEFAULT_CHECK_INTERVAL: Duration = Duration::from_secs(1);
+const DEFAULT_CHECK_INTERVAL: Duration = Duration::from_millis(500);
 const DEFAULT_GRACE_PERIOD: Duration = Duration::from_secs(0);
 const DEFAULT_MINIMUM_THROUGHPUT: Throughput = Throughput {
-    bytes_read: 1.0,
+    bytes_read: 1,
     per_time_elapsed: Duration::from_secs(1),
 };
+
+const DEFAULT_CHECK_WINDOW: Duration = Duration::from_secs(1);
 
 impl MinimumThroughputBodyOptionsBuilder {
     /// Create a new `MinimumThroughputBodyOptionsBuilder`.
@@ -146,6 +162,7 @@ impl MinimumThroughputBodyOptionsBuilder {
                 .minimum_throughput
                 .unwrap_or(DEFAULT_MINIMUM_THROUGHPUT),
             check_interval: self.check_interval.unwrap_or(DEFAULT_CHECK_INTERVAL),
+            check_window: DEFAULT_CHECK_WINDOW,
         }
     }
 }
@@ -156,6 +173,7 @@ impl From<StalledStreamProtectionConfig> for MinimumThroughputBodyOptions {
             grace_period: value.grace_period(),
             minimum_throughput: DEFAULT_MINIMUM_THROUGHPUT,
             check_interval: DEFAULT_CHECK_INTERVAL,
+            check_window: DEFAULT_CHECK_WINDOW,
         }
     }
 }

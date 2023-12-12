@@ -38,7 +38,7 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.0.0", features = ["behavior-version-latest"] }
+aws-config = { version = "1.0.1", features = ["behavior-version-latest"] }
 aws-sdk-codestar = "1.5.0"
 tokio = { version = "1", features = ["full"] }
 ```
