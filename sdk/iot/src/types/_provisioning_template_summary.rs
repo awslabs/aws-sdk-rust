@@ -15,7 +15,7 @@ pub struct ProvisioningTemplateSummary {
     /// <p>The date when the provisioning template summary was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
-    pub enabled: ::std::option::Option<bool>,
+    pub enabled: bool,
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
     pub r#type: ::std::option::Option<crate::types::TemplateType>,
 }
@@ -41,7 +41,7 @@ impl ProvisioningTemplateSummary {
         self.last_modified_date.as_ref()
     }
     /// <p>True if the fleet provision template is enabled, otherwise false.</p>
-    pub fn enabled(&self) -> ::std::option::Option<bool> {
+    pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The type you define in a provisioning template. You can create a template with only one type. You can't change the template type after its creation. The default value is <code>FLEET_PROVISIONING</code>. For more information about provisioning template, see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning template</a>. </p>
@@ -175,7 +175,7 @@ impl ProvisioningTemplateSummaryBuilder {
             description: self.description,
             creation_date: self.creation_date,
             last_modified_date: self.last_modified_date,
-            enabled: self.enabled,
+            enabled: self.enabled.unwrap_or_default(),
             r#type: self.r#type,
         }
     }

@@ -16,26 +16,26 @@ http = "0.2.9"
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "1.0.3"
+version = "1.0.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "1.5.0"
+version = "1.6.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
-version = "1.0.3"
+version = "1.0.0"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["test-util"]
-version = "1.0.3"
+version = "1.0.0"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["test-util"]
-version = "1.0.3"
+version = "1.0.0"
 
 [dev-dependencies.tokio]
 version = "1.23.1"
