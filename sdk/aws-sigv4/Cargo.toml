@@ -10,7 +10,7 @@ required-features = ["sigv4a"]
 
 [package]
 name = "aws-sigv4"
-version = "1.0.1"
+version = "1.0.2"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
@@ -44,7 +44,7 @@ tracing = "0.1"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.0.1"
+version = "1.0.2"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
@@ -58,11 +58,11 @@ version = "0.60.0"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.0.1"
+version = "1.0.2"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.0.1"
+version = "1.0.2"
 
 [dependencies.form_urlencoded]
 version = "1.0"
@@ -116,12 +116,12 @@ serde_json = "1.0.104"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util", "hardcoded-credentials"]
-version = "1.0.1"
+version = "1.0.2"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "test-util"]
-version = "1.0.1"
+version = "1.0.2"
 
 [dev-dependencies.time]
 version = "0.3.5"

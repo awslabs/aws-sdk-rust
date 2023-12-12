@@ -4,6 +4,7 @@
  */
 
 use crate::client::http::connection_poisoning::CaptureSmithyConnection;
+use crate::client::http::hyper_014::timeout_middleware::HttpTimeoutError;
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_runtime_api::box_error::BoxError;
@@ -19,6 +20,7 @@ use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
+use h2::Reason;
 use http::{Extensions, Uri};
 use hyper_0_14::client::connect::{capture_connection, CaptureConnection, Connection, HttpInfo};
 use hyper_0_14::service::Service;
@@ -397,21 +399,29 @@ fn downcast_error(err: BoxError) -> ConnectorError {
 
 /// Convert a [`hyper_0_14::Error`] into a [`ConnectorError`]
 fn to_connector_error(err: hyper_0_14::Error) -> ConnectorError {
-    if err.is_timeout() || find_source::<timeout_middleware::HttpTimeoutError>(&err).is_some() {
-        ConnectorError::timeout(err.into())
-    } else if err.is_user() {
-        ConnectorError::user(err.into())
-    } else if err.is_closed() || err.is_canceled() || find_source::<std::io::Error>(&err).is_some()
-    {
-        ConnectorError::io(err.into())
+    if err.is_timeout() || find_source::<HttpTimeoutError>(&err).is_some() {
+        return ConnectorError::timeout(err.into());
+    }
+    if err.is_user() {
+        return ConnectorError::user(err.into());
+    }
+    if err.is_closed() || err.is_canceled() || find_source::<std::io::Error>(&err).is_some() {
+        return ConnectorError::io(err.into());
     }
     // We sometimes receive this from S3: hyper::Error(IncompleteMessage)
-    else if err.is_incomplete_message() {
-        ConnectorError::other(err.into(), Some(ErrorKind::TransientError))
-    } else {
-        tracing::warn!(err = %DisplayErrorContext(&err), "unrecognized error from Hyper. If this error should be retried, please file an issue.");
-        ConnectorError::other(err.into(), None)
+    if err.is_incomplete_message() {
+        return ConnectorError::other(err.into(), Some(ErrorKind::TransientError));
     }
+    if let Some(h2_err) = find_source::<h2::Error>(&err) {
+        if h2_err.is_go_away()
+            || (h2_err.is_reset() && h2_err.reason() == Some(Reason::REFUSED_STREAM))
+        {
+            return ConnectorError::io(err.into());
+        }
+    }
+
+    tracing::warn!(err = %DisplayErrorContext(&err), "unrecognized error from Hyper. If this error should be retried, please file an issue.");
+    ConnectorError::other(err.into(), None)
 }
 
 fn find_source<'a, E: Error + 'static>(err: &'a (dyn Error + 'static)) -> Option<&'a E> {

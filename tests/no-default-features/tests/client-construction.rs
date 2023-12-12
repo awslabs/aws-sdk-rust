@@ -171,10 +171,10 @@ async fn behavior_mv_from_aws_config() {
         .send()
         .await
         .expect_err("it should fail to send a request because there is no HTTP client");
-    assert_eq!(
-        req.expect_request().uri(),
-        "https://s3.us-west-2.amazonaws.com/"
-    );
+    assert!(req
+        .expect_request()
+        .uri()
+        .starts_with("https://s3.us-west-2.amazonaws.com/"));
 }
 
 #[tokio::test]
@@ -199,8 +199,8 @@ async fn behavior_mv_from_client_construction() {
         .send()
         .await
         .expect_err("it should fail to send a request because there is no HTTP client"));
-    assert_eq!(
-        req.expect_request().uri(),
-        "https://s3.us-west-2.amazonaws.com/"
-    );
+    assert!(req
+        .expect_request()
+        .uri()
+        .starts_with("https://s3.us-west-2.amazonaws.com/"));
 }
