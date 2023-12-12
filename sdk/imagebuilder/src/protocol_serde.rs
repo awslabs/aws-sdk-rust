@@ -43,6 +43,8 @@ pub(crate) mod shape_create_infrastructure_configuration;
 
 pub(crate) mod shape_create_lifecycle_policy;
 
+pub(crate) mod shape_create_workflow;
+
 pub(crate) mod shape_delete_component;
 
 pub(crate) mod shape_delete_container_recipe;
@@ -58,6 +60,8 @@ pub(crate) mod shape_delete_image_recipe;
 pub(crate) mod shape_delete_infrastructure_configuration;
 
 pub(crate) mod shape_delete_lifecycle_policy;
+
+pub(crate) mod shape_delete_workflow;
 
 pub(crate) mod shape_get_component;
 
@@ -84,6 +88,8 @@ pub(crate) mod shape_get_infrastructure_configuration;
 pub(crate) mod shape_get_lifecycle_execution;
 
 pub(crate) mod shape_get_lifecycle_policy;
+
+pub(crate) mod shape_get_workflow;
 
 pub(crate) mod shape_get_workflow_execution;
 
@@ -127,9 +133,15 @@ pub(crate) mod shape_list_lifecycle_policies;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_waiting_workflow_steps;
+
+pub(crate) mod shape_list_workflow_build_versions;
+
 pub(crate) mod shape_list_workflow_executions;
 
 pub(crate) mod shape_list_workflow_step_executions;
+
+pub(crate) mod shape_list_workflows;
 
 pub(crate) mod shape_put_component_policy;
 
@@ -138,6 +150,8 @@ pub(crate) mod shape_put_container_recipe_policy;
 pub(crate) mod shape_put_image_policy;
 
 pub(crate) mod shape_put_image_recipe_policy;
+
+pub(crate) mod shape_send_workflow_step_action;
 
 pub(crate) mod shape_start_image_pipeline_execution;
 
@@ -186,6 +200,8 @@ pub(crate) mod shape_create_image_recipe_input;
 pub(crate) mod shape_create_infrastructure_configuration_input;
 
 pub(crate) mod shape_create_lifecycle_policy_input;
+
+pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_forbidden_exception;
 
@@ -239,9 +255,15 @@ pub(crate) mod shape_list_lifecycle_executions_input;
 
 pub(crate) mod shape_list_lifecycle_policies_input;
 
+pub(crate) mod shape_list_waiting_workflow_steps_input;
+
+pub(crate) mod shape_list_workflow_build_versions_input;
+
 pub(crate) mod shape_list_workflow_executions_input;
 
 pub(crate) mod shape_list_workflow_step_executions_input;
+
+pub(crate) mod shape_list_workflows_input;
 
 pub(crate) mod shape_put_component_policy_input;
 
@@ -258,6 +280,8 @@ pub(crate) mod shape_resource_dependency_exception;
 pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_workflow_step_action_input;
 
 pub(crate) mod shape_service_exception;
 
@@ -367,9 +391,19 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_container_repository;
 
+pub(crate) mod shape_workflow;
+
+pub(crate) mod shape_workflow_configuration;
+
 pub(crate) mod shape_workflow_executions_list;
 
+pub(crate) mod shape_workflow_step_execution_list;
+
 pub(crate) mod shape_workflow_step_executions_list;
+
+pub(crate) mod shape_workflow_summary_list;
+
+pub(crate) mod shape_workflow_version_list;
 
 pub(crate) mod shape_ami_distribution_configuration;
 
@@ -455,9 +489,23 @@ pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_systems_manager_agent;
 
+pub(crate) mod shape_workflow_configuration_list;
+
 pub(crate) mod shape_workflow_execution_metadata;
 
+pub(crate) mod shape_workflow_parameter;
+
+pub(crate) mod shape_workflow_parameter_detail_list;
+
+pub(crate) mod shape_workflow_state;
+
+pub(crate) mod shape_workflow_step_execution;
+
 pub(crate) mod shape_workflow_step_metadata;
+
+pub(crate) mod shape_workflow_summary;
+
+pub(crate) mod shape_workflow_version;
 
 pub(crate) mod shape_account_aggregation;
 
@@ -501,6 +549,8 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_vulnerability_id_aggregation;
 
+pub(crate) mod shape_workflow_parameter_detail;
+
 pub(crate) mod shape_ami;
 
 pub(crate) mod shape_component_parameter_list;
@@ -530,6 +580,10 @@ pub(crate) mod shape_severity_counts;
 pub(crate) mod shape_vulnerability_id_list;
 
 pub(crate) mod shape_vulnerable_package_list;
+
+pub(crate) mod shape_workflow_parameter_list;
+
+pub(crate) mod shape_workflow_parameter_value_list;
 
 pub(crate) mod shape_account_list;
 

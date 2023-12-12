@@ -61,6 +61,8 @@ pub use crate::types::_step::Step;
 
 pub use crate::types::_leg_geometry::LegGeometry;
 
+pub use crate::types::_optimization_mode::OptimizationMode;
+
 pub use crate::types::_list_route_calculators_response_entry::ListRouteCalculatorsResponseEntry;
 
 pub use crate::types::_search_for_text_result::SearchForTextResult;
@@ -190,6 +192,8 @@ mod _list_trackers_response_entry;
 mod _map_configuration;
 
 mod _map_configuration_update;
+
+mod _optimization_mode;
 
 mod _place;
 

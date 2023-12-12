@@ -21,6 +21,10 @@ pub struct CreateImageInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains settings for vulnerability scans.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub execution_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
@@ -59,6 +63,16 @@ impl CreateImageInput {
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
+    /// <p>Contains an array of workflow configuration objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
+    pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
+        self.workflows.as_deref().unwrap_or_default()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
 }
 impl CreateImageInput {
     /// Creates a new builder-style object to manufacture [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
@@ -80,6 +94,8 @@ pub struct CreateImageInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
+    pub(crate) execution_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
@@ -216,6 +232,40 @@ impl CreateImageInputBuilder {
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
+    /// Appends an item to `workflows`.
+    ///
+    /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
+    ///
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
+        let mut v = self.workflows.unwrap_or_default();
+        v.push(input);
+        self.workflows = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
+        self.workflows = input;
+        self
+    }
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
+        &self.workflows
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role = input;
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
+    }
     /// Consumes the builder and constructs a [`CreateImageInput`](crate::operation::create_image::CreateImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_image::CreateImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_image::CreateImageInput {
@@ -228,6 +278,8 @@ impl CreateImageInputBuilder {
             tags: self.tags,
             client_token: self.client_token,
             image_scanning_configuration: self.image_scanning_configuration,
+            workflows: self.workflows,
+            execution_role: self.execution_role,
         })
     }
 }

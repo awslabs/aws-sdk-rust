@@ -172,6 +172,13 @@ pub(crate) fn de_get_workflow_execution(
                             .transpose()?,
                     );
                 }
+                "parallelGroup" => {
+                    builder = builder.set_parallel_group(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "requestId" => {
                     builder = builder.set_request_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

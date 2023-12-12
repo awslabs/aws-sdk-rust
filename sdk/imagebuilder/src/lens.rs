@@ -159,6 +159,26 @@ pub(crate) fn reflens_list_lifecycle_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_waiting_workflow_steps_output_output_next_token(
+    input: &crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_workflow_build_versions_output_output_next_token(
+    input: &crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workflow_executions_output_output_next_token(
     input: &crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -171,6 +191,16 @@ pub(crate) fn reflens_list_workflow_executions_output_output_next_token(
 
 pub(crate) fn reflens_list_workflow_step_executions_output_output_next_token(
     input: &crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_workflows_output_output_next_token(
+    input: &crate::operation::list_workflows::ListWorkflowsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -339,6 +369,26 @@ pub(crate) fn lens_list_lifecycle_policies_output_output_lifecycle_policy_summar
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_waiting_workflow_steps_output_output_steps(
+    input: crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>> {
+    let input = match input.steps {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workflow_build_versions_output_output_workflow_summary_list(
+    input: crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
+    let input = match input.workflow_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_workflow_executions_output_output_workflow_executions(
     input: crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
@@ -353,6 +403,16 @@ pub(crate) fn lens_list_workflow_step_executions_output_output_steps(
     input: crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepMetadata>> {
     let input = match input.steps {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workflows_output_output_workflow_version_list(
+    input: crate::operation::list_workflows::ListWorkflowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersion>> {
+    let input = match input.workflow_version_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

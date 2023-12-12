@@ -125,6 +125,18 @@ where
                                 crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens)?,
                             );
                         }
+                        "executionRole" => {
+                            builder = builder.set_execution_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "workflows" => {
+                            builder = builder.set_workflows(
+                                crate::protocol_serde::shape_workflow_configuration_list::de_workflow_configuration_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

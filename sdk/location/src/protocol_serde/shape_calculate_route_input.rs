@@ -3,76 +3,84 @@ pub fn ser_calculate_route_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::calculate_route::CalculateRouteInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.car_mode_options {
+    if let Some(var_1) = &input.arrival_time {
+        object
+            .key("ArrivalTime")
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    if let Some(var_2) = &input.car_mode_options {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("CarModeOptions").start_object();
-        crate::protocol_serde::shape_calculate_route_car_mode_options::ser_calculate_route_car_mode_options(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("CarModeOptions").start_object();
+        crate::protocol_serde::shape_calculate_route_car_mode_options::ser_calculate_route_car_mode_options(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.depart_now {
-        object.key("DepartNow").boolean(*var_3);
+    if let Some(var_4) = &input.depart_now {
+        object.key("DepartNow").boolean(*var_4);
     }
-    if let Some(var_4) = &input.departure_position {
-        let mut array_5 = object.key("DeparturePosition").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.departure_position {
+        let mut array_6 = object.key("DeparturePosition").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().number(
+                array_6.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_6).into()),
+                    ::aws_smithy_types::Number::Float((*item_7).into()),
                 );
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.departure_time {
+    if let Some(var_8) = &input.departure_time {
         object
             .key("DepartureTime")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_8, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_8) = &input.destination_position {
-        let mut array_9 = object.key("DestinationPosition").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.destination_position {
+        let mut array_10 = object.key("DestinationPosition").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().number(
+                array_10.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_10).into()),
+                    ::aws_smithy_types::Number::Float((*item_11).into()),
                 );
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.distance_unit {
-        object.key("DistanceUnit").string(var_11.as_str());
+    if let Some(var_12) = &input.distance_unit {
+        object.key("DistanceUnit").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.include_leg_geometry {
-        object.key("IncludeLegGeometry").boolean(*var_12);
+    if let Some(var_13) = &input.include_leg_geometry {
+        object.key("IncludeLegGeometry").boolean(*var_13);
     }
-    if let Some(var_13) = &input.travel_mode {
-        object.key("TravelMode").string(var_13.as_str());
+    if let Some(var_14) = &input.optimize_for {
+        object.key("OptimizeFor").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.truck_mode_options {
+    if let Some(var_15) = &input.travel_mode {
+        object.key("TravelMode").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.truck_mode_options {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("TruckModeOptions").start_object();
-        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_17 = object.key("TruckModeOptions").start_object();
+        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_16) = &input.waypoint_positions {
-        let mut array_17 = object.key("WaypointPositions").start_array();
-        for item_18 in var_16 {
+    if let Some(var_18) = &input.waypoint_positions {
+        let mut array_19 = object.key("WaypointPositions").start_array();
+        for item_20 in var_18 {
             {
-                let mut array_19 = array_17.value().start_array();
-                for item_20 in item_18 {
+                let mut array_21 = array_19.value().start_array();
+                for item_22 in item_20 {
                     {
-                        array_19.value().number(
+                        array_21.value().number(
                             #[allow(clippy::useless_conversion)]
-                            ::aws_smithy_types::Number::Float((*item_20).into()),
+                            ::aws_smithy_types::Number::Float((*item_22).into()),
                         );
                     }
                 }
-                array_19.finish();
+                array_21.finish();
             }
         }
-        array_17.finish();
+        array_19.finish();
     }
     Ok(())
 }

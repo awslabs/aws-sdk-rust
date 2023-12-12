@@ -92,6 +92,10 @@ pub struct Image {
     pub deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identifies the last runtime instance of the lifecycle policy to take action on the image.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>Contains the build and test workflows that are associated with the image.</p>
+    pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
 }
 impl Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p><note>
@@ -230,6 +234,16 @@ impl Image {
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn execution_role(&self) -> ::std::option::Option<&str> {
+        self.execution_role.as_deref()
+    }
+    /// <p>Contains the build and test workflows that are associated with the image.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
+    pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
+        self.workflows.as_deref().unwrap_or_default()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -266,6 +280,8 @@ pub struct ImageBuilder {
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) deprecation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) lifecycle_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
 }
 impl ImageBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image.</p><note>
@@ -730,6 +746,40 @@ impl ImageBuilder {
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role = input;
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role
+    }
+    /// Appends an item to `workflows`.
+    ///
+    /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
+    ///
+    /// <p>Contains the build and test workflows that are associated with the image.</p>
+    pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
+        let mut v = self.workflows.unwrap_or_default();
+        v.push(input);
+        self.workflows = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains the build and test workflows that are associated with the image.</p>
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
+        self.workflows = input;
+        self
+    }
+    /// <p>Contains the build and test workflows that are associated with the image.</p>
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
+        &self.workflows
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -757,6 +807,8 @@ impl ImageBuilder {
             image_scanning_configuration: self.image_scanning_configuration,
             deprecation_time: self.deprecation_time,
             lifecycle_execution_id: self.lifecycle_execution_id,
+            execution_role: self.execution_role,
+            workflows: self.workflows,
         }
     }
 }

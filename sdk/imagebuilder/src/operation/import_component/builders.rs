@@ -192,17 +192,17 @@ impl ImportComponentFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of the component.</p>
     pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.change_description(input.into());
         self
     }
-    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of the component.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_change_description(input);
         self
     }
-    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
+    /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of the component.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_change_description()
     }

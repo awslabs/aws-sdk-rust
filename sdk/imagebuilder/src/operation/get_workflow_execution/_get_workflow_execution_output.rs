@@ -29,6 +29,8 @@ pub struct GetWorkflowExecutionOutput {
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime instance of the workflow finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
+    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    pub parallel_group: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowExecutionOutput {
@@ -84,6 +86,10 @@ impl GetWorkflowExecutionOutput {
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
+    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    pub fn parallel_group(&self) -> ::std::option::Option<&str> {
+        self.parallel_group.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -114,6 +120,7 @@ pub struct GetWorkflowExecutionOutputBuilder {
     pub(crate) total_steps_skipped: ::std::option::Option<i32>,
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) parallel_group: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWorkflowExecutionOutputBuilder {
@@ -299,6 +306,20 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }
+    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    pub fn parallel_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parallel_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    pub fn set_parallel_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parallel_group = input;
+        self
+    }
+    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parallel_group
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -324,6 +345,7 @@ impl GetWorkflowExecutionOutputBuilder {
             total_steps_skipped: self.total_steps_skipped.unwrap_or_default(),
             start_time: self.start_time,
             end_time: self.end_time,
+            parallel_group: self.parallel_group,
             _request_id: self._request_id,
         }
     }

@@ -75,6 +75,27 @@ pub(crate) fn package_vulnerability_details_correct_errors(
     builder
 }
 
+pub(crate) fn workflow_configuration_correct_errors(
+    mut builder: crate::types::builders::WorkflowConfigurationBuilder,
+) -> crate::types::builders::WorkflowConfigurationBuilder {
+    if builder.workflow_arn.is_none() {
+        builder.workflow_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn workflow_parameter_detail_correct_errors(
+    mut builder: crate::types::builders::WorkflowParameterDetailBuilder,
+) -> crate::types::builders::WorkflowParameterDetailBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn container_distribution_configuration_correct_errors(
     mut builder: crate::types::builders::ContainerDistributionConfigurationBuilder,
 ) -> crate::types::builders::ContainerDistributionConfigurationBuilder {
@@ -161,6 +182,18 @@ pub(crate) fn launch_template_configuration_correct_errors(
 ) -> crate::types::builders::LaunchTemplateConfigurationBuilder {
     if builder.launch_template_id.is_none() {
         builder.launch_template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn workflow_parameter_correct_errors(
+    mut builder: crate::types::builders::WorkflowParameterBuilder,
+) -> crate::types::builders::WorkflowParameterBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

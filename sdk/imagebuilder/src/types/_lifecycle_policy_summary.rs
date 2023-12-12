@@ -12,7 +12,7 @@ pub struct LifecyclePolicySummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle policy resource status.</p>
     pub status: ::std::option::Option<crate::types::LifecyclePolicyStatus>,
-    /// <p>The name of the IAM role that Image Builder uses to run the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The type of resources the lifecycle policy targets.</p>
     pub resource_type: ::std::option::Option<crate::types::LifecyclePolicyResourceType>,
@@ -42,7 +42,7 @@ impl LifecyclePolicySummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStatus> {
         self.status.as_ref()
     }
-    /// <p>The name of the IAM role that Image Builder uses to run the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
@@ -146,17 +146,17 @@ impl LifecyclePolicySummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStatus> {
         &self.status
     }
-    /// <p>The name of the IAM role that Image Builder uses to run the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the IAM role that Image Builder uses to run the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The name of the IAM role that Image Builder uses to run the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }

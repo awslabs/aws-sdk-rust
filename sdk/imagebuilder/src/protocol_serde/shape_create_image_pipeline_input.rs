@@ -18,45 +18,60 @@ pub fn ser_create_image_pipeline_input_input(
     if let Some(var_5) = &input.enhanced_image_metadata_enabled {
         object.key("enhancedImageMetadataEnabled").boolean(*var_5);
     }
-    if let Some(var_6) = &input.image_recipe_arn {
-        object.key("imageRecipeArn").string(var_6.as_str());
+    if let Some(var_6) = &input.execution_role {
+        object.key("executionRole").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.image_scanning_configuration {
+    if let Some(var_7) = &input.image_recipe_arn {
+        object.key("imageRecipeArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("imageScanningConfiguration").start_object();
-        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.image_tests_configuration {
+    if let Some(var_10) = &input.image_tests_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.infrastructure_configuration_arn {
-        object.key("infrastructureConfigurationArn").string(var_11.as_str());
+    if let Some(var_12) = &input.infrastructure_configuration_arn {
+        object.key("infrastructureConfigurationArn").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.schedule {
+    if let Some(var_14) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.status {
-        object.key("status").string(var_15.as_str());
+    if let Some(var_16) = &input.status {
+        object.key("status").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
+    }
+    if let Some(var_21) = &input.workflows {
+        let mut array_22 = object.key("workflows").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
     }
     Ok(())
 }

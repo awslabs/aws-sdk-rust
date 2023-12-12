@@ -108,6 +108,13 @@ where
                                 crate::protocol_serde::shape_place_supplemental_category_list::de_place_supplemental_category_list(tokens)?,
                             );
                         }
+                        "SubMunicipality" => {
+                            builder = builder.set_sub_municipality(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

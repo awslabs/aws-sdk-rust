@@ -156,6 +156,8 @@ mod create_infrastructure_configuration;
 
 mod create_lifecycle_policy;
 
+mod create_workflow;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -199,6 +201,8 @@ mod delete_infrastructure_configuration;
 
 mod delete_lifecycle_policy;
 
+mod delete_workflow;
+
 mod get_component;
 
 mod get_component_policy;
@@ -224,6 +228,8 @@ mod get_infrastructure_configuration;
 mod get_lifecycle_execution;
 
 mod get_lifecycle_policy;
+
+mod get_workflow;
 
 mod get_workflow_execution;
 
@@ -267,9 +273,15 @@ mod list_lifecycle_policies;
 
 mod list_tags_for_resource;
 
+mod list_waiting_workflow_steps;
+
+mod list_workflow_build_versions;
+
 mod list_workflow_executions;
 
 mod list_workflow_step_executions;
+
+mod list_workflows;
 
 mod put_component_policy;
 
@@ -278,6 +290,8 @@ mod put_container_recipe_policy;
 mod put_image_policy;
 
 mod put_image_recipe_policy;
+
+mod send_workflow_step_action;
 
 mod start_image_pipeline_execution;
 

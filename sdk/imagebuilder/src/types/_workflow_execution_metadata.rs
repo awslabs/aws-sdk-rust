@@ -26,6 +26,8 @@ pub struct WorkflowExecutionMetadata {
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when this runtime instance of the workflow finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the test group that included the test workflow resource at runtime.</p>
+    pub parallel_group: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
@@ -72,6 +74,10 @@ impl WorkflowExecutionMetadata {
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
+    /// <p>The name of the test group that included the test workflow resource at runtime.</p>
+    pub fn parallel_group(&self) -> ::std::option::Option<&str> {
+        self.parallel_group.as_deref()
+    }
 }
 impl WorkflowExecutionMetadata {
     /// Creates a new builder-style object to manufacture [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
@@ -95,6 +101,7 @@ pub struct WorkflowExecutionMetadataBuilder {
     pub(crate) total_steps_skipped: ::std::option::Option<i32>,
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) parallel_group: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the workflow resource build version that ran.</p>
@@ -251,6 +258,20 @@ impl WorkflowExecutionMetadataBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }
+    /// <p>The name of the test group that included the test workflow resource at runtime.</p>
+    pub fn parallel_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parallel_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the test group that included the test workflow resource at runtime.</p>
+    pub fn set_parallel_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parallel_group = input;
+        self
+    }
+    /// <p>The name of the test group that included the test workflow resource at runtime.</p>
+    pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parallel_group
+    }
     /// Consumes the builder and constructs a [`WorkflowExecutionMetadata`](crate::types::WorkflowExecutionMetadata).
     pub fn build(self) -> crate::types::WorkflowExecutionMetadata {
         crate::types::WorkflowExecutionMetadata {
@@ -265,6 +286,7 @@ impl WorkflowExecutionMetadataBuilder {
             total_steps_skipped: self.total_steps_skipped.unwrap_or_default(),
             start_time: self.start_time,
             end_time: self.end_time,
+            parallel_group: self.parallel_group,
         }
     }
 }

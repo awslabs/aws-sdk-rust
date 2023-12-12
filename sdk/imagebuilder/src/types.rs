@@ -33,6 +33,12 @@ pub use crate::types::_logging::Logging;
 
 pub use crate::types::_s3_logs::S3Logs;
 
+pub use crate::types::_workflow_configuration::WorkflowConfiguration;
+
+pub use crate::types::_on_workflow_failure::OnWorkflowFailure;
+
+pub use crate::types::_workflow_parameter::WorkflowParameter;
+
 pub use crate::types::_image_scanning_configuration::ImageScanningConfiguration;
 
 pub use crate::types::_ecr_configuration::EcrConfiguration;
@@ -77,21 +83,35 @@ pub use crate::types::_resource_state::ResourceState;
 
 pub use crate::types::_resource_status::ResourceStatus;
 
+pub use crate::types::_workflow_step_action_type::WorkflowStepActionType;
+
 pub use crate::types::_workflow_step_metadata::WorkflowStepMetadata;
 
 pub use crate::types::_workflow_step_execution_rollback_status::WorkflowStepExecutionRollbackStatus;
 
 pub use crate::types::_workflow_step_execution_status::WorkflowStepExecutionStatus;
 
+pub use crate::types::_workflow_version::WorkflowVersion;
+
+pub use crate::types::_workflow_type::WorkflowType;
+
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_ownership::Ownership;
+
 pub use crate::types::_workflow_execution_metadata::WorkflowExecutionMetadata;
 
 pub use crate::types::_workflow_execution_status::WorkflowExecutionStatus;
 
-pub use crate::types::_workflow_type::WorkflowType;
+pub use crate::types::_workflow_summary::WorkflowSummary;
+
+pub use crate::types::_workflow_state::WorkflowState;
+
+pub use crate::types::_workflow_status::WorkflowStatus;
+
+pub use crate::types::_workflow_step_execution::WorkflowStepExecution;
 
 pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummary;
-
-pub use crate::types::_filter::Filter;
 
 pub use crate::types::_lifecycle_execution::LifecycleExecution;
 
@@ -157,8 +177,6 @@ pub use crate::types::_platform::Platform;
 
 pub use crate::types::_image_type::ImageType;
 
-pub use crate::types::_ownership::Ownership;
-
 pub use crate::types::_image_recipe_summary::ImageRecipeSummary;
 
 pub use crate::types::_image_pipeline::ImagePipeline;
@@ -194,6 +212,10 @@ pub use crate::types::_component_state::ComponentState;
 pub use crate::types::_component_status::ComponentStatus;
 
 pub use crate::types::_component_format::ComponentFormat;
+
+pub use crate::types::_workflow::Workflow;
+
+pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetail;
 
 pub use crate::types::_lifecycle_policy::LifecyclePolicy;
 
@@ -411,6 +433,8 @@ mod _lifecycle_policy_time_unit;
 
 mod _logging;
 
+mod _on_workflow_failure;
+
 mod _output_resources;
 
 mod _ownership;
@@ -451,9 +475,25 @@ mod _vulnerability_id_aggregation;
 
 mod _vulnerable_package;
 
+mod _workflow;
+
+mod _workflow_configuration;
+
 mod _workflow_execution_metadata;
 
 mod _workflow_execution_status;
+
+mod _workflow_parameter;
+
+mod _workflow_parameter_detail;
+
+mod _workflow_state;
+
+mod _workflow_status;
+
+mod _workflow_step_action_type;
+
+mod _workflow_step_execution;
 
 mod _workflow_step_execution_rollback_status;
 
@@ -461,7 +501,11 @@ mod _workflow_step_execution_status;
 
 mod _workflow_step_metadata;
 
+mod _workflow_summary;
+
 mod _workflow_type;
+
+mod _workflow_version;
 
 /// Builders
 pub mod builders;

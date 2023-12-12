@@ -294,4 +294,36 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }
+    /// Appends an item to `workflows`.
+    ///
+    /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
+    ///
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
+        self.inner = self.inner.workflows(input);
+        self
+    }
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
+        self.inner = self.inner.set_workflows(input);
+        self
+    }
+    /// <p>Contains an array of workflow configuration objects.</p>
+    pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
+        self.inner.get_workflows()
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.execution_role(input.into());
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_execution_role(input);
+        self
+    }
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_execution_role()
+    }
 }

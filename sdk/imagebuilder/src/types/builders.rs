@@ -23,6 +23,10 @@ pub use crate::types::_logging::LoggingBuilder;
 
 pub use crate::types::_s3_logs::S3LogsBuilder;
 
+pub use crate::types::_workflow_configuration::WorkflowConfigurationBuilder;
+
+pub use crate::types::_workflow_parameter::WorkflowParameterBuilder;
+
 pub use crate::types::_image_scanning_configuration::ImageScanningConfigurationBuilder;
 
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
@@ -59,11 +63,19 @@ pub use crate::types::_resource_state::ResourceStateBuilder;
 
 pub use crate::types::_workflow_step_metadata::WorkflowStepMetadataBuilder;
 
-pub use crate::types::_workflow_execution_metadata::WorkflowExecutionMetadataBuilder;
-
-pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummaryBuilder;
+pub use crate::types::_workflow_version::WorkflowVersionBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_workflow_execution_metadata::WorkflowExecutionMetadataBuilder;
+
+pub use crate::types::_workflow_summary::WorkflowSummaryBuilder;
+
+pub use crate::types::_workflow_state::WorkflowStateBuilder;
+
+pub use crate::types::_workflow_step_execution::WorkflowStepExecutionBuilder;
+
+pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummaryBuilder;
 
 pub use crate::types::_lifecycle_execution::LifecycleExecutionBuilder;
 
@@ -140,6 +152,10 @@ pub use crate::types::_component_version::ComponentVersionBuilder;
 pub use crate::types::_component_summary::ComponentSummaryBuilder;
 
 pub use crate::types::_component_state::ComponentStateBuilder;
+
+pub use crate::types::_workflow::WorkflowBuilder;
+
+pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetailBuilder;
 
 pub use crate::types::_lifecycle_policy::LifecyclePolicyBuilder;
 

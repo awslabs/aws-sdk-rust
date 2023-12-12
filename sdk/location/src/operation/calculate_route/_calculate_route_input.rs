@@ -48,9 +48,7 @@ pub struct CalculateRouteInput {
     /// </ul>
     /// <p>Default Value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::TravelMode>,
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
-    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
-    /// </note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <ul>
     /// <li>
     /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
@@ -73,6 +71,12 @@ pub struct CalculateRouteInput {
     /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+    /// <p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
+    /// <p>ArrivalTime is not supported Esri.</p>
+    /// </note>
+    pub arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies the distance to optimize for when calculating a route.</p>
+    pub optimize_for: ::std::option::Option<crate::types::OptimizationMode>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
@@ -138,9 +142,7 @@ impl CalculateRouteInput {
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::TravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
-    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
-    /// </note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <ul>
     /// <li>
     /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
@@ -175,6 +177,16 @@ impl CalculateRouteInput {
     pub fn truck_mode_options(&self) -> ::std::option::Option<&crate::types::CalculateRouteTruckModeOptions> {
         self.truck_mode_options.as_ref()
     }
+    /// <p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
+    /// <p>ArrivalTime is not supported Esri.</p>
+    /// </note>
+    pub fn arrival_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.arrival_time.as_ref()
+    }
+    /// <p>Specifies the distance to optimize for when calculating a route.</p>
+    pub fn optimize_for(&self) -> ::std::option::Option<&crate::types::OptimizationMode> {
+        self.optimize_for.as_ref()
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -194,6 +206,8 @@ impl ::std::fmt::Debug for CalculateRouteInput {
         formatter.field("include_leg_geometry", &self.include_leg_geometry);
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
+        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("optimize_for", &self.optimize_for);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -220,6 +234,8 @@ pub struct CalculateRouteInputBuilder {
     pub(crate) include_leg_geometry: ::std::option::Option<bool>,
     pub(crate) car_mode_options: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
     pub(crate) truck_mode_options: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+    pub(crate) arrival_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) optimize_for: ::std::option::Option<crate::types::OptimizationMode>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl CalculateRouteInputBuilder {
@@ -417,9 +433,7 @@ impl CalculateRouteInputBuilder {
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::TravelMode> {
         &self.travel_mode
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
-    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
-    /// </note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <ul>
     /// <li>
     /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
@@ -428,9 +442,7 @@ impl CalculateRouteInputBuilder {
         self.departure_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
-    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
-    /// </note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <ul>
     /// <li>
     /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
@@ -439,9 +451,7 @@ impl CalculateRouteInputBuilder {
         self.departure_time = input;
         self
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
-    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
-    /// </note>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <ul>
     /// <li>
     /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code></p></li>
@@ -540,6 +550,40 @@ impl CalculateRouteInputBuilder {
     pub fn get_truck_mode_options(&self) -> &::std::option::Option<crate::types::CalculateRouteTruckModeOptions> {
         &self.truck_mode_options
     }
+    /// <p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
+    /// <p>ArrivalTime is not supported Esri.</p>
+    /// </note>
+    pub fn arrival_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.arrival_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
+    /// <p>ArrivalTime is not supported Esri.</p>
+    /// </note>
+    pub fn set_arrival_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.arrival_time = input;
+        self
+    }
+    /// <p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p><note>
+    /// <p>ArrivalTime is not supported Esri.</p>
+    /// </note>
+    pub fn get_arrival_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.arrival_time
+    }
+    /// <p>Specifies the distance to optimize for when calculating a route.</p>
+    pub fn optimize_for(mut self, input: crate::types::OptimizationMode) -> Self {
+        self.optimize_for = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the distance to optimize for when calculating a route.</p>
+    pub fn set_optimize_for(mut self, input: ::std::option::Option<crate::types::OptimizationMode>) -> Self {
+        self.optimize_for = input;
+        self
+    }
+    /// <p>Specifies the distance to optimize for when calculating a route.</p>
+    pub fn get_optimize_for(&self) -> &::std::option::Option<crate::types::OptimizationMode> {
+        &self.optimize_for
+    }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -570,6 +614,8 @@ impl CalculateRouteInputBuilder {
             include_leg_geometry: self.include_leg_geometry,
             car_mode_options: self.car_mode_options,
             truck_mode_options: self.truck_mode_options,
+            arrival_time: self.arrival_time,
+            optimize_for: self.optimize_for,
             key: self.key,
         })
     }
@@ -588,6 +634,8 @@ impl ::std::fmt::Debug for CalculateRouteInputBuilder {
         formatter.field("include_leg_geometry", &self.include_leg_geometry);
         formatter.field("car_mode_options", &self.car_mode_options);
         formatter.field("truck_mode_options", &self.truck_mode_options);
+        formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("optimize_for", &self.optimize_for);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

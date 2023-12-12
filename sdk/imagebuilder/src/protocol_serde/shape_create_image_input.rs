@@ -15,33 +15,48 @@ pub fn ser_create_image_input_input(
     if let Some(var_4) = &input.enhanced_image_metadata_enabled {
         object.key("enhancedImageMetadataEnabled").boolean(*var_4);
     }
-    if let Some(var_5) = &input.image_recipe_arn {
-        object.key("imageRecipeArn").string(var_5.as_str());
+    if let Some(var_5) = &input.execution_role {
+        object.key("executionRole").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.image_scanning_configuration {
+    if let Some(var_6) = &input.image_recipe_arn {
+        object.key("imageRecipeArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("imageScanningConfiguration").start_object();
-        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.image_tests_configuration {
+    if let Some(var_9) = &input.image_tests_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.infrastructure_configuration_arn {
-        object.key("infrastructureConfigurationArn").string(var_10.as_str());
+    if let Some(var_11) = &input.infrastructure_configuration_arn {
+        object.key("infrastructureConfigurationArn").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_12.finish();
+        object_13.finish();
+    }
+    if let Some(var_16) = &input.workflows {
+        let mut array_17 = object.key("workflows").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
     }
     Ok(())
 }

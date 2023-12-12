@@ -6,11 +6,11 @@
 pub struct LifecyclePolicyDetailExclusionRulesAmis {
     /// <p>Configures whether public AMIs are excluded from the lifecycle action.</p>
     pub is_public: bool,
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
-    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
-    pub shared_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    pub shared_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
     pub last_launched: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched>,
     /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
     pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -20,19 +20,19 @@ impl LifecyclePolicyDetailExclusionRulesAmis {
     pub fn is_public(&self) -> bool {
         self.is_public
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
         self.regions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_accounts.is_none()`.
     pub fn shared_accounts(&self) -> &[::std::string::String] {
         self.shared_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
+    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
     pub fn last_launched(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched> {
         self.last_launched.as_ref()
     }
@@ -77,19 +77,19 @@ impl LifecyclePolicyDetailExclusionRulesAmisBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
@@ -97,33 +97,33 @@ impl LifecyclePolicyDetailExclusionRulesAmisBuilder {
     ///
     /// To override the contents of this collection use [`set_shared_accounts`](Self::set_shared_accounts).
     ///
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
     pub fn shared_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_accounts.unwrap_or_default();
         v.push(input.into());
         self.shared_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
     pub fn set_shared_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_accounts = input;
         self
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
     pub fn get_shared_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_accounts
     }
-    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
+    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
     pub fn last_launched(mut self, input: crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched) -> Self {
         self.last_launched = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
+    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
     pub fn set_last_launched(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched>) -> Self {
         self.last_launched = input;
         self
     }
-    /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
+    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
     pub fn get_last_launched(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched> {
         &self.last_launched
     }

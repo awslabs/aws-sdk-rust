@@ -11,7 +11,7 @@ pub struct ListDevicePositionsInput {
     /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
     /// <p>Default value: <code>null</code></p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub filter_geometry: ::std::option::Option<crate::types::TrackingFilterGeometry>,
 }
 impl ListDevicePositionsInput {
@@ -29,7 +29,7 @@ impl ListDevicePositionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn filter_geometry(&self) -> ::std::option::Option<&crate::types::TrackingFilterGeometry> {
         self.filter_geometry.as_ref()
     }
@@ -100,17 +100,17 @@ impl ListDevicePositionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn filter_geometry(mut self, input: crate::types::TrackingFilterGeometry) -> Self {
         self.filter_geometry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn set_filter_geometry(mut self, input: ::std::option::Option<crate::types::TrackingFilterGeometry>) -> Self {
         self.filter_geometry = input;
         self
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn get_filter_geometry(&self) -> &::std::option::Option<crate::types::TrackingFilterGeometry> {
         &self.filter_geometry
     }

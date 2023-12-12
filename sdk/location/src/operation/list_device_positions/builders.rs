@@ -162,17 +162,17 @@ impl ListDevicePositionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn filter_geometry(mut self, input: crate::types::TrackingFilterGeometry) -> Self {
         self.inner = self.inner.filter_geometry(input);
         self
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn set_filter_geometry(mut self, input: ::std::option::Option<crate::types::TrackingFilterGeometry>) -> Self {
         self.inner = self.inner.set_filter_geometry(input);
         self
     }
-    /// <p>The geomerty used to filter device positions.</p>
+    /// <p>The geometry used to filter device positions.</p>
     pub fn get_filter_geometry(&self) -> &::std::option::Option<crate::types::TrackingFilterGeometry> {
         self.inner.get_filter_geometry()
     }

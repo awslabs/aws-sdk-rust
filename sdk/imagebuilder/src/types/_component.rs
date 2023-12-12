@@ -12,7 +12,7 @@ pub struct Component {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The change description of the component.</p>
+    /// <p>Describes what change has been made in this version of the component, or what makes this version different from other versions of the component.</p>
     pub change_description: ::std::option::Option<::std::string::String>,
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub r#type: ::std::option::Option<crate::types::ComponentType>,
@@ -58,7 +58,7 @@ impl Component {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description of the component.</p>
+    /// <p>Describes what change has been made in this version of the component, or what makes this version different from other versions of the component.</p>
     pub fn change_description(&self) -> ::std::option::Option<&str> {
         self.change_description.as_deref()
     }
@@ -206,17 +206,17 @@ impl ComponentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The change description of the component.</p>
+    /// <p>Describes what change has been made in this version of the component, or what makes this version different from other versions of the component.</p>
     pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The change description of the component.</p>
+    /// <p>Describes what change has been made in this version of the component, or what makes this version different from other versions of the component.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_description = input;
         self
     }
-    /// <p>The change description of the component.</p>
+    /// <p>Describes what change has been made in this version of the component, or what makes this version different from other versions of the component.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_description
     }

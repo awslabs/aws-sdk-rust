@@ -5,7 +5,7 @@
 pub struct GetComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The component object associated with the specified ARN.</p>
+    /// <p>The component object specified in the request.</p>
     pub component: ::std::option::Option<crate::types::Component>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetComponentOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The component object associated with the specified ARN.</p>
+    /// <p>The component object specified in the request.</p>
     pub fn component(&self) -> ::std::option::Option<&crate::types::Component> {
         self.component.as_ref()
     }
@@ -54,17 +54,17 @@ impl GetComponentOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The component object associated with the specified ARN.</p>
+    /// <p>The component object specified in the request.</p>
     pub fn component(mut self, input: crate::types::Component) -> Self {
         self.component = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The component object associated with the specified ARN.</p>
+    /// <p>The component object specified in the request.</p>
     pub fn set_component(mut self, input: ::std::option::Option<crate::types::Component>) -> Self {
         self.component = input;
         self
     }
-    /// <p>The component object associated with the specified ARN.</p>
+    /// <p>The component object specified in the request.</p>
     pub fn get_component(&self) -> &::std::option::Option<crate::types::Component> {
         &self.component
     }

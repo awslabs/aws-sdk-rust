@@ -576,6 +576,48 @@ impl From<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow::CreateWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workflow::CreateWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_workflow::CreateWorkflowError> for Error {
+    fn from(err: crate::operation::create_workflow::CreateWorkflowError) -> Self {
+        match err {
+            crate::operation::create_workflow::CreateWorkflowError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::create_workflow::CreateWorkflowError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::create_workflow::CreateWorkflowError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::create_workflow::CreateWorkflowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::InvalidVersionNumberException(inner) => {
+                Error::InvalidVersionNumberException(inner)
+            }
+            crate::operation::create_workflow::CreateWorkflowError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_workflow::CreateWorkflowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_workflow::CreateWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_component::DeleteComponentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -885,6 +927,36 @@ impl From<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError>
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow::DeleteWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_workflow::DeleteWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_workflow::DeleteWorkflowError> for Error {
+    fn from(err: crate::operation::delete_workflow::DeleteWorkflowError) -> Self {
+        match err {
+            crate::operation::delete_workflow::DeleteWorkflowError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::delete_workflow::DeleteWorkflowError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ResourceDependencyException(inner) => Error::ResourceDependencyException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_workflow::DeleteWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1331,6 +1403,33 @@ impl From<crate::operation::get_lifecycle_policy::GetLifecyclePolicyError> for E
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::get_lifecycle_policy::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_workflow::GetWorkflowError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_workflow::GetWorkflowError> for Error {
+    fn from(err: crate::operation::get_workflow::GetWorkflowError) -> Self {
+        match err {
+            crate::operation::get_workflow::GetWorkflowError::CallRateLimitExceededException(inner) => Error::CallRateLimitExceededException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_workflow::GetWorkflowError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_workflow::GetWorkflowError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_workflow::GetWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2150,6 +2249,88 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError> for Error {
+    fn from(err: crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError) -> Self {
+        match err {
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_waiting_workflow_steps::ListWaitingWorkflowStepsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError> for Error {
+    fn from(err: crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError) -> Self {
+        match err {
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_workflow_build_versions::ListWorkflowBuildVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflow_executions::ListWorkflowExecutionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2185,6 +2366,38 @@ impl From<crate::operation::list_workflow_executions::ListWorkflowExecutionsErro
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_workflow_executions::ListWorkflowExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_workflows::ListWorkflowsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_workflows::ListWorkflowsError> for Error {
+    fn from(err: crate::operation::list_workflows::ListWorkflowsError) -> Self {
+        match err {
+            crate::operation::list_workflows::ListWorkflowsError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::list_workflows::ListWorkflowsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
+            crate::operation::list_workflows::ListWorkflowsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_workflows::ListWorkflowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2383,6 +2596,54 @@ impl From<crate::operation::put_image_recipe_policy::PutImageRecipePolicyError> 
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::put_image_recipe_policy::PutImageRecipePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_workflow_step_action::SendWorkflowStepActionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_workflow_step_action::SendWorkflowStepActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_workflow_step_action::SendWorkflowStepActionError> for Error {
+    fn from(err: crate::operation::send_workflow_step_action::SendWorkflowStepActionError) -> Self {
+        match err {
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::CallRateLimitExceededException(inner) => {
+                Error::CallRateLimitExceededException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::send_workflow_step_action::SendWorkflowStepActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

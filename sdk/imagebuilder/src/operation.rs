@@ -31,6 +31,9 @@ pub mod create_infrastructure_configuration;
 /// Types for the `CreateLifecyclePolicy` operation.
 pub mod create_lifecycle_policy;
 
+/// Types for the `CreateWorkflow` operation.
+pub mod create_workflow;
+
 /// Types for the `DeleteComponent` operation.
 pub mod delete_component;
 
@@ -54,6 +57,9 @@ pub mod delete_infrastructure_configuration;
 
 /// Types for the `DeleteLifecyclePolicy` operation.
 pub mod delete_lifecycle_policy;
+
+/// Types for the `DeleteWorkflow` operation.
+pub mod delete_workflow;
 
 /// Types for the `GetComponent` operation.
 pub mod get_component;
@@ -93,6 +99,9 @@ pub mod get_lifecycle_execution;
 
 /// Types for the `GetLifecyclePolicy` operation.
 pub mod get_lifecycle_policy;
+
+/// Types for the `GetWorkflow` operation.
+pub mod get_workflow;
 
 /// Types for the `GetWorkflowExecution` operation.
 pub mod get_workflow_execution;
@@ -157,11 +166,20 @@ pub mod list_lifecycle_policies;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListWaitingWorkflowSteps` operation.
+pub mod list_waiting_workflow_steps;
+
+/// Types for the `ListWorkflowBuildVersions` operation.
+pub mod list_workflow_build_versions;
+
 /// Types for the `ListWorkflowExecutions` operation.
 pub mod list_workflow_executions;
 
 /// Types for the `ListWorkflowStepExecutions` operation.
 pub mod list_workflow_step_executions;
+
+/// Types for the `ListWorkflows` operation.
+pub mod list_workflows;
 
 /// Types for the `PutComponentPolicy` operation.
 pub mod put_component_policy;
@@ -174,6 +192,9 @@ pub mod put_image_policy;
 
 /// Types for the `PutImageRecipePolicy` operation.
 pub mod put_image_recipe_policy;
+
+/// Types for the `SendWorkflowStepAction` operation.
+pub mod send_workflow_step_action;
 
 /// Types for the `StartImagePipelineExecution` operation.
 pub mod start_image_pipeline_execution;

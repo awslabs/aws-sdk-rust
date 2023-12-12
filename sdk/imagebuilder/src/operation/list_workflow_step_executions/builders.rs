@@ -22,7 +22,7 @@ impl ListWorkflowStepExecutionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListWorkflowStepExecutions`.
 ///
-/// <p>Shows runtime data for each step in a runtime instance of the workflow that you specify in the request.</p>
+/// <p>Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWorkflowStepExecutionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

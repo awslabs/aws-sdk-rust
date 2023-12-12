@@ -12,6 +12,7 @@
 /// ```text
 /// # let workflowstepexecutionstatus = unimplemented!();
 /// match workflowstepexecutionstatus {
+///     WorkflowStepExecutionStatus::Cancelled => { /* ... */ },
 ///     WorkflowStepExecutionStatus::Completed => { /* ... */ },
 ///     WorkflowStepExecutionStatus::Failed => { /* ... */ },
 ///     WorkflowStepExecutionStatus::Pending => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum WorkflowStepExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -61,6 +64,7 @@ pub enum WorkflowStepExecutionStatus {
 impl ::std::convert::From<&str> for WorkflowStepExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CANCELLED" => WorkflowStepExecutionStatus::Cancelled,
             "COMPLETED" => WorkflowStepExecutionStatus::Completed,
             "FAILED" => WorkflowStepExecutionStatus::Failed,
             "PENDING" => WorkflowStepExecutionStatus::Pending,
@@ -81,6 +85,7 @@ impl WorkflowStepExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            WorkflowStepExecutionStatus::Cancelled => "CANCELLED",
             WorkflowStepExecutionStatus::Completed => "COMPLETED",
             WorkflowStepExecutionStatus::Failed => "FAILED",
             WorkflowStepExecutionStatus::Pending => "PENDING",
@@ -91,7 +96,7 @@ impl WorkflowStepExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "PENDING", "RUNNING", "SKIPPED"]
+        &["CANCELLED", "COMPLETED", "FAILED", "PENDING", "RUNNING", "SKIPPED"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowStepExecutionStatus {

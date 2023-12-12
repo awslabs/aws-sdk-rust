@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyDetailExclusionRules {
-    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for AMIs that have them.</p>
+    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for resources that have them.</p>
     pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action.</p>
     pub amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
 impl LifecyclePolicyDetailExclusionRules {
-    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for AMIs that have them.</p>
+    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for resources that have them.</p>
     pub fn tag_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tag_map.as_ref()
     }
@@ -38,19 +38,19 @@ impl LifecyclePolicyDetailExclusionRulesBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_map`](Self::set_tag_map).
     ///
-    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for AMIs that have them.</p>
+    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for resources that have them.</p>
     pub fn tag_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tag_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tag_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for AMIs that have them.</p>
+    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for resources that have them.</p>
     pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tag_map = input;
         self
     }
-    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for AMIs that have them.</p>
+    /// <p>Contains a list of tags that Image Builder uses to skip lifecycle actions for resources that have them.</p>
     pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tag_map
     }
